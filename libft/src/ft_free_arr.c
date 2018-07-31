@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstpushback.c                                   :+:      :+:    :+:   */
+/*   ft_free_arr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlinkin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/30 16:42:56 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/04/30 16:45:47 by dlinkin          ###   ########.fr       */
+/*   Created: 2018/01/16 13:26:53 by dlinkin           #+#    #+#             */
+/*   Updated: 2018/08/01 00:59:35 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstpushback(t_list **alst, t_list *new)
+void	ft_free_arr(void **arr)
 {
-	t_list *cope;
+	void **ptr;
 
-	if (alst)
+	if (arr)
 	{
-		if (!*alst)
-			*alst = new;
-		else
+		ptr = arr;
+		while (*ptr)
 		{
-			cope = *alst;
-			while (cope->next)
-				cope = cope->next;
-			cope->next = new;
+			free(*ptr);
+			ptr++;
 		}
+		free(arr);
+		arr = NULL;
 	}
 }

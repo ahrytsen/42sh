@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/07/31 21:00:16 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/08/01 01:00:31 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -18,8 +18,8 @@ DIRSRC	=	./src/
 
 DIROBJ	=	./obj/
 
-HDR		=	includes/libft.h\
-			includes/ft_printf.h
+HDR		=	inc/libft.h\
+			inc/ft_printf.h
 
 SRC		=	ft_arrstr.c\
 			ft_atoi.c\
@@ -30,6 +30,8 @@ SRC		=	ft_arrstr.c\
 			ft_count_digits.c\
 			ft_dtoa.c\
 			ft_dtoea.c\
+			ft_free_arr.c\
+			ft_is_blank.c\
 			ft_isalnum.c\
 			ft_isalnum_str.c\
 			ft_isalpha.c\
@@ -37,22 +39,28 @@ SRC		=	ft_arrstr.c\
 			ft_isascii.c\
 			ft_isascii_str.c\
 			ft_isdigit.c\
+			ft_isnumber.c\
 			ft_isnumeric_str.c\
 			ft_isprint.c\
 			ft_isprint_str.c\
 			ft_iswhitespace.c\
 			ft_itoa.c\
+			ft_itoa_base.c\
 			ft_ldtoa.c\
 			ft_ldtoea.c\
 			ft_lstadd.c\
 			ft_lstadd_end.c\
 			ft_lstdel.c\
 			ft_lstdelone.c\
+			ft_lstfree.c\
 			ft_lstiter.c\
 			ft_lstmap.c\
 			ft_lstnew.c\
+			ft_lstprint.c\
 			ft_lstpush_back.c\
 			ft_lstpush_front.c\
+			ft_lstsize.c\
+			ft_lstsort.c\
 			ft_lstsplit.c\
 			ft_ltoa.c\
 			ft_memalloc.c\
@@ -63,7 +71,6 @@ SRC		=	ft_arrstr.c\
 			ft_memdel.c\
 			ft_memmove.c\
 			ft_memset.c\
-			ft_printf\
 			ft_putchar.c\
 			ft_putchar_fd.c\
 			ft_putendl.c\
@@ -72,6 +79,7 @@ SRC		=	ft_arrstr.c\
 			ft_putnbr_fd.c\
 			ft_putstr.c\
 			ft_putstr_fd.c\
+			ft_realloc.c\
 			ft_sort_params.c\
 			ft_strarr_free.c\
 			ft_strcat.c\
@@ -113,16 +121,17 @@ SRC		=	ft_arrstr.c\
 			\
 			ft_printf/ft_fatal.c\
 			ft_printf/ft_pbuf.c\
-			ft_printf/ft_pbuf_str.c
+			ft_printf/ft_pbuf_str.c\
 			ft_printf/ft_pfloat.c\
 			ft_printf/ft_phelper.c\
 			ft_printf/ft_phendler.c\
-			ft_printf/ft_printf.c\
+			ft_printf/ft_printf.c
 
 OBJ		= $(addprefix $(DIROBJ), $(SRC:.c=.o))
 
 CC		= gcc
 
+#===========================================================
 ifdef FLAGS
 	ifeq ($(FLAGS), no)
 CFLAGS		=
@@ -131,27 +140,44 @@ CFLAGS		=
 CFLAGS		=	-Wall -Wextra -Werror -g
 	endif
 else
-CFLAGS	= -Wall -Wextra -Werror -Ofast -flto=thin
+CFLAGS		= 	-Wextra -Werror -Ofast -flto=thin
 endif
+#===========================================================
+OS = $(shell uname)
+ifeq ($(OS),Darwin)
+	BBLUE = \x1b[1;34m
+	NON = \x1b[0m
+	BLUE = \x1b[34m
+	GRN = \x1b[32m
+endif
+STRING1 = $(BBLUE)---Compile_Library$(NON)
+STRING2 = $(BBLUE)---Remove_Library_O_Files$(NON)
+STRING3 = $(BBLUE)---Remove_Library$(NON)
+#===========================================================
 
 all: $(NAME)
 
 $(NAME): $(DIROBJ) $(OBJ)
-	@ar rc $(NAME) $(OBJ);
-	@ranlib $(NAME);
-	@echo "\033[31m> \033[32mlibftprintf: Compiled\033[0m"
+				@echo "$(STRING1)"
+				@ar rc $(NAME) $(OBJ);
+				@ranlib $(NAME);
+				@echo "$(BBLUE)comp$(NON)..."$(NAME)"...$(GRN)OK$(NON)\n"
 
 $(OBJ)	:		$(DIROBJ)%.o : $(DIRSRC)%.c $(HDR)
-				@$(CC) $(INCLUDE) $(CFLAGS) -o $@ -c $<
-				@echo ".\c"
+				@$(CC) -I$(INC) $(CFLAGS) -o $@ -c $<
+				@echo "$(BLUE)comp$(NON)..."$@
 
 clean:
 				@rm -rf $(DIROBJ)
-				@echo "\033[31m> \033[33mlibftprintf: Directory cleaned\033[0m"
+				@echo "$(STRING2)"
 
 fclean: clean
 				@rm -f $(NAME)
-				@echo "\033[31m> \033[33mRemove libftprintf.a\033[0m"
+				@echo "$(STRING3)"
+
+clean_lib:
+				@echo "$(STRING3)"
+				@rm -rf $(NAME)
 
 re: fclean all
 

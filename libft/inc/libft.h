@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 05:35:20 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/07/14 16:01:29 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/07/31 23:22:38 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <sys/uio.h>
 
 # define MOD(a)(a >= 0 ? a : -a)
+# define ft_lstpushback ft_lstadd_end
 
 /*
 **				ft_printf
@@ -143,5 +144,15 @@ int				ft_atoi_base(const char *str, int base);
 void			ft_strarr_free(char **arr);
 char			*ft_arrstr(char **arr, char *str);
 size_t			ft_count_digits(size_t n);
+
+char			*ft_realloc(size_t new_size, size_t old_size, char *ptr);
+void			ft_lstfree(t_list **alst);
+t_list			*ft_lstsort(t_list *alst);
+size_t			ft_lstsize(t_list *list);
+void			ft_lstprint(t_list *list);
+char			*ft_itoa_base(int n, int base);
+int				ft_isnumber(char *str);
+void			ft_free_arr(void **arr);
+int				ft_is_blank(char *str);
 
 #endif
