@@ -44,13 +44,36 @@ static int	gsh_reader_bell_chaek(t_ych in, t_pos *pos, char *out)
 		return (1);
 	return (0);
 }
+size_t		gsh_prompt(int mod)
+{
+	char	buf[BUFSIZE];
+	char	*ptr;
+
+	if (!isatty(2))
+		return (0);
+	getcwd(buf, BUFSIZE);
+	if (!ft_strcmp(buf, getpwuid(getuid())->pw_dir))
+		ptr = "~";
+	else
+		ptr = ft_strrchr(buf, '/');
+	if (mod)
+	{
+		if (*(ptr + 1))
+			ft_dprintf(2, "\e[36m%s > \e[0m", ptr + 1);
+		else
+			ft_dprintf(2, "\e[36m%s > \e[0m", ptr);
+	}
+	if (*(ptr + 1))
+		return (ft_strlen(ptr) + 2);
+	return (ft_strlen(ptr) + 3);
+}
 
 static int	gsh_reader_cycle(int i, char *out, t_pos *pos)
 {
 	t_ych	u;
 
 	u.d = 0;
-	while ((i = read(0, u.c, 8)))
+	while ((i = read(pos->fd, u.c, 8)))
 	{
 		u.c[i] = 0;
 		if (gsh_reader_bell_chaek(u, pos, out))
@@ -71,7 +94,7 @@ static int	gsh_reader_cycle(int i, char *out, t_pos *pos)
 	return (i);
 }
 
-static int	gsh_reader_init(char **line, char *out, size_t prompt)
+static int	gsh_reader_init(char **line, char *out, size_t prompt, int fd)
 {
 	t_pos	*pos;
 	int		i;
@@ -81,6 +104,7 @@ static int	gsh_reader_init(char **line, char *out, size_t prompt)
 	ft_bzero((void *)out, LINE_SIZE);
 	pos = (t_pos *)malloc(sizeof(t_pos));
 	pos->prompt = prompt;
+	pos->fd = fd;
 	gsh_r_history_bucket(CREATE, 0);
 	gsh_r_redraw_line(out, pos, 0, 2);
 	sum_save_function_for_winsize(0, pos);
@@ -92,7 +116,7 @@ static int	gsh_reader_init(char **line, char *out, size_t prompt)
 	return (i);
 }
 
-int			gsh_reader(char **line, size_t prompt)
+int			gsh_reader(int fd, char **line)
 {
 	struct termios	tstr;
 	struct termios	copy;
@@ -108,7 +132,7 @@ int			gsh_reader(char **line, size_t prompt)
 	tcsetattr(0, TCSAFLUSH, &tstr);
 	signal(SIGWINCH, gsh_r_signal);
 	*line = NULL;
-	i = gsh_reader_init(line, out, prompt);
+	i = gsh_reader_init(line, out, gsh_prompt(1), fd);
 	signal(SIGWINCH, SIG_DFL);
 	tcsetattr(0, TCSANOW, &copy);
 	return (i);
