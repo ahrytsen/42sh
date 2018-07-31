@@ -54,7 +54,7 @@ $(BIN): $(OBJ_FILES)
 	@echo "$(CYANN)comp$(NON)..."$(BIN)"...$(GREEN)OK$(NON)"
 
 library: $(LIBA)
-	@make -C $(LIB_DIR)
+	@make -C $(LIB_DIR) -j3
 
 $(OBJ_DIR):
 	mkdir $(OBJ_DIR)
