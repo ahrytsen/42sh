@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   regex.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlinkin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 16:40:23 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/07/26 16:40:26 by dlinkin          ###   ########.fr       */
+/*   Updated: 2018/08/01 16:37:44 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 #include <dirent.h>
 #include <sys/stat.h>
 
@@ -83,7 +83,7 @@ t_list		*regex(char *pattern)
 	char	path[1024];
 	t_list	*list;
 
-	names = ft_strcut(av[1], '/');
+	names = ft_strcut(pattern, '/');
 	list = NULL;
 	if (*pattern != '/' && *pattern != '~')
 	{

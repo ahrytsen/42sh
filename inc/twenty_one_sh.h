@@ -260,7 +260,7 @@ typedef struct	s_ast
 /*
 **				main.c
 */
-int				main(void);
+//int				main(void);
 int				main_loop(void);
 /*
 **				init.c

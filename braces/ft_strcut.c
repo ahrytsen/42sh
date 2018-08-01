@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcut.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlinkin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 16:39:53 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/07/26 16:39:57 by dlinkin          ###   ########.fr       */
+/*   Updated: 2018/08/01 16:28:27 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-#include <stdlib.h>
+#include "libft.h"
 
 static size_t	cut_wrds(char const *str, char c)
 {
