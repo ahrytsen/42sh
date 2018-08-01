@@ -6,35 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 13:59:58 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:32:41 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 15:45:39 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
-#include "ft_readline.h"
-
-static void	ft_init_termcap(void)
-{
-	char	*termtype;
-	int		success;
-
-	if (!(termtype = getenv("TERM")))
-		ft_fatal(1, exit,
-				"Specify a terminal type with `setenv TERM <yourtype>'.\n");
-	success = tgetent(NULL, termtype);
-	if (success < 0)
-		ft_fatal(1, exit, "Could not access the termcap data base.\n");
-	else if (!success)
-		ft_fatal(1, exit, "Terminal type `%s' is not defined.\n", termtype);
-	get_term()->clear = tgetstr("ce", NULL);
-	get_term()->cm_left = tgetstr("le", NULL);
-	get_term()->cm_right = tgetstr("nd", NULL);
-	get_term()->iv_on = tgetstr("mr", NULL);
-	get_term()->iv_off = tgetstr("me", NULL);
-	get_term()->del_ch = tgetstr("DC", NULL);
-	get_term()->height = tgetnum("li");
-	get_term()->width = tgetnum("co");
-}
 
 static void	ft_if_interactive(void)
 {
@@ -42,7 +18,6 @@ static void	ft_if_interactive(void)
 			(get_environ()->sh_pgid = getpgrp()))
 		kill(-get_environ()->sh_pgid, SIGTTIN);
 	ft_set_sh_signal(S_SH);
-	ft_init_termcap();
 	get_environ()->sh_pid = getpid();
 	setpgid(get_environ()->sh_pid, get_environ()->sh_pid);
 	tcsetpgrp(1, get_environ()->sh_pid);
@@ -66,7 +41,7 @@ void		ft_fildes(int mod)
 
 void		ft_set_sh_signal(int mod)
 {
-	if (mod & S_SH)
+	if (mod & S_SH && get_environ()->is_interactive)
 	{
 		signal(SIGINT, SIG_IGN);
 		signal(SIGQUIT, SIG_IGN);
@@ -97,7 +72,6 @@ void		ft_init(void)
 	int			shlvl;
 	char		*tmp;
 
-	ft_bzero(get_term(), sizeof(t_term));
 	ft_bzero(get_environ(), sizeof(t_env));
 	ft_fildes(FD_BACKUP);
 	get_environ()->env = ft_strdup_arr(environ);

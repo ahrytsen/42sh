@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:33:57 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 15:49:11 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,6 @@ typedef struct	s_env
 	pid_t			pid;
 	t_list			*jobs;
 	int				bkp_fd[3];
-	struct termios	savetty;
-	struct termios	work_tty;
 	int				sh_terminal;
 	int				is_interactive;
 }				t_env;
