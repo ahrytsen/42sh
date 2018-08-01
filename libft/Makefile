@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/01 01:00:31 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/08/01 02:54:23 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -119,9 +119,7 @@ SRC		=	ft_arrstr.c\
 			ft_wcharlen.c\
 			get_next_line.c\
 			\
-			ft_printf/ft_fatal.c\
 			ft_printf/ft_pbuf.c\
-			ft_printf/ft_pbuf_str.c\
 			ft_printf/ft_pfloat.c\
 			ft_printf/ft_phelper.c\
 			ft_printf/ft_phendler.c\
@@ -182,7 +180,7 @@ clean_lib:
 re: fclean all
 
 $(DIROBJ):
-				@mkdir -p $(DIROBJ)
-				@mkdir -p $(DIROBJ)/ft_printf
+				mkdir -p $(DIROBJ)
+				mkdir -p $(DIROBJ)/ft_printf
 
 .NOTEPARALLEL: all $(NAME) re

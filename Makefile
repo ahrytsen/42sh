@@ -1,89 +1,161 @@
-# **************************************************************************** #
+#******************************************************************************#
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dlinkin <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/05/22 12:27:21 by dlinkin           #+#    #+#              #
-#    Updated: 2018/05/22 12:27:23 by dlinkin          ###   ########.fr        #
+#    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
+#    Updated: 2018/08/01 03:13:31 by ahrytsen         ###   ########.fr        #
 #                                                                              #
-# **************************************************************************** #
+#******************************************************************************#
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror $(INC)
-SRC_DIR = src
-SRC = main.c
+NAME 		=	42sh
 
-SRC_FILES = $(foreach a,$(SRC), $(foreach b,$(SRC_DIR), $b/$a))
-OBJ_DIR = obj
-OBJ_FILES = $(foreach a,$(SRC:%.c=%.o), $(foreach b,$(OBJ_DIR), $b/$a))
-
-OS = $(shell uname)
+#===========================================================
+OS			= $(shell uname)
 ifeq ($(OS),Darwin)
-	INC = -I./libft/includes -I./inc
-	LIBA = ./libft/libftprintf.a
-	LIB_DIR = ./libft
-	TCAP = -ltermcap
-	CYAN = \x1b[1;36m
-	NON = \x1b[0m
-	CYANN = \x1b[36m
-	GREEN = \x1b[32m
+	INC		=	-I./inc/ -I./libft/inc/
+	LIBFT	= ./libft/libftprintf.a
+	SUB_MAKE= ./libft
+	TCAP	= -ltermcap
+	CYAN	= \x1b[1;36m
+	NON		= \x1b[0m
+	CYANN	= \x1b[36m
+	GREEN	= \x1b[32m
 else
-	INC = -I../../libft_win/includes -I./inc
-	LIBA = ../../libft_win/libftprintf.a
-	LIB_DIR = ../../libft_win
-	TCAP = -lcurses
+	INC		= -I../../libft_win/includes -I./inc
+	LIBFT	= ../../libft_win/libftprintf.a
+	SUB_MAKE= ../../libft_win
+	TCAP	= -lcurses
 endif
+#===========================================================
 
-BIN = 42sh
 
-STRING1 = $(CYAN)---Compile_$(BIN)$(NON)
-STRING2 = $(CYAN)---Remove_$(BIN)_O_Files$(NON)
-STRING3 = $(CYAN)---Remove_$(BIN)$(NON)
+INC_LIB		=	-L./libft -lftprintf $(TCAP)
+
+LIBFT		=	libft/libftprintf.a
+
+DIRSRC		=	./src/
+
+DIROBJ		=	./obj/
+
+HDR			=	inc/twenty_one_sh.h
+
+SRC			=	main.c\
+				init.c\
+				env_utils.c\
+				ft_buffer.c\
+				ft_tokenize.c\
+				ft_tokenize_utils.c\
+				ft_ast.c\
+				ft_ast_utils.c\
+				ft_ast_exec.c\
+				ft_cmdlst.c\
+				ft_cmdlst_utils.c\
+				ft_cmdlst_exec.c\
+				ft_argv.c\
+				ft_argv_utils.c\
+				ft_argv_quotes.c\
+				ft_argv_exec.c\
+				ft_redirection.c\
+				ft_redirection_utils.c\
+				ft_heredoc.c\
+				ft_jobs_utils.c\
+				\
+				builtins/builtins.c\
+				builtins/env_builtin.c\
+				builtins/ft_cd.c\
+				builtins/ft_fg.c\
+				\
+				ft_readline/ft_autocomplit.c\
+				ft_readline/ft_readline.c\
+				ft_readline/ft_readline_action.c\
+				ft_readline/line.c\
+				ft_readline/rl_init.c\
+				ft_readline/ft_cursor.c\
+				ft_readline/ft_readline_helper.c\
+				ft_readline/ft_history.c\
+				ft_readline/ft_highlight.c\
+				ft_readline/line_edit.c\
+				ft_readline/ft_prompt.c\
+				ft_readline/ft_check_line.c\
+				ft_readline/ft_read.c
+
+OBJ			=	$(addprefix $(DIROBJ), $(SRC:.c=.o))
+
+CC			=	gcc
+RM			=	rm -rf
+ECHO		=	echo
+
+#===========================================================
+ifdef FLAGS
+	ifeq ($(FLAGS), no)
+CFLAGS		=
+	endif
+	ifeq ($(FLAGS), debug)
+CFLAGS		=	-Wall -Wextra -Werror -g
+	endif
+else
+CFLAGS		= 	-Wall -Wextra -Werror -Ofast -flto=thin
+endif
+#===========================================================
+STRING1 = $(CYAN)---Compile_$(NAME)$(NON)
+STRING2 = $(CYAN)---Remove_$(NAME)_O_Files$(NON)
+STRING3 = $(CYAN)---Remove_$(NAME)$(NON)
 STRING4 = $(CYAN)---Running$(NON)
 STRING5 = $(CYAN)---Copy binary file in ~/my_bin$(NON)
+STRING5 = $(CYAN)---$(NAME) installed in ~/.my_bin$(NON)
+#===========================================================
 
-.PHONY: $(LIBA)
+.PHONY: all clean re
 
-all: library $(OBJ_DIR) $(BIN)
+all: $(NAME)
 
-$(BIN): $(OBJ_FILES)
+$(NAME): $(LIBFT) $(DIROBJ) $(OBJ)
 	@echo "$(STRING1)"
-	@$(CC) $(CFLAGS) $(OBJ_FILES) $(LIBA) $(TCAP) -o $(BIN)
-	@echo "$(CYANN)comp$(NON)..."$(BIN)"...$(GREEN)OK$(NON)"
+	@$(CC) $(INC) $(INC_LIB) $(CFLAGS) -o $(NAME) $(OBJ)
+	@echo "$(CYANN)comp$(NON)..."$(NAME)"...$(GREEN)OK$(NON)"
 
-library: $(LIBA)
-	@make -C $(LIB_DIR) -j3
+$(DIROBJ):
+	mkdir -p $(DIROBJ)
+	mkdir -p $(DIROBJ)/ft_readline
+	mkdir -p $(DIROBJ)/builtins
 
-$(OBJ_DIR):
-	mkdir $(OBJ_DIR)
+lib:
+	@$(MAKE) -C $(SUB_MAKE) -j3
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEAD)
-	@$(CC) $(CFLAGS) -o $@ -c $<
+$(LIBFT): lib
+
+$(OBJ):	$(DIROBJ)%.o : $(DIRSRC)%.c $(HDR)
+	@$(CC) $(INC) $(CFLAGS) -o $@ -c $<
 	@echo "$(CYANN)comp$(NON)..."$@
 
 clean:
-	@echo "$(STRING2)"
-	@rm -rf $(OBJ_DIR)
-	@make clean -C $(LIB_DIR)
+	@($(RM) $(DIROBJ))
+ifdef SUB_MAKE
+	@$(MAKE) -C $(SUB_MAKE) clean
+endif
+	@$(ECHO) "$(STRING2)"
 
 fclean: clean
+ifdef SUB_MAKE
+	@$(MAKE) -C $(SUB_MAKE) fclean
+endif
+	-@$(RM) $(NAME)
 	@echo "$(STRING3)"
-	@rm -rf $(BIN)
-	@make clean_lib -C $(LIB_DIR)
+
+re: fclean all
 
 clear:
 	@echo "$(STRING2)"
 	@rm -rf $(OBJ)
 	@echo "$(STRING3)"
-	@rm -rf $(BIN)
-
-re: fclean all
+	@rm -rf $(NAME)
 
 run:
 	@echo "$(STRING4)"
-	@./$(BIN)
+	@./$(NAME)
 
 test:
 
@@ -92,4 +164,10 @@ os:
 
 inst:
 	@echo "$(STRING5)"
-	@cp $(BIN) ~/my_bin
+	@cp $(NAME) ~/my_bin
+
+install:
+	@echo "$(STRING6)"
+	@cp $(NAME) ~/.my_bin
+
+.NOTEPARALLEL: all $(NAME) re
