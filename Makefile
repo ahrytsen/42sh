@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/01 14:25:59 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/08/01 18:57:28 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -106,7 +106,7 @@ STRING2 = $(CYAN)---Remove_$(NAME)_O_Files$(NON)
 STRING3 = $(CYAN)---Remove_$(NAME)$(NON)
 STRING4 = $(CYAN)---Running$(NON)
 STRING5 = $(CYAN)---Copy binary file in ~/my_bin$(NON)
-STRING5 = $(CYAN)---$(NAME) installed in ~/.my_bin$(NON)
+STRING5 = $(CYAN)---$(NAME) installed in ~/.mybin$(NON)
 #===========================================================
 
 .PHONY: all clean re
@@ -169,6 +169,6 @@ inst:
 
 install:
 	@echo "$(STRING6)"
-	@cp $(NAME) ~/.my_bin
+	@cp $(NAME) ~/.mybin
 
 .NOTEPARALLEL: all $(NAME) re

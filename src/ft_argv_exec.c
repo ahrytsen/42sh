@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/26 16:27:15 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:21:11 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 18:58:53 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static int	ft_exec_builtin(char **cmd)
 static int	ft_exec_bypath(char **cmd, char *path, int bg)
 {
 	struct stat	tmp;
+	int			fd;
 
 	if (path && !access(path, F_OK) && !access(path, X_OK)
 		&& !stat(path, &tmp) && S_ISREG(tmp.st_mode))
@@ -47,8 +48,8 @@ static int	ft_exec_bypath(char **cmd, char *path, int bg)
 		if (bg != -1 && get_environ()->is_interactive)
 			ft_set_sh_signal(bg ? S_CHLD : S_CHLD_FG);
 		execve(path, cmd, get_environ()->env);
-		if (dup2(open(path, O_RDONLY), 0) != -1)
-			return (main());
+		if ((fd = open(path, O_RDONLY)) >= 0)
+			exit(main_loop(fd));
 		exit(ft_dprintf(2, "%s: permission denied\n", *cmd) ? -2 : 0);
 	}
 	if (access(path, F_OK)

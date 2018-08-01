@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 13:59:58 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 15:45:39 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 17:24:13 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,13 @@ void		ft_set_sh_signal(int mod)
 	}
 }
 
+void		ft_init_fd(int fd)
+{
+	get_environ()->sh_terminal = fd;
+	if ((get_environ()->is_interactive = isatty(get_environ()->sh_terminal)))
+		ft_if_interactive();
+}
+
 void		ft_init(void)
 {
 	extern char	**environ;
@@ -81,7 +88,4 @@ void		ft_init(void)
 	ft_setenv("SHLVL", tmp, 1);
 	free(tmp);
 	ft_setenv("PATH", "/usr/bin:/bin", 0);
-	get_environ()->sh_terminal = STDIN_FILENO;
-	if ((get_environ()->is_interactive = isatty(get_environ()->sh_terminal)))
-		ft_if_interactive();
 }

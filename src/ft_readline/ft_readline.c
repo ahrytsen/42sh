@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 16:45:16 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 16:01:35 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 18:40:02 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static int	ft_readline_helper(const int fd, char **line)
 	uint64_t		buf;
 
 	if (!get_environ()->is_interactive)
-		ret = get_next_line(0, line);
+		ret = get_next_line(fd, line);
 	else
 	{
 		ft_terminal(T_INIT);

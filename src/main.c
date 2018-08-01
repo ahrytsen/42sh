@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/11 19:53:36 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 15:43:28 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 17:44:28 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,19 +78,20 @@ static void	ft_print_ast(t_ast *ast)
 	}
 }
 
-int			main_loop(void)
+int			main_loop(int fd)
 {
 	char	*cmds;
 	t_list	*toks;
 	t_ast	*ast;
 	int		i;
 
+	ft_init_fd(fd);
 	while (1)
 	{
 		toks = NULL;
 		cmds = NULL;
 		ast = NULL;
-		if (!(i = ft_readline(0, &cmds)) || (i == -1 && !ft_is_interrupted()))
+		if (!(i = ft_readline(fd, &cmds)) || (i == -1 && !ft_is_interrupted()))
 			return (!i ? get_environ()->st : 1);
 		if (cmds && (toks = ft_tokenize(cmds)) && ft_heredoc(toks))
 		{
@@ -104,8 +105,27 @@ int			main_loop(void)
 	}
 }
 
-int			main(void)
+int			main(int ac, char **av)
 {
+	int i;
+	int	fd;
+	int	ret;
+
+	i = 1;
 	ft_init();
-	return (main_loop());
+	if (ac < 2)
+		return (main_loop(STDIN_FILENO));
+	while (i < ac)
+	{
+		if ((access(av[i], F_OK)
+				&& ft_dprintf(2, "%s: no such file: %s\n", av[0], av[i]))
+			|| (access(av[i], R_OK)
+				&& ft_dprintf(2, "%s: permission denied: %s\n", av[0], av[i]))
+			|| ((fd = open(av[i], O_RDONLY)) < 0
+				&& ft_dprintf(2, "%s: open error: %s\n", av[0], av[i])))
+			return (127);
+		i++;
+		ret = main_loop(fd);
+	}
+	return (ret);
 }

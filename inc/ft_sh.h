@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 16:32:39 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 17:25:15 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,13 +166,13 @@ typedef struct	s_ast
 /*
 **				main.c
 */
-int				main(void);
-int				main_loop(void);
+int				main_loop(int fd);
 /*
 **				init.c
 */
 void			ft_fildes(int mod);
 void			ft_set_sh_signal(int mod);
+void			ft_init_fd(int fd);
 void			ft_init(void);
 /*
 **				ft_tokenize.c
