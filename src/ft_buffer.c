@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 19:01:15 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/05/11 20:18:31 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:22:54 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_sh.h"
 
 static size_t	ft_getbufsize(t_buf *buf)
 {

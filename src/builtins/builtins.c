@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/12 15:02:36 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/07/02 19:16:44 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:19:46 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_sh.h"
 
 int		ft_echo(char **av)
 {

@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 17:41:55 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/07/03 17:56:00 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:23:09 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_sh.h"
 
 static int	ft_pl_make(int pl[2], t_cmd *cmd)
 {

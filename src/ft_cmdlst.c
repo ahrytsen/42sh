@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 19:53:42 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/06/23 22:22:14 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:23:02 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_sh.h"
 
 static int	ft_get_pipe(t_list **toks, t_cmd *cmdlst)
 {

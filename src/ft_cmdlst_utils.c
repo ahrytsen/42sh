@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 17:35:56 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/07/01 23:20:42 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:23:18 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_sh.h"
 
 void			ft_cmdlst_print(t_cmd *cmdlst)
 {

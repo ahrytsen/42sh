@@ -6,11 +6,12 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/11 19:53:36 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/07/02 18:31:20 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:28:00 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_sh.h"
+#include "ft_readline.h"
 
 static void	test(t_list *elem)
 {

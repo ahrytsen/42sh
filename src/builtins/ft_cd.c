@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/17 15:13:47 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/07/02 19:44:58 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:20:12 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_sh.h"
 
 static char	*ft_cd_getpath(char **av)
 {

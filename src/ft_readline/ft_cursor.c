@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/11 19:38:15 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/06/26 19:39:55 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:16:57 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_readline.h"
 
 void	ft_curhome(void)
 {

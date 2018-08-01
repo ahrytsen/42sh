@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/12 17:35:20 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/06/26 18:48:34 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:17:58 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_readline.h"
 
 int		term_print(int c)
 {

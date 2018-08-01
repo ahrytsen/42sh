@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/26 17:28:37 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/06/26 21:44:21 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:17:35 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_readline.h"
 
 ssize_t	ft_read(int fd, uint64_t *buf)
 {

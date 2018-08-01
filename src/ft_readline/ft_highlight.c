@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/19 18:31:00 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/05/21 19:07:08 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:17:05 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_readline.h"
 
 uint64_t	ft_highlight_helper(uint64_t buf)
 {

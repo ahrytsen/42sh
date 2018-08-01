@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/18 12:54:32 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/05/21 16:51:23 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:18:10 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_readline.h"
 
 static void	swap_points(void)
 {

@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 18:46:30 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/07/02 15:13:41 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:20:19 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_sh.h"
 
 int			ft_count_fg(t_list *proc)
 {

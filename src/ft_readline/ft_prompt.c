@@ -6,11 +6,12 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 12:37:06 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/07/02 22:07:23 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:39:32 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_readline.h"
+#include "ft_sh.h"
 
 static int	ft_getcurx(void)
 {

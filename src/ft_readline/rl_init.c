@@ -6,11 +6,12 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 13:35:29 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/07/02 18:19:23 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:38:32 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_readline.h"
+#include "ft_sh.h"
 
 static void	sig_handler(int signo)
 {

@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 13:54:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/06/14 20:43:08 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:22:47 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_sh.h"
 
 static int		ft_getprior(t_ast_type type)
 {

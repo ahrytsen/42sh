@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/01 03:13:31 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/08/01 14:25:59 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -40,7 +40,8 @@ DIRSRC		=	./src/
 
 DIROBJ		=	./obj/
 
-HDR			=	inc/twenty_one_sh.h
+HDR			=	inc/ft_sh.h\
+				inc/ft_readline.h
 
 SRC			=	main.c\
 				init.c\

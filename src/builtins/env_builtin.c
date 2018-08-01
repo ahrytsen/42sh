@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/26 14:27:36 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/07/02 21:40:07 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:20:03 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_sh.h"
 
 static void	ft_env_usage(char c)
 {

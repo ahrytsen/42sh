@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/14 19:05:06 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/06/26 15:00:57 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:17:14 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_readline.h"
 
 int		hist_init(void)
 {

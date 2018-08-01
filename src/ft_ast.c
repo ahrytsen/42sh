@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/08 15:16:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/07/01 13:34:42 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:22:28 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_sh.h"
 
 char		*ft_tname(int type)
 {
