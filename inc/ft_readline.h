@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/05 17:38:16 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:37:12 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 16:32:18 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,25 +87,25 @@ typedef struct	s_hist
 
 typedef struct	s_term
 {
-	t_line	*cursor;
-	t_hist	*hist;
-	t_line	*st_sel;
-	t_line	*end_sel;
-	t_line	*buffer;
-	int		prompt;
-	int		curx;
-	int		cury;
-	char	*clear;
-	char	*curmov;
-	char	*cm_left;
-	char	*cm_right;
-	char	*iv_on;
-	char	*iv_off;
-	char	*del_ch;
-	int		height;
-	int		width;
-	char	*heredoc_key;
-	int		is_inter;
+	t_line			*cursor;
+	t_hist			*hist;
+	t_line			*st_sel;
+	t_line			*end_sel;
+	t_line			*buffer;
+	int				prompt;
+	int				curx;
+	int				cury;
+	char			*clear;
+	char			*curmov;
+	char			*cm_left;
+	char			*cm_right;
+	char			*iv_on;
+	char			*iv_off;
+	char			*del_ch;
+	int				height;
+	int				width;
+	char			*heredoc_key;
+	int				is_inter;
 	struct termios	savetty;
 	struct termios	work_tty;
 }				t_term;

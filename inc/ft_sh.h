@@ -6,12 +6,12 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 15:49:11 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 16:32:39 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ONE_SH_H
-# define FT_ONE_SH_H
+#ifndef FT_SH_H
+# define FT_SH_H
 
 # include "libft.h"
 # include <sys/stat.h>
