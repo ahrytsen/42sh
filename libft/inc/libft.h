@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 05:35:20 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/07/31 23:22:38 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 13:42:25 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <sys/uio.h>
 
 # define MOD(a)(a >= 0 ? a : -a)
-# define ft_lstpushback ft_lstadd_end
 
 /*
 **				ft_printf
