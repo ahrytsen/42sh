@@ -29,7 +29,7 @@ static char			*ft_exp(long double *nbr, char c)
 		*nbr *= 10.0;
 		i--;
 	}
-	ichar = ft_itoa(MOD(i));
+	ichar = ft_itoa(i >= 0 ? i : -i);
 	ret = (char*)ft_memalloc(3 + ((i > 9 || i < -9) ? ft_strlen(ichar) : 2));
 	*ret = c;
 	ret[1] = i < 0 ? '-' : '+';

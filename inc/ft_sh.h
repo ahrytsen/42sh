@@ -164,6 +164,11 @@ typedef struct	s_ast
 }				t_ast;
 
 /*
+**				ft_argv_exec.c
+*/
+extern const t_builtins	g_builtin[];
+
+/*
 **				main.c
 */
 int				main_loop(int fd);

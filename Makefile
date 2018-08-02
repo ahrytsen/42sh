@@ -69,6 +69,9 @@ SRC			=	main.c\
 				\
 				ft_readline/ft_readline.c\
 				ft_readline/ft_rl_autocomplit.c\
+				ft_readline/ft_rl_autocomp_commands.c\
+				ft_readline/ft_rl_autocomp_drawer.c\
+				ft_readline/ft_rl_autocomp_filenames.c\
 				ft_readline/ft_rl_action.c\
 				ft_readline/ft_rl_init.c\
 				ft_readline/ft_rl_check_line.c\

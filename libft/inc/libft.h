@@ -19,8 +19,6 @@
 # include <sys/types.h>
 # include <sys/uio.h>
 
-# define MOD(a)(a >= 0 ? a : -a)
-
 /*
 **				ft_printf
 */

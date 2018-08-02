@@ -123,7 +123,8 @@ SRC		=	ft_arrstr.c\
 			ft_printf/ft_pfloat.c\
 			ft_printf/ft_phelper.c\
 			ft_printf/ft_phendler.c\
-			ft_printf/ft_printf.c
+			ft_printf/ft_printf.c\
+			ft_printf/ft_ptool.c
 
 OBJ		= $(addprefix $(DIROBJ), $(SRC:.c=.o))
 

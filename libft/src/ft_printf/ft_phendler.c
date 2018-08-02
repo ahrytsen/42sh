@@ -20,7 +20,8 @@ inline void	ft_print_arg(t_buf **pbuf, t_arg *arg, char **tmp, int *len)
 		ft_memset(tmp[1], '0', arg->prec - len[0]
 			- (tmp[0] && (ft_strchr("oO", arg->spec)) ? 1 : 0));
 	(tmp[0] = ft_strjoin(tmp[0], tmp[1])) ? free(tmp[1]) : 0;
-	len[1] = MOD(arg->width) - len[0] - (tmp[0] ? ft_strlen(tmp[0]) : 0);
+	len[1] = ft_absolute(arg->width) - len[0]
+		- (tmp[0] ? ft_strlen(tmp[0]) : 0);
 	(len[1] > 0 && arg->width >= 0 && !ft_strchr(arg->flags, '-')
 	&& (arg->is_prec || !ft_strchr(arg->flags, '0')))
 		? ft_filler(pbuf, arg, len[1]) : 0;
@@ -56,7 +57,8 @@ inline void	ft_str(t_buf **pbuf, va_list *ap, t_arg *arg)
 	if (arg->width < 0 || ft_strchr(arg->flags, '-'))
 		(arg->spec == 'S' || (arg->len && !ft_strcmp(arg->len, "l")))
 			? ft_putustr_buf(pbuf, s, len) : ft_putstr_buf(pbuf, s, len);
-	len < MOD(arg->width) ? ft_filler(pbuf, arg, MOD(arg->width) - len) : 0;
+	len < ft_absolute(arg->width) ? ft_filler(pbuf, arg, ft_absolute(arg->width)
+		- len) : 0;
 	if (arg->width >= 0 && !ft_strchr(arg->flags, '-'))
 		(arg->spec == 'S' || (arg->len && !ft_strcmp(arg->len, "l")))
 			? ft_putustr_buf(pbuf, s, len) : ft_putstr_buf(pbuf, s, len);
@@ -122,7 +124,7 @@ inline void	ft_undef(t_buf **pbuf, va_list *ap, t_arg *arg)
 		? c = (char)c : 0;
 	if (ft_strchr(arg->flags, '-') || arg->width < 0)
 		ft_putchar_buf(pbuf, c);
-	ft_filler(pbuf, arg, MOD(arg->width) - ft_wcharlen(c));
+	ft_filler(pbuf, arg, ft_absolute(arg->width) - ft_wcharlen(c));
 	if (!ft_strchr(arg->flags, '-') && arg->width >= 0)
 		ft_putchar_buf(pbuf, c);
 }

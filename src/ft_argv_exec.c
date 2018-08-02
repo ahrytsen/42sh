@@ -12,25 +12,28 @@
 
 #include "ft_sh.h"
 
+const t_builtins	g_builtin[] = {
+	{"echo", &ft_echo},
+	{"cd", &ft_cd},
+	{"fg", &ft_fg},
+	{"setenv", &ft_setenv_builtin},
+	{"unsetenv", &ft_unsetenv_builtin},
+	{"env", &ft_env},
+	{"exit", &ft_exit},
+	{NULL, NULL}
+};
+
 static int	ft_exec_builtin(char **cmd)
 {
 	int						i;
-	const static t_builtins	builtins[] = {
-		{"echo", &ft_echo},
-		{"cd", &ft_cd},
-		{"fg", &ft_fg},
-		{"setenv", &ft_setenv_builtin},
-		{"unsetenv", &ft_unsetenv_builtin},
-		{"env", &ft_env},
-		{"exit", &ft_exit},
-		{NULL, NULL}
-	};
+	extern const t_builtins	g_builtin[];
 
 	i = 0;
-	while (builtins[i].cmd && ft_strcmp(cmd[0], builtins[i].cmd))
+	while (g_builtin[i].cmd && ft_strcmp(cmd[0], g_builtin[i].cmd))
 		i++;
-	return (builtins[i].cmd ? builtins[i].ft_builtin(cmd + 1) : -1);
+	return (g_builtin[i].cmd ? g_builtin[i].ft_builtin(cmd + 1) : -1);
 }
+
 
 static int	ft_exec_bypath(char **cmd, char *path, int bg)
 {
