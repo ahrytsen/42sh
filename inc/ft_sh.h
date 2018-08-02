@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 17:25:15 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/02 17:41:59 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,28 +85,6 @@ typedef struct	s_buf
 	struct s_buf	*next;
 }				t_buf;
 
-typedef enum	e_token_type
-{
-	blank,
-	word,
-	pipeline,
-	bg_op,
-	semicolon,
-	and,
-	or,
-	heredoc,
-	heredoc_t,
-	herestr,
-	open_file,
-	read_out,
-	read_out_pipe,
-	read_out_apend,
-	read_in,
-	read_in_and,
-	read_out_and,
-	and_read_out
-}				t_type;
-
 typedef struct	s_redir
 {
 	int		cls;
@@ -115,14 +93,26 @@ typedef struct	s_redir
 	char	*hd;
 	char	*right;
 }				t_redir;
+
 typedef union	u_data
 {
 	char		*word;
 	t_redir		redir;
 }				t_data;
+
 typedef struct	s_token
 {
-	t_type	type;
+	enum {
+		cmdlst,
+		or,
+		bg_op,
+		and,
+		smcln,
+		dbl_smcln,
+
+		_while,
+
+	}		type;
 	t_data	data;
 }				t_token;
 
@@ -142,19 +132,16 @@ typedef struct	s_job
 	t_cmd			*cmd;
 }				t_job;
 
-typedef enum	e_ast_node_type
-{
-	cmd = word,
-	ast_and = and,
-	ast_or = or,
-	ast_bg = bg_op,
-	ast_smcln = semicolon
-}				t_ast_type;
-
 typedef struct	s_ast
 {
 	t_list			*toks;
-	t_ast_type		type;
+	enum {
+		cmd = word,
+		ast_and = and,
+		ast_or = or,
+		ast_bg = bg_op,
+		ast_smcln = semicolon
+	}				type;
 	pid_t			pid;
 	int				bg;
 	t_cmd			*cmd;
