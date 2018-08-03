@@ -23,14 +23,14 @@ static void		rl_choose_mr_anderson(t_list **lst, char *name, char *path)
 	{
 		free(full);
 		full = ft_strjoin(name, "/");
-		ft_lstadd_end(lst, ft_lstnew((void *)full, ft_strlen(full) + 1));
-		free(full);
 	}
 	else
 	{
 		free(full);
-		ft_lstadd_end(lst, ft_lstnew((void *)name, ft_strlen(name) + 1));
+		full = ft_strjoin(name, " ");
 	}
+	ft_lstadd_end(lst, ft_lstnew((void *)full, ft_strlen(full) + 1));
+	free(full);
 }
 
 static t_list	*rl_filename_overseer(char *path, char *str, size_t len)

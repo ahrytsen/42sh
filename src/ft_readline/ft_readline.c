@@ -35,6 +35,7 @@ static int	ft_check_key(uint64_t buf)
 
 static int	ft_action(uint64_t buf)
 {
+	(buf != K_TAB) ? get_term()->comp_stage = -1 : 0;
 	if (buf == K_RET)
 		ft_readline_ret();
 	else if (buf == K_DEL || buf == K_CTRL_D)

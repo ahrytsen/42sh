@@ -108,6 +108,8 @@ typedef struct	s_term
 	int				is_inter;
 	struct termios	savetty;
 	struct termios	work_tty;
+	int				comp_stage;
+	int				comp_erase;
 }				t_term;
 
 /*
@@ -165,6 +167,7 @@ int				ft_copy_paste(uint64_t buf);
 **				ft_readline/ft_rl_autocomplit.c
 */
 void			ft_autocomplit(t_line *cursor);
+char			*ft_rl_autocomp_switcher(t_list *lst, char *str);
 /*
 **				ft_readline/ft_rl_autocomp_filenames.c
 */
@@ -174,9 +177,10 @@ char			*ft_rl_search_filename(char *str, size_t len);
 */
 char			*ft_rl_match_drawer(t_list *lst, char *str);
 /*
-**				ft_readline/ft_rl_autocomp_commands.c
+**				ft_readline/ft_rl_autocomp_commands_and_var.c
 */
 char			*ft_rl_search_command(char *str, size_t len);
+char			*ft_rl_search_varname(char *str, size_t len);
 /*
 **				ft_readline/ft_rl_history.c
 */

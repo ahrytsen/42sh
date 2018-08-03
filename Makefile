@@ -69,7 +69,7 @@ SRC			=	main.c\
 				\
 				ft_readline/ft_readline.c\
 				ft_readline/ft_rl_autocomplit.c\
-				ft_readline/ft_rl_autocomp_commands.c\
+				ft_readline/ft_rl_autocomp_cmd_and_var.c\
 				ft_readline/ft_rl_autocomp_drawer.c\
 				ft_readline/ft_rl_autocomp_filenames.c\
 				ft_readline/ft_rl_action.c\
@@ -173,3 +173,6 @@ install:
 	@cp $(NAME) ~/.mybin
 
 .NOTEPARALLEL: all $(NAME) re
+
+dbg:
+	@./42sh 2>file

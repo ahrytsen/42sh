@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rl_autocomp_commands.c                          :+:      :+:    :+:   */
+/*   ft_rl_autocomp_cmd_and_var.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlinkin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include "ft_readline.h"
 #include "ft_sh.h"
 
-static int		rl_get_path_name(char *out, char *path, char *name)
+static int	rl_get_path_name(char *out, char *path, char *name)
 {
 	char	*tmp;
 	int		ret;
@@ -36,12 +36,13 @@ static int		rl_get_path_name(char *out, char *path, char *name)
 	return (ret);
 }
 
-static void		rl_search_in_path(t_list **list, char *str, int i, size_t len)
+static void	rl_search_in_path(t_list **list, char *str, int i, size_t len)
 {
 	char			*path;
 	char			part[NAMESIZE];
 	DIR				*directory;
 	struct dirent	*fl;
+	char			*ptr;
 
 	path = ft_getenv("PATH");
 	while ((i = rl_get_path_name(part, path, "")))
@@ -49,11 +50,13 @@ static void		rl_search_in_path(t_list **list, char *str, int i, size_t len)
 		if ((directory = opendir(part)))
 		{
 			while ((fl = readdir(directory)))
-			{
 				if (fl->d_name[0] != '.' && !ft_strncmp(str, fl->d_name, len))
-					ft_lstadd_end(list, ft_lstnew((void *)fl->d_name
-					, ft_strlen(fl->d_name) + 1));
-			}
+				{
+					ptr = ft_strjoin(fl->d_name, " ");
+					ft_lstadd_end(list, ft_lstnew((void *)ptr
+					, ft_strlen(ptr) + 1));
+					free(ptr);
+				}
 			closedir(directory);
 		}
 		path += i;
@@ -62,21 +65,56 @@ static void		rl_search_in_path(t_list **list, char *str, int i, size_t len)
 	}
 }
 
-char			*ft_rl_search_command(char *str, size_t len)
+char		*ft_rl_search_command(char *str, size_t len)
 {
 	t_list					*list;
 	extern const t_builtins	g_builtin[];
 	int						i;
+	char					*ptr;
 
 	i = 0;
 	list = NULL;
 	while (g_builtin[i].cmd)
 	{
 		if (!ft_strncmp(str, g_builtin[i].cmd, len))
-			ft_lstadd_end(&list, ft_lstnew((void *)g_builtin[i].cmd
-				, ft_strlen(g_builtin[i].cmd) + 1));
+		{
+			ptr = ft_strjoin(g_builtin[i].cmd, " ");
+			ft_lstadd_end(&list, ft_lstnew((void *)ptr, ft_strlen(ptr) + 1));
+			free(ptr);
+		}
 		i++;
 	}
 	rl_search_in_path(&list, str, 0, len);
+	return (ft_rl_match_drawer(list, str));
+}
+
+static void	rl_loop_var(t_list **list, char **env, char *str, size_t len)
+{
+	char	*in;
+	char	*ptr;
+	int		i;
+
+	i = 0;
+	while (env && env[i])
+	{
+		if (!ft_strncmp(str, env[i], len))
+		{
+			in = ft_strsub(env[i], 0, ft_strchr(env[i], '=') - env[i]);
+			ptr = ft_strjoin(in, " ");
+			ft_lstadd_end(list, ft_lstnew((void *)ptr, ft_strlen(ptr) + 1));
+			free(in);
+			free(ptr);
+		}
+		i++;
+	}
+}
+
+char		*ft_rl_search_varname(char *str, size_t len)
+{
+	t_list	*list;
+
+	list = NULL;
+	rl_loop_var(&list, get_environ()->envar, str, len);
+	rl_loop_var(&list, get_environ()->shvar, str, len);
 	return (ft_rl_match_drawer(list, str));
 }
