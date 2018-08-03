@@ -99,7 +99,7 @@ CFLAGS		=
 CFLAGS		=	-Wall -Wextra -Werror -g
 	endif
 else
-CFLAGS		= 	-Wall -Wextra -Werror -Ofast -flto=thin
+CFLAGS		= 	-Wall -Wextra -Werror -O2 -flto=thin
 endif
 #===========================================================
 STRING1 = $(CYAN)---Compile_$(NAME)$(NON)

@@ -21,7 +21,7 @@ static char		*ft_rl_search_varname(char *str, size_t len)
 	int		i;
 
 	list = NULL;
-	env = get_environ()->env;
+	env = get_environ()->envar;
 	i = -1;
 	while (env && env[++i])
 		if (!ft_strncmp(str, env[i], len))
@@ -30,15 +30,15 @@ static char		*ft_rl_search_varname(char *str, size_t len)
 			ft_lstadd_end(&list, ft_lstnew((void *)in, ft_strlen(in) + 1));
 			free(in);
 		}
-	// env = get_environ()->shvar;
-	// i = -1;
-	// while (env && env[++i])
-	// 	if (!ft_strncmp(str, env[i], len))
-	// 	{
-	// 		in = ft_strsub(env[i], 0, ft_strchr(env[i], '=') - env[i]);
-	// 		ft_lstadd_end(&list, ft_lstnew((void *)in, ft_strlen(in) + 1));
-	// 		free(in);
-	// 	}
+	env = get_environ()->shvar;
+	i = -1;
+	while (env && env[++i])
+		if (!ft_strncmp(str, env[i], len))
+		{
+			in = ft_strsub(env[i], 0, ft_strchr(env[i], '=') - env[i]);
+			ft_lstadd_end(&list, ft_lstnew((void *)in, ft_strlen(in) + 1));
+			free(in);
+		}
 	return (ft_rl_match_drawer(list, str));
 }
 

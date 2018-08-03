@@ -50,7 +50,7 @@ static int	ft_exec_bypath(char **cmd, char *path, int bg)
 			return (ft_dprintf(2, "21sh: fork error\n"));
 		if (bg != -1 && get_environ()->is_interactive)
 			ft_set_sh_signal(bg ? S_CHLD : S_CHLD_FG);
-		execve(path, cmd, get_environ()->env);
+		execve(path, cmd, get_environ()->envar);
 		if ((fd = open(path, O_RDONLY)) >= 0)
 			exit(main_loop(fd));
 		exit(ft_dprintf(2, "%s: permission denied\n", *cmd) ? -2 : 0);

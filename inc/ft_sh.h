@@ -59,7 +59,8 @@ typedef struct	s_op
 
 typedef struct	s_env
 {
-	char			**env;
+	char			**envar;
+	char			**shvar;
 	int				st;
 	pid_t			sh_pid;
 	pid_t			sh_pgid;
