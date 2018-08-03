@@ -60,6 +60,7 @@ static int	ft_action(uint64_t buf)
 		buf = ft_add(buf);
 	else
 		ft_dprintf(0, "\a");
+	ft_dprintf(2, "%d:%d\n", get_term()->curx, get_term()->cury);
 	return (ft_highlight_helper(buf));
 }
 

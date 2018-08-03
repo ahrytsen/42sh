@@ -1,7 +1,0 @@
-
-[1] + 16660 suspended	ls 
-You have access to multiple processes named 42sh:
-    a) 16647 ./42sh
-    b) 16660 ./42sh
-
-leaks[16688]: leaks cannot find any existing process you have access to which has a name like '42sh'; try running with `sudo`.

@@ -30,7 +30,6 @@ char		*ft_rl_autocomp_switcher(t_list *lst, char *str)
 	i = get_term()->comp_erase;
 	ptr = (char *)ft_memalloc(i + 1);
 	ft_strncpy(ptr, lst->content + ft_strlen(str), i);
-	// ft_dprintf(2, "%d:%zu\n", get_term()->comp_stage, get_term()->comp_erase);
 	return (ptr);
 }
 
@@ -95,15 +94,7 @@ void		ft_autocomplit(t_line *cursor)
 	line = NULL;
 	if (get_term()->comp_stage > -1)
 		while (get_term()->comp_erase--)
-		{
-			// ft_back_space();
-			if (!line_bs(get_term()->cursor))
-			{
-				ft_curleft(1);
-				tputs(tparm(get_term()->del_ch, 1), 1, term_print);
-				ft_print_tail(get_term()->cursor);
-			}
-		}
+			ft_back_space();
 	else
 		get_term()->comp_erase = 0;
 	if (get_term()->prompt == P_USER && (line = rl_check_line(cursor, 1)))
@@ -112,7 +103,10 @@ void		ft_autocomplit(t_line *cursor)
 		{
 			tmp = res;
 			while (*res && write(1, res, 1))
+			{
 				line_add(cursor, *res++);
+				get_term()->curx++;
+			}
 			free(tmp);
 		}
 	}
