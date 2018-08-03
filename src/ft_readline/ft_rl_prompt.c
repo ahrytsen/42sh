@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 12:37:06 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 18:40:30 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/03 19:54:35 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,11 +93,11 @@ void		ft_prompt(void)
 {
 	struct winsize	w;
 
+	ioctl(get_environ()->sh_terminal, TIOCGWINSZ, &w);
+	get_term()->height = w.ws_row;
+	get_term()->width = w.ws_col;
 	if (isatty(2))
 	{
-		ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
-		get_term()->height = w.ws_row;
-		get_term()->width = w.ws_col;
 		if (ft_getcurx() != 1)
 			ft_dprintf(2, "%s%%%s\n", get_term()->iv_on, get_term()->iv_off);
 		get_term()->prompt ? ft_toread_prompt(get_term()->prompt)
