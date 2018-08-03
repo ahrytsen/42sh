@@ -33,9 +33,9 @@ static void	ft_toread_heredoc(void)
 	const char	*prompt;
 
 	prompt = "heredoc(%s)> ";
-	ft_dprintf(2, "\r%s\033[31m", tgetstr("cd", NULL));
-	tmp = ft_dprintf(2, prompt, get_term()->heredoc_key);
-	ft_dprintf(2, "\033[0m");
+	ft_dprintf(1, "\r%s\033[31m", tgetstr("cd", NULL));
+	tmp = ft_dprintf(1, prompt, get_term()->heredoc_key);
+	ft_dprintf(1, "\033[0m");
 	get_term()->cury = tmp / get_term()->width;
 	get_term()->curx = tmp % get_term()->width;
 }
@@ -61,7 +61,7 @@ static void	ft_toread_prompt(int mod)
 	tmp = ft_strlen(prompt);
 	get_term()->cury = tmp / get_term()->width;
 	get_term()->curx = tmp % get_term()->width;
-	ft_dprintf(2, "\r%s\033[31m%s\033[0m",
+	ft_dprintf(1, "\r%s\033[31m%s\033[0m",
 				tgetstr("cd", NULL), prompt);
 }
 
@@ -74,17 +74,17 @@ static void	ft_user_prompt(void)
 	getcwd(pwd, MAXPATHLEN);
 	proc = ft_count_fg(get_environ()->jobs);
 	tmp = 3;
-	ft_dprintf(2, "\r%s\033[3%cm", tgetstr("cd", NULL),
+	ft_dprintf(1, "\r%s\033[3%cm", tgetstr("cd", NULL),
 				get_environ()->st ? '1' : '2');
-	tmp += ft_dprintf(2, "[%hhd] ", (char)get_environ()->st);
+	tmp += ft_dprintf(1, "[%hhd] ", (char)get_environ()->st);
 	if (proc)
 	{
-		ft_dprintf(2, "\033[36m");
-		tmp += ft_dprintf(2, proc == 1 ? "{⚙} " : "{⚙: %d} ", proc) - 2;
+		ft_dprintf(1, "\033[36m");
+		tmp += ft_dprintf(1, proc == 1 ? "{⚙} " : "{⚙: %d} ", proc) - 2;
 	}
-	ft_dprintf(2, "\033[33m");
-	tmp += ft_dprintf(2, "%s ", pwd);
-	ft_dprintf(2, "\033[32m$>\033[0m ");
+	ft_dprintf(1, "\033[33m");
+	tmp += ft_dprintf(1, "%s ", pwd);
+	ft_dprintf(1, "\033[32m$>\033[0m ");
 	get_term()->cury = tmp / get_term()->width;
 	get_term()->curx = tmp % get_term()->width;
 }
@@ -93,13 +93,13 @@ void		ft_prompt(void)
 {
 	struct winsize	w;
 
-	if (isatty(2))
+	if (isatty(1))
 	{
 		ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
 		get_term()->height = w.ws_row;
 		get_term()->width = w.ws_col;
 		if (ft_getcurx() != 1)
-			ft_dprintf(2, "%s%%%s\n", get_term()->iv_on, get_term()->iv_off);
+			ft_dprintf(1, "%s%%%s\n", get_term()->iv_on, get_term()->iv_off);
 		get_term()->prompt ? ft_toread_prompt(get_term()->prompt)
 			: ft_user_prompt();
 	}
