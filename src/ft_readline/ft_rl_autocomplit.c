@@ -24,11 +24,13 @@ char		*ft_rl_autocomp_switcher(t_list *lst, char *str)
 		lst = lst->next;
 	}
 	get_term()->comp_stage++;
+	// ft_dprintf(2, "%d:%d:(%s)\n", get_term()->comp_stage, lst->content_size, ptr);
+	if (get_term()->comp_stage == (int)ft_lstsize(lst))
+		get_term()->comp_stage = 0;
 	get_term()->comp_erase = lst->content_size - (ft_strlen(str) + 2);
 	i = get_term()->comp_erase;
 	ptr = (char *)ft_memalloc(i + 1);
 	ft_strncpy(ptr, lst->content + ft_strlen(str), i);
-	ft_dprintf(2, "%d:%d:(%s)\n", get_term()->comp_stage, lst->content_size, ptr);
 	return (ptr);
 }
 
@@ -98,7 +100,7 @@ void		ft_autocomplit(t_line *cursor)
 			get_term()->comp_erase--;
 			ft_back_space();
 		}
-		sleep(2);
+		// sleep(2);
 	}
 	if (get_term()->prompt == P_USER && (line = rl_check_line(cursor, 1)))
 	{

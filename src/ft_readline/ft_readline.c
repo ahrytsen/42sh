@@ -90,6 +90,7 @@ int			ft_readline(const int fd, char **line)
 	char	*tmp;
 	int		ret;
 
+	write(1, "+\n", 2);
 	tmp = NULL;
 	*line = NULL;
 	while (ft_check_line(*line))
@@ -105,5 +106,6 @@ int			ft_readline(const int fd, char **line)
 		*line = ft_strextend(*line, tmp);
 	}
 	ret < 0 ? ft_memdel((void**)line) : 0;
+	write(1, "-\n", 2);
 	return (*line ? 1 : ret);
 }
