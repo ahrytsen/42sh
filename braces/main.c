@@ -41,9 +41,9 @@ bool	check_brace_quote(char *s)
 
 bool	check_braces(char *pattern)
 {
-//	if (strchr_spec(pattern, ','))
-//		return (true);
-//	return (false);
+	bool 	comma;
+	int 	dot;
+
 	while (*pattern)
 	{
 		if (ft_strchr("\"'`", *pattern))
@@ -54,13 +54,13 @@ bool	check_braces(char *pattern)
 			return (false);
 		++pattern;
 	}
-	return ()
+//	return ();
 }
 
 int 	main(int ac, char **av)
 {
-	char 	*pat = "{1,,2,}";
+	char *pat = "{1,,2,}";
 
-	return (check_braces(pat));
+//	return (check_braces(pat));
 //	print_regex_lst(regex("/*"));
 }
