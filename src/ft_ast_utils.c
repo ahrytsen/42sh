@@ -6,13 +6,13 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 13:54:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:22:47 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/03 15:49:15 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
 
-static int		ft_getprior(t_ast_type type)
+static int		ft_getprior(enum e_ast_type type)
 {
 	if (type == cmd)
 		return (1);

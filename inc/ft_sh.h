@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/02 17:41:59 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/03 15:47:01 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,16 +102,25 @@ typedef union	u_data
 
 typedef struct	s_token
 {
-	enum {
-		cmdlst,
-		or,
+	enum e_ast_type {
+		blank,
+		word,
+		pipeline,
 		bg_op,
+		semicolon,
 		and,
-		smcln,
-		dbl_smcln,
-
-		_while,
-
+		or,
+		heredoc,
+		heredoc_t,
+		herestr,
+		open_file,
+		read_out,
+		read_out_pipe,
+		read_out_apend,
+		read_in,
+		read_in_and,
+		read_out_and,
+		and_read_out
 	}		type;
 	t_data	data;
 }				t_token;
