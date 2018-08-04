@@ -3,7 +3,7 @@
 
 t_list		*regex(char *pattern);
 
-void		print_regex_lst(t_list *lst)
+void		print_lst(t_list *lst)
 {
 	while (lst)
 	{
@@ -11,6 +11,8 @@ void		print_regex_lst(t_list *lst)
 		lst = lst->next;
 	}
 }
+
+//char 	*strchr_unquoted()
 
 char 	*skip_quotes(char *s)
 {
@@ -24,43 +26,46 @@ char 	*skip_quotes(char *s)
 			return (s);
 }
 
-bool	check_brace_quote(char *s)
+bool	check_braces(char *braces)
 {
-	while (*s)
-	{
-		if (ft_strchr("\"'`", *s))
-			s = skip_quotes(s);
-		else if (*s == '\\')
-			++s;
-		else if (*s == ' ')
-			return (false);
-		++s;
-	}
-	return (true);
+//	while ()
+	return (1);
 }
 
-bool	check_braces(char *pattern)
+t_list	*get_brace_seq(char *s)
 {
-	bool 	comma;
-	int 	dot;
+	char 	**vals;
+	t_list	*vals_lst;
 
-	while (*pattern)
+	vals_lst = NULL;
+	vals = ft_strsplit(s, ',');
+	while (*vals)
 	{
-		if (ft_strchr("\"'`", *pattern))
-			pattern = skip_quotes(pattern);
-		else if (*pattern == '\\')
-			++pattern;
-		else if (*pattern == ' ')
-			return (false);
-		++pattern;
+		ft_lstpush_back(&vals_lst, *vals, ft_strlen(*vals) + 1);
+		++vals;
 	}
-//	return ();
+	return (vals_lst);
+}
+
+t_list	*expand_braces(t_list *toks, char *braces)
+{
+
 }
 
 int 	main(int ac, char **av)
 {
-	char *pat = "{1,,2,}";
+	int 	i;
+	int 	j;
+	t_list	*toks = ft_lstnew("{1,2}{3,4}", ft_strlen("{1,2}{3,4}"));
 
-//	return (check_braces(pat));
-//	print_regex_lst(regex("/*"));
+	print_lst(toks);
+	ft_printf("\n---------------------------\n\n");
+	while (*(char *)(toks->content))
+	{
+		if (*toks->content == '{')
+
+	}
+
+
+
 }
