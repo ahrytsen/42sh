@@ -20,13 +20,13 @@ void			ft_cmdlst_print(t_cmd *cmdlst)
 		cmdlst = cmdlst->prev;
 	while (cmdlst)
 	{
-		cmdlst->prev ? ft_dprintf(2, " | ") : 0;
+		cmdlst->prev ? write(2, " | ", 3) : 0;
 		av = cmdlst->av;
 		while (av && *av)
 			ft_dprintf(2, "%s ", *av++);
 		cmdlst = cmdlst->next;
 	}
-	ft_dprintf(2, "\n");
+	write(2, "\n", 1);
 }
 
 t_cmd			*ft_cmdlst_del(t_cmd *cmdlst)
@@ -51,7 +51,7 @@ t_cmd			*ft_cmdlst_push(t_cmd *cmdlst, t_cmd *node)
 	t_cmd *new_node;
 
 	if (!(new_node = (t_cmd*)malloc(sizeof(t_cmd)))
-		&& ft_dprintf(2, "21sh: malloc error\n"))
+		&& write(2, "21sh: malloc error\n", 19))
 		return (ft_cmdlst_del(cmdlst));
 	ft_memcpy(new_node, node, sizeof(t_cmd));
 	while (cmdlst && cmdlst->next)

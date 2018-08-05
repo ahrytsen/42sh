@@ -3,89 +3,86 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rl_autocomplit.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: dlinkin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/05 16:19:38 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:35:24 by ahrytsen         ###   ########.fr       */
+/*   Created: 2018/08/01 14:27:47 by dlinkin           #+#    #+#             */
+/*   Updated: 2018/08/01 14:27:48 by dlinkin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_readline.h"
-#include "ft_sh.h"
 
-/*
-**static char	*ft_search_files(char	*line)
-**{
-**	DIR				*dirp;
-**	struct dirent	*dp;
-**	int				len;
-**	char			*path;
-**
-**	if (!line || (path = NULL))
-**		return (NULL);
-**	if (ft_strchr(line, '/'))
-**	{
-**		path = ft_strsub(line, 0, ft_strrchr(line, '/') - line + 1);
-**		line = ft_strrchr(line, '/') + 1;
-**	}
-**	if (*path != '/' && ft_strncmp(path, "./", 2))
-**		path = ft_strextend(ft_strdup("./"), path);
-**	len = ft_strlen(line);
-**	dirp = opendir(path);
-**	while (dirp && (dp = readdir(dirp)))
-**		if (!ft_strncmp(dp->d_name, line, len) && !closedir(dirp))
-**		{
-**			free(path);
-**			return (ft_strdup(dp->d_name));
-**		}
-**	closedir(dirp);
-**	free(path);
-**	return (NULL);
-**}
-*/
-
-static char	*ft_search_builtin(char *line)
+char		*ft_rl_autocomp_switcher(t_list *lst, char *str)
 {
-	int					i;
-	int					len;
-	const static char	*builtins[] = {"echo", "cd", "fg", "setenv", "unsetenv",
-									"env", "exit", NULL};
+	int		i;
+	char	*ptr;
 
 	i = 0;
-	if (!line)
-		return (NULL);
-	len = ft_strlen(line);
-	while (builtins[i] && ft_strncmp(line, builtins[i], len))
+	while (i != get_term()->comp_stage)
+	{
 		i++;
-	return (builtins[i] ? ft_strdup(builtins[i]) : NULL);
+		lst = lst->next;
+	}
+	get_term()->comp_stage++;
+	if (lst->next == NULL)
+		get_term()->comp_stage = 0;
+	get_term()->comp_erase = lst->content_size - (ft_strlen(str) + 2);
+	i = get_term()->comp_erase;
+	ptr = (char *)ft_memalloc(i + 1);
+	ft_strncpy(ptr, lst->content + ft_strlen(str), i);
+	return (ptr);
 }
 
-static char	*ft_searchcmd(char *line)
+static char	*rl_check_line(t_line *cur, size_t size)
 {
-	DIR				*dirp;
-	struct dirent	*dp;
-	int				len;
-	int				i;
-	char			**path;
+	char	*line;
+	t_line	*tmp;
 
-	if (!line || !(path = ft_strsplit(ft_getenv("PATH"), ':')))
-		return (NULL);
-	i = 0;
-	len = ft_strlen(line);
-	while (path[i])
+	tmp = cur;
+	while (cur && cur->next && cur->ch != ' ' && cur->ch != '\t'
+		&& (cur->ch != '$' || (cur->ch == '$' && size == 1)) && cur->ch != ';'
+		&& cur->ch != '&' && cur->ch != '|')
 	{
-		dirp = opendir(path[i++]);
-		while (dirp && (dp = readdir(dirp)))
-			if (ft_strncmp(dp->d_name, line, len) == 0)
-			{
-				closedir(dirp);
-				ft_strarr_free(path);
-				return (ft_strdup(dp->d_name));
-			}
-		closedir(dirp);
+		cur = cur->next;
+		size += ft_strlen((char*)&cur->ch);
 	}
-	ft_strarr_free(path);
-	return (NULL);
+	while (tmp->prev && tmp->prev->ch != ';' && tmp->prev->ch != '&'
+		&& tmp->prev->ch != '|')
+	{
+		tmp = tmp->prev;
+		size += ft_strlen((char*)&tmp->ch);
+	}
+	if (!(line = ft_memalloc(sizeof(char) * size)))
+		return (NULL);
+	while (tmp != cur)
+	{
+		ft_strcat(line, (char*)&tmp->ch);
+		tmp = tmp->next;
+	}
+	return (line);
+}
+
+static char	*rl_search(char *str)
+{
+	char	*s;
+	size_t	len;
+	int		mk;
+
+	len = ft_strlen(str);
+	while (len && str[len - 1] != ' ' && str[len - 1] != '\t' && str[len] != '$'
+		&& str[len - 1] != ';' && str[len - 1] != '|' && str[len - 1] != '&')
+		len--;
+	s = str + len;
+	while (len && (str[len - 1] == ' ' || str[len - 1] == '\t')
+		&& str[len - 1] != ';' && str[len - 1] != '|' && str[len - 1] != '&')
+		len--;
+	mk = ((!len || str[len - 1] == ';' || str[len - 1] == '|'
+			|| str[len - 1] == '&') ? 1 : 0);
+	if (mk && *s != '~' && *s != '$' && *s != '.' && *s != '/' && *s != '!')
+		return (ft_rl_search_command(s, ft_strlen(s)));
+	if (*s == '$')
+		return (ft_rl_search_varname(s + 1, ft_strlen(s) - 1));
+	return (ft_rl_search_filename(s, ft_strlen(s)));
 }
 
 void		ft_autocomplit(t_line *cursor)
@@ -94,21 +91,23 @@ void		ft_autocomplit(t_line *cursor)
 	char	*res;
 	char	*tmp;
 
-	res = NULL;
 	line = NULL;
-	if (get_term()->prompt == P_USER
-		&& (line = line_tostr(&cursor, 0))
-		&& ((res = ft_search_builtin(line))
-			|| (res = ft_searchcmd(line))))
+	if (get_term()->comp_stage > -1)
+		while (get_term()->comp_erase--)
+			ft_back_space();
+	else
+		get_term()->comp_erase = 0;
+	if (get_term()->prompt == P_USER && (line = rl_check_line(cursor, 1)))
 	{
-		tmp = res + ft_strlen(line);
-		while (*tmp && ft_printf("%c", *tmp))
-			line_add(cursor, *tmp++);
-		ft_printf(" ");
-		line_add(cursor, ' ');
+		if ((res = rl_search(line)))
+		{
+			tmp = res;
+			while (*res)
+				ft_add((uint64_t)(*res++));
+			free(tmp);
+		}
 	}
 	else
-		ft_printf("\a");
-	free(res);
+		write(1, "\a", 1);
 	free(line);
 }

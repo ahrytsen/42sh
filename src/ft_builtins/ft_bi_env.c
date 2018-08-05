@@ -25,7 +25,7 @@ int			ft_env_op(int p)
 {
 	char **env;
 
-	env = get_environ()->env;
+	env = get_environ()->envar;
 	while (env && *env)
 		if (p == ENV_CLEAR)
 			ft_memdel((void*)env++);

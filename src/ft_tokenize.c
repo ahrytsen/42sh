@@ -118,7 +118,7 @@ t_list		*ft_tokenize(char *ln)
 		else if (ft_check_redir(toks ? tmp->content : NULL, &tok, ln)
 			|| !(tmp = ft_lstpush_back(toks ? &tmp : &toks, &tok, sizeof(tok))))
 		{
-			!tmp ? ft_dprintf(2, "21sh: malloc error\n") : 0;
+			!tmp ? write(2, "21sh: malloc error\n", 19) : 0;
 			ft_lstdel(&toks, ft_token_del);
 			return (NULL);
 		}

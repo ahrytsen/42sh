@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/03 15:47:01 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 17:25:15 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ typedef struct	s_op
 
 typedef struct	s_env
 {
-	char			**env;
+	char			**envar;
+	char			**shvar;
 	int				st;
 	pid_t			sh_pid;
 	pid_t			sh_pgid;
@@ -85,6 +86,28 @@ typedef struct	s_buf
 	struct s_buf	*next;
 }				t_buf;
 
+typedef enum	e_token_type
+{
+	blank,
+	word,
+	pipeline,
+	bg_op,
+	semicolon,
+	and,
+	or,
+	heredoc,
+	heredoc_t,
+	herestr,
+	open_file,
+	read_out,
+	read_out_pipe,
+	read_out_apend,
+	read_in,
+	read_in_and,
+	read_out_and,
+	and_read_out
+}				t_type;
+
 typedef struct	s_redir
 {
 	int		cls;
@@ -93,35 +116,14 @@ typedef struct	s_redir
 	char	*hd;
 	char	*right;
 }				t_redir;
-
 typedef union	u_data
 {
 	char		*word;
 	t_redir		redir;
 }				t_data;
-
 typedef struct	s_token
 {
-	enum e_ast_type {
-		blank,
-		word,
-		pipeline,
-		bg_op,
-		semicolon,
-		and,
-		or,
-		heredoc,
-		heredoc_t,
-		herestr,
-		open_file,
-		read_out,
-		read_out_pipe,
-		read_out_apend,
-		read_in,
-		read_in_and,
-		read_out_and,
-		and_read_out
-	}		type;
+	t_type	type;
 	t_data	data;
 }				t_token;
 
@@ -141,16 +143,19 @@ typedef struct	s_job
 	t_cmd			*cmd;
 }				t_job;
 
+typedef enum	e_ast_node_type
+{
+	cmd = word,
+	ast_and = and,
+	ast_or = or,
+	ast_bg = bg_op,
+	ast_smcln = semicolon
+}				t_ast_type;
+
 typedef struct	s_ast
 {
 	t_list			*toks;
-	enum {
-		cmd = word,
-		ast_and = and,
-		ast_or = or,
-		ast_bg = bg_op,
-		ast_smcln = semicolon
-	}				type;
+	t_ast_type		type;
 	pid_t			pid;
 	int				bg;
 	t_cmd			*cmd;
@@ -158,6 +163,11 @@ typedef struct	s_ast
 	struct s_ast	*right;
 	struct s_ast	*prev;
 }				t_ast;
+
+/*
+**				ft_argv_exec.c
+*/
+extern const t_builtins	g_builtin[];
 
 /*
 **				main.c

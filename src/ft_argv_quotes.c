@@ -90,7 +90,7 @@ void		ft_bquote_helper(t_buf **cur, char *str)
 		get_environ()->pid = 0;
 	}
 	else if (get_environ()->pid == -1)
-		ft_dprintf(2, "21sh: fork() error\n");
+		write(2, "21sh: fork() error\n", 19);
 	else
 		ft_bquote_child(fd_get, str);
 }

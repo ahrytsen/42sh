@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exec.c                                             :+:      :+:    :+:   */
+/*   ft_argv_exec.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,24 +12,26 @@
 
 #include "ft_sh.h"
 
+const t_builtins	g_builtin[] = {
+	{"echo", &ft_echo},
+	{"cd", &ft_cd},
+	{"fg", &ft_fg},
+	{"setenv", &ft_setenv_builtin},
+	{"unsetenv", &ft_unsetenv_builtin},
+	{"env", &ft_env},
+	{"exit", &ft_exit},
+	{NULL, NULL}
+};
+
 static int	ft_exec_builtin(char **cmd)
 {
 	int						i;
-	const static t_builtins	builtins[] = {
-		{"echo", &ft_echo},
-		{"cd", &ft_cd},
-		{"fg", &ft_fg},
-		{"setenv", &ft_setenv_builtin},
-		{"unsetenv", &ft_unsetenv_builtin},
-		{"env", &ft_env},
-		{"exit", &ft_exit},
-		{NULL, NULL}
-	};
+	extern const t_builtins	g_builtin[];
 
 	i = 0;
-	while (builtins[i].cmd && ft_strcmp(cmd[0], builtins[i].cmd))
+	while (g_builtin[i].cmd && ft_strcmp(cmd[0], g_builtin[i].cmd))
 		i++;
-	return (builtins[i].cmd ? builtins[i].ft_builtin(cmd + 1) : -1);
+	return (g_builtin[i].cmd ? g_builtin[i].ft_builtin(cmd + 1) : -1);
 }
 
 static int	ft_exec_bypath(char **cmd, char *path, int bg)
@@ -44,10 +46,10 @@ static int	ft_exec_bypath(char **cmd, char *path, int bg)
 			&& (get_environ()->pgid = get_environ()->pid))
 			return (0);
 		else if (get_environ()->pid < 0)
-			return (ft_dprintf(2, "21sh: fork error\n"));
+			return (write(2, "21sh: fork error\n", 17));
 		if (bg != -1 && get_environ()->is_interactive)
 			ft_set_sh_signal(bg ? S_CHLD : S_CHLD_FG);
-		execve(path, cmd, get_environ()->env);
+		execve(path, cmd, get_environ()->envar);
 		if ((fd = open(path, O_RDONLY)) >= 0)
 			exit(main_loop(fd));
 		exit(ft_dprintf(2, "%s: permission denied\n", *cmd) ? -2 : 0);
