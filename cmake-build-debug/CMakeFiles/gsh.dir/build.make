@@ -2505,57 +2505,9 @@ CMakeFiles/gsh.dir/libft/src/get_next_line.c.o.provides: CMakeFiles/gsh.dir/libf
 CMakeFiles/gsh.dir/libft/src/get_next_line.c.o.provides.build: CMakeFiles/gsh.dir/libft/src/get_next_line.c.o
 
 
-CMakeFiles/gsh.dir/braces/ft_strcut.c.o: CMakeFiles/gsh.dir/flags.make
-CMakeFiles/gsh.dir/braces/ft_strcut.c.o: ../braces/ft_strcut.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/gsh.dir/braces/ft_strcut.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/braces/ft_strcut.c.o   -c /home/yulia/gsh/braces/ft_strcut.c
-
-CMakeFiles/gsh.dir/braces/ft_strcut.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/braces/ft_strcut.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/braces/ft_strcut.c > CMakeFiles/gsh.dir/braces/ft_strcut.c.i
-
-CMakeFiles/gsh.dir/braces/ft_strcut.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/braces/ft_strcut.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/braces/ft_strcut.c -o CMakeFiles/gsh.dir/braces/ft_strcut.c.s
-
-CMakeFiles/gsh.dir/braces/ft_strcut.c.o.requires:
-
-.PHONY : CMakeFiles/gsh.dir/braces/ft_strcut.c.o.requires
-
-CMakeFiles/gsh.dir/braces/ft_strcut.c.o.provides: CMakeFiles/gsh.dir/braces/ft_strcut.c.o.requires
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/braces/ft_strcut.c.o.provides.build
-.PHONY : CMakeFiles/gsh.dir/braces/ft_strcut.c.o.provides
-
-CMakeFiles/gsh.dir/braces/ft_strcut.c.o.provides.build: CMakeFiles/gsh.dir/braces/ft_strcut.c.o
-
-
-CMakeFiles/gsh.dir/braces/regex.c.o: CMakeFiles/gsh.dir/flags.make
-CMakeFiles/gsh.dir/braces/regex.c.o: ../braces/regex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/gsh.dir/braces/regex.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/braces/regex.c.o   -c /home/yulia/gsh/braces/regex.c
-
-CMakeFiles/gsh.dir/braces/regex.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/braces/regex.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/braces/regex.c > CMakeFiles/gsh.dir/braces/regex.c.i
-
-CMakeFiles/gsh.dir/braces/regex.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/braces/regex.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/braces/regex.c -o CMakeFiles/gsh.dir/braces/regex.c.s
-
-CMakeFiles/gsh.dir/braces/regex.c.o.requires:
-
-.PHONY : CMakeFiles/gsh.dir/braces/regex.c.o.requires
-
-CMakeFiles/gsh.dir/braces/regex.c.o.provides: CMakeFiles/gsh.dir/braces/regex.c.o.requires
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/braces/regex.c.o.provides.build
-.PHONY : CMakeFiles/gsh.dir/braces/regex.c.o.provides
-
-CMakeFiles/gsh.dir/braces/regex.c.o.provides.build: CMakeFiles/gsh.dir/braces/regex.c.o
-
-
 CMakeFiles/gsh.dir/braces/main.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/braces/main.c.o: ../braces/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/gsh.dir/braces/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/gsh.dir/braces/main.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/braces/main.c.o   -c /home/yulia/gsh/braces/main.c
 
 CMakeFiles/gsh.dir/braces/main.c.i: cmake_force
@@ -2681,8 +2633,6 @@ gsh_OBJECTS = \
 "CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.o" \
 "CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o" \
 "CMakeFiles/gsh.dir/libft/src/get_next_line.c.o" \
-"CMakeFiles/gsh.dir/braces/ft_strcut.c.o" \
-"CMakeFiles/gsh.dir/braces/regex.c.o" \
 "CMakeFiles/gsh.dir/braces/main.c.o"
 
 # External object files for target gsh
@@ -2790,14 +2740,12 @@ gsh: CMakeFiles/gsh.dir/libft/src/ft_toupper.c.o
 gsh: CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.o
 gsh: CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o
 gsh: CMakeFiles/gsh.dir/libft/src/get_next_line.c.o
-gsh: CMakeFiles/gsh.dir/braces/ft_strcut.c.o
-gsh: CMakeFiles/gsh.dir/braces/regex.c.o
 gsh: CMakeFiles/gsh.dir/braces/main.c.o
 gsh: CMakeFiles/gsh.dir/build.make
 gsh: /usr/lib/x86_64-linux-gnu/libcurses.so
 gsh: /usr/lib/x86_64-linux-gnu/libform.so
 gsh: CMakeFiles/gsh.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Linking C executable gsh"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Linking C executable gsh"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gsh.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -2907,8 +2855,6 @@ CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_toupper.c.o.require
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/get_next_line.c.o.requires
-CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/braces/ft_strcut.c.o.requires
-CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/braces/regex.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/braces/main.c.o.requires
 
 .PHONY : CMakeFiles/gsh.dir/requires

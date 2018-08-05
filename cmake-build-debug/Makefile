@@ -123,33 +123,6 @@ gsh/fast:
 	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/build
 .PHONY : gsh/fast
 
-braces/ft_strcut.o: braces/ft_strcut.c.o
-
-.PHONY : braces/ft_strcut.o
-
-# target to build an object file
-braces/ft_strcut.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/braces/ft_strcut.c.o
-.PHONY : braces/ft_strcut.c.o
-
-braces/ft_strcut.i: braces/ft_strcut.c.i
-
-.PHONY : braces/ft_strcut.i
-
-# target to preprocess a source file
-braces/ft_strcut.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/braces/ft_strcut.c.i
-.PHONY : braces/ft_strcut.c.i
-
-braces/ft_strcut.s: braces/ft_strcut.c.s
-
-.PHONY : braces/ft_strcut.s
-
-# target to generate assembly for a file
-braces/ft_strcut.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/braces/ft_strcut.c.s
-.PHONY : braces/ft_strcut.c.s
-
 braces/main.o: braces/main.c.o
 
 .PHONY : braces/main.o
@@ -176,33 +149,6 @@ braces/main.s: braces/main.c.s
 braces/main.c.s:
 	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/braces/main.c.s
 .PHONY : braces/main.c.s
-
-braces/regex.o: braces/regex.c.o
-
-.PHONY : braces/regex.o
-
-# target to build an object file
-braces/regex.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/braces/regex.c.o
-.PHONY : braces/regex.c.o
-
-braces/regex.i: braces/regex.c.i
-
-.PHONY : braces/regex.i
-
-# target to preprocess a source file
-braces/regex.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/braces/regex.c.i
-.PHONY : braces/regex.c.i
-
-braces/regex.s: braces/regex.c.s
-
-.PHONY : braces/regex.s
-
-# target to generate assembly for a file
-braces/regex.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/braces/regex.c.s
-.PHONY : braces/regex.c.s
 
 libft/src/ft_arrstr.o: libft/src/ft_arrstr.c.o
 
@@ -2967,15 +2913,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... gsh"
-	@echo "... braces/ft_strcut.o"
-	@echo "... braces/ft_strcut.i"
-	@echo "... braces/ft_strcut.s"
 	@echo "... braces/main.o"
 	@echo "... braces/main.i"
 	@echo "... braces/main.s"
-	@echo "... braces/regex.o"
-	@echo "... braces/regex.i"
-	@echo "... braces/regex.s"
 	@echo "... libft/src/ft_arrstr.o"
 	@echo "... libft/src/ft_arrstr.i"
 	@echo "... libft/src/ft_arrstr.s"

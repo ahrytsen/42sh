@@ -150,8 +150,6 @@ add_executable(gsh
 #        src/ft_tokenize_utils.c
 #        src/init.c
 #        src/main.c
-        braces/ft_strcut.c
-        braces/regex.c
         braces/main.c)
 
 target_link_libraries(gsh ${CURSES_LIBRARIES})

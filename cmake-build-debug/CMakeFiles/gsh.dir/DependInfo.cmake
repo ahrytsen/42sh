@@ -4,9 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/yulia/gsh/braces/ft_strcut.c" "/home/yulia/gsh/cmake-build-debug/CMakeFiles/gsh.dir/braces/ft_strcut.c.o"
   "/home/yulia/gsh/braces/main.c" "/home/yulia/gsh/cmake-build-debug/CMakeFiles/gsh.dir/braces/main.c.o"
-  "/home/yulia/gsh/braces/regex.c" "/home/yulia/gsh/cmake-build-debug/CMakeFiles/gsh.dir/braces/regex.c.o"
   "/home/yulia/gsh/libft/src/ft_arrstr.c" "/home/yulia/gsh/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_arrstr.c.o"
   "/home/yulia/gsh/libft/src/ft_atoi.c" "/home/yulia/gsh/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_atoi.c.o"
   "/home/yulia/gsh/libft/src/ft_atoi_base.c" "/home/yulia/gsh/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_atoi_base.c.o"

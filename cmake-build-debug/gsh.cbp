@@ -88,13 +88,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/yulia/gsh/braces/ft_strcut.c">
-			<Option target="gsh"/>
-		</Unit>
 		<Unit filename="/home/yulia/gsh/braces/main.c">
-			<Option target="gsh"/>
-		</Unit>
-		<Unit filename="/home/yulia/gsh/braces/regex.c">
 			<Option target="gsh"/>
 		</Unit>
 		<Unit filename="/home/yulia/gsh/inc/twenty_one_sh.h">

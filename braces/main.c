@@ -26,19 +26,47 @@ char 	*skip_quotes(char *s)
 			return (s);
 }
 
-bool	check_braces(char *braces)
+//char	*check_braces(char **s)
+//{
+//	while (s++)
+//		if (**s == '\\')
+//			++*s;
+//		else if (ft_strchr("\"'`", **s))
+//			*s = skip_quotes(*s);
+//		else if (**s == '}')
+//			break ;
+//		else if (**s == '{')
+//			s = check_braces(s);
+//	return (s);
+//}
+//
+
+t_list	*get_valid_range(char **s)
 {
-//	while ()
-	return (1);
+	t_list	*lst;
+	int 	max;
+	int		min;
+
+	lst = NULL;
+	if (ft_isalpha(**s) && **(s + 1) == '.' && **(s + 2) == '.' &&
+		**(s + 3) == '.' && **(s + 4) == '}')
+	{
+		max = **s > **(s + 4) ? **s : **(s + 4);
+		min = **s < **(s + 4) ? **s : **(s + 4);
+		while (min < max)
+			ft_lstpush_back(&lst, min++, 2);
+		*s += 5;
+	}
+	return (lst);
 }
 
-t_list	*get_brace_seq(char *s)
+t_list	*get_brace_seq(char **s)
 {
-	char 	**vals;
-	t_list	*vals_lst;
+	char		**vals;
+	t_list		*vals_lst;
 
-	vals_lst = NULL;
-	vals = ft_strsplit(s, ',');
+	vals_lst = get_valid_range(s);
+	vals = ft_strsplit(ft_strsub(*s, 1, 3), ',');
 	while (*vals)
 	{
 		ft_lstpush_back(&vals_lst, *vals, ft_strlen(*vals) + 1);
@@ -73,7 +101,7 @@ t_list	*expand_braces(char *s, int i,  char *buf)
 	{
 		if (*s == '{')
 		{
-			vals_first = get_brace_seq(ft_strsub(s++, 1, 3));
+			vals_first = get_brace_seq(&s);
 			s += 4;
 			vals = vals_first->next;
 			while (vals)
@@ -103,7 +131,9 @@ int 	main(int ac, char **av)
 
 	ft_bzero(buf, 500);
 	i = 0;
-	expand_braces("{1,2}{3,4}{5,6}", i, buf);
+//	expand_braces("a{1,2}b{3,4}c{5,6d}", i, buf);
+	expand_braces("a{1,2,{,}", i, buf);
+
 //	print_lst(expand_braces("{1,2}{3,4}{5,6}", i, buf));
 
 }
