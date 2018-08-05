@@ -61,9 +61,8 @@ char			*ft_rl_search_filename(char *str, size_t len)
 	char			path[NAMESIZE];
 	t_list			*list;
 
-	if (*str == '~' && *(str + 1) == '/')
+	if (*str == '~' && *(str + 1) == '/' && (ptr = ft_getenv("HOME")))
 	{
-		ptr = ft_getenv("HOME");
 		ft_strcpy(path, ptr);
 		ptr = ft_strrchr(++str, '/');
 		len = ft_strlen(ptr + 1);
@@ -80,5 +79,7 @@ char			*ft_rl_search_filename(char *str, size_t len)
 	else
 		ft_strcpy(path, "./");
 	list = rl_filename_overseer(path, str, len);
+	if (!list && write(0, "\a", 1))
+		return (NULL);
 	return (ft_rl_match_drawer(list, str));
 }

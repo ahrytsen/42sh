@@ -34,7 +34,6 @@ static int	ft_exec_builtin(char **cmd)
 	return (g_builtin[i].cmd ? g_builtin[i].ft_builtin(cmd + 1) : -1);
 }
 
-
 static int	ft_exec_bypath(char **cmd, char *path, int bg)
 {
 	struct stat	tmp;
@@ -47,7 +46,7 @@ static int	ft_exec_bypath(char **cmd, char *path, int bg)
 			&& (get_environ()->pgid = get_environ()->pid))
 			return (0);
 		else if (get_environ()->pid < 0)
-			return (ft_dprintf(2, "21sh: fork error\n"));
+			return (write(2, "21sh: fork error\n", 17));
 		if (bg != -1 && get_environ()->is_interactive)
 			ft_set_sh_signal(bg ? S_CHLD : S_CHLD_FG);
 		execve(path, cmd, get_environ()->envar);

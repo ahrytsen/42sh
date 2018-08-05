@@ -85,6 +85,8 @@ char		*ft_rl_search_command(char *str, size_t len)
 		i++;
 	}
 	rl_search_in_path(&list, str, 0, len);
+	if (!list && write(0, "\a", 1))
+		return (NULL);
 	return (ft_rl_match_drawer(list, str));
 }
 
@@ -116,5 +118,7 @@ char		*ft_rl_search_varname(char *str, size_t len)
 	list = NULL;
 	rl_loop_var(&list, get_environ()->envar, str, len);
 	rl_loop_var(&list, get_environ()->shvar, str, len);
+	if (!list && write(0, "\a", 1))
+		return (NULL);
 	return (ft_rl_match_drawer(list, str));
 }

@@ -74,7 +74,7 @@ static void	ft_print_ast(t_ast *ast)
 	if (ft_getenv("TEST_AST"))
 	{
 		test_ast(ast);
-		ast ? ft_printf("\n") : 0;
+		ast ? write(1, "\n", 1) : 0;
 	}
 }
 

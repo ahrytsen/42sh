@@ -33,7 +33,7 @@ static int	ft_check_key(uint64_t buf)
 	return (0);
 }
 
-static int	ft_action(uint64_t buf)
+static int	ft_action(uint64_t buf)				// 26 lines
 {
 	(buf != K_TAB) ? get_term()->comp_stage = -1 : 0;
 	if (buf == K_RET)
@@ -59,8 +59,7 @@ static int	ft_action(uint64_t buf)
 	else if (((char*)&buf)[0] != 27 && (buf > 31 || ft_iswhitespace(buf)))
 		buf = ft_add(buf);
 	else
-		ft_dprintf(0, "\a");
-	ft_dprintf(2, "%d:%d\n", get_term()->curx, get_term()->cury);
+		write(0, "\a", 1);
 	return (ft_highlight_helper(buf));
 }
 
@@ -81,6 +80,11 @@ static int	ft_readline_helper(const int fd, char **line)
 				break ;
 		ft_terminal(T_RESTORE);
 		*line = line_tostr(&get_term()->cursor, ret <= 0 ? 2 : 0);
+		if (*line && ft_strchr(*line, '!'))
+		{
+			free(*line);
+			*line = ft_rl_history_replace_mark();
+		}
 		hist_commit(ret);
 	}
 	return (ret);

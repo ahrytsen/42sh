@@ -66,7 +66,7 @@ t_ast			*ft_ast_push(t_ast *ast, t_ast *node)
 	if ((node->type == cmd
 			&& !(node->cmd = ft_cmdlst_make(&node->toks)))
 		|| (!(new_node = (t_ast*)malloc(sizeof(t_ast)))
-			&& ft_dprintf(2, "21sh: malloc error\n")))
+			&& write(2, "21sh: malloc error\n", 19)))
 		return ((t_ast*)ft_cmdlst_del(node->cmd));
 	node->toks = NULL;
 	ft_memcpy(new_node, node, sizeof(t_ast));

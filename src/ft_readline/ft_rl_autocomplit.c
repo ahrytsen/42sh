@@ -102,11 +102,8 @@ void		ft_autocomplit(t_line *cursor)
 		if ((res = rl_search(line)))
 		{
 			tmp = res;
-			while (*res && write(1, res, 1))
-			{
-				line_add(cursor, *res++);
-				get_term()->curx++;
-			}
+			while (*res)
+				ft_add((uint64_t)(*res++));
 			free(tmp);
 		}
 	}

@@ -29,7 +29,7 @@ void	ft_readline_ret(void)
 	while (get_term()->cursor->next
 			&& (get_term()->cursor = get_term()->cursor->next))
 		ft_curright(1);
-	ft_dprintf(0, "\n");
+	write(0, "\n", 1);
 }
 
 void	ft_redraw_line(void)

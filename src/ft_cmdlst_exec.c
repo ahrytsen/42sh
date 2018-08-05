@@ -22,7 +22,7 @@ static int	ft_pl_make(int pl[2], t_cmd *cmd)
 	}
 	if (cmd->next)
 	{
-		if (pipe(pl) && ft_dprintf(2, "21sh: pipe error\n"))
+		if (pipe(pl) && write(2, "21sh: pipe error\n", 17))
 			return (1);
 		dup2(pl[1], 1);
 	}
@@ -37,7 +37,7 @@ static int	ft_cmd_exec_chld(t_cmd *cmd, int bg)
 		bg = -1;
 	}
 	if (ft_redirection(cmd->toks) || (!(cmd->av = ft_argv_make(cmd->toks))
-								&& ft_dprintf(2, "21sh: malloc error\n")))
+								&& write(2, "21sh: malloc error\n", 19)))
 		cmd->ret = 1;
 	else
 		cmd->ret = ft_argv_exec(cmd->av, NULL, bg);
@@ -57,7 +57,7 @@ static int	ft_cmd_exec(t_cmd *cmd, int bg)
 		return (1);
 	if ((cmd->next || cmd->prev || bg) && (cmd->pid = fork()))
 	{
-		if (cmd->pid == -1 && ft_dprintf(2, "21sh: fork() error\n"))
+		if (cmd->pid == -1 && write(2, "21sh: fork() error\n", 19))
 			return (1);
 		get_environ()->pid = cmd->pid;
 		cmd->av = ft_argv_make(cmd->toks);

@@ -22,7 +22,7 @@ static int	ft_get_pipe(t_list **toks, t_cmd *cmdlst)
 	ft_lstdel(&tmp, ft_token_del);
 	if (!cmdlst || !*toks || ((t_token*)(*toks)->content)->type == pipeline)
 	{
-		ft_dprintf(2, "21sh: unexpected token `|'\n");
+		write(2, "21sh: unexpected token `|'\n", 27);
 		return (1);
 	}
 	return (0);

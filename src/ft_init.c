@@ -90,7 +90,7 @@ void		ft_init(void)
 
 	ft_bzero(get_environ(), sizeof(t_env));
 	ft_fildes(FD_BACKUP);
-	get_environ()->env = ft_strdup_arr(environ);
+	get_environ()->envar = ft_strdup_arr(environ);
 	tmp = ft_getenv("SHLVL");
 	shlvl = tmp ? ft_atoi(tmp) : 0;
 	tmp = ft_itoa(shlvl + 1);
