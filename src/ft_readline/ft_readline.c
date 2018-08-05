@@ -80,11 +80,11 @@ static int	ft_readline_helper(const int fd, char **line)
 				break ;
 		ft_terminal(T_RESTORE);
 		*line = line_tostr(&get_term()->cursor, ret <= 0 ? 2 : 0);
-		if (*line && ft_strchr(*line, '!'))
-		{
-			free(*line);
-			*line = ft_rl_history_replace_mark();
-		}
+		// if (*line && ft_strchr(*line, '!'))
+		// {
+		// 	free(*line);
+		// 	*line = ft_rl_history_replace_mark();
+		// }
 		hist_commit(ret);
 	}
 	return (ret);

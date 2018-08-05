@@ -83,6 +83,7 @@ typedef struct	s_hist
 	t_line			*tmp;
 	struct s_hist	*next;
 	struct s_hist	*prev;
+	unsigned		no;
 }				t_hist;
 
 typedef struct	s_term
@@ -201,5 +202,9 @@ void			ft_prompt(void);
 **				ft_readline/ft_rl_check_line.c
 */
 int				ft_check_line(char *ln);
+/*
+**				ft_readline/ft_rl_exclamation.c
+*/
+char			*ft_rl_history_replace_mark(void);
 
 #endif

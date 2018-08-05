@@ -76,6 +76,7 @@ SRC			=	main.c\
 				ft_readline/ft_rl_init.c\
 				ft_readline/ft_rl_check_line.c\
 				ft_readline/ft_rl_cursor.c\
+				ft_readline/ft_rl_exclamation.c\
 				ft_readline/ft_rl_helper.c\
 				ft_readline/ft_rl_history.c\
 				ft_readline/ft_rl_highlight.c\
