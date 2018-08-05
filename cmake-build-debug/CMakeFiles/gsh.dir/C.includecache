@@ -29,6 +29,8 @@ termios.h
 -
 term.h
 -
+inttypes.h
+-
 
 ../libft/inc/ft_printf.h
 stdarg.h
@@ -50,423 +52,423 @@ sys/types.h
 sys/uio.h
 -
 
-/Users/yvyliehz/gsh/braces/ft_strcut.c
+/home/yulia/gsh/braces/ft_strcut.c
 libft.h
-/Users/yvyliehz/gsh/braces/libft.h
+/home/yulia/gsh/braces/libft.h
 
-/Users/yvyliehz/gsh/braces/main.c
+/home/yulia/gsh/braces/main.c
 stdbool.h
 -
 twenty_one_sh.h
-/Users/yvyliehz/gsh/braces/twenty_one_sh.h
+/home/yulia/gsh/braces/twenty_one_sh.h
 
-/Users/yvyliehz/gsh/braces/regex.c
+/home/yulia/gsh/braces/regex.c
 libft.h
-/Users/yvyliehz/gsh/braces/libft.h
+/home/yulia/gsh/braces/libft.h
 dirent.h
 -
 sys/stat.h
 -
 
-/Users/yvyliehz/gsh/libft/src/ft_arrstr.c
+/home/yulia/gsh/libft/src/ft_arrstr.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_atoi.c
+/home/yulia/gsh/libft/src/ft_atoi.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_atoi_base.c
+/home/yulia/gsh/libft/src/ft_atoi_base.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_atol.c
+/home/yulia/gsh/libft/src/ft_atol.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_atol_base.c
+/home/yulia/gsh/libft/src/ft_atol_base.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_bzero.c
+/home/yulia/gsh/libft/src/ft_bzero.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_count_digits.c
+/home/yulia/gsh/libft/src/ft_count_digits.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_dtoa.c
+/home/yulia/gsh/libft/src/ft_dtoa.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_dtoea.c
+/home/yulia/gsh/libft/src/ft_dtoea.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_free_arr.c
+/home/yulia/gsh/libft/src/ft_free_arr.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_is_blank.c
+/home/yulia/gsh/libft/src/ft_is_blank.c
 
-/Users/yvyliehz/gsh/libft/src/ft_isalnum.c
+/home/yulia/gsh/libft/src/ft_isalnum.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_isalnum_str.c
+/home/yulia/gsh/libft/src/ft_isalnum_str.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_isalpha.c
+/home/yulia/gsh/libft/src/ft_isalpha.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_isalpha_str.c
+/home/yulia/gsh/libft/src/ft_isalpha_str.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_isascii.c
+/home/yulia/gsh/libft/src/ft_isascii.c
 
-/Users/yvyliehz/gsh/libft/src/ft_isascii_str.c
+/home/yulia/gsh/libft/src/ft_isascii_str.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_isdigit.c
+/home/yulia/gsh/libft/src/ft_isdigit.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_isnumber.c
+/home/yulia/gsh/libft/src/ft_isnumber.c
 
-/Users/yvyliehz/gsh/libft/src/ft_isnumeric_str.c
+/home/yulia/gsh/libft/src/ft_isnumeric_str.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_isprint.c
+/home/yulia/gsh/libft/src/ft_isprint.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_isprint_str.c
+/home/yulia/gsh/libft/src/ft_isprint_str.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_iswhitespace.c
+/home/yulia/gsh/libft/src/ft_iswhitespace.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_itoa.c
+/home/yulia/gsh/libft/src/ft_itoa.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_itoa_base.c
+/home/yulia/gsh/libft/src/ft_itoa_base.c
 stdlib.h
 -
 
-/Users/yvyliehz/gsh/libft/src/ft_ldtoa.c
+/home/yulia/gsh/libft/src/ft_ldtoa.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_ldtoea.c
+/home/yulia/gsh/libft/src/ft_ldtoea.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_lstadd.c
+/home/yulia/gsh/libft/src/ft_lstadd.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_lstadd_end.c
+/home/yulia/gsh/libft/src/ft_lstadd_end.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_lstdel.c
+/home/yulia/gsh/libft/src/ft_lstdel.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_lstdelone.c
+/home/yulia/gsh/libft/src/ft_lstdelone.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_lstfree.c
+/home/yulia/gsh/libft/src/ft_lstfree.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_lstiter.c
+/home/yulia/gsh/libft/src/ft_lstiter.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_lstmap.c
+/home/yulia/gsh/libft/src/ft_lstmap.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_lstnew.c
+/home/yulia/gsh/libft/src/ft_lstnew.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_lstprint.c
+/home/yulia/gsh/libft/src/ft_lstprint.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_lstpush_back.c
+/home/yulia/gsh/libft/src/ft_lstpush_back.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_lstpush_front.c
+/home/yulia/gsh/libft/src/ft_lstpush_front.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_lstsize.c
+/home/yulia/gsh/libft/src/ft_lstsize.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_lstsort.c
+/home/yulia/gsh/libft/src/ft_lstsort.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_lstsplit.c
+/home/yulia/gsh/libft/src/ft_lstsplit.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_ltoa.c
+/home/yulia/gsh/libft/src/ft_ltoa.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_memalloc.c
+/home/yulia/gsh/libft/src/ft_memalloc.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_memccpy.c
+/home/yulia/gsh/libft/src/ft_memccpy.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_memchr.c
+/home/yulia/gsh/libft/src/ft_memchr.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_memcmp.c
+/home/yulia/gsh/libft/src/ft_memcmp.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_memcpy.c
+/home/yulia/gsh/libft/src/ft_memcpy.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_memdel.c
+/home/yulia/gsh/libft/src/ft_memdel.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_memmove.c
+/home/yulia/gsh/libft/src/ft_memmove.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_memset.c
+/home/yulia/gsh/libft/src/ft_memset.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_printf/ft_pbuf.c
+/home/yulia/gsh/libft/src/ft_printf/ft_pbuf.c
 ft_printf.h
-/Users/yvyliehz/gsh/libft/src/ft_printf/ft_printf.h
+/home/yulia/gsh/libft/src/ft_printf/ft_printf.h
 
-/Users/yvyliehz/gsh/libft/src/ft_printf/ft_pfloat.c
+/home/yulia/gsh/libft/src/ft_printf/ft_pfloat.c
 ft_printf.h
-/Users/yvyliehz/gsh/libft/src/ft_printf/ft_printf.h
+/home/yulia/gsh/libft/src/ft_printf/ft_printf.h
 
-/Users/yvyliehz/gsh/libft/src/ft_printf/ft_phelper.c
+/home/yulia/gsh/libft/src/ft_printf/ft_phelper.c
 ft_printf.h
-/Users/yvyliehz/gsh/libft/src/ft_printf/ft_printf.h
+/home/yulia/gsh/libft/src/ft_printf/ft_printf.h
 
-/Users/yvyliehz/gsh/libft/src/ft_printf/ft_phendler.c
+/home/yulia/gsh/libft/src/ft_printf/ft_phendler.c
 ft_printf.h
-/Users/yvyliehz/gsh/libft/src/ft_printf/ft_printf.h
+/home/yulia/gsh/libft/src/ft_printf/ft_printf.h
 
-/Users/yvyliehz/gsh/libft/src/ft_printf/ft_printf.c
+/home/yulia/gsh/libft/src/ft_printf/ft_printf.c
 ft_printf.h
-/Users/yvyliehz/gsh/libft/src/ft_printf/ft_printf.h
+/home/yulia/gsh/libft/src/ft_printf/ft_printf.h
 
-/Users/yvyliehz/gsh/libft/src/ft_putchar.c
+/home/yulia/gsh/libft/src/ft_putchar.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_putchar_fd.c
+/home/yulia/gsh/libft/src/ft_putchar_fd.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_putendl.c
+/home/yulia/gsh/libft/src/ft_putendl.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_putendl_fd.c
+/home/yulia/gsh/libft/src/ft_putendl_fd.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_putnbr.c
+/home/yulia/gsh/libft/src/ft_putnbr.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_putnbr_fd.c
+/home/yulia/gsh/libft/src/ft_putnbr_fd.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_putstr.c
+/home/yulia/gsh/libft/src/ft_putstr.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_putstr_fd.c
+/home/yulia/gsh/libft/src/ft_putstr_fd.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_realloc.c
+/home/yulia/gsh/libft/src/ft_realloc.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_sort_params.c
+/home/yulia/gsh/libft/src/ft_sort_params.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strarr_free.c
+/home/yulia/gsh/libft/src/ft_strarr_free.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strcat.c
+/home/yulia/gsh/libft/src/ft_strcat.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strchr.c
+/home/yulia/gsh/libft/src/ft_strchr.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strclr.c
+/home/yulia/gsh/libft/src/ft_strclr.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strcmp.c
+/home/yulia/gsh/libft/src/ft_strcmp.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strcpy.c
+/home/yulia/gsh/libft/src/ft_strcpy.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strdel.c
+/home/yulia/gsh/libft/src/ft_strdel.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strdup.c
+/home/yulia/gsh/libft/src/ft_strdup.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strdup_arr.c
+/home/yulia/gsh/libft/src/ft_strdup_arr.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strequ.c
+/home/yulia/gsh/libft/src/ft_strequ.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strextend.c
+/home/yulia/gsh/libft/src/ft_strextend.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strhalfextend.c
+/home/yulia/gsh/libft/src/ft_strhalfextend.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_striter.c
+/home/yulia/gsh/libft/src/ft_striter.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_striteri.c
+/home/yulia/gsh/libft/src/ft_striteri.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strjoin.c
+/home/yulia/gsh/libft/src/ft_strjoin.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strlcat.c
+/home/yulia/gsh/libft/src/ft_strlcat.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strlen.c
+/home/yulia/gsh/libft/src/ft_strlen.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strlen_c.c
+/home/yulia/gsh/libft/src/ft_strlen_c.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strmap.c
+/home/yulia/gsh/libft/src/ft_strmap.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strmapi.c
+/home/yulia/gsh/libft/src/ft_strmapi.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strncat.c
+/home/yulia/gsh/libft/src/ft_strncat.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strncmp.c
+/home/yulia/gsh/libft/src/ft_strncmp.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strncpy.c
+/home/yulia/gsh/libft/src/ft_strncpy.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strnequ.c
+/home/yulia/gsh/libft/src/ft_strnequ.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strnew.c
+/home/yulia/gsh/libft/src/ft_strnew.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strnstr.c
+/home/yulia/gsh/libft/src/ft_strnstr.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strrchr.c
+/home/yulia/gsh/libft/src/ft_strrchr.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strsplit.c
+/home/yulia/gsh/libft/src/ft_strsplit.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strstr.c
+/home/yulia/gsh/libft/src/ft_strstr.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strsub.c
+/home/yulia/gsh/libft/src/ft_strsub.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strtrim.c
+/home/yulia/gsh/libft/src/ft_strtrim.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_strulen.c
+/home/yulia/gsh/libft/src/ft_strulen.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_tolower.c
+/home/yulia/gsh/libft/src/ft_tolower.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_toupper.c
+/home/yulia/gsh/libft/src/ft_toupper.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_ultoa_base.c
+/home/yulia/gsh/libft/src/ft_ultoa_base.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/ft_wcharlen.c
+/home/yulia/gsh/libft/src/ft_wcharlen.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/libft/src/get_next_line.c
+/home/yulia/gsh/libft/src/get_next_line.c
 libft.h
-/Users/yvyliehz/gsh/libft/src/libft.h
+/home/yulia/gsh/libft/src/libft.h
 

@@ -47,25 +47,63 @@ t_list	*get_brace_seq(char *s)
 	return (vals_lst);
 }
 
-t_list	*expand_braces(t_list *toks, char *braces)
+void	lstadd_list(t_list **alst, t_list *new)
 {
+	t_list	*tmp;
 
+	if (alst && new)
+	{
+		tmp = new;
+		while (new->next)
+			new = new->next;
+		new->next = *alst;
+		*alst = tmp;
+	}
+}
+
+t_list	*expand_braces(char *s, int i,  char *buf)
+{
+	t_list	*vals;
+	t_list	*vals_first;
+	t_list	*ret;
+	t_list	*tmp;
+
+	ret = NULL;
+	while (*s)
+	{
+		if (*s == '{')
+		{
+			vals_first = get_brace_seq(ft_strsub(s++, 1, 3));
+			s += 4;
+			vals = vals_first->next;
+			while (vals)
+			{
+				buf[i] = *(char *)vals->content;
+				lstadd_list(&ret, expand_braces(s, i + 1, buf));
+				ft_printf("\n------------------------\n");
+				print_lst(ret);
+				vals = vals->next;
+			}
+			buf[i++] = *(char *)vals_first->content;
+		}
+		else
+			buf[i++] = *s++;
+	}
+	ft_lstpush_front(&ret, buf, 500);
+	ft_printf("\n------------------------\n");
+	print_lst(ret);
+	return (ret);
 }
 
 int 	main(int ac, char **av)
 {
+	char 	buf[500];
 	int 	i;
-	int 	j;
-	t_list	*toks = ft_lstnew("{1,2}{3,4}", ft_strlen("{1,2}{3,4}"));
+	t_list	*toks = ft_lstnew("{1,2}{3,4}", ft_strlen("{1,2}{3,4}") + 1);
 
-	print_lst(toks);
-	ft_printf("\n---------------------------\n\n");
-	while (*(char *)(toks->content))
-	{
-		if (*toks->content == '{')
-
-	}
-
-
+	ft_bzero(buf, 500);
+	i = 0;
+	expand_braces("{1,2}{3,4}{5,6}", i, buf);
+//	print_lst(expand_braces("{1,2}{3,4}{5,6}", i, buf));
 
 }
