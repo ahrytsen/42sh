@@ -96,7 +96,8 @@ int			main_loop(int fd)
 			system("leaks --quiet 42sh");
 			return (!i ? get_environ()->st : 1);
 		}
-		if (cmds && (toks = ft_tokenize(cmds)) && ft_heredoc(toks))
+		// if (cmds && (toks = ft_tokenize(cmds)) && ft_heredoc(toks))
+		if (0)
 		{
 			ast = ft_ast_make(&toks);
 			ft_print_ast(ast);

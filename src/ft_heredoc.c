@@ -72,6 +72,7 @@ int			ft_heredoc(t_list *toks)
 	t_token	*tok;
 	int		ret;
 
+	ret = 1;
 	get_term()->prompt = P_HEREDOC;
 	while (toks)
 	{

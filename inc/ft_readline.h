@@ -205,6 +205,6 @@ int				ft_check_line(char *ln);
 /*
 **				ft_readline/ft_rl_exclamation.c
 */
-char			*ft_rl_history_replace_mark(void);
+char			*ft_rl_history_replace_mark(t_line **cur);
 
 #endif

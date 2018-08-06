@@ -11,114 +11,121 @@
 /* ************************************************************************** */
 
 #include "ft_readline.h"
-//
-// static char	*search_hist_by_number(char *ptr, t_hist *hist)
-// {
-// 	unsigned num;
-//
-// 	if (*ptr == '-')
-// 		num = hist->no - (unsigned)ft_atoi(ptr + 1);
-// 	else
-// 		num = (unsigned)ft_atoi(ptr);
-// 	while (hist)
-// 	{
-// 		if (hist->no == num)
-// 			return (hist->str);
-// 		hist = hist->prv;
-// 	}
-// 	return (NULL);
-// }
-//
-// static char	*srana_func(char *ptr)
-// {
-// 	t_hist	*hist;
-//
-// 	hist = gsh_r_history_bucket(-2, 0);
-// 	if (*ptr == '!')
-// 		return (hist->prv->str);
-// 	else if (ft_isnumber(ptr) && *ptr != '+')
-// 		return (search_hist_by_number(ptr, hist));
-// 	else if (*ptr == '?')
-// 		while (hist)
-// 		{
-// 			if (hist->str && ft_strstr(hist->str, ptr + 1))
-// 				return (hist->str);
-// 			hist = hist->prv;
-// 		}
-// 	else
-// 		while (hist)
-// 		{
-// 			if (hist->str && !ft_strncmp(hist->str, ptr, ft_strlen(ptr)))
-// 				return (hist->str);
-// 			hist = hist->prv;
-// 		}
-// 	return (NULL);
-// }
-//
-// static int	exclamation_replacer(char **ln, int *k, int z)
-// {
-// 	char	ptr[LINE_SIZE];
-// 	char	*str;
-//
-// 	while ((*ln)[*k + z])
-// 	{
-// 		z++;
-// 		if ((*ln)[*k + z] == ' ' || (*ln)[*k + z] == '\t' || (*ln)[*k + z] ==
-// 	'\n' || (*ln)[*k + z] == '\n' || (*ln)[*k + z] == '\'' || (*ln)[*k + z] ==
-// 	';' || (*ln)[*k + z] == '|' || (*ln)[*k + z] == '&')
-// 			break ;
-// 		else
-// 			ptr[z - 1] = (*ln)[*k + z];
-// 	}
-// 	ptr[z - 1] = 0;
-// 	if ((str = srana_func(ptr)))
-// 	{
-// 		*ln = ft_realloc(ft_strlen(*ln) - z + ft_strlen(str) + 1,
-// 			ft_strlen(*ln) + 1, *ln);
-// 		ft_memmove(*ln + *k + ft_strlen(str), *ln + *k + z,
-// 			ft_strlen(*ln) - *k - z + 1);
-// 		ft_memmove(*ln + *k, str, ft_strlen(str));
-// 		*k += ft_strlen(str);
-// 		return (1);
-// 	}
-// 	return (0);
-// }
 
-int		rl_mark_replacer(void)
+static t_hist	*search_hist_by_number(char *ptr)
 {
+	unsigned	num;
+	t_hist		*tmp;
+
+	tmp = get_term()->hist;
+	if (*ptr == '-')
+		num = tmp->no - (unsigned)ft_atoi(ptr + 1);
+	else
+		num = (unsigned)ft_atoi(ptr);
+	while (tmp)
+	{
+		if (tmp->no == num)
+			return (tmp);
+		tmp = tmp->prev;
+	}
+	return (NULL);
+}
+
+static t_line	*rl_match_history(char *ptr)
+{
+	t_hist	*hist;
+	char *str;
+
+	hist = get_term()->hist;
+	if (*ptr == '!')
+		return (hist->prev->line);
+	if (ft_isnumber(ptr) && *ptr != '+')
+		return (search_hist_by_number(ptr)->line);
+	while (hist)
+	{
+		if (hist->line)
+		{
+			str = line_tostr(&hist->line, 0);
+			if ((*ptr == '?' && ft_strstr(str, ptr + 1))
+			|| !ft_strncmp(str, ptr, ft_strlen(ptr)))
+			{
+				free(str);
+				return (hist->line);
+			}
+			free(str);
+		}
+		hist = hist->prev;
+	}
+	return (NULL);
+}
+
+static int		rl_mark_replacer(t_line **cur)
+{
+	t_line	*tmp;
+	t_line	*rat;
+	char	ptr[4096];
+	int		k;
+
+	tmp = (*cur);
+	k = 0;
+	while ((*cur)->next && (*cur = (*cur)->next))
+	{
+		if ((*cur)->ch == ' ' || (*cur)->ch == '\t' || (*cur)->ch == '\n'
+		|| (*cur)->ch == '\'' || (*cur)->ch == ';' || (*cur)->ch == '|'
+		|| (*cur)->ch == '&' || (*cur)->ch == '\"')
+			break ;
+		else
+			ptr[k] = (*cur)->ch;
+		k++;
+	}
+	ptr[k] = 0;
+	if ((rat = rl_match_history(ptr)))
+	{
+		while (k-- + 1)
+			ft_back_space();
+		if (tmp->prev)
+			tmp->prev->next = rat;
+		ft_printf("[%c]\n", rat->prev->ch);
+		// rat->prev = tmp->prev;
+		while (rat->next)
+			rat = rat->next;
+		rat->next = *cur;
+		(*cur)->prev = rat;
+		return (1);
+	}
+	write(1, "\a", 1);
 	return (0);
 }
 
-char	*ft_rl_history_replace_mark(void)
+char			*ft_rl_history_replace_mark(t_line **cur)
 {
-	t_line	*tmp;
 	char	mrk;
 	char	sign;
 	char	*s;
 
 	mrk = 0;
-	tmp = get_term()->cursor;
-	while (tmp->prev)
-		tmp = tmp->prev;
-	while (tmp)
+	while ((*cur)->prev)
+		*cur = (*cur)->prev;
+	while (*cur && (*cur)->next)
 	{
-		if (tmp->ch == '!' && !mrk && !(tmp->prev && tmp->prev->ch == '\\')
-			&& tmp->next && tmp->next->ch != '\t' && tmp->next->ch != '\n'
-			&& tmp->next->ch != ' ')
+		if ((*cur)->ch == '!' && !mrk && !((*cur)->prev
+		&& (*cur)->prev->ch == '\\') && (*cur)->next->ch != '\t'
+		&& (*cur)->next->ch != '\n' && (*cur)->next->ch != ' '
+		&& (*cur)->next->ch != ';' && (*cur)->next->ch != '|'
+		&& (*cur)->next->ch != '&')
 		{
-			if (!rl_mark_replacer())
-			{
-				write(1, "\a", 1);
-				return (line_tostr(&get_term()->cursor, 2));
-			}
-			else
-				sign = 1;
+			if (!rl_mark_replacer(cur))
+				return (line_tostr(cur, 0));
+			sign = 1;
 		}
-		tmp->ch == '\\' ? mrk ^= 1 : 0;
-		tmp = tmp->next;
+		(*cur)->ch == '\'' ? mrk ^= 1 : 0;
+		*cur = (*cur)->next;
 	}
-	s = NULL;
-	s = line_tostr(&get_term()->cursor, 0);
+	write(1, "#", 1);
+	*cur = (*cur)->prev;
+	write(1, "@", 1);
+	s = line_tostr(cur, 0);
+	write(1, "$", 1);
 	ft_putendl(s);
 	return (s);
 }
