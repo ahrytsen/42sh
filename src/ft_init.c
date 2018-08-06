@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 13:59:58 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/03 20:34:36 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 17:24:13 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,31 +20,22 @@ static void	ft_if_interactive(void)
 	ft_set_sh_signal(S_SH);
 	get_environ()->sh_pid = getpid();
 	setpgid(get_environ()->sh_pid, get_environ()->sh_pid);
-	tcsetpgrp(get_environ()->sh_terminal, get_environ()->sh_pid);
+	tcsetpgrp(1, get_environ()->sh_pid);
 }
 
 void		ft_fildes(int mod)
 {
 	if (mod == FD_BACKUP)
 	{
-		get_environ()->bkp_fd[0] = fcntl(0, F_GETFD) > 0 ? dup(0) : -1;
-		get_environ()->bkp_fd[1] = fcntl(1, F_GETFD) > 0 ? dup(1) : -1;
-		get_environ()->bkp_fd[2] = fcntl(2, F_GETFD) > 0 ? dup(2) : -1;
+		get_environ()->bkp_fd[0] = dup(0);
+		get_environ()->bkp_fd[1] = dup(1);
+		get_environ()->bkp_fd[2] = dup(2);
 	}
 	else if (mod == FD_RESTORE)
 	{
-		if (get_environ()->bkp_fd[0] == -1)
-			fcntl(0, F_GETFD) > 0 ? close(0) : 0;
-		else
-			dup2(get_environ()->bkp_fd[0], 0);
-		if (get_environ()->bkp_fd[1] == -1)
-			fcntl(1, F_GETFD) > 0 ? close(1) : 0;
-		else
-			dup2(get_environ()->bkp_fd[1], 1);
-		if (get_environ()->bkp_fd[2] == -1)
-			fcntl(2, F_GETFD) > 0 ? close(2) : 0;
-		else
-			dup2(get_environ()->bkp_fd[2], 2);
+		dup2(get_environ()->bkp_fd[0], 0);
+		dup2(get_environ()->bkp_fd[1], 1);
+		dup2(get_environ()->bkp_fd[2], 2);
 	}
 }
 
@@ -90,7 +81,7 @@ void		ft_init(void)
 
 	ft_bzero(get_environ(), sizeof(t_env));
 	ft_fildes(FD_BACKUP);
-	get_environ()->envar = ft_strdup_arr(environ);
+	get_environ()->env = ft_strdup_arr(environ);
 	tmp = ft_getenv("SHLVL");
 	shlvl = tmp ? ft_atoi(tmp) : 0;
 	tmp = ft_itoa(shlvl + 1);

@@ -6,12 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 13:35:29 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/03 19:55:19 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 15:50:43 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_readline.h"
-#include "ft_sh.h"
 
 static void	ft_init_termcap(void)
 {
@@ -32,6 +31,8 @@ static void	ft_init_termcap(void)
 	get_term()->iv_on = tgetstr("mr", NULL);
 	get_term()->iv_off = tgetstr("me", NULL);
 	get_term()->del_ch = tgetstr("DC", NULL);
+	get_term()->height = tgetnum("li");
+	get_term()->width = tgetnum("co");
 }
 
 static void	sig_handler(int signo)
@@ -55,7 +56,7 @@ static void	sig_handler(int signo)
 		ft_redraw_line();
 	}
 	else if (signo == SIGTSTP)
-		write(2, "\a", 1);
+		ft_dprintf(2, "\a");
 }
 
 static void	ft_set_rl_signal(int mod)
@@ -84,13 +85,13 @@ void		ft_terminal(int mod)
 {
 	static int	already_saved = 0;
 
-	if (!isatty(get_environ()->sh_terminal))
+	if (!isatty(0))
 		ft_fatal(1, exit, "42sh: fd isn't valid terminal type device.\n");
 	else if (mod == T_INIT && !already_saved)
 	{
 		ft_bzero(get_term(), sizeof(t_term));
 		ft_init_termcap();
-		tcgetattr(get_environ()->sh_terminal, &get_term()->savetty);
+		tcgetattr(0, &get_term()->savetty);
 		get_term()->work_tty = get_term()->savetty;
 		get_term()->work_tty.c_lflag &= ~(ICANON | ECHO);
 		get_term()->work_tty.c_lflag |= TOSTOP;
@@ -99,10 +100,9 @@ void		ft_terminal(int mod)
 		already_saved = 1;
 	}
 	ft_set_rl_signal(mod);
-	if (mod == T_INIT)
-		tcsetattr(get_environ()->sh_terminal, TCSAFLUSH, &get_term()->work_tty);
-	else
-		tcsetattr(get_environ()->sh_terminal, TCSANOW, &get_term()->savetty);
+	(mod == T_INIT)
+		? tcsetattr(0, TCSAFLUSH, &get_term()->work_tty)
+		: tcsetattr(0, TCSANOW, &get_term()->savetty);
 }
 
 int			ft_is_interrupted(void)
