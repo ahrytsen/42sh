@@ -85,19 +85,31 @@ t_list	*get_valid_range(char **s)
 
 t_list	*get_brace_seq(char **s)
 {
-	char 		*simple_braces;
-	char		**vals;
-	t_list		*vals_lst;
+	char	simple_braces[ft_strlen(*s)];
+	int 	i;
+	t_list	*ret;
+	char	**vals;
+	t_list	*vals_lst;
 
-	if (!(vals_lst = get_valid_range(s)))
+	i = 0;
+	ret = NULL;
+	while (*(*s)++)
 	{
-		vals = ft_strsplit(ft_strsub(*s, 1, 3), ',');
-		while (*vals)
-		{
-			ft_lstpush_back(&vals_lst, *vals, ft_strlen(*vals) + 1);
-			++vals;
-		}
-		*s += 5;
+		if (**s == '{')
+			get_brace_seq(&(*s));
+		else if ()
+		simple_braces[i++] = **s;
 	}
-	return (vals_lst);
+
+//	if (!(vals_lst = get_valid_range(s)))
+//	{
+//		vals = ft_strsplit(ft_strsub(*s, 1, 3), ',');
+//		while (*vals)
+//		{
+//			ft_lstpush_back(&vals_lst, *vals, ft_strlen(*vals) + 1);
+//			++vals;
+//		}
+//		*s += 5;
+//	}
+//	return (vals_lst);
 }
