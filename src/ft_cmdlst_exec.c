@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 17:41:55 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/06 17:50:48 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/06 21:03:43 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,16 @@ static int	ft_pl_make(int pl[2], t_cmd *cmd)
 {
 	if (cmd->prev)
 	{
-		dup2(pl[0], 0);
+		cmd->fd_in = dup(pl[0]);
 		close(pl[0]);
-		close(pl[1]);
 	}
 	if (cmd->next)
 	{
 		if (pipe(pl) && write(2, "21sh: pipe error\n", 17))
 			return (1);
-		dup2(pl[1], 1);
+		cmd->fd_out = dup(pl[1]);
+		cmd->fd_close = pl[0];
+		close(pl[1]);
 	}
 	return (0);
 }
@@ -35,6 +36,13 @@ static int	ft_cmd_exec_chld(t_cmd *cmd, int bg)
 	{
 		ft_set_sh_signal(bg ? S_CHLD : S_CHLD_FG);
 		bg = -1;
+		if (cmd->next)
+		{
+			dup2(cmd->fd_out, 1);
+			close(cmd->fd_close);
+		}
+		cmd->prev ? dup2(cmd->fd_in, 0) : 0;
+
 	}
 	if (ft_redirection(cmd->toks) || (!(cmd->av = ft_argv_make(cmd->toks))
 								&& write(2, "21sh: malloc error\n", 19)))

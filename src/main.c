@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/11 19:53:36 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 17:44:28 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/06 19:06:02 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,10 +92,7 @@ int			main_loop(int fd)
 		cmds = NULL;
 		ast = NULL;
 		if (!(i = ft_readline(fd, &cmds)) || (i == -1 && !ft_is_interrupted()))
-		{
-			system("leaks --quiet 42sh");
 			return (!i ? get_environ()->st : 1);
-		}
 		if (cmds && (toks = ft_tokenize(cmds)) && ft_heredoc(toks))
 		{
 			ast = ft_ast_make(&toks);
