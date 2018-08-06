@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 17:41:55 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:23:09 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/06 17:50:48 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,11 @@ static int	ft_cmd_exec(t_cmd *cmd, int bg)
 			return (1);
 		get_environ()->pid = cmd->pid;
 		cmd->av = ft_argv_make(cmd->toks);
-		!get_environ()->pgid ? get_environ()->pgid = cmd->pid : 0;
-		setpgid(get_environ()->pid, get_environ()->pgid);
+		if (get_environ()->is_interactive)
+		{
+			!get_environ()->pgid ? get_environ()->pgid = cmd->pid : 0;
+			setpgid(get_environ()->pid, get_environ()->pgid);
+		}
 		return (0);
 	}
 	else

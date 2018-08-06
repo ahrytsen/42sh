@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/03 20:39:24 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/06 18:01:54 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ typedef union	u_data
 
 typedef struct	s_token
 {
-	enum e_ast_type {
+	enum	e_ast_type {
 		blank,
 		word,
 		pipeline,

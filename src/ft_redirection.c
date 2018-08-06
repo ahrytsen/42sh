@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 14:04:03 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:23:41 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/06 15:04:00 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ static int	ft_redir_file(t_token *tok)
 							oflag, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH)) >= 0)
 	{
 		dup2(fd, tok->data.redir.left);
-		close(fd);
+		fd != tok->data.redir.left ? close(fd) : 0;
 		return (0);
 	}
 	else if (fd < 0)

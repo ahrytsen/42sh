@@ -6,13 +6,14 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/26 16:27:15 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 18:58:53 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/06 17:53:22 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
 
-const t_builtins	g_builtin[] = {
+const t_builtins	g_builtin[] =
+{
 	{"echo", &ft_echo},
 	{"cd", &ft_cd},
 	{"fg", &ft_fg},
@@ -34,7 +35,6 @@ static int	ft_exec_builtin(char **cmd)
 	return (g_builtin[i].cmd ? g_builtin[i].ft_builtin(cmd + 1) : -1);
 }
 
-
 static int	ft_exec_bypath(char **cmd, char *path, int bg)
 {
 	struct stat	tmp;
@@ -48,7 +48,7 @@ static int	ft_exec_bypath(char **cmd, char *path, int bg)
 			return (0);
 		else if (get_environ()->pid < 0)
 			return (ft_dprintf(2, "21sh: fork error\n"));
-		if (bg != -1 && get_environ()->is_interactive)
+		if (bg != -1)
 			ft_set_sh_signal(bg ? S_CHLD : S_CHLD_FG);
 		execve(path, cmd, get_environ()->env);
 		if ((fd = open(path, O_RDONLY)) >= 0)
