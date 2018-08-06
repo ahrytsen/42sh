@@ -23,14 +23,14 @@ static void		rl_choose_mr_anderson(t_list **lst, char *name, char *path)
 	{
 		free(full);
 		full = ft_strjoin(name, "/");
-		ft_lstadd_end(lst, ft_lstnew((void *)full, ft_strlen(full) + 1));
-		free(full);
 	}
 	else
 	{
 		free(full);
-		ft_lstadd_end(lst, ft_lstnew((void *)name, ft_strlen(name) + 1));
+		full = ft_strjoin(name, " ");
 	}
+	ft_lstadd_end(lst, ft_lstnew((void *)full, ft_strlen(full) + 1));
+	free(full);
 }
 
 static t_list	*rl_filename_overseer(char *path, char *str, size_t len)
@@ -61,9 +61,8 @@ char			*ft_rl_search_filename(char *str, size_t len)
 	char			path[NAMESIZE];
 	t_list			*list;
 
-	if (*str == '~' && *(str + 1) == '/')
+	if (*str == '~' && *(str + 1) == '/' && (ptr = ft_getenv("HOME")))
 	{
-		ptr = ft_getenv("HOME");
 		ft_strcpy(path, ptr);
 		ptr = ft_strrchr(++str, '/');
 		len = ft_strlen(ptr + 1);
@@ -80,5 +79,7 @@ char			*ft_rl_search_filename(char *str, size_t len)
 	else
 		ft_strcpy(path, "./");
 	list = rl_filename_overseer(path, str, len);
+	if (!list && write(0, "\a", 1))
+		return (NULL);
 	return (ft_rl_match_drawer(list, str));
 }

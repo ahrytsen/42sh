@@ -57,15 +57,15 @@ static void		rl_drawing_cycle(char **win_buf, t_list *lst, int *dim, int num)
 }
 
 /*
-**	dim[] - dimensions: 0 - max name, 1 - columns, 2 - rows, 3 - mod
+**	dim[] - dimensions: 0 - max name, 1 - columns, 2 - rows, 3 - list size
 */
 
-static void		rl_get_dimensions(int *dim, int num)
+static void		rl_get_dimensions(int *dim)
 {
 	struct winsize	ws;
 
 	ioctl(0, TIOCGWINSZ, &ws);
-	if (num == 0)
+	if (dim[3] == 0)
 	{
 		dim[1] = 0;
 		return ;
@@ -73,14 +73,14 @@ static void		rl_get_dimensions(int *dim, int num)
 	dim[1] = 1;
 	while ((dim[1] + 1) * dim[0] < ws.ws_col)
 	{
-		if (dim[1] > num)
+		if (dim[1] > dim[3])
 			break ;
 		dim[1]++;
 	}
-	dim[2] = num / dim[1];
-	while (dim[1] * dim[2] < num)
+	dim[2] = dim[3] / dim[1];
+	while (dim[1] * dim[2] < dim[3])
 		dim[2]++;
-	while ((dim[1] - 1) * dim[2] >= num)
+	while ((dim[1] - 1) * dim[2] >= dim[3])
 		dim[1]--;
 }
 
@@ -101,26 +101,29 @@ static int		rl_get_max_name(t_list *lst)
 
 char			*ft_rl_match_drawer(t_list *lst, char *str)
 {
-	int		num;
-	int		dim[3];
+	int		dim[4];
 	char	*win_buf;
 	char	*ptr;
 
 	ptr = NULL;
-	if (!lst)
-		write(0, "\a", 1);
-	else if ((num = (int)ft_lstsize(lst)) == 1)
+	if ((dim[3] = (int)ft_lstsize(lst)) == 1)
+	{
+		get_term()->comp_stage = -1;
 		ptr = ft_strdup(lst->content + ft_strlen(str));
-	else
+	}
+	else if (get_term()->comp_stage == -1)
 	{
 		dim[0] = rl_get_max_name(lst);
-		win_buf = (char *)ft_memalloc((dim[0] + 1) * num);
-		rl_get_dimensions(dim, num);
-		rl_drawing_cycle(&win_buf, lst, dim, (int)num);
-		write(0, win_buf, (size_t)dim[0] * num);
+		win_buf = (char *)ft_memalloc((dim[0] + 1) * dim[3]);
+		rl_get_dimensions(dim);
+		rl_drawing_cycle(&win_buf, lst, dim, (int)dim[3]);
+		write(0, win_buf, (size_t)dim[0] * dim[3]);
 		free(win_buf);
 		ft_redraw_line();
+		get_term()->comp_stage = 0;
 	}
+	else
+		ptr = ft_rl_autocomp_switcher(lst, str);
 	ft_lstfree(&lst);
 	return (ptr);
 }

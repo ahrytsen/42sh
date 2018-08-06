@@ -32,7 +32,7 @@ static int	ft_redir_fd(t_token *tok)
 	{
 		if (tok->data.redir.nbr != -1
 			&& dup2(tok->data.redir.nbr, tok->data.redir.left) == -1
-			&& ft_dprintf(2, "21sh: duplicate error\n"))
+			&& write(2, "21sh: duplicate error\n", 22))
 			return (256);
 		if (tok->data.redir.cls)
 			close(tok->data.redir.nbr != -1
@@ -45,10 +45,10 @@ static int	ft_redir_heredoc(t_token *tok)
 {
 	int	pl[2];
 
-	if (pipe(pl) && ft_dprintf(2, "21sh: pipe error\n"))
+	if (pipe(pl) && write(2, "21sh: pipe error\n", 17))
 		return (256);
 	if (dup2(pl[0], tok->data.redir.left) == -1
-		&& ft_dprintf(2, "21sh: duplicate error\n"))
+		&& write(2, "21sh: duplicate error\n", 22))
 		return (256);
 	close(pl[0]);
 	ft_dprintf(pl[1], tok->type == herestr ? "%s\n" : "%s", tok->data.redir.hd);
@@ -80,7 +80,7 @@ static int	ft_redir_file(t_token *tok)
 		return (0);
 	}
 	else if (fd < 0)
-		ft_dprintf(2, "21sh: open() error\n");
+		write(2, "21sh: open() error\n", 19);
 	return (256);
 }
 

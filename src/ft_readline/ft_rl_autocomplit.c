@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_autocomplit.c                                   :+:      :+:    :+:   */
+/*   ft_rl_autocomplit.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlinkin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,45 +11,34 @@
 /* ************************************************************************** */
 
 #include "ft_readline.h"
-#include "ft_sh.h"
 
-static char		*ft_rl_search_varname(char *str, size_t len)
+char		*ft_rl_autocomp_switcher(t_list *lst, char *str)
 {
-	t_list	*list;
-	char	**env;
-	char	*in;
 	int		i;
+	char	*ptr;
 
-	list = NULL;
-	env = get_environ()->env;
-	i = -1;
-	while (env && env[++i])
-		if (!ft_strncmp(str, env[i], len))
-		{
-			in = ft_strsub(env[i], 0, ft_strchr(env[i], '=') - env[i]);
-			ft_lstadd_end(&list, ft_lstnew((void *)in, ft_strlen(in) + 1));
-			free(in);
-		}
-	// env = get_environ()->shvar;
-	// i = -1;
-	// while (env && env[++i])
-	// 	if (!ft_strncmp(str, env[i], len))
-	// 	{
-	// 		in = ft_strsub(env[i], 0, ft_strchr(env[i], '=') - env[i]);
-	// 		ft_lstadd_end(&list, ft_lstnew((void *)in, ft_strlen(in) + 1));
-	// 		free(in);
-	// 	}
-	return (ft_rl_match_drawer(list, str));
+	i = 0;
+	while (i != get_term()->comp_stage)
+	{
+		i++;
+		lst = lst->next;
+	}
+	get_term()->comp_stage++;
+	if (lst->next == NULL)
+		get_term()->comp_stage = 0;
+	get_term()->comp_erase = lst->content_size - (ft_strlen(str) + 2);
+	i = get_term()->comp_erase;
+	ptr = (char *)ft_memalloc(i + 1);
+	ft_strncpy(ptr, lst->content + ft_strlen(str), i);
+	return (ptr);
 }
 
-static char	*rl_check_line(t_line *cur)
+static char	*rl_check_line(t_line *cur, size_t size)
 {
 	char	*line;
-	size_t	size;
 	t_line	*tmp;
 
 	tmp = cur;
-	size = 1;
 	while (cur && cur->next && cur->ch != ' ' && cur->ch != '\t'
 		&& (cur->ch != '$' || (cur->ch == '$' && size == 1)) && cur->ch != ';'
 		&& cur->ch != '&' && cur->ch != '|')
@@ -73,29 +62,23 @@ static char	*rl_check_line(t_line *cur)
 	return (line);
 }
 
-static int	rl_zeroed(char *str, size_t len)
-{
-	while (len && (str[len - 1] == ' ' || str[len - 1] == '\t')
-		&& str[len - 1] != ';' && str[len - 1] != '|' && str[len - 1] != '&')
-		len--;
-	if (!len || str[len - 1] == ';' || str[len - 1] == '|'
-		|| str[len - 1] == '&')
-		return (1);
-	return (0);
-}
-
 static char	*rl_search(char *str)
 {
 	char	*s;
 	size_t	len;
+	int		mk;
 
 	len = ft_strlen(str);
 	while (len && str[len - 1] != ' ' && str[len - 1] != '\t' && str[len] != '$'
 		&& str[len - 1] != ';' && str[len - 1] != '|' && str[len - 1] != '&')
 		len--;
 	s = str + len;
-	if (rl_zeroed(s, len) && *s != '~' && *s != '$' && *s != '.'
-		&& *s != '/' && *s != '!')
+	while (len && (str[len - 1] == ' ' || str[len - 1] == '\t')
+		&& str[len - 1] != ';' && str[len - 1] != '|' && str[len - 1] != '&')
+		len--;
+	mk = ((!len || str[len - 1] == ';' || str[len - 1] == '|'
+			|| str[len - 1] == '&') ? 1 : 0);
+	if (mk && *s != '~' && *s != '$' && *s != '.' && *s != '/' && *s != '!')
 		return (ft_rl_search_command(s, ft_strlen(s)));
 	if (*s == '$')
 		return (ft_rl_search_varname(s + 1, ft_strlen(s) - 1));
@@ -109,15 +92,18 @@ void		ft_autocomplit(t_line *cursor)
 	char	*tmp;
 
 	line = NULL;
-	if (get_term()->prompt == P_USER && (line = rl_check_line(cursor)))
+	if (get_term()->comp_stage > -1)
+		while (get_term()->comp_erase--)
+			ft_back_space();
+	else
+		get_term()->comp_erase = 0;
+	if (get_term()->prompt == P_USER && (line = rl_check_line(cursor, 1)))
 	{
 		if ((res = rl_search(line)))
 		{
 			tmp = res;
-			while (*res && write(1, res, 1))
-				line_add(cursor, *res++);
-			write(1, " ", 1);
-			line_add(cursor, ' ');
+			while (*res)
+				ft_add((uint64_t)(*res++));
 			free(tmp);
 		}
 	}

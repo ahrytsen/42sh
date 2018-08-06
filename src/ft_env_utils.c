@@ -41,7 +41,7 @@ char		*ft_getenv(const char *name)
 {
 	char	**env;
 
-	env = get_environ()->env;
+	env = get_environ()->envar;
 	if (!name || !env)
 		return (NULL);
 	while (*env)
@@ -61,7 +61,7 @@ int			ft_setenv(const char *name, const char *value, int overwrite)
 
 	i = -1;
 	if (!(tmp = ft_new_env_str(name, value))
-		|| !(env = get_environ()->env))
+		|| !(env = get_environ()->envar))
 		return (-1);
 	while (env[++i])
 		if (ft_strcmp(env[i], name) == '=')
@@ -76,17 +76,17 @@ int			ft_setenv(const char *name, const char *value, int overwrite)
 		}
 	if (!(env = ft_memalloc(sizeof(char*) * (i + 2))))
 		return (-1);
-	ft_memcpy(env, get_environ()->env, sizeof(char*) * i);
+	ft_memcpy(env, get_environ()->envar, sizeof(char*) * i);
 	env[i] = tmp;
-	free(get_environ()->env);
-	return ((get_environ()->env = env) ? 0 : -1);
+	free(get_environ()->envar);
+	return ((get_environ()->envar = env) ? 0 : -1);
 }
 
 int			ft_unsetenv(const char *name)
 {
 	char	**env;
 
-	env = get_environ()->env;
+	env = get_environ()->envar;
 	if (!env || !name || ft_strchr(name, '='))
 		return (-1);
 	while (*env && ft_strcmp(*env, name) != '=')

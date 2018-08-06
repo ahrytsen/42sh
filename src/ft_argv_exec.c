@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exec.c                                             :+:      :+:    :+:   */
+/*   ft_argv_exec.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,8 +12,7 @@
 
 #include "ft_sh.h"
 
-const t_builtins	g_builtin[] =
-{
+const t_builtins	g_builtin[] = {
 	{"echo", &ft_echo},
 	{"cd", &ft_cd},
 	{"fg", &ft_fg},
@@ -47,10 +46,10 @@ static int	ft_exec_bypath(char **cmd, char *path, int bg)
 			&& (get_environ()->pgid = get_environ()->pid))
 			return (0);
 		else if (get_environ()->pid < 0)
-			return (ft_dprintf(2, "21sh: fork error\n"));
+			return (write(2, "21sh: fork error\n", 17));
 		if (bg != -1)
 			ft_set_sh_signal(bg ? S_CHLD : S_CHLD_FG);
-		execve(path, cmd, get_environ()->env);
+		execve(path, cmd, get_environ()->envar);
 		if ((fd = open(path, O_RDONLY)) >= 0)
 			exit(main_loop(fd));
 		exit(ft_dprintf(2, "%s: permission denied\n", *cmd) ? -2 : 0);

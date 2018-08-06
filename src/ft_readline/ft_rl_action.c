@@ -24,7 +24,7 @@ int		ft_del(uint64_t buf)
 		ft_back_space();
 	}
 	else
-		ft_dprintf(0, "\a");
+		write(0, "\a", 1);
 	return (1);
 }
 
@@ -37,7 +37,7 @@ void	ft_back_space(void)
 		ft_print_tail(get_term()->cursor);
 	}
 	else
-		ft_dprintf(0, "\a");
+		write(0, "\a", 1);
 }
 
 void	ft_move(uint64_t buf)
@@ -62,7 +62,7 @@ void	ft_move(uint64_t buf)
 			get_term()->cursor = get_term()->cursor->next;
 		}
 	else
-		ft_dprintf(0, "\a");
+		write(0, "\a", 1);
 }
 
 void	ft_word_action(uint64_t buf)
@@ -83,7 +83,7 @@ void	ft_word_action(uint64_t buf)
 			buf == K_ABS ? ft_back_space() : ft_del(K_DEL);
 	}
 	if (!flag)
-		ft_dprintf(0, "\a");
+		write(0, "\a", 1);
 }
 
 int		ft_add(uint64_t buf)

@@ -52,7 +52,7 @@ void	hist_move(uint64_t buf)
 		ft_redraw_line();
 	}
 	else
-		ft_dprintf(0, "\a");
+		write(0, "\a", 1);
 }
 
 void	clean_hist(void)
