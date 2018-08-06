@@ -101,7 +101,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.o"
   "CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o"
   "CMakeFiles/gsh.dir/libft/src/get_next_line.c.o"
+  "CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o"
   "CMakeFiles/gsh.dir/braces/main.c.o"
+  "CMakeFiles/gsh.dir/braces/get_seq.c.o"
   "gsh.pdb"
   "gsh"
 )

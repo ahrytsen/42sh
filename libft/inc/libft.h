@@ -113,6 +113,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 /*
 **              Extra functions
 */
+void			ft_lstadd_list(t_list **alst, t_list *new);
 void			ft_lstadd_end(t_list **alst, t_list *new);
 t_list			*ft_lstpush_back(t_list **lst, void const *content,
 								size_t content_size);

@@ -1,4 +1,4 @@
-/home/yulia/Downloads/clion-2018.1.5/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/yulia/gsh
+/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/yvyliehz/gsh
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/yulia/gsh/cmake-build-debug
+-- Build files have been written to: /Users/yvyliehz/gsh/cmake-build-debug

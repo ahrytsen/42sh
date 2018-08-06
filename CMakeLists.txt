@@ -113,6 +113,7 @@ add_executable(gsh
         libft/src/ft_ultoa_base.c
         libft/src/ft_wcharlen.c
         libft/src/get_next_line.c
+        libft/src/ft_lstadd_list.c
 #        src/builtins/builtins.c
 #        src/builtins/env_builtin.c
 #        src/builtins/ft_cd.c
@@ -150,6 +151,7 @@ add_executable(gsh
 #        src/ft_tokenize_utils.c
 #        src/init.c
 #        src/main.c
-        braces/main.c)
+        braces/main.c
+        braces/get_seq.c)
 
 target_link_libraries(gsh ${CURSES_LIBRARIES})
