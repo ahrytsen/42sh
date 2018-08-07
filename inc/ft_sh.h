@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/06 20:57:15 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/07 13:53:28 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,9 +132,8 @@ typedef struct	s_cmd
 	t_list			*toks;
 	pid_t			pid;
 	int				ret;
-	int				fd_in;
-	int				fd_out;
-	int				fd_close;
+	int				p_in;
+	int				p_out;
 	struct s_cmd	*next;
 	struct s_cmd	*prev;
 }				t_cmd;

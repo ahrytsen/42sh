@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/06 19:24:17 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/08/07 15:27:02 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -99,7 +99,7 @@ CFLAGS		=
 CFLAGS		=	-Wall -Wextra -Werror -g
 	endif
 else
-CFLAGS		= 	-Wall -Wextra -Werror -Ofast -flto=thin
+CFLAGS		= 	-Wall -Wextra -Werror
 endif
 #===========================================================
 STRING1 = $(CYAN)---Compile_$(NAME)$(NON)
