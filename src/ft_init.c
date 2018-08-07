@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 13:59:58 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/06 17:42:56 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/06 20:32:43 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,12 @@ void		ft_fildes(int mod)
 	}
 	else if (mod == FD_RESTORE)
 	{
-		get_environ()->bkp_fd[0] == -1 ? 0 : dup2(get_environ()->bkp_fd[0], 0);
-		get_environ()->bkp_fd[1] == -1 ? 0 : dup2(get_environ()->bkp_fd[1], 1);
-		get_environ()->bkp_fd[2] == -1 ? 0 : dup2(get_environ()->bkp_fd[2], 2);
+		get_environ()->bkp_fd[0] == -1
+			? close(0) : dup2(get_environ()->bkp_fd[0], 0);
+		get_environ()->bkp_fd[1] == -1
+			? close(1) : dup2(get_environ()->bkp_fd[1], 1);
+		get_environ()->bkp_fd[2] == -1
+			? close(2) : dup2(get_environ()->bkp_fd[2], 2);
 	}
 }
 

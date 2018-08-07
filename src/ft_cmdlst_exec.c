@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 17:41:55 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/06 17:50:48 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/07 15:15:40 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,12 @@
 
 static int	ft_pl_make(int pl[2], t_cmd *cmd)
 {
-	if (cmd->prev)
-	{
-		dup2(pl[0], 0);
-		close(pl[0]);
-		close(pl[1]);
-	}
 	if (cmd->next)
 	{
 		if (pipe(pl) && write(2, "21sh: pipe error\n", 17))
 			return (1);
-		dup2(pl[1], 1);
+		cmd->p_out = pl[1];
+		cmd->next->p_in = pl[0];
 	}
 	return (0);
 }
@@ -33,6 +28,10 @@ static int	ft_cmd_exec_chld(t_cmd *cmd, int bg)
 {
 	if (cmd->next || cmd->prev || bg)
 	{
+		cmd->prev ? dup2(cmd->p_in, 0) : 0;
+		cmd->prev ? close(cmd->p_in) : 0;
+		cmd->next ? dup2(cmd->p_out, 1) : 0;
+		cmd->next ? close(cmd->p_out) : 0;
 		ft_set_sh_signal(bg ? S_CHLD : S_CHLD_FG);
 		bg = -1;
 	}
@@ -80,11 +79,13 @@ int			ft_cmdlst_exec(t_cmd *cmd, int bg)
 	while (1)
 	{
 		cmd->ret = ft_cmd_exec(cmd, bg);
-		ft_fildes(FD_RESTORE);
+		cmd->next ? close(cmd->p_out) : 0;
+		cmd->prev ? close(cmd->p_in) : 0;
 		if (cmd->ret || !cmd->next)
 			break ;
 		cmd = cmd->next;
 	}
+	(cmd->next || cmd->prev || bg) ? 0 : ft_fildes(FD_RESTORE);
 	ret = cmd->ret;
 	ret2 = ft_control_job(cmd, bg, 0);
 	if (ret || (!WIFSTOPPED(ret2) && !bg))
