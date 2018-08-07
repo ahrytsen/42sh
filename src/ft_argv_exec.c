@@ -16,6 +16,7 @@ const t_builtins	g_builtin[] = {
 	{"echo", &ft_echo},
 	{"cd", &ft_cd},
 	{"fg", &ft_fg},
+	{"history", &ft_history},
 	{"setenv", &ft_setenv_builtin},
 	{"unsetenv", &ft_unsetenv_builtin},
 	{"env", &ft_env},

@@ -188,7 +188,7 @@ char			*ft_rl_search_varname(char *str, size_t len);
 int				hist_init(void);
 void			hist_move(uint64_t buf);
 void			clean_hist(void);
-void			hist_commit(int st);
+void			hist_commit(int st, int i);
 /*
 **				ft_readline/ft_rl_highlight.c
 */

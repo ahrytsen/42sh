@@ -66,6 +66,7 @@ SRC			=	main.c\
 				ft_builtins/ft_bi_env.c\
 				ft_builtins/ft_bi_cd.c\
 				ft_builtins/ft_bi_fg.c\
+				ft_builtins/ft_bi_history.c\
 				\
 				ft_readline/ft_readline.c\
 				ft_readline/ft_rl_autocomplit.c\

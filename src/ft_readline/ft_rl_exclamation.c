@@ -12,7 +12,7 @@
 
 #include "ft_readline.h"
 
-static t_hist	*search_hist_by_number(char *ptr)
+static char	*search_hist_by_number(char *ptr)
 {
 	unsigned	num;
 	t_hist		*tmp;
@@ -25,107 +25,94 @@ static t_hist	*search_hist_by_number(char *ptr)
 	while (tmp)
 	{
 		if (tmp->no == num)
-			return (tmp);
+			return (line_tostr(&tmp->line, 0));
 		tmp = tmp->prev;
 	}
 	return (NULL);
 }
 
-static t_line	*rl_match_history(char *ptr)
+static char	*rl_match_history(char *ptr)
 {
 	t_hist	*hist;
-	char *str;
+	char	*str;
 
 	hist = get_term()->hist;
-	if (*ptr == '!')
-		return (hist->prev->line);
-	if (ft_isnumber(ptr) && *ptr != '+')
-		return (search_hist_by_number(ptr)->line);
-	while (hist)
-	{
-		if (hist->line)
+	if (*ptr == '!' && hist->prev)
+		return (line_tostr(&hist->prev->line, 0));
+	else if (*ptr && ft_isnumber(ptr) && *ptr != '+')
+		return (search_hist_by_number(ptr));
+	else if (*ptr)
+		while (hist)
 		{
-			str = line_tostr(&hist->line, 0);
-			if ((*ptr == '?' && ft_strstr(str, ptr + 1))
-			|| !ft_strncmp(str, ptr, ft_strlen(ptr)))
+			if (hist->line)
 			{
+				str = line_tostr(&hist->line, 0);
+				if ((*ptr == '?' && ft_strstr(str, ptr + 1))
+				|| !ft_strncmp(str, ptr, ft_strlen(ptr)))
+					return (str);
 				free(str);
-				return (hist->line);
 			}
-			free(str);
+			hist = hist->prev;
 		}
-		hist = hist->prev;
-	}
 	return (NULL);
 }
 
-static int		rl_mark_replacer(t_line **cur)
+static int	rl_mark_replacer(t_line **cur)									//28
 {
-	t_line	*tmp;
-	t_line	*rat;
+	char	*tmp;
+	char	*rat;
 	char	ptr[4096];
 	int		k;
 
-	tmp = (*cur);
 	k = 0;
 	while ((*cur)->next && (*cur = (*cur)->next))
 	{
 		if ((*cur)->ch == ' ' || (*cur)->ch == '\t' || (*cur)->ch == '\n'
 		|| (*cur)->ch == '\'' || (*cur)->ch == ';' || (*cur)->ch == '|'
-		|| (*cur)->ch == '&' || (*cur)->ch == '\"')
+		|| (*cur)->ch == '&' || (*cur)->ch == '\"' || (*cur)->ch == '\0'
+		|| (k && (*cur)->prev->ch == '!'))
 			break ;
-		else
-			ptr[k] = (*cur)->ch;
-		k++;
+		ptr[k++] = (*cur)->ch;
 	}
 	ptr[k] = 0;
 	if ((rat = rl_match_history(ptr)))
 	{
 		while (k-- + 1)
 			ft_back_space();
-		if (tmp->prev)
-			tmp->prev->next = rat;
-		ft_printf("[%c]\n", rat->prev->ch);
-		// rat->prev = tmp->prev;
-		while (rat->next)
-			rat = rat->next;
-		rat->next = *cur;
-		(*cur)->prev = rat;
+		tmp = rat;
+		while (*rat)
+			line_add(*cur, (uint64_t)(*rat++));
+		free(tmp);
 		return (1);
 	}
-	write(1, "\a", 1);
+	ft_dprintf(2, "42sh: event not found: %s\n", ptr);
 	return (0);
 }
 
-char			*ft_rl_history_replace_mark(t_line **cur)
+char		*ft_rl_history_replace_mark(t_line **cur)
 {
-	char	mrk;
-	char	sign;
+	char	mk[3];
 	char	*s;
 
-	mrk = 0;
+	mk[1] = 0;
+	mk[2] = 0;
+	s = NULL;
 	while ((*cur)->prev)
 		*cur = (*cur)->prev;
 	while (*cur && (*cur)->next)
 	{
-		if ((*cur)->ch == '!' && !mrk && !((*cur)->prev
-		&& (*cur)->prev->ch == '\\') && (*cur)->next->ch != '\t'
-		&& (*cur)->next->ch != '\n' && (*cur)->next->ch != ' '
-		&& (*cur)->next->ch != ';' && (*cur)->next->ch != '|'
-		&& (*cur)->next->ch != '&')
+		if ((*cur)->ch == '!' && !mk[1] && !((*cur)->prev && (*cur)->prev->ch
+		== '\\') && (*mk = (char)(*cur)->next->ch) != '\t' && *mk != '\n'
+		&& *mk != ' ' && *mk != ';' && *mk != '|' && *mk != '&' && *mk != '\0')
 		{
 			if (!rl_mark_replacer(cur))
-				return (line_tostr(cur, 0));
-			sign = 1;
+				return (NULL);
+			mk[2] = 1;
 		}
-		(*cur)->ch == '\'' ? mrk ^= 1 : 0;
-		*cur = (*cur)->next;
+		(*cur)->ch == '\'' ? mk[1] ^= 1 : 0;
+		(*cur)->next ? *cur = (*cur)->next : 0;
 	}
-	write(1, "#", 1);
-	*cur = (*cur)->prev;
-	write(1, "@", 1);
-	s = line_tostr(cur, 0);
-	write(1, "$", 1);
-	ft_putendl(s);
+	if (mk[2] && (s = line_tostr(cur, 0)))
+		ft_printf("%s\n", s);
 	return (s);
 }

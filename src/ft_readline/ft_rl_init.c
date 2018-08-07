@@ -56,7 +56,7 @@ static void	sig_handler(int signo)
 		ft_redraw_line();
 	}
 	else if (signo == SIGTSTP)
-		ft_dprintf(2, "\a");
+		write(2, "\a", 1);
 }
 
 static void	ft_set_rl_signal(int mod)

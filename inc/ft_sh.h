@@ -277,10 +277,14 @@ int				ft_cd(char **av);
 int				ft_count_fg(t_list *proc);
 int				ft_fg(char **av);
 /*
-**				builtins/env_builtin.c
+**				builtins/ft_bi_env.c
 */
 int				ft_env(char **av);
 int				ft_env_op(int p);
+/*
+**				builtins/ft_bi_history.c
+*/
+int				ft_history(char **av);
 /*
 **				env_utils.c
 */

@@ -33,7 +33,7 @@ static int	ft_check_key(uint64_t buf)
 	return (0);
 }
 
-static int	ft_action(uint64_t buf)				// 26 lines
+static int	ft_action(uint64_t buf)											//26
 {
 	(buf != K_TAB) ? get_term()->comp_stage = -1 : 0;
 	if (buf == K_RET)
@@ -85,7 +85,7 @@ static int	ft_readline_helper(const int fd, char **line)
 			free(*line);
 			*line = ft_rl_history_replace_mark(&get_term()->cursor);
 		}
-		hist_commit(ret);
+		hist_commit(ret, (int)*line);
 	}
 	return (ret);
 }
