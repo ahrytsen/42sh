@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/07 13:53:28 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/07 17:47:54 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,6 +149,8 @@ typedef struct	s_ast
 	t_list			*toks;
 	enum {
 		cmd = word,
+		sub_on,
+		sub_off,
 		ast_and = and,
 		ast_or = or,
 		ast_bg = bg_op,

@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:31 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:24:12 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/07 21:10:31 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_token_del(void *token, size_t size)
 
 int		ft_isseparator(int c)
 {
-	return (ft_strchr("|&;<> \t\n", c) ? 1 : 0);
+	return (ft_strchr("|&;<> \t", c) ? 1 : 0);
 }
 
 int		ft_check_redir(t_token *prev, t_token *next, char *ln)
@@ -47,6 +47,11 @@ void	ft_skip_slash(char **s)
 {
 	if (*++(*s))
 		(*s)++;
+}
+
+void	ft_skip_dollar(char **s)
+{
+
 }
 
 int		ft_skip_qoutes(char **s)
