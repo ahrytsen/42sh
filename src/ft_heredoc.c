@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/23 21:00:10 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:33:16 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/06 19:18:28 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int			ft_heredoc(t_list *toks)
 	t_token	*tok;
 	int		ret;
 
-	ret = 1;
+    ret = 1;
 	get_term()->prompt = P_HEREDOC;
 	while (toks)
 	{
