@@ -96,7 +96,7 @@ int			main_loop(int fd)
 			system("leaks --quiet 42sh");
 			return (!i ? get_environ()->st : 1);
 		}
-		ft_printf("LINE={%s}\n", cmds);
+		// ft_printf("LINE={%s}\n", cmds);
 		// if (0)
 		if (cmds && (toks = ft_tokenize(cmds)) && ft_heredoc(toks))
 		{

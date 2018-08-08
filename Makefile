@@ -61,12 +61,14 @@ SRC			=	main.c\
 				ft_redirection_utils.c\
 				ft_heredoc.c\
 				ft_jobs_utils.c\
+				ft_shell_var.c\
 				\
 				ft_builtins/ft_builtins.c\
 				ft_builtins/ft_bi_env.c\
 				ft_builtins/ft_bi_cd.c\
 				ft_builtins/ft_bi_fg.c\
 				ft_builtins/ft_bi_history.c\
+				ft_builtins/ft_bi_un_setenv.c\
 				\
 				ft_readline/ft_readline.c\
 				ft_readline/ft_rl_autocomplit.c\

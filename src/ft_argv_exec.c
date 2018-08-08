@@ -17,8 +17,8 @@ const t_builtins	g_builtin[] = {
 	{"cd", &ft_cd},
 	{"fg", &ft_fg},
 	{"history", &ft_history},
-	{"setenv", &ft_setenv_builtin},
-	{"unsetenv", &ft_unsetenv_builtin},
+	{"setenv", &ft_setenv},
+	{"unsetenv", &ft_unsetenv},
 	{"env", &ft_env},
 	{"exit", &ft_exit},
 	{NULL, NULL}
@@ -112,7 +112,9 @@ int			ft_argv_exec(char **cmd, char *altpath, int bg)
 	bin_path = NULL;
 	if (!cmd || !*cmd)
 		return (0);
-	if (ft_strchr(*cmd, '/'))
+	if (ft_var_checker(&cmd))
+		st = ft_set_shell_var(cmd);
+	else if (ft_strchr(*cmd, '/'))
 		st = ft_exec_bypath(cmd, *cmd, bg);
 	else if ((st = ft_exec_builtin(cmd)) == -1)
 	{

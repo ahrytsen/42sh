@@ -82,10 +82,11 @@ void		ft_init(void)
 	ft_bzero(get_environ(), sizeof(t_env));
 	ft_fildes(FD_BACKUP);
 	get_environ()->envar = ft_strdup_arr(environ);
+	get_environ()->shvar = ft_init_shell_var();
 	tmp = ft_getenv("SHLVL");
 	shlvl = tmp ? ft_atoi(tmp) : 0;
 	tmp = ft_itoa(shlvl + 1);
-	ft_setenv("SHLVL", tmp, 1);
+	ft_set_tool("SHLVL", tmp, 1, ENVAR);
 	free(tmp);
-	ft_setenv("PATH", "/usr/bin:/bin", 0);
+	ft_set_tool("PATH", "/usr/bin:/bin", 0, ENVAR);
 }

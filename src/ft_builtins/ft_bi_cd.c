@@ -80,8 +80,8 @@ int			ft_cd(char **av)
 		return (256);
 	if (*av && ft_strequ(*av, "-"))
 		ft_printf("%s\n", next_path);
-	ft_setenv("OLDPWD", ft_getenv("PWD"), 1);
+	ft_set_tool("OLDPWD", ft_getenv("PWD"), 1, ENVAR);
 	getcwd(curent_path, MAXPATHLEN);
-	ft_setenv("PWD", curent_path, 1);
+	ft_set_tool("PWD", curent_path, 1, ENVAR);
 	return (0);
 }

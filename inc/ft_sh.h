@@ -14,13 +14,14 @@
 # define FT_SH_H
 
 # include "libft.h"
-# include <sys/stat.h>
+# include <dirent.h>
+# include <fcntl.h>
+# include <pwd.h>
+# include <signal.h>
+# include <sys/dir.h>
 # include <sys/param.h>
 # include <sys/types.h>
-# include <sys/dir.h>
-# include <dirent.h>
-# include <signal.h>
-# include <fcntl.h>
+# include <sys/stat.h>
 # include <term.h>
 
 /*
@@ -47,6 +48,12 @@
 */
 # define EXEC_BG 0
 # define EXEC_FG 1
+
+/*
+**	VARIABLES MOD
+*/
+# define ENVAR 0
+# define SHVAR 1
 
 typedef struct	s_op
 {
@@ -264,8 +271,8 @@ int				ft_status_job(int st);
 **				builtins/builtins.c
 */
 int				ft_echo(char **av);
-int				ft_setenv_builtin(char **av);
-int				ft_unsetenv_builtin(char **av);
+int				ft_setenv(char **av);
+int				ft_unsetenv(char **av);
 int				ft_exit(char **av);
 /*
 **				builtins/ft_cd.c
@@ -290,8 +297,9 @@ int				ft_history(char **av);
 */
 t_env			*get_environ(void);
 char			*ft_getenv(const char *name);
-int				ft_setenv(const char *name, const char *value, int overwrite);
-int				ft_unsetenv(const char *name);
+int				ft_set_tool(const char *name, const char *value, int overwrite
+	, int mod);
+int				ft_unset_tool(const char *name, int mod);
 /*
 **				ft_buffer.c
 */
@@ -299,5 +307,11 @@ void			ft_putstr_mshbuf(t_buf **buf, char *str, ssize_t len);
 void			ft_putchar_mshbuf(t_buf **buf, char c);
 char			*ft_buftostr(t_buf *buf_head);
 void			*ft_free_mshbuf(t_buf *buf);
+/*
+**				ft_shell_var.c
+*/
+int				ft_var_checker(char ***cmd);
+int				ft_set_shell_var(char **cmd);
+char			**ft_init_shell_var(void);
 
 #endif

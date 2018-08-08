@@ -21,7 +21,7 @@ static char	*ft_new_env_str(const char *name, const char *value)
 	if (!name)
 		return (NULL);
 	name_l = ft_strlen(name);
-	value_l = value ? ft_strlen(value) : 0;
+	value_l = (value ? ft_strlen(value) : 0);
 	if (!(new_env = (char*)malloc(sizeof(char) * (name_l + value_l + 2))))
 		return (NULL);
 	ft_strcpy(new_env, name);
@@ -41,28 +41,36 @@ char		*ft_getenv(const char *name)
 {
 	char	**env;
 
-	env = get_environ()->envar;
-	if (!name || !env)
+	if (!name)
 		return (NULL);
-	while (*env)
-	{
-		if (ft_strcmp(*env, name) == '=')
-			return (ft_strchr(*env, '=') + 1);
-		env++;
-	}
+	if ((env = get_environ()->envar))
+		while (*env)
+		{
+			if (ft_strcmp(*env, name) == '=')
+				return (ft_strchr(*env, '=') + 1);
+			env++;
+		}
+	if ((env = get_environ()->shvar))
+		while (*env)
+		{
+			if (ft_strcmp(*env, name) == '=')
+				return (ft_strchr(*env, '=') + 1);
+			env++;
+		}
 	return (NULL);
 }
 
-int			ft_setenv(const char *name, const char *value, int overwrite)
+int			ft_set_tool(const char *name, const char *value, int overwrite
+	, int mod)
 {
 	size_t	i;
 	char	**env;
 	char	*tmp;
 
-	i = -1;
-	if (!(tmp = ft_new_env_str(name, value))
-		|| !(env = get_environ()->envar))
+	if (!(env = (mod ? get_environ()->shvar : get_environ()->envar))
+		|| !(tmp = ft_new_env_str(name, value)))
 		return (-1);
+	i = -1;
 	while (env[++i])
 		if (ft_strcmp(env[i], name) == '=')
 		{
@@ -76,17 +84,33 @@ int			ft_setenv(const char *name, const char *value, int overwrite)
 		}
 	if (!(env = ft_memalloc(sizeof(char*) * (i + 2))))
 		return (-1);
-	ft_memcpy(env, get_environ()->envar, sizeof(char*) * i);
+	ft_memcpy(env, (mod ? get_environ()->shvar : get_environ()->envar),
+		sizeof(char*) * i);
 	env[i] = tmp;
-	free(get_environ()->envar);
-	return ((get_environ()->envar = env) ? 0 : -1);
+	free((mod ? get_environ()->shvar : get_environ()->envar));
+	if (mod)
+		get_environ()->shvar = env;
+	else
+		get_environ()->envar = env;
+	return (env ? 0 : -1);
 }
-
-int			ft_unsetenv(const char *name)
+/*
+int			ft_set_tool(const char *name, const char *value, int overwrite
+	, int mod)
+{
+	if (mod && ft_browse_variable(get_environ()->envar, name))
+		return (ft_set_tool(name, value, overwrite, ENVAR));
+	else if (mod)
+		return (ft_set_tool(name, value, overwrite, SHVAR));
+	ft_unset_tool(name, SHVAR);
+	return (ft_set_tool(name, value, overwrite, ENVAR));
+}
+*/
+int			ft_unset_tool(const char *name, int mod)
 {
 	char	**env;
 
-	env = get_environ()->envar;
+	env = (mod ? get_environ()->shvar : get_environ()->envar);
 	if (!env || !name || ft_strchr(name, '='))
 		return (-1);
 	while (*env && ft_strcmp(*env, name) != '=')
