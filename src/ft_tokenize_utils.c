@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:31 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/07 21:10:31 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/09 21:18:42 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,6 @@ void	ft_skip_slash(char **s)
 {
 	if (*++(*s))
 		(*s)++;
-}
-
-void	ft_skip_dollar(char **s)
-{
-
 }
 
 int		ft_skip_qoutes(char **s)

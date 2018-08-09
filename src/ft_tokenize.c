@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:24:03 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/09 21:00:56 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ static int	ft_get_token(char **ln, t_token *token)
 		&& !(*(*ln)++ = '\0'))
 	{
 		token->data.redir.left = ft_atoi(token->data.word);
+		token->data.redir.cls = 0;
 		(f[0] == '<') ? ft_get_redirect_in(ln, token)
 			: ft_get_redirect_out(ln, token);
 	}
@@ -109,8 +110,7 @@ t_list		*ft_tokenize(char *ln)
 		ft_bzero(&tok, sizeof(tok));
 		if ((!ft_isseparator(*ln) ? ft_get_token : ft_get_separator)(&ln, &tok))
 			ft_lstdel(&toks, ft_token_del);
-		else if (((!toks || ((t_token*)tmp->content)->type == semicolon)
-			&& tok.type == semicolon) || tok.type == blank)
+		else if (tok.type == blank)
 			continue ;
 		else if (toks && ((t_token*)tmp->content)->type > or
 			&& !((t_token*)tmp->content)->data.redir.right && tok.type == word)
