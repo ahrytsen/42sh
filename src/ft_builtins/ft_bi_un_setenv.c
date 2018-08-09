@@ -38,15 +38,13 @@ int		ft_setenv(char **av)
 		ft_env_op(ENV_PRINT);
 	while (*av)
 	{
-		value = ft_strchr(*av, '=');
-		if (value)
+		if ((value = ft_strchr(*av, '=')))
 			*value++ = '\0';
 		i = -1;
 		while ((*av)[++i])
 			if (((i && !ft_isalnum((*av)[i])) || (!i && !ft_isalpha((*av)[i])))
-				&& (*av)[i] != '_'
-				&& ft_dprintf(2, "setenv: `%s': not a valid identifier\n",
-								*av++))
+			&& (*av)[i] != '_'
+			&& ft_dprintf(2, "setenv: `%s': not a valid identifier\n", *av))
 				return (256);
 		if (ft_set_tool(*av++, value, 1, ENVAR))
 			ret = 256;

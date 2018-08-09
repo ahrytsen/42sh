@@ -68,6 +68,7 @@ SRC			=	main.c\
 				ft_builtins/ft_bi_cd.c\
 				ft_builtins/ft_bi_fg.c\
 				ft_builtins/ft_bi_history.c\
+				ft_builtins/ft_bi_un_set.c\
 				ft_builtins/ft_bi_un_setenv.c\
 				\
 				ft_readline/ft_readline.c\

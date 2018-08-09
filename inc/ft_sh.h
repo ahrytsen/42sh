@@ -52,8 +52,8 @@
 /*
 **	VARIABLES MOD
 */
-# define ENVAR 0
-# define SHVAR 1
+# define SHVAR 0
+# define ENVAR 1
 
 typedef struct	s_op
 {
@@ -64,10 +64,17 @@ typedef struct	s_op
 	char	**exec;
 }				t_op;
 
+typedef struct	s_var
+{
+	char			attr;
+	struct s_var	*next;
+	char			*var;
+}				t_var;
+
 typedef struct	s_env
 {
 	char			**envar;
-	char			**shvar;
+	t_var			*shvar;
 	int				st;
 	pid_t			sh_pid;
 	pid_t			sh_pgid;
@@ -268,18 +275,16 @@ void			ft_stop_job(t_cmd *cmd, int mod);
 int				ft_control_job(t_cmd *cmd, int bg, int cont);
 int				ft_status_job(int st);
 /*
-**				builtins/builtins.c
+**				builtins/ft_builtins.c
 */
 int				ft_echo(char **av);
-int				ft_setenv(char **av);
-int				ft_unsetenv(char **av);
 int				ft_exit(char **av);
 /*
-**				builtins/ft_cd.c
+**				builtins/ft_bi_cd.c
 */
 int				ft_cd(char **av);
 /*
-**				builtins/ft_fg.c
+**				builtins/ft_bi_fg.c
 */
 int				ft_count_fg(t_list *proc);
 int				ft_fg(char **av);
@@ -288,6 +293,16 @@ int				ft_fg(char **av);
 */
 int				ft_env(char **av);
 int				ft_env_op(int p);
+/*
+**				builtins/ft_bi_un_setenv.c
+*/
+int				ft_setenv(char **av);
+int				ft_unsetenv(char **av);
+/*
+**				builtins/ft_bi_un_set.c
+*/
+int				ft_set(char **av);
+int				ft_unset(char **av);
 /*
 **				builtins/ft_bi_history.c
 */
@@ -312,6 +327,7 @@ void			*ft_free_mshbuf(t_buf *buf);
 */
 int				ft_var_checker(char ***cmd);
 int				ft_set_shell_var(char **cmd);
-char			**ft_init_shell_var(void);
+void			ft_init_shell_var(void);
+int				ft_rem_shvar_entry(const char *name);
 
 #endif

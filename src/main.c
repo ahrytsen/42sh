@@ -93,7 +93,7 @@ int			main_loop(int fd)
 		ast = NULL;
 		if (!(i = ft_readline(fd, &cmds)) || (i == -1 && !ft_is_interrupted()))
 		{
-			system("leaks --quiet 42sh");
+			// system("leaks --quiet 42sh");
 			return (!i ? get_environ()->st : 1);
 		}
 		// ft_printf("LINE={%s}\n", cmds);

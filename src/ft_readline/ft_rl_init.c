@@ -97,6 +97,7 @@ void		ft_terminal(int mod)
 		get_term()->work_tty.c_lflag |= TOSTOP;
 		get_term()->work_tty.c_cc[VMIN] = 1;
 		get_term()->work_tty.c_cc[VTIME] = 0;
+		get_term()->comp_stage = -1;
 		already_saved = 1;
 	}
 	ft_set_rl_signal(mod);

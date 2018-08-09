@@ -19,6 +19,8 @@ const t_builtins	g_builtin[] = {
 	{"history", &ft_history},
 	{"setenv", &ft_setenv},
 	{"unsetenv", &ft_unsetenv},
+	{"set", &ft_set},
+	{"unset", &ft_unset},
 	{"env", &ft_env},
 	{"exit", &ft_exit},
 	{NULL, NULL}
