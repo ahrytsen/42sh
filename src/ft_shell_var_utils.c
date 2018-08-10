@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_env_utils.c                                     :+:      :+:    :+:   */
+/*   ft_shell_var_utils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -28,28 +28,6 @@ static char	*ft_new_env_str(const char *name, const char *value)
 	new_env[name_l] = '=';
 	ft_strcpy(new_env + name_l + 1, value ? value : "");
 	return (new_env);
-}
-
-t_env		*get_environ(void)
-{
-	static t_env	env;
-
-	return (&env);
-}
-
-char		*ft_getenv(const char *name)
-{
-	char	**env;
-
-	if (!name || !(env = get_environ()->envar))
-		return (NULL);
-	while (*env)
-	{
-		if (ft_strcmp(*env, name) == '=')
-			return (ft_strchr(*env, '=') + 1);
-		env++;
-	}
-	return (NULL);
 }
 
 int			ft_setter(const char *name, const char *value, int overwrite)
@@ -84,30 +62,44 @@ int			ft_setter(const char *name, const char *value, int overwrite)
 int			ft_set_tool(const char *name, const char *value, int overwrite
 	, int mod)
 {
-	char **env;
+	char	*str;
+	t_var	*entry;
+	int		rat;
 
-	if (mod)
+	rat = 0;
+	if ((entry = ft_get_shvar_entry(name)) && !overwrite)
+		return (-1);
+	str = ft_new_env_str(name, value);
+	if (mod == SHVAR)
 	{
-		env = get_environ()->envar;
-		while (*env)
-		{
-			if (ft_strcmp(*env, name) == '=')
-				break ;
-			env++;
-		}
-		if (*env)
-			return (ft_setter(name, value, overwrite));
-		return (ft_setter(name, value, overwrite));
+		ft_add_shvar_entry(str, ((entry && entry->attr == 'e') ? 'e' : 'l'));
+		if (entry && entry->attr == 'e'
+		&& (rat = ft_setter(name, value, overwrite)) == -1)
+			ft_rem_shvar_entry(name);
 	}
-	ft_unset_tool(name, SHVAR);
-	return (ft_setter(name, value, overwrite));
+	else
+	{
+		if (entry)
+		{
+			entry->attr = 'e';
+			free(entry->var);
+			entry->var = ft_strdup(str);
+		}
+		else
+			ft_add_shvar_entry(str, 'e');
+		if ((rat = ft_setter(name, value, overwrite)) == -1)
+			ft_rem_shvar_entry(name);
+	}
+	free(str);
+	return (rat);
 }
 
 int			ft_unset_tool(const char *name, int mod)
 {
 	char	**env;
 
-	if (!ft_rem_shvar_entry(name) && !mod)
+	if ((mod == ENVAR && ft_get_shvar_entry(name)->attr != 'e')
+		|| !ft_rem_shvar_entry(name))
 		return (0);
 	env = get_environ()->envar;
 	if (!env || !name || ft_strchr(name, '='))

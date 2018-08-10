@@ -12,64 +12,6 @@
 
 #include "ft_sh.h"
 
-/* ************************************************************************** */
-
-static void	inner_loop(t_var **head, int *mark, int count)
-{
-	t_var	*list;
-	int		j;
-	char	*var;
-	char	attr;
-
-	j = 0;
-	list = *head;
-	while (j < count)
-	{
-		if (ft_strcmp((char *)list->var, (char *)list->next->var) > 0)
-		{
-			*mark = 1;
-			var = list->var;
-			attr = list->attr;
-			list->var = list->next->var;
-			list->attr = list->next->attr;
-			list->next->var = var;
-			list->next->attr = attr;
-		}
-		list = list->next;
-		j++;
-	}
-}
-
-t_var		*ft_sort_entry(t_var *alst)
-{
-	int		i;
-	int		num;
-	int		mark;
-	t_var	*tmp;
-
-	if (!alst)
-		return (NULL);
-	tmp = alst;
-	num = 0;
-	while (tmp)
-	{
-		tmp = tmp->next;
-		num++;
-	}
-	i = 1;
-	while (i < num)
-	{
-		mark = 0;
-		inner_loop(&alst, &mark, num - i);
-		if (!mark)
-			break ;
-		i++;
-	}
-	return (alst);
-}
-
-/* ************************************************************************** */
-
 int		ft_unset(char **av)
 {
 	int	ret;
@@ -87,10 +29,10 @@ int			ft_print_shvar(void)
 {
 	t_var *env;
 
-	env = ft_sort_entry(get_environ()->shvar);
+	env = get_environ()->shvar;
 	while (env)
 	{
-		ft_printf("%s\n", env->var);
+		ft_printf("%c %s\n", env->attr, env->var);
 		env = env->next;
 	}
 	return (0);
@@ -105,7 +47,7 @@ int		ft_set(char **av)
 	ret = 0;
 	if (!av)
 		return (256);
-	if (!*av)
+	if (!*av || !ft_strcmp(*av, "--"))
 		ft_print_shvar();
 	// while (*av)
 	// {

@@ -12,76 +12,6 @@
 
 #include "ft_sh.h"
 
-void	ft_add_shvar_entry(char *entry, char attr)
-{
-	t_var	*tmp;
-	t_var	*new;
-
-	tmp = get_environ()->shvar;
-	if (!(new = (t_var *)ft_memalloc(sizeof(t_var))))
-		return ;
-	if (!(new->var = ft_strdup(entry)))
-	{
-		free(new);
-		return ;
-	}
-	new->next = NULL;
-	new->attr = attr;
-	if (!tmp)
-	{
-		get_environ()->shvar = new;
-		return ;
-	}
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = new;
-}
-
-t_var		*ft_get_shvar_entry(char *name)
-{
-	t_var	*iter;
-
-	if ((iter = get_environ()->shvar))
-	{
-		while (iter)
-		{
-			if (ft_strcmp(iter->var, name) == '=')
-				return (iter);
-			iter = iter->next;
-		}
-	}
-	return (NULL);
-}
-
-int		ft_rem_shvar_entry(const char *name)
-{
-	t_var	*iter;
-	t_var	*tmp;
-
-	tmp = NULL;
-	if ((iter = get_environ()->shvar))
-	{
-		while (iter)
-		{
-			if (ft_strcmp(iter->var, name) == '=')
-			{
-				if (tmp)
-				 	tmp->next = iter->next;
-				tmp = iter;
-				free(tmp->var);
-				free(tmp);
-				return (1);
-			}
-			tmp = iter;
-			iter = iter->next;
-		}
-		if (!tmp)
-			get_environ()->shvar = iter;
-	}
-	return (0);
-}
-
-
 void	ft_init_shell_var(void)
 {
 	char	*str;
@@ -95,19 +25,19 @@ void	ft_init_shell_var(void)
 			ft_add_shvar_entry(*env, 'e');
 			env++;
 		}
-	ft_add_shvar_entry("?=0", 0);
+	ft_add_shvar_entry("?=0", 'l');
 	str = ft_itoa(getpid());
 	ptr = ft_strjoin("$=", str);
-	ft_add_shvar_entry(ptr, 0);
+	ft_add_shvar_entry(ptr, 'l');
 	free(str);
 	free(ptr);
 	str = ft_strjoin(getpwuid(getuid())->pw_dir, "/.ft_history");
 	ptr = ft_strjoin("HISTFILE=", str);
-	ft_add_shvar_entry(ptr, 0);
+	ft_add_shvar_entry(ptr, 'l');
 	free(str);
 	free(ptr);
-	ft_add_shvar_entry("HISTSIZE=42", 0);
-	ft_add_shvar_entry("HISTFILESIZE=42", 0);
+	ft_add_shvar_entry("HISTSIZE=42", 'l');
+	ft_add_shvar_entry("HISTFILESIZE=42", 'l');
 }
 
 int		ft_var_checker(char ***cmd)
@@ -129,12 +59,57 @@ int		ft_var_checker(char ***cmd)
 	return (1);
 }
 
+t_env		*get_environ(void)
+{
+	static t_env	env;
+
+	return (&env);
+}
+
+char		*ft_getenv(const char *name)
+{
+	// char	**env;
+    //
+	// if (!name || !(env = get_environ()->envar))
+	// 	return (NULL);
+	// while (*env)
+	// {
+	// 	if (ft_strcmp(*env, name) == '=')
+	// 		return (ft_strchr(*env, '=') + 1);
+	// 	env++;
+	// }
+	// return (NULL);
+
+	t_var	*entry;
+	char	*ptr;
+
+	if (!name || !(entry = ft_get_shvar_entry(name)))
+		return (NULL);
+	ptr = ft_strchr(entry->var, '=') + 1;
+	return (ptr);
+}
+
 int		ft_set_shell_var(char **cmd)
 {
+	char	*value;
+	char	*ptr;
+	t_var	*entry;
 
 	while (*cmd)
 	{
-
+		ptr = ft_strchr(*cmd, '=');
+		value = ptr + 1;
+		*ptr = '\0';
+		if ((entry = ft_get_shvar_entry(*cmd)))
+		{
+			if (entry->attr == 'e')
+				ft_setter(*cmd, value, 1);
+			free(entry->var);
+			*ptr = '=';
+			entry->var = ft_strdup(*cmd);
+		}
+		else
+			ft_set_tool(*cmd, value, 1, SHVAR);
 		cmd++;
 	}
 	return (0);

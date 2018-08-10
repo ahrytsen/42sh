@@ -188,12 +188,108 @@ extern const t_builtins	g_builtin[];
 */
 int				main_loop(int fd);
 /*
-**				init.c
+**				ft_argv.c
+*/
+char			**ft_argv_make(t_list *toks);
+/*
+**				ft_argv_exec.c
+*/
+int				ft_argv_exec(char **cmd, char *altpath, int bg);
+/*
+**				ft_argv_quotes.c
+*/
+void			ft_slash(t_buf **cur, char **line);
+void			ft_dquote_slash(t_buf **cur, char **line);
+void			ft_bquote_helper(t_buf **cur, char *str);
+/*
+**				ft_argv_utils.c
+*/
+void			parse_dollar(t_buf **cur, char **line);
+void			ft_quote(t_buf **cur, char **line);
+void			ft_bquote(t_buf **cur, char **line, uint8_t q);
+char			*parse_argv(char *line);
+/*
+**				ft_ast.c
+*/
+char			*ft_tname(int type);
+t_ast			*ft_ast_make(t_list **toks);
+/*
+**				ft_ast_exec.c
+*/
+int				ft_ast_exec(t_ast *ast);
+/*
+**				ft_ast_utils.c
+*/
+t_ast			*ft_ast_push(t_ast *ast, t_ast *node);
+t_ast			*ft_ast_del(t_ast *ast, int up);
+/*
+**				ft_buffer.c
+*/
+void			ft_putstr_mshbuf(t_buf **buf, char *str, ssize_t len);
+void			ft_putchar_mshbuf(t_buf **buf, char c);
+char			*ft_buftostr(t_buf *buf_head);
+void			*ft_free_mshbuf(t_buf *buf);
+/*
+**				ft_cmdlst.c
+*/
+t_cmd			*ft_cmdlst_make(t_list **toks);
+/*
+**				ft_cmdlst_exec.c
+*/
+int				ft_cmdlst_exec(t_cmd *cmd, int bg);
+/*
+**				ft_cmdlst_utils.c
+*/
+void			ft_cmdlst_print(t_cmd *cmdlst);
+t_cmd			*ft_cmdlst_del(t_cmd *cmdlst);
+t_cmd			*ft_cmdlst_push(t_cmd *cmdlst, t_cmd *node);
+/*
+**				ft_heredoc.c
+*/
+int				ft_heredoc(t_list *toks);
+/*
+**				ft_init.c
 */
 void			ft_fildes(int mod);
 void			ft_set_sh_signal(int mod);
 void			ft_init_fd(int fd);
 void			ft_init(void);
+/*
+**				ft_jobs_utils.c
+*/
+void			ft_stop_job(t_cmd *cmd, int mod);
+int				ft_control_job(t_cmd *cmd, int bg, int cont);
+int				ft_status_job(int st);
+/*
+**				ft_redirection.c
+*/
+int				ft_redirection(t_list *toks);
+void			ft_redirection_close(t_list *toks);
+/*
+**				ft_redirection_utils.c
+*/
+int				ft_redir_right_param(t_token *tok);
+/*
+**				ft_shell_var.c
+*/
+char			*ft_getenv(const char *name);
+void			ft_init_shell_var(void);
+int				ft_set_shell_var(char **cmd);
+int				ft_var_checker(char ***cmd);
+t_env			*get_environ(void);
+/*
+**				ft_shell_var_toolz.c
+*/
+void			ft_add_shvar_entry(char *entry, char attr);
+t_var			*ft_get_shvar_entry(const char *name);
+int				ft_rem_shvar_entry(const char *name);
+/*
+**				ft_shell_var_utils.c
+*/
+int				ft_set_tool(const char *name, const char *value, int overwrite
+	, int mod);
+int				ft_unset_tool(const char *name, int mod);
+int				ft_setter(const char *name, const char *value, int overwrite);
 /*
 **				ft_tokenize.c
 */
@@ -206,128 +302,40 @@ int				ft_isseparator(int c);
 int				ft_check_redir(t_token *prev, t_token *next, char *ln);
 void			ft_skip_slash(char **s);
 int				ft_skip_qoutes(char **s);
+
 /*
-**				ft_heredoc.c
-*/
-int				ft_heredoc(t_list *toks);
-/*
-**				ft_cmdlst.c
-*/
-t_cmd			*ft_cmdlst_make(t_list **toks);
-/*
-**				ft_cmdlst_utils.c
-*/
-void			ft_cmdlst_print(t_cmd *cmdlst);
-t_cmd			*ft_cmdlst_del(t_cmd *cmdlst);
-t_cmd			*ft_cmdlst_push(t_cmd *cmdlst, t_cmd *node);
-/*
-**				ft_cmdlst_exec.c
-*/
-int				ft_cmdlst_exec(t_cmd *cmd, int bg);
-/*
-**				ft_ast.c
-*/
-char			*ft_tname(int type);
-t_ast			*ft_ast_make(t_list **toks);
-/*
-**				ft_ast_utils.c
-*/
-t_ast			*ft_ast_push(t_ast *ast, t_ast *node);
-t_ast			*ft_ast_del(t_ast *ast, int up);
-/*
-**				ft_ast_exec.c
-*/
-int				ft_ast_exec(t_ast *ast);
-/*
-**				ft_argv.c
-*/
-char			**ft_argv_make(t_list *toks);
-/*
-**				ft_argv_utils.c
-*/
-void			parse_dollar(t_buf **cur, char **line);
-void			ft_quote(t_buf **cur, char **line);
-void			ft_bquote(t_buf **cur, char **line, uint8_t q);
-char			*parse_argv(char *line);
-/*
-**				ft_argv_quotes.c
-*/
-void			ft_slash(t_buf **cur, char **line);
-void			ft_dquote_slash(t_buf **cur, char **line);
-void			ft_bquote_helper(t_buf **cur, char *str);
-/*
-**				ft_argv_exec.c
-*/
-int				ft_argv_exec(char **cmd, char *altpath, int bg);
-/*
-**				ft_redirection.c
-*/
-int				ft_redirection(t_list *toks);
-void			ft_redirection_close(t_list *toks);
-/*
-**				ft_redirection_utils.c
-*/
-int				ft_redir_right_param(t_token *tok);
-/*
-**				ft_jobs_utils.c
-*/
-void			ft_stop_job(t_cmd *cmd, int mod);
-int				ft_control_job(t_cmd *cmd, int bg, int cont);
-int				ft_status_job(int st);
-/*
-**				builtins/ft_builtins.c
+**				ft_builtins/ft_builtins.c
 */
 int				ft_echo(char **av);
 int				ft_exit(char **av);
+int				ft_export(char **av);
 /*
-**				builtins/ft_bi_cd.c
+**				ft_builtins/ft_bi_cd.c
 */
 int				ft_cd(char **av);
 /*
-**				builtins/ft_bi_fg.c
+**				ft_builtins/ft_bi_fg.c
 */
 int				ft_count_fg(t_list *proc);
 int				ft_fg(char **av);
 /*
-**				builtins/ft_bi_env.c
+**				ft_builtins/ft_bi_env.c
 */
 int				ft_env(char **av);
 int				ft_env_op(int p);
 /*
-**				builtins/ft_bi_un_setenv.c
+**				ft_builtins/ft_bi_un_setenv.c
 */
 int				ft_setenv(char **av);
 int				ft_unsetenv(char **av);
 /*
-**				builtins/ft_bi_un_set.c
+**				ft_builtins/ft_bi_un_set.c
 */
 int				ft_set(char **av);
 int				ft_unset(char **av);
 /*
-**				builtins/ft_bi_history.c
+**				ft_builtins/ft_bi_history.c
 */
 int				ft_history(char **av);
-/*
-**				env_utils.c
-*/
-t_env			*get_environ(void);
-char			*ft_getenv(const char *name);
-int				ft_set_tool(const char *name, const char *value, int overwrite
-	, int mod);
-int				ft_unset_tool(const char *name, int mod);
-/*
-**				ft_buffer.c
-*/
-void			ft_putstr_mshbuf(t_buf **buf, char *str, ssize_t len);
-void			ft_putchar_mshbuf(t_buf **buf, char c);
-char			*ft_buftostr(t_buf *buf_head);
-void			*ft_free_mshbuf(t_buf *buf);
-/*
-**				ft_shell_var.c
-*/
-int				ft_var_checker(char ***cmd);
-int				ft_set_shell_var(char **cmd);
-void			ft_init_shell_var(void);
-int				ft_rem_shvar_entry(const char *name);
 
 #endif

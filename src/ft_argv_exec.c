@@ -23,6 +23,7 @@ const t_builtins	g_builtin[] = {
 	{"unset", &ft_unset},
 	{"env", &ft_env},
 	{"exit", &ft_exit},
+	{"export", &ft_export},
 	{NULL, NULL}
 };
 

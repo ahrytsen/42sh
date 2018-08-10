@@ -52,3 +52,29 @@ int		ft_exit(char **av)
 	}
 	exit((av && *av) ? ft_atoi(*av) : get_environ()->st);
 }
+
+int		ft_export(char **av)
+{
+	char	*value;
+	t_var	*entry;
+
+	while (*av)
+	{
+		if ((value = ft_strchr(*av, '=')))
+			*value++='\0';
+		if ((entry = ft_get_shvar_entry(*av)))
+		{
+			if (value)
+				ft_set_tool(*av, value, 1, ENVAR);
+			else if (entry->attr != 'e')
+			{
+				entry->attr = 'e';
+				ft_setter(*av, ft_strchr(entry->var, '=') + 1, 1);
+			}
+		}
+		else if (value)
+			ft_set_tool(*av, value, 1, ENVAR);
+		av++;
+	}
+	return (0);
+}
