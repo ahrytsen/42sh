@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 14:04:03 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/06 15:04:00 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/09 21:19:49 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ static int	ft_redir_fd(t_token *tok)
 		if (fd < 0)
 			return (256);
 		dup2(fd, 1);
-		dup2(fd, 2);
+		close(fd);
+		dup2(1, 2);
 	}
 	else
 	{
@@ -36,7 +37,7 @@ static int	ft_redir_fd(t_token *tok)
 			return (256);
 		if (tok->data.redir.cls)
 			close(tok->data.redir.nbr != -1
-				? tok->data.redir.nbr : tok->data.redir.left);
+			? tok->data.redir.nbr : tok->data.redir.left);
 	}
 	return (0);
 }

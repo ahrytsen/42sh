@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 13:59:58 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/06 20:32:43 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/09 16:52:31 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,20 +50,24 @@ void		ft_set_sh_signal(int mod)
 		signal(SIGQUIT, SIG_IGN);
 		signal(SIGTSTP, SIG_IGN);
 		signal(SIGTTIN, SIG_IGN);
+		signal(SIGTTOU, SIG_DFL);
 	}
-	else if ((mod & (S_CHLD | S_CHLD_FG)) && get_environ()->is_interactive)
+	else if (mod & (S_CHLD | S_CHLD_FG))
 	{
-		signal(SIGINT, SIG_DFL);
-		signal(SIGQUIT, SIG_DFL);
-		signal(SIGTSTP, SIG_DFL);
-		signal(SIGTTIN, SIG_DFL);
-		signal(SIGCHLD, SIG_DFL);
-		signal(SIGWINCH, SIG_DFL);
 		get_environ()->pid = getpid();
-		if (!get_environ()->pgid)
-			get_environ()->pgid = get_environ()->pid;
-		setpgid(get_environ()->pid, get_environ()->pgid);
-		(mod & S_CHLD_FG) ? tcsetpgrp(0, get_environ()->pgid) : 0;
+		if (get_environ()->is_interactive)
+		{
+			signal(SIGINT, SIG_DFL);
+			signal(SIGQUIT, SIG_DFL);
+			signal(SIGTSTP, SIG_DFL);
+			signal(SIGTTIN, SIG_DFL);
+			signal(SIGCHLD, SIG_DFL);
+			signal(SIGWINCH, SIG_DFL);
+			if (!get_environ()->pgid)
+				get_environ()->pgid = get_environ()->pid;
+			setpgid(get_environ()->pid, get_environ()->pgid);
+			(mod & S_CHLD_FG) ? tcsetpgrp(0, get_environ()->pgid) : 0;
+		}
 	}
 }
 
