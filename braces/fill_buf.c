@@ -12,11 +12,13 @@ char 	*put_quote_content_to_buf(char *buf, int *i, char *s)
 	char 	quote;
 
 	quote = *s;
+	buf[(*i)++] = *s++;
 	while (*s != quote)
 		if (*s == '\\')
 			s = put_backslash_to_buf(buf, i, s);
 		else
 			buf[(*i)++] = *s++;
+	buf[(*i)++] = *s++;
 	return (s);
 }
 

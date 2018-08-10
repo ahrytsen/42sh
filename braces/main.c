@@ -113,7 +113,7 @@ int 	main(int ac, char **av)
 		char buf[500];
 		//	char *s = "{1,I{30..45}P}";
 //		char *s = "sadasd{+++++++,1,YY,2,ab,---}98098";
-		char *s = "a{,,,,}O";
+		char *s = "$(ls -l {lol,kek}){1..3}";
 //		char *s = "{1,2,f{3,4,5{0..3},\\6}hy}";
 		t_list *lst = NULL;
 		ft_bzero(buf, 500);
@@ -127,10 +127,8 @@ int 	main(int ac, char **av)
 	else
 	{
 		char buf[ft_strlen(av[1]) + 1];
-		char *s = av[1];
 		ft_bzero(buf, ft_strlen(av[1]) + 1);
-//		print_lst(expand_braces(s, 0, buf));
-		print_lst(expand_braces(s, 0, buf));
+		print_lst(expand_braces(av[1], 0, buf));
 	}
 	return (0);
 }

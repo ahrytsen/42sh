@@ -12,7 +12,7 @@ num_fail=0
 
 for ((i = 0 ; i < ${#tests[*]}; i++))
 do
-    gsh_output=$($gsh ${tests[$i]})
+    gsh_output=$($gsh "${tests[$i]}")
     if [ $? -ne 0 ]
     then
         echo "${red}Expansion failed on ${tests[$i]} (line $((i + 1)))"
@@ -25,7 +25,9 @@ do
             echo -e "${green}TRUE ${nc}"
             ((num_success++))
         else
-            echo -e "${red}FALSE: ${tests[$i]} (line $i) ${nc}"
+            echo -e "${red}FALSE: ${tests[$i]} (line $i)"
+            echo -e "    Expected output: ${output[$i]}"
+            echo -e "    Your output: $gsh_output ${nc}"
             ((num_fail++))
         fi
     fi
