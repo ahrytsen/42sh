@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/07 17:47:54 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/10 18:19:39 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,10 @@ typedef struct	s_token
 		word,
 		pipeline,
 		bg_op,
-		semicolon,
+		semi,
+		dsemi,
+		subsh_on,
+		subsh_off,
 		and,
 		or,
 		heredoc,
@@ -149,12 +152,12 @@ typedef struct	s_ast
 	t_list			*toks;
 	enum {
 		cmd = word,
-		sub_on,
-		sub_off,
+		sub_on = subsh_on,
+		sub_off = subsh_off,
 		ast_and = and,
 		ast_or = or,
 		ast_bg = bg_op,
-		ast_smcln = semicolon
+		ast_smcln = semi
 	}				type;
 	pid_t			pid;
 	int				bg;

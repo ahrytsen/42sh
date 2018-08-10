@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnumber.c                                      :+:      :+:    :+:   */
+/*   ft_isnumeric_n.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlinkin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/23 13:29:17 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/08/10 15:48:13 by ahrytsen         ###   ########.fr       */
+/*   Created: 2018/08/10 15:30:01 by ahrytsen          #+#    #+#             */
+/*   Updated: 2018/08/10 15:49:03 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isnumber(char *str)
+int	ft_isnumeric_n(char *str, size_t len)
 {
 	if (!str)
 		return (0);
-	while (*str == ' ' || *str == '\t' || *str == '\n')
-		str++;
-	if (*str == '+' || *str == '-')
-		str++;
-	return (ft_isnumeric(str));
+	while (*str && len--)
+		if (!ft_isdigit(*str++))
+			return (0);
+	return (1);
 }

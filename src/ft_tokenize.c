@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/09 21:00:56 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/10 19:26:39 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,13 @@ static int	ft_get_separator(char **ln, t_token *token)
 	if ((**ln == ' ' || **ln == '\t') && !(*(*ln)++ = '\0'))
 		token->type = blank;
 	else if ((**ln == ';' || **ln == '\n') && !(*(*ln)++ = '\0'))
-		token->type = semicolon;
+		token->type = semi;
 	else if (**ln == '|' && !(*(*ln)++ = '\0'))
 		token->type =
 			(**ln == '|' && !(*(*ln)++ = '\0')) ? or : pipeline;
+	else if ((**ln == '(' || **ln == ')')
+			 && (token->type = (**ln == '(' ? subsh_on : subsh_off)))
+		*(*ln)++ = '\0';
 	else if (**ln == '&' && !(*(*ln)++ = '\0'))
 	{
 		if (**ln == '>' && !(*(*ln)++ = '\0'))
@@ -71,31 +74,27 @@ static int	ft_get_separator(char **ln, t_token *token)
 
 static int	ft_get_token(char **ln, t_token *token)
 {
-	int	f[2];
-
-	f[0] = 1;
-	f[1] = 0;
 	token->type = word;
 	token->data.word = *ln;
 	while (**ln && !ft_isseparator(**ln))
-	{
-		f[0] && !ft_isdigit(**ln) ? f[0] = 0 : 0;
 		if (**ln == '\'' || **ln == '"' || **ln == '`')
-			f[1] = ft_skip_qoutes(ln);
+		{
+			if (ft_skip_qoutes(ln))
+				return (1);
+		}
 		else if (**ln == '\\')
 			ft_skip_slash(ln);
 		else
 			(*ln)++;
-	}
-	if ((**ln == '<' || **ln == '>') && f[0] && (f[0] = **ln)
-		&& !(*(*ln)++ = '\0'))
+	if ((**ln == '<' || **ln == '>')
+		&& ft_isnumeric_n(token->data.word, *ln - token->data.word))
 	{
 		token->data.redir.left = ft_atoi(token->data.word);
 		token->data.redir.cls = 0;
-		(f[0] == '<') ? ft_get_redirect_in(ln, token)
+		(**ln == '<' && (*ln)++) || !++(*ln) ? ft_get_redirect_in(ln, token)
 			: ft_get_redirect_out(ln, token);
 	}
-	return (f[1]);
+	return (0);
 }
 
 t_list		*ft_tokenize(char *ln)

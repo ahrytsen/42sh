@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/08 15:16:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:22:28 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/10 14:46:07 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char		*ft_tname(int type)
 		return ("newline");
 	else if (type == pipeline || type == bg_op)
 		return (type == pipeline ? "|" : "&");
-	else if (type == semicolon || type == and)
-		return (type == semicolon ? ";" : "&&");
+	else if (type == semi || type == and)
+		return (type == semi ? ";" : "&&");
 	else if (type == or || type == heredoc)
 		return (type == or ? "||" : "<<");
 	else if (type == heredoc_t || type == herestr)
@@ -52,7 +52,7 @@ static void	ft_get_operator(t_list **toks, t_ast *ast_node)
 	tok = tmp->content;
 	if (tok->type == bg_op)
 		ast_node->type = ast_bg;
-	else if (tok->type == semicolon)
+	else if (tok->type == semi)
 		ast_node->type = ast_smcln;
 	else if (tok->type == and)
 		ast_node->type = ast_and;
@@ -90,7 +90,7 @@ t_ast		*ft_ast_make(t_list **toks)
 		(ft_isoperator((*toks)->content)
 		? ft_get_operator : ft_get_cmd)(toks, &ast_node);
 		if (((ast_node.type > cmd && (!ast || ast->type > cmd)) && ft_dprintf(2,
-					"21sh: unexpected token `%s'\n", ft_tname(ast_node.type)))
+					"42sh: unexpected token `%s'\n", ft_tname(ast_node.type)))
 			|| !(tmp = ft_ast_push(ast, &ast_node)))
 		{
 			ft_lstdel(&ast_node.toks, ft_token_del);
@@ -99,7 +99,7 @@ t_ast		*ft_ast_make(t_list **toks)
 		ast = tmp;
 	}
 	if (ast && ast->type != cmd && ast->type != ast_smcln && ast->type != ast_bg
-		&& write(2, "21sh: unexpected EOF\n", 21))
+		&& write(2, "42sh: unexpected EOF\n", 21))
 		return (ft_ast_del(ast, 1));
 	while (ast && ast->prev)
 		ast = ast->prev;
