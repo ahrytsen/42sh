@@ -128,7 +128,7 @@ SRC		=	ft_arrstr.c\
 
 OBJ		= $(addprefix $(DIROBJ), $(SRC:.c=.o))
 
-CC		= gcc
+CC		= clang
 
 #===========================================================
 ifdef FLAGS

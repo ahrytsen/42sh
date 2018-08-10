@@ -1,39 +1,39 @@
 #include "twenty_one_sh.h"
 
-t_list	*get_brace_seq(char **s);
-t_list	*get_valid_range(char **s);
-t_list	*get_alpha_range(int lim1, int lim2, char **s);
-t_list	*get_num_range(char	**s);
+char	*get_brace_seq(char **s, t_list **lst);
+char	*put_str_to_buf(char *buf, int *i, char *s, char c);
+char 	*put_backslash_to_buf(char *buf, int *i, char *s);
+char 	*put_quote_content_to_buf(char *buf, int *i, char *s);
 
 void		print_lst(t_list *lst)
 {
 	while (lst)
 	{
-		ft_printf("%s\n", lst->content);
+		ft_printf("%s ", lst->content);
 		lst = lst->next;
 	}
+	ft_printf("\n");
 }
-
-//char 	*strchr_unquoted()
 
 char 	*skip_quotes(char *s)
 {
 	char 	c;
 
 	c = *s;
-	while (++*s)
+	while (*++s)
 		if (*s == '\\')
 			++s;
 		else if (*s == c)
-			return (s);
+			break ;
+	return (s);
 }
 
 char	*check_braces(char *s)
 {
-	while (*s++)
+	while (*++s)
 		if (*s == '\\')
-			++*s;
-		else if (ft_strchr("\"'`", *s))
+			++s;
+		else if (*s && ft_strchr("\"'`", *s))
 			s = skip_quotes(s);
 		else if (*s == '}')
 			break ;
@@ -42,45 +42,95 @@ char	*check_braces(char *s)
 	return (s);
 }
 
-t_list	*expand_braces(char *s, int i,  char *buf)
+int		check_comma(char *s)
+{
+	int		comma;
+
+	comma = 0;
+	while (*++s)
+		if (*s == ',')
+			comma = 1;
+		else if (*s == '\\')
+			++s;
+		else if (*s && ft_strchr("\"'`", *s))
+			s = skip_quotes(s);
+		else if (*s == '}')
+			break ;
+		else if (*s == '{')
+			s = check_braces(s);
+	return (comma);
+}
+
+void	del_node(void *content, size_t size)
+{
+	(void)size;
+	free(content);
+}
+
+t_list	*expand_braces(char *s, int i, char *buf)
 {
 	t_list	*vals;
-	t_list	*vals_first;
+	t_list	*tmp;
 	t_list	*ret;
+	int 	j;
 
 	ret = NULL;
 	while (*s)
-		if (*s == '{')
+		if (*s == '\\')
+			s = put_backslash_to_buf(buf, &i, s);
+		else if (*s && ft_strchr("\"'`", *s))
+			s = put_quote_content_to_buf(buf, &i, s);
+		else if (*s == '{' && *check_braces(s) == '}')
 		{
-			vals_first = get_brace_seq(&s);
-			vals = vals_first->next;
-			print_lst(vals_first);
-			ft_printf("---------------------------\n\n");
-			while (vals)
+			vals = NULL;
+			s = get_brace_seq(&s, &vals);
+			if (!(tmp = vals))
 			{
-				buf[i] = *(char *)vals->content;
-				ft_lstadd_list(&ret, expand_braces(s, i + 1, buf));
+				buf[i++] = *s++;
+				continue ;
+			}
+			while (vals->next)
+			{
+				j = i;
+				put_str_to_buf(buf, &j, vals->content, 0);
+				ft_lstadd_end(&ret, expand_braces(s, j, buf));
+				ft_bzero(buf + i, ft_strlen(buf + i));
 				vals = vals->next;
 			}
-			buf[i++] = *(char *)vals_first->content;
+			put_str_to_buf(buf, &i, vals->content, 0);
+			ft_lstdel(&tmp, (void (*)(void *, size_t))free);
 		}
 		else
 			buf[i++] = *s++;
-	ft_lstpush_front(&ret, buf, 500);
+	ft_lstpush_back(&ret, buf, i + 1);
 	return (ret);
 }
 
 int 	main(int ac, char **av)
 {
-	char 	buf[500];
-	int 	i;
-	t_list	*toks = ft_lstnew("{1,2}{3,4}", ft_strlen("{1,2}{3,4}") + 1);
+	if (!av[1])
+	{
+		char buf[500];
+		//	char *s = "{1,I{30..45}P}";
+//		char *s = "sadasd{+++++++,1,YY,2,ab,---}98098";
+		char *s = "a{,,,,}O";
+//		char *s = "{1,2,f{3,4,5{0..3},\\6}hy}";
+		t_list *lst = NULL;
+		ft_bzero(buf, 500);
+//		expand_braces(s, 0, buf, &lst, 0);
+//		print_lst(lst);
+		print_lst((lst = expand_braces(s, 0, buf)));
+		ft_lstdel(&lst, (void (*)(void *, size_t))free);
+		system("leaks gsh");
 
-	ft_bzero(buf, 500);
-	i = 0;
-//	expand_braces("a{1,2}b{3,4}c{5,6d}", i, buf);
-	print_lst(expand_braces("{1,2}{F,G}", i, buf));
-
-//	print_lst(expand_braces("{1,2}{3,4}{5,6}", i, buf));
-
+	}
+	else
+	{
+		char buf[ft_strlen(av[1]) + 1];
+		char *s = av[1];
+		ft_bzero(buf, ft_strlen(av[1]) + 1);
+//		print_lst(expand_braces(s, 0, buf));
+		print_lst(expand_braces(s, 0, buf));
+	}
+	return (0);
 }

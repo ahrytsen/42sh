@@ -1,4 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/gsh.dir/braces/fill_buf.c.o"
+  "CMakeFiles/gsh.dir/braces/get_seq.c.o"
+  "CMakeFiles/gsh.dir/braces/main.c.o"
   "CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pbuf.c.o"
   "CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pfloat.c.o"
   "CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phelper.c.o"
@@ -33,6 +36,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/gsh.dir/libft/src/ft_ldtoea.c.o"
   "CMakeFiles/gsh.dir/libft/src/ft_lstadd.c.o"
   "CMakeFiles/gsh.dir/libft/src/ft_lstadd_end.c.o"
+  "CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o"
   "CMakeFiles/gsh.dir/libft/src/ft_lstdel.c.o"
   "CMakeFiles/gsh.dir/libft/src/ft_lstdelone.c.o"
   "CMakeFiles/gsh.dir/libft/src/ft_lstfree.c.o"
@@ -101,9 +105,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.o"
   "CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o"
   "CMakeFiles/gsh.dir/libft/src/get_next_line.c.o"
-  "CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o"
-  "CMakeFiles/gsh.dir/braces/main.c.o"
-  "CMakeFiles/gsh.dir/braces/get_seq.c.o"
   "gsh.pdb"
   "gsh"
 )

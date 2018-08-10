@@ -57,9 +57,81 @@ include CMakeFiles/gsh.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/gsh.dir/flags.make
 
+CMakeFiles/gsh.dir/braces/fill_buf.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/braces/fill_buf.c.o: ../braces/fill_buf.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/gsh.dir/braces/fill_buf.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/braces/fill_buf.c.o   -c /Users/yvyliehz/gsh/braces/fill_buf.c
+
+CMakeFiles/gsh.dir/braces/fill_buf.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/braces/fill_buf.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yvyliehz/gsh/braces/fill_buf.c > CMakeFiles/gsh.dir/braces/fill_buf.c.i
+
+CMakeFiles/gsh.dir/braces/fill_buf.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/braces/fill_buf.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yvyliehz/gsh/braces/fill_buf.c -o CMakeFiles/gsh.dir/braces/fill_buf.c.s
+
+CMakeFiles/gsh.dir/braces/fill_buf.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/braces/fill_buf.c.o.requires
+
+CMakeFiles/gsh.dir/braces/fill_buf.c.o.provides: CMakeFiles/gsh.dir/braces/fill_buf.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/braces/fill_buf.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/braces/fill_buf.c.o.provides
+
+CMakeFiles/gsh.dir/braces/fill_buf.c.o.provides.build: CMakeFiles/gsh.dir/braces/fill_buf.c.o
+
+
+CMakeFiles/gsh.dir/braces/get_seq.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/braces/get_seq.c.o: ../braces/get_seq.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/gsh.dir/braces/get_seq.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/braces/get_seq.c.o   -c /Users/yvyliehz/gsh/braces/get_seq.c
+
+CMakeFiles/gsh.dir/braces/get_seq.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/braces/get_seq.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yvyliehz/gsh/braces/get_seq.c > CMakeFiles/gsh.dir/braces/get_seq.c.i
+
+CMakeFiles/gsh.dir/braces/get_seq.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/braces/get_seq.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yvyliehz/gsh/braces/get_seq.c -o CMakeFiles/gsh.dir/braces/get_seq.c.s
+
+CMakeFiles/gsh.dir/braces/get_seq.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/braces/get_seq.c.o.requires
+
+CMakeFiles/gsh.dir/braces/get_seq.c.o.provides: CMakeFiles/gsh.dir/braces/get_seq.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/braces/get_seq.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/braces/get_seq.c.o.provides
+
+CMakeFiles/gsh.dir/braces/get_seq.c.o.provides.build: CMakeFiles/gsh.dir/braces/get_seq.c.o
+
+
+CMakeFiles/gsh.dir/braces/main.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/braces/main.c.o: ../braces/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/gsh.dir/braces/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/braces/main.c.o   -c /Users/yvyliehz/gsh/braces/main.c
+
+CMakeFiles/gsh.dir/braces/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/braces/main.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yvyliehz/gsh/braces/main.c > CMakeFiles/gsh.dir/braces/main.c.i
+
+CMakeFiles/gsh.dir/braces/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/braces/main.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yvyliehz/gsh/braces/main.c -o CMakeFiles/gsh.dir/braces/main.c.s
+
+CMakeFiles/gsh.dir/braces/main.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/braces/main.c.o.requires
+
+CMakeFiles/gsh.dir/braces/main.c.o.provides: CMakeFiles/gsh.dir/braces/main.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/braces/main.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/braces/main.c.o.provides
+
+CMakeFiles/gsh.dir/braces/main.c.o.provides.build: CMakeFiles/gsh.dir/braces/main.c.o
+
+
 CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pbuf.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pbuf.c.o: ../libft/src/ft_printf/ft_pbuf.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pbuf.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pbuf.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pbuf.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_printf/ft_pbuf.c
 
 CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pbuf.c.i: cmake_force
@@ -83,7 +155,7 @@ CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pbuf.c.o.provides.build: CMakeFiles/gs
 
 CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pfloat.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pfloat.c.o: ../libft/src/ft_printf/ft_pfloat.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pfloat.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pfloat.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pfloat.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_printf/ft_pfloat.c
 
 CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pfloat.c.i: cmake_force
@@ -107,7 +179,7 @@ CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pfloat.c.o.provides.build: CMakeFiles/
 
 CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phelper.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phelper.c.o: ../libft/src/ft_printf/ft_phelper.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phelper.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phelper.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phelper.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_printf/ft_phelper.c
 
 CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phelper.c.i: cmake_force
@@ -131,7 +203,7 @@ CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phelper.c.o.provides.build: CMakeFiles
 
 CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phendler.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phendler.c.o: ../libft/src/ft_printf/ft_phendler.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phendler.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phendler.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phendler.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_printf/ft_phendler.c
 
 CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phendler.c.i: cmake_force
@@ -155,7 +227,7 @@ CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phendler.c.o.provides.build: CMakeFile
 
 CMakeFiles/gsh.dir/libft/src/ft_printf/ft_printf.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_printf/ft_printf.c.o: ../libft/src/ft_printf/ft_printf.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/gsh.dir/libft/src/ft_printf/ft_printf.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/gsh.dir/libft/src/ft_printf/ft_printf.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_printf/ft_printf.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_printf/ft_printf.c
 
 CMakeFiles/gsh.dir/libft/src/ft_printf/ft_printf.c.i: cmake_force
@@ -179,7 +251,7 @@ CMakeFiles/gsh.dir/libft/src/ft_printf/ft_printf.c.o.provides.build: CMakeFiles/
 
 CMakeFiles/gsh.dir/libft/src/ft_arrstr.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_arrstr.c.o: ../libft/src/ft_arrstr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/gsh.dir/libft/src/ft_arrstr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/gsh.dir/libft/src/ft_arrstr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_arrstr.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_arrstr.c
 
 CMakeFiles/gsh.dir/libft/src/ft_arrstr.c.i: cmake_force
@@ -203,7 +275,7 @@ CMakeFiles/gsh.dir/libft/src/ft_arrstr.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_atoi.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_atoi.c.o: ../libft/src/ft_atoi.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/gsh.dir/libft/src/ft_atoi.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/gsh.dir/libft/src/ft_atoi.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_atoi.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_atoi.c
 
 CMakeFiles/gsh.dir/libft/src/ft_atoi.c.i: cmake_force
@@ -227,7 +299,7 @@ CMakeFiles/gsh.dir/libft/src/ft_atoi.c.o.provides.build: CMakeFiles/gsh.dir/libf
 
 CMakeFiles/gsh.dir/libft/src/ft_atoi_base.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_atoi_base.c.o: ../libft/src/ft_atoi_base.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/gsh.dir/libft/src/ft_atoi_base.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/gsh.dir/libft/src/ft_atoi_base.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_atoi_base.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_atoi_base.c
 
 CMakeFiles/gsh.dir/libft/src/ft_atoi_base.c.i: cmake_force
@@ -251,7 +323,7 @@ CMakeFiles/gsh.dir/libft/src/ft_atoi_base.c.o.provides.build: CMakeFiles/gsh.dir
 
 CMakeFiles/gsh.dir/libft/src/ft_atol.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_atol.c.o: ../libft/src/ft_atol.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/gsh.dir/libft/src/ft_atol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/gsh.dir/libft/src/ft_atol.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_atol.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_atol.c
 
 CMakeFiles/gsh.dir/libft/src/ft_atol.c.i: cmake_force
@@ -275,7 +347,7 @@ CMakeFiles/gsh.dir/libft/src/ft_atol.c.o.provides.build: CMakeFiles/gsh.dir/libf
 
 CMakeFiles/gsh.dir/libft/src/ft_atol_base.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_atol_base.c.o: ../libft/src/ft_atol_base.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/gsh.dir/libft/src/ft_atol_base.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/gsh.dir/libft/src/ft_atol_base.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_atol_base.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_atol_base.c
 
 CMakeFiles/gsh.dir/libft/src/ft_atol_base.c.i: cmake_force
@@ -299,7 +371,7 @@ CMakeFiles/gsh.dir/libft/src/ft_atol_base.c.o.provides.build: CMakeFiles/gsh.dir
 
 CMakeFiles/gsh.dir/libft/src/ft_bzero.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_bzero.c.o: ../libft/src/ft_bzero.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/gsh.dir/libft/src/ft_bzero.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/gsh.dir/libft/src/ft_bzero.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_bzero.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_bzero.c
 
 CMakeFiles/gsh.dir/libft/src/ft_bzero.c.i: cmake_force
@@ -323,7 +395,7 @@ CMakeFiles/gsh.dir/libft/src/ft_bzero.c.o.provides.build: CMakeFiles/gsh.dir/lib
 
 CMakeFiles/gsh.dir/libft/src/ft_count_digits.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_count_digits.c.o: ../libft/src/ft_count_digits.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/gsh.dir/libft/src/ft_count_digits.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/gsh.dir/libft/src/ft_count_digits.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_count_digits.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_count_digits.c
 
 CMakeFiles/gsh.dir/libft/src/ft_count_digits.c.i: cmake_force
@@ -347,7 +419,7 @@ CMakeFiles/gsh.dir/libft/src/ft_count_digits.c.o.provides.build: CMakeFiles/gsh.
 
 CMakeFiles/gsh.dir/libft/src/ft_dtoa.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_dtoa.c.o: ../libft/src/ft_dtoa.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/gsh.dir/libft/src/ft_dtoa.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/gsh.dir/libft/src/ft_dtoa.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_dtoa.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_dtoa.c
 
 CMakeFiles/gsh.dir/libft/src/ft_dtoa.c.i: cmake_force
@@ -371,7 +443,7 @@ CMakeFiles/gsh.dir/libft/src/ft_dtoa.c.o.provides.build: CMakeFiles/gsh.dir/libf
 
 CMakeFiles/gsh.dir/libft/src/ft_dtoea.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_dtoea.c.o: ../libft/src/ft_dtoea.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/gsh.dir/libft/src/ft_dtoea.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/gsh.dir/libft/src/ft_dtoea.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_dtoea.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_dtoea.c
 
 CMakeFiles/gsh.dir/libft/src/ft_dtoea.c.i: cmake_force
@@ -395,7 +467,7 @@ CMakeFiles/gsh.dir/libft/src/ft_dtoea.c.o.provides.build: CMakeFiles/gsh.dir/lib
 
 CMakeFiles/gsh.dir/libft/src/ft_free_arr.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_free_arr.c.o: ../libft/src/ft_free_arr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/gsh.dir/libft/src/ft_free_arr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/gsh.dir/libft/src/ft_free_arr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_free_arr.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_free_arr.c
 
 CMakeFiles/gsh.dir/libft/src/ft_free_arr.c.i: cmake_force
@@ -419,7 +491,7 @@ CMakeFiles/gsh.dir/libft/src/ft_free_arr.c.o.provides.build: CMakeFiles/gsh.dir/
 
 CMakeFiles/gsh.dir/libft/src/ft_is_blank.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_is_blank.c.o: ../libft/src/ft_is_blank.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/gsh.dir/libft/src/ft_is_blank.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/gsh.dir/libft/src/ft_is_blank.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_is_blank.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_is_blank.c
 
 CMakeFiles/gsh.dir/libft/src/ft_is_blank.c.i: cmake_force
@@ -443,7 +515,7 @@ CMakeFiles/gsh.dir/libft/src/ft_is_blank.c.o.provides.build: CMakeFiles/gsh.dir/
 
 CMakeFiles/gsh.dir/libft/src/ft_isalnum.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_isalnum.c.o: ../libft/src/ft_isalnum.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isalnum.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isalnum.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_isalnum.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_isalnum.c
 
 CMakeFiles/gsh.dir/libft/src/ft_isalnum.c.i: cmake_force
@@ -467,7 +539,7 @@ CMakeFiles/gsh.dir/libft/src/ft_isalnum.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_isalnum_str.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_isalnum_str.c.o: ../libft/src/ft_isalnum_str.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isalnum_str.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isalnum_str.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_isalnum_str.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_isalnum_str.c
 
 CMakeFiles/gsh.dir/libft/src/ft_isalnum_str.c.i: cmake_force
@@ -491,7 +563,7 @@ CMakeFiles/gsh.dir/libft/src/ft_isalnum_str.c.o.provides.build: CMakeFiles/gsh.d
 
 CMakeFiles/gsh.dir/libft/src/ft_isalpha.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_isalpha.c.o: ../libft/src/ft_isalpha.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isalpha.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isalpha.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_isalpha.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_isalpha.c
 
 CMakeFiles/gsh.dir/libft/src/ft_isalpha.c.i: cmake_force
@@ -515,7 +587,7 @@ CMakeFiles/gsh.dir/libft/src/ft_isalpha.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_isalpha_str.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_isalpha_str.c.o: ../libft/src/ft_isalpha_str.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isalpha_str.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isalpha_str.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_isalpha_str.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_isalpha_str.c
 
 CMakeFiles/gsh.dir/libft/src/ft_isalpha_str.c.i: cmake_force
@@ -539,7 +611,7 @@ CMakeFiles/gsh.dir/libft/src/ft_isalpha_str.c.o.provides.build: CMakeFiles/gsh.d
 
 CMakeFiles/gsh.dir/libft/src/ft_isascii.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_isascii.c.o: ../libft/src/ft_isascii.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isascii.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isascii.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_isascii.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_isascii.c
 
 CMakeFiles/gsh.dir/libft/src/ft_isascii.c.i: cmake_force
@@ -563,7 +635,7 @@ CMakeFiles/gsh.dir/libft/src/ft_isascii.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_isascii_str.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_isascii_str.c.o: ../libft/src/ft_isascii_str.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isascii_str.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isascii_str.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_isascii_str.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_isascii_str.c
 
 CMakeFiles/gsh.dir/libft/src/ft_isascii_str.c.i: cmake_force
@@ -587,7 +659,7 @@ CMakeFiles/gsh.dir/libft/src/ft_isascii_str.c.o.provides.build: CMakeFiles/gsh.d
 
 CMakeFiles/gsh.dir/libft/src/ft_isdigit.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_isdigit.c.o: ../libft/src/ft_isdigit.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isdigit.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isdigit.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_isdigit.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_isdigit.c
 
 CMakeFiles/gsh.dir/libft/src/ft_isdigit.c.i: cmake_force
@@ -611,7 +683,7 @@ CMakeFiles/gsh.dir/libft/src/ft_isdigit.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_isnumber.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_isnumber.c.o: ../libft/src/ft_isnumber.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isnumber.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isnumber.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_isnumber.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_isnumber.c
 
 CMakeFiles/gsh.dir/libft/src/ft_isnumber.c.i: cmake_force
@@ -635,7 +707,7 @@ CMakeFiles/gsh.dir/libft/src/ft_isnumber.c.o.provides.build: CMakeFiles/gsh.dir/
 
 CMakeFiles/gsh.dir/libft/src/ft_isnumeric_str.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_isnumeric_str.c.o: ../libft/src/ft_isnumeric_str.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isnumeric_str.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isnumeric_str.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_isnumeric_str.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_isnumeric_str.c
 
 CMakeFiles/gsh.dir/libft/src/ft_isnumeric_str.c.i: cmake_force
@@ -659,7 +731,7 @@ CMakeFiles/gsh.dir/libft/src/ft_isnumeric_str.c.o.provides.build: CMakeFiles/gsh
 
 CMakeFiles/gsh.dir/libft/src/ft_isprint.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_isprint.c.o: ../libft/src/ft_isprint.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isprint.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isprint.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_isprint.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_isprint.c
 
 CMakeFiles/gsh.dir/libft/src/ft_isprint.c.i: cmake_force
@@ -683,7 +755,7 @@ CMakeFiles/gsh.dir/libft/src/ft_isprint.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_isprint_str.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_isprint_str.c.o: ../libft/src/ft_isprint_str.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isprint_str.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/gsh.dir/libft/src/ft_isprint_str.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_isprint_str.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_isprint_str.c
 
 CMakeFiles/gsh.dir/libft/src/ft_isprint_str.c.i: cmake_force
@@ -707,7 +779,7 @@ CMakeFiles/gsh.dir/libft/src/ft_isprint_str.c.o.provides.build: CMakeFiles/gsh.d
 
 CMakeFiles/gsh.dir/libft/src/ft_iswhitespace.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_iswhitespace.c.o: ../libft/src/ft_iswhitespace.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/gsh.dir/libft/src/ft_iswhitespace.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/gsh.dir/libft/src/ft_iswhitespace.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_iswhitespace.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_iswhitespace.c
 
 CMakeFiles/gsh.dir/libft/src/ft_iswhitespace.c.i: cmake_force
@@ -731,7 +803,7 @@ CMakeFiles/gsh.dir/libft/src/ft_iswhitespace.c.o.provides.build: CMakeFiles/gsh.
 
 CMakeFiles/gsh.dir/libft/src/ft_itoa.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_itoa.c.o: ../libft/src/ft_itoa.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/gsh.dir/libft/src/ft_itoa.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/gsh.dir/libft/src/ft_itoa.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_itoa.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_itoa.c
 
 CMakeFiles/gsh.dir/libft/src/ft_itoa.c.i: cmake_force
@@ -755,7 +827,7 @@ CMakeFiles/gsh.dir/libft/src/ft_itoa.c.o.provides.build: CMakeFiles/gsh.dir/libf
 
 CMakeFiles/gsh.dir/libft/src/ft_itoa_base.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_itoa_base.c.o: ../libft/src/ft_itoa_base.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/gsh.dir/libft/src/ft_itoa_base.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/gsh.dir/libft/src/ft_itoa_base.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_itoa_base.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_itoa_base.c
 
 CMakeFiles/gsh.dir/libft/src/ft_itoa_base.c.i: cmake_force
@@ -779,7 +851,7 @@ CMakeFiles/gsh.dir/libft/src/ft_itoa_base.c.o.provides.build: CMakeFiles/gsh.dir
 
 CMakeFiles/gsh.dir/libft/src/ft_ldtoa.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_ldtoa.c.o: ../libft/src/ft_ldtoa.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/gsh.dir/libft/src/ft_ldtoa.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/gsh.dir/libft/src/ft_ldtoa.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_ldtoa.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_ldtoa.c
 
 CMakeFiles/gsh.dir/libft/src/ft_ldtoa.c.i: cmake_force
@@ -803,7 +875,7 @@ CMakeFiles/gsh.dir/libft/src/ft_ldtoa.c.o.provides.build: CMakeFiles/gsh.dir/lib
 
 CMakeFiles/gsh.dir/libft/src/ft_ldtoea.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_ldtoea.c.o: ../libft/src/ft_ldtoea.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/gsh.dir/libft/src/ft_ldtoea.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/gsh.dir/libft/src/ft_ldtoea.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_ldtoea.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_ldtoea.c
 
 CMakeFiles/gsh.dir/libft/src/ft_ldtoea.c.i: cmake_force
@@ -827,7 +899,7 @@ CMakeFiles/gsh.dir/libft/src/ft_ldtoea.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_lstadd.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_lstadd.c.o: ../libft/src/ft_lstadd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstadd.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstadd.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_lstadd.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_lstadd.c
 
 CMakeFiles/gsh.dir/libft/src/ft_lstadd.c.i: cmake_force
@@ -851,7 +923,7 @@ CMakeFiles/gsh.dir/libft/src/ft_lstadd.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_lstadd_end.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_lstadd_end.c.o: ../libft/src/ft_lstadd_end.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstadd_end.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstadd_end.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_lstadd_end.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_lstadd_end.c
 
 CMakeFiles/gsh.dir/libft/src/ft_lstadd_end.c.i: cmake_force
@@ -873,9 +945,33 @@ CMakeFiles/gsh.dir/libft/src/ft_lstadd_end.c.o.provides: CMakeFiles/gsh.dir/libf
 CMakeFiles/gsh.dir/libft/src/ft_lstadd_end.c.o.provides.build: CMakeFiles/gsh.dir/libft/src/ft_lstadd_end.c.o
 
 
+CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o: ../libft/src/ft_lstadd_list.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_lstadd_list.c
+
+CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yvyliehz/gsh/libft/src/ft_lstadd_list.c > CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.i
+
+CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yvyliehz/gsh/libft/src/ft_lstadd_list.c -o CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.s
+
+CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o.requires
+
+CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o.provides: CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o.provides
+
+CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o.provides.build: CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o
+
+
 CMakeFiles/gsh.dir/libft/src/ft_lstdel.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_lstdel.c.o: ../libft/src/ft_lstdel.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstdel.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstdel.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_lstdel.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_lstdel.c
 
 CMakeFiles/gsh.dir/libft/src/ft_lstdel.c.i: cmake_force
@@ -899,7 +995,7 @@ CMakeFiles/gsh.dir/libft/src/ft_lstdel.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_lstdelone.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_lstdelone.c.o: ../libft/src/ft_lstdelone.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstdelone.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstdelone.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_lstdelone.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_lstdelone.c
 
 CMakeFiles/gsh.dir/libft/src/ft_lstdelone.c.i: cmake_force
@@ -923,7 +1019,7 @@ CMakeFiles/gsh.dir/libft/src/ft_lstdelone.c.o.provides.build: CMakeFiles/gsh.dir
 
 CMakeFiles/gsh.dir/libft/src/ft_lstfree.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_lstfree.c.o: ../libft/src/ft_lstfree.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstfree.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstfree.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_lstfree.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_lstfree.c
 
 CMakeFiles/gsh.dir/libft/src/ft_lstfree.c.i: cmake_force
@@ -947,7 +1043,7 @@ CMakeFiles/gsh.dir/libft/src/ft_lstfree.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_lstiter.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_lstiter.c.o: ../libft/src/ft_lstiter.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstiter.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstiter.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_lstiter.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_lstiter.c
 
 CMakeFiles/gsh.dir/libft/src/ft_lstiter.c.i: cmake_force
@@ -971,7 +1067,7 @@ CMakeFiles/gsh.dir/libft/src/ft_lstiter.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_lstmap.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_lstmap.c.o: ../libft/src/ft_lstmap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstmap.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstmap.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_lstmap.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_lstmap.c
 
 CMakeFiles/gsh.dir/libft/src/ft_lstmap.c.i: cmake_force
@@ -995,7 +1091,7 @@ CMakeFiles/gsh.dir/libft/src/ft_lstmap.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_lstnew.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_lstnew.c.o: ../libft/src/ft_lstnew.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstnew.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstnew.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_lstnew.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_lstnew.c
 
 CMakeFiles/gsh.dir/libft/src/ft_lstnew.c.i: cmake_force
@@ -1019,7 +1115,7 @@ CMakeFiles/gsh.dir/libft/src/ft_lstnew.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_lstprint.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_lstprint.c.o: ../libft/src/ft_lstprint.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstprint.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstprint.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_lstprint.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_lstprint.c
 
 CMakeFiles/gsh.dir/libft/src/ft_lstprint.c.i: cmake_force
@@ -1043,7 +1139,7 @@ CMakeFiles/gsh.dir/libft/src/ft_lstprint.c.o.provides.build: CMakeFiles/gsh.dir/
 
 CMakeFiles/gsh.dir/libft/src/ft_lstpush_back.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_lstpush_back.c.o: ../libft/src/ft_lstpush_back.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstpush_back.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstpush_back.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_lstpush_back.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_lstpush_back.c
 
 CMakeFiles/gsh.dir/libft/src/ft_lstpush_back.c.i: cmake_force
@@ -1067,7 +1163,7 @@ CMakeFiles/gsh.dir/libft/src/ft_lstpush_back.c.o.provides.build: CMakeFiles/gsh.
 
 CMakeFiles/gsh.dir/libft/src/ft_lstpush_front.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_lstpush_front.c.o: ../libft/src/ft_lstpush_front.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstpush_front.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstpush_front.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_lstpush_front.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_lstpush_front.c
 
 CMakeFiles/gsh.dir/libft/src/ft_lstpush_front.c.i: cmake_force
@@ -1091,7 +1187,7 @@ CMakeFiles/gsh.dir/libft/src/ft_lstpush_front.c.o.provides.build: CMakeFiles/gsh
 
 CMakeFiles/gsh.dir/libft/src/ft_lstsize.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_lstsize.c.o: ../libft/src/ft_lstsize.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstsize.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstsize.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_lstsize.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_lstsize.c
 
 CMakeFiles/gsh.dir/libft/src/ft_lstsize.c.i: cmake_force
@@ -1115,7 +1211,7 @@ CMakeFiles/gsh.dir/libft/src/ft_lstsize.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_lstsort.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_lstsort.c.o: ../libft/src/ft_lstsort.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstsort.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstsort.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_lstsort.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_lstsort.c
 
 CMakeFiles/gsh.dir/libft/src/ft_lstsort.c.i: cmake_force
@@ -1139,7 +1235,7 @@ CMakeFiles/gsh.dir/libft/src/ft_lstsort.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_lstsplit.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_lstsplit.c.o: ../libft/src/ft_lstsplit.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstsplit.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstsplit.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_lstsplit.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_lstsplit.c
 
 CMakeFiles/gsh.dir/libft/src/ft_lstsplit.c.i: cmake_force
@@ -1163,7 +1259,7 @@ CMakeFiles/gsh.dir/libft/src/ft_lstsplit.c.o.provides.build: CMakeFiles/gsh.dir/
 
 CMakeFiles/gsh.dir/libft/src/ft_ltoa.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_ltoa.c.o: ../libft/src/ft_ltoa.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/gsh.dir/libft/src/ft_ltoa.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/gsh.dir/libft/src/ft_ltoa.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_ltoa.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_ltoa.c
 
 CMakeFiles/gsh.dir/libft/src/ft_ltoa.c.i: cmake_force
@@ -1187,7 +1283,7 @@ CMakeFiles/gsh.dir/libft/src/ft_ltoa.c.o.provides.build: CMakeFiles/gsh.dir/libf
 
 CMakeFiles/gsh.dir/libft/src/ft_memalloc.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_memalloc.c.o: ../libft/src/ft_memalloc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/gsh.dir/libft/src/ft_memalloc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/gsh.dir/libft/src/ft_memalloc.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_memalloc.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_memalloc.c
 
 CMakeFiles/gsh.dir/libft/src/ft_memalloc.c.i: cmake_force
@@ -1211,7 +1307,7 @@ CMakeFiles/gsh.dir/libft/src/ft_memalloc.c.o.provides.build: CMakeFiles/gsh.dir/
 
 CMakeFiles/gsh.dir/libft/src/ft_memccpy.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_memccpy.c.o: ../libft/src/ft_memccpy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/gsh.dir/libft/src/ft_memccpy.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/gsh.dir/libft/src/ft_memccpy.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_memccpy.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_memccpy.c
 
 CMakeFiles/gsh.dir/libft/src/ft_memccpy.c.i: cmake_force
@@ -1235,7 +1331,7 @@ CMakeFiles/gsh.dir/libft/src/ft_memccpy.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_memchr.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_memchr.c.o: ../libft/src/ft_memchr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/gsh.dir/libft/src/ft_memchr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/gsh.dir/libft/src/ft_memchr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_memchr.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_memchr.c
 
 CMakeFiles/gsh.dir/libft/src/ft_memchr.c.i: cmake_force
@@ -1259,7 +1355,7 @@ CMakeFiles/gsh.dir/libft/src/ft_memchr.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_memcmp.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_memcmp.c.o: ../libft/src/ft_memcmp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/gsh.dir/libft/src/ft_memcmp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/gsh.dir/libft/src/ft_memcmp.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_memcmp.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_memcmp.c
 
 CMakeFiles/gsh.dir/libft/src/ft_memcmp.c.i: cmake_force
@@ -1283,7 +1379,7 @@ CMakeFiles/gsh.dir/libft/src/ft_memcmp.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_memcpy.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_memcpy.c.o: ../libft/src/ft_memcpy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/gsh.dir/libft/src/ft_memcpy.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/gsh.dir/libft/src/ft_memcpy.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_memcpy.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_memcpy.c
 
 CMakeFiles/gsh.dir/libft/src/ft_memcpy.c.i: cmake_force
@@ -1307,7 +1403,7 @@ CMakeFiles/gsh.dir/libft/src/ft_memcpy.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_memdel.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_memdel.c.o: ../libft/src/ft_memdel.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/gsh.dir/libft/src/ft_memdel.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/gsh.dir/libft/src/ft_memdel.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_memdel.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_memdel.c
 
 CMakeFiles/gsh.dir/libft/src/ft_memdel.c.i: cmake_force
@@ -1331,7 +1427,7 @@ CMakeFiles/gsh.dir/libft/src/ft_memdel.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_memmove.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_memmove.c.o: ../libft/src/ft_memmove.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/gsh.dir/libft/src/ft_memmove.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/gsh.dir/libft/src/ft_memmove.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_memmove.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_memmove.c
 
 CMakeFiles/gsh.dir/libft/src/ft_memmove.c.i: cmake_force
@@ -1355,7 +1451,7 @@ CMakeFiles/gsh.dir/libft/src/ft_memmove.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_memset.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_memset.c.o: ../libft/src/ft_memset.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/gsh.dir/libft/src/ft_memset.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/gsh.dir/libft/src/ft_memset.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_memset.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_memset.c
 
 CMakeFiles/gsh.dir/libft/src/ft_memset.c.i: cmake_force
@@ -1379,7 +1475,7 @@ CMakeFiles/gsh.dir/libft/src/ft_memset.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_putchar.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_putchar.c.o: ../libft/src/ft_putchar.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/gsh.dir/libft/src/ft_putchar.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/gsh.dir/libft/src/ft_putchar.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_putchar.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_putchar.c
 
 CMakeFiles/gsh.dir/libft/src/ft_putchar.c.i: cmake_force
@@ -1403,7 +1499,7 @@ CMakeFiles/gsh.dir/libft/src/ft_putchar.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_putchar_fd.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_putchar_fd.c.o: ../libft/src/ft_putchar_fd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/gsh.dir/libft/src/ft_putchar_fd.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/gsh.dir/libft/src/ft_putchar_fd.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_putchar_fd.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_putchar_fd.c
 
 CMakeFiles/gsh.dir/libft/src/ft_putchar_fd.c.i: cmake_force
@@ -1427,7 +1523,7 @@ CMakeFiles/gsh.dir/libft/src/ft_putchar_fd.c.o.provides.build: CMakeFiles/gsh.di
 
 CMakeFiles/gsh.dir/libft/src/ft_putendl.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_putendl.c.o: ../libft/src/ft_putendl.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/gsh.dir/libft/src/ft_putendl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/gsh.dir/libft/src/ft_putendl.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_putendl.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_putendl.c
 
 CMakeFiles/gsh.dir/libft/src/ft_putendl.c.i: cmake_force
@@ -1451,7 +1547,7 @@ CMakeFiles/gsh.dir/libft/src/ft_putendl.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_putendl_fd.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_putendl_fd.c.o: ../libft/src/ft_putendl_fd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/gsh.dir/libft/src/ft_putendl_fd.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/gsh.dir/libft/src/ft_putendl_fd.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_putendl_fd.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_putendl_fd.c
 
 CMakeFiles/gsh.dir/libft/src/ft_putendl_fd.c.i: cmake_force
@@ -1475,7 +1571,7 @@ CMakeFiles/gsh.dir/libft/src/ft_putendl_fd.c.o.provides.build: CMakeFiles/gsh.di
 
 CMakeFiles/gsh.dir/libft/src/ft_putnbr.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_putnbr.c.o: ../libft/src/ft_putnbr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/gsh.dir/libft/src/ft_putnbr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/gsh.dir/libft/src/ft_putnbr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_putnbr.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_putnbr.c
 
 CMakeFiles/gsh.dir/libft/src/ft_putnbr.c.i: cmake_force
@@ -1499,7 +1595,7 @@ CMakeFiles/gsh.dir/libft/src/ft_putnbr.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_putnbr_fd.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_putnbr_fd.c.o: ../libft/src/ft_putnbr_fd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/gsh.dir/libft/src/ft_putnbr_fd.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/gsh.dir/libft/src/ft_putnbr_fd.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_putnbr_fd.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_putnbr_fd.c
 
 CMakeFiles/gsh.dir/libft/src/ft_putnbr_fd.c.i: cmake_force
@@ -1523,7 +1619,7 @@ CMakeFiles/gsh.dir/libft/src/ft_putnbr_fd.c.o.provides.build: CMakeFiles/gsh.dir
 
 CMakeFiles/gsh.dir/libft/src/ft_putstr.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_putstr.c.o: ../libft/src/ft_putstr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/gsh.dir/libft/src/ft_putstr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/gsh.dir/libft/src/ft_putstr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_putstr.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_putstr.c
 
 CMakeFiles/gsh.dir/libft/src/ft_putstr.c.i: cmake_force
@@ -1547,7 +1643,7 @@ CMakeFiles/gsh.dir/libft/src/ft_putstr.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_putstr_fd.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_putstr_fd.c.o: ../libft/src/ft_putstr_fd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/gsh.dir/libft/src/ft_putstr_fd.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/gsh.dir/libft/src/ft_putstr_fd.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_putstr_fd.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_putstr_fd.c
 
 CMakeFiles/gsh.dir/libft/src/ft_putstr_fd.c.i: cmake_force
@@ -1571,7 +1667,7 @@ CMakeFiles/gsh.dir/libft/src/ft_putstr_fd.c.o.provides.build: CMakeFiles/gsh.dir
 
 CMakeFiles/gsh.dir/libft/src/ft_realloc.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_realloc.c.o: ../libft/src/ft_realloc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/gsh.dir/libft/src/ft_realloc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/gsh.dir/libft/src/ft_realloc.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_realloc.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_realloc.c
 
 CMakeFiles/gsh.dir/libft/src/ft_realloc.c.i: cmake_force
@@ -1595,7 +1691,7 @@ CMakeFiles/gsh.dir/libft/src/ft_realloc.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_sort_params.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_sort_params.c.o: ../libft/src/ft_sort_params.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/gsh.dir/libft/src/ft_sort_params.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/gsh.dir/libft/src/ft_sort_params.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_sort_params.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_sort_params.c
 
 CMakeFiles/gsh.dir/libft/src/ft_sort_params.c.i: cmake_force
@@ -1619,7 +1715,7 @@ CMakeFiles/gsh.dir/libft/src/ft_sort_params.c.o.provides.build: CMakeFiles/gsh.d
 
 CMakeFiles/gsh.dir/libft/src/ft_strarr_free.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strarr_free.c.o: ../libft/src/ft_strarr_free.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strarr_free.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strarr_free.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strarr_free.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strarr_free.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strarr_free.c.i: cmake_force
@@ -1643,7 +1739,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strarr_free.c.o.provides.build: CMakeFiles/gsh.d
 
 CMakeFiles/gsh.dir/libft/src/ft_strcat.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strcat.c.o: ../libft/src/ft_strcat.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strcat.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strcat.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strcat.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strcat.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strcat.c.i: cmake_force
@@ -1667,7 +1763,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strcat.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_strchr.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strchr.c.o: ../libft/src/ft_strchr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strchr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strchr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strchr.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strchr.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strchr.c.i: cmake_force
@@ -1691,7 +1787,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strchr.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_strclr.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strclr.c.o: ../libft/src/ft_strclr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strclr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strclr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strclr.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strclr.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strclr.c.i: cmake_force
@@ -1715,7 +1811,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strclr.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_strcmp.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strcmp.c.o: ../libft/src/ft_strcmp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strcmp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strcmp.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strcmp.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strcmp.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strcmp.c.i: cmake_force
@@ -1739,7 +1835,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strcmp.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_strcpy.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strcpy.c.o: ../libft/src/ft_strcpy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strcpy.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strcpy.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strcpy.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strcpy.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strcpy.c.i: cmake_force
@@ -1763,7 +1859,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strcpy.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_strdel.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strdel.c.o: ../libft/src/ft_strdel.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strdel.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strdel.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strdel.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strdel.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strdel.c.i: cmake_force
@@ -1787,7 +1883,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strdel.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_strdup.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strdup.c.o: ../libft/src/ft_strdup.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strdup.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strdup.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strdup.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strdup.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strdup.c.i: cmake_force
@@ -1811,7 +1907,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strdup.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_strdup_arr.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strdup_arr.c.o: ../libft/src/ft_strdup_arr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strdup_arr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strdup_arr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strdup_arr.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strdup_arr.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strdup_arr.c.i: cmake_force
@@ -1835,7 +1931,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strdup_arr.c.o.provides.build: CMakeFiles/gsh.di
 
 CMakeFiles/gsh.dir/libft/src/ft_strequ.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strequ.c.o: ../libft/src/ft_strequ.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strequ.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strequ.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strequ.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strequ.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strequ.c.i: cmake_force
@@ -1859,7 +1955,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strequ.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_strextend.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strextend.c.o: ../libft/src/ft_strextend.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strextend.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strextend.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strextend.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strextend.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strextend.c.i: cmake_force
@@ -1883,7 +1979,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strextend.c.o.provides.build: CMakeFiles/gsh.dir
 
 CMakeFiles/gsh.dir/libft/src/ft_strhalfextend.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strhalfextend.c.o: ../libft/src/ft_strhalfextend.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strhalfextend.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strhalfextend.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strhalfextend.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strhalfextend.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strhalfextend.c.i: cmake_force
@@ -1907,7 +2003,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strhalfextend.c.o.provides.build: CMakeFiles/gsh
 
 CMakeFiles/gsh.dir/libft/src/ft_striter.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_striter.c.o: ../libft/src/ft_striter.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/gsh.dir/libft/src/ft_striter.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/gsh.dir/libft/src/ft_striter.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_striter.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_striter.c
 
 CMakeFiles/gsh.dir/libft/src/ft_striter.c.i: cmake_force
@@ -1931,7 +2027,7 @@ CMakeFiles/gsh.dir/libft/src/ft_striter.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_striteri.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_striteri.c.o: ../libft/src/ft_striteri.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/gsh.dir/libft/src/ft_striteri.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/gsh.dir/libft/src/ft_striteri.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_striteri.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_striteri.c
 
 CMakeFiles/gsh.dir/libft/src/ft_striteri.c.i: cmake_force
@@ -1955,7 +2051,7 @@ CMakeFiles/gsh.dir/libft/src/ft_striteri.c.o.provides.build: CMakeFiles/gsh.dir/
 
 CMakeFiles/gsh.dir/libft/src/ft_strjoin.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strjoin.c.o: ../libft/src/ft_strjoin.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strjoin.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strjoin.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strjoin.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strjoin.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strjoin.c.i: cmake_force
@@ -1979,7 +2075,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strjoin.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_strlcat.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strlcat.c.o: ../libft/src/ft_strlcat.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strlcat.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strlcat.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strlcat.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strlcat.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strlcat.c.i: cmake_force
@@ -2003,7 +2099,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strlcat.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_strlen.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strlen.c.o: ../libft/src/ft_strlen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strlen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strlen.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strlen.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strlen.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strlen.c.i: cmake_force
@@ -2027,7 +2123,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strlen.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_strlen_c.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strlen_c.c.o: ../libft/src/ft_strlen_c.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strlen_c.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strlen_c.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strlen_c.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strlen_c.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strlen_c.c.i: cmake_force
@@ -2051,7 +2147,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strlen_c.c.o.provides.build: CMakeFiles/gsh.dir/
 
 CMakeFiles/gsh.dir/libft/src/ft_strmap.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strmap.c.o: ../libft/src/ft_strmap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strmap.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strmap.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strmap.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strmap.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strmap.c.i: cmake_force
@@ -2075,7 +2171,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strmap.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_strmapi.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strmapi.c.o: ../libft/src/ft_strmapi.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strmapi.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strmapi.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strmapi.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strmapi.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strmapi.c.i: cmake_force
@@ -2099,7 +2195,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strmapi.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_strncat.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strncat.c.o: ../libft/src/ft_strncat.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strncat.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strncat.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strncat.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strncat.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strncat.c.i: cmake_force
@@ -2123,7 +2219,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strncat.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_strncmp.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strncmp.c.o: ../libft/src/ft_strncmp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strncmp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strncmp.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strncmp.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strncmp.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strncmp.c.i: cmake_force
@@ -2147,7 +2243,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strncmp.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_strncpy.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strncpy.c.o: ../libft/src/ft_strncpy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strncpy.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strncpy.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strncpy.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strncpy.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strncpy.c.i: cmake_force
@@ -2171,7 +2267,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strncpy.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_strnequ.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strnequ.c.o: ../libft/src/ft_strnequ.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strnequ.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strnequ.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strnequ.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strnequ.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strnequ.c.i: cmake_force
@@ -2195,7 +2291,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strnequ.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_strnew.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strnew.c.o: ../libft/src/ft_strnew.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strnew.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strnew.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strnew.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strnew.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strnew.c.i: cmake_force
@@ -2219,7 +2315,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strnew.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_strnstr.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strnstr.c.o: ../libft/src/ft_strnstr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strnstr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strnstr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strnstr.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strnstr.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strnstr.c.i: cmake_force
@@ -2243,7 +2339,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strnstr.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_strrchr.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strrchr.c.o: ../libft/src/ft_strrchr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strrchr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strrchr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strrchr.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strrchr.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strrchr.c.i: cmake_force
@@ -2267,7 +2363,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strrchr.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_strsplit.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strsplit.c.o: ../libft/src/ft_strsplit.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strsplit.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strsplit.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strsplit.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strsplit.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strsplit.c.i: cmake_force
@@ -2291,7 +2387,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strsplit.c.o.provides.build: CMakeFiles/gsh.dir/
 
 CMakeFiles/gsh.dir/libft/src/ft_strstr.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strstr.c.o: ../libft/src/ft_strstr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strstr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strstr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strstr.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strstr.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strstr.c.i: cmake_force
@@ -2315,7 +2411,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strstr.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_strsub.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strsub.c.o: ../libft/src/ft_strsub.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strsub.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strsub.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strsub.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strsub.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strsub.c.i: cmake_force
@@ -2339,7 +2435,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strsub.c.o.provides.build: CMakeFiles/gsh.dir/li
 
 CMakeFiles/gsh.dir/libft/src/ft_strtrim.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strtrim.c.o: ../libft/src/ft_strtrim.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strtrim.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strtrim.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strtrim.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strtrim.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strtrim.c.i: cmake_force
@@ -2363,7 +2459,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strtrim.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_strulen.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_strulen.c.o: ../libft/src/ft_strulen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strulen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/gsh.dir/libft/src/ft_strulen.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_strulen.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_strulen.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strulen.c.i: cmake_force
@@ -2387,7 +2483,7 @@ CMakeFiles/gsh.dir/libft/src/ft_strulen.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_tolower.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_tolower.c.o: ../libft/src/ft_tolower.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/gsh.dir/libft/src/ft_tolower.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/gsh.dir/libft/src/ft_tolower.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_tolower.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_tolower.c
 
 CMakeFiles/gsh.dir/libft/src/ft_tolower.c.i: cmake_force
@@ -2411,7 +2507,7 @@ CMakeFiles/gsh.dir/libft/src/ft_tolower.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_toupper.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_toupper.c.o: ../libft/src/ft_toupper.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object CMakeFiles/gsh.dir/libft/src/ft_toupper.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/gsh.dir/libft/src/ft_toupper.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_toupper.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_toupper.c
 
 CMakeFiles/gsh.dir/libft/src/ft_toupper.c.i: cmake_force
@@ -2435,7 +2531,7 @@ CMakeFiles/gsh.dir/libft/src/ft_toupper.c.o.provides.build: CMakeFiles/gsh.dir/l
 
 CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.o: ../libft/src/ft_ultoa_base.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_ultoa_base.c
 
 CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.i: cmake_force
@@ -2459,7 +2555,7 @@ CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.o.provides.build: CMakeFiles/gsh.di
 
 CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o: ../libft/src/ft_wcharlen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_wcharlen.c
 
 CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.i: cmake_force
@@ -2483,7 +2579,7 @@ CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o.provides.build: CMakeFiles/gsh.dir/
 
 CMakeFiles/gsh.dir/libft/src/get_next_line.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/libft/src/get_next_line.c.o: ../libft/src/get_next_line.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/gsh.dir/libft/src/get_next_line.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/gsh.dir/libft/src/get_next_line.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/get_next_line.c.o   -c /Users/yvyliehz/gsh/libft/src/get_next_line.c
 
 CMakeFiles/gsh.dir/libft/src/get_next_line.c.i: cmake_force
@@ -2505,80 +2601,11 @@ CMakeFiles/gsh.dir/libft/src/get_next_line.c.o.provides: CMakeFiles/gsh.dir/libf
 CMakeFiles/gsh.dir/libft/src/get_next_line.c.o.provides.build: CMakeFiles/gsh.dir/libft/src/get_next_line.c.o
 
 
-CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o: CMakeFiles/gsh.dir/flags.make
-CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o: ../libft/src/ft_lstadd_list.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o   -c /Users/yvyliehz/gsh/libft/src/ft_lstadd_list.c
-
-CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yvyliehz/gsh/libft/src/ft_lstadd_list.c > CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.i
-
-CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yvyliehz/gsh/libft/src/ft_lstadd_list.c -o CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.s
-
-CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o.requires:
-
-.PHONY : CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o.requires
-
-CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o.provides: CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o.requires
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o.provides.build
-.PHONY : CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o.provides
-
-CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o.provides.build: CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o
-
-
-CMakeFiles/gsh.dir/braces/main.c.o: CMakeFiles/gsh.dir/flags.make
-CMakeFiles/gsh.dir/braces/main.c.o: ../braces/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/gsh.dir/braces/main.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/braces/main.c.o   -c /Users/yvyliehz/gsh/braces/main.c
-
-CMakeFiles/gsh.dir/braces/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/braces/main.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yvyliehz/gsh/braces/main.c > CMakeFiles/gsh.dir/braces/main.c.i
-
-CMakeFiles/gsh.dir/braces/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/braces/main.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yvyliehz/gsh/braces/main.c -o CMakeFiles/gsh.dir/braces/main.c.s
-
-CMakeFiles/gsh.dir/braces/main.c.o.requires:
-
-.PHONY : CMakeFiles/gsh.dir/braces/main.c.o.requires
-
-CMakeFiles/gsh.dir/braces/main.c.o.provides: CMakeFiles/gsh.dir/braces/main.c.o.requires
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/braces/main.c.o.provides.build
-.PHONY : CMakeFiles/gsh.dir/braces/main.c.o.provides
-
-CMakeFiles/gsh.dir/braces/main.c.o.provides.build: CMakeFiles/gsh.dir/braces/main.c.o
-
-
-CMakeFiles/gsh.dir/braces/get_seq.c.o: CMakeFiles/gsh.dir/flags.make
-CMakeFiles/gsh.dir/braces/get_seq.c.o: ../braces/get_seq.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/gsh.dir/braces/get_seq.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/braces/get_seq.c.o   -c /Users/yvyliehz/gsh/braces/get_seq.c
-
-CMakeFiles/gsh.dir/braces/get_seq.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/braces/get_seq.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yvyliehz/gsh/braces/get_seq.c > CMakeFiles/gsh.dir/braces/get_seq.c.i
-
-CMakeFiles/gsh.dir/braces/get_seq.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/braces/get_seq.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yvyliehz/gsh/braces/get_seq.c -o CMakeFiles/gsh.dir/braces/get_seq.c.s
-
-CMakeFiles/gsh.dir/braces/get_seq.c.o.requires:
-
-.PHONY : CMakeFiles/gsh.dir/braces/get_seq.c.o.requires
-
-CMakeFiles/gsh.dir/braces/get_seq.c.o.provides: CMakeFiles/gsh.dir/braces/get_seq.c.o.requires
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/braces/get_seq.c.o.provides.build
-.PHONY : CMakeFiles/gsh.dir/braces/get_seq.c.o.provides
-
-CMakeFiles/gsh.dir/braces/get_seq.c.o.provides.build: CMakeFiles/gsh.dir/braces/get_seq.c.o
-
-
 # Object files for target gsh
 gsh_OBJECTS = \
+"CMakeFiles/gsh.dir/braces/fill_buf.c.o" \
+"CMakeFiles/gsh.dir/braces/get_seq.c.o" \
+"CMakeFiles/gsh.dir/braces/main.c.o" \
 "CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pbuf.c.o" \
 "CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pfloat.c.o" \
 "CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phelper.c.o" \
@@ -2613,6 +2640,7 @@ gsh_OBJECTS = \
 "CMakeFiles/gsh.dir/libft/src/ft_ldtoea.c.o" \
 "CMakeFiles/gsh.dir/libft/src/ft_lstadd.c.o" \
 "CMakeFiles/gsh.dir/libft/src/ft_lstadd_end.c.o" \
+"CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o" \
 "CMakeFiles/gsh.dir/libft/src/ft_lstdel.c.o" \
 "CMakeFiles/gsh.dir/libft/src/ft_lstdelone.c.o" \
 "CMakeFiles/gsh.dir/libft/src/ft_lstfree.c.o" \
@@ -2680,14 +2708,14 @@ gsh_OBJECTS = \
 "CMakeFiles/gsh.dir/libft/src/ft_toupper.c.o" \
 "CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.o" \
 "CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o" \
-"CMakeFiles/gsh.dir/libft/src/get_next_line.c.o" \
-"CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o" \
-"CMakeFiles/gsh.dir/braces/main.c.o" \
-"CMakeFiles/gsh.dir/braces/get_seq.c.o"
+"CMakeFiles/gsh.dir/libft/src/get_next_line.c.o"
 
 # External object files for target gsh
 gsh_EXTERNAL_OBJECTS =
 
+gsh: CMakeFiles/gsh.dir/braces/fill_buf.c.o
+gsh: CMakeFiles/gsh.dir/braces/get_seq.c.o
+gsh: CMakeFiles/gsh.dir/braces/main.c.o
 gsh: CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pbuf.c.o
 gsh: CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pfloat.c.o
 gsh: CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phelper.c.o
@@ -2722,6 +2750,7 @@ gsh: CMakeFiles/gsh.dir/libft/src/ft_ldtoa.c.o
 gsh: CMakeFiles/gsh.dir/libft/src/ft_ldtoea.c.o
 gsh: CMakeFiles/gsh.dir/libft/src/ft_lstadd.c.o
 gsh: CMakeFiles/gsh.dir/libft/src/ft_lstadd_end.c.o
+gsh: CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o
 gsh: CMakeFiles/gsh.dir/libft/src/ft_lstdel.c.o
 gsh: CMakeFiles/gsh.dir/libft/src/ft_lstdelone.c.o
 gsh: CMakeFiles/gsh.dir/libft/src/ft_lstfree.c.o
@@ -2790,14 +2819,9 @@ gsh: CMakeFiles/gsh.dir/libft/src/ft_toupper.c.o
 gsh: CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.o
 gsh: CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o
 gsh: CMakeFiles/gsh.dir/libft/src/get_next_line.c.o
-gsh: CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o
-gsh: CMakeFiles/gsh.dir/braces/main.c.o
-gsh: CMakeFiles/gsh.dir/braces/get_seq.c.o
 gsh: CMakeFiles/gsh.dir/build.make
-gsh: /usr/lib/libcurses.dylib
-gsh: /usr/lib/libform.dylib
 gsh: CMakeFiles/gsh.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Linking C executable gsh"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Linking C executable gsh"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gsh.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -2805,6 +2829,9 @@ CMakeFiles/gsh.dir/build: gsh
 
 .PHONY : CMakeFiles/gsh.dir/build
 
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/braces/fill_buf.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/braces/get_seq.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/braces/main.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pbuf.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pfloat.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phelper.c.o.requires
@@ -2839,6 +2866,7 @@ CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_ldtoa.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_ldtoea.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_lstadd.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_lstadd_end.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_lstdel.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_lstdelone.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_lstfree.c.o.requires
@@ -2907,9 +2935,6 @@ CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_toupper.c.o.require
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/get_next_line.c.o.requires
-CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o.requires
-CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/braces/main.c.o.requires
-CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/braces/get_seq.c.o.requires
 
 .PHONY : CMakeFiles/gsh.dir/requires
 

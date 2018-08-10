@@ -1,13 +1,16 @@
 cmake_minimum_required(VERSION 3.9)
 project(gsh)
 
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_CXX_STANDARD 11)
 
-find_package(Curses REQUIRED)
-include_directories(${CURSES_INCLUDE_DIR})
-include_directories(inc/ libft/inc)
+#set (CMAKE_C_FLAGS "-Wall -Wextra -Werror")
+
+include_directories(inc libft/inc)
 
 add_executable(gsh
+        braces/fill_buf.c
+        braces/get_seq.c
+        braces/main.c
         inc/twenty_one_sh.h
         libft/inc/ft_printf.h
         libft/inc/libft.h
@@ -45,6 +48,7 @@ add_executable(gsh
         libft/src/ft_ldtoea.c
         libft/src/ft_lstadd.c
         libft/src/ft_lstadd_end.c
+        libft/src/ft_lstadd_list.c
         libft/src/ft_lstdel.c
         libft/src/ft_lstdelone.c
         libft/src/ft_lstfree.c
@@ -113,7 +117,6 @@ add_executable(gsh
         libft/src/ft_ultoa_base.c
         libft/src/ft_wcharlen.c
         libft/src/get_next_line.c
-        libft/src/ft_lstadd_list.c
 #        src/builtins/builtins.c
 #        src/builtins/env_builtin.c
 #        src/builtins/ft_cd.c
@@ -151,7 +154,4 @@ add_executable(gsh
 #        src/ft_tokenize_utils.c
 #        src/init.c
 #        src/main.c
-        braces/main.c
-        braces/get_seq.c)
-
-target_link_libraries(gsh ${CURSES_LIBRARIES})
+        )
