@@ -4,6 +4,7 @@ char	*get_brace_seq(char **s, t_list **lst);
 char	*put_str_to_buf(char *buf, int *i, char *s, char c);
 char 	*put_backslash_to_buf(char *buf, int *i, char *s);
 char 	*put_quote_content_to_buf(char *buf, int *i, char *s);
+char 	*put_parentheses_content_to_buf(char *buf, int *i, char *s);
 
 void		print_lst(t_list *lst)
 {
@@ -61,12 +62,6 @@ int		check_comma(char *s)
 	return (comma);
 }
 
-void	del_node(void *content, size_t size)
-{
-	(void)size;
-	free(content);
-}
-
 t_list	*expand_braces(char *s, int i, char *buf)
 {
 	t_list	*vals;
@@ -80,6 +75,8 @@ t_list	*expand_braces(char *s, int i, char *buf)
 			s = put_backslash_to_buf(buf, &i, s);
 		else if (*s && ft_strchr("\"'`", *s))
 			s = put_quote_content_to_buf(buf, &i, s);
+		else if (*s == '(')
+			s = put_parentheses_content_to_buf(buf, &i, s);
 		else if (*s == '{' && *check_braces(s) == '}')
 		{
 			vals = NULL;
@@ -113,7 +110,7 @@ int 	main(int ac, char **av)
 		char buf[500];
 		//	char *s = "{1,I{30..45}P}";
 //		char *s = "sadasd{+++++++,1,YY,2,ab,---}98098";
-		char *s = "$(ls -l {lol,kek}){1..3}";
+		char *s = "a{1,$({a..b}{A..B})}";
 //		char *s = "{1,2,f{3,4,5{0..3},\\6}hy}";
 		t_list *lst = NULL;
 		ft_bzero(buf, 500);
@@ -121,7 +118,7 @@ int 	main(int ac, char **av)
 //		print_lst(lst);
 		print_lst((lst = expand_braces(s, 0, buf)));
 		ft_lstdel(&lst, (void (*)(void *, size_t))free);
-		system("leaks gsh");
+//		system("leaks gsh");
 
 	}
 	else

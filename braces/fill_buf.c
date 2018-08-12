@@ -28,3 +28,21 @@ char	*put_str_to_buf(char *buf, int *i, char *s)
 		buf[(*i)++] = *s++;
 	return (s);
 }
+
+char 	*put_parentheses_content_to_buf(char *buf, int *i, char *s)
+{
+	buf[(*i)++] = *s++;
+	while (*s)
+		if (*s == '\\')
+			s = put_backslash_to_buf(buf, i, s);
+		else if (*s && ft_strchr("\"'`", *s))
+			s = put_quote_content_to_buf(buf, i, s);
+		else if (*s == ')')
+			break ;
+		else if (*s == '(')
+			s = put_parentheses_content_to_buf(buf, i, s);
+		else
+			buf[(*i)++] = *s++;
+	buf[(*i)++] = *s++;
+	return (s);
+}

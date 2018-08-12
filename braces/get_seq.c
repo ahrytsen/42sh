@@ -7,6 +7,7 @@ char	*get_brace_seq(char **s, t_list **lst);
 char 	*put_backslash_to_buf(char *buf, int *i, char *s);
 char 	*put_quote_content_to_buf(char *buf, int *i, char *s);
 int		check_comma(char *s);
+char 	*put_parentheses_content_to_buf(char *buf, int *i, char *s);
 
 t_list	*get_num_range(char	**s)
 {
@@ -113,6 +114,8 @@ char	*get_one_elem(char *s, char *buf, t_list **lst)
 			s = put_quote_content_to_buf(buf, &i, s);
 		else if (*s == '\\')
 			s = put_backslash_to_buf(buf, &i, s);
+		else if (*s == '(')
+			s = put_parentheses_content_to_buf(buf, &i, s);
 		else if (*s == '{')
 		{
 			vals = NULL;
