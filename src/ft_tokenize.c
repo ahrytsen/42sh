@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/10 19:26:39 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/12 19:28:21 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,6 @@ static int	ft_get_separator(char **ln, t_token *token)
 	else if (**ln == '|' && !(*(*ln)++ = '\0'))
 		token->type =
 			(**ln == '|' && !(*(*ln)++ = '\0')) ? or : pipeline;
-	else if ((**ln == '(' || **ln == ')')
-			 && (token->type = (**ln == '(' ? subsh_on : subsh_off)))
-		*(*ln)++ = '\0';
 	else if (**ln == '&' && !(*(*ln)++ = '\0'))
 	{
 		if (**ln == '>' && !(*(*ln)++ = '\0'))
@@ -63,6 +60,8 @@ static int	ft_get_separator(char **ln, t_token *token)
 			token->type =
 				(**ln == '&' && !(*(*ln)++ = '\0')) ? and : bg_op;
 	}
+	else if (**ln == '(' && (token->type = subsh))
+		ft_skip_subsh(ln);
 	else if (**ln == '<' && !(*(*ln)++ = '\0')
 			&& !(token->data.redir.left = 0))
 		ft_get_redirect_in(ln, token);
@@ -76,16 +75,8 @@ static int	ft_get_token(char **ln, t_token *token)
 {
 	token->type = word;
 	token->data.word = *ln;
-	while (**ln && !ft_isseparator(**ln))
-		if (**ln == '\'' || **ln == '"' || **ln == '`')
-		{
-			if (ft_skip_qoutes(ln))
-				return (1);
-		}
-		else if (**ln == '\\')
-			ft_skip_slash(ln);
-		else
-			(*ln)++;
+	if (ft_skip_word(ln))
+		return (1);
 	if ((**ln == '<' || **ln == '>')
 		&& ft_isnumeric_n(token->data.word, *ln - token->data.word))
 	{
@@ -114,7 +105,7 @@ t_list		*ft_tokenize(char *ln)
 		else if (toks && ((t_token*)tmp->content)->type > or
 			&& !((t_token*)tmp->content)->data.redir.right && tok.type == word)
 			((t_token*)tmp->content)->data.redir.right = tok.data.word;
-		else if (ft_check_redir(toks ? tmp->content : NULL, &tok, ln)
+		else if (ft_redir_check(toks ? tmp->content : NULL, &tok, ln)
 			|| !(tmp = ft_lstpush_back(toks ? &tmp : &toks, &tok, sizeof(tok))))
 		{
 			!tmp ? write(2, "21sh: malloc error\n", 19) : 0;

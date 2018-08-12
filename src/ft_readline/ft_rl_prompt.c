@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 12:37:06 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/03 19:54:35 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/12 17:00:31 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,17 @@ static void	ft_toread_prompt(int mod)
 	int			tmp;
 	const char	*prompt;
 
-	if (mod == P_QUOTE)
-		prompt = "quote> ";
-	else if (mod == P_BQUOTE)
-		prompt = "bquote> ";
-	else if (mod == P_DQUOTE)
-		prompt = "dquote> ";
+	if (mod == P_QUOTE || mod == P_BQUOTE)
+		prompt = (mod == P_QUOTE ? "quote> " : "bquote> ");
+	else if (mod == P_DQUOTE || mod == P_BSLASH)
+		prompt = (mod == P_DQUOTE ? "dquote> " : "bslash> ");
+	else if (mod == P_CMDSUBST || mod == P_SUBSH)
+		prompt = (mod == P_SUBSH ? "subsh> " : "cmdsubst> ");
 	else if (mod == P_HEREDOC)
 	{
 		ft_toread_heredoc();
 		return ;
 	}
-	else if (mod == P_BSLASH)
-		prompt = "bslash> ";
 	tmp = ft_strlen(prompt);
 	get_term()->cury = tmp / get_term()->width;
 	get_term()->curx = tmp % get_term()->width;
