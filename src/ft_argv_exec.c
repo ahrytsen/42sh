@@ -42,24 +42,18 @@ static int	ft_exec_bypath(char **cmd, char *path, int bg)
 	if (path && !access(path, F_OK) && !access(path, X_OK)
 		&& !stat(path, &tmp) && S_ISREG(tmp.st_mode))
 	{
-		write(2, "f\n", 2);
 		if (!get_environ()->pid && (get_environ()->pid = fork()) > 0
 			&& (get_environ()->pgid = get_environ()->pid))
-		{
-			write(2, "!\n", 2);
 			return (0);
-		}
 		else if (get_environ()->pid < 0)
 			return (write(2, "21sh: fork error\n", 17));
 		if (bg != -1)
 			ft_set_sh_signal(bg ? S_CHLD : S_CHLD_FG);
 		execve(path, cmd, get_environ()->envar);
-		write(2, "e\n", 2);
 		if ((fd = open(path, O_RDONLY)) >= 0)
 			exit(main_loop(fd));
 		exit(ft_dprintf(2, "%s: permission denied\n", *cmd) ? -2 : 0);
 	}
-	write(2, "?\n", 2);
 	if (access(path, F_OK)
 		&& ft_dprintf(2, "%s: No such file or directory\n", *cmd))
 		return (127);
@@ -122,11 +116,7 @@ int			ft_argv_exec(char **cmd, char *altpath, int bg)
 	else if ((st = ft_exec_builtin(cmd)) == -1)
 	{
 		if ((bin_path = ft_search_bin(*cmd, altpath)))
-		{
-			write(2, "+\n", 2);
 			st = ft_exec_bypath(cmd, bin_path, bg);
-			write(2, "-\n", 2);
-		}
 		else if ((st = 127))
 			ft_dprintf(2, "%s: command not found\n", *cmd);
 	}

@@ -56,7 +56,6 @@ static int	ft_cmd_exec(t_cmd *cmd, int bg)
 		if (cmd->pid == -1 && write(2, "21sh: fork() error\n", 19))
 			return (1);
 		get_environ()->pid = cmd->pid;
-		cmd->av = ft_argv_make(cmd->toks);
 		if (get_environ()->is_interactive)
 		{
 			!get_environ()->pgid ? get_environ()->pgid = cmd->pid : 0;
