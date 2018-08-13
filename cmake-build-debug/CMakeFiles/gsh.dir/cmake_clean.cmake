@@ -1,9 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o"
-  "CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o"
-  "CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o"
-  "CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o"
-  "CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o"
+  "CMakeFiles/gsh.dir/pathname/regex.c.o"
+  "CMakeFiles/gsh.dir/pathname/ft_strcut.c.o"
   "CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pbuf.c.o"
   "CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pfloat.c.o"
   "CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phelper.c.o"

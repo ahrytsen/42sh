@@ -6,13 +6,13 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:31:09 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/13 14:46:10 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/13 16:18:27 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_expansions.h"
 
-void		print_lst(t_list *lst)
+void		print_lst(t_list *lst) //TODO: delete
 {
 	while (lst)
 	{

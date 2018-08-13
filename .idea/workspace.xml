@@ -12,211 +12,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edfa0b28-b9b7-4b2b-8b5a-e0cb37bdb69f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/inc/ft_expansions.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/inc/ft_readline.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/libft/src/ft_absolute.c" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ft_expansions/brace/auxiliary_funcs.c" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ft_expansions/brace/get_range.c" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ft_init.c" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ft_readline/ft_rl_autocomp_cmd_and_var.c" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ft_readline/ft_rl_autocomp_commands.c" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ft_readline/ft_rl_autocomp_drawer.c" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ft_readline/ft_rl_autocomp_filenames.c" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ft_readline/ft_rl_autocomplit.c" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ft_readline/ft_rl_init.c" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pathname/test_script.sh" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pathname/tests.sh" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change beforePath="$PROJECT_DIR$/Makefile" afterPath="$PROJECT_DIR$/Makefile" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/braces/fill_buf.c" afterPath="$PROJECT_DIR$/src/ft_expansions/brace/fill_buf.c" />
-      <change beforePath="$PROJECT_DIR$/braces/get_seq.c" afterPath="$PROJECT_DIR$/src/ft_expansions/brace/get_seq.c" />
-      <change beforePath="$PROJECT_DIR$/braces/main.c" afterPath="$PROJECT_DIR$/src/ft_expansions/brace/expand_braces.c" />
-      <change beforePath="$PROJECT_DIR$/braces/tests/brace_output.sh" afterPath="$PROJECT_DIR$/braces/tests/brace_output.sh" />
-      <change beforePath="$PROJECT_DIR$/braces/tests/brace_tests.sh" afterPath="$PROJECT_DIR$/braces/tests/brace_tests.sh" />
-      <change beforePath="$PROJECT_DIR$/braces/tests/test_script.sh" afterPath="$PROJECT_DIR$/braces/tests/test_script.sh" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeCCompiler.cmake" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeCXXCompiler.cmake" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_C.bin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_CXX.bin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeSystem.cmake" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdC/CMakeCCompilerId.c" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdC/a.out" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdCXX/a.out" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.cxx" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/C.includecache" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/C.includecache" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/DependInfo.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/braces/fill_buf.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/braces/get_seq.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/braces/main.c.o" afterPath="" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/build.make" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/cmake_clean.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/cmake_clean.cmake" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/depend.internal" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/depend.internal" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/depend.make" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/flags.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_arrstr.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_atoi.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_atoi_base.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_atol.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_atol_base.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_bzero.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_count_digits.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_dtoa.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_dtoea.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_free_arr.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_is_blank.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_is_blank.c.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_isalnum.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_isalnum_str.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_isalpha.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_isalpha_str.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_isascii.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_isascii.c.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_isascii_str.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_isdigit.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_isnumber.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_isnumber.c.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_isnumeric_str.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_isprint.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_isprint_str.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_iswhitespace.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_itoa.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_itoa_base.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_itoa_base.c.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_ldtoa.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_ldtoea.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_lstadd.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_lstadd_end.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_lstadd_list.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_lstdel.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_lstdelone.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_lstfree.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_lstiter.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_lstmap.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_lstnew.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_lstprint.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_lstpush_back.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_lstpush_front.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_lstsize.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_lstsort.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_lstsplit.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_ltoa.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_memalloc.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_memccpy.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_memchr.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_memcmp.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_memcpy.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_memdel.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_memmove.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_memset.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pbuf.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pbuf.c.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pfloat.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pfloat.c.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phelper.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phelper.c.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phendler.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_printf/ft_printf.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_printf/ft_printf.c.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_putchar.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_putchar_fd.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_putendl.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_putendl_fd.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_putnbr.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_putnbr_fd.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_putstr.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_putstr_fd.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_realloc.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_sort_params.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strarr_free.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strcat.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strchr.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strclr.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strcmp.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strcpy.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strdel.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strdup.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strdup_arr.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strequ.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strextend.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strhalfextend.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_striter.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_striteri.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strjoin.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strlcat.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strlen.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strlen_c.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strmap.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strmapi.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strncat.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strncmp.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strncpy.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strnequ.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strnew.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strnstr.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strrchr.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strsplit.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strstr.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strsub.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strtrim.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_strulen.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_tolower.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_toupper.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/get_next_line.c.o" afterPath="" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/link.txt" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/progress.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/progress.make" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o" afterPath="" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/gsh" afterPath="$PROJECT_DIR$/cmake-build-debug/gsh" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/gsh.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/gsh.cbp" />
-      <change beforePath="$PROJECT_DIR$/inc/twenty_one_sh.h" afterPath="$PROJECT_DIR$/inc/ft_sh.h" />
-      <change beforePath="$PROJECT_DIR$/libft/Makefile" afterPath="$PROJECT_DIR$/libft/Makefile" />
-      <change beforePath="$PROJECT_DIR$/libft/inc/ft_printf.h" afterPath="$PROJECT_DIR$/libft/inc/ft_printf.h" />
-      <change beforePath="$PROJECT_DIR$/libft/inc/libft.h" afterPath="$PROJECT_DIR$/libft/inc/libft.h" />
-      <change beforePath="$PROJECT_DIR$/libft/src/ft_count_digits.c" afterPath="$PROJECT_DIR$/libft/src/ft_count_digits.c" />
-      <change beforePath="$PROJECT_DIR$/libft/src/ft_dtoea.c" afterPath="$PROJECT_DIR$/libft/src/ft_dtoea.c" />
-      <change beforePath="$PROJECT_DIR$/libft/src/ft_ldtoea.c" afterPath="$PROJECT_DIR$/libft/src/ft_ldtoea.c" />
-      <change beforePath="$PROJECT_DIR$/libft/src/ft_printf/ft_phendler.c" afterPath="$PROJECT_DIR$/libft/src/ft_printf/ft_phendler.c" />
-      <change beforePath="$PROJECT_DIR$/src/builtins/builtins.c" afterPath="$PROJECT_DIR$/src/ft_builtins/ft_builtins.c" />
-      <change beforePath="$PROJECT_DIR$/src/builtins/env_builtin.c" afterPath="$PROJECT_DIR$/src/ft_builtins/ft_bi_env.c" />
-      <change beforePath="$PROJECT_DIR$/src/builtins/ft_cd.c" afterPath="$PROJECT_DIR$/src/ft_builtins/ft_bi_cd.c" />
-      <change beforePath="$PROJECT_DIR$/src/builtins/ft_fg.c" afterPath="$PROJECT_DIR$/src/ft_builtins/ft_bi_fg.c" />
-      <change beforePath="$PROJECT_DIR$/src/env_utils.c" afterPath="$PROJECT_DIR$/src/ft_env_utils.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_argv.c" afterPath="$PROJECT_DIR$/src/ft_argv.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_argv_exec.c" afterPath="$PROJECT_DIR$/src/ft_argv_exec.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_argv_quotes.c" afterPath="$PROJECT_DIR$/src/ft_argv_quotes.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_argv_utils.c" afterPath="$PROJECT_DIR$/src/ft_argv_utils.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_ast.c" afterPath="$PROJECT_DIR$/src/ft_ast.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_ast_exec.c" afterPath="$PROJECT_DIR$/src/ft_ast_exec.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_ast_utils.c" afterPath="$PROJECT_DIR$/src/ft_ast_utils.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_buffer.c" afterPath="$PROJECT_DIR$/src/ft_buffer.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_cmdlst.c" afterPath="$PROJECT_DIR$/src/ft_cmdlst.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_cmdlst_exec.c" afterPath="$PROJECT_DIR$/src/ft_cmdlst_exec.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_cmdlst_utils.c" afterPath="$PROJECT_DIR$/src/ft_cmdlst_utils.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_heredoc.c" afterPath="$PROJECT_DIR$/src/ft_heredoc.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_jobs_utils.c" afterPath="$PROJECT_DIR$/src/ft_jobs_utils.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_readline/ft_autocomplit.c" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/ft_readline/ft_check_line.c" afterPath="$PROJECT_DIR$/src/ft_readline/ft_rl_check_line.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_readline/ft_cursor.c" afterPath="$PROJECT_DIR$/src/ft_readline/ft_rl_cursor.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_readline/ft_highlight.c" afterPath="$PROJECT_DIR$/src/ft_readline/ft_rl_highlight.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_readline/ft_history.c" afterPath="$PROJECT_DIR$/src/ft_readline/ft_rl_history.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_readline/ft_prompt.c" afterPath="$PROJECT_DIR$/src/ft_readline/ft_rl_prompt.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_readline/ft_read.c" afterPath="$PROJECT_DIR$/src/ft_readline/ft_rl_read.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_readline/ft_readline.c" afterPath="$PROJECT_DIR$/src/ft_readline/ft_readline.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_readline/ft_readline_action.c" afterPath="$PROJECT_DIR$/src/ft_readline/ft_rl_action.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_readline/ft_readline_helper.c" afterPath="$PROJECT_DIR$/src/ft_readline/ft_rl_helper.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_readline/line.c" afterPath="$PROJECT_DIR$/src/ft_readline/ft_rl_line.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_readline/line_edit.c" afterPath="$PROJECT_DIR$/src/ft_readline/ft_rl_line_edit.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_readline/rl_init.c" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/ft_redirection.c" afterPath="$PROJECT_DIR$/src/ft_redirection.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_redirection_utils.c" afterPath="$PROJECT_DIR$/src/ft_redirection_utils.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_tokenize.c" afterPath="$PROJECT_DIR$/src/ft_tokenize.c" />
-      <change beforePath="$PROJECT_DIR$/src/ft_tokenize_utils.c" afterPath="$PROJECT_DIR$/src/ft_tokenize_utils.c" />
-      <change beforePath="$PROJECT_DIR$/src/init.c" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main.c" afterPath="$PROJECT_DIR$/src/main.c" />
+      <change beforePath="$PROJECT_DIR$/src/ft_expansions/brace/expand_braces.c" afterPath="$PROJECT_DIR$/src/ft_expansions/brace/expand_braces.c" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -228,76 +45,60 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="expand_braces.c" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ft_expansions/brace/expand_braces.c">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="529">
-                  <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="get_range.c" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ft_expansions/brace/get_range.c">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="433">
-                  <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="fill_buf.c" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ft_expansions/brace/fill_buf.c">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="735">
-                  <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="auxiliary_funcs.c" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/ft_expansions/brace/auxiliary_funcs.c">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="759">
-                  <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="brace_tests.sh" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/braces/tests/brace_tests.sh">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="633">
-                  <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="brace_output.sh" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/braces/tests/brace_output.sh">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="331">
-                  <caret line="41" column="12" lean-forward="false" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ft_strcut.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pathname/ft_strcut.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-921">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="regex.c" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pathname/regex.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="642">
+              <caret line="60" column="27" lean-forward="false" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+              <folding>
+                <element signature="e#892#910#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tests.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pathname/tests.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="1" column="3" lean-forward="true" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_script.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pathname/test_script.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -318,17 +119,22 @@
         <option value="$PROJECT_DIR$/braces/tests/brace_output.sh" />
         <option value="$PROJECT_DIR$/braces/get_seq.c" />
         <option value="$PROJECT_DIR$/src/ft_expansions/brace/main.c" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/libft/src/ft_ptool.c" />
         <option value="$PROJECT_DIR$/libft/Makefile" />
         <option value="$PROJECT_DIR$/libft/src/ft_absolute.c" />
         <option value="$PROJECT_DIR$/libft/inc/libft.h" />
         <option value="$PROJECT_DIR$/inc/ft_expansions.h" />
         <option value="$PROJECT_DIR$/src/ft_expansions/brace/get_range.c" />
-        <option value="$PROJECT_DIR$/src/ft_expansions/brace/expand_braces.c" />
         <option value="$PROJECT_DIR$/src/ft_expansions/brace/get_seq.c" />
         <option value="$PROJECT_DIR$/src/ft_expansions/brace/fill_buf.c" />
         <option value="$PROJECT_DIR$/src/ft_expansions/brace/auxiliary_funcs.c" />
+        <option value="$PROJECT_DIR$/pathname/ft_strcut.c" />
+        <option value="$PROJECT_DIR$/src/ft_expansions/brace/expand_braces.c" />
+        <option value="$PROJECT_DIR$/pathname/brace_tests.sh" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/pathname/tests.sh" />
+        <option value="$PROJECT_DIR$/pathname/test_script.sh" />
+        <option value="$PROJECT_DIR$/pathname/regex.c" />
       </list>
     </option>
   </component>
@@ -375,18 +181,13 @@
             <path>
               <item name="gsh" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="gsh" type="462c0819:PsiDirectoryNode" />
-              <item name="inc" type="462c0819:PsiDirectoryNode" />
+              <item name="braces" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gsh" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="gsh" type="462c0819:PsiDirectoryNode" />
-              <item name="libft" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gsh" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="gsh" type="462c0819:PsiDirectoryNode" />
-              <item name="libft" type="462c0819:PsiDirectoryNode" />
-              <item name="inc" type="462c0819:PsiDirectoryNode" />
+              <item name="pathname" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gsh" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
@@ -406,12 +207,6 @@
               <item name="ft_expansions" type="462c0819:PsiDirectoryNode" />
               <item name="brace" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="gsh" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="gsh" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ft_readline" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -422,6 +217,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pathname" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/libft/src" />
       <recent name="$PROJECT_DIR$/src/ft_expansions/brace" />
@@ -469,12 +267,12 @@
       <workItem from="1534152009639" duration="1245000" />
       <workItem from="1534155503457" duration="497000" />
       <workItem from="1534156049051" duration="2000" />
-      <workItem from="1534156073682" duration="5591000" />
+      <workItem from="1534156073682" duration="12292000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25673000" />
+    <option name="totallyTimeSpent" value="32374000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
@@ -508,7 +306,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="21" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/pathname/regex.c</url>
+          <line>104</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -542,46 +347,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/braces/tests/brace_output.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="51" column="51" lean-forward="false" selection-start-line="51" selection-start-column="51" selection-end-line="51" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/braces/tests/test_script.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ft_expansions/brace/get_seq.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="35" lean-forward="false" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/braces/tests/brace_tests.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -826,22 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/braces/tests/brace_tests.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/braces/tests/brace_output.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="41" column="12" lean-forward="false" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libft/src/ft_count_digits.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
@@ -868,26 +617,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libft/src/ft_absolute.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ft_expansions/brace/get_range.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -916,10 +649,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ft_expansions/brace/expand_braces.c">
+    <entry file="file://$PROJECT_DIR$/src/ft_expansions/brace/get_range.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+        <state relative-caret-position="433">
+          <caret line="25" column="36" lean-forward="false" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -935,8 +668,82 @@
     <entry file="file://$PROJECT_DIR$/src/ft_expansions/brace/auxiliary_funcs.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="759">
-          <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+          <caret line="33" column="31" lean-forward="false" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/braces/tests/brace_output.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="41" column="12" lean-forward="false" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ft_expansions/brace/expand_braces.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="22" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libft/src/ft_lstpush_back.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/braces/tests/brace_tests.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pathname/ft_strcut.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-921">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pathname/test_script.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pathname/tests.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="3" lean-forward="true" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pathname/regex.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="642">
+          <caret line="60" column="27" lean-forward="false" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+          <folding>
+            <element signature="e#892#910#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

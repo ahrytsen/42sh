@@ -314,23 +314,9 @@ CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o: ../libft/src/ft_wcharlen.c
 CMakeFiles/gsh.dir/libft/src/get_next_line.c.o: ../libft/inc/libft.h
 CMakeFiles/gsh.dir/libft/src/get_next_line.c.o: ../libft/src/get_next_line.c
 
-CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o: ../inc/ft_expansions.h
-CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o: ../libft/inc/libft.h
-CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o: ../src/ft_expansions/brace/auxiliary_funcs.c
+CMakeFiles/gsh.dir/pathname/ft_strcut.c.o: ../libft/inc/libft.h
+CMakeFiles/gsh.dir/pathname/ft_strcut.c.o: ../pathname/ft_strcut.c
 
-CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o: ../inc/ft_expansions.h
-CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o: ../libft/inc/libft.h
-CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o: ../src/ft_expansions/brace/expand_braces.c
-
-CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o: ../inc/ft_expansions.h
-CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o: ../libft/inc/libft.h
-CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o: ../src/ft_expansions/brace/fill_buf.c
-
-CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o: ../inc/ft_expansions.h
-CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o: ../libft/inc/libft.h
-CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o: ../src/ft_expansions/brace/get_range.c
-
-CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o: ../inc/ft_expansions.h
-CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o: ../libft/inc/libft.h
-CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o: ../src/ft_expansions/brace/get_seq.c
+CMakeFiles/gsh.dir/pathname/regex.c.o: ../libft/inc/libft.h
+CMakeFiles/gsh.dir/pathname/regex.c.o: ../pathname/regex.c
 

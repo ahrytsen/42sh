@@ -3,16 +3,18 @@ project(gsh)
 
 set(CMAKE_CXX_STANDARD 99)
 
-set (CMAKE_C_FLAGS "-Wall -Werror -Wextra")
+#set (CMAKE_C_FLAGS "-Wall -Werror -Wextra")
 
 include_directories(inc libft/inc)
 
 add_executable(gsh
-        src/ft_expansions/brace/fill_buf.c
-        src/ft_expansions/brace/get_seq.c
-        src/ft_expansions/brace/expand_braces.c
-        src/ft_expansions/brace/auxiliary_funcs.c
-        src/ft_expansions/brace/get_range.c
+        pathname/regex.c
+        pathname/ft_strcut.c
+#        src/ft_expansions/brace/fill_buf.c
+#        src/ft_expansions/brace/get_seq.c
+#        src/ft_expansions/brace/expand_braces.c
+#        src/ft_expansions/brace/auxiliary_funcs.c
+#        src/ft_expansions/brace/get_range.c
         inc/ft_readline.h
         inc/ft_sh.h
         inc/ft_expansions.h

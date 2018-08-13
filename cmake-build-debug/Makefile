@@ -2931,140 +2931,59 @@ libft/src/get_next_line.c.s:
 	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/get_next_line.c.s
 .PHONY : libft/src/get_next_line.c.s
 
-src/ft_expansions/brace/auxiliary_funcs.o: src/ft_expansions/brace/auxiliary_funcs.c.o
+pathname/ft_strcut.o: pathname/ft_strcut.c.o
 
-.PHONY : src/ft_expansions/brace/auxiliary_funcs.o
-
-# target to build an object file
-src/ft_expansions/brace/auxiliary_funcs.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o
-.PHONY : src/ft_expansions/brace/auxiliary_funcs.c.o
-
-src/ft_expansions/brace/auxiliary_funcs.i: src/ft_expansions/brace/auxiliary_funcs.c.i
-
-.PHONY : src/ft_expansions/brace/auxiliary_funcs.i
-
-# target to preprocess a source file
-src/ft_expansions/brace/auxiliary_funcs.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.i
-.PHONY : src/ft_expansions/brace/auxiliary_funcs.c.i
-
-src/ft_expansions/brace/auxiliary_funcs.s: src/ft_expansions/brace/auxiliary_funcs.c.s
-
-.PHONY : src/ft_expansions/brace/auxiliary_funcs.s
-
-# target to generate assembly for a file
-src/ft_expansions/brace/auxiliary_funcs.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.s
-.PHONY : src/ft_expansions/brace/auxiliary_funcs.c.s
-
-src/ft_expansions/brace/expand_braces.o: src/ft_expansions/brace/expand_braces.c.o
-
-.PHONY : src/ft_expansions/brace/expand_braces.o
+.PHONY : pathname/ft_strcut.o
 
 # target to build an object file
-src/ft_expansions/brace/expand_braces.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o
-.PHONY : src/ft_expansions/brace/expand_braces.c.o
+pathname/ft_strcut.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/pathname/ft_strcut.c.o
+.PHONY : pathname/ft_strcut.c.o
 
-src/ft_expansions/brace/expand_braces.i: src/ft_expansions/brace/expand_braces.c.i
+pathname/ft_strcut.i: pathname/ft_strcut.c.i
 
-.PHONY : src/ft_expansions/brace/expand_braces.i
+.PHONY : pathname/ft_strcut.i
 
 # target to preprocess a source file
-src/ft_expansions/brace/expand_braces.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.i
-.PHONY : src/ft_expansions/brace/expand_braces.c.i
+pathname/ft_strcut.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/pathname/ft_strcut.c.i
+.PHONY : pathname/ft_strcut.c.i
 
-src/ft_expansions/brace/expand_braces.s: src/ft_expansions/brace/expand_braces.c.s
+pathname/ft_strcut.s: pathname/ft_strcut.c.s
 
-.PHONY : src/ft_expansions/brace/expand_braces.s
+.PHONY : pathname/ft_strcut.s
 
 # target to generate assembly for a file
-src/ft_expansions/brace/expand_braces.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.s
-.PHONY : src/ft_expansions/brace/expand_braces.c.s
+pathname/ft_strcut.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/pathname/ft_strcut.c.s
+.PHONY : pathname/ft_strcut.c.s
 
-src/ft_expansions/brace/fill_buf.o: src/ft_expansions/brace/fill_buf.c.o
+pathname/regex.o: pathname/regex.c.o
 
-.PHONY : src/ft_expansions/brace/fill_buf.o
+.PHONY : pathname/regex.o
 
 # target to build an object file
-src/ft_expansions/brace/fill_buf.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o
-.PHONY : src/ft_expansions/brace/fill_buf.c.o
+pathname/regex.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/pathname/regex.c.o
+.PHONY : pathname/regex.c.o
 
-src/ft_expansions/brace/fill_buf.i: src/ft_expansions/brace/fill_buf.c.i
+pathname/regex.i: pathname/regex.c.i
 
-.PHONY : src/ft_expansions/brace/fill_buf.i
-
-# target to preprocess a source file
-src/ft_expansions/brace/fill_buf.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.i
-.PHONY : src/ft_expansions/brace/fill_buf.c.i
-
-src/ft_expansions/brace/fill_buf.s: src/ft_expansions/brace/fill_buf.c.s
-
-.PHONY : src/ft_expansions/brace/fill_buf.s
-
-# target to generate assembly for a file
-src/ft_expansions/brace/fill_buf.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.s
-.PHONY : src/ft_expansions/brace/fill_buf.c.s
-
-src/ft_expansions/brace/get_range.o: src/ft_expansions/brace/get_range.c.o
-
-.PHONY : src/ft_expansions/brace/get_range.o
-
-# target to build an object file
-src/ft_expansions/brace/get_range.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o
-.PHONY : src/ft_expansions/brace/get_range.c.o
-
-src/ft_expansions/brace/get_range.i: src/ft_expansions/brace/get_range.c.i
-
-.PHONY : src/ft_expansions/brace/get_range.i
+.PHONY : pathname/regex.i
 
 # target to preprocess a source file
-src/ft_expansions/brace/get_range.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.i
-.PHONY : src/ft_expansions/brace/get_range.c.i
+pathname/regex.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/pathname/regex.c.i
+.PHONY : pathname/regex.c.i
 
-src/ft_expansions/brace/get_range.s: src/ft_expansions/brace/get_range.c.s
+pathname/regex.s: pathname/regex.c.s
 
-.PHONY : src/ft_expansions/brace/get_range.s
-
-# target to generate assembly for a file
-src/ft_expansions/brace/get_range.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.s
-.PHONY : src/ft_expansions/brace/get_range.c.s
-
-src/ft_expansions/brace/get_seq.o: src/ft_expansions/brace/get_seq.c.o
-
-.PHONY : src/ft_expansions/brace/get_seq.o
-
-# target to build an object file
-src/ft_expansions/brace/get_seq.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o
-.PHONY : src/ft_expansions/brace/get_seq.c.o
-
-src/ft_expansions/brace/get_seq.i: src/ft_expansions/brace/get_seq.c.i
-
-.PHONY : src/ft_expansions/brace/get_seq.i
-
-# target to preprocess a source file
-src/ft_expansions/brace/get_seq.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.i
-.PHONY : src/ft_expansions/brace/get_seq.c.i
-
-src/ft_expansions/brace/get_seq.s: src/ft_expansions/brace/get_seq.c.s
-
-.PHONY : src/ft_expansions/brace/get_seq.s
+.PHONY : pathname/regex.s
 
 # target to generate assembly for a file
-src/ft_expansions/brace/get_seq.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.s
-.PHONY : src/ft_expansions/brace/get_seq.c.s
+pathname/regex.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/pathname/regex.c.s
+.PHONY : pathname/regex.c.s
 
 # Help Target
 help:
@@ -3387,21 +3306,12 @@ help:
 	@echo "... libft/src/get_next_line.o"
 	@echo "... libft/src/get_next_line.i"
 	@echo "... libft/src/get_next_line.s"
-	@echo "... src/ft_expansions/brace/auxiliary_funcs.o"
-	@echo "... src/ft_expansions/brace/auxiliary_funcs.i"
-	@echo "... src/ft_expansions/brace/auxiliary_funcs.s"
-	@echo "... src/ft_expansions/brace/expand_braces.o"
-	@echo "... src/ft_expansions/brace/expand_braces.i"
-	@echo "... src/ft_expansions/brace/expand_braces.s"
-	@echo "... src/ft_expansions/brace/fill_buf.o"
-	@echo "... src/ft_expansions/brace/fill_buf.i"
-	@echo "... src/ft_expansions/brace/fill_buf.s"
-	@echo "... src/ft_expansions/brace/get_range.o"
-	@echo "... src/ft_expansions/brace/get_range.i"
-	@echo "... src/ft_expansions/brace/get_range.s"
-	@echo "... src/ft_expansions/brace/get_seq.o"
-	@echo "... src/ft_expansions/brace/get_seq.i"
-	@echo "... src/ft_expansions/brace/get_seq.s"
+	@echo "... pathname/ft_strcut.o"
+	@echo "... pathname/ft_strcut.i"
+	@echo "... pathname/ft_strcut.s"
+	@echo "... pathname/regex.o"
+	@echo "... pathname/regex.i"
+	@echo "... pathname/regex.s"
 .PHONY : help
 
 

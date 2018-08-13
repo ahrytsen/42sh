@@ -411,19 +411,10 @@
 		<Unit filename="/Users/yvyliehz/gsh/libft/src/get_next_line.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/src/ft_expansions/brace/auxiliary_funcs.c">
+		<Unit filename="/Users/yvyliehz/gsh/pathname/ft_strcut.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/src/ft_expansions/brace/expand_braces.c">
-			<Option target="gsh"/>
-		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/src/ft_expansions/brace/fill_buf.c">
-			<Option target="gsh"/>
-		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/src/ft_expansions/brace/get_range.c">
-			<Option target="gsh"/>
-		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/src/ft_expansions/brace/get_seq.c">
+		<Unit filename="/Users/yvyliehz/gsh/pathname/regex.c">
 			<Option target="gsh"/>
 		</Unit>
 		<Unit filename="/Users/yvyliehz/gsh/CMakeLists.txt">

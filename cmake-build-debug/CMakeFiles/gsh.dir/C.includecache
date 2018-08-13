@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../inc/ft_expansions.h
-libft.h
-../inc/libft.h
-
 ../libft/inc/ft_printf.h
 stdarg.h
 -
@@ -440,23 +436,15 @@ libft.h
 libft.h
 /Users/yvyliehz/gsh/libft/src/libft.h
 
-/Users/yvyliehz/gsh/src/ft_expansions/brace/auxiliary_funcs.c
-ft_expansions.h
-/Users/yvyliehz/gsh/src/ft_expansions/brace/ft_expansions.h
+/Users/yvyliehz/gsh/pathname/ft_strcut.c
+libft.h
+/Users/yvyliehz/gsh/pathname/libft.h
 
-/Users/yvyliehz/gsh/src/ft_expansions/brace/expand_braces.c
-ft_expansions.h
-/Users/yvyliehz/gsh/src/ft_expansions/brace/ft_expansions.h
-
-/Users/yvyliehz/gsh/src/ft_expansions/brace/fill_buf.c
-ft_expansions.h
-/Users/yvyliehz/gsh/src/ft_expansions/brace/ft_expansions.h
-
-/Users/yvyliehz/gsh/src/ft_expansions/brace/get_range.c
-ft_expansions.h
-/Users/yvyliehz/gsh/src/ft_expansions/brace/ft_expansions.h
-
-/Users/yvyliehz/gsh/src/ft_expansions/brace/get_seq.c
-ft_expansions.h
-/Users/yvyliehz/gsh/src/ft_expansions/brace/ft_expansions.h
+/Users/yvyliehz/gsh/pathname/regex.c
+libft.h
+/Users/yvyliehz/gsh/pathname/libft.h
+dirent.h
+-
+sys/stat.h
+-
 

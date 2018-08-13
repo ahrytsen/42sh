@@ -108,11 +108,8 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/yvyliehz/gsh/libft/src/ft_ultoa_base.c" "/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.o"
   "/Users/yvyliehz/gsh/libft/src/ft_wcharlen.c" "/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o"
   "/Users/yvyliehz/gsh/libft/src/get_next_line.c" "/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles/gsh.dir/libft/src/get_next_line.c.o"
-  "/Users/yvyliehz/gsh/src/ft_expansions/brace/auxiliary_funcs.c" "/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o"
-  "/Users/yvyliehz/gsh/src/ft_expansions/brace/expand_braces.c" "/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o"
-  "/Users/yvyliehz/gsh/src/ft_expansions/brace/fill_buf.c" "/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o"
-  "/Users/yvyliehz/gsh/src/ft_expansions/brace/get_range.c" "/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o"
-  "/Users/yvyliehz/gsh/src/ft_expansions/brace/get_seq.c" "/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o"
+  "/Users/yvyliehz/gsh/pathname/ft_strcut.c" "/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles/gsh.dir/pathname/ft_strcut.c.o"
+  "/Users/yvyliehz/gsh/pathname/regex.c" "/Users/yvyliehz/gsh/cmake-build-debug/CMakeFiles/gsh.dir/pathname/regex.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
