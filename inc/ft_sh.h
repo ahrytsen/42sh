@@ -199,11 +199,9 @@ int				ft_argv_exec(char **cmd, char *altpath, int bg);
 /*
 **				ft_argv_quotes.c
 */
-void			ft_token_del(void *token, size_t size);
-int				ft_isseparator(int c);
-int				ft_skip_word(char **ln);
-int				ft_skip_qoutes(char **s);
-int				ft_skip_subsh(char **ln);
+void			ft_slash(t_buf **cur, char **line);
+void			ft_dquote_slash(t_buf **cur, char **line);
+void			ft_bquote_helper(t_buf **cur, char *str);
 /*
 **				ft_argv_utils.c
 */
@@ -303,10 +301,9 @@ t_list			*ft_tokenize(char *ln);
 */
 void			ft_token_del(void *token, size_t size);
 int				ft_isseparator(int c);
-int				ft_check_redir(t_token *prev, t_token *next, char *ln);
-void			ft_skip_slash(char **s);
+int				ft_skip_word(char **ln);
 int				ft_skip_qoutes(char **s);
-
+int				ft_skip_subsh(char **ln);
 /*
 **				ft_builtins/ft_builtins.c
 */
