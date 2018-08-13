@@ -47,17 +47,42 @@ int		ft_exit(char **av)
 	}
 	if (av && *av && *(av + 1))
 	{
-		ft_dprintf(2, "exit: too many arguments\n");
+		write(2, "exit: too many arguments\n", 25);
 		return (256);
 	}
 	exit((av && *av) ? ft_atoi(*av) : get_environ()->st);
+}
+
+int		ft_read_export_flags(char ***av, int *flags)
+{
+	if (**av && ***av == '-')
+	{
+		(**av)++;
+		while (***av)
+		{
+			if (***av != 'p' || ***av != 'n')
+			{
+				ft_dprintf(2, "export: bad option: -%c\n", ***av);
+				return (1);
+			}
+			*flags |= (***av - 109);
+			(**av)++;
+		}
+		(*av)++;
+	}
+	return (0);
 }
 
 int		ft_export(char **av)
 {
 	char	*value;
 	t_var	*entry;
+	int		flags;
 
+	if (ft_read_export_flags(&av, &flags))
+		return (-1);
+	if (!*av)
+		return (ft_print_shvar(ENVAR));
 	while (*av)
 	{
 		if ((value = ft_strchr(*av, '=')))
