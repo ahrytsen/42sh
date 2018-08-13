@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 13:54:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/07 20:03:30 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/13 14:42:42 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ t_ast			*ft_ast_push(t_ast *ast, t_ast *node)
 	if ((node->type == cmd
 			&& !(node->cmd = ft_cmdlst_make(&node->toks)))
 		|| (!(new_node = (t_ast*)malloc(sizeof(t_ast)))
-			&& write(2, "21sh: malloc error\n", 19)))
+			&& write(2, "42sh: malloc error\n", 19)))
 		return ((t_ast*)ft_cmdlst_del(node->cmd));
 	node->toks = NULL;
 	ft_memcpy(new_node, node, sizeof(t_ast));

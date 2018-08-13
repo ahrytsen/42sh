@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 17:35:56 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:23:18 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/13 17:35:11 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_cmd			*ft_cmdlst_push(t_cmd *cmdlst, t_cmd *node)
 	t_cmd *new_node;
 
 	if (!(new_node = (t_cmd*)malloc(sizeof(t_cmd)))
-		&& write(2, "21sh: malloc error\n", 19))
+		&& write(2, "42sh: malloc error\n", 19))
 		return (ft_cmdlst_del(cmdlst));
 	ft_memcpy(new_node, node, sizeof(t_cmd));
 	while (cmdlst && cmdlst->next)

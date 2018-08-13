@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/07 15:27:02 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/08/13 21:02:01 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -47,6 +47,7 @@ SRC			=	main.c\
 				ft_buffer.c\
 				ft_tokenize.c\
 				ft_tokenize_utils.c\
+				ft_tokenize_tools.c\
 				ft_ast.c\
 				ft_ast_utils.c\
 				ft_ast_exec.c\

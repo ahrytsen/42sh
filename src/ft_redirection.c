@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 14:04:03 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/12 19:31:24 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/13 13:36:19 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@ static int	ft_redir_fd(t_token *tok)
 {
 	int	fd;
 
-	if (tok->type == and_read_out
-		|| (tok->type == read_out_and && tok->data.redir.left == 1
-			&& !ft_redir_right_param(tok)))
+	if ((!ft_redir_right_param(tok) && tok->type == read_out_and
+			&& tok->data.redir.left == 1) || tok->type == and_read_out)
 	{
 		fd = open(tok->data.redir.right, O_WRONLY | O_CREAT | O_TRUNC,
 				S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);

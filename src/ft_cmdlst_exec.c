@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 17:41:55 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/09 19:54:35 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/13 20:28:03 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,31 @@ static int	ft_pl_make(int pl[2], t_cmd *cmd)
 {
 	if (cmd->next)
 	{
-		if (pipe(pl) && write(2, "21sh: pipe error\n", 17))
+		if (pipe(pl) && write(2, "42sh: pipe error\n", 17))
 			return (1);
 		cmd->p_out = pl[1];
 		cmd->next->p_in = pl[0];
 	}
 	return (0);
+}
+
+static int	ft_subsh_exec(t_cmd *cmd)
+{
+	t_list	*toks;
+	t_ast	*ast;
+
+	ast = NULL;
+	toks = NULL;
+	get_environ()->st = 1;
+	if (cmd->subsh && (toks = ft_tokenize(cmd->subsh))
+		&& ft_heredoc(toks))
+	{
+		ast = ft_ast_make(&toks);
+		get_environ()->st = ft_ast_exec(ast);
+		ast = ft_ast_del(ast, 1);
+		ft_lstdel(&toks, ft_token_del);
+	}
+	exit(get_environ()->st);
 }
 
 static int	ft_cmd_exec_chld(t_cmd *cmd, int bg)
@@ -35,25 +54,30 @@ static int	ft_cmd_exec_chld(t_cmd *cmd, int bg)
 		ft_set_sh_signal(bg ? S_CHLD : S_CHLD_FG);
 		bg = -1;
 	}
-	cmd->ret = ft_redirection(cmd->toks) ? 1 : ft_argv_exec(cmd->av, NULL, bg);
+	if (ft_redirection(cmd->toks))
+		cmd->ret = 1;
+	else
+		cmd->ret = cmd->subsh ? ft_subsh_exec(cmd)
+			: ft_argv_exec(cmd->av, NULL, bg);
 	cmd->pid = get_environ()->pid;
 	get_environ()->pgid = cmd->pid;
 	ft_redirection_close(cmd->toks);
 	if (cmd->next || cmd->prev || bg)
-		exit(cmd->av ? cmd->ret : 1);
-	return (cmd->av ? cmd->ret : 1);
+		exit(cmd->ret);
+	return (cmd->ret);
 }
 
 static int	ft_cmd_exec(t_cmd *cmd, int bg)
 {
 	static int	pl[2];
 
-	if (ft_pl_make(pl, cmd) || (!(cmd->av = ft_argv_make(cmd->toks))
-								&& write(2, "21sh: malloc error\n", 19)))
+	if (ft_pl_make(pl, cmd)
+		|| (!cmd->subsh && !(cmd->av = ft_argv_make(cmd->toks))
+			&& write(2, "42sh: malloc error\n", 19)))
 		return (1);
-	if ((cmd->next || cmd->prev || bg) && (cmd->pid = fork()))
+	if ((cmd->next || cmd->prev || bg || cmd->subsh) && (cmd->pid = fork()))
 	{
-		if (cmd->pid == -1 && write(2, "21sh: fork() error\n", 19))
+		if (cmd->pid == -1 && write(2, "42sh: fork() error\n", 19))
 			return (1);
 		get_environ()->pid = cmd->pid;
 		if (get_environ()->is_interactive)

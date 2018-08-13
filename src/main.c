@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/11 19:53:36 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/12 15:38:37 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/13 20:35:22 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ static void	test(t_list *elem)
 	t_token	*tok;
 
 	tok = elem->content;
-	if (tok->type == word && ft_printf("[%s]", tok->data.word))
+	if ((tok->type == word || tok->type == subsh)
+		&& ft_printf(tok->type == word ? "[%s]" : "[(%s)]", tok->data.word))
 		return ;
 	ft_printf("[%d", tok->data.redir.left);
 	if (tok->type == heredoc || tok->type == heredoc_t)
