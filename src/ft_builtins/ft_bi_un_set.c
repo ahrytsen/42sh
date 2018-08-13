@@ -25,14 +25,16 @@ int		ft_unset(char **av)
 	return (ret);
 }
 
-int			ft_print_shvar(void)
+int			ft_print_shvar(int mod)
 {
 	t_var *env;
 
 	env = get_environ()->shvar;
 	while (env)
 	{
-		ft_printf("%c %s\n", env->attr, env->var);
+		if ((mod < ENVAR && env->attr == 'l')
+		|| (mod > SHVAR && env->attr == 'e'))
+			ft_printf("%c %s\n", env->attr, env->var);
 		env = env->next;
 	}
 	return (0);
@@ -48,7 +50,7 @@ int		ft_set(char **av)
 	if (!av)
 		return (256);
 	if (!*av || !ft_strcmp(*av, "--"))
-		ft_print_shvar();
+		ft_print_shvar(1);
 	// while (*av)
 	// {
 	// 	if ((value = ft_strchr(*av, '=')))

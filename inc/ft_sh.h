@@ -53,7 +53,7 @@
 **	VARIABLES MOD
 */
 # define SHVAR 0
-# define ENVAR 1
+# define ENVAR 2
 
 typedef struct	s_op
 {
@@ -329,6 +329,7 @@ int				ft_unsetenv(char **av);
 */
 int				ft_set(char **av);
 int				ft_unset(char **av);
+int				ft_print_shvar(int mod);
 /*
 **				ft_builtins/ft_bi_history.c
 */
