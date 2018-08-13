@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/08 15:16:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/10 14:46:07 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/13 21:23:30 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char		*ft_tname(int type)
 		return ("?");
 }
 
-static int	ft_isoperator(t_token *tok)
+int			ft_isoperator(t_token *tok)
 {
 	return ((tok->type >= bg_op && tok->type <= or) ? 1 : 0);
 }
@@ -52,7 +52,7 @@ static void	ft_get_operator(t_list **toks, t_ast *ast_node)
 	tok = tmp->content;
 	if (tok->type == bg_op)
 		ast_node->type = ast_bg;
-	else if (tok->type == semi)
+	else if (tok->type == semi || tok->type == nl)
 		ast_node->type = ast_smcln;
 	else if (tok->type == and)
 		ast_node->type = ast_and;
