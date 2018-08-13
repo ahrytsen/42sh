@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:31 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:24:12 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/12 19:28:47 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,48 +23,76 @@ void	ft_token_del(void *token, size_t size)
 
 int		ft_isseparator(int c)
 {
-	return (ft_strchr("|&;<> \t\n", c) ? 1 : 0);
+	return (ft_strchr("|&;()<> \t", c) ? 1 : 0);
 }
 
-int		ft_check_redir(t_token *prev, t_token *next, char *ln)
+int		ft_skip_word(char **ln)
 {
-	if (prev && prev->type > or && !prev->data.redir.right)
-	{
-		ft_dprintf(2, "21sh: unexpected token `%s'\n",
-					ft_tname(next ? next->type : 0));
-		return (1);
-	}
-	else if (next && next->type > or && !*ln)
-	{
-		ft_dprintf(2, "21sh: unexpected token `%s'\n",
-					ft_tname(0));
-		return (1);
-	}
+	while (**ln && !ft_isseparator(**ln))
+		if (**ln == '\'' || **ln == '"' || **ln == '`')
+		{
+			if (ft_skip_qoutes(ln))
+				return (1);
+		}
+		else if (*(*ln) == '$' && *((*ln) + 1) == '(' && (*ln)++)
+		{
+			if (ft_skip_subsh(ln))
+				return (1);
+		}
+		else if (**ln == '\\')
+			*++(*ln) ? (*ln)++ : 0;
+		else
+			(*ln)++;
 	return (0);
 }
 
-void	ft_skip_slash(char **s)
+int		ft_skip_subsh(char **ln)
 {
-	if (*++(*s))
-		(*s)++;
+	(*ln)++;
+	while (**ln != ')')
+		if (!**ln
+			&& ft_dprintf(2, "42sh: %s `)'\n",
+						"unexpected EOF while looking for matching"))
+			return (1);
+		else if (**ln == '\'' || **ln == '`' || **ln == '"')
+		{
+			if (ft_skip_qoutes(ln))
+				return (1);
+		}
+		else if (**ln == '(')
+		{
+			if (ft_skip_subsh(ln))
+				return (1);
+		}
+		else if (**ln == '\\')
+			*++(*ln) ? (*ln)++ : 0;
+		else
+			(*ln)++;
+	(*ln)++;
+	return (0);
 }
 
-int		ft_skip_qoutes(char **s)
+int		ft_skip_qoutes(char **ln)
 {
 	char	q;
 
-	q = *(*s)++;
-	while (**s != q)
-		if (!**s
-			&& ft_dprintf(2, "21sh: %s `%c'\n",
+	q = *(*ln)++;
+	while (**ln != q)
+		if (!**ln
+			&& ft_dprintf(2, "42sh: %s `%c'\n",
 						"unexpected EOF while looking for matching", q))
 			return (1);
-		else if (q == '"' && **s == '`')
-			ft_skip_qoutes(s);
-		else if (q != '\'' && **s == '\\' && (*s)++)
-			**s ? (*s)++ : 0;
+		else if (q == '"' && **ln == '`')
+			ft_skip_qoutes(ln);
+		else if (q != '\'' && **ln == '\\')
+			*++(*ln) ? (*ln)++ : 0;
+		else if (q != '\'' && **ln == '$' && *((*ln) + 1) == '(' && (*ln)++)
+		{
+			if (ft_skip_subsh(ln))
+				return (1);
+		}
 		else
-			(*s)++;
-	(*s)++;
+			(*ln)++;
+	(*ln)++;
 	return (0);
 }

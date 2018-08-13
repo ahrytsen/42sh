@@ -99,7 +99,11 @@ t_ast		*ft_ast_make(t_list **toks)
 		ast = tmp;
 	}
 	if (ast && ast->type != cmd && ast->type != ast_smcln && ast->type != ast_bg
+<<<<<<< HEAD
+		&& write(2, "21sh: unexpected EOF\n", 21))
+=======
 		&& write(2, "42sh: unexpected EOF\n", 21))
+>>>>>>> master
 		return (ft_ast_del(ast, 1));
 	while (ast && ast->prev)
 		ast = ast->prev;

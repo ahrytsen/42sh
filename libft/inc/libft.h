@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 05:35:20 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 13:42:25 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/10 15:47:02 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,8 @@ void			ft_sort_params(char **av, int ac);
 char			**ft_strdup_arr(char **src_arr);
 int				ft_iswhitespace(int c);
 int				ft_isalpha_str(char *str);
-int				ft_isnumeric_str(char *str);
+int				ft_isnumeric(char *str);
+int				ft_isnumeric_n(char *str, size_t len);
 int				ft_isalnum_str(char *str);
 int				ft_isascii_str(char *str);
 int				ft_isprint_str(char *str);

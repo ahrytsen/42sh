@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:24:03 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/12 19:28:21 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	ft_get_separator(char **ln, t_token *token)
 	if ((**ln == ' ' || **ln == '\t') && !(*(*ln)++ = '\0'))
 		token->type = blank;
 	else if ((**ln == ';' || **ln == '\n') && !(*(*ln)++ = '\0'))
-		token->type = semicolon;
+		token->type = semi;
 	else if (**ln == '|' && !(*(*ln)++ = '\0'))
 		token->type =
 			(**ln == '|' && !(*(*ln)++ = '\0')) ? or : pipeline;
@@ -60,6 +60,8 @@ static int	ft_get_separator(char **ln, t_token *token)
 			token->type =
 				(**ln == '&' && !(*(*ln)++ = '\0')) ? and : bg_op;
 	}
+	else if (**ln == '(' && (token->type = subsh))
+		ft_skip_subsh(ln);
 	else if (**ln == '<' && !(*(*ln)++ = '\0')
 			&& !(token->data.redir.left = 0))
 		ft_get_redirect_in(ln, token);
@@ -71,30 +73,19 @@ static int	ft_get_separator(char **ln, t_token *token)
 
 static int	ft_get_token(char **ln, t_token *token)
 {
-	int	f[2];
-
-	f[0] = 1;
-	f[1] = 0;
 	token->type = word;
 	token->data.word = *ln;
-	while (**ln && !ft_isseparator(**ln))
-	{
-		f[0] && !ft_isdigit(**ln) ? f[0] = 0 : 0;
-		if (**ln == '\'' || **ln == '"' || **ln == '`')
-			f[1] = ft_skip_qoutes(ln);
-		else if (**ln == '\\')
-			ft_skip_slash(ln);
-		else
-			(*ln)++;
-	}
-	if ((**ln == '<' || **ln == '>') && f[0] && (f[0] = **ln)
-		&& !(*(*ln)++ = '\0'))
+	if (ft_skip_word(ln))
+		return (1);
+	if ((**ln == '<' || **ln == '>')
+		&& ft_isnumeric_n(token->data.word, *ln - token->data.word))
 	{
 		token->data.redir.left = ft_atoi(token->data.word);
-		(f[0] == '<') ? ft_get_redirect_in(ln, token)
+		token->data.redir.cls = 0;
+		(**ln == '<' && (*ln)++) || !++(*ln) ? ft_get_redirect_in(ln, token)
 			: ft_get_redirect_out(ln, token);
 	}
-	return (f[1]);
+	return (0);
 }
 
 t_list		*ft_tokenize(char *ln)
@@ -109,13 +100,12 @@ t_list		*ft_tokenize(char *ln)
 		ft_bzero(&tok, sizeof(tok));
 		if ((!ft_isseparator(*ln) ? ft_get_token : ft_get_separator)(&ln, &tok))
 			ft_lstdel(&toks, ft_token_del);
-		else if (((!toks || ((t_token*)tmp->content)->type == semicolon)
-			&& tok.type == semicolon) || tok.type == blank)
+		else if (tok.type == blank)
 			continue ;
 		else if (toks && ((t_token*)tmp->content)->type > or
 			&& !((t_token*)tmp->content)->data.redir.right && tok.type == word)
 			((t_token*)tmp->content)->data.redir.right = tok.data.word;
-		else if (ft_check_redir(toks ? tmp->content : NULL, &tok, ln)
+		else if (ft_redir_check(toks ? tmp->content : NULL, &tok, ln)
 			|| !(tmp = ft_lstpush_back(toks ? &tmp : &toks, &tok, sizeof(tok))))
 		{
 			!tmp ? write(2, "21sh: malloc error\n", 19) : 0;

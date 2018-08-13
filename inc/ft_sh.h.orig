@@ -74,7 +74,11 @@ typedef struct	s_var
 typedef struct	s_env
 {
 	char			**envar;
+<<<<<<< HEAD
 	t_var			*shvar;
+=======
+	char			**shvar;
+>>>>>>> master
 	int				st;
 	pid_t			sh_pid;
 	pid_t			sh_pgid;
@@ -189,7 +193,30 @@ extern const t_builtins	g_builtin[];
 */
 int				main_loop(int fd);
 /*
+<<<<<<< HEAD
 **				ft_argv.c
+=======
+**				init.c
+*/
+void			ft_fildes(int mod);
+void			ft_set_sh_signal(int mod);
+void			ft_init_fd(int fd);
+void			ft_init(void);
+/*
+**				ft_tokenize.c
+*/
+t_list			*ft_tokenize(char *ln);
+/*
+**				ft_tokenize_utils.c
+*/
+void			ft_token_del(void *token, size_t size);
+int				ft_isseparator(int c);
+int				ft_skip_word(char **ln);
+int				ft_skip_qoutes(char **s);
+int				ft_skip_subsh(char **ln);
+/*
+**				ft_heredoc.c
+>>>>>>> master
 */
 char			**ft_argv_make(t_list *toks);
 /*
@@ -199,11 +226,9 @@ int				ft_argv_exec(char **cmd, char *altpath, int bg);
 /*
 **				ft_argv_quotes.c
 */
-void			ft_token_del(void *token, size_t size);
-int				ft_isseparator(int c);
-int				ft_skip_word(char **ln);
-int				ft_skip_qoutes(char **s);
-int				ft_skip_subsh(char **ln);
+void			ft_slash(t_buf **cur, char **line);
+void			ft_dquote_slash(t_buf **cur, char **line);
+void			ft_bquote_helper(t_buf **cur, char *str);
 /*
 **				ft_argv_utils.c
 */
