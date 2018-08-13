@@ -6,11 +6,12 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/23 21:00:10 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/06/28 17:58:55 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/09 21:18:02 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_sh.h"
+#include "ft_readline.h"
 
 static char	*parse_heredoc(char *line, int mod, int *f)
 {
@@ -71,6 +72,7 @@ int			ft_heredoc(t_list *toks)
 	t_token	*tok;
 	int		ret;
 
+	ret = 1;
 	get_term()->prompt = P_HEREDOC;
 	while (toks)
 	{

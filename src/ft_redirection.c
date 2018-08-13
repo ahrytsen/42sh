@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 14:04:03 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/07/03 17:53:04 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/09 21:19:49 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_sh.h"
 
 static int	ft_redir_fd(t_token *tok)
 {
@@ -26,17 +26,18 @@ static int	ft_redir_fd(t_token *tok)
 		if (fd < 0)
 			return (256);
 		dup2(fd, 1);
-		dup2(fd, 2);
+		close(fd);
+		dup2(1, 2);
 	}
 	else
 	{
 		if (tok->data.redir.nbr != -1
 			&& dup2(tok->data.redir.nbr, tok->data.redir.left) == -1
-			&& ft_dprintf(2, "21sh: duplicate error\n"))
+			&& write(2, "21sh: duplicate error\n", 22))
 			return (256);
 		if (tok->data.redir.cls)
 			close(tok->data.redir.nbr != -1
-				? tok->data.redir.nbr : tok->data.redir.left);
+			? tok->data.redir.nbr : tok->data.redir.left);
 	}
 	return (0);
 }
@@ -45,10 +46,10 @@ static int	ft_redir_heredoc(t_token *tok)
 {
 	int	pl[2];
 
-	if (pipe(pl) && ft_dprintf(2, "21sh: pipe error\n"))
+	if (pipe(pl) && write(2, "21sh: pipe error\n", 17))
 		return (256);
 	if (dup2(pl[0], tok->data.redir.left) == -1
-		&& ft_dprintf(2, "21sh: duplicate error\n"))
+		&& write(2, "21sh: duplicate error\n", 22))
 		return (256);
 	close(pl[0]);
 	ft_dprintf(pl[1], tok->type == herestr ? "%s\n" : "%s", tok->data.redir.hd);
@@ -76,11 +77,11 @@ static int	ft_redir_file(t_token *tok)
 							oflag, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH)) >= 0)
 	{
 		dup2(fd, tok->data.redir.left);
-		close(fd);
+		fd != tok->data.redir.left ? close(fd) : 0;
 		return (0);
 	}
 	else if (fd < 0)
-		ft_dprintf(2, "21sh: open() error\n");
+		write(2, "21sh: open() error\n", 19);
 	return (256);
 }
 

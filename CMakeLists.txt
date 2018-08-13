@@ -1,17 +1,21 @@
 cmake_minimum_required(VERSION 3.9)
 project(gsh)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 99)
 
-#set (CMAKE_C_FLAGS "-Wall -Wextra -Werror")
+set (CMAKE_C_FLAGS "-Wall -Werror -Wextra")
 
 include_directories(inc libft/inc)
 
 add_executable(gsh
-        braces/fill_buf.c
-        braces/get_seq.c
-        braces/main.c
-        inc/twenty_one_sh.h
+        src/ft_expansions/brace/fill_buf.c
+        src/ft_expansions/brace/get_seq.c
+        src/ft_expansions/brace/expand_braces.c
+        src/ft_expansions/brace/auxiliary_funcs.c
+        src/ft_expansions/brace/get_range.c
+        inc/ft_readline.h
+        inc/ft_sh.h
+        inc/ft_expansions.h
         libft/inc/ft_printf.h
         libft/inc/libft.h
         libft/src/ft_printf/ft_pbuf.c
@@ -19,6 +23,7 @@ add_executable(gsh
         libft/src/ft_printf/ft_phelper.c
         libft/src/ft_printf/ft_phendler.c
         libft/src/ft_printf/ft_printf.c
+        libft/src/ft_absolute.c
         libft/src/ft_arrstr.c
         libft/src/ft_atoi.c
         libft/src/ft_atoi_base.c
@@ -117,24 +122,27 @@ add_executable(gsh
         libft/src/ft_ultoa_base.c
         libft/src/ft_wcharlen.c
         libft/src/get_next_line.c
-#        src/builtins/builtins.c
-#        src/builtins/env_builtin.c
-#        src/builtins/ft_cd.c
-#        src/builtins/ft_fg.c
-#        src/ft_readline/ft_autocomplit.c
-#        src/ft_readline/ft_check_line.c
-#        src/ft_readline/ft_cursor.c
-#        src/ft_readline/ft_highlight.c
-#        src/ft_readline/ft_history.c
-#        src/ft_readline/ft_prompt.c
-#        src/ft_readline/ft_read.c
+#        src/ft_builtins/ft_bi_cd.c
+#        src/ft_builtins/ft_bi_env.c
+#        src/ft_builtins/ft_bi_fg.c
+#        src/ft_builtins/ft_builtins.c
 #        src/ft_readline/ft_readline.c
-#        src/ft_readline/ft_readline_action.c
-#        src/ft_readline/ft_readline_helper.c
-#        src/ft_readline/line.c
-#        src/ft_readline/line_edit.c
-#        src/ft_readline/rl_init.c
-#        src/env_utils.c
+#        src/ft_readline/ft_rl_action.c
+#        src/ft_readline/ft_rl_autocomp_cmd_and_var.c
+#        src/ft_readline/ft_rl_autocomp_commands.c
+#        src/ft_readline/ft_rl_autocomp_drawer.c
+#        src/ft_readline/ft_rl_autocomp_filenames.c
+#        src/ft_readline/ft_rl_autocomplit.c
+#        src/ft_readline/ft_rl_check_line.c
+#        src/ft_readline/ft_rl_cursor.c
+#        src/ft_readline/ft_rl_helper.c
+#        src/ft_readline/ft_rl_highlight.c
+#        src/ft_readline/ft_rl_history.c
+#        src/ft_readline/ft_rl_init.c
+#        src/ft_readline/ft_rl_line.c
+#        src/ft_readline/ft_rl_line_edit.c
+#        src/ft_readline/ft_rl_prompt.c
+#        src/ft_readline/ft_rl_read.c
 #        src/ft_argv.c
 #        src/ft_argv_exec.c
 #        src/ft_argv_quotes.c
@@ -146,12 +154,13 @@ add_executable(gsh
 #        src/ft_cmdlst.c
 #        src/ft_cmdlst_exec.c
 #        src/ft_cmdlst_utils.c
+#        src/ft_env_utils.c
 #        src/ft_heredoc.c
+#        src/ft_init.c
 #        src/ft_jobs_utils.c
 #        src/ft_redirection.c
 #        src/ft_redirection_utils.c
 #        src/ft_tokenize.c
 #        src/ft_tokenize_utils.c
-#        src/init.c
 #        src/main.c
         )

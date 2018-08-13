@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:36:50 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/06/29 15:19:03 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:21:19 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_sh.h"
 
 void		ft_dquote_slash(t_buf **cur, char **line)
 {
@@ -90,7 +90,7 @@ void		ft_bquote_helper(t_buf **cur, char *str)
 		get_environ()->pid = 0;
 	}
 	else if (get_environ()->pid == -1)
-		ft_dprintf(2, "21sh: fork() error\n");
+		write(2, "21sh: fork() error\n", 19);
 	else
 		ft_bquote_child(fd_get, str);
 }

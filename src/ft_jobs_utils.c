@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 18:37:54 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/07/03 14:55:56 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/08 18:43:38 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_sh.h"
 
 void		ft_stop_job(t_cmd *cmd, int mod)
 {
@@ -51,7 +51,7 @@ static void	ft_kill_all(t_cmd *cmd)
 {
 	while ((cmd = cmd->prev))
 	{
-		!kill(cmd->pid, SIGKILL) ? waitpid(cmd->pid, &cmd->ret, WUNTRACED) : 0;
+		cmd->pid > 0 ? waitpid(cmd->pid, &cmd->ret, WUNTRACED) : 0;
 		cmd->ret = ft_status_job(cmd->ret);
 	}
 }
@@ -64,10 +64,10 @@ int			ft_control_job(t_cmd *cmd, int bg, int cont)
 	if (!cmd->ret && cmd->pid && get_environ()->is_interactive)
 	{
 		setpgid(cmd->pid, get_environ()->pgid);
-		!bg ? tcsetpgrp(1, get_environ()->pgid) : 0;
+		!bg ? tcsetpgrp(0, get_environ()->pgid) : 0;
 		cont ? kill(-get_environ()->pgid, SIGCONT) : 0;
 		!bg ? waitpid(cmd->pid, &cmd->ret, WUNTRACED) : ft_bg_job(cmd);
-		!bg ? tcsetpgrp(1, get_environ()->sh_pid) : 0;
+		!bg ? tcsetpgrp(0, get_environ()->sh_pid) : 0;
 		!bg && WIFSTOPPED(cmd->ret) ? ft_stop_job(cmd, 1) : 0;
 	}
 	else if (!cmd->ret && cmd->pid)

@@ -15,8 +15,8 @@ do
     gsh_output=$($gsh "${tests[$i]}")
     if [ $? -ne 0 ]
     then
-        echo "${red}Expansion failed on ${tests[$i]} (line $((i + 1)))"
-        echo "Exit code: $?${nc}"
+        echo -e "${red}Expansion failed on ${tests[$i]} (line $((i + 1)))"
+        echo -e "Exit code: $?${nc}"
         ((num_fail++))
     else
         diff=$(diff <(echo ${output[$i]}) <(echo $gsh_output))

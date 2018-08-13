@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:31 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/07/03 16:04:22 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/09 21:18:42 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_sh.h"
 
 void	ft_token_del(void *token, size_t size)
 {
@@ -23,7 +23,7 @@ void	ft_token_del(void *token, size_t size)
 
 int		ft_isseparator(int c)
 {
-	return (ft_strchr("|&;<> \t\n", c) ? 1 : 0);
+	return (ft_strchr("|&;<> \t", c) ? 1 : 0);
 }
 
 int		ft_check_redir(t_token *prev, t_token *next, char *ln)

@@ -83,5 +83,6 @@ void			ft_int(t_buf **pbuf, va_list *ap, t_arg *arg);
 void			ft_base(t_buf **pbuf, va_list *ap, t_arg *arg);
 void			ft_undef(t_buf **pbuf, va_list *ap, t_arg *arg);
 void			ft_pfloat(t_buf **pbuf, va_list *ap, t_arg *arg);
+ssize_t			ft_absolute(ssize_t value);
 
 #endif

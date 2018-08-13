@@ -6,25 +6,27 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 13:54:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/06/14 20:43:08 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/07 20:03:30 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_sh.h"
 
-static int		ft_getprior(t_ast_type type)
+static int		ft_getprior(enum e_ast_type type)
 {
 	if (type == cmd)
 		return (1);
+	else if (type == ast_and || type == ast_or)
+		return (2);
 	else
-		return (type == ast_and || type == ast_or ? 2 : 3);
+		return (3);
 }
 
 static t_ast	*ft_add_up(t_ast *ast, t_ast *node)
 {
 	t_ast	*tmp;
 
-	while (ast->prev && ft_getprior(ast->prev->type) < ft_getprior(node->type))
+	while (ast->prev && ft_getprior(ast->prev->type) <= ft_getprior(node->type))
 		ast = ast->prev;
 	tmp = ast->prev;
 	tmp ? tmp->left = node : 0;
@@ -66,7 +68,7 @@ t_ast			*ft_ast_push(t_ast *ast, t_ast *node)
 	if ((node->type == cmd
 			&& !(node->cmd = ft_cmdlst_make(&node->toks)))
 		|| (!(new_node = (t_ast*)malloc(sizeof(t_ast)))
-			&& ft_dprintf(2, "21sh: malloc error\n")))
+			&& write(2, "21sh: malloc error\n", 19)))
 		return ((t_ast*)ft_cmdlst_del(node->cmd));
 	node->toks = NULL;
 	ft_memcpy(new_node, node, sizeof(t_ast));

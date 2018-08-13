@@ -6,11 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/08 15:16:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/07/01 13:34:42 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 14:22:28 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twenty_one_sh.h>
+#include "ft_sh.h"
 
 char		*ft_tname(int type)
 {
@@ -99,7 +99,7 @@ t_ast		*ft_ast_make(t_list **toks)
 		ast = tmp;
 	}
 	if (ast && ast->type != cmd && ast->type != ast_smcln && ast->type != ast_bg
-		&& ft_dprintf(2, "21sh: unexpected EOF\n"))
+		&& write(2, "21sh: unexpected EOF\n", 21))
 		return (ft_ast_del(ast, 1));
 	while (ast && ast->prev)
 		ast = ast->prev;

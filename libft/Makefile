@@ -119,7 +119,7 @@ SRC		=	ft_arrstr.c\
 			ft_wcharlen.c\
 			get_next_line.c\
 			ft_lstadd_list.c\
-			\
+			ft_absolute.c\
 			ft_printf/ft_pbuf.c\
 			ft_printf/ft_pfloat.c\
 			ft_printf/ft_phelper.c\

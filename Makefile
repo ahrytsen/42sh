@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/01 03:13:31 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/08/07 15:27:02 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -34,17 +34,16 @@ endif
 
 INC_LIB		=	-L./libft -lftprintf $(TCAP)
 
-LIBFT		=	libft/libftprintf.a
-
 DIRSRC		=	./src/
 
 DIROBJ		=	./obj/
 
-HDR			=	inc/twenty_one_sh.h
+HDR			=	inc/ft_sh.h\
+				inc/ft_readline.h
 
 SRC			=	main.c\
-				init.c\
-				env_utils.c\
+				ft_init.c\
+				ft_env_utils.c\
 				ft_buffer.c\
 				ft_tokenize.c\
 				ft_tokenize_utils.c\
@@ -63,24 +62,27 @@ SRC			=	main.c\
 				ft_heredoc.c\
 				ft_jobs_utils.c\
 				\
-				builtins/builtins.c\
-				builtins/env_builtin.c\
-				builtins/ft_cd.c\
-				builtins/ft_fg.c\
+				ft_builtins/ft_builtins.c\
+				ft_builtins/ft_bi_env.c\
+				ft_builtins/ft_bi_cd.c\
+				ft_builtins/ft_bi_fg.c\
 				\
-				ft_readline/ft_autocomplit.c\
 				ft_readline/ft_readline.c\
-				ft_readline/ft_readline_action.c\
-				ft_readline/line.c\
-				ft_readline/rl_init.c\
-				ft_readline/ft_cursor.c\
-				ft_readline/ft_readline_helper.c\
-				ft_readline/ft_history.c\
-				ft_readline/ft_highlight.c\
-				ft_readline/line_edit.c\
-				ft_readline/ft_prompt.c\
-				ft_readline/ft_check_line.c\
-				ft_readline/ft_read.c
+				ft_readline/ft_rl_autocomplit.c\
+				ft_readline/ft_rl_autocomp_cmd_and_var.c\
+				ft_readline/ft_rl_autocomp_drawer.c\
+				ft_readline/ft_rl_autocomp_filenames.c\
+				ft_readline/ft_rl_action.c\
+				ft_readline/ft_rl_init.c\
+				ft_readline/ft_rl_check_line.c\
+				ft_readline/ft_rl_cursor.c\
+				ft_readline/ft_rl_helper.c\
+				ft_readline/ft_rl_history.c\
+				ft_readline/ft_rl_highlight.c\
+				ft_readline/ft_rl_line_edit.c\
+				ft_readline/ft_rl_line.c\
+				ft_readline/ft_rl_prompt.c\
+				ft_readline/ft_rl_read.c
 
 OBJ			=	$(addprefix $(DIROBJ), $(SRC:.c=.o))
 
@@ -97,7 +99,7 @@ CFLAGS		=
 CFLAGS		=	-Wall -Wextra -Werror -g
 	endif
 else
-CFLAGS		= 	-Wall -Wextra -Werror -Ofast -flto=thin
+CFLAGS		= 	-Wall -Wextra -Werror -O2 -flto=thin
 endif
 #===========================================================
 STRING1 = $(CYAN)---Compile_$(NAME)$(NON)
@@ -105,7 +107,7 @@ STRING2 = $(CYAN)---Remove_$(NAME)_O_Files$(NON)
 STRING3 = $(CYAN)---Remove_$(NAME)$(NON)
 STRING4 = $(CYAN)---Running$(NON)
 STRING5 = $(CYAN)---Copy binary file in ~/my_bin$(NON)
-STRING5 = $(CYAN)---$(NAME) installed in ~/.my_bin$(NON)
+STRING5 = $(CYAN)---$(NAME) installed in ~/.mybin$(NON)
 #===========================================================
 
 .PHONY: all clean re
@@ -120,7 +122,7 @@ $(NAME): $(LIBFT) $(DIROBJ) $(OBJ)
 $(DIROBJ):
 	mkdir -p $(DIROBJ)
 	mkdir -p $(DIROBJ)/ft_readline
-	mkdir -p $(DIROBJ)/builtins
+	mkdir -p $(DIROBJ)/ft_builtins
 
 lib:
 	@$(MAKE) -C $(SUB_MAKE) -j3
@@ -132,7 +134,7 @@ $(OBJ):	$(DIROBJ)%.o : $(DIRSRC)%.c $(HDR)
 	@echo "$(CYANN)comp$(NON)..."$@
 
 clean:
-	@($(RM) $(DIROBJ))
+	@$(RM) $(DIROBJ)
 ifdef SUB_MAKE
 	@$(MAKE) -C $(SUB_MAKE) clean
 endif
@@ -149,7 +151,7 @@ re: fclean all
 
 clear:
 	@echo "$(STRING2)"
-	@rm -rf $(OBJ)
+	@rm -rf $(DIROBJ)
 	@echo "$(STRING3)"
 	@rm -rf $(NAME)
 
@@ -168,6 +170,9 @@ inst:
 
 install:
 	@echo "$(STRING6)"
-	@cp $(NAME) ~/.my_bin
+	@cp $(NAME) ~/.mybin
 
 .NOTEPARALLEL: all $(NAME) re
+
+dbg:
+	@./42sh 2>file

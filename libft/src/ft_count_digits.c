@@ -12,11 +12,12 @@
 
 #include "libft.h"
 
-size_t	ft_count_digits(size_t n)
+size_t	ft_count_digits(ssize_t n)
 {
 	size_t	digits;
 
 	digits = 1;
+	n = ft_absolute(n);
 	while (n /= 10)
 		digits++;
 	return (digits);
