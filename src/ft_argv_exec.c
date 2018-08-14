@@ -70,9 +70,10 @@ static char	**ft_get_path(const char *altpath)
 {
 	char	pwd[MAXPATHLEN];
 
+
 	if (!altpath)
 	{
-		altpath = ft_getenv("PATH");
+		altpath = ft_other_getenv("PATH");
 		if (!altpath || !*altpath)
 			altpath = getcwd(pwd, MAXPATHLEN);
 	}
@@ -107,17 +108,35 @@ static char	*ft_search_bin(char *bin_name, const char *altpath)
 	return (exec_path);
 }
 
+void		ft_swap_env_var(int i)
+{
+	if (!i)
+		get_environ()->tmpvar = ft_strdup_arr(get_environ()->envar);
+	else
+	{
+		ft_strarr_free(get_environ()->envar);
+		get_environ()->envar = get_environ()->tmpvar;
+	}
+}
+
 int			ft_argv_exec(char **cmd, char *altpath, int bg)
 {
 	char	*bin_path;
 	int		st;
 
-	bin_path = NULL;
 	if (!cmd || !*cmd)
+	{
+		if (get_environ()->setvar)
+			return (ft_set_shell_var(get_environ()->setvar, SHVAR));
 		return (0);
-	if (ft_var_checker(&cmd))
-		st = ft_set_shell_var(cmd);
-	else if (ft_strchr(*cmd, '/'))
+	}
+	if (get_environ()->setvar)
+	{
+		ft_swap_env_var(0);
+		ft_set_shell_var(get_environ()->setvar, ENVAR);
+	}
+	bin_path = NULL;
+	if (ft_strchr(*cmd, '/'))
 		st = ft_exec_bypath(cmd, *cmd, bg);
 	else if ((st = ft_exec_builtin(cmd)) == -1)
 	{
@@ -125,6 +144,8 @@ int			ft_argv_exec(char **cmd, char *altpath, int bg)
 			st = ft_exec_bypath(cmd, bin_path, bg);
 		else if ((st = 127))
 			ft_dprintf(2, "%s: command not found\n", *cmd);
+		if (get_environ()->setvar)
+			ft_swap_env_var(1);
 	}
 	free(bin_path);
 	return (st);

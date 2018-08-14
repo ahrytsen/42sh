@@ -58,6 +58,7 @@ int		ft_read_export_flags(char ***av, int *flags)
 	int i;
 
 	i = 0;
+	*flags = 0;
 	if (**av && (**av)[i] == '-')
 	{
 		i++;
@@ -68,7 +69,7 @@ int		ft_read_export_flags(char ***av, int *flags)
 				ft_dprintf(2, "export: bad option: -%c\n", (**av)[i]);
 				return (1);
 			}
-			*flags |= ((**av)[i] - 109);
+			*flags |= ((**av)[i] == 'n' ? 2 : 1);
 			i++;
 		}
 		(*av)++;
@@ -92,15 +93,22 @@ int		ft_export(char **av)
 			*value++='\0';
 		if ((entry = ft_get_shvar_entry(*av)))
 		{
-			if (value)
-				ft_set_tool(*av, value, 1, ENVAR);
-			else if (entry->attr != 'e')
+			if (flags & 2)
+				ft_putendl("unexport");
+			else if (flags & 1)
+				ft_putendl(entry->var);
+			else
 			{
-				entry->attr = 'e';
-				ft_setter(*av, ft_strchr(entry->var, '=') + 1, 1);
+				if (value)
+					ft_set_tool(*av, value, 1, ENVAR);
+				else if (entry->attr != 'e')
+				{
+					entry->attr = 'e';
+					ft_setter(*av, ft_strchr(entry->var, '=') + 1, 1);
+				}
 			}
 		}
-		if (value)
+		else
 			ft_set_tool(*av, value, 1, ENVAR);
 		av++;
 	}

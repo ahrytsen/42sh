@@ -75,7 +75,9 @@ typedef struct	s_var
 typedef struct	s_env
 {
 	char			**envar;
+	char			**tmpvar;
 	t_var			*shvar;
+	t_list			*setvar;
 	int				st;
 	pid_t			sh_pid;
 	pid_t			sh_pgid;
@@ -120,6 +122,7 @@ typedef struct	s_token
 {
 	enum	e_ast_type {
 		blank,
+		assignment,
 		word,
 		subsh,
 		pipeline,
@@ -279,9 +282,10 @@ int				ft_redir_check(t_token *prev, t_token *next, char *ln);
 **				ft_shell_var.c
 */
 char			*ft_getenv(const char *name);
+char			*ft_other_getenv(const char *name);
 void			ft_init_shell_var(void);
-int				ft_set_shell_var(char **cmd);
-int				ft_var_checker(char ***cmd);
+int				ft_set_shell_var(t_list *var, int mod);
+void			ft_var_checker(t_list *lst);
 t_env			*get_environ(void);
 /*
 **				ft_shell_var_toolz.c

@@ -45,6 +45,7 @@ static void	ft_toread_prompt(int mod)
 	int			tmp;
 	const char	*prompt;
 
+	prompt = "";
 	if (mod == P_QUOTE || mod == P_BQUOTE)
 		prompt = (mod == P_QUOTE ? "quote> " : "bquote> ");
 	else if (mod == P_DQUOTE || mod == P_BSLASH)

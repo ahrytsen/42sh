@@ -40,23 +40,41 @@ void	ft_init_shell_var(void)
 	ft_add_shvar_entry("HISTFILESIZE=42", 'l');
 }
 
-int		ft_var_checker(char ***cmd)
+int		ft_is_valid_name(char *str)
 {
-	char	*str;
-	char	*ptr;
-	char	**tmp;
-
-	tmp = *cmd;
-	while (**cmd)
+	while (*str && *str != '=')
 	{
-		if (!(str = ft_strchr(**cmd, '=')))
+		if (!ft_isalnum(*str) && *str != '_')
 			return (0);
-		if ((ptr = ft_strchr(**cmd, '/')) && str > ptr)
-			return (0);
-		(*cmd)++;
+		str++;
 	}
-	*cmd = tmp;
 	return (1);
+}
+
+void		ft_var_checker(t_list *lst)
+{
+	t_token	*tmp;
+	char	*str;
+
+	if (get_environ()->setvar)
+		ft_lstfree(&get_environ()->setvar);
+	while (lst)
+	{
+		tmp = lst->content;
+		if (tmp->type == (enum e_ast_type)word)
+		{
+			if ((str = ft_strchr(tmp->data.word, '='))
+			&& ft_is_valid_name(tmp->data.word))
+			{
+				ft_lstpush_back(&get_environ()->setvar, tmp->data.word
+				, ft_strlen(tmp->data.word) + 1);
+				tmp->type = (enum e_ast_type)assignment;
+			}
+			else
+				break ;
+		}
+		lst = lst->next;
+	}
 }
 
 t_env		*get_environ(void)
@@ -68,18 +86,6 @@ t_env		*get_environ(void)
 
 char		*ft_getenv(const char *name)
 {
-	// char	**env;
-    //
-	// if (!name || !(env = get_environ()->envar))
-	// 	return (NULL);
-	// while (*env)
-	// {
-	// 	if (ft_strcmp(*env, name) == '=')
-	// 		return (ft_strchr(*env, '=') + 1);
-	// 	env++;
-	// }
-	// return (NULL);
-
 	t_var	*entry;
 	char	*ptr;
 
@@ -89,29 +95,49 @@ char		*ft_getenv(const char *name)
 	return (ptr);
 }
 
-int		ft_set_shell_var(char **cmd)
+char		*ft_other_getenv(const char *name)
+{
+	char	**env;
+
+	env = get_environ()->envar;
+	if (!name || !env)
+		return (NULL);
+	while (*env)
+	{
+		if (ft_strcmp(*env, name) == '=')
+			return (ft_strchr(*env, '=') + 1);
+		env++;
+	}
+	return (NULL);
+}
+
+int		ft_set_shell_var(t_list *var, int mod)
 {
 	char	*value;
 	char	*ptr;
 	t_var	*entry;
 
-	while (*cmd)
+	while (var)
 	{
-		ptr = ft_strchr(*cmd, '=');
+		ptr = ft_strchr(var->content, '=');
 		value = ptr + 1;
 		*ptr = '\0';
-		if ((entry = ft_get_shvar_entry(*cmd)))
+		if (mod == SHVAR)
 		{
-			write(1, "OP\n", 3);
-			if (entry->attr == 'e')
-				ft_setter(*cmd, value, 1);
-			free(entry->var);
-			*ptr = '=';
-			entry->var = ft_strdup(*cmd);
+			if ((entry = ft_get_shvar_entry(var->content)))
+			{
+				if (entry->attr == 'e')
+					ft_setter(var->content, value, 1);
+				free(entry->var);
+				*ptr = '=';
+				entry->var = ft_strdup(var->content);
+			}
+			else
+				ft_set_tool(var->content, value, 1, SHVAR);
 		}
-		else
-			ft_set_tool(*cmd, value, 1, SHVAR);
-		cmd++;
+		else if (mod == ENVAR)
+			ft_setter(var->content, value, 1);
+		var = var->next;
 	}
 	return (0);
 }

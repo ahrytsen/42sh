@@ -72,7 +72,13 @@ int			ft_set_tool(const char *name, const char *value, int overwrite
 		return (-1);
 	if (mod == SHVAR)
 	{
-		ft_add_shvar_entry(str, ((entry && entry->attr == 'e') ? 'e' : 'l'));
+		if (entry)
+		{
+			free(entry->var);
+			entry->var = ft_strdup(str);
+		}
+		else
+			ft_add_shvar_entry(str, ((entry && entry->attr == 'e') ? 'e' : 'l'));
 		if (entry && entry->attr == 'e'
 		&& (rat = ft_setter(name, value, overwrite)) == -1)
 			ft_rem_shvar_entry(name);

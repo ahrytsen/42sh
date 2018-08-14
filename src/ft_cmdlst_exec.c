@@ -46,7 +46,7 @@ static int	ft_subsh_exec(t_cmd *cmd)
 static int	ft_cmd_exec_chld(t_cmd *cmd, int bg)
 {
 	if (cmd->next || cmd->prev || bg)
-	{ertert
+	{
 		cmd->prev ? dup2(cmd->p_in, 0) : 0;
 		cmd->prev ? close(cmd->p_in) : 0;
 		cmd->next ? dup2(cmd->p_out, 1) : 0;
@@ -71,14 +71,9 @@ static int	ft_cmd_exec(t_cmd *cmd, int bg)
 {
 	static int	pl[2];
 
-<<<<<<< HEAD
-	if (ft_pl_make(pl, cmd) || (!(cmd->av = ft_argv_make(cmd->toks))
-	&& write(2, "21sh: malloc error\n", 19)))
-=======
 	if (ft_pl_make(pl, cmd)
-		|| (!cmd->subsh && !(cmd->av = ft_argv_make(cmd->toks))
-			&& write(2, "42sh: malloc error\n", 19)))
->>>>>>> ad62eaca3666efaf597f9e9c500a52813c851740
+	|| (!cmd->subsh && !(cmd->av = ft_argv_make(cmd->toks))
+	&& write(2, "42sh: malloc error\n", 19)))
 		return (1);
 	if ((cmd->next || cmd->prev || bg || cmd->subsh) && (cmd->pid = fork()))
 	{
@@ -103,6 +98,7 @@ int			ft_cmdlst_exec(t_cmd *cmd, int bg)
 
 	while (1)
 	{
+		ft_var_checker(cmd->toks);
 		cmd->ret = ft_cmd_exec(cmd, bg);
 		cmd->next ? close(cmd->p_out) : 0;
 		cmd->prev ? close(cmd->p_in) : 0;
