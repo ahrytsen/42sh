@@ -6,23 +6,24 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:31 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/13 20:39:33 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/14 14:49:31 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
 
-int		ft_get_subsh(char **ln, t_token *token)
+void	ft_token_del(void *token, size_t size)
 {
-	if (**ln == ')' && !(**ln = '\0')
-		&& write(2, "42sh: unexpected token `)'\n", 27))
-		return (1);
-	**ln = '\0';
-	token->data.word = *ln + 1;
-	if (ft_skip_subsh(ln))
-		return (1);
-	*(*ln - 1) = '\0';
-	return (0);
+	(void)size;
+	if (((t_token*)token)->type >= heredoc
+		&& ((t_token*)token)->type <= herestr)
+		free(((t_token*)token)->data.redir.hd);
+	free(token);
+}
+
+int		ft_isseparator(int c)
+{
+	return (ft_strchr("|&;()<> \t\n", c) ? 1 : 0);
 }
 
 int		ft_skip_word(char **ln)

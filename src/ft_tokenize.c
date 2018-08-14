@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/13 21:29:24 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/14 15:03:23 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static void	ft_get_redirect_in(char **ln, t_token *token)
 {
+	*(*ln)++ = '\0';
+	token->data.redir.left = 0;
 	if (**ln == '<' && !(*(*ln)++ = '\0'))
 	{
 		if (**ln == '<' && !(*(*ln)++ = '\0'))
@@ -33,6 +35,8 @@ static void	ft_get_redirect_in(char **ln, t_token *token)
 
 static void	ft_get_redirect_out(char **ln, t_token *token)
 {
+	*(*ln)++ = '\0';
+	token->data.redir.left = 1;
 	if (**ln == '|' && !(*(*ln)++ = 0))
 		token->type = read_out_pipe;
 	else if (**ln == '&' && !(*(*ln)++ = 0))
@@ -61,31 +65,32 @@ static int	ft_get_separator(char **ln, t_token *token)
 			token->type =
 				(**ln == '&' && !(*(*ln)++ = '\0')) ? and : bg_op;
 	}
-	else if ((**ln == '(' || **ln == ')') && (token->type = subsh))
-		return (ft_get_subsh(ln, token));
-	else if (**ln == '<' && !(*(*ln)++ = '\0')
-			&& !(token->data.redir.left = 0))
+	else if ((**ln == '(' && (token->type = subsh_on))
+			|| (**ln == ')' && (token->type = subsh_off)))
+		*(*ln)++ = '\0';
+	else if (**ln == '<')
 		ft_get_redirect_in(ln, token);
-	else if (**ln == '>' && !(*(*ln)++ = '\0')
-			&& (token->data.redir.left = 1))
+	else if (**ln == '>')
 		ft_get_redirect_out(ln, token);
 	return (0);
 }
 
 static int	ft_get_token(char **ln, t_token *token)
 {
+	char	*tmp;
+
 	token->type = word;
-	token->data.word = *ln;
+	tmp = *ln;
 	if (ft_skip_word(ln))
 		return (1);
 	if ((**ln == '<' || **ln == '>')
-		&& ft_isnumeric_n(token->data.word, *ln - token->data.word))
+		&& ft_isnumeric_n(token->data.word, *ln - tmp))
 	{
-		token->data.redir.left = ft_atoi(token->data.word);
-		token->data.redir.cls = 0;
-		(**ln == '<' && (*ln)++) || !++(*ln) ? ft_get_redirect_in(ln, token)
-			: ft_get_redirect_out(ln, token);
+		(**ln == '<' ? ft_get_redirect_in : ft_get_redirect_out)(ln, token);
+		token->data.redir.left = ft_atoi(tmp);
 	}
+	else
+		token->data.word = tmp;
 	return (0);
 }
 

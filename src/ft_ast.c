@@ -6,35 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/08 15:16:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/13 21:23:30 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/14 21:48:25 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
-
-char		*ft_tname(int type)
-{
-	if (!type)
-		return ("newline");
-	else if (type == pipeline || type == bg_op)
-		return (type == pipeline ? "|" : "&");
-	else if (type == semi || type == and)
-		return (type == semi ? ";" : "&&");
-	else if (type == or || type == heredoc)
-		return (type == or ? "||" : "<<");
-	else if (type == heredoc_t || type == herestr)
-		return (type == heredoc_t ? "<<-" : "<<<");
-	else if (type == open_file || type == read_out)
-		return (type == open_file ? "<>" : ">");
-	else if (type == read_out_pipe || type == read_out_apend)
-		return (type == read_out_pipe ? ">|" : ">>");
-	else if (type == read_in || type == read_in_and)
-		return (type == read_in ? "<" : "<&");
-	else if (type == read_out_and || type == and_read_out)
-		return (type == read_out_and ? ">&" : "&>");
-	else
-		return ("?");
-}
 
 int			ft_isoperator(t_token *tok)
 {
@@ -70,11 +46,25 @@ static void	ft_get_cmd(t_list **toks, t_ast *ast_node)
 	while (*toks && !ft_isoperator((*toks)->content))
 	{
 		tmp = *toks;
+		if (((t_token*)(*toks)->content)->type == subsh_on)
+
 		*toks = (*toks)->next;
 	}
 	if (*toks && ((t_token*)(*toks)->content)->type == bg_op)
 		ast_node->bg = 1;
 	tmp->next = NULL;
+}
+
+int			ft_ast_get_token(t_list **toks, t_ast *ast_node, t_ast *prev)
+{
+	ft_bzero(ast_node, sizeof(t_ast));
+	ft_isoperator((*toks)->content)
+		? ft_get_operator(toks, ast_node) : ft_get_cmd(toks, ast_node);
+	if ((ast_node->type > cmd && (!prev || prev->type > cmd))
+		&& ft_dprintf(2, "42sh: syntax error near unexpected token `%s'\n",
+						ft_tname(ast_node.type)))
+		return (1);
+	return (0);
 }
 
 t_ast		*ft_ast_make(t_list **toks)
@@ -85,21 +75,15 @@ t_ast		*ft_ast_make(t_list **toks)
 
 	ast = NULL;
 	while (*toks)
-	{
-		ft_bzero(&ast_node, sizeof(ast_node));
-		(ft_isoperator((*toks)->content)
-		? ft_get_operator : ft_get_cmd)(toks, &ast_node);
-		if (((ast_node.type > cmd && (!ast || ast->type > cmd)) && ft_dprintf(2,
-					"42sh: unexpected token `%s'\n", ft_tname(ast_node.type)))
-			|| !(tmp = ft_ast_push(ast, &ast_node)))
+		if (ft_ast_get_token(toks, &ast_node, ast)
+			|| !(tmp = ft_ast_push(ast, &ast_node))
+			|| !(ast = tmp))
 		{
 			ft_lstdel(&ast_node.toks, ft_token_del);
 			return (ft_ast_del(ast, 1));
 		}
-		ast = tmp;
-	}
 	if (ast && ast->type != cmd && ast->type != ast_smcln && ast->type != ast_bg
-		&& write(2, "42sh: unexpected EOF\n", 21))
+		&& write(2, "42sh: syntax error near unexpected EOF\n", 39))
 		return (ft_ast_del(ast, 1));
 	while (ast && ast->prev)
 		ast = ast->prev;

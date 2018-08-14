@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 15:22:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/13 21:00:31 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/14 14:55:59 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int			ft_rl_skip_subsh(char **ln)
 {
 	int tmp;
 
-	tmp = (**ln == '$' ? P_CMDSUBST : P_SUBSH);
+	tmp = P_CMDSUBST;
 	*ln += (**ln == '$' ? 2 : 1);
 	while (**ln != ')')
 		if (!**ln && (get_term()->prompt = tmp))
@@ -93,7 +93,7 @@ int			ft_check_line(char *ln)
 			if (skip_qoutes(&ln))
 				return (1);
 		}
-		else if (*ln == '(' || (*ln == '$' && *(ln + 1) == '('))
+		else if (*ln == '$' && *(ln + 1) == '(')
 		{
 			if (ft_rl_skip_subsh(&ln))
 				return (1);

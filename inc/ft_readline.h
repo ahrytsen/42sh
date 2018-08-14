@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/05 17:38:16 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/12 18:19:24 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/14 20:53:20 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,13 @@
 # define P_BQUOTE 96
 # define P_CMDSUBST 2
 # define P_SUBSH 3
+# define P_AND 4
+# define P_OR 5
+# define P_WHILE 6
+# define P_DO 7
+# define P_IF 8
+# define P_ELSE_IF 9
+# define P_ELSE 10
 
 typedef struct	s_line
 {

@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 19:53:42 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/13 21:01:27 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/14 21:48:28 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ static int	ft_get_cmd(t_list **toks, t_cmd *cmd)
 	cmd->toks = *toks;
 	tmp = *toks;
 	while (*toks && ((t_token*)(*toks)->content)->type != pipeline
-			&& ((t_token*)(*toks)->content)->type != subsh)
+			&& ((t_token*)(*toks)->content)->type != subsh_on)
 	{
 		tmp = *toks;
 		*toks = (*toks)->next;
 	}
 	tmp->next = NULL;
-	if (*toks && ((t_token*)(*toks)->content)->type == subsh)
+	if (*toks && ((t_token*)(*toks)->content)->type == subsh_)
 	{
 		ft_lstdel(&cmd->toks, ft_token_del);
 		write(2, "42sh: unexpected token `('\n", 27);
@@ -80,7 +80,7 @@ t_cmd		*ft_cmdlst_make(t_list **toks)
 		ft_bzero(&cmd, sizeof(cmd));
 		if ((*toks && ((t_token*)(*toks)->content)->type == pipeline
 				&& ft_get_pipe(toks, cmdlst))
-			|| (*toks && ((t_token*)(*toks)->content)->type == subsh
+			|| (*toks && ((t_token*)(*toks)->content)->type == subsh_on
 				&& ft_get_sub_sh(toks, &cmd))
 			|| (*toks && ((t_token*)(*toks)->content)->type != pipeline
 				&& ((t_token*)(*toks)->content)->type != subsh

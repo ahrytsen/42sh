@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/13 21:23:52 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/14 21:08:53 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,8 +106,9 @@ typedef struct	s_token
 	enum	e_ast_type {
 		blank,
 		word,
-		subsh,
 		pipeline,
+		subsh_on,
+		subsh_off,
 		bg_op,
 		nl,
 		semi,
@@ -153,7 +154,6 @@ typedef struct	s_ast
 	t_list			*toks;
 	enum {
 		cmd = word,
-		sub_sh = subsh,
 		ast_and = and,
 		ast_or = or,
 		ast_bg = bg_op,
@@ -190,15 +190,11 @@ t_list			*ft_tokenize(char *ln);
 /*
 **				ft_tokenize_utils.c
 */
-int				ft_get_subsh(char **ln, t_token *token);
+int				ft_isseparator(int c);
+void			ft_token_del(void *token, size_t size);
 int				ft_skip_word(char **ln);
 int				ft_skip_qoutes(char **s);
 int				ft_skip_subsh(char **ln);
-/*
-**				ft_tokenize_tools.c
-*/
-void			ft_token_del(void *token, size_t size);
-int				ft_isseparator(int c);
 /*
 **				ft_heredoc.c
 */
