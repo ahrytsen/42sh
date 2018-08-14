@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/12 19:27:19 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/13 21:23:52 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,11 +121,12 @@ typedef struct	s_token
 	enum	e_ast_type {
 		blank,
 		word,
+		subsh,
 		pipeline,
 		bg_op,
+		nl,
 		semi,
 		dsemi,
-		subsh,
 		and,
 		or,
 		heredoc,
@@ -147,6 +148,7 @@ typedef struct	s_cmd
 {
 	char			**av;
 	t_list			*toks;
+	char			*subsh;
 	pid_t			pid;
 	int				ret;
 	int				p_in;
@@ -214,6 +216,7 @@ char			*parse_argv(char *line);
 **				ft_ast.c
 */
 char			*ft_tname(int type);
+int				ft_isoperator(t_token *tok);
 t_ast			*ft_ast_make(t_list **toks);
 /*
 **				ft_ast_exec.c
@@ -298,10 +301,14 @@ int				ft_setter(const char *name, const char *value, int overwrite);
 */
 t_list			*ft_tokenize(char *ln);
 /*
+ **				ft_tokenize_tools.c
+ */
+int				ft_isseparator(int c);
+void			ft_token_del(void *token, size_t size);
+/*
 **				ft_tokenize_utils.c
 */
-void			ft_token_del(void *token, size_t size);
-int				ft_isseparator(int c);
+int				ft_get_subsh(char **ln, t_token *token);
 int				ft_skip_word(char **ln);
 int				ft_skip_qoutes(char **s);
 int				ft_skip_subsh(char **ln);

@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/12 19:28:21 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/13 21:29:24 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,9 @@ static int	ft_get_separator(char **ln, t_token *token)
 {
 	if ((**ln == ' ' || **ln == '\t') && !(*(*ln)++ = '\0'))
 		token->type = blank;
-	else if ((**ln == ';' || **ln == '\n') && !(*(*ln)++ = '\0'))
-		token->type = semi;
+	else if ((**ln == ';' && (token->type = semi))
+			|| (**ln == '\n' && (token->type = nl)))
+		*(*ln)++ = '\0';
 	else if (**ln == '|' && !(*(*ln)++ = '\0'))
 		token->type =
 			(**ln == '|' && !(*(*ln)++ = '\0')) ? or : pipeline;
@@ -60,8 +61,8 @@ static int	ft_get_separator(char **ln, t_token *token)
 			token->type =
 				(**ln == '&' && !(*(*ln)++ = '\0')) ? and : bg_op;
 	}
-	else if (**ln == '(' && (token->type = subsh))
-		ft_skip_subsh(ln);
+	else if ((**ln == '(' || **ln == ')') && (token->type = subsh))
+		return (ft_get_subsh(ln, token));
 	else if (**ln == '<' && !(*(*ln)++ = '\0')
 			&& !(token->data.redir.left = 0))
 		ft_get_redirect_in(ln, token);
@@ -100,7 +101,8 @@ t_list		*ft_tokenize(char *ln)
 		ft_bzero(&tok, sizeof(tok));
 		if ((!ft_isseparator(*ln) ? ft_get_token : ft_get_separator)(&ln, &tok))
 			ft_lstdel(&toks, ft_token_del);
-		else if (tok.type == blank)
+		else if ((tok.type == nl && ((!toks || ft_isoperator(tmp->content))
+				|| !(tok.type = semi))) || tok.type == blank)
 			continue ;
 		else if (toks && ((t_token*)tmp->content)->type > or
 			&& !((t_token*)tmp->content)->data.redir.right && tok.type == word)
@@ -108,7 +110,7 @@ t_list		*ft_tokenize(char *ln)
 		else if (ft_redir_check(toks ? tmp->content : NULL, &tok, ln)
 			|| !(tmp = ft_lstpush_back(toks ? &tmp : &toks, &tok, sizeof(tok))))
 		{
-			!tmp ? write(2, "21sh: malloc error\n", 19) : 0;
+			!tmp ? write(2, "42sh: malloc error\n", 19) : 0;
 			ft_lstdel(&toks, ft_token_del);
 			return (NULL);
 		}
