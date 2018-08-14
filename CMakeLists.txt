@@ -10,6 +10,7 @@ include_directories(inc libft/inc)
 add_executable(gsh
         pathname/regex.c
         pathname/ft_strcut.c
+        pathname/brackets.c
 #        src/ft_expansions/brace/fill_buf.c
 #        src/ft_expansions/brace/get_seq.c
 #        src/ft_expansions/brace/expand_braces.c

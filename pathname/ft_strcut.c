@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_expansions.h"
 
 static size_t	cut_wrds(char const *str, char c)
 {

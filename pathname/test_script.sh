@@ -2,12 +2,14 @@
 
 source tests.sh
 
-gsh=../cmake-build-debug/gsh
+gsh=../../cmake-build-debug/gsh
 red='\033[0;31m'
 green='\033[0;32m'
 nc='\033[0m'
 num_success=0
 num_fail=0
+
+cd testing_directory
 
 for ((i = 0 ; i < ${#tests[*]}; i++))
 do
@@ -20,7 +22,7 @@ do
         ((num_fail++))
     else
         diff=$(diff <(echo $echo_output) <(echo $gsh_output))
-        if [ -z "$diff" ] && [ $? -eq 0 ]
+        if [ -z "$diff" ]
         then
             echo -e "${green}TRUE ${nc}"
             ((num_success++))
@@ -30,6 +32,7 @@ do
             echo -e "    Your output: $gsh_output ${nc}"
             ((num_fail++))
         fi
+#        echo $echo_output
     fi
 done
 echo "============================================"
@@ -41,3 +44,5 @@ else
     echo -en "${red}"
 fi
 echo -e "FAILED: $num_fail ${nc}"
+
+cd -

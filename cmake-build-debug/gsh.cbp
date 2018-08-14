@@ -8,416 +8,423 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/yvyliehz/gsh/cmake-build-debug"/>
+				<Option working_dir="/home/yulia/gsh/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/yvyliehz/gsh/cmake-build-debug"/>
+				<Option working_dir="/home/yulia/gsh/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/yvyliehz/gsh/cmake-build-debug"/>
+				<Option working_dir="/home/yulia/gsh/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gsh">
-				<Option output="/Users/yvyliehz/gsh/cmake-build-debug/gsh" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/yvyliehz/gsh/cmake-build-debug"/>
+				<Option output="/home/yulia/gsh/cmake-build-debug/gsh" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/yulia/gsh/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/yvyliehz/gsh/inc"/>
-					<Add directory="/Users/yvyliehz/gsh/libft/inc"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/home/yulia/gsh/inc"/>
+					<Add directory="/home/yulia/gsh/libft/inc"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 gsh"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 gsh"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gsh/fast">
-				<Option output="/Users/yvyliehz/gsh/cmake-build-debug/gsh" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/yvyliehz/gsh/cmake-build-debug"/>
+				<Option output="/home/yulia/gsh/cmake-build-debug/gsh" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/yulia/gsh/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/yvyliehz/gsh/inc"/>
-					<Add directory="/Users/yvyliehz/gsh/libft/inc"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/home/yulia/gsh/inc"/>
+					<Add directory="/home/yulia/gsh/libft/inc"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 gsh/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yvyliehz/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 gsh/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/yulia/gsh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/yvyliehz/gsh/inc/ft_expansions.h">
+		<Unit filename="/home/yulia/gsh/inc/ft_expansions.h">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/inc/ft_readline.h">
+		<Unit filename="/home/yulia/gsh/inc/ft_readline.h">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/inc/ft_sh.h">
+		<Unit filename="/home/yulia/gsh/inc/ft_sh.h">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/inc/ft_printf.h">
+		<Unit filename="/home/yulia/gsh/libft/inc/ft_printf.h">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/inc/libft.h">
+		<Unit filename="/home/yulia/gsh/libft/inc/libft.h">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_absolute.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_absolute.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_arrstr.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_arrstr.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_atoi.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_atoi.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_atoi_base.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_atoi_base.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_atol.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_atol.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_atol_base.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_atol_base.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_bzero.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_bzero.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_count_digits.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_count_digits.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_dtoa.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_dtoa.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_dtoea.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_dtoea.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_free_arr.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_free_arr.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_is_blank.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_is_blank.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_isalnum.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_isalnum.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_isalnum_str.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_isalnum_str.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_isalpha.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_isalpha.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_isalpha_str.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_isalpha_str.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_isascii.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_isascii.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_isascii_str.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_isascii_str.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_isdigit.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_isdigit.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_isnumber.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_isnumber.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_isnumeric_str.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_isnumeric_str.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_isprint.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_isprint.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_isprint_str.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_isprint_str.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_iswhitespace.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_iswhitespace.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_itoa.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_itoa.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_itoa_base.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_itoa_base.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_ldtoa.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_ldtoa.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_ldtoea.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_ldtoea.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_lstadd.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_lstadd.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_lstadd_end.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_lstadd_end.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_lstadd_list.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_lstadd_list.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_lstdel.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_lstdel.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_lstdelone.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_lstdelone.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_lstfree.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_lstfree.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_lstiter.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_lstiter.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_lstmap.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_lstmap.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_lstnew.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_lstnew.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_lstprint.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_lstprint.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_lstpush_back.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_lstpush_back.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_lstpush_front.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_lstpush_front.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_lstsize.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_lstsize.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_lstsort.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_lstsort.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_lstsplit.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_lstsplit.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_ltoa.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_ltoa.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_memalloc.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_memalloc.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_memccpy.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_memccpy.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_memchr.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_memchr.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_memcmp.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_memcmp.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_memcpy.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_memcpy.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_memdel.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_memdel.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_memmove.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_memmove.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_memset.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_memset.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_printf/ft_pbuf.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_printf/ft_pbuf.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_printf/ft_pfloat.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_printf/ft_pfloat.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_printf/ft_phelper.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_printf/ft_phelper.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_printf/ft_phendler.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_printf/ft_phendler.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_printf/ft_printf.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_printf/ft_printf.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_putchar.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_putchar.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_putchar_fd.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_putchar_fd.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_putendl.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_putendl.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_putendl_fd.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_putendl_fd.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_putnbr.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_putnbr.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_putnbr_fd.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_putnbr_fd.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_putstr.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_putstr.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_putstr_fd.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_putstr_fd.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_realloc.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_realloc.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_sort_params.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_sort_params.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strarr_free.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strarr_free.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strcat.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strcat.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strchr.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strchr.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strclr.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strclr.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strcmp.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strcmp.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strcpy.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strcpy.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strdel.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strdel.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strdup.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strdup.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strdup_arr.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strdup_arr.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strequ.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strequ.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strextend.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strextend.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strhalfextend.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strhalfextend.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_striter.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_striter.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_striteri.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_striteri.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strjoin.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strjoin.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strlcat.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strlcat.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strlen.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strlen.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strlen_c.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strlen_c.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strmap.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strmap.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strmapi.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strmapi.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strncat.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strncat.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strncmp.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strncmp.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strncpy.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strncpy.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strnequ.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strnequ.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strnew.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strnew.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strnstr.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strnstr.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strrchr.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strrchr.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strsplit.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strsplit.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strstr.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strstr.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strsub.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strsub.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strtrim.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strtrim.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_strulen.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strulen.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_tolower.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_tolower.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_toupper.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_toupper.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_ultoa_base.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_ultoa_base.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/ft_wcharlen.c">
+		<Unit filename="/home/yulia/gsh/libft/src/ft_wcharlen.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/libft/src/get_next_line.c">
+		<Unit filename="/home/yulia/gsh/libft/src/get_next_line.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/pathname/ft_strcut.c">
+		<Unit filename="/home/yulia/gsh/pathname/brackets.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/pathname/regex.c">
+		<Unit filename="/home/yulia/gsh/pathname/ft_strcut.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/CMakeLists.txt">
+		<Unit filename="/home/yulia/gsh/pathname/regex.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

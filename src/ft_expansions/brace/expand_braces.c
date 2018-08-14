@@ -74,7 +74,7 @@ int 	main(int ac, char **av)
 	if (!av[1])
 	{
 		char buf[500];
-		char *s = "{1..2}";
+		char *s = "{,{1..2},{10..20},{a..z},{A..Z}}pre{,{1..2},{10..20},{a..z},{A..Z}}file{,{1..2},{10..20},{a..z},{A..Z}}post{,{1..2},{10..20},{a..z},{A..Z}}";
 		t_list *lst = NULL;
 		ft_bzero(buf, 500);
 		print_lst((lst = expand_braces(s, 0, buf)));

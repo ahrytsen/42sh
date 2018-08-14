@@ -1,7 +1,9 @@
 tests=(
-"*"
-"/de*/*/"
-#"/*"
-#"/*/*/"
-#"/*/*/*"
+"file[a-b]"
+"file[b-a]"
+"file[-ab2]"
+"file[1-2-]"
+"file[1-9a-gGB]"
+"file[1-9a-g]?"
+"file['1-G']"
 )

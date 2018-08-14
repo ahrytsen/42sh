@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <dirent.h>
-#include <sys/stat.h>
+#include "ft_expansions.h"
 
 char	**ft_strcut(char const *s, char c);
 
@@ -35,25 +33,28 @@ void	print_arr(char **arr)
 
 int		ft_regex_str(char *pattern, char *str, char q)
 {
+	int 	sl;
+
+	sl = 0;
 	if (!*pattern && !*str)
 		return (1);
-	if (*pattern == '\\')
-		pattern += 2;
-	if ((*pattern == '\'' || *pattern == '"') && !q)
+	if (*pattern == '\\' && pattern++)
+		sl = 1;
+	else if ((*pattern == '\'' || *pattern == '"') && !q)
 		q = *pattern++;
-	if (*pattern == q)
+	else if (*pattern == q)
 	{
 		q = 0;
 		++pattern;
 	}
-	if (!q && *pattern == '*' && *str)
-	{
+	if (!q && !sl && *pattern == '[' && *str)
+		return (ft_regex_brackets(pattern + 1, str, q));
+	if (!q && !sl && *pattern == '*' && *str)
 		return (ft_regex_str(pattern + 1, str, q)
 			|| ft_regex_str(pattern, str + 1, q));
-	}
-	if (!q && *pattern == '*' && !*str)
+	if (!q && !sl && *pattern == '*' && !*str)
 		return (ft_regex_str(pattern + 1, str, q));
-	if (!q && ((*pattern == '?' && *str) || (*pattern == *str)))
+	if (!q && !sl && ((*pattern == '?' && *str) || (*pattern == *str)))
 		return (ft_regex_str(pattern + 1, str + 1, q));
 	return (0);
 }
@@ -102,9 +103,9 @@ int		main(int ac, char **av)
 	t_list	*list;
 	char 	*pattern;
 
-	pattern = av[1] ? av[1] : "~/gsh/pathname////*.c";
+	pattern = av[1] ? av[1] : "file['1-G']";
 	names = ft_strcut(pattern, '/');
-	print_arr(names);
+//	print_arr(names);
 //	exit(0);
 	list = NULL;
 	if (*pattern != '/' && *pattern != '~')

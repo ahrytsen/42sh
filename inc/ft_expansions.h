@@ -14,6 +14,8 @@
 # define FT_EXPANSIONS_H
 
 # include "libft.h"
+#include <dirent.h>
+#include <sys/stat.h>
 
 /*
 **		expand_braces.c
@@ -41,5 +43,13 @@ char		*put_backslash_to_buf(char *buf, int *i, char *s);
 char		*put_quote_content_to_buf(char *buf, int *i, char *s);
 char		*put_str_to_buf(char *buf, int *i, char *s);
 char		*put_parentheses_content_to_buf(char *buf, int *i, char *s);
+/*
+**		regex.c
+*/
+int			ft_regex_str(char *pattern, char *str, char q);
+/*
+**		brackets.c
+*/
+int			ft_regex_brackets(char *pattern, char *str, char q);
 
 #endif
