@@ -84,6 +84,7 @@ int			main_loop(int fd)
 	t_list	*toks;
 	t_ast	*ast;
 	int		i;
+	// char	*str;
 
 	ft_init_fd(fd);
 	while (1)
@@ -96,13 +97,14 @@ int			main_loop(int fd)
 			system("leaks --quiet 42sh");
 			return (!i ? get_environ()->st : 1);
 		}
-		// ft_printf("LINE={%s}\n", cmds);
-		// if (0)
 		if (cmds && (toks = ft_tokenize(cmds)) && ft_heredoc(toks))
 		{
 			ast = ft_ast_make(&toks);
 			ft_print_ast(ast);
 			get_environ()->st = ft_ast_exec(ast);
+			// str = ft_itoa(get_environ()->st);
+			// ft_set_tool("?", str, 1, SHVAR);
+			// free(str);
 			ast = ft_ast_del(ast, 1);
 		}
 		ft_lstdel(&toks, ft_token_del);

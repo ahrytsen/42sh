@@ -163,7 +163,7 @@ clear:
 
 run:
 	@echo "$(STRING4)"
-	@./$(NAME)
+	./$(NAME)
 
 test:
 

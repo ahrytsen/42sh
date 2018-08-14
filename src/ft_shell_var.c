@@ -102,6 +102,7 @@ int		ft_set_shell_var(char **cmd)
 		*ptr = '\0';
 		if ((entry = ft_get_shvar_entry(*cmd)))
 		{
+			write(1, "OP\n", 3);
 			if (entry->attr == 'e')
 				ft_setter(*cmd, value, 1);
 			free(entry->var);

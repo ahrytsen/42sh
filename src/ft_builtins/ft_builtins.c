@@ -55,18 +55,21 @@ int		ft_exit(char **av)
 
 int		ft_read_export_flags(char ***av, int *flags)
 {
-	if (**av && ***av == '-')
+	int i;
+
+	i = 0;
+	if (**av && (**av)[i] == '-')
 	{
-		(**av)++;
-		while (***av)
+		i++;
+		while ((**av)[i])
 		{
-			if (***av != 'p' || ***av != 'n')
+			if ((**av)[i] != 'p' && (**av)[i] != 'n')
 			{
-				ft_dprintf(2, "export: bad option: -%c\n", ***av);
+				ft_dprintf(2, "export: bad option: -%c\n", (**av)[i]);
 				return (1);
 			}
-			*flags |= (***av - 109);
-			(**av)++;
+			*flags |= ((**av)[i] - 109);
+			i++;
 		}
 		(*av)++;
 	}
@@ -80,7 +83,7 @@ int		ft_export(char **av)
 	int		flags;
 
 	if (ft_read_export_flags(&av, &flags))
-		return (-1);
+		return (256);
 	if (!*av)
 		return (ft_print_shvar(ENVAR));
 	while (*av)
@@ -97,7 +100,7 @@ int		ft_export(char **av)
 				ft_setter(*av, ft_strchr(entry->var, '=') + 1, 1);
 			}
 		}
-		else if (value)
+		if (value)
 			ft_set_tool(*av, value, 1, ENVAR);
 		av++;
 	}

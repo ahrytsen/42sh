@@ -27,7 +27,7 @@ static int	ft_pl_make(int pl[2], t_cmd *cmd)
 static int	ft_cmd_exec_chld(t_cmd *cmd, int bg)
 {
 	if (cmd->next || cmd->prev || bg)
-	{
+	{ertert
 		cmd->prev ? dup2(cmd->p_in, 0) : 0;
 		cmd->prev ? close(cmd->p_in) : 0;
 		cmd->next ? dup2(cmd->p_out, 1) : 0;
@@ -49,7 +49,7 @@ static int	ft_cmd_exec(t_cmd *cmd, int bg)
 	static int	pl[2];
 
 	if (ft_pl_make(pl, cmd) || (!(cmd->av = ft_argv_make(cmd->toks))
-								&& write(2, "21sh: malloc error\n", 19)))
+	&& write(2, "21sh: malloc error\n", 19)))
 		return (1);
 	if ((cmd->next || cmd->prev || bg) && (cmd->pid = fork()))
 	{

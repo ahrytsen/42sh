@@ -14,9 +14,10 @@
 
 static int		ft_getprior(enum e_ast_type type)
 {
-	if (type == cmd)
+	if (type == (enum e_ast_type)cmd)
 		return (1);
-	else if (type == ast_and || type == ast_or)
+	else if (type == (enum e_ast_type)ast_and
+	|| type == (enum e_ast_type)ast_or)
 		return (2);
 	else
 		return (3);
