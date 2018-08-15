@@ -75,7 +75,6 @@ typedef struct	s_var
 typedef struct	s_env
 {
 	char			**envar;
-	char			**tmpvar;
 	t_var			*shvar;
 	t_list			*setvar;
 	int				st;
@@ -284,7 +283,7 @@ int				ft_redir_check(t_token *prev, t_token *next, char *ln);
 char			*ft_getenv(const char *name);
 char			*ft_other_getenv(const char *name);
 void			ft_init_shell_var(void);
-int				ft_set_shell_var(t_list *var, int mod);
+int				ft_set_var(t_list *var, int mod);
 void			ft_var_checker(t_list *lst);
 t_env			*get_environ(void);
 /*
@@ -344,7 +343,6 @@ int				ft_unsetenv(char **av);
 /*
 **				ft_builtins/ft_bi_un_set.c
 */
-int				ft_set(char **av);
 int				ft_unset(char **av);
 int				ft_print_shvar(int mod);
 /*

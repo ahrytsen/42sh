@@ -64,7 +64,7 @@ int		ft_read_export_flags(char ***av, int *flags)
 		i++;
 		while ((**av)[i])
 		{
-			if ((**av)[i] != 'p' && (**av)[i] != 'n')
+			if ((**av)[i] != 'p' && (**av)[i] != 'n' && (**av)[i] != 'a')
 			{
 				ft_dprintf(2, "export: bad option: -%c\n", (**av)[i]);
 				return (1);
@@ -86,7 +86,7 @@ int		ft_export(char **av)
 	if (ft_read_export_flags(&av, &flags))
 		return (256);
 	if (!*av)
-		return (ft_print_shvar(ENVAR));
+		return (ft_print_shvar(flags & 2 ? SHVAR : ENVAR));
 	while (*av)
 	{
 		if ((value = ft_strchr(*av, '=')))

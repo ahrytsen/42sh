@@ -25,7 +25,7 @@ static char	*ft_cd_getpath(char **av)
 		tmp = "HOME";
 	else
 		next_path = *av;
-	(!next_path && tmp) ? next_path = ft_other_getenv(tmp) : 0;
+	(!next_path && tmp) ? next_path = ft_getenv(tmp) : 0;
 	(!next_path) ? ft_dprintf(2, "cd: %s not set\n", tmp) : 0;
 	return (next_path);
 }
@@ -80,7 +80,7 @@ int			ft_cd(char **av)
 		return (256);
 	if (*av && ft_strequ(*av, "-"))
 		ft_printf("%s\n", next_path);
-	ft_set_tool("OLDPWD", ft_other_getenv("PWD"), 1, ENVAR);
+	ft_set_tool("OLDPWD", ft_getenv("PWD"), 1, ENVAR);
 	getcwd(curent_path, MAXPATHLEN);
 	ft_set_tool("PWD", curent_path, 1, ENVAR);
 	return (0);

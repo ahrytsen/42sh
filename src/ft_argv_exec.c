@@ -19,7 +19,6 @@ const t_builtins	g_builtin[] = {
 	{"history", &ft_history},
 	{"setenv", &ft_setenv},
 	{"unsetenv", &ft_unsetenv},
-	{"set", &ft_set},
 	{"unset", &ft_unset},
 	{"env", &ft_env},
 	{"exit", &ft_exit},
@@ -53,6 +52,7 @@ static int	ft_exec_bypath(char **cmd, char *path, int bg)
 			return (write(2, "21sh: fork error\n", 17));
 		if (bg != -1)
 			ft_set_sh_signal(bg ? S_CHLD : S_CHLD_FG);
+		get_environ()->setvar ? ft_set_var(get_environ()->setvar, ENVAR) : 0;
 		execve(path, cmd, get_environ()->envar);
 		if ((fd = open(path, O_RDONLY)) >= 0)
 			exit(main_loop(fd));
@@ -108,17 +108,6 @@ static char	*ft_search_bin(char *bin_name, const char *altpath)
 	return (exec_path);
 }
 
-void		ft_swap_env_var(int i)
-{
-	if (!i)
-		get_environ()->tmpvar = ft_strdup_arr(get_environ()->envar);
-	else
-	{
-		ft_strarr_free(get_environ()->envar);
-		get_environ()->envar = get_environ()->tmpvar;
-	}
-}
-
 int			ft_argv_exec(char **cmd, char *altpath, int bg)
 {
 	char	*bin_path;
@@ -127,13 +116,8 @@ int			ft_argv_exec(char **cmd, char *altpath, int bg)
 	if (!cmd || !*cmd)
 	{
 		if (get_environ()->setvar)
-			return (ft_set_shell_var(get_environ()->setvar, SHVAR));
+			return (ft_set_var(get_environ()->setvar, SHVAR));
 		return (0);
-	}
-	if (get_environ()->setvar)
-	{
-		ft_swap_env_var(0);
-		ft_set_shell_var(get_environ()->setvar, ENVAR);
 	}
 	bin_path = NULL;
 	if (ft_strchr(*cmd, '/'))
@@ -144,8 +128,6 @@ int			ft_argv_exec(char **cmd, char *altpath, int bg)
 			st = ft_exec_bypath(cmd, bin_path, bg);
 		else if ((st = 127))
 			ft_dprintf(2, "%s: command not found\n", *cmd);
-		if (get_environ()->setvar)
-			ft_swap_env_var(1);
 	}
 	free(bin_path);
 	return (st);

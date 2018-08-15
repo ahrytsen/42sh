@@ -111,7 +111,7 @@ char		*ft_other_getenv(const char *name)
 	return (NULL);
 }
 
-int		ft_set_shell_var(t_list *var, int mod)
+int		ft_set_var(t_list *var, int mod)
 {
 	char	*value;
 	char	*ptr;
