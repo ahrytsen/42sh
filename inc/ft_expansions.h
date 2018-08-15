@@ -17,6 +17,14 @@
 #include <dirent.h>
 #include <sys/stat.h>
 
+typedef struct	s_vals_range
+{
+	char	*buf;
+	char	*buf_q;
+	int		i;
+	int		max;
+}				t_brack;
+
 /*
 **		expand_braces.c
 */

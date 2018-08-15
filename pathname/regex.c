@@ -18,10 +18,9 @@ void		print_lst(t_list *lst) //TODO: delete
 {
 	while (lst)
 	{
-		ft_printf("%s ", lst->content);
+		ft_printf(lst->next ? "%s " : "%s\n", lst->content);
 		lst = lst->next;
 	}
-	ft_printf("\n");
 }
 
 void	print_arr(char **arr)
@@ -103,7 +102,7 @@ int		main(int ac, char **av)
 	t_list	*list;
 	char 	*pattern;
 
-	pattern = av[1] ? av[1] : "file[1-2-]";
+	pattern = av[1] ? av[1] : "file[9-1]";
 	names = ft_strcut(pattern, '/');
 //	print_arr(names);
 //	exit(0);

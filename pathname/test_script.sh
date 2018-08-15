@@ -21,8 +21,7 @@ do
         echo -e "Exit code: $?${nc}"
         ((num_fail++))
     else
-        diff=$(diff <(echo $echo_output) <(echo $gsh_output))
-        if [ -z "$diff" ]
+        if [ "$echo_output" =  "$gsh_output" ]
         then
             echo -e "${green}TRUE ${nc}"
             ((num_success++))
@@ -30,6 +29,8 @@ do
             echo -e "${red}FALSE: ${tests[$i]} (line $i)"
             echo -e "    Expected output: $echo_output"
             echo -e "    Your output: $gsh_output ${nc}"
+            echo $(wc <<< $echo_output)
+            echo $(wc <<< $gsh_output)
             ((num_fail++))
         fi
 #        echo $echo_output

@@ -10,5 +10,7 @@ tests=(
 "file[1-9a-g]?"
 "file[B9-1Gg-ae]"
 "file[10-1]"
-#"file['1-G']"
+"file['1-G']"
+"file'[1-G]'"
+"file[!'1'-'9k]'\"D\"-G]"
 )
