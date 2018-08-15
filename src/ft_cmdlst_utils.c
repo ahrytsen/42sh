@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 17:35:56 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/14 21:48:27 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/15 21:12:57 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ int			ft_cmdlst_skip_subsh(t_list **toks)
 	t_token *tok;
 
 	while (((t_token*)((*toks)->content))->type != subsh_off)
-		tok = toks->content;
+		tok = (*toks)->content;
+	return (1);
 }

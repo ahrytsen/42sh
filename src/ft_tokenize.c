@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/14 15:03:23 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/15 21:08:36 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,38 @@
 static void	ft_get_redirect_in(char **ln, t_token *token)
 {
 	*(*ln)++ = '\0';
+	token->type = redir;
 	token->data.redir.left = 0;
 	if (**ln == '<' && !(*(*ln)++ = '\0'))
 	{
 		if (**ln == '<' && !(*(*ln)++ = '\0'))
-			token->type = herestr;
+			token->data.redir.type = herestr;
 		else if (**ln == '-' && !(*(*ln)++ = '\0'))
-			token->type = heredoc_t;
+			token->data.redir.type = heredoc_t;
 		else
-			token->type = heredoc;
+			token->data.redir.type = heredoc;
 	}
 	else if (**ln == '>' && !(*(*ln)++ = '\0'))
-		token->type = open_file;
+		token->data.redir.type = open_file;
 	else if (**ln == '&' && !(*(*ln)++ = '\0'))
-		token->type = read_in_and;
+		token->data.redir.type = read_in_and;
 	else
-		token->type = read_in;
+		token->data.redir.type = read_in;
 }
 
 static void	ft_get_redirect_out(char **ln, t_token *token)
 {
 	*(*ln)++ = '\0';
+	token->type = redir;
 	token->data.redir.left = 1;
 	if (**ln == '|' && !(*(*ln)++ = 0))
-		token->type = read_out_pipe;
+		token->data.redir.type = read_out_pipe;
 	else if (**ln == '&' && !(*(*ln)++ = 0))
-		token->type = read_out_and;
+		token->data.redir.type = read_out_and;
 	else if (**ln == '>' && !(*(*ln)++ = 0))
-		token->type = read_out_apend;
+		token->data.redir.type = read_out_apend;
 	else
-		token->type = read_out;
+		token->data.redir.type = read_out;
 }
 
 static int	ft_get_separator(char **ln, t_token *token)
@@ -56,11 +58,12 @@ static int	ft_get_separator(char **ln, t_token *token)
 		*(*ln)++ = '\0';
 	else if (**ln == '|' && !(*(*ln)++ = '\0'))
 		token->type =
-			(**ln == '|' && !(*(*ln)++ = '\0')) ? or : pipeline;
+			(**ln == '|' && !(*(*ln)++ = '\0')) ? or : pipeln;
 	else if (**ln == '&' && !(*(*ln)++ = '\0'))
 	{
-		if (**ln == '>' && !(*(*ln)++ = '\0'))
-			token->type = and_read_out;
+		if (**ln == '>' && !(*(*ln)++ = '\0')
+			&& (token->type = redir))
+			token->data.redir.type = and_read_out;
 		else
 			token->type =
 				(**ln == '&' && !(*(*ln)++ = '\0')) ? and : bg_op;
@@ -109,7 +112,7 @@ t_list		*ft_tokenize(char *ln)
 		else if ((tok.type == nl && ((!toks || ft_isoperator(tmp->content))
 				|| !(tok.type = semi))) || tok.type == blank)
 			continue ;
-		else if (toks && ((t_token*)tmp->content)->type > or
+		else if (toks && ((t_token*)tmp->content)->type == redir
 			&& !((t_token*)tmp->content)->data.redir.right && tok.type == word)
 			((t_token*)tmp->content)->data.redir.right = tok.data.word;
 		else if (ft_redir_check(toks ? tmp->content : NULL, &tok, ln)

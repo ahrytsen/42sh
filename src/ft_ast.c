@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/08 15:16:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/14 21:48:25 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/15 22:11:12 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int			ft_ast_get_token(t_list **toks, t_ast *ast_node, t_ast *prev)
 		? ft_get_operator(toks, ast_node) : ft_get_cmd(toks, ast_node);
 	if ((ast_node->type > cmd && (!prev || prev->type > cmd))
 		&& ft_dprintf(2, "42sh: syntax error near unexpected token `%s'\n",
-						ft_tname(ast_node.type)))
+					  "?"))//ft_tname(ast_node->type)))
 		return (1);
 	return (0);
 }

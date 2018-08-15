@@ -6,11 +6,36 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:31 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/14 14:49:31 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/15 22:05:13 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
+
+const char	*ft_tname(t_token *tok)
+{
+	static const char *const	t_names[] =
+		{
+			" ", "redir", "word", "res_word", "|", "(", ")",
+			"&", "newline", ";", ";;", "&&", "||"
+		};
+	static const char *const	r_names[] =
+		{
+			"<<", "<<-", "<<<", "<>", ">", ">|", ">>", "<", "<&", ">&", "&>"
+		};
+
+	if (!tok)
+		return ("newline");
+	else if (tok->type == redir && tok->data.redir.type >= heredoc
+			&& tok->data.redir.type <= and_read_out)
+		return (r_names[tok->data.redir.type]);
+	else if (tok->type == word || tok->type == res_word)
+		return (tok->data.word);
+	else if (tok->type >= blank && tok->type <= or)
+		return (t_names[tok->type]);
+	else
+		return ("unknown token");
+}
 
 void	ft_token_del(void *token, size_t size)
 {

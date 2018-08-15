@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 14:04:03 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/13 13:36:19 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/15 22:24:08 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static int	ft_redir_fd(t_token *tok)
 {
 	int	fd;
 
-	if ((!ft_redir_right_param(tok) && tok->type == read_out_and
-			&& tok->data.redir.left == 1) || tok->type == and_read_out)
+	if ((!ft_redir_right_param(tok) && tok->data.redir.type == read_out_and
+		&& tok->data.redir.left == 1) || tok->data.redir.type == and_read_out)
 	{
 		fd = open(tok->data.redir.right, O_WRONLY | O_CREAT | O_TRUNC,
 				S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
@@ -50,7 +50,8 @@ static int	ft_redir_heredoc(t_token *tok)
 		&& write(2, "42sh: duplicate error\n", 22))
 		return (256);
 	close(pl[0]);
-	ft_dprintf(pl[1], tok->type == herestr ? "%s\n" : "%s", tok->data.redir.hd);
+	ft_dprintf(pl[1], tok->data.redir.type == herestr
+				? "%s\n" : "%s", tok->data.redir.hd);
 	close(pl[1]);
 	return (0);
 }
@@ -62,9 +63,9 @@ static int	ft_redir_file(t_token *tok)
 
 	oflag = 0;
 	fd = 0;
-	if (tok->type == open_file)
+	if (tok->data.redir.type == open_file)
 		oflag |= O_RDWR | O_CREAT;
-	else if (tok->type == read_in)
+	else if (tok->data.redir.type == read_in)
 		access(tok->data.redir.right, F_OK)
 			? (fd = ft_dprintf(2, "42sh: no such file or directory: %s\n",
 							tok->data.redir.right)) : (oflag |= O_RDONLY);
@@ -90,7 +91,7 @@ void		ft_redirection_close(t_list *toks)
 	while (toks)
 	{
 		token = toks->content;
-		if (token->type > or)
+		if (token->type == redir)
 			token->data.redir.left > 2 ? close(token->data.redir.left) : 0;
 		toks = toks->next;
 	}
@@ -105,12 +106,17 @@ int			ft_redirection(t_list *toks)
 	while (toks && !ret)
 	{
 		token = toks->content;
-		if (token->type > or && token->type < open_file)
-			ret = ft_redir_heredoc(token);
-		else if (token->type >= open_file && token->type <= read_in)
-			ret = ft_redir_file(token);
-		else if (token->type > read_in)
-			ret = ft_redir_fd(token);
+		if (token->type == redir)
+		{
+			if (token->data.redir.type >= heredoc
+				&& token->data.redir.type <= herestr)
+				ret = ft_redir_heredoc(token);
+			else if (token->data.redir.type >= open_file
+					&& token->data.redir.type <= read_in)
+				ret = ft_redir_file(token);
+			else if (token->type <= and_read_out)
+				ret = ft_redir_fd(token);
+		}
 		toks = toks->next;
 	}
 	return (ret);

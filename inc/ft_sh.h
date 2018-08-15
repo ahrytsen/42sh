@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/14 21:08:53 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/15 22:06:21 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,27 +86,15 @@ typedef struct	s_buf
 	struct s_buf	*next;
 }				t_buf;
 
-typedef struct	s_redir
-{
-	int		cls;
-	int		left;
-	int		nbr;
-	char	*hd;
-	char	*right;
-}				t_redir;
-
-typedef union	u_data
-{
-	char		*word;
-	t_redir		redir;
-}				t_data;
-
 typedef struct	s_token
 {
-	enum	e_ast_type {
+	enum	e_token_type
+	{
 		blank,
+		redir,
 		word,
-		pipeline,
+		res_word,
+		pipeln,
 		subsh_on,
 		subsh_off,
 		bg_op,
@@ -114,58 +102,109 @@ typedef struct	s_token
 		semi,
 		dsemi,
 		and,
-		or,
-		heredoc,
-		heredoc_t,
-		herestr,
-		open_file,
-		read_out,
-		read_out_pipe,
-		read_out_apend,
-		read_in,
-		read_in_and,
-		read_out_and,
-		and_read_out
+		or
 	}		type;
-	t_data	data;
+	struct		s_data
+	{
+		char	*word;
+		enum	e_rsrv_word_type
+		{
+			not,
+			brace_on,
+			brace_off,
+			_case,
+			_do,
+			done,
+			elif,
+			_else,
+			esac,
+			fi,
+			_for,
+			_if,
+			in,
+			then,
+			until,
+			_while
+		}		reserved_word;
+		struct	s_redir
+		{
+			enum	e_redir_type
+			{
+				heredoc,
+				heredoc_t,
+				herestr,
+				open_file,
+				read_out,
+				read_out_pipe,
+				read_out_apend,
+				read_in,
+				read_in_and,
+				read_out_and,
+				and_read_out
+			}		type;
+			int		cls;
+			int		left;
+			int		nbr;
+			char	*hd;
+			char	*right;
+		}		redir;
+	}		data;
 }				t_token;
 
-typedef struct	s_cmd
-{
-	char			**av;
-	t_list			*toks;
-	char			*subsh;
-	pid_t			pid;
-	int				ret;
-	int				p_in;
-	int				p_out;
-	struct s_cmd	*next;
-	struct s_cmd	*prev;
-}				t_cmd;
+typedef struct s_cmd	t_cmd;
+typedef struct s_ast	t_ast;
 
-typedef struct	s_job
+struct			s_ast
 {
-	pid_t			pgid;
-	t_cmd			*cmd;
-}				t_job;
-
-typedef struct	s_ast
-{
-	t_list			*toks;
-	enum {
+	t_list	*toks;
+	enum	e_ast_type
+	{
 		cmd = word,
 		ast_and = and,
 		ast_or = or,
 		ast_bg = bg_op,
-		ast_smcln = semi
-	}				type;
-	pid_t			pid;
-	int				bg;
-	t_cmd			*cmd;
-	struct s_ast	*left;
-	struct s_ast	*right;
-	struct s_ast	*prev;
-}				t_ast;
+		ast_smcln = semi,
+		ast_not = not,
+		ast_brace_on = brace_on,
+		ast_brace_off = brace_off,
+		ast_case = _case,
+		ast_do = _do,
+		ast_done = done,
+		ast_elif = elif,
+		ast_else = _else,
+		ast_esac = esac,
+		ast_fi = fi,
+		ast_for = _for,
+		ast_if = _if,
+		ast_in = in,
+		ast_thenv = then,
+		ast_until = until,
+		ast_while = _while
+	}		type;
+	pid_t	pid;
+	int		bg;
+	struct		s_cmd
+	{
+		char	**av;
+		t_list	*toks;
+		int		subsh;
+		pid_t	pid;
+		int		ret;
+		int		p_in;
+		int		p_out;
+		t_cmd	*next;
+		t_cmd	*prev;
+	}		*cmd;
+	t_ast	*left;
+	t_ast	*right;
+	t_ast	*prev;
+};
+
+typedef struct	s_job
+{
+	pid_t	pgid;
+	t_cmd	*cmd;
+}				t_job;
 
 /*
 **				ft_argv_exec.c
@@ -196,6 +235,11 @@ int				ft_skip_word(char **ln);
 int				ft_skip_qoutes(char **s);
 int				ft_skip_subsh(char **ln);
 /*
+**				ft_tokenize_validate.c
+*/
+const char		*ft_tname(t_token *tok);
+int				ft_tokenize_validate(t_list *toks);
+/*
 **				ft_heredoc.c
 */
 int				ft_heredoc(t_list *toks);
@@ -216,7 +260,6 @@ int				ft_cmdlst_exec(t_cmd *cmd, int bg);
 /*
 **				ft_ast.c
 */
-char			*ft_tname(int type);
 int				ft_isoperator(t_token *tok);
 t_ast			*ft_ast_make(t_list **toks);
 /*

@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 17:41:55 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/13 20:28:03 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/15 21:13:58 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	ft_subsh_exec(t_cmd *cmd)
 	ast = NULL;
 	toks = NULL;
 	get_environ()->st = 1;
-	if (cmd->subsh && (toks = ft_tokenize(cmd->subsh))
+	if (cmd->subsh && (toks = ft_tokenize(cmd->subsh ? NULL:NULL))
 		&& ft_heredoc(toks))
 	{
 		ast = ft_ast_make(&toks);
