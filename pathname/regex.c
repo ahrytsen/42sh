@@ -103,7 +103,7 @@ int		main(int ac, char **av)
 	t_list	*list;
 	char 	*pattern;
 
-	pattern = av[1] ? av[1] : "file['1-G']";
+	pattern = av[1] ? av[1] : "file[1-2-]";
 	names = ft_strcut(pattern, '/');
 //	print_arr(names);
 //	exit(0);
@@ -127,6 +127,6 @@ int		main(int ac, char **av)
 	}
 	list = ft_lstsort(list);
 	ft_free_arr((void **)names);
-	print_lst(list);
+	list ? print_lst(list) : ft_printf("%s\n", pattern);
 //	return (list);
 }

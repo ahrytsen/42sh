@@ -1,9 +1,14 @@
 tests=(
+"file"
+"file[Ghalkjoai9sdjoakjl]"
+"file[as,.md-sldjfnslJGlfk983uj-sdfkj&hkjdh]"
 "file[a-b]"
 "file[b-a]"
 "file[-ab2]"
 "file[1-2-]"
 "file[1-9a-gGB]"
 "file[1-9a-g]?"
-"file['1-G']"
+"file[B9-1Gg-ae]"
+"file[10-1]"
+#"file['1-G']"
 )

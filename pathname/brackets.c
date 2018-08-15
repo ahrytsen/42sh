@@ -19,7 +19,7 @@ static char	*check_brackets(char *pattern)
 	while (*pattern)
 	{
 		if (!quote && *pattern == ']')
-			return (pattern + 1);
+			return (pattern);
 		else if (*pattern == '\\')
 			++pattern;
 		else if (*pattern == '\'' || *pattern == '"')
@@ -34,26 +34,25 @@ static char	*check_brackets(char *pattern)
 	return (0);
 }
 
-int 		brackets_range(char **pattern, char *str, int eq)
+int 		brackets_range(char **pattern, char *str, int eq, char *q)
 {
 	char	min;
 	char	max;
-	char 	q;
 
 	min = *(*pattern)++;
 	max = *++*pattern;
-	q = 0;
+	++*pattern;
 	while (min <= max)
 	{
-//		if (**pattern == '\\')
-//			++pattern;
-//		else if ((**pattern == '\'' || **pattern == '"') && !q)
-//			q = *(*pattern++);
-//		else if (**pattern == q)
-//		{
-//			q = 0;
-//			++*pattern;
-//		}
+		if (**pattern == '\\')
+			++pattern;
+		else if ((**pattern == '\'' || **pattern == '"') && !*q)
+			*q = *(*pattern++);
+		else if (**pattern == *q)
+		{
+			*q = 0;
+			++*pattern;
+		}
 		if (eq && min == *str)
 			return (1);
 		else if (!eq && min != *str)
@@ -72,11 +71,8 @@ int			ft_regex_brackets(char *pattern, char *str, char q)
 	{
 		eq = *pattern == '!' || *pattern == '^' ? 0 : 1;
 		pattern += *pattern == '!' || *pattern == '^' ? 1 : 0;
-		while (pattern + 1 != brackets_end)
+		while (pattern != brackets_end)
 		{
-			if (!q && *(pattern + 1) == '-' && pattern + 2 != brackets_end
-				&& brackets_range(&pattern, str, eq))
-				return (ft_regex_str(brackets_end, str + 1, q));
 			if (*pattern == '\\')
 				++pattern;
 			else if ((*pattern == '\'' || *pattern == '"') && !q)
@@ -86,10 +82,17 @@ int			ft_regex_brackets(char *pattern, char *str, char q)
 				q = 0;
 				++pattern;
 			}
+			if (!q && *(pattern + 1) == '-' && pattern + 2 != brackets_end)
+			{
+				if (brackets_range(&pattern, str, eq, &q))
+					return (ft_regex_str(brackets_end + 1, str + 1, q));
+				else
+					continue ;
+			}
 			if (eq && *pattern == *str)
-				return (ft_regex_str(brackets_end, str + 1, q));
+				return (ft_regex_str(brackets_end + 1, str + 1, q));
 			else if (!eq && *pattern != *str)
-				return (ft_regex_str(brackets_end, str + 1, q));
+				return (ft_regex_str(brackets_end + 1, str + 1, q));
 			++pattern;
 		}
 	}
