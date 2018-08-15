@@ -32,10 +32,38 @@ int			ft_print_shvar(int mod)
 	env = get_environ()->shvar;
 	while (env)
 	{
-		if ((mod < ENVAR && env->attr == 'l')
-		|| (mod > SHVAR && env->attr == 'e'))
+		if (mod < ENVAR)
 			ft_printf("%c %s\n", env->attr, env->var);
+		else if (mod > SHVAR && env->attr == 'e')
+			ft_printf("export %s\n", env->var);
 		env = env->next;
 	}
 	return (0);
+}
+
+int		ft_set(char **av)
+{
+	// char	*value;
+	// int		i;
+	int		ret;
+
+	ret = 0;
+	if (!av)
+		return (256);
+	if (!*av)
+		ft_print_shvar(SHVAR);
+	while (*av)
+	{
+		// if ((value = ft_strchr(*av, '=')))
+		// 	*value++ = '\0';
+		// i = -1;
+		// while ((*av)[++i])
+		// 	if (((i && !ft_isalnum((*av)[i])) || (!i && !ft_isalpha((*av)[i])))
+		// 	&& (*av)[i] != '_'
+		// 	&& ft_dprintf(2, "setenv: `%s': not a valid identifier\n", *av))
+		// 		return (256);
+		// if (ft_set_tool(*av++, value, 1, ENVAR))
+		// 	ret = 256;
+	}
+	return (ret);
 }

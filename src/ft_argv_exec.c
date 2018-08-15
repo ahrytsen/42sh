@@ -19,6 +19,7 @@ const t_builtins	g_builtin[] = {
 	{"history", &ft_history},
 	{"setenv", &ft_setenv},
 	{"unsetenv", &ft_unsetenv},
+	{"set", &ft_set},
 	{"unset", &ft_unset},
 	{"env", &ft_env},
 	{"exit", &ft_exit},
@@ -34,7 +35,13 @@ static int	ft_exec_builtin(char **cmd)
 	i = 0;
 	while (g_builtin[i].cmd && ft_strcmp(cmd[0], g_builtin[i].cmd))
 		i++;
-	return (g_builtin[i].cmd ? g_builtin[i].ft_builtin(cmd + 1) : -1);
+	if (g_builtin[i].cmd)
+	{
+		if (get_environ()->setvar)
+			ft_set_var(get_environ()->setvar, SHVAR);
+		return (g_builtin[i].ft_builtin(cmd + 1));
+	}
+	return (-1);
 }
 
 static int	ft_exec_bypath(char **cmd, char *path, int bg)
@@ -49,10 +56,9 @@ static int	ft_exec_bypath(char **cmd, char *path, int bg)
 			&& (get_environ()->pgid = get_environ()->pid))
 			return (0);
 		else if (get_environ()->pid < 0)
-			return (write(2, "21sh: fork error\n", 17));
+			return (write(2, "42sh: fork error\n", 17));
 		if (bg != -1)
 			ft_set_sh_signal(bg ? S_CHLD : S_CHLD_FG);
-		get_environ()->setvar ? ft_set_var(get_environ()->setvar, ENVAR) : 0;
 		execve(path, cmd, get_environ()->envar);
 		if ((fd = open(path, O_RDONLY)) >= 0)
 			exit(main_loop(fd));
@@ -108,6 +114,21 @@ static char	*ft_search_bin(char *bin_name, const char *altpath)
 	return (exec_path);
 }
 
+static int	ft_swap_env(int mod)
+{
+	if (mod)
+	{
+		get_environ()->swap = ft_strdup_arr(get_environ()->envar);
+		ft_set_var(get_environ()->setvar, ENVAR);
+	}
+	else
+	{
+		ft_strarr_free(get_environ()->envar);
+		get_environ()->envar = get_environ()->swap;
+	}
+	return (1);
+}
+
 int			ft_argv_exec(char **cmd, char *altpath, int bg)
 {
 	char	*bin_path;
@@ -121,13 +142,19 @@ int			ft_argv_exec(char **cmd, char *altpath, int bg)
 	}
 	bin_path = NULL;
 	if (ft_strchr(*cmd, '/'))
+	{
+		(get_environ()->setvar) ? ft_swap_env(1) : 0;
 		st = ft_exec_bypath(cmd, *cmd, bg);
+		(get_environ()->setvar) ? ft_swap_env(0) : 0;
+	}
 	else if ((st = ft_exec_builtin(cmd)) == -1)
 	{
+		(get_environ()->setvar) ? ft_swap_env(1) : 0;
 		if ((bin_path = ft_search_bin(*cmd, altpath)))
 			st = ft_exec_bypath(cmd, bin_path, bg);
 		else if ((st = 127))
 			ft_dprintf(2, "%s: command not found\n", *cmd);
+		(get_environ()->setvar) ? ft_swap_env(0) : 0;
 	}
 	free(bin_path);
 	return (st);

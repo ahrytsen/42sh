@@ -64,12 +64,13 @@ int		ft_read_export_flags(char ***av, int *flags)
 		i++;
 		while ((**av)[i])
 		{
-			if ((**av)[i] != 'p' && (**av)[i] != 'n' && (**av)[i] != 'a')
+			if ((**av)[i] != 'n' && (**av)[i] != 'p')
 			{
 				ft_dprintf(2, "export: bad option: -%c\n", (**av)[i]);
+				write(2, "export: usage: export [-np] [name[=value]]\n", 43);
 				return (1);
 			}
-			*flags |= ((**av)[i] == 'n' ? 2 : 1);
+			*flags |= ((**av)[i] == 'n' ? 1 : 2);
 			i++;
 		}
 		(*av)++;
@@ -82,20 +83,32 @@ int		ft_export(char **av)
 	char	*value;
 	t_var	*entry;
 	int		flags;
+	int 	rat;
 
+	rat = 0;
 	if (ft_read_export_flags(&av, &flags))
 		return (256);
 	if (!*av)
-		return (ft_print_shvar(flags & 2 ? SHVAR : ENVAR));
+		return (ft_print_shvar(ENVAR));
 	while (*av)
 	{
+		if (!ft_is_valid_name(*av))
+		{
+			ft_dprintf(2, "42sh: export: %s is not a valid identifier\n", *av);
+			rat = 1;
+			av++;
+			continue ;
+		}
 		if ((value = ft_strchr(*av, '=')))
 			*value++='\0';
 		if ((entry = ft_get_shvar_entry(*av)))
 		{
-			if (flags & 2)
-				ft_putendl("unexport");
-			else if (flags & 1)
+			if (flags & 1 && entry->attr == 'e')
+			{
+				entry->attr = 'l';
+				ft_unset_tool(*av, ENVAR);
+			}
+			else if (flags & 2 && entry->attr == 'e')
 				ft_putendl(entry->var);
 			else
 			{
@@ -108,7 +121,7 @@ int		ft_export(char **av)
 				}
 			}
 		}
-		else
+		else if (value)
 			ft_set_tool(*av, value, 1, ENVAR);
 		av++;
 	}

@@ -42,19 +42,24 @@ void	ft_init_shell_var(void)
 
 int		ft_is_valid_name(char *str)
 {
-	while (*str && *str != '=')
+	int i;
+
+	i = 0;
+	while (str[i] && str[i] != '=')
 	{
-		if (!ft_isalnum(*str) && *str != '_')
+		if ((!i && !ft_isalpha(str[i]) && str[i] != '_')
+		|| (i && !ft_isalnum(str[i]) && str[i] != '_'))
 			return (0);
-		str++;
+		i++;
 	}
+	if (!str[i])
+		return (0);
 	return (1);
 }
 
 void		ft_var_checker(t_list *lst)
 {
 	t_token	*tmp;
-	char	*str;
 
 	if (get_environ()->setvar)
 		ft_lstfree(&get_environ()->setvar);
@@ -63,8 +68,7 @@ void		ft_var_checker(t_list *lst)
 		tmp = lst->content;
 		if (tmp->type == (enum e_ast_type)word)
 		{
-			if ((str = ft_strchr(tmp->data.word, '='))
-			&& ft_is_valid_name(tmp->data.word))
+			if (ft_is_valid_name(tmp->data.word))
 			{
 				ft_lstpush_back(&get_environ()->setvar, tmp->data.word
 				, ft_strlen(tmp->data.word) + 1);
