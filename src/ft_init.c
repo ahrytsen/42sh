@@ -21,8 +21,8 @@ static void	ft_if_interactive(void)
 	}
 	ft_set_sh_signal(S_SH);
 	get_environ()->sh_pid = getpid();
-	// setpgid(get_environ()->sh_pid, get_environ()->sh_pid);					//
-	// tcsetpgrp(get_environ()->sh_terminal, get_environ()->sh_pid);			//
+	// setpgid(get_environ()->sh_pid, get_environ()->sh_pid);				//
+	// tcsetpgrp(get_environ()->sh_terminal, get_environ()->sh_pid);		//
 }
 
 void		ft_fildes(int mod)

@@ -285,7 +285,6 @@ void			ft_init_shell_var(void);
 int				ft_is_valid_name(char *str);
 char			*ft_getenv(const char *name);
 char			*ft_other_getenv(const char *name);
-int				ft_set_var(t_list *var, int mod);
 void			ft_var_checker(t_list *lst);
 t_env			*get_environ(void);
 /*
@@ -294,13 +293,14 @@ t_env			*get_environ(void);
 void			ft_add_shvar_entry(char *entry, char attr);
 t_var			*ft_get_shvar_entry(const char *name);
 int				ft_rem_shvar_entry(const char *name);
+int				ft_print_shvar(int mod);
 /*
 **				ft_shell_var_utils.c
 */
 int				ft_set_tool(const char *name, const char *value, int overwrite
 	, int mod);
 int				ft_unset_tool(const char *name, int mod);
-int				ft_setter(const char *name, const char *value, int overwrite);
+int				ft_setter(const char *name, const char *value);
 /*
 **				ft_tokenize.c
 */
@@ -338,6 +338,10 @@ int				ft_fg(char **av);
 int				ft_env(char **av);
 int				ft_env_op(int p);
 /*
+**				ft_builtins/ft_bi_export.c
+*/
+int				ft_export(char **av);
+/*
 **				ft_builtins/ft_bi_un_setenv.c
 */
 int				ft_setenv(char **av);
@@ -345,9 +349,8 @@ int				ft_unsetenv(char **av);
 /*
 **				ft_builtins/ft_bi_un_set.c
 */
-int				ft_set(char **av);
 int				ft_unset(char **av);
-int				ft_print_shvar(int mod);
+int				ft_set_var(t_list *var, int mod);
 /*
 **				ft_builtins/ft_bi_history.c
 */

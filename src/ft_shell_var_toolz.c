@@ -65,7 +65,8 @@ t_var			*ft_get_shvar_entry(const char *name)
 	{
 		while (iter)
 		{
-			if (ft_strcmp(iter->var, name) == '=')
+			if (ft_strcmp(iter->var, name) == '='
+			|| !ft_strcmp(iter->var, name))
 				return (iter);
 			iter = iter->next;
 		}
@@ -97,6 +98,24 @@ int				ft_rem_shvar_entry(const char *name)
 		}
 		if (!tmp)
 			get_environ()->shvar = iter;
+	}
+	return (0);
+}
+
+int				ft_print_shvar(int mod)
+{
+	t_var *env;
+
+	env = get_environ()->shvar;
+	while (env)
+	{
+		if (mod & 1 && env->attr == 'l')
+			ft_printf("%s\n", env->var);
+		else if (mod & 2)
+			ft_printf("%c %s\n", env->attr, env->var);
+		else if ((!mod || mod & 4) && (env->attr == 'e' || env->attr == 'u'))
+			ft_printf("export %s\n", env->var);
+		env = env->next;
 	}
 	return (0);
 }

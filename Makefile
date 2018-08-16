@@ -61,13 +61,14 @@ SRC			=	ft_argv.c\
 				ft_redirection.c\
 				ft_redirection_utils.c\
 				ft_tokenize.c\
-                ft_tokenize_tools.c\
+				ft_tokenize_tools.c\
 				ft_tokenize_utils.c\
 				main.c\
 				\
 				ft_builtins/ft_builtins.c\
 				ft_builtins/ft_bi_cd.c\
 				ft_builtins/ft_bi_env.c\
+				ft_builtins/ft_bi_export.c\
 				ft_builtins/ft_bi_fg.c\
 				ft_builtins/ft_bi_history.c\
 				ft_builtins/ft_bi_un_set.c\
@@ -123,7 +124,7 @@ all: $(NAME)
 
 $(NAME): $(LIBFT) $(DIROBJ) $(OBJ)
 	@echo "$(STRING1)"
-	@$(CC) $(INC) $(INC_LIB) $(CFLAGS) -o $(NAME) $(OBJ)
+	@$(CC) $(INC) $(INC_LIB) $(CFLAGS) $(OBJ) -o $(NAME)
 	@echo "$(CYANN)comp$(NON)..."$(NAME)"...$(GREEN)OK$(NON)"
 
 $(DIROBJ):

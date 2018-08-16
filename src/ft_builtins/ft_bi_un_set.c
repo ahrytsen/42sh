@@ -25,45 +25,34 @@ int		ft_unset(char **av)
 	return (ret);
 }
 
-int			ft_print_shvar(int mod)
+int		ft_set_var(t_list *var, int mod)									//28
 {
-	t_var *env;
+	char	*value;
+	char	*ptr;
+	t_var	*entry;
 
-	env = get_environ()->shvar;
-	while (env)
+	while (var)
 	{
-		if (mod < ENVAR)
-			ft_printf("%c %s\n", env->attr, env->var);
-		else if (mod > SHVAR && env->attr == 'e')
-			ft_printf("export %s\n", env->var);
-		env = env->next;
+		ptr = ft_strchr(var->content, '=');
+		value = ptr + 1;
+		*ptr = '\0';
+		if (mod == SHVAR)
+		{
+			if ((entry = ft_get_shvar_entry(var->content)))
+			{
+				if (entry->attr == 'e'
+				|| (entry->attr == 'u' && (entry->attr = 'e')))
+					ft_setter(var->content, value);
+				free(entry->var);
+				*ptr = '=';
+				entry->var = ft_strdup(var->content);
+			}
+			else
+				ft_set_tool(var->content, value, 1, SHVAR);
+		}
+		else if (mod == ENVAR)
+			ft_setter(var->content, value);
+		var = var->next;
 	}
 	return (0);
-}
-
-int		ft_set(char **av)
-{
-	// char	*value;
-	// int		i;
-	int		ret;
-
-	ret = 0;
-	if (!av)
-		return (256);
-	if (!*av)
-		ft_print_shvar(SHVAR);
-	while (*av)
-	{
-		// if ((value = ft_strchr(*av, '=')))
-		// 	*value++ = '\0';
-		// i = -1;
-		// while ((*av)[++i])
-		// 	if (((i && !ft_isalnum((*av)[i])) || (!i && !ft_isalpha((*av)[i])))
-		// 	&& (*av)[i] != '_'
-		// 	&& ft_dprintf(2, "setenv: `%s': not a valid identifier\n", *av))
-		// 		return (256);
-		// if (ft_set_tool(*av++, value, 1, ENVAR))
-		// 	ret = 256;
-	}
-	return (ret);
 }

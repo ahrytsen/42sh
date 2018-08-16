@@ -30,7 +30,7 @@ static char	*ft_new_env_str(const char *name, const char *value)
 	return (new_env);
 }
 
-int			ft_setter(const char *name, const char *value, int overwrite)
+int			ft_setter(const char *name, const char *value)
 {
 	size_t	i;
 	char	**env;
@@ -43,11 +43,6 @@ int			ft_setter(const char *name, const char *value, int overwrite)
 	while (env[++i])
 		if (ft_strcmp(env[i], name) == '=')
 		{
-			if (!overwrite)
-			{
-				free(tmp);
-				return (-1);
-			}
 			free((void*)env[i]);
 			return ((env[i] = tmp) ? 0 : -1);
 		}
@@ -64,40 +59,29 @@ int			ft_set_tool(const char *name, const char *value, int overwrite
 {
 	char	*str;
 	t_var	*entry;
-	int		rat;
 
-	rat = 0;
 	if (((entry = ft_get_shvar_entry(name)) && !overwrite)
 	|| !(str = ft_new_env_str(name, value)))
 		return (-1);
-	if (mod == SHVAR)
+	if (entry && mod != -1)
 	{
-		if (entry)
-		{
-			free(entry->var);
-			entry->var = ft_strdup(str);
-		}
-		else
-			ft_add_shvar_entry(str, ((entry && entry->attr == 'e') ? 'e' : 'l'));
-		if (entry && entry->attr == 'e'
-		&& (rat = ft_setter(name, value, overwrite)) == -1)
-			ft_rem_shvar_entry(name);
+		entry->attr = ((entry->attr == 'l' && mod == SHVAR) ? 'l' : 'e');
+		free(entry->var);
+		entry->var = ft_strdup(str);
 	}
-	else
+	else if (!entry)
 	{
-		if (entry)
-		{
-			entry->attr = 'e';
-			free(entry->var);
-			entry->var = ft_strdup(str);
-		}
+		if (mod != -1)
+			ft_add_shvar_entry(str, (mod == ENVAR ? 'e' : 'l'));
 		else
-			ft_add_shvar_entry(str, 'e');
-		if ((rat = ft_setter(name, value, overwrite)) == -1)
-			ft_rem_shvar_entry(name);
+			ft_add_shvar_entry((char *)name, 'u');
 	}
 	free(str);
-	return (rat);
+	if (((entry && entry->attr == 'e') || mod == ENVAR)
+	&& ft_setter(name, value) == -1
+	&& ft_rem_shvar_entry(name))
+		return (-1);
+	return (0);
 }
 
 int			ft_unset_tool(const char *name, int mod)
@@ -108,7 +92,7 @@ int			ft_unset_tool(const char *name, int mod)
 
 	if (!(entry = ft_get_shvar_entry(name))
 	|| ((attr = entry->attr) != 'e' && mod == ENVAR))
-		return (0);											// | -1?
+		return (0);
 	if (!ft_rem_shvar_entry(name))
 		return (-1);
 	if (attr != 'e')

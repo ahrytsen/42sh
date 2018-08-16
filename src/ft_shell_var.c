@@ -52,12 +52,10 @@ int		ft_is_valid_name(char *str)
 			return (0);
 		i++;
 	}
-	if (!str[i])
-		return (0);
 	return (1);
 }
 
-void		ft_var_checker(t_list *lst)
+void	ft_var_checker(t_list *lst)
 {
 	t_token	*tmp;
 
@@ -68,7 +66,8 @@ void		ft_var_checker(t_list *lst)
 		tmp = lst->content;
 		if (tmp->type == (enum e_ast_type)word)
 		{
-			if (ft_is_valid_name(tmp->data.word))
+			if (ft_strchr(tmp->data.word, '=')
+			&& ft_is_valid_name(tmp->data.word))
 			{
 				ft_lstpush_back(&get_environ()->setvar, tmp->data.word
 				, ft_strlen(tmp->data.word) + 1);
@@ -81,25 +80,26 @@ void		ft_var_checker(t_list *lst)
 	}
 }
 
-t_env		*get_environ(void)
+t_env	*get_environ(void)
 {
 	static t_env	env;
 
 	return (&env);
 }
 
-char		*ft_getenv(const char *name)
+char	*ft_getenv(const char *name)
 {
 	t_var	*entry;
 	char	*ptr;
 
 	if (!name || !(entry = ft_get_shvar_entry(name)))
 		return (NULL);
-	ptr = ft_strchr(entry->var, '=') + 1;
+	if ((ptr = ft_strchr(entry->var, '=')))
+		return (ptr + 1);
 	return (ptr);
 }
 
-char		*ft_other_getenv(const char *name)
+char	*ft_other_getenv(const char *name)
 {
 	char	**env;
 
@@ -113,35 +113,4 @@ char		*ft_other_getenv(const char *name)
 		env++;
 	}
 	return (NULL);
-}
-
-int		ft_set_var(t_list *var, int mod)
-{
-	char	*value;
-	char	*ptr;
-	t_var	*entry;
-
-	while (var)
-	{
-		ptr = ft_strchr(var->content, '=');
-		value = ptr + 1;
-		*ptr = '\0';
-		if (mod == SHVAR)
-		{
-			if ((entry = ft_get_shvar_entry(var->content)))
-			{
-				if (entry->attr == 'e')
-					ft_setter(var->content, value, 1);
-				free(entry->var);
-				*ptr = '=';
-				entry->var = ft_strdup(var->content);
-			}
-			else
-				ft_set_tool(var->content, value, 1, SHVAR);
-		}
-		else if (mod == ENVAR)
-			ft_setter(var->content, value, 1);
-		var = var->next;
-	}
-	return (0);
 }

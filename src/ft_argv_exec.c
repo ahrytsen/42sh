@@ -19,7 +19,6 @@ const t_builtins	g_builtin[] = {
 	{"history", &ft_history},
 	{"setenv", &ft_setenv},
 	{"unsetenv", &ft_unsetenv},
-	{"set", &ft_set},
 	{"unset", &ft_unset},
 	{"env", &ft_env},
 	{"exit", &ft_exit},
@@ -76,7 +75,6 @@ static char	**ft_get_path(const char *altpath)
 {
 	char	pwd[MAXPATHLEN];
 
-
 	if (!altpath)
 	{
 		altpath = ft_other_getenv("PATH");
@@ -129,7 +127,7 @@ static int	ft_swap_env(int mod)
 	return (1);
 }
 
-int			ft_argv_exec(char **cmd, char *altpath, int bg)
+int			ft_argv_exec(char **cmd, char *altpath, int bg)					//27
 {
 	char	*bin_path;
 	int		st;

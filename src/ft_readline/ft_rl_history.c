@@ -21,7 +21,7 @@ int		hist_init(void)
 		if (!(new_hist = ft_memalloc(sizeof(t_hist)))
 			|| !(new_hist->tmp = ft_memalloc(sizeof(t_line))))
 			return (-1);
-		new_hist->no = ((get_term()->hist)? get_term()->hist->no + 1 : 1);
+		new_hist->no = ((get_term()->hist) ? get_term()->hist->no + 1 : 1);
 		if (!get_term()->hist)
 			get_term()->hist = new_hist;
 		else
