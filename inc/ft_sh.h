@@ -75,7 +75,6 @@ typedef struct	s_var
 typedef struct	s_env
 {
 	char			**envar;
-	char			**swap;
 	t_var			*shvar;
 	t_list			*setvar;
 	int				st;

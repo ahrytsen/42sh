@@ -58,6 +58,7 @@ static int	ft_exec_bypath(char **cmd, char *path, int bg)
 			return (write(2, "42sh: fork error\n", 17));
 		if (bg != -1)
 			ft_set_sh_signal(bg ? S_CHLD : S_CHLD_FG);
+		get_environ()->setvar ? ft_set_var(get_environ()->setvar, ENVAR) : 0;
 		execve(path, cmd, get_environ()->envar);
 		if ((fd = open(path, O_RDONLY)) >= 0)
 			exit(main_loop(fd));
@@ -74,10 +75,24 @@ static int	ft_exec_bypath(char **cmd, char *path, int bg)
 static char	**ft_get_path(const char *altpath)
 {
 	char	pwd[MAXPATHLEN];
+	t_list	*list;
 
 	if (!altpath)
 	{
-		altpath = ft_other_getenv("PATH");
+		if ((list = get_environ()->setvar))
+		{
+			while (list)
+			{
+				if (ft_strcmp((char *)list->content, "PATH") == '=')
+				{
+					altpath = ft_strchr((char *)list->content, '=') + 1;
+					break ;
+				}
+				list = list->next;
+			}
+		}
+		else
+			altpath = ft_other_getenv("PATH");
 		if (!altpath || !*altpath)
 			altpath = getcwd(pwd, MAXPATHLEN);
 	}
@@ -112,21 +127,6 @@ static char	*ft_search_bin(char *bin_name, const char *altpath)
 	return (exec_path);
 }
 
-static int	ft_swap_env(int mod)
-{
-	if (mod)
-	{
-		get_environ()->swap = ft_strdup_arr(get_environ()->envar);
-		ft_set_var(get_environ()->setvar, ENVAR);
-	}
-	else
-	{
-		ft_strarr_free(get_environ()->envar);
-		get_environ()->envar = get_environ()->swap;
-	}
-	return (1);
-}
-
 int			ft_argv_exec(char **cmd, char *altpath, int bg)					//27
 {
 	char	*bin_path;
@@ -140,19 +140,13 @@ int			ft_argv_exec(char **cmd, char *altpath, int bg)					//27
 	}
 	bin_path = NULL;
 	if (ft_strchr(*cmd, '/'))
-	{
-		(get_environ()->setvar) ? ft_swap_env(1) : 0;
 		st = ft_exec_bypath(cmd, *cmd, bg);
-		(get_environ()->setvar) ? ft_swap_env(0) : 0;
-	}
 	else if ((st = ft_exec_builtin(cmd)) == -1)
 	{
-		(get_environ()->setvar) ? ft_swap_env(1) : 0;
 		if ((bin_path = ft_search_bin(*cmd, altpath)))
 			st = ft_exec_bypath(cmd, bin_path, bg);
 		else if ((st = 127))
 			ft_dprintf(2, "%s: command not found\n", *cmd);
-		(get_environ()->setvar) ? ft_swap_env(0) : 0;
 	}
 	free(bin_path);
 	return (st);
