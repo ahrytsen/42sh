@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/19 19:39:06 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/15 22:16:08 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/16 15:31:14 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,11 @@ int		ft_redir_right_param(t_token *tok)
 int		ft_redir_check(t_token *prev, t_token *next, char *ln)
 {
 	if (((prev && prev->type == redir && !prev->data.redir.right)
-			&& ft_dprintf(2, "42sh: unexpected token `%s'\n", ft_tname(next)))
+			&& ft_dprintf(2, "42sh: syntax error near unexpected token `%s'\n",
+							ft_tname(next)))
 		|| ((next && next->type == redir && !*ln)
-			&& ft_dprintf(2, "42sh: unexpected token `%s'\n", ft_tname(NULL))))
+			&& ft_dprintf(2, "42sh: syntax error near unexpected token `%s'\n",
+							ft_tname(NULL))))
 		return (1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/15 22:06:21 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/16 19:11:25 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,7 +156,6 @@ typedef struct s_ast	t_ast;
 
 struct			s_ast
 {
-	t_list	*toks;
 	enum	e_ast_type
 	{
 		cmd = word,
@@ -181,6 +180,7 @@ struct			s_ast
 		ast_until = until,
 		ast_while = _while
 	}		type;
+	t_list	*toks;
 	pid_t	pid;
 	int		bg;
 	struct		s_cmd
@@ -229,16 +229,16 @@ t_list			*ft_tokenize(char *ln);
 /*
 **				ft_tokenize_utils.c
 */
-int				ft_isseparator(int c);
-void			ft_token_del(void *token, size_t size);
+int				ft_get_subsh(char **ln, t_token *token);
 int				ft_skip_word(char **ln);
 int				ft_skip_qoutes(char **s);
 int				ft_skip_subsh(char **ln);
 /*
-**				ft_tokenize_validate.c
+**				ft_tokenize_tools.c
 */
+int				ft_isseparator(int c);
+void			ft_token_del(void *token, size_t size);
 const char		*ft_tname(t_token *tok);
-int				ft_tokenize_validate(t_list *toks);
 /*
 **				ft_heredoc.c
 */
@@ -271,6 +271,11 @@ t_ast			*ft_ast_del(t_ast *ast, int up);
 **				ft_ast_exec.c
 */
 int				ft_ast_exec(t_ast *ast);
+/*
+**				ft_ast_debug.c
+*/
+void			ft_print_ast(t_ast *ast);
+void			ft_print_toks(t_list *toks);
 /*
 **				ft_argv.c
 */

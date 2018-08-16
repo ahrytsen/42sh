@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/11 19:53:36 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/15 21:06:05 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/16 14:44:52 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int			main_loop(int fd)
 			return (!i ? get_environ()->st : 1);
 		if (cmds && (toks = ft_tokenize(cmds)) && ft_heredoc(toks))
 		{
+			ft_print_toks(toks);
 //			ast = ft_ast_make(&toks);
 //			ft_print_ast(ast);
 //			get_environ()->st = ft_ast_exec(ast);
