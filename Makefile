@@ -72,6 +72,7 @@ SRC			=	ft_argv.c\
 				ft_builtins/ft_bi_fg.c\
 				ft_builtins/ft_bi_history.c\
 				ft_builtins/ft_bi_history_toolz.c\
+				ft_builtins/ft_bi_history_utils.c\
 				ft_builtins/ft_bi_un_set.c\
 				ft_builtins/ft_bi_un_setenv.c\
 				\

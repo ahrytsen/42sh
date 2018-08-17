@@ -13,24 +13,48 @@
 #include "ft_sh.h"
 #include "ft_readline.h"
 
+void ft_hist_add_entry(char *line)
+{
+	t_hist	*tmp;
+	int		i;
+
+	i = 0;
+	tmp = get_term()->hist;
+	if (tmp)
+	{
+		tmp->next = (t_hist *)ft_memalloc(sizeof(t_hist));
+		tmp->next->prev = tmp;
+		tmp = tmp->next;
+		tmp->no = tmp->prev->no + 1;
+	}
+	else
+	{
+		tmp = (t_hist *)ft_memalloc(sizeof(t_hist));
+		tmp->no = 1;
+	}
+	tmp->line = (t_line *)ft_memalloc(sizeof(t_line));
+	while (line[i])
+	{
+		line_add(tmp->line, (uint64_t)line[i]);
+		i++;
+	}
+	get_term()->hist = tmp;
+}
+
 void		ft_hist_init(char *str)
 {
-	char	*file;
-	char	*line;
-	int		fd;
+	int			fd;
 
 	if (!str)
-		file = ft_getenv("HISTFILE");
-	else
-		file = str;
-	if ((fd = open(file, O_RDONLY)) != -1)
+		str = ft_getenv("HISTFILE");
+	if ((fd = open(str, O_RDONLY)) != -1)
 	{
+		ft_hist_erase();
 		get_term()->hist_max_size = (unsigned)ft_atoi(ft_getenv("HISTSIZE"));
-		while (get_next_line(fd, &line) > 0)
+		while (get_next_line(fd, &str) > 0)
 		{
-			// gsh_r_history_bucket(CREATE, 0);					//
-			// gsh_r_history_bucket(ADD, line);					//
-			free(line);
+			ft_hist_add_entry(str);
+			free(str);
 		}
 		close(fd);
 	}
@@ -71,23 +95,10 @@ void		ft_hist_read(char *str)
 		while (get_next_line(fd, &line) > 0)
 		{
 			if (!ft_hist_search_elem(line))
-			{
-				// gsh_r_history_bucket(CREATE, 0);			//
-				// gsh_r_history_bucket(ADD, line);			//
-			}
+				ft_hist_add_entry(line);
 			free(line);
 		}
 	}
-}
-
-int			ft_hist_erase_rec(char *str)
-{
-	if (!str)
-		return (ft_hist_usage(1));
-	if (!ft_isnumber(str))
-		return (ft_hist_usage(2));
-	// gsh_r_history_bucket(DELONE, str);						//
-	return (0);
 }
 
 void		ft_hist_add_rec(void)
@@ -121,7 +132,7 @@ void		ft_hist_show_without_add(char **av)
 	tmp->next = NULL;
 	get_term()->hist = tmp;
 	line_tostr(&hist->line, 2);
-	line_tostr(&hist->tmp, 2);
+	// line_tostr(&hist->tmp, 2);
 	free(hist);
 	while (*av)
 	{

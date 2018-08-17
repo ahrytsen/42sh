@@ -345,6 +345,7 @@ int				ft_fg(char **av);
 */
 int				ft_hist_usage(int err);
 int				ft_history(char **av);
+void			ft_hist_erase(void);
 /*
 **				ft_builtins/ft_bi_history_toolz.c
 */
@@ -353,6 +354,9 @@ void			ft_hist_read(char *str);
 int				ft_hist_erase_rec(char *str);
 void			ft_hist_add_rec(void);
 void			ft_hist_show_without_add(char **av);
+/*
+**				ft_builtins/ft_bi_history_utils.c
+*/
 
 /*
 **				ft_builtins/ft_bi_un_set.c

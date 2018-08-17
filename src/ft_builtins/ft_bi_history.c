@@ -17,7 +17,6 @@ static int	ft_hist_write(char *str, int mod)
 {
 	int		fd;
 	t_hist	*hist;
-	char	*line;
 
 	if (!str)
 		str = ft_getenv("HISTFILE");
@@ -28,26 +27,15 @@ static int	ft_hist_write(char *str, int mod)
 			hist = hist->prev;
 		while (hist)
 		{
-			line = line_tostr(&hist->line, 0);
-			write(fd, line, ft_strlen(line));
+			str = line_tostr(&hist->line, 0);
+			write(fd, str, ft_strlen(str));
 			write(fd, "\n", 1);
-			free(line);
+			free(str);
 			hist = hist->next;
 		}
 		close(fd);
 		return (0);
 	}
-	return (1);
-}
-
-int			ft_hist_usage(int err)
-{
-	if (err == 1)
-		ft_putendl_fd("history: -d option requires an argument", 2);
-	if (err == 2)
-		ft_putendl_fd("history: numeric argument required", 2);
-	ft_putendl_fd("history usage:\n\thistory [-c] [-d offset] [n]\n\t\
-history -awrn [filename]\n\thistory -ps arg [arg...]", 2);
 	return (1);
 }
 
@@ -100,27 +88,6 @@ static int	ft_hist_reveal(char **av)
 	return (0);
 }
 
-static void	ft_hist_erase(void)
-{
-	t_hist	*tmp;
-	t_hist	*hist;
-
-	if (!(hist = get_term()->hist))
-		return ;
-	while (hist->next)
-		hist = hist->next;
-	while (hist)
-	{
-		tmp = hist;
-		hist = hist->prev;
-		if (tmp->tmp)
-			line_tostr(&tmp->tmp, 2);
-		line_tostr(&tmp->line, 2);
-		free(tmp);
-	}
-	get_term()->hist = NULL;
-}
-
 int			ft_history(char **av)
 {
 	if (*av && **av == '-')
@@ -130,17 +97,17 @@ int			ft_history(char **av)
 		if (*(*av + 1) == 'c')
 			ft_hist_erase();
 		else if (*(*av + 1) == 's')
-			ft_hist_add_rec();// add record
+			ft_hist_add_rec();
 		else if (*(*av + 1) == 'p')
-			ft_hist_show_without_add(av + 1);// show without add
+			ft_hist_show_without_add(av + 1);
 		else if (*(*av + 1) == 'd')
-			return (ft_hist_erase_rec(*(av + 1)));// erase record
+			return (ft_hist_erase_rec(*(av + 1)));
 		else if (*(*av + 1) == 'a')
 			return (ft_hist_write(*(av + 1), 01011));
 		else if (*(*av + 1) == 'n')
-			ft_hist_read(*(av + 1));// append from file
+			ft_hist_read(*(av + 1));
 		else if (*(*av + 1) == 'r')
-			ft_hist_init(*(av + 1));// read from file
+			ft_hist_init(*(av + 1));
 		else if (*(*av + 1) == 'w')
 			return (ft_hist_write(*(av + 1), 03001));
 		else
