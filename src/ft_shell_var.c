@@ -6,7 +6,7 @@
 /*   By: dlinkin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/08 14:21:11 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/08/08 14:21:12 by dlinkin          ###   ########.fr       */
+/*   Updated: 2018/08/17 22:16:24 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,14 @@ void	ft_var_checker(t_list *lst)
 	while (lst)
 	{
 		tmp = lst->content;
-		if (tmp->type == (enum e_ast_type)word)
+		if (tmp->type == word)
 		{
-			if (ft_strchr(tmp->data.word, '=')
-			&& ft_is_valid_name(tmp->data.word))
+			if (ft_strchr(tmp->word, '=')
+			&& ft_is_valid_name(tmp->word))
 			{
-				ft_lstpush_back(&get_environ()->setvar, tmp->data.word
-				, ft_strlen(tmp->data.word) + 1);
-				tmp->type = (enum e_ast_type)assignment;
+				ft_lstpush_back(&get_environ()->setvar, tmp->word,
+								ft_strlen(tmp->word) + 1);
+				tmp->type = assignment;
 			}
 			else
 				break ;
