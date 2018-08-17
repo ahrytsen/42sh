@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/07 15:27:02 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/08/13 21:02:01 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -41,31 +41,38 @@ DIROBJ		=	./obj/
 HDR			=	inc/ft_sh.h\
 				inc/ft_readline.h
 
-SRC			=	main.c\
-				ft_init.c\
-				ft_env_utils.c\
-				ft_buffer.c\
-				ft_tokenize.c\
-				ft_tokenize_utils.c\
+SRC			=	ft_argv.c\
+				ft_argv_exec.c\
+				ft_argv_quotes.c\
+				ft_argv_utils.c\
 				ft_ast.c\
-				ft_ast_utils.c\
 				ft_ast_exec.c\
+				ft_ast_utils.c\
+				ft_buffer.c\
 				ft_cmdlst.c\
 				ft_cmdlst_utils.c\
 				ft_cmdlst_exec.c\
-				ft_argv.c\
-				ft_argv_utils.c\
-				ft_argv_quotes.c\
-				ft_argv_exec.c\
+				ft_heredoc.c\
+				ft_init.c\
+				ft_jobs_utils.c\
+				ft_shell_var.c\
+				ft_shell_var_toolz.c\
+				ft_shell_var_utils.c\
 				ft_redirection.c\
 				ft_redirection_utils.c\
-				ft_heredoc.c\
-				ft_jobs_utils.c\
+				ft_tokenize.c\
+				ft_tokenize_tools.c\
+				ft_tokenize_utils.c\
+				main.c\
 				\
 				ft_builtins/ft_builtins.c\
-				ft_builtins/ft_bi_env.c\
 				ft_builtins/ft_bi_cd.c\
+				ft_builtins/ft_bi_env.c\
+				ft_builtins/ft_bi_export.c\
 				ft_builtins/ft_bi_fg.c\
+				ft_builtins/ft_bi_history.c\
+				ft_builtins/ft_bi_un_set.c\
+				ft_builtins/ft_bi_un_setenv.c\
 				\
 				ft_readline/ft_readline.c\
 				ft_readline/ft_rl_autocomplit.c\
@@ -76,6 +83,7 @@ SRC			=	main.c\
 				ft_readline/ft_rl_init.c\
 				ft_readline/ft_rl_check_line.c\
 				ft_readline/ft_rl_cursor.c\
+				ft_readline/ft_rl_exclamation.c\
 				ft_readline/ft_rl_helper.c\
 				ft_readline/ft_rl_history.c\
 				ft_readline/ft_rl_highlight.c\
@@ -116,7 +124,7 @@ all: $(NAME)
 
 $(NAME): $(LIBFT) $(DIROBJ) $(OBJ)
 	@echo "$(STRING1)"
-	@$(CC) $(INC) $(INC_LIB) $(CFLAGS) -o $(NAME) $(OBJ)
+	@$(CC) $(INC) $(INC_LIB) $(CFLAGS) $(OBJ) -o $(NAME)
 	@echo "$(CYANN)comp$(NON)..."$(NAME)"...$(GREEN)OK$(NON)"
 
 $(DIROBJ):
@@ -157,7 +165,7 @@ clear:
 
 run:
 	@echo "$(STRING4)"
-	@./$(NAME)
+	./$(NAME)
 
 test:
 

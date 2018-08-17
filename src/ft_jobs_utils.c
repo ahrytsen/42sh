@@ -67,7 +67,7 @@ int			ft_control_job(t_cmd *cmd, int bg, int cont)
 		!bg ? tcsetpgrp(0, get_environ()->pgid) : 0;
 		cont ? kill(-get_environ()->pgid, SIGCONT) : 0;
 		!bg ? waitpid(cmd->pid, &cmd->ret, WUNTRACED) : ft_bg_job(cmd);
-		!bg ? tcsetpgrp(0, get_environ()->sh_pid) : 0;
+		!bg ? tcsetpgrp(0, get_environ()->sh_pgid) : 0;
 		!bg && WIFSTOPPED(cmd->ret) ? ft_stop_job(cmd, 1) : 0;
 	}
 	else if (!cmd->ret && cmd->pid)

@@ -49,7 +49,7 @@ static int	ft_env_flags(char ***av, t_op *options)
 		else if (*str == 'u' || *str == 'S' || *str == 'P')
 		{
 			tmp = (!*(str + 1)) ? *(++*av) : (str + 1);
-			*str == 'u' ? ft_unsetenv(tmp) : 0;
+			*str == 'u' ? ft_unset_tool(tmp, ENVAR) : 0;
 			*str == 'u' && options->v ? ft_printf("#env unset:\t%s\n", tmp) : 0;
 			*str == 'P' ? options->ap = tmp : 0;
 			*str == 'S' ? options->exec = ft_strdup_arr(*av) : 0;
@@ -89,7 +89,7 @@ int			ft_env(char **av)
 	{
 		options.v ? ft_printf("#env setenv:\t%s\n", *av) : 0;
 		*tmp = 0;
-		ft_setenv(*av++, ++tmp, 1);
+		ft_set_tool(*av++, ++tmp, 1, ENVAR);
 	}
 	!options.exec && *av ? options.exec = ft_strdup_arr(av) : 0;
 	if (options.v && options.exec && (st = -1))

@@ -51,16 +51,24 @@ static int	ft_ast_smcln_exec(t_ast *ast)
 
 int			ft_ast_exec(t_ast *ast)
 {
+	int		rat;
+	char	*str;
+
+	rat = 0;
 	if (!ast)
-		return (2);
+		rat = 2;
 	else if (ast->type == cmd)
-		return (ft_ast_cmd_exec(ast));
+		rat = ft_ast_cmd_exec(ast);
 	else if (ast->type == ast_and)
-		return (ft_ast_and_exec(ast));
+		rat = ft_ast_and_exec(ast);
 	else if (ast->type == ast_or)
-		return (ft_ast_or_exec(ast));
+		rat = ft_ast_or_exec(ast);
 	else if (ast->type == ast_bg || ast->type == ast_smcln)
-		return (ft_ast_smcln_exec(ast));
+		rat = ft_ast_smcln_exec(ast);
 	else
-		return (-1);
+		rat = -1;
+	str = ft_itoa(rat);
+	ft_set_tool("?", str, 1, SHVAR);
+	free(str);
+	return (rat);
 }

@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/05 17:38:16 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/12 18:19:24 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/01 16:32:18 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -190,7 +190,7 @@ char			*ft_rl_search_varname(char *str, size_t len);
 int				hist_init(void);
 void			hist_move(uint64_t buf);
 void			clean_hist(void);
-void			hist_commit(int st);
+void			hist_commit(int st, int i);
 /*
 **				ft_readline/ft_rl_highlight.c
 */
@@ -208,6 +208,6 @@ int				ft_check_line(char *ln);
 /*
 **				ft_readline/ft_rl_exclamation.c
 */
-char			*ft_rl_history_replace_mark(void);
+char			*ft_rl_history_replace_mark(t_line **cur);
 
 #endif

@@ -12,7 +12,7 @@
 
 #include <unistd.h>
 
-extern inline ssize_t	ft_absolute(ssize_t value)
+inline ssize_t	ft_absolute(ssize_t value)
 {
 	return (value >= 0 ? value : -value);
 }

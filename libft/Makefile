@@ -140,7 +140,7 @@ CFLAGS		=
 CFLAGS		=	-Wall -Wextra -Werror -g
 	endif
 else
-CFLAGS		= 	-Wextra -Werror -Ofast -flto=thin
+CFLAGS		= 	-Wall -Wextra -Werror -O2 -flto=thin
 endif
 #===========================================================
 OS = $(shell uname)
@@ -183,6 +183,6 @@ re: fclean all
 
 $(DIROBJ):
 				mkdir -p $(DIROBJ)
-				mkdir -p $(DIROBJ)/ft_printf
+				mkdir -p $(DIROBJ)ft_printf
 
 .NOTEPARALLEL: all $(NAME) re

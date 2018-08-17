@@ -21,6 +21,7 @@ int		hist_init(void)
 		if (!(new_hist = ft_memalloc(sizeof(t_hist)))
 			|| !(new_hist->tmp = ft_memalloc(sizeof(t_line))))
 			return (-1);
+		new_hist->no = ((get_term()->hist) ? get_term()->hist->no + 1 : 1);
 		if (!get_term()->hist)
 			get_term()->hist = new_hist;
 		else
@@ -68,16 +69,16 @@ void	clean_hist(void)
 	}
 }
 
-void	hist_commit(int st)
+void	hist_commit(int st, int i)
 {
 	t_line	*to_save;
 
 	to_save = get_term()->hist->tmp;
 	get_term()->hist->tmp = NULL;
 	clean_hist();
-	if (to_save->prev && st > 0 && get_term()->prompt == P_USER)
+	if (i && to_save->prev && st > 0 && get_term()->prompt == P_USER)
 		get_term()->hist->line = to_save;
-	else if (st > 0 && get_term()->prompt == P_USER)
+	else if (i && st > 0 && get_term()->prompt == P_USER)
 		get_term()->hist->tmp = to_save;
 	else if (st > 0)
 		line_tostr(&get_term()->cursor, 2);

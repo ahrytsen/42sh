@@ -47,6 +47,7 @@ static int	ft_heredoc_toread(t_token *tok)
 
 	line = NULL;
 	f = 0;
+	ret = 0;
 	get_term()->heredoc_key = parse_heredoc(tok->data.redir.right, 0, &f);
 	while (get_term()->heredoc_key && (ret = ft_readline(0, &line)) > 0)
 	{

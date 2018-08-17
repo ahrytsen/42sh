@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-const static t_conv		g_phelper[] =
+static const t_conv		g_phelper[] =
 {
 	{"sS", &ft_str},
 	{"diD", &ft_int},
@@ -24,7 +24,7 @@ const static t_conv		g_phelper[] =
 */
 	{NULL, NULL}
 };
-const static t_color	g_colors[] =
+static const t_color	g_colors[] =
 {
 	{"{eoc}", "\033[0m"}, {"{default}", "\033[39m"},
 	{"{black}", "\033[30m"}, {"{red}", "\033[31m"},
