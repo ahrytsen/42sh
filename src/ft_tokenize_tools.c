@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 20:36:51 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/16 19:00:57 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/17 17:13:57 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,11 @@ int		ft_isseparator(int c)
 
 const char	*ft_tname(t_token *tok)
 {
-	static const char *const	t_names[] =
-		{
-			" ", "redir", "word", "res_word", "|", "(", ")",
-			"&", "newline", ";", ";;", "&&", "||"
-		};
-	static const char *const	r_names[] =
-		{
-			"<<", "<<-", "<<<", "<>", ">", ">|", ">>", "<", "<&", ">&", "&>"
-		};
+	static const char *const	t_names[] = {
+		" ", "redir", "word", "res_word", "|", "(",
+		"newline", "&", ";", ";;", "&&", "||"};
+	static const char *const	r_names[] = {
+		"<<", "<<-", "<<<", "<>", ">", ">|", ">>", "<", "<&", ">&", "&>"};
 
 	if (!tok)
 		return ("newline");
@@ -48,7 +44,7 @@ const char	*ft_tname(t_token *tok)
 			&& tok->data.redir.type <= and_read_out)
 		return (r_names[tok->data.redir.type]);
 	else if (tok->type == word || tok->type == res_word)
-		return (tok->data.word);
+		return (tok->word);
 	else if (tok->type >= blank && tok->type <= or)
 		return (t_names[tok->type]);
 	else

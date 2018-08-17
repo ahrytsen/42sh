@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:02:28 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:21:02 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/17 16:35:47 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	**ft_argv_make(t_list *toks)
 	while (i < size && toks)
 	{
 		if (((t_token*)(toks->content))->type == word
-			&& !(av[i++] = parse_argv(((t_token*)(toks->content))->data.word)))
+			&& !(av[i++] = parse_argv(((t_token*)(toks->content))->word)))
 		{
 			ft_strarr_free(av);
 			return (NULL);

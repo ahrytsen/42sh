@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/15 21:05:06 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/16 15:27:34 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/17 16:09:23 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ const char	*ft_ast_name(enum e_ast_type type)
 		"while"
 	};
 
-	if (type >= cmd && type <= ast_while)
+	if (type >= cmd) //&& type <= ast_while)
 		return (names[type]);
 	else
 		return ("unknown token");

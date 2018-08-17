@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:31 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/16 19:04:33 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/17 16:31:07 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int		ft_get_subsh(char **ln, t_token *token)
 {
        if (**ln == ')' && !(**ln = '\0')
-               && write(2, "42sh: unexpected token `)'\n", 27))
+			&& write(2, "42sh: syntax error near unexpected token `)'\n", 45))
                return (1);
        **ln = '\0';
-       token->data.word = *ln + 1;
+       token->word = *ln + 1;
        if (ft_skip_subsh(ln))
                return (1);
        *(*ln - 1) = '\0';

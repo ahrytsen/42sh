@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/16 14:52:14 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/17 16:30:06 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,9 @@ static int	ft_get_separator(char **ln, t_token *token)
 {
 	if ((**ln == ' ' || **ln == '\t') && !(*(*ln)++ = '\0'))
 		token->type = blank;
-	else if ((**ln == ';' && (token->type = semi))
-			|| (**ln == '\n' && (token->type = nl)))
+	else if ((**ln == ';' && (token->type = semi)))
+		*(*ln)++ = '\0';
+	else if (**ln == '\n' && (token->type = nl))
 		*(*ln)++ = '\0';
 	else if (**ln == '|' && !(*(*ln)++ = '\0'))
 		token->type =
@@ -68,9 +69,8 @@ static int	ft_get_separator(char **ln, t_token *token)
 			token->type =
 				(**ln == '&' && !(*(*ln)++ = '\0')) ? and : bg_op;
 	}
-	else if ((**ln == '(' && (token->type = subsh_on))
-			|| (**ln == ')' && (token->type = subsh_off)))
-		*(*ln)++ = '\0';
+	else if ((**ln == '(' || **ln == ')') && (token->type = subsh))
+		return (ft_get_subsh(ln, token));
 	else if (**ln == '<')
 		ft_get_redirect_in(ln, token);
 	else if (**ln == '>')
@@ -81,14 +81,14 @@ static int	ft_get_separator(char **ln, t_token *token)
 static int	ft_get_token(char **ln, t_token *token)
 {
 	token->type = word;
-	token->data.word = *ln;
+	token->word = *ln;
 	if (ft_skip_word(ln))
 		return (1);
 	if ((**ln == '<' || **ln == '>')
-		&& ft_isnumeric_n(token->data.word, *ln - token->data.word))
+		&& ft_isnumeric_n(token->word, *ln - token->word))
 	{
 		(**ln == '<' ? ft_get_redirect_in : ft_get_redirect_out)(ln, token);
-		token->data.redir.left = ft_atoi(token->data.word);
+		token->data.redir.left = ft_atoi(token->word);
 	}
 	return (0);
 }
@@ -110,7 +110,7 @@ t_list		*ft_tokenize(char *ln)
 			continue ;
 		else if (toks && ((t_token*)tmp->content)->type == redir
 			&& !((t_token*)tmp->content)->data.redir.right && tok.type == word)
-			((t_token*)tmp->content)->data.redir.right = tok.data.word;
+			((t_token*)tmp->content)->data.redir.right = tok.word;
 		else if (ft_redir_check(toks ? tmp->content : NULL, &tok, ln)
 			|| !(tmp = ft_lstpush_back(toks ? &tmp : &toks, &tok, sizeof(tok))))
 		{

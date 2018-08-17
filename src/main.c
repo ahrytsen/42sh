@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/11 19:53:36 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/16 14:44:52 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/17 14:33:35 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int			main_loop(int fd)
 		{
 			ft_print_toks(toks);
 //			ast = ft_ast_make(&toks);
-//			ft_print_ast(ast);
-//			get_environ()->st = ft_ast_exec(ast);
+			ft_print_ast(ast);
+			get_environ()->st = ft_ast_exec(ast);
 			ast = ft_ast_del(ast, 1);
 		}
 		ft_lstdel(&toks, ft_token_del);

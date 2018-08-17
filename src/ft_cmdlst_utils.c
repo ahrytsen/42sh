@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 17:35:56 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/15 21:12:57 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/17 16:09:55 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,4 @@ t_cmd			*ft_cmdlst_push(t_cmd *cmdlst, t_cmd *node)
 	cmdlst ? cmdlst->next = new_node : 0;
 	new_node->prev = cmdlst;
 	return (new_node);
-}
-
-int			ft_cmdlst_skip_subsh(t_list **toks)
-{
-	t_token *tok;
-
-	while (((t_token*)((*toks)->content))->type != subsh_off)
-		tok = (*toks)->content;
-	return (1);
 }

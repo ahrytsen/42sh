@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/16 19:11:25 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/17 16:28:59 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,18 +95,17 @@ typedef struct	s_token
 		word,
 		res_word,
 		pipeln,
-		subsh_on,
-		subsh_off,
-		bg_op,
+		subsh,
 		nl,
+		bg_op,
 		semi,
 		dsemi,
 		and,
 		or
 	}		type;
-	struct		s_data
+	char	*word;
+	union		u_data
 	{
-		char	*word;
 		enum	e_rsrv_word_type
 		{
 			not,
@@ -158,36 +157,33 @@ struct			s_ast
 {
 	enum	e_ast_type
 	{
-		cmd = word,
-		ast_and = and,
-		ast_or = or,
-		ast_bg = bg_op,
-		ast_smcln = semi,
-		ast_not = not,
-		ast_brace_on = brace_on,
-		ast_brace_off = brace_off,
-		ast_case = _case,
-		ast_do = _do,
-		ast_done = done,
-		ast_elif = elif,
-		ast_else = _else,
-		ast_esac = esac,
-		ast_fi = fi,
-		ast_for = _for,
-		ast_if = _if,
-		ast_in = in,
-		ast_thenv = then,
-		ast_until = until,
-		ast_while = _while
+		cmd,
+		ast_and,
+		ast_or,
+		ast_bg,
+		ast_semi,
+		ast_dsemi
 	}		type;
 	t_list	*toks;
 	pid_t	pid;
 	int		bg;
 	struct		s_cmd
 	{
+		enum	e_cmd_type
+		{
+			cmd_smpl,
+			cmd_subsh,
+			cmd_not,
+			cmd_grp,
+			cmd_case,
+			cmd_for,
+			cmd_if,
+			cmd_until,
+			cmd_while
+		}		type;
 		char	**av;
 		t_list	*toks;
-		int		subsh;
+		t_ast	*sub_ast;
 		pid_t	pid;
 		int		ret;
 		int		p_in;

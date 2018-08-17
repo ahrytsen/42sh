@@ -6,11 +6,13 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/08 15:16:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/15 22:11:12 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/17 17:27:23 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
+
+//static const char*
 
 int			ft_isoperator(t_token *tok)
 {
@@ -29,7 +31,7 @@ static void	ft_get_operator(t_list **toks, t_ast *ast_node)
 	if (tok->type == bg_op)
 		ast_node->type = ast_bg;
 	else if (tok->type == semi || tok->type == nl)
-		ast_node->type = ast_smcln;
+		ast_node->type = ast_semi;
 	else if (tok->type == and)
 		ast_node->type = ast_and;
 	else if (tok->type == or)
@@ -46,8 +48,6 @@ static void	ft_get_cmd(t_list **toks, t_ast *ast_node)
 	while (*toks && !ft_isoperator((*toks)->content))
 	{
 		tmp = *toks;
-		if (((t_token*)(*toks)->content)->type == subsh_on)
-
 		*toks = (*toks)->next;
 	}
 	if (*toks && ((t_token*)(*toks)->content)->type == bg_op)
@@ -62,7 +62,7 @@ int			ft_ast_get_token(t_list **toks, t_ast *ast_node, t_ast *prev)
 		? ft_get_operator(toks, ast_node) : ft_get_cmd(toks, ast_node);
 	if ((ast_node->type > cmd && (!prev || prev->type > cmd))
 		&& ft_dprintf(2, "42sh: syntax error near unexpected token `%s'\n",
-					  "?"))//ft_tname(ast_node->type)))
+					ft_ast_name(ast_node->type)))
 		return (1);
 	return (0);
 }
@@ -82,7 +82,7 @@ t_ast		*ft_ast_make(t_list **toks)
 			ft_lstdel(&ast_node.toks, ft_token_del);
 			return (ft_ast_del(ast, 1));
 		}
-	if (ast && ast->type != cmd && ast->type != ast_smcln && ast->type != ast_bg
+	if (ast && ast->type != cmd && ast->type != ast_semi && ast->type != ast_bg
 		&& write(2, "42sh: syntax error near unexpected EOF\n", 39))
 		return (ft_ast_del(ast, 1));
 	while (ast && ast->prev)
