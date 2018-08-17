@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 17:41:55 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/17 16:26:38 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/17 21:23:20 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,12 @@ static int	ft_pl_make(int pl[2], t_cmd *cmd)
 
 static int	ft_subsh_exec(t_cmd *cmd)
 {
+	t_token	*tmp;
+
+	ft_fildes(FD_BACKUP);
+	tmp = cmd->toks->content;
 	get_environ()->st = 1;
-	get_environ()->st = ft_ast_exec(cmd->sub_ast);
+	get_environ()->st = ft_ast_exec(tmp->data.sub_ast);
 	exit(get_environ()->st);
 }
 
@@ -45,7 +49,7 @@ static int	ft_cmd_exec_chld(t_cmd *cmd, int bg)
 	if (ft_redirection(cmd->toks))
 		cmd->ret = 1;
 	else
-		cmd->ret = cmd->type = cmd_subsh ? ft_subsh_exec(cmd)
+		cmd->ret = cmd->type == cmd_subsh ? ft_subsh_exec(cmd)
 			: ft_argv_exec(cmd->av, NULL, bg);
 	cmd->pid = get_environ()->pid;
 	get_environ()->pgid = cmd->pid;
@@ -94,7 +98,8 @@ int			ft_cmdlst_exec(t_cmd *cmd, int bg)
 			break ;
 		cmd = cmd->next;
 	}
-	(cmd->next || cmd->prev || bg) ? 0 : ft_fildes(FD_RESTORE);
+	(cmd->next || cmd->prev || bg || cmd->type == cmd_subsh)
+		? 0 : ft_fildes(FD_RESTORE);
 	ret = cmd->ret;
 	ret2 = ft_control_job(cmd, bg, 0);
 	if (ret || (!WIFSTOPPED(ret2) && !bg))

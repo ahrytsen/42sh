@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/17 16:28:59 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/17 19:32:13 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,9 @@ typedef struct	s_buf
 	struct s_buf	*next;
 }				t_buf;
 
+typedef struct s_cmd	t_cmd;
+typedef struct s_ast	t_ast;
+
 typedef struct	s_token
 {
 	enum	e_token_type
@@ -124,7 +127,8 @@ typedef struct	s_token
 			then,
 			until,
 			_while
-		}		reserved_word;
+		}		res_word_type;
+		t_ast	*sub_ast;
 		struct	s_redir
 		{
 			enum	e_redir_type
@@ -149,9 +153,6 @@ typedef struct	s_token
 		}		redir;
 	}		data;
 }				t_token;
-
-typedef struct s_cmd	t_cmd;
-typedef struct s_ast	t_ast;
 
 struct			s_ast
 {
@@ -183,7 +184,6 @@ struct			s_ast
 		}		type;
 		char	**av;
 		t_list	*toks;
-		t_ast	*sub_ast;
 		pid_t	pid;
 		int		ret;
 		int		p_in;
@@ -270,6 +270,7 @@ int				ft_ast_exec(t_ast *ast);
 /*
 **				ft_ast_debug.c
 */
+const char		*ft_ast_name(enum e_ast_type type);
 void			ft_print_ast(t_ast *ast);
 void			ft_print_toks(t_list *toks);
 /*

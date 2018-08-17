@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 14:04:03 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/15 22:24:08 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/17 20:10:39 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static int	ft_redir_file(t_token *tok)
 			? (fd = ft_dprintf(2, "42sh: no such file or directory: %s\n",
 							tok->data.redir.right)) : (oflag |= O_RDONLY);
 	else
-		oflag |= O_WRONLY | O_CREAT | (tok->type == read_out_apend
+		oflag |= O_WRONLY | O_CREAT | (tok->data.redir.type == read_out_apend
 										? O_APPEND : O_TRUNC);
 	if (!fd && (fd = open(tok->data.redir.right,
 							oflag, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH)) >= 0)
@@ -114,7 +114,7 @@ int			ft_redirection(t_list *toks)
 			else if (token->data.redir.type >= open_file
 					&& token->data.redir.type <= read_in)
 				ret = ft_redir_file(token);
-			else if (token->type <= and_read_out)
+			else if (token->data.redir.type <= and_read_out)
 				ret = ft_redir_fd(token);
 		}
 		toks = toks->next;

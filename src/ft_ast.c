@@ -6,13 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/08 15:16:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/17 17:27:23 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/17 20:44:31 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
-
-//static const char*
 
 int			ft_isoperator(t_token *tok)
 {

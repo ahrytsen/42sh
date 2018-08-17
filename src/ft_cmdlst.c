@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 19:53:42 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/17 17:21:41 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/17 21:06:19 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_get_pipe(t_list **toks, t_cmd *cmdlst)
 	ft_lstdel(&tmp, ft_token_del);
 	if (!cmdlst || !*toks || ((t_token*)(*toks)->content)->type == pipeln)
 	{
-		write(2, "42sh: unexpected token `|'\n", 27);
+		write(2, "42sh: syntax error near unexpected token `|'\n", 45);
 		return (1);
 	}
 	return (0);
@@ -59,9 +59,9 @@ static int	ft_get_sub_sh(t_list **toks, t_cmd *cmd)
 	tmp = ((t_token*)cmd->toks->content)->word;
 	*toks = (*toks)->next;
 	cmd->toks->next = NULL;
-	if ((cmd->sub_ast)(*toks && ((t_token*)(*toks)->content)->type != pipeln
+	if (*toks && ((t_token*)(*toks)->content)->type != pipeln
 		&& ft_dprintf(2, "42sh: syntax error near unexpected token `%s'\n",
-					ft_tname(*toks))))
+					ft_tname((*toks)->content)))
 	{
 		ft_lstdel(&cmd->toks, ft_token_del);
 		return (1);
@@ -76,7 +76,6 @@ t_cmd		*ft_cmdlst_make(t_list **toks)
 	t_cmd	cmd;
 
 	cmdlst = NULL;
-	toks = NULL;
 	while (*toks)
 	{
 		ft_bzero(&cmd, sizeof(cmd));

@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/15 21:05:06 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/17 16:09:23 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/17 20:47:09 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,10 @@
 const char	*ft_ast_name(enum e_ast_type type)
 {
 	static const char *const	names[] = {
-		"cmd", "&&", "||", "&", ";", "!", "{", "}", "case", "do", "done",
-		"elif", "else", "esac", "fi", "for", "if", "in", "then", "until",
-		"while"
+		"cmd", "&&", "||", "&", ";", ";;"
 	};
 
-	if (type >= cmd) //&& type <= ast_while)
+	if (type >= cmd && type <= ast_dsemi)
 		return (names[type]);
 	else
 		return ("unknown token");
