@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 14:04:03 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/09 21:19:49 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/12 19:31:24 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 static int	ft_redir_fd(t_token *tok)
 {
 	int	fd;
-	int	flg;
 
-	flg = ft_redir_right_param(tok);
 	if (tok->type == and_read_out
-		|| (tok->type == read_out_and && tok->data.redir.left == 1 && !flg))
+		|| (tok->type == read_out_and && tok->data.redir.left == 1
+			&& !ft_redir_right_param(tok)))
 	{
 		fd = open(tok->data.redir.right, O_WRONLY | O_CREAT | O_TRUNC,
 				S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
@@ -33,7 +32,7 @@ static int	ft_redir_fd(t_token *tok)
 	{
 		if (tok->data.redir.nbr != -1
 			&& dup2(tok->data.redir.nbr, tok->data.redir.left) == -1
-			&& write(2, "21sh: duplicate error\n", 22))
+			&& write(2, "42sh: duplicate error\n", 22))
 			return (256);
 		if (tok->data.redir.cls)
 			close(tok->data.redir.nbr != -1
@@ -46,10 +45,10 @@ static int	ft_redir_heredoc(t_token *tok)
 {
 	int	pl[2];
 
-	if (pipe(pl) && write(2, "21sh: pipe error\n", 17))
+	if (pipe(pl) && write(2, "42sh: pipe error\n", 17))
 		return (256);
 	if (dup2(pl[0], tok->data.redir.left) == -1
-		&& write(2, "21sh: duplicate error\n", 22))
+		&& write(2, "42sh: duplicate error\n", 22))
 		return (256);
 	close(pl[0]);
 	ft_dprintf(pl[1], tok->type == herestr ? "%s\n" : "%s", tok->data.redir.hd);
@@ -68,7 +67,7 @@ static int	ft_redir_file(t_token *tok)
 		oflag |= O_RDWR | O_CREAT;
 	else if (tok->type == read_in)
 		access(tok->data.redir.right, F_OK)
-			? (fd = ft_dprintf(2, "21sh: no such file or directory: %s\n",
+			? (fd = ft_dprintf(2, "42sh: no such file or directory: %s\n",
 							tok->data.redir.right)) : (oflag |= O_RDONLY);
 	else
 		oflag |= O_WRONLY | O_CREAT | (tok->type == read_out_apend
@@ -81,7 +80,7 @@ static int	ft_redir_file(t_token *tok)
 		return (0);
 	}
 	else if (fd < 0)
-		write(2, "21sh: open() error\n", 19);
+		write(2, "42sh: open() error\n", 19);
 	return (256);
 }
 

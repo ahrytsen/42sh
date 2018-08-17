@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/07 17:47:54 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/12 19:27:19 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,9 @@ typedef struct	s_token
 		word,
 		pipeline,
 		bg_op,
-		semicolon,
+		semi,
+		dsemi,
+		subsh,
 		and,
 		or,
 		heredoc,
@@ -149,12 +151,11 @@ typedef struct	s_ast
 	t_list			*toks;
 	enum {
 		cmd = word,
-		sub_on,
-		sub_off,
+		sub_sh = subsh,
 		ast_and = and,
 		ast_or = or,
 		ast_bg = bg_op,
-		ast_smcln = semicolon
+		ast_smcln = semi
 	}				type;
 	pid_t			pid;
 	int				bg;
@@ -189,9 +190,9 @@ t_list			*ft_tokenize(char *ln);
 */
 void			ft_token_del(void *token, size_t size);
 int				ft_isseparator(int c);
-int				ft_check_redir(t_token *prev, t_token *next, char *ln);
-void			ft_skip_slash(char **s);
+int				ft_skip_word(char **ln);
 int				ft_skip_qoutes(char **s);
+int				ft_skip_subsh(char **ln);
 /*
 **				ft_heredoc.c
 */
@@ -254,6 +255,7 @@ void			ft_redirection_close(t_list *toks);
 **				ft_redirection_utils.c
 */
 int				ft_redir_right_param(t_token *tok);
+int				ft_redir_check(t_token *prev, t_token *next, char *ln);
 /*
 **				ft_jobs_utils.c
 */

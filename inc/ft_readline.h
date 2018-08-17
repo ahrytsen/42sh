@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/05 17:38:16 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 16:32:18 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/12 18:19:24 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@
 # define P_QUOTE 39
 # define P_BSLASH 92
 # define P_BQUOTE 96
+# define P_CMDSUBST 2
+# define P_SUBSH 3
 
 typedef struct	s_line
 {
@@ -201,6 +203,7 @@ void			ft_prompt(void);
 /*
 **				ft_readline/ft_rl_check_line.c
 */
+int				ft_rl_skip_subsh(char **ln);
 int				ft_check_line(char *ln);
 /*
 **				ft_readline/ft_rl_exclamation.c

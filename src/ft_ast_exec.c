@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/13 18:55:11 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:22:38 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/10 12:05:37 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int	ft_ast_smcln_exec(t_ast *ast)
 int			ft_ast_exec(t_ast *ast)
 {
 	if (!ast)
-		return (0);
+		return (2);
 	else if (ast->type == cmd)
 		return (ft_ast_cmd_exec(ast));
 	else if (ast->type == ast_and)

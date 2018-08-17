@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnumeric_str.c                                 :+:      :+:    :+:   */
+/*   ft_isnumeric.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/05 21:24:57 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/07/11 20:03:38 by ahrytsen         ###   ########.fr       */
+/*   Created: 2018/08/10 15:25:03 by ahrytsen          #+#    #+#             */
+/*   Updated: 2018/08/10 15:25:06 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isnumeric_str(char *str)
+int	ft_isnumeric(char *str)
 {
 	if (!str)
 		return (0);
