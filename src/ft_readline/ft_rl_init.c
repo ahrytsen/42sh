@@ -89,6 +89,7 @@ void		ft_terminal(int mod)
 	else if (mod == T_INIT && !already_saved)
 	{
 		ft_bzero(get_term(), sizeof(t_term));
+
 		ft_init_termcap();
 		tcgetattr(get_environ()->sh_terminal, &get_term()->savetty);
 		get_term()->work_tty = get_term()->savetty;
@@ -97,6 +98,7 @@ void		ft_terminal(int mod)
 		get_term()->work_tty.c_cc[VMIN] = 1;
 		get_term()->work_tty.c_cc[VTIME] = 0;
 		get_term()->comp_stage = -1;
+		get_term()->hist_max_size = (unsigned)ft_atoi(ft_getenv("HISTSIZE"));
 		already_saved = 1;
 	}
 	ft_set_rl_signal(mod);

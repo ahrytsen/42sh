@@ -13,31 +13,34 @@
 #include "ft_sh.h"
 #include "ft_readline.h"
 
-// static int	gsh_h_write_history(char *str, int mod)
-// {
-// 	int		fd;
-// 	t_hist	*hist;
-//
-// 	if (!str)
-// 		str = gsh_get_env("HISTFILE");
-// 	if ((fd = open(str, mod, S_IRUSR | S_IWUSR)) != -1)
-// 	{
-// 		hist = gsh_r_history_bucket(RETURN, NULL);
-// 		while (hist->prv)
-// 			hist = hist->prv;
-// 		while (hist)
-// 		{
-// 			write(fd, hist->str, ft_strlen(hist->str));
-// 			write(fd, "\n", 1);
-// 			hist = hist->nxt;
-// 		}
-// 		close(fd);
-// 		return (0);
-// 	}
-// 	return (1);
-// }
+static int	ft_hist_write(char *str, int mod)
+{
+	int		fd;
+	t_hist	*hist;
+	char	*line;
 
-int			gsh_h_usage(int err)
+	if (!str)
+		str = ft_getenv("HISTFILE");
+	if ((fd = open(str, mod, S_IRUSR | S_IWUSR)) != -1)
+	{
+		hist = get_term()->hist;
+		while (hist->prev)
+			hist = hist->prev;
+		while (hist)
+		{
+			line = line_tostr(&hist->line, 0);
+			write(fd, line, ft_strlen(line));
+			write(fd, "\n", 1);
+			free(line);
+			hist = hist->next;
+		}
+		close(fd);
+		return (0);
+	}
+	return (1);
+}
+
+int			ft_hist_usage(int err)
 {
 	if (err == 1)
 		ft_putendl_fd("history: -d option requires an argument", 2);
@@ -48,7 +51,7 @@ history -awrn [filename]\n\thistory -ps arg [arg...]", 2);
 	return (1);
 }
 
-static void	gsh_h_print_last(int num)
+static void	ft_hist_print_last(int num)
 {
 	int		i;
 	t_hist	*hist;
@@ -72,7 +75,7 @@ static void	gsh_h_print_last(int num)
 	}
 }
 
-static int	gsh_h_sum_func(char **av)
+static int	ft_hist_reveal(char **av)
 {
 	t_hist	*hist;
 	char	*str;
@@ -91,10 +94,31 @@ static int	gsh_h_sum_func(char **av)
 		}
 	}
 	else if (ft_isnumber(*av))
-		gsh_h_print_last(ft_atoi(*av));
+		ft_hist_print_last(ft_atoi(*av));
 	else
-		return (gsh_h_usage(2));
+		return (ft_hist_usage(2));
 	return (0);
+}
+
+static void	ft_hist_erase(void)
+{
+	t_hist	*tmp;
+	t_hist	*hist;
+
+	if (!(hist = get_term()->hist))
+		return ;
+	while (hist->next)
+		hist = hist->next;
+	while (hist)
+	{
+		tmp = hist;
+		hist = hist->prev;
+		if (tmp->tmp)
+			line_tostr(&tmp->tmp, 2);
+		line_tostr(&tmp->line, 2);
+		free(tmp);
+	}
+	get_term()->hist = NULL;
 }
 
 int			ft_history(char **av)
@@ -102,26 +126,26 @@ int			ft_history(char **av)
 	if (*av && **av == '-')
 	{
 		if (*(*av + 1) == '-')
-			return (gsh_h_sum_func(av + 1));
+			return (ft_hist_reveal(av + 1));
 		if (*(*av + 1) == 'c')
-			;// erase history
+			ft_hist_erase();
 		else if (*(*av + 1) == 's')
-			;// add record
+			ft_hist_add_rec();// add record
 		else if (*(*av + 1) == 'p')
-			;// show without add
+			ft_hist_show_without_add(av + 1);// show without add
 		else if (*(*av + 1) == 'd')
-			;// erase record
+			return (ft_hist_erase_rec(*(av + 1)));// erase record
 		else if (*(*av + 1) == 'a')
-			;// append in file
+			return (ft_hist_write(*(av + 1), 01011));
 		else if (*(*av + 1) == 'n')
-			;// append from file
+			ft_hist_read(*(av + 1));// append from file
 		else if (*(*av + 1) == 'r')
-			;// read from file
+			ft_hist_init(*(av + 1));// read from file
 		else if (*(*av + 1) == 'w')
-			;// write in file
+			return (ft_hist_write(*(av + 1), 03001));
 		else
-			return (gsh_h_usage(0));
+			return (ft_hist_usage(0));
 		return (0);
 	}
-	return (gsh_h_sum_func(av));
+	return (ft_hist_reveal(av));
 }

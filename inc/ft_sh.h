@@ -327,11 +327,6 @@ int				ft_export(char **av);
 */
 int				ft_cd(char **av);
 /*
-**				ft_builtins/ft_bi_fg.c
-*/
-int				ft_count_fg(t_list *proc);
-int				ft_fg(char **av);
-/*
 **				ft_builtins/ft_bi_env.c
 */
 int				ft_env(char **av);
@@ -341,18 +336,33 @@ int				ft_env_op(int p);
 */
 int				ft_export(char **av);
 /*
-**				ft_builtins/ft_bi_un_setenv.c
+**				ft_builtins/ft_bi_fg.c
 */
-int				ft_setenv(char **av);
-int				ft_unsetenv(char **av);
+int				ft_count_fg(t_list *proc);
+int				ft_fg(char **av);
+/*
+**				ft_builtins/ft_bi_history.c
+*/
+int				ft_hist_usage(int err);
+int				ft_history(char **av);
+/*
+**				ft_builtins/ft_bi_history_toolz.c
+*/
+void			ft_hist_init(char *str);
+void			ft_hist_read(char *str);
+int				ft_hist_erase_rec(char *str);
+void			ft_hist_add_rec(void);
+void			ft_hist_show_without_add(char **av);
+
 /*
 **				ft_builtins/ft_bi_un_set.c
 */
 int				ft_unset(char **av);
 int				ft_set_var(t_list *var, int mod);
 /*
-**				ft_builtins/ft_bi_history.c
+**				ft_builtins/ft_bi_un_setenv.c
 */
-int				ft_history(char **av);
+int				ft_setenv(char **av);
+int				ft_unsetenv(char **av);
 
 #endif

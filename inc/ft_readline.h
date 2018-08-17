@@ -113,6 +113,7 @@ typedef struct	s_term
 	struct termios	work_tty;
 	int				comp_stage;
 	int				comp_erase;
+	int				hist_max_size;
 }				t_term;
 
 /*
