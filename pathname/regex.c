@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 16:40:23 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/08/13 18:07:41 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/18 02:07:17 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		ft_regex_str(char *pattern, char *str, char q)
 			|| ft_regex_str(pattern, str + 1, q));
 	if (!q && !sl && *pattern == '*' && !*str)
 		return (ft_regex_str(pattern + 1, str, q));
-	if (!q && !sl && ((*pattern == '?' && *str) || (*pattern == *str)))
+	if ((!q && !sl && (*pattern == '?' && *str)) || (*pattern == *str))
 		return (ft_regex_str(pattern + 1, str + 1, q));
 	return (0);
 }
@@ -102,7 +102,7 @@ int		main(int ac, char **av)
 	t_list	*list;
 	char 	*pattern;
 
-	pattern = av[1] ? av[1] : "file[9-1]";
+	pattern = av[1] ? av[1] : "file\\[[[:graph:]]";
 	names = ft_strcut(pattern, '/');
 //	print_arr(names);
 //	exit(0);

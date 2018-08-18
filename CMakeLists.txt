@@ -166,4 +166,4 @@ add_executable(gsh
 #        src/ft_tokenize.c
 #        src/ft_tokenize_utils.c
 #        src/main.c
-        )
+        libft/src/ft_isblank.c libft/src/ft_iscntrl.c libft/src/ft_isgraph.c libft/src/ft_islower.c libft/src/ft_ispunct.c libft/src/ft_isupper.c libft/src/ft_isword.c libft/src/ft_isxdigit.c libft/src/ft_strnchr.c)

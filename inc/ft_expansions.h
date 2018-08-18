@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 14:22:50 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/13 14:44:06 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/17 03:52:40 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,11 @@
 #include <dirent.h>
 #include <sys/stat.h>
 
-typedef struct	s_vals_range
+typedef struct	s_char_class
 {
-	char	*buf;
-	char	*buf_q;
-	int		i;
-	int		max;
-}				t_brack;
+	char		*name;
+	int 		(*func)(int);
+}				t_char_class;
 
 /*
 **		expand_braces.c

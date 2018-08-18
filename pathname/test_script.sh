@@ -29,8 +29,8 @@ do
             echo -e "${red}FALSE: ${tests[$i]} (line $i)"
             echo -e "    Expected output: $echo_output"
             echo -e "    Your output: $gsh_output ${nc}"
-            echo $(wc <<< $echo_output)
-            echo $(wc <<< $gsh_output)
+#            echo $(wc <<< $echo_output)
+#            echo $(wc <<< $gsh_output)
             ((num_fail++))
         fi
 #        echo $echo_output

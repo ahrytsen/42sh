@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 05:35:20 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/13 14:54:58 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/17 02:42:58 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,5 +153,14 @@ int				ft_isnumber(char *str);
 void			ft_free_arr(void **arr);
 int				ft_is_blank(char *str);
 ssize_t			ft_absolute(ssize_t value);
+int				ft_isblank(int c);
+int				ft_iscntrl(int c);
+int				ft_isgraph(int c);
+int				ft_islower(int c);
+int				ft_isupper(int c);
+int				ft_ispunct(int c);
+int				ft_isword(int c);
+int				ft_isxdigit(int c);
+char			*ft_strnchr(const char *s, int c, int n);
 
 #endif

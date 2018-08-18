@@ -609,6 +609,60 @@ libft/src/ft_isascii_str.c.s:
 	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isascii_str.c.s
 .PHONY : libft/src/ft_isascii_str.c.s
 
+libft/src/ft_isblank.o: libft/src/ft_isblank.c.o
+
+.PHONY : libft/src/ft_isblank.o
+
+# target to build an object file
+libft/src/ft_isblank.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isblank.c.o
+.PHONY : libft/src/ft_isblank.c.o
+
+libft/src/ft_isblank.i: libft/src/ft_isblank.c.i
+
+.PHONY : libft/src/ft_isblank.i
+
+# target to preprocess a source file
+libft/src/ft_isblank.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isblank.c.i
+.PHONY : libft/src/ft_isblank.c.i
+
+libft/src/ft_isblank.s: libft/src/ft_isblank.c.s
+
+.PHONY : libft/src/ft_isblank.s
+
+# target to generate assembly for a file
+libft/src/ft_isblank.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isblank.c.s
+.PHONY : libft/src/ft_isblank.c.s
+
+libft/src/ft_iscntrl.o: libft/src/ft_iscntrl.c.o
+
+.PHONY : libft/src/ft_iscntrl.o
+
+# target to build an object file
+libft/src/ft_iscntrl.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_iscntrl.c.o
+.PHONY : libft/src/ft_iscntrl.c.o
+
+libft/src/ft_iscntrl.i: libft/src/ft_iscntrl.c.i
+
+.PHONY : libft/src/ft_iscntrl.i
+
+# target to preprocess a source file
+libft/src/ft_iscntrl.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_iscntrl.c.i
+.PHONY : libft/src/ft_iscntrl.c.i
+
+libft/src/ft_iscntrl.s: libft/src/ft_iscntrl.c.s
+
+.PHONY : libft/src/ft_iscntrl.s
+
+# target to generate assembly for a file
+libft/src/ft_iscntrl.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_iscntrl.c.s
+.PHONY : libft/src/ft_iscntrl.c.s
+
 libft/src/ft_isdigit.o: libft/src/ft_isdigit.c.o
 
 .PHONY : libft/src/ft_isdigit.o
@@ -635,6 +689,60 @@ libft/src/ft_isdigit.s: libft/src/ft_isdigit.c.s
 libft/src/ft_isdigit.c.s:
 	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isdigit.c.s
 .PHONY : libft/src/ft_isdigit.c.s
+
+libft/src/ft_isgraph.o: libft/src/ft_isgraph.c.o
+
+.PHONY : libft/src/ft_isgraph.o
+
+# target to build an object file
+libft/src/ft_isgraph.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isgraph.c.o
+.PHONY : libft/src/ft_isgraph.c.o
+
+libft/src/ft_isgraph.i: libft/src/ft_isgraph.c.i
+
+.PHONY : libft/src/ft_isgraph.i
+
+# target to preprocess a source file
+libft/src/ft_isgraph.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isgraph.c.i
+.PHONY : libft/src/ft_isgraph.c.i
+
+libft/src/ft_isgraph.s: libft/src/ft_isgraph.c.s
+
+.PHONY : libft/src/ft_isgraph.s
+
+# target to generate assembly for a file
+libft/src/ft_isgraph.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isgraph.c.s
+.PHONY : libft/src/ft_isgraph.c.s
+
+libft/src/ft_islower.o: libft/src/ft_islower.c.o
+
+.PHONY : libft/src/ft_islower.o
+
+# target to build an object file
+libft/src/ft_islower.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_islower.c.o
+.PHONY : libft/src/ft_islower.c.o
+
+libft/src/ft_islower.i: libft/src/ft_islower.c.i
+
+.PHONY : libft/src/ft_islower.i
+
+# target to preprocess a source file
+libft/src/ft_islower.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_islower.c.i
+.PHONY : libft/src/ft_islower.c.i
+
+libft/src/ft_islower.s: libft/src/ft_islower.c.s
+
+.PHONY : libft/src/ft_islower.s
+
+# target to generate assembly for a file
+libft/src/ft_islower.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_islower.c.s
+.PHONY : libft/src/ft_islower.c.s
 
 libft/src/ft_isnumber.o: libft/src/ft_isnumber.c.o
 
@@ -744,6 +852,60 @@ libft/src/ft_isprint_str.c.s:
 	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isprint_str.c.s
 .PHONY : libft/src/ft_isprint_str.c.s
 
+libft/src/ft_ispunct.o: libft/src/ft_ispunct.c.o
+
+.PHONY : libft/src/ft_ispunct.o
+
+# target to build an object file
+libft/src/ft_ispunct.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_ispunct.c.o
+.PHONY : libft/src/ft_ispunct.c.o
+
+libft/src/ft_ispunct.i: libft/src/ft_ispunct.c.i
+
+.PHONY : libft/src/ft_ispunct.i
+
+# target to preprocess a source file
+libft/src/ft_ispunct.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_ispunct.c.i
+.PHONY : libft/src/ft_ispunct.c.i
+
+libft/src/ft_ispunct.s: libft/src/ft_ispunct.c.s
+
+.PHONY : libft/src/ft_ispunct.s
+
+# target to generate assembly for a file
+libft/src/ft_ispunct.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_ispunct.c.s
+.PHONY : libft/src/ft_ispunct.c.s
+
+libft/src/ft_isupper.o: libft/src/ft_isupper.c.o
+
+.PHONY : libft/src/ft_isupper.o
+
+# target to build an object file
+libft/src/ft_isupper.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isupper.c.o
+.PHONY : libft/src/ft_isupper.c.o
+
+libft/src/ft_isupper.i: libft/src/ft_isupper.c.i
+
+.PHONY : libft/src/ft_isupper.i
+
+# target to preprocess a source file
+libft/src/ft_isupper.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isupper.c.i
+.PHONY : libft/src/ft_isupper.c.i
+
+libft/src/ft_isupper.s: libft/src/ft_isupper.c.s
+
+.PHONY : libft/src/ft_isupper.s
+
+# target to generate assembly for a file
+libft/src/ft_isupper.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isupper.c.s
+.PHONY : libft/src/ft_isupper.c.s
+
 libft/src/ft_iswhitespace.o: libft/src/ft_iswhitespace.c.o
 
 .PHONY : libft/src/ft_iswhitespace.o
@@ -770,6 +932,60 @@ libft/src/ft_iswhitespace.s: libft/src/ft_iswhitespace.c.s
 libft/src/ft_iswhitespace.c.s:
 	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_iswhitespace.c.s
 .PHONY : libft/src/ft_iswhitespace.c.s
+
+libft/src/ft_isword.o: libft/src/ft_isword.c.o
+
+.PHONY : libft/src/ft_isword.o
+
+# target to build an object file
+libft/src/ft_isword.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isword.c.o
+.PHONY : libft/src/ft_isword.c.o
+
+libft/src/ft_isword.i: libft/src/ft_isword.c.i
+
+.PHONY : libft/src/ft_isword.i
+
+# target to preprocess a source file
+libft/src/ft_isword.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isword.c.i
+.PHONY : libft/src/ft_isword.c.i
+
+libft/src/ft_isword.s: libft/src/ft_isword.c.s
+
+.PHONY : libft/src/ft_isword.s
+
+# target to generate assembly for a file
+libft/src/ft_isword.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isword.c.s
+.PHONY : libft/src/ft_isword.c.s
+
+libft/src/ft_isxdigit.o: libft/src/ft_isxdigit.c.o
+
+.PHONY : libft/src/ft_isxdigit.o
+
+# target to build an object file
+libft/src/ft_isxdigit.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isxdigit.c.o
+.PHONY : libft/src/ft_isxdigit.c.o
+
+libft/src/ft_isxdigit.i: libft/src/ft_isxdigit.c.i
+
+.PHONY : libft/src/ft_isxdigit.i
+
+# target to preprocess a source file
+libft/src/ft_isxdigit.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isxdigit.c.i
+.PHONY : libft/src/ft_isxdigit.c.i
+
+libft/src/ft_isxdigit.s: libft/src/ft_isxdigit.c.s
+
+.PHONY : libft/src/ft_isxdigit.s
+
+# target to generate assembly for a file
+libft/src/ft_isxdigit.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isxdigit.c.s
+.PHONY : libft/src/ft_isxdigit.c.s
 
 libft/src/ft_itoa.o: libft/src/ft_itoa.c.o
 
@@ -2499,6 +2715,33 @@ libft/src/ft_strncat.c.s:
 	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_strncat.c.s
 .PHONY : libft/src/ft_strncat.c.s
 
+libft/src/ft_strnchr.o: libft/src/ft_strnchr.c.o
+
+.PHONY : libft/src/ft_strnchr.o
+
+# target to build an object file
+libft/src/ft_strnchr.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_strnchr.c.o
+.PHONY : libft/src/ft_strnchr.c.o
+
+libft/src/ft_strnchr.i: libft/src/ft_strnchr.c.i
+
+.PHONY : libft/src/ft_strnchr.i
+
+# target to preprocess a source file
+libft/src/ft_strnchr.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_strnchr.c.i
+.PHONY : libft/src/ft_strnchr.c.i
+
+libft/src/ft_strnchr.s: libft/src/ft_strnchr.c.s
+
+.PHONY : libft/src/ft_strnchr.s
+
+# target to generate assembly for a file
+libft/src/ft_strnchr.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_strnchr.c.s
+.PHONY : libft/src/ft_strnchr.c.s
+
 libft/src/ft_strncmp.o: libft/src/ft_strncmp.c.o
 
 .PHONY : libft/src/ft_strncmp.o
@@ -3075,9 +3318,21 @@ help:
 	@echo "... libft/src/ft_isascii_str.o"
 	@echo "... libft/src/ft_isascii_str.i"
 	@echo "... libft/src/ft_isascii_str.s"
+	@echo "... libft/src/ft_isblank.o"
+	@echo "... libft/src/ft_isblank.i"
+	@echo "... libft/src/ft_isblank.s"
+	@echo "... libft/src/ft_iscntrl.o"
+	@echo "... libft/src/ft_iscntrl.i"
+	@echo "... libft/src/ft_iscntrl.s"
 	@echo "... libft/src/ft_isdigit.o"
 	@echo "... libft/src/ft_isdigit.i"
 	@echo "... libft/src/ft_isdigit.s"
+	@echo "... libft/src/ft_isgraph.o"
+	@echo "... libft/src/ft_isgraph.i"
+	@echo "... libft/src/ft_isgraph.s"
+	@echo "... libft/src/ft_islower.o"
+	@echo "... libft/src/ft_islower.i"
+	@echo "... libft/src/ft_islower.s"
 	@echo "... libft/src/ft_isnumber.o"
 	@echo "... libft/src/ft_isnumber.i"
 	@echo "... libft/src/ft_isnumber.s"
@@ -3090,9 +3345,21 @@ help:
 	@echo "... libft/src/ft_isprint_str.o"
 	@echo "... libft/src/ft_isprint_str.i"
 	@echo "... libft/src/ft_isprint_str.s"
+	@echo "... libft/src/ft_ispunct.o"
+	@echo "... libft/src/ft_ispunct.i"
+	@echo "... libft/src/ft_ispunct.s"
+	@echo "... libft/src/ft_isupper.o"
+	@echo "... libft/src/ft_isupper.i"
+	@echo "... libft/src/ft_isupper.s"
 	@echo "... libft/src/ft_iswhitespace.o"
 	@echo "... libft/src/ft_iswhitespace.i"
 	@echo "... libft/src/ft_iswhitespace.s"
+	@echo "... libft/src/ft_isword.o"
+	@echo "... libft/src/ft_isword.i"
+	@echo "... libft/src/ft_isword.s"
+	@echo "... libft/src/ft_isxdigit.o"
+	@echo "... libft/src/ft_isxdigit.i"
+	@echo "... libft/src/ft_isxdigit.s"
 	@echo "... libft/src/ft_itoa.o"
 	@echo "... libft/src/ft_itoa.i"
 	@echo "... libft/src/ft_itoa.s"
@@ -3285,6 +3552,9 @@ help:
 	@echo "... libft/src/ft_strncat.o"
 	@echo "... libft/src/ft_strncat.i"
 	@echo "... libft/src/ft_strncat.s"
+	@echo "... libft/src/ft_strnchr.o"
+	@echo "... libft/src/ft_strnchr.i"
+	@echo "... libft/src/ft_strnchr.s"
 	@echo "... libft/src/ft_strncmp.o"
 	@echo "... libft/src/ft_strncmp.i"
 	@echo "... libft/src/ft_strncmp.s"

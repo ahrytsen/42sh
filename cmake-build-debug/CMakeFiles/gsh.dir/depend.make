@@ -53,8 +53,20 @@ CMakeFiles/gsh.dir/libft/src/ft_isascii.c.o: ../libft/src/ft_isascii.c
 CMakeFiles/gsh.dir/libft/src/ft_isascii_str.c.o: ../libft/inc/libft.h
 CMakeFiles/gsh.dir/libft/src/ft_isascii_str.c.o: ../libft/src/ft_isascii_str.c
 
+CMakeFiles/gsh.dir/libft/src/ft_isblank.c.o: ../libft/inc/libft.h
+CMakeFiles/gsh.dir/libft/src/ft_isblank.c.o: ../libft/src/ft_isblank.c
+
+CMakeFiles/gsh.dir/libft/src/ft_iscntrl.c.o: ../libft/inc/libft.h
+CMakeFiles/gsh.dir/libft/src/ft_iscntrl.c.o: ../libft/src/ft_iscntrl.c
+
 CMakeFiles/gsh.dir/libft/src/ft_isdigit.c.o: ../libft/inc/libft.h
 CMakeFiles/gsh.dir/libft/src/ft_isdigit.c.o: ../libft/src/ft_isdigit.c
+
+CMakeFiles/gsh.dir/libft/src/ft_isgraph.c.o: ../libft/inc/libft.h
+CMakeFiles/gsh.dir/libft/src/ft_isgraph.c.o: ../libft/src/ft_isgraph.c
+
+CMakeFiles/gsh.dir/libft/src/ft_islower.c.o: ../libft/inc/libft.h
+CMakeFiles/gsh.dir/libft/src/ft_islower.c.o: ../libft/src/ft_islower.c
 
 CMakeFiles/gsh.dir/libft/src/ft_isnumber.c.o: ../libft/src/ft_isnumber.c
 
@@ -67,8 +79,20 @@ CMakeFiles/gsh.dir/libft/src/ft_isprint.c.o: ../libft/src/ft_isprint.c
 CMakeFiles/gsh.dir/libft/src/ft_isprint_str.c.o: ../libft/inc/libft.h
 CMakeFiles/gsh.dir/libft/src/ft_isprint_str.c.o: ../libft/src/ft_isprint_str.c
 
+CMakeFiles/gsh.dir/libft/src/ft_ispunct.c.o: ../libft/inc/libft.h
+CMakeFiles/gsh.dir/libft/src/ft_ispunct.c.o: ../libft/src/ft_ispunct.c
+
+CMakeFiles/gsh.dir/libft/src/ft_isupper.c.o: ../libft/inc/libft.h
+CMakeFiles/gsh.dir/libft/src/ft_isupper.c.o: ../libft/src/ft_isupper.c
+
 CMakeFiles/gsh.dir/libft/src/ft_iswhitespace.c.o: ../libft/inc/libft.h
 CMakeFiles/gsh.dir/libft/src/ft_iswhitespace.c.o: ../libft/src/ft_iswhitespace.c
+
+CMakeFiles/gsh.dir/libft/src/ft_isword.c.o: ../libft/inc/libft.h
+CMakeFiles/gsh.dir/libft/src/ft_isword.c.o: ../libft/src/ft_isword.c
+
+CMakeFiles/gsh.dir/libft/src/ft_isxdigit.c.o: ../libft/inc/libft.h
+CMakeFiles/gsh.dir/libft/src/ft_isxdigit.c.o: ../libft/src/ft_isxdigit.c
 
 CMakeFiles/gsh.dir/libft/src/ft_itoa.c.o: ../libft/inc/libft.h
 CMakeFiles/gsh.dir/libft/src/ft_itoa.c.o: ../libft/src/ft_itoa.c
@@ -265,6 +289,9 @@ CMakeFiles/gsh.dir/libft/src/ft_strmapi.c.o: ../libft/src/ft_strmapi.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strncat.c.o: ../libft/inc/libft.h
 CMakeFiles/gsh.dir/libft/src/ft_strncat.c.o: ../libft/src/ft_strncat.c
+
+CMakeFiles/gsh.dir/libft/src/ft_strnchr.c.o: ../libft/inc/libft.h
+CMakeFiles/gsh.dir/libft/src/ft_strnchr.c.o: ../libft/src/ft_strnchr.c
 
 CMakeFiles/gsh.dir/libft/src/ft_strncmp.c.o: ../libft/inc/libft.h
 CMakeFiles/gsh.dir/libft/src/ft_strncmp.c.o: ../libft/src/ft_strncmp.c

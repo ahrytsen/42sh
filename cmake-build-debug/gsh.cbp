@@ -157,7 +157,19 @@
 		<Unit filename="/home/yulia/gsh/libft/src/ft_isascii_str.c">
 			<Option target="gsh"/>
 		</Unit>
+		<Unit filename="/home/yulia/gsh/libft/src/ft_isblank.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/libft/src/ft_iscntrl.c">
+			<Option target="gsh"/>
+		</Unit>
 		<Unit filename="/home/yulia/gsh/libft/src/ft_isdigit.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/libft/src/ft_isgraph.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/libft/src/ft_islower.c">
 			<Option target="gsh"/>
 		</Unit>
 		<Unit filename="/home/yulia/gsh/libft/src/ft_isnumber.c">
@@ -172,7 +184,19 @@
 		<Unit filename="/home/yulia/gsh/libft/src/ft_isprint_str.c">
 			<Option target="gsh"/>
 		</Unit>
+		<Unit filename="/home/yulia/gsh/libft/src/ft_ispunct.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/libft/src/ft_isupper.c">
+			<Option target="gsh"/>
+		</Unit>
 		<Unit filename="/home/yulia/gsh/libft/src/ft_iswhitespace.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/libft/src/ft_isword.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/libft/src/ft_isxdigit.c">
 			<Option target="gsh"/>
 		</Unit>
 		<Unit filename="/home/yulia/gsh/libft/src/ft_itoa.c">
@@ -365,6 +389,9 @@
 			<Option target="gsh"/>
 		</Unit>
 		<Unit filename="/home/yulia/gsh/libft/src/ft_strncat.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/libft/src/ft_strnchr.c">
 			<Option target="gsh"/>
 		</Unit>
 		<Unit filename="/home/yulia/gsh/libft/src/ft_strncmp.c">

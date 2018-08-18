@@ -102,7 +102,23 @@ libft.h
 libft.h
 /home/yulia/gsh/libft/src/libft.h
 
+/home/yulia/gsh/libft/src/ft_isblank.c
+libft.h
+/home/yulia/gsh/libft/src/libft.h
+
+/home/yulia/gsh/libft/src/ft_iscntrl.c
+libft.h
+/home/yulia/gsh/libft/src/libft.h
+
 /home/yulia/gsh/libft/src/ft_isdigit.c
+libft.h
+/home/yulia/gsh/libft/src/libft.h
+
+/home/yulia/gsh/libft/src/ft_isgraph.c
+libft.h
+/home/yulia/gsh/libft/src/libft.h
+
+/home/yulia/gsh/libft/src/ft_islower.c
 libft.h
 /home/yulia/gsh/libft/src/libft.h
 
@@ -120,7 +136,23 @@ libft.h
 libft.h
 /home/yulia/gsh/libft/src/libft.h
 
+/home/yulia/gsh/libft/src/ft_ispunct.c
+libft.h
+/home/yulia/gsh/libft/src/libft.h
+
+/home/yulia/gsh/libft/src/ft_isupper.c
+libft.h
+/home/yulia/gsh/libft/src/libft.h
+
 /home/yulia/gsh/libft/src/ft_iswhitespace.c
+libft.h
+/home/yulia/gsh/libft/src/libft.h
+
+/home/yulia/gsh/libft/src/ft_isword.c
+libft.h
+/home/yulia/gsh/libft/src/libft.h
+
+/home/yulia/gsh/libft/src/ft_isxdigit.c
 libft.h
 /home/yulia/gsh/libft/src/libft.h
 
@@ -377,6 +409,10 @@ libft.h
 /home/yulia/gsh/libft/src/libft.h
 
 /home/yulia/gsh/libft/src/ft_strncat.c
+libft.h
+/home/yulia/gsh/libft/src/libft.h
+
+/home/yulia/gsh/libft/src/ft_strnchr.c
 libft.h
 /home/yulia/gsh/libft/src/libft.h
 

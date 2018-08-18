@@ -120,6 +120,15 @@ SRC		=	ft_arrstr.c\
 			get_next_line.c\
 			ft_lstadd_list.c\
 			ft_absolute.c\
+			ft_isblank.c\
+			ft_iscntrl.c\
+			ft_isgraph.c\
+	        ft_islower.c\
+	        ft_ispunct.c\
+	        ft_isupper.c\
+	        ft_isword.c\
+	        ft_xdigit.c\
+	        ft_strnchr.c\
 			ft_printf/ft_pbuf.c\
 			ft_printf/ft_pfloat.c\
 			ft_printf/ft_phelper.c\
