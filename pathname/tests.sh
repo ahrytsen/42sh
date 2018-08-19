@@ -10,7 +10,7 @@ tests=(
 "file[1-9a-g]?"
 "file[B9-1Gg-ae]"
 "file[10-1]"
-#'file[\"1-G\"]'
+'file[\"1-G\"]'
 "file'[1-G]'"
 #"file[!'1'-'9k]'\"D\"-G]"
 "file[!2-9]"
@@ -88,4 +88,34 @@ tests=(
 "fi*le[:dsdf:]"
 "?file"
 "file?"
+"file*"
+"file[[:digit:][:alpha:][:space:]]"
+"file[![:digit:][:alpha:][:space:]]"
+"file[^[:digit:][:alpha:][:space:]]"
+'file\\*'
+'file[\\[:digit:]]'
+'fi\\le\\?'
+'file\\[]'
+'file[]]'
+'file[!]]'
+'file[^]]'
+'file[]-[]'
+'file[\\]'
+'file[\]'
+'file[:space]]'
+'file[[[:digit:]]'
+'file[^[[:digit:]'
+'"file"'
+'"file["l]'
+'file["]"'
+#'file["[:"word:]]'
+'file[\"]'
+'file[\"]""'
+'file[[:xdigit'
+'file[[:print\:]]'
+'file[[:print\\:]]'
+'file[[:pun"c"t:]]'
+'fil'
+'file[[:blank:]\ ]]'
+'file[[:blank:]\\ ]]'
 )

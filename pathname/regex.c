@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 16:40:23 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/08/18 02:07:17 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/19 09:16:11 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ int		main(int ac, char **av)
 	t_list	*list;
 	char 	*pattern;
 
-	pattern = av[1] ? av[1] : "file\\[[[:graph:]]";
+	pattern = av[1] ? av[1] : "file[!'1'-'9k]'\"D\"-G]";
 	names = ft_strcut(pattern, '/');
 //	print_arr(names);
 //	exit(0);

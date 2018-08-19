@@ -23,7 +23,7 @@ do
     else
         if [ "$echo_output" =  "$gsh_output" ]
         then
-            echo -e "${green}TRUE ${nc}"
+#            echo -e "${green}TRUE ${nc}"
             ((num_success++))
         else
             echo -e "${red}FALSE: ${tests[$i]} (line $i)"
@@ -33,7 +33,6 @@ do
 #            echo $(wc <<< $gsh_output)
             ((num_fail++))
         fi
-#        echo $echo_output
     fi
 done
 echo "============================================"
