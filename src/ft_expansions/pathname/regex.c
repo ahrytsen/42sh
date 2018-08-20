@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 16:40:23 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/08/20 12:43:21 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/20 15:44:21 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,14 +85,14 @@ static void	recurcive(t_list **list, char *path, char **names, char *directory)
 	closedir(papka);
 }
 
-int		main(int ac, char **av)
+void	expand_pathname(t_list *lst)
 {
 	char	**names;
 	char	path[1024];
 	t_list	*list;
 	char	*pattern;
 
-	pattern = av[1] ? av[1] : "file";
+	pattern = lst->content;
 	names = ft_strcut(pattern, '/');
 	list = NULL;
 	if (*pattern != '/')
@@ -108,7 +108,4 @@ int		main(int ac, char **av)
 	}
 	list = ft_lstsort(list);
 	ft_free_arr((void **)names);
-	list ? print_lst(list) : ft_printf("%s\n", pattern);
-//	return (list);
-	return (0);
 }

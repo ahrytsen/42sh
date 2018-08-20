@@ -3,14 +3,53 @@
 /*                                                        :::      ::::::::   */
 /*   ft_argv.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:02:28 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:21:02 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/20 17:48:22 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
+
+void	ft_lstreplace(t_list *lst1, t_list *lst2)
+{
+	t_list	*lst
+}
+
+void	ft_lstiter_custom(t_list *lst, t_list *(*f)(t_list *elem))
+{
+	t_list	*lst_next;
+	t_list	*lst_prev;
+	t_list	*new_lst;
+
+	lst_prev = NULL;
+	while (lst && f)
+	{
+		lst_next = lst->next;
+		if ((new_lst = (*f)(lst)))
+		{
+			//delete node from lst
+			ft_lstinsert(lst_prev, new_lst);
+		}
+		lst_prev = lst;
+		lst = lst_next;
+	}
+}
+
+void	perform_expansions(t_list *toks)
+{
+	t_list	*lst;
+
+	while (tok)
+	{
+		if (((t_token*)(toks->content))->type == word)
+			ft_lstpush_back(&lst, ((t_token*)(toks->content))->data.word,
+						ft_strlen(((t_token*)(toks->content))->data.word) + 1);
+		toks = toks->next;
+	}
+	ft_lstiter_custom(lst, )
+}
 
 int		ft_count_args(t_list *toks)
 {

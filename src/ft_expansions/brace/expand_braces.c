@@ -6,21 +6,11 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:31:09 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/13 16:18:27 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/20 17:20:46 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_expansions.h"
-
-void		print_lst(t_list *lst) //TODO: delete
-{
-	while (lst)
-	{
-		ft_printf("%s ", lst->content);
-		lst = lst->next;
-	}
-	ft_printf("\n");
-}
 
 static char	*utilize_seq(char *buf, char *s, int *i, t_list **ret)
 {
@@ -68,23 +58,18 @@ t_list		*expand_braces(char *s, int i, char *buf)
 	return (ret);
 }
 
-int 	main(int ac, char **av)
+t_list		*brace_expansion(t_list *lst)
 {
-	(void)ac;
-	if (!av[1])
+	char buf[ft_strlen(lst->content) + 1];
+	t_list *new_lst;
+
+	ft_bzero(buf, ft_strlen(lst->content) + 1);
+	new_lst = expand_braces(lst->content, 0, buf);
+	if (!new_lst->next && ft_strequ(new_lst->content, lst->content))
 	{
-		char buf[500];
-		char *s = "{,{1..2},{10..20},{a..z},{A..Z}}pre{,{1..2},{10..20},{a..z},{A..Z}}file{,{1..2},{10..20},{a..z},{A..Z}}post{,{1..2},{10..20},{a..z},{A..Z}}";
-		t_list *lst = NULL;
-		ft_bzero(buf, 500);
-		print_lst((lst = expand_braces(s, 0, buf)));
-		ft_lstdel(&lst, (void (*)(void *, size_t))free);
+		free(new_lst->content);
+		free(new_lst);
+		return (NULL);
 	}
-	else
-	{
-		char buf[ft_strlen(av[1]) + 1];
-		ft_bzero(buf, ft_strlen(av[1]) + 1);
-		print_lst(expand_braces(av[1], 0, buf));
-	}
-	return (0);
+	return (new_lst);
 }

@@ -127,8 +127,9 @@ SRC		=	ft_arrstr.c\
 	        ft_ispunct.c\
 	        ft_isupper.c\
 	        ft_isword.c\
-	        ft_xdigit.c\
+	        ft_isxdigit.c\
 	        ft_strnchr.c\
+	        ft_lstinsert.c\
 			ft_printf/ft_pbuf.c\
 			ft_printf/ft_pfloat.c\
 			ft_printf/ft_phelper.c\

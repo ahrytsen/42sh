@@ -8,15 +8,15 @@ set(CMAKE_CXX_STANDARD 99)
 include_directories(inc libft/inc)
 
 add_executable(gsh
-        pathname/regex.c
-        pathname/ft_strcut.c
-        pathname/brackets.c
-        pathname/check_brackets.c
-#        src/ft_expansions/brace/fill_buf.c
-#        src/ft_expansions/brace/get_seq.c
-#        src/ft_expansions/brace/expand_braces.c
-#        src/ft_expansions/brace/auxiliary_funcs.c
-#        src/ft_expansions/brace/get_range.c
+        src/ft_expansions/pathname/regex.c
+        src/ft_expansions/pathname/ft_strcut.c
+        src/ft_expansions/pathname/brackets.c
+        src/ft_expansions/pathname/check_brackets.c
+        src/ft_expansions/brace/fill_buf.c
+        src/ft_expansions/brace/get_seq.c
+        src/ft_expansions/brace/expand_braces.c
+        src/ft_expansions/brace/auxiliary_funcs.c
+        src/ft_expansions/brace/get_range.c
         inc/ft_readline.h
         inc/ft_sh.h
         inc/ft_expansions.h
@@ -126,47 +126,47 @@ add_executable(gsh
         libft/src/ft_ultoa_base.c
         libft/src/ft_wcharlen.c
         libft/src/get_next_line.c
-#        src/ft_builtins/ft_bi_cd.c
-#        src/ft_builtins/ft_bi_env.c
-#        src/ft_builtins/ft_bi_fg.c
-#        src/ft_builtins/ft_builtins.c
-#        src/ft_readline/ft_readline.c
-#        src/ft_readline/ft_rl_action.c
-#        src/ft_readline/ft_rl_autocomp_cmd_and_var.c
-#        src/ft_readline/ft_rl_autocomp_commands.c
-#        src/ft_readline/ft_rl_autocomp_drawer.c
-#        src/ft_readline/ft_rl_autocomp_filenames.c
-#        src/ft_readline/ft_rl_autocomplit.c
-#        src/ft_readline/ft_rl_check_line.c
-#        src/ft_readline/ft_rl_cursor.c
-#        src/ft_readline/ft_rl_helper.c
-#        src/ft_readline/ft_rl_highlight.c
-#        src/ft_readline/ft_rl_history.c
-#        src/ft_readline/ft_rl_init.c
-#        src/ft_readline/ft_rl_line.c
-#        src/ft_readline/ft_rl_line_edit.c
-#        src/ft_readline/ft_rl_prompt.c
-#        src/ft_readline/ft_rl_read.c
-#        src/ft_argv.c
-#        src/ft_argv_exec.c
-#        src/ft_argv_quotes.c
-#        src/ft_argv_utils.c
-#        src/ft_ast.c
-#        src/ft_ast_exec.c
-#        src/ft_ast_utils.c
-#        src/ft_buffer.c
-#        src/ft_cmdlst.c
-#        src/ft_cmdlst_exec.c
-#        src/ft_cmdlst_utils.c
-#        src/ft_env_utils.c
-#        src/ft_heredoc.c
-#        src/ft_init.c
-#        src/ft_jobs_utils.c
-#        src/ft_redirection.c
-#        src/ft_redirection_utils.c
-#        src/ft_tokenize.c
-#        src/ft_tokenize_utils.c
-#        src/main.c
+        src/ft_builtins/ft_bi_cd.c
+        src/ft_builtins/ft_bi_env.c
+        src/ft_builtins/ft_bi_fg.c
+        src/ft_builtins/ft_builtins.c
+        src/ft_readline/ft_readline.c
+        src/ft_readline/ft_rl_action.c
+        src/ft_readline/ft_rl_autocomp_cmd_and_var.c
+        src/ft_readline/ft_rl_autocomp_commands.c
+        src/ft_readline/ft_rl_autocomp_drawer.c
+        src/ft_readline/ft_rl_autocomp_filenames.c
+        src/ft_readline/ft_rl_autocomplit.c
+        src/ft_readline/ft_rl_check_line.c
+        src/ft_readline/ft_rl_cursor.c
+        src/ft_readline/ft_rl_helper.c
+        src/ft_readline/ft_rl_highlight.c
+        src/ft_readline/ft_rl_history.c
+        src/ft_readline/ft_rl_init.c
+        src/ft_readline/ft_rl_line.c
+        src/ft_readline/ft_rl_line_edit.c
+        src/ft_readline/ft_rl_prompt.c
+        src/ft_readline/ft_rl_read.c
+        src/ft_argv.c
+        src/ft_argv_exec.c
+        src/ft_argv_quotes.c
+        src/ft_argv_utils.c
+        src/ft_ast.c
+        src/ft_ast_exec.c
+        src/ft_ast_utils.c
+        src/ft_buffer.c
+        src/ft_cmdlst.c
+        src/ft_cmdlst_exec.c
+        src/ft_cmdlst_utils.c
+        src/ft_env_utils.c
+        src/ft_heredoc.c
+        src/ft_init.c
+        src/ft_jobs_utils.c
+        src/ft_redirection.c
+        src/ft_redirection_utils.c
+        src/ft_tokenize.c
+        src/ft_tokenize_utils.c
+        src/main.c
         libft/src/ft_isblank.c
         libft/src/ft_iscntrl.c
         libft/src/ft_isgraph.c
@@ -176,4 +176,5 @@ add_executable(gsh
         libft/src/ft_isword.c
         libft/src/ft_isxdigit.c
         libft/src/ft_strnchr.c
+        libft/src/ft_lstinsert.c
         )
