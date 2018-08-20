@@ -1,71 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   brackets.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/20 12:44:11 by yvyliehz          #+#    #+#             */
+/*   Updated: 2018/08/20 13:40:26 by yvyliehz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_expansions.h"
 
-char 		*check_class(char *pattern)
+static int	check_class_vals(char *buf, char *buf_q, int *i, char c)
 {
-	int 				i;
-	static const char	*class[] = {"[:alnum:]", "[:alpha:]", "[:ascii:]",
-							"[:blank:]", "[:cntrl:]", "[:digit:]", "[:graph:]",
-							"[:lower:]", "[:print:]", "[:punct:]", "[:space:]",
-							"[:upper:]", "[:word:]", "[:xdigit:]", NULL};
-
-	i = -1;
-	while (class[++i])
-		if (ft_strnequ(class[i], pattern, ft_strlen(class[i])))
-			return (pattern + ft_strlen(class[i]) - 1);
-	return (0);
-}
-
-//char 		*check_class(char *pattern)
-//{
-//	char 	quote;
-//
-//	while (*pattern)
-//	{
-//		if (*pattern == ':' && *(pattern + 1) == ']')
-//			return (*(pattern + 2) ? pattern + 1 : pattern);
-//		else if (*pattern == '\\')
-//			++pattern;
-//		else if (*pattern == '\'' || *pattern == '"')
-//		{
-//			quote = *pattern++;
-//			while (*pattern != quote)
-//				++pattern;
-//		}
-//		++pattern;
-//	}
-//	return (0);
-//}
-
-static char	*check_brackets(char *pattern)
-{
-	char 	quote;
-	char 	*tmp;
-
-	pattern += *pattern == '^' || *pattern == '!' ? 1 : 0;
-	pattern += *pattern == ']' ? 1 : 0;
-	while (*pattern)
-	{
-		if (*pattern == ']')
-			return (pattern);
-		else if (*pattern == '[' && *(pattern + 1) == ':' &&
-				(tmp = check_class(pattern)))
-				pattern = tmp;
-		else if (*pattern == '\\')
-			++pattern;
-		else if (*pattern == '\'' || *pattern == '"')
-		{
-			quote = *pattern++;
-			while (*pattern != quote)
-				++pattern;
-		}
-		++pattern;
-	}
-	return (0);
-}
-
-int 	check_class_vals(char *buf, char *buf_q, int *i, char c)
-{
-	int 						j;
+	int							j;
 	static const t_char_class	class[] = {{"[:alnum:]", ft_isalnum},
 			{"[:alpha:]", ft_isalpha}, {"[:ascii:]", ft_isascii},
 			{"[:blank:]", ft_isblank}, {"[:cntrl:]", ft_iscntrl},
@@ -87,43 +36,38 @@ int 	check_class_vals(char *buf, char *buf_q, int *i, char c)
 	return (0);
 }
 
-int 	check_vals(char *buf, char *buf_q, char *brackets_end, char *str)
+static int	check_vals(char *buf, char *buf_q, char *brackets_end, char *str)
 {
-	int		eq;
-	int 	i;
-	char 	j;
+	int				i;
+	char			j;
+	const int		eq = (*buf == '!' || *buf == '^') && !*buf_q ? 0 : 1;
 
-	eq = (*buf == '!' || *buf == '^') && !*buf_q ? 0 : 1;
-	buf += eq ? 0 : 1;
-	i = 0;
+	i = eq ? 0 : 1;
 	while (buf[i])
-	{
 		if (buf[i] == '[' && buf[i + 1] == ':' && !buf_q[i] && !buf_q[i + 1])
 		{
 			if (check_class_vals(buf, buf_q, &i, *str))
 				return (eq ? ft_regex_str(brackets_end + 1, str + 1, 0) : 0);
 		}
-		else if (buf[i + 1] == '-' && buf[i + 2] && !buf_q[i + 1])
+		else if (buf[i + 1] == '-' && buf[i + 2] && !buf_q[i + 1] && (i += 3))
 		{
-			j = buf[i] - 1;
-			i += 2;
-			while (++j <= buf[i])
+			j = buf[i - 3] - 1;
+			while (++j <= buf[i - 1])
 				if (j == *str)
-					return (eq ? ft_regex_str(brackets_end + 1, str + 1, 0) : 0);
-			i += 1;
+					return (eq ?
+							ft_regex_str(brackets_end + 1, str + 1, 0) : 0);
 		}
 		else if (buf[i] == *str)
 			return (eq ? ft_regex_str(brackets_end + 1, str + 1, 0) : 0);
 		else
 			++i;
-	}
 	return (eq ? 0 : ft_regex_str(brackets_end + 1, str + 1, 0));
 }
 
-void	get_vals(char *pattern, char *buf, char *buf_q, char *brackets_end)
+static void	get_vals(char *pattern, char *buf, char *buf_q, char *brackets_end)
 {
-	char 	quote;
-	int 	i;
+	char	quote;
+	int		i;
 
 	quote = 0;
 	i = 0;
@@ -148,7 +92,7 @@ void	get_vals(char *pattern, char *buf, char *buf_q, char *brackets_end)
 
 int			ft_regex_brackets(char *pattern, char *str, char q)
 {
-	char 	*brackets_end;
+	char	*brackets_end;
 	char	buf[ft_strlen(pattern) + 1];
 	char	buf_q[ft_strlen(pattern) + 1];
 

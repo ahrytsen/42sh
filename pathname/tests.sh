@@ -118,4 +118,5 @@ tests=(
 'fil'
 'file[[:blank:]\ ]]'
 'file[[:blank:]\\ ]]'
+'file[]]'
 )

@@ -6,15 +6,13 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 16:40:23 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/08/19 09:16:11 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/20 12:43:21 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_expansions.h"
 
-char	**ft_strcut(char const *s, char c);
-
-void		print_lst(t_list *lst) //TODO: delete
+void	print_lst(t_list *lst) //TODO: delete
 {
 	while (lst)
 	{
@@ -23,16 +21,9 @@ void		print_lst(t_list *lst) //TODO: delete
 	}
 }
 
-void	print_arr(char **arr)
-{
-	if (arr)
-		while (*arr)
-			ft_printf("%s\n", *arr++);
-}
-
 int		ft_regex_str(char *pattern, char *str, char q)
 {
-	int 	sl;
+	int		sl;
 
 	sl = 0;
 	if (!*pattern && !*str)
@@ -49,8 +40,7 @@ int		ft_regex_str(char *pattern, char *str, char q)
 	if (!q && !sl && *pattern == '[' && *str)
 		return (ft_regex_brackets(pattern + 1, str, q));
 	if (!q && !sl && *pattern == '*' && *str)
-		return (ft_regex_str(pattern + 1, str, q)
-			|| ft_regex_str(pattern, str + 1, q));
+		return (ft_regex_str(pattern + 1, str, q) || ft_regex_str(pattern, str + 1, q));
 	if (!q && !sl && *pattern == '*' && !*str)
 		return (ft_regex_str(pattern + 1, str, q));
 	if ((!q && !sl && (*pattern == '?' && *str)) || (*pattern == *str))
@@ -58,7 +48,7 @@ int		ft_regex_str(char *pattern, char *str, char q)
 	return (0);
 }
 
-int		compare_mthfkr_d_u_speak_it(char *a, char *b)
+static int	compare_mthfkr_d_u_speak_it(char *a, char *b)
 {
 	if ((a[0] != '.'
 	|| (a[0] == '.' && b[0] == '.' && ft_strcmp(a, "..") && ft_strcmp(a, "."))
@@ -70,7 +60,7 @@ int		compare_mthfkr_d_u_speak_it(char *a, char *b)
 	return (0);
 }
 
-void	recurcive(t_list **list, char *path, char **names, char *directory)
+static void	recurcive(t_list **list, char *path, char **names, char *directory)
 {
 	DIR				*papka;
 	struct dirent	*file;
@@ -100,23 +90,15 @@ int		main(int ac, char **av)
 	char	**names;
 	char	path[1024];
 	t_list	*list;
-	char 	*pattern;
+	char	*pattern;
 
-	pattern = av[1] ? av[1] : "file[!'1'-'9k]'\"D\"-G]";
+	pattern = av[1] ? av[1] : "file";
 	names = ft_strcut(pattern, '/');
-//	print_arr(names);
-//	exit(0);
 	list = NULL;
-	if (*pattern != '/' && *pattern != '~')
+	if (*pattern != '/')
 	{
 		path[0] = 0;
 		recurcive(&list, path, names, ".");
-	}
-	else if (*pattern != '/')
-	{
-		ft_strcat(path, getenv("HOME"));
-		ft_strcat(path, "/");
-		recurcive(&list, path, names + 1, getenv("HOME"));
 	}
 	else
 	{
@@ -128,4 +110,5 @@ int		main(int ac, char **av)
 	ft_free_arr((void **)names);
 	list ? print_lst(list) : ft_printf("%s\n", pattern);
 //	return (list);
+	return (0);
 }

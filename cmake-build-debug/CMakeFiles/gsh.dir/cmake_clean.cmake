@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/gsh.dir/pathname/regex.c.o"
   "CMakeFiles/gsh.dir/pathname/ft_strcut.c.o"
   "CMakeFiles/gsh.dir/pathname/brackets.c.o"
+  "CMakeFiles/gsh.dir/pathname/check_brackets.c.o"
   "CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pbuf.c.o"
   "CMakeFiles/gsh.dir/libft/src/ft_printf/ft_pfloat.c.o"
   "CMakeFiles/gsh.dir/libft/src/ft_printf/ft_phelper.c.o"

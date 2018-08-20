@@ -1,4 +1,4 @@
-#!/bin/bash -i
+#!/bin/bash
 
 source tests.sh
 
@@ -17,16 +17,16 @@ do
     gsh_output=$($gsh "${tests[$i]}")
     if [ $? -ne 0 ]
     then
-        echo -e "${red}Expansion failed on ${tests[$i]} (line $((i + 1)))"
+        echo -e "${red}Expansion failed on ${tests[$i]} (line $((i + 2)))"
         echo -e "Exit code: $?${nc}"
         ((num_fail++))
     else
-        if [ "$echo_output" =  "$gsh_output" ]
+        if [ "$echo_output" = "$gsh_output" ]
         then
 #            echo -e "${green}TRUE ${nc}"
             ((num_success++))
         else
-            echo -e "${red}FALSE: ${tests[$i]} (line $i)"
+            echo -e "${red}FALSE: ${tests[$i]} (line $((i + 2)))"
             echo -e "    Expected output: $echo_output"
             echo -e "    Your output: $gsh_output ${nc}"
 #            echo $(wc <<< $echo_output)

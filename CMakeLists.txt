@@ -11,6 +11,7 @@ add_executable(gsh
         pathname/regex.c
         pathname/ft_strcut.c
         pathname/brackets.c
+        pathname/check_brackets.c
 #        src/ft_expansions/brace/fill_buf.c
 #        src/ft_expansions/brace/get_seq.c
 #        src/ft_expansions/brace/expand_braces.c
@@ -166,4 +167,13 @@ add_executable(gsh
 #        src/ft_tokenize.c
 #        src/ft_tokenize_utils.c
 #        src/main.c
-        libft/src/ft_isblank.c libft/src/ft_iscntrl.c libft/src/ft_isgraph.c libft/src/ft_islower.c libft/src/ft_ispunct.c libft/src/ft_isupper.c libft/src/ft_isword.c libft/src/ft_isxdigit.c libft/src/ft_strnchr.c)
+        libft/src/ft_isblank.c
+        libft/src/ft_iscntrl.c
+        libft/src/ft_isgraph.c
+        libft/src/ft_islower.c
+        libft/src/ft_ispunct.c
+        libft/src/ft_isupper.c
+        libft/src/ft_isword.c
+        libft/src/ft_isxdigit.c
+        libft/src/ft_strnchr.c
+        )

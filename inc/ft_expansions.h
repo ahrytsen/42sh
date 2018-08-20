@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 14:22:50 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/17 03:52:40 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/20 12:40:23 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,12 @@ int			ft_regex_str(char *pattern, char *str, char q);
 **		brackets.c
 */
 int			ft_regex_brackets(char *pattern, char *str, char q);
-
+/*
+*		ft_strcut.c
+*/
+char		**ft_strcut(char const *s, char c);
+/*
+*		check_brackets.c
+*/
+char		*check_brackets(char *pattern);
 #endif
