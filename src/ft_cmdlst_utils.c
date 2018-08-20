@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 17:35:56 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/17 16:09:55 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/20 22:11:18 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ void			ft_cmdlst_print(t_cmd *cmdlst)
 		cmdlst = cmdlst->prev;
 	while (cmdlst)
 	{
-		cmdlst->prev ? write(2, " | ", 3) : 0;
+		cmdlst->prev ? write(1, " | ", 3) : 0;
 		av = cmdlst->av;
 		while (av && *av)
-			ft_dprintf(2, "%s ", *av++);
+			ft_dprintf(1, "%s ", *av++);
 		cmdlst = cmdlst->next;
 	}
-	write(2, "\n", 1);
+	write(1, "\n", 1);
 }
 
 t_cmd			*ft_cmdlst_del(t_cmd *cmdlst)

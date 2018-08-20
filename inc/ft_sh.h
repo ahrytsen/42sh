@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/17 19:32:13 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/20 21:13:18 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,17 @@
 # define EXEC_FG 1
 
 /*
-**	VARIABLES MOD
+**	VARIABLES_MOD
 */
 # define SHVAR 0
 # define ENVAR 2
+
+/*
+**	JOBS_OPTIONS
+*/
+# define J_DEF 0
+# define J_L 1
+# define J_P 2
 
 typedef struct	s_op
 {
@@ -216,6 +223,7 @@ struct			s_ast
 typedef struct	s_job
 {
 	pid_t	pgid;
+	int		st;
 	t_cmd	*cmd;
 }				t_job;
 
@@ -336,8 +344,8 @@ int				ft_print_shvar(int mod);
 /*
 **				ft_shell_var_utils.c
 */
-int				ft_set_tool(const char *name, const char *value, int overwrite
-	, int mod);
+int				ft_set_tool(const char *name, const char *value,
+							int overwrite, int mod);
 int				ft_unset_tool(const char *name, int mod);
 int				ft_setter(const char *name, const char *value);
 /*
@@ -370,8 +378,11 @@ int				ft_cd(char **av);
 /*
 **				ft_builtins/ft_bi_fg.c
 */
-int				ft_count_fg(t_list *proc);
 int				ft_fg(char **av);
+/*
+**				ft_builtins/ft_bi_jobs.c
+*/
+int				ft_jobs(char **av);
 /*
 **				ft_builtins/ft_bi_env.c
 */

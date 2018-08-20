@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 18:37:54 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/08 18:43:38 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/20 22:23:11 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void		ft_stop_job(t_cmd *cmd, int mod)
 		if (mod)
 		{
 			ft_dprintf(2, "\n[%d] + %d suspended\t",
-						ft_count_fg(get_environ()->jobs), job->cmd->pid);
+						ft_lstsize(get_environ()->jobs), job->cmd->pid);
 			ft_cmdlst_print(job->cmd);
 		}
 	}
@@ -42,7 +42,7 @@ void		ft_stop_job(t_cmd *cmd, int mod)
 
 static void	ft_bg_job(t_cmd *cmd)
 {
-	ft_dprintf(2, "[%d] %d\n", ft_count_fg(get_environ()->jobs),
+	ft_dprintf(2, "[%d] %d\n", ft_lstsize(get_environ()->jobs) + 1,
 				get_environ()->pid);
 	ft_stop_job(cmd, 0);
 }
@@ -88,9 +88,9 @@ int			ft_status_job(int st)
 		if (WIFEXITED(st))
 			st = WEXITSTATUS(st);
 		else if (WIFSTOPPED(st))
-			st = -WSTOPSIG(st);
+			st = WSTOPSIG(st);
 		else if (WIFSIGNALED(st))
-			st = -WTERMSIG(st);
+			st = WTERMSIG(st);
 	}
 	return (st);
 }

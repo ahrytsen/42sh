@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 17:41:55 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/17 21:23:20 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/20 22:26:14 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,14 @@ static int	ft_subsh_exec(t_cmd *cmd)
 
 static int	ft_cmd_exec_chld(t_cmd *cmd, int bg)
 {
-	if (cmd->next || cmd->prev || bg)
+	if (cmd->next || cmd->prev || bg || cmd->type == cmd_subsh)
 	{
 		cmd->prev ? dup2(cmd->p_in, 0) : 0;
+//		cmd->prev ? close(cmd->prev->p_out) : 0;
 		cmd->prev ? close(cmd->p_in) : 0;
 		cmd->next ? dup2(cmd->p_out, 1) : 0;
 		cmd->next ? close(cmd->p_out) : 0;
+		cmd->next ? close(cmd->next->p_in) : 0;
 		ft_set_sh_signal(bg ? S_CHLD : S_CHLD_FG);
 		bg = -1;
 	}

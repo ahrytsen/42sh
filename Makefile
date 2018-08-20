@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/16 19:10:56 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/08/20 17:04:51 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -71,6 +71,7 @@ SRC			=	ft_argv.c\
 				ft_builtins/ft_bi_env.c\
 				ft_builtins/ft_bi_export.c\
 				ft_builtins/ft_bi_fg.c\
+				ft_builtins/ft_bi_jobs.c\
 				ft_builtins/ft_bi_history.c\
 				ft_builtins/ft_bi_un_set.c\
 				ft_builtins/ft_bi_un_setenv.c\
