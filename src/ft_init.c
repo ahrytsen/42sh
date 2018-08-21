@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 13:59:58 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/09 16:52:31 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/17 22:28:15 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static void	ft_if_interactive(void)
 	}
 	ft_set_sh_signal(S_SH);
 	get_environ()->sh_pid = getpid();
-	// setpgid(get_environ()->sh_pid, get_environ()->sh_pid);				//
-	// tcsetpgrp(get_environ()->sh_terminal, get_environ()->sh_pid);		//
+	setpgid(get_environ()->sh_pid, get_environ()->sh_pgid);
+	tcsetpgrp(get_environ()->sh_terminal, get_environ()->sh_pgid);
 }
 
 void		ft_fildes(int mod)
