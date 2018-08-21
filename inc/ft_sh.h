@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/20 21:13:18 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/21 21:50:25 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -285,6 +285,10 @@ void			ft_putchar_mshbuf(t_buf **buf, char c);
 char			*ft_buftostr(t_buf *buf_head);
 void			*ft_free_mshbuf(t_buf *buf);
 /*
+**				ft_cmd_print.c
+*/
+void			ft_cmd_print(t_cmd *cmd);
+/*
 **				ft_cmdlst.c
 */
 t_cmd			*ft_cmdlst_make(t_list **toks);
@@ -353,8 +357,8 @@ int				ft_setter(const char *name, const char *value);
 */
 t_list			*ft_tokenize(char *ln);
 /*
- **				ft_tokenize_tools.c
- */
+**				ft_tokenize_tools.c
+*/
 int				ft_isseparator(int c);
 void			ft_token_del(void *token, size_t size);
 const char		*ft_tname(t_token *tok);
@@ -372,6 +376,10 @@ int				ft_echo(char **av);
 int				ft_exit(char **av);
 int				ft_export(char **av);
 /*
+**				ft_builtins/ft_bi_bg.c
+*/
+int				ft_bg(char **av);
+/*
 **				ft_builtins/ft_bi_cd.c
 */
 int				ft_cd(char **av);
@@ -383,6 +391,11 @@ int				ft_fg(char **av);
 **				ft_builtins/ft_bi_jobs.c
 */
 int				ft_jobs(char **av);
+/*
+**				ft_builtins/ft_bi_jobs_tools.c
+*/
+void			ft_cmd_print_colon(t_cmd *cmdlst);
+void			ft_print_status(int st);
 /*
 **				ft_builtins/ft_bi_env.c
 */

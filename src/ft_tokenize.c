@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/17 16:30:06 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/21 20:22:09 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ static int	ft_get_separator(char **ln, t_token *token)
 
 static int	ft_get_token(char **ln, t_token *token)
 {
+	char	*tmp;
+
 	token->type = word;
 	token->word = *ln;
 	if (ft_skip_word(ln))
@@ -89,6 +91,13 @@ static int	ft_get_token(char **ln, t_token *token)
 	{
 		(**ln == '<' ? ft_get_redirect_in : ft_get_redirect_out)(ln, token);
 		token->data.redir.left = ft_atoi(token->word);
+		token->word = NULL;
+	}
+	else
+	{
+		tmp = ft_strnew(*ln - token->word);
+		ft_strncpy(tmp, token->word, *ln - token->word);
+		token->word = tmp;
 	}
 	return (0);
 }

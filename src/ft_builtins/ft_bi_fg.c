@@ -6,11 +6,13 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 18:46:30 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/20 17:01:43 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/21 18:36:33 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
+
+//static
 
 int			ft_fg(char **av)
 {

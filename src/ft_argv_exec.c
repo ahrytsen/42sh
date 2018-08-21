@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/26 16:27:15 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/20 14:11:41 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/21 14:26:30 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 const t_builtins	g_builtin[] = {
 	{"echo", &ft_echo},
+	{"bg", &ft_bg},
 	{"cd", &ft_cd},
 	{"fg", &ft_fg},
 	{"jobs", &ft_jobs},

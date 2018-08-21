@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:31 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/17 20:53:58 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/21 20:10:50 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int		ft_get_subsh(char **ln, t_token *token)
 		write(2, "42sh: syntax error near unexpected token `)'\n", 45);
 		return (1);
 	}
+	token->word = NULL;
 	ft_lstdel(&toks, ft_token_del);
 	return (0);
 }
