@@ -45,7 +45,9 @@ static char	*rl_check_line(t_line *cur, size_t size)
 	{
 		cur = cur->next;
 		size += ft_strlen((char*)&cur->ch);
+		ft_curright(1);
 	}
+	get_term()->cursor = cur;
 	while (tmp->prev && tmp->prev->ch != ';' && tmp->prev->ch != '&'
 		&& tmp->prev->ch != '|')
 	{
