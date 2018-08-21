@@ -6,63 +6,75 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:02:28 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/20 17:48:22 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/21 08:48:26 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
+#include "ft_expansions.h"
 
-void	ft_lstreplace(t_list *lst1, t_list *lst2)
+t_list	*get_lst_end(t_list *lst)
 {
-	t_list	*lst
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
 
-void	ft_lstiter_custom(t_list *lst, t_list *(*f)(t_list *elem))
+void	lstiter_custom(t_list **lst, t_list *(*f)(t_list *))
 {
-	t_list	*lst_next;
 	t_list	*lst_prev;
 	t_list	*new_lst;
+	t_list	*tmp_lst;
+	t_list	*new_lst_end;
 
 	lst_prev = NULL;
-	while (lst && f)
+	tmp_lst = *lst;
+	while (tmp_lst)
 	{
-		lst_next = lst->next;
-		if ((new_lst = (*f)(lst)))
+		if ((new_lst = (*f)(tmp_lst)))
 		{
-			//delete node from lst
-			ft_lstinsert(lst_prev, new_lst);
+			new_lst_end = get_lst_end(new_lst);
+			if (lst_prev)
+				lst_prev->next = tmp_lst->next;
+			ft_lstdelone(&tmp_lst, (void (*)(void *, size_t))free);
+			ft_lstinsert(lst, lst_prev, new_lst);
+			tmp_lst = new_lst_end;
 		}
-		lst_prev = lst;
-		lst = lst_next;
+		lst_prev = tmp_lst;
+		tmp_lst = tmp_lst->next;
 	}
 }
 
-void	perform_expansions(t_list *toks)
+t_list	*perform_expansions(t_list *toks)
 {
 	t_list	*lst;
 
-	while (tok)
+	lst = NULL;
+	while (toks)
 	{
 		if (((t_token*)(toks->content))->type == word)
 			ft_lstpush_back(&lst, ((t_token*)(toks->content))->data.word,
 						ft_strlen(((t_token*)(toks->content))->data.word) + 1);
 		toks = toks->next;
 	}
-	ft_lstiter_custom(lst, )
-}
+	lstiter_custom(&lst, brace_expansion);
+	// other expansions
+	// syntax: ft_lstiter(&lst, expansion_func);
+	// your expansion_func prototype must be as it required in lstiter prototype
 
-int		ft_count_args(t_list *toks)
-{
-	int	ret;
+	lstiter_custom(&lst, expand_pathname);
+	// quote removal
+	// syntax: ft_lstiter(&lst, quote_removal_func);
+	// your quote_removal_func prototype must be as it required in lstiter prototype
 
-	ret = 0;
-	while (toks)
-	{
-		if (((t_token*)(toks->content))->type == word)
-			ret++;
-		toks = toks->next;
-	}
-	return (ret);
+//	t_list *tmp = lst;
+//	while (tmp)
+//	{
+//		ft_printf("%s\n", tmp->content);
+//		tmp = tmp->next;
+//	}
+//	ft_printf("\n\n");
+	return (lst);
 }
 
 char	**ft_argv_make(t_list *toks)
@@ -70,20 +82,21 @@ char	**ft_argv_make(t_list *toks)
 	int		i;
 	int		size;
 	char	**av;
+	t_list	*lst;
 
 	i = 0;
-	size = ft_count_args(toks) + 1;
+	lst = perform_expansions(toks);
+	size = ft_lstsize(lst) + 1;
 	if (!(av = ft_memalloc(size * sizeof(av))))
 		return (NULL);
-	while (i < size && toks)
+	while (lst)
 	{
-		if (((t_token*)(toks->content))->type == word
-			&& !(av[i++] = parse_argv(((t_token*)(toks->content))->data.word)))
+		if (!(av[i++] = parse_argv(lst->content)))
 		{
 			ft_strarr_free(av);
 			return (NULL);
 		}
-		toks = toks->next;
+		lst = lst->next;
 	}
 	return (av);
 }

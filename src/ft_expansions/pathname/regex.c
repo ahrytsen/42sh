@@ -6,20 +6,11 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 16:40:23 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/08/20 15:44:21 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/21 08:53:54 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_expansions.h"
-
-void	print_lst(t_list *lst) //TODO: delete
-{
-	while (lst)
-	{
-		ft_printf(lst->next ? "%s " : "%s\n", lst->content);
-		lst = lst->next;
-	}
-}
 
 int		ft_regex_str(char *pattern, char *str, char q)
 {
@@ -85,7 +76,7 @@ static void	recurcive(t_list **list, char *path, char **names, char *directory)
 	closedir(papka);
 }
 
-void	expand_pathname(t_list *lst)
+t_list	*expand_pathname(t_list *lst)
 {
 	char	**names;
 	char	path[1024];
@@ -99,13 +90,16 @@ void	expand_pathname(t_list *lst)
 	{
 		path[0] = 0;
 		recurcive(&list, path, names, ".");
+
 	}
 	else
 	{
 		path[0] = '/';
 		path[1] = 0;
 		recurcive(&list, path, names + 1, "/");
+
 	}
 	list = ft_lstsort(list);
 	ft_free_arr((void **)names);
+	return (list);
 }

@@ -14,7 +14,7 @@ NAME 		=	42sh
 
 #===========================================================
 OS			= $(shell uname)
-ifeq ($(OS),Darwin)
+#ifeq ($(OS),Darwin
 	INC		=	-I./inc/ -I./libft/inc/
 	LIBFT	= ./libft/libftprintf.a
 	SUB_MAKE= ./libft
@@ -23,12 +23,12 @@ ifeq ($(OS),Darwin)
 	NON		= \x1b[0m
 	CYANN	= \x1b[36m
 	GREEN	= \x1b[32m
-else
-	INC		= -I../../libft_win/includes -I./inc
-	LIBFT	= ../../libft_win/libftprintf.a
-	SUB_MAKE= ../../libft_win
-	TCAP	= -lcurses
-endif
+#else
+#	INC		= -I../../libft_win/includes -I./inc
+#	LIBFT	= ../../libft_win/libftprintf.a
+#	SUB_MAKE= ../../libft_win
+#	TCAP	= -lcurses
+#endif
 #===========================================================
 
 
@@ -82,25 +82,36 @@ SRC			=	main.c\
 				ft_readline/ft_rl_line_edit.c\
 				ft_readline/ft_rl_line.c\
 				ft_readline/ft_rl_prompt.c\
-				ft_readline/ft_rl_read.c
+				ft_readline/ft_rl_read.c\
+				\
+				ft_expansions/brace/auxiliary_funcs.c\
+				ft_expansions/brace/expand_braces.c\
+				ft_expansions/brace/fill_buf.c\
+				ft_expansions/brace/get_range.c\
+				ft_expansions/brace/get_seq.c\
+				\
+				ft_expansions/pathname/brackets.c\
+				ft_expansions/pathname/check_brackets.c\
+				ft_expansions/pathname/ft_strcut.c\
+				ft_expansions/pathname/regex.c
 
 OBJ			=	$(addprefix $(DIROBJ), $(SRC:.c=.o))
 
-CC			=	gcc
+CC			=	clang
 RM			=	rm -rf
 ECHO		=	echo
 
 #===========================================================
-ifdef FLAGS
-	ifeq ($(FLAGS), no)
-CFLAGS		=
-	endif
-	ifeq ($(FLAGS), debug)
-CFLAGS		=	-Wall -Wextra -Werror -g
-	endif
-else
-CFLAGS		= 	-Wall -Wextra -Werror -O2 -flto=thin
-endif
+#ifdef FLAGS
+#	ifeq ($(FLAGS), no)
+#CFLAGS		=
+#	endif
+#	ifeq ($(FLAGS), debug)
+#CFLAGS		=	-Wall -Wextra -Werror -g
+#	endif
+#else
+CFLAGS		= 	-Wall -Wextra -Werror -O2
+#endif
 #===========================================================
 STRING1 = $(CYAN)---Compile_$(NAME)$(NON)
 STRING2 = $(CYAN)---Remove_$(NAME)_O_Files$(NON)
@@ -116,13 +127,16 @@ all: $(NAME)
 
 $(NAME): $(LIBFT) $(DIROBJ) $(OBJ)
 	@echo "$(STRING1)"
-	@$(CC) $(INC) $(INC_LIB) $(CFLAGS) -o $(NAME) $(OBJ)
+	@$(CC) $(INC) $(INC_LIB) $(CFLAGS) -o $(NAME) $(OBJ) libft/libftprintf.a
 	@echo "$(CYANN)comp$(NON)..."$(NAME)"...$(GREEN)OK$(NON)"
 
 $(DIROBJ):
 	mkdir -p $(DIROBJ)
 	mkdir -p $(DIROBJ)/ft_readline
 	mkdir -p $(DIROBJ)/ft_builtins
+	mkdir -p $(DIROBJ)/ft_expansions
+	mkdir -p $(DIROBJ)/ft_expansions/brace
+	mkdir -p $(DIROBJ)/ft_expansions/pathname
 
 lib:
 	@$(MAKE) -C $(SUB_MAKE) -j3

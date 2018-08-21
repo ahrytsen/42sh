@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 14:22:50 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/20 12:40:23 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/21 01:28:04 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct	s_char_class
 **		expand_braces.c
 */
 t_list		*expand_braces(char *s, int i, char *buf);
+t_list		*brace_expansion(t_list *lst);
 /*
 **		auxiliary_funcs.c
 */
@@ -53,6 +54,7 @@ char		*put_parentheses_content_to_buf(char *buf, int *i, char *s);
 **		regex.c
 */
 int			ft_regex_str(char *pattern, char *str, char q);
+t_list		*expand_pathname(t_list *lst);
 /*
 **		brackets.c
 */

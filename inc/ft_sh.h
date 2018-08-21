@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/07 17:47:54 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/21 01:51:10 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@
 # include <signal.h>
 # include <fcntl.h>
 # include <term.h>
-#include <inttypes.h>
+# include <inttypes.h>
+# include <sys/wait.h>
 
 /*
 **	SIGNAL MODS

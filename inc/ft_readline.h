@@ -18,6 +18,9 @@
 # include <signal.h>
 # include <term.h>
 
+#include <inttypes.h>
+
+
 /*
 **	KEY BINDINGS
 */

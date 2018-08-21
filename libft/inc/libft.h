@@ -162,6 +162,6 @@ int				ft_ispunct(int c);
 int				ft_isword(int c);
 int				ft_isxdigit(int c);
 char			*ft_strnchr(const char *s, int c, int n);
-void			ft_lstinsert(t_list *lst1, t_list *lst2);
+void ft_lstinsert(t_list **lst, t_list *node, t_list *ins);
 
 #endif

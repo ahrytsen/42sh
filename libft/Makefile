@@ -149,7 +149,7 @@ CFLAGS		=
 CFLAGS		=	-Wall -Wextra -Werror -g
 	endif
 else
-CFLAGS		= 	-Wextra -Werror -Ofast -flto=thin
+CFLAGS		= 	-Wextra -Werror -Ofast
 endif
 #===========================================================
 OS = $(shell uname)
