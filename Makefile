@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/13 21:02:01 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/08/16 19:10:56 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -47,6 +47,7 @@ SRC			=	ft_argv.c\
 				ft_argv_utils.c\
 				ft_ast.c\
 				ft_ast_exec.c\
+                ft_ast_debug.c\
 				ft_ast_utils.c\
 				ft_buffer.c\
 				ft_cmdlst.c\
@@ -71,6 +72,8 @@ SRC			=	ft_argv.c\
 				ft_builtins/ft_bi_export.c\
 				ft_builtins/ft_bi_fg.c\
 				ft_builtins/ft_bi_history.c\
+				ft_builtins/ft_bi_history_toolz.c\
+				ft_builtins/ft_bi_history_utils.c\
 				ft_builtins/ft_bi_un_set.c\
 				ft_builtins/ft_bi_un_setenv.c\
 				\
