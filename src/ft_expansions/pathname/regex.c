@@ -76,6 +76,11 @@ static void	recurcive(t_list **list, char *path, char **names, char *directory)
 	closedir(papka);
 }
 
+int     check_xpansion(char *pattern)
+{
+    return (1);
+}
+
 t_list	*expand_pathname(t_list *lst)
 {
 	char	**names;
@@ -84,8 +89,10 @@ t_list	*expand_pathname(t_list *lst)
 	char	*pattern;
 
 	pattern = lst->content;
-	names = ft_strcut(pattern, '/');
 	list = NULL;
+	if (!check_xpansion(pattern))
+	    return (list);
+	names = ft_strcut(pattern, '/');
 	if (*pattern != '/')
 	{
 		path[0] = 0;
