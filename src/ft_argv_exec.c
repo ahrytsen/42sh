@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/26 16:27:15 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/09 16:44:59 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/21 14:26:30 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 const t_builtins	g_builtin[] = {
 	{"echo", &ft_echo},
+	{"bg", &ft_bg},
 	{"cd", &ft_cd},
 	{"fg", &ft_fg},
-	{"setenv", &ft_setenv_builtin},
-	{"unsetenv", &ft_unsetenv_builtin},
+	{"jobs", &ft_jobs},
+	{"history", &ft_history},
+	{"setenv", &ft_setenv},
+	{"unsetenv", &ft_unsetenv},
+	{"unset", &ft_unset},
 	{"env", &ft_env},
 	{"exit", &ft_exit},
+	{"export", &ft_export},
 	{NULL, NULL}
 };
 
@@ -31,7 +36,13 @@ static int	ft_exec_builtin(char **cmd)
 	i = 0;
 	while (g_builtin[i].cmd && ft_strcmp(cmd[0], g_builtin[i].cmd))
 		i++;
-	return (g_builtin[i].cmd ? g_builtin[i].ft_builtin(cmd + 1) : -1);
+	if (g_builtin[i].cmd)
+	{
+		if (get_environ()->setvar)
+			ft_set_var(get_environ()->setvar, SHVAR);
+		return (g_builtin[i].ft_builtin(cmd + 1));
+	}
+	return (-1);
 }
 
 static int	ft_exec_bypath(char **cmd, char *path, int bg)
@@ -46,9 +57,10 @@ static int	ft_exec_bypath(char **cmd, char *path, int bg)
 			&& (get_environ()->pgid = get_environ()->pid))
 			return (0);
 		else if (get_environ()->pid < 0)
-			return (write(2, "21sh: fork error\n", 17));
+			return (write(2, "42sh: fork error\n", 17));
 		if (bg != -1)
 			ft_set_sh_signal(bg ? S_CHLD : S_CHLD_FG);
+		get_environ()->setvar ? ft_set_var(get_environ()->setvar, ENVAR) : 0;
 		execve(path, cmd, get_environ()->envar);
 		if ((fd = open(path, O_RDONLY)) >= 0)
 			exit(main_loop(fd));
@@ -65,10 +77,24 @@ static int	ft_exec_bypath(char **cmd, char *path, int bg)
 static char	**ft_get_path(const char *altpath)
 {
 	char	pwd[MAXPATHLEN];
+	t_list	*list;
 
 	if (!altpath)
 	{
-		altpath = ft_getenv("PATH");
+		if ((list = get_environ()->setvar))
+		{
+			while (list)
+			{
+				if (ft_strcmp((char *)list->content, "PATH") == '=')
+				{
+					altpath = ft_strchr((char *)list->content, '=') + 1;
+					break ;
+				}
+				list = list->next;
+			}
+		}
+		else
+			altpath = ft_other_getenv("PATH");
 		if (!altpath || !*altpath)
 			altpath = getcwd(pwd, MAXPATHLEN);
 	}
@@ -108,9 +134,12 @@ int			ft_argv_exec(char **cmd, char *altpath, int bg)
 	char	*bin_path;
 	int		st;
 
-	bin_path = NULL;
 	if (!cmd || !*cmd)
-		return (0);
+	{
+		return (get_environ()->setvar
+				? ft_set_var(get_environ()->setvar, SHVAR) : 0);
+	}
+	bin_path = NULL;
 	if (ft_strchr(*cmd, '/'))
 		st = ft_exec_bypath(cmd, *cmd, bg);
 	else if ((st = ft_exec_builtin(cmd)) == -1)

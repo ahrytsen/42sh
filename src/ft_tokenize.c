@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/09 21:00:56 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/21 20:22:09 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,88 +14,92 @@
 
 static void	ft_get_redirect_in(char **ln, t_token *token)
 {
+	*(*ln)++ = '\0';
+	token->type = redir;
+	token->data.redir.left = 0;
 	if (**ln == '<' && !(*(*ln)++ = '\0'))
 	{
 		if (**ln == '<' && !(*(*ln)++ = '\0'))
-			token->type = herestr;
+			token->data.redir.type = herestr;
 		else if (**ln == '-' && !(*(*ln)++ = '\0'))
-			token->type = heredoc_t;
+			token->data.redir.type = heredoc_t;
 		else
-			token->type = heredoc;
+			token->data.redir.type = heredoc;
 	}
 	else if (**ln == '>' && !(*(*ln)++ = '\0'))
-		token->type = open_file;
+		token->data.redir.type = open_file;
 	else if (**ln == '&' && !(*(*ln)++ = '\0'))
-		token->type = read_in_and;
+		token->data.redir.type = read_in_and;
 	else
-		token->type = read_in;
+		token->data.redir.type = read_in;
 }
 
 static void	ft_get_redirect_out(char **ln, t_token *token)
 {
+	*(*ln)++ = '\0';
+	token->type = redir;
+	token->data.redir.left = 1;
 	if (**ln == '|' && !(*(*ln)++ = 0))
-		token->type = read_out_pipe;
+		token->data.redir.type = read_out_pipe;
 	else if (**ln == '&' && !(*(*ln)++ = 0))
-		token->type = read_out_and;
+		token->data.redir.type = read_out_and;
 	else if (**ln == '>' && !(*(*ln)++ = 0))
-		token->type = read_out_apend;
+		token->data.redir.type = read_out_apend;
 	else
-		token->type = read_out;
+		token->data.redir.type = read_out;
 }
 
 static int	ft_get_separator(char **ln, t_token *token)
 {
 	if ((**ln == ' ' || **ln == '\t') && !(*(*ln)++ = '\0'))
 		token->type = blank;
-	else if ((**ln == ';' || **ln == '\n') && !(*(*ln)++ = '\0'))
-		token->type = semicolon;
+	else if ((**ln == ';' && (token->type = semi)))
+		*(*ln)++ = '\0';
+	else if (**ln == '\n' && (token->type = nl))
+		*(*ln)++ = '\0';
 	else if (**ln == '|' && !(*(*ln)++ = '\0'))
 		token->type =
-			(**ln == '|' && !(*(*ln)++ = '\0')) ? or : pipeline;
+			(**ln == '|' && !(*(*ln)++ = '\0')) ? or : pipeln;
 	else if (**ln == '&' && !(*(*ln)++ = '\0'))
 	{
-		if (**ln == '>' && !(*(*ln)++ = '\0'))
-			token->type = and_read_out;
+		if (**ln == '>' && !(*(*ln)++ = '\0')
+			&& (token->type = redir))
+			token->data.redir.type = and_read_out;
 		else
 			token->type =
 				(**ln == '&' && !(*(*ln)++ = '\0')) ? and : bg_op;
 	}
-	else if (**ln == '<' && !(*(*ln)++ = '\0')
-			&& !(token->data.redir.left = 0))
+	else if ((**ln == '(' || **ln == ')') && (token->type = subsh))
+		return (ft_get_subsh(ln, token));
+	else if (**ln == '<')
 		ft_get_redirect_in(ln, token);
-	else if (**ln == '>' && !(*(*ln)++ = '\0')
-			&& (token->data.redir.left = 1))
+	else if (**ln == '>')
 		ft_get_redirect_out(ln, token);
 	return (0);
 }
 
 static int	ft_get_token(char **ln, t_token *token)
 {
-	int	f[2];
+	char	*tmp;
 
-	f[0] = 1;
-	f[1] = 0;
 	token->type = word;
-	token->data.word = *ln;
-	while (**ln && !ft_isseparator(**ln))
+	token->word = *ln;
+	if (ft_skip_word(ln))
+		return (1);
+	if ((**ln == '<' || **ln == '>')
+		&& ft_isnumeric_n(token->word, *ln - token->word))
 	{
-		f[0] && !ft_isdigit(**ln) ? f[0] = 0 : 0;
-		if (**ln == '\'' || **ln == '"' || **ln == '`')
-			f[1] = ft_skip_qoutes(ln);
-		else if (**ln == '\\')
-			ft_skip_slash(ln);
-		else
-			(*ln)++;
+		(**ln == '<' ? ft_get_redirect_in : ft_get_redirect_out)(ln, token);
+		token->data.redir.left = ft_atoi(token->word);
+		token->word = NULL;
 	}
-	if ((**ln == '<' || **ln == '>') && f[0] && (f[0] = **ln)
-		&& !(*(*ln)++ = '\0'))
+	else
 	{
-		token->data.redir.left = ft_atoi(token->data.word);
-		token->data.redir.cls = 0;
-		(f[0] == '<') ? ft_get_redirect_in(ln, token)
-			: ft_get_redirect_out(ln, token);
+		tmp = ft_strnew(*ln - token->word);
+		ft_strncpy(tmp, token->word, *ln - token->word);
+		token->word = tmp;
 	}
-	return (f[1]);
+	return (0);
 }
 
 t_list		*ft_tokenize(char *ln)
@@ -110,15 +114,16 @@ t_list		*ft_tokenize(char *ln)
 		ft_bzero(&tok, sizeof(tok));
 		if ((!ft_isseparator(*ln) ? ft_get_token : ft_get_separator)(&ln, &tok))
 			ft_lstdel(&toks, ft_token_del);
-		else if (tok.type == blank)
+		else if ((tok.type == nl && ((!toks || ft_isoperator(tmp->content))
+				|| !(tok.type = semi))) || tok.type == blank)
 			continue ;
-		else if (toks && ((t_token*)tmp->content)->type > or
+		else if (toks && ((t_token*)tmp->content)->type == redir
 			&& !((t_token*)tmp->content)->data.redir.right && tok.type == word)
-			((t_token*)tmp->content)->data.redir.right = tok.data.word;
-		else if (ft_check_redir(toks ? tmp->content : NULL, &tok, ln)
+			((t_token*)tmp->content)->data.redir.right = tok.word;
+		else if (ft_redir_check(toks ? tmp->content : NULL, &tok, ln)
 			|| !(tmp = ft_lstpush_back(toks ? &tmp : &toks, &tok, sizeof(tok))))
 		{
-			!tmp ? write(2, "21sh: malloc error\n", 19) : 0;
+			!tmp ? write(2, "42sh: malloc error\n", 19) : 0;
 			ft_lstdel(&toks, ft_token_del);
 			return (NULL);
 		}

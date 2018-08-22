@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 15:22:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:16:49 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/17 14:29:59 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,16 @@ static int	skip_qoutes(char **ln)
 
 	q = *(*ln)++;
 	while (**ln != q)
-		if (!**ln)
-		{
-			get_term()->prompt = q;
+		if (!**ln && (get_term()->prompt = q))
 			return (1);
-		}
 		else if (q == '"' && **ln == '`')
 		{
 			if (skip_qoutes(ln))
+				return (1);
+		}
+		else if (q != '\'' && **ln == '$' && *(*ln + 1) == '(')
+		{
+			if (ft_rl_skip_subsh(ln))
 				return (1);
 		}
 		else if (q != '\'' && **ln == '\\')
@@ -52,19 +54,48 @@ static int	skip_qoutes(char **ln)
 	return (0);
 }
 
+int			ft_rl_skip_subsh(char **ln)
+{
+	int tmp;
+
+	tmp = (**ln == '$' ? P_CMDSUBST : P_SUBSH);
+	*ln += (**ln == '$' ? 2 : 1);
+	while (**ln != ')')
+		if (!**ln && (get_term()->prompt = tmp))
+			return (1);
+		else if (**ln == '\'' || **ln == '`' || **ln == '"')
+		{
+			if (skip_qoutes(ln))
+				return (1);
+		}
+		else if ((**ln == '$' && *(*ln + 1) == '(') || **ln == '(')
+		{
+			if (ft_rl_skip_subsh(ln))
+				return (1);
+		}
+		else if (**ln == '\\')
+			*++(*ln) ? (*ln)++ : 0;
+		else
+			(*ln)++;
+	(*ln)++;
+	return (0);
+}
+
 int			ft_check_line(char *ln)
 {
 	if (get_term()->prompt == P_HEREDOC)
 		return (ln ? 0 : 1);
-	if (!ln)
-	{
-		get_term()->prompt = P_USER;
+	if (!ln && !(get_term()->prompt = P_USER))
 		return (1);
-	}
 	while (*ln)
 		if (*ln == '"' || *ln == '\'' || *ln == '`')
 		{
 			if (skip_qoutes(&ln))
+				return (1);
+		}
+		else if (*ln == '(' || (*ln == '$' && *(ln + 1) == '('))
+		{
+			if (ft_rl_skip_subsh(&ln))
 				return (1);
 		}
 		else if (*ln == '\\')

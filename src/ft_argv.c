@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:02:28 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/22 12:46:09 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/22 16:41:51 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ t_list	*perform_expansions(t_list *toks)
 	while (toks)
 	{
 		if (((t_token*)(toks->content))->type == word)
-			ft_lstpush_back(&lst, ((t_token*)(toks->content))->data.word,
-						ft_strlen(((t_token*)(toks->content))->data.word) + 1);
+			ft_lstpush_back(&lst, ((t_token*)(toks->content))->word,
+						ft_strlen(((t_token*)(toks->content))->word) + 1);
 		toks = toks->next;
 	}
 	lstiter_custom(&lst, brace_expansion);

@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/01 02:54:23 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/08/10 15:25:24 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -40,7 +40,8 @@ SRC		=	ft_arrstr.c\
 			ft_isascii_str.c\
 			ft_isdigit.c\
 			ft_isnumber.c\
-			ft_isnumeric_str.c\
+			ft_isnumeric.c\
+			ft_isnumeric_n.c\
 			ft_isprint.c\
 			ft_isprint_str.c\
 			ft_iswhitespace.c\
@@ -149,7 +150,7 @@ CFLAGS		=
 CFLAGS		=	-Wall -Wextra -Werror -g
 	endif
 else
-CFLAGS		= 	-Wextra -Werror -Ofast
+CFLAGS		= 	-Wall -Wextra -Werror -O2 -flto=thin
 endif
 #===========================================================
 OS = $(shell uname)
@@ -192,6 +193,6 @@ re: fclean all
 
 $(DIROBJ):
 				mkdir -p $(DIROBJ)
-				mkdir -p $(DIROBJ)/ft_printf
+				mkdir -p $(DIROBJ)ft_printf
 
 .NOTEPARALLEL: all $(NAME) re

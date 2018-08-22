@@ -1,0 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bi_jobs_tools.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/21 21:48:14 by ahrytsen          #+#    #+#             */
+/*   Updated: 2018/08/21 21:48:45 by ahrytsen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_sh.h"
+
+void		ft_cmd_print_colon(t_cmd *cmdlst)
+{
+	while (cmdlst && cmdlst->prev)
+		cmdlst = cmdlst->prev;
+	while (cmdlst)
+	{
+		cmdlst->prev ? ft_printf("\n\t%d\t\t\t| ", cmdlst->pid) : 0;
+		ft_cmd_print(cmdlst);
+		cmdlst = cmdlst->next;
+	}
+	ft_printf("\n");
+}
+
+void		ft_print_status(int st)
+{
+	if (st == -1)
+		ft_printf("Running ");
+	else if (!st || st == 126 || st == 127)
+		ft_printf(!st ? "Done\t\t" : "Done(%d)\t\t", st);
+	else if (WIFEXITED(st))
+		ft_printf("Done(%d)\t\t", WEXITSTATUS(st));
+	else if (WIFSTOPPED(st))
+	{
+		ft_printf("Stopped (");
+		if (WSTOPSIG(st) == SIGTSTP)
+			ft_printf("SIGTSTP)\t\t");
+		else if (WSTOPSIG(st) == SIGSTOP)
+			ft_printf("SIGSTOP)\t\t");
+		else if (WSTOPSIG(st) == SIGTTIN)
+			ft_printf("SIGTTIN)\t\t");
+		else if (WSTOPSIG(st) == SIGTTOU)
+			ft_printf("SIGTTOU)\t\t");
+	}
+}

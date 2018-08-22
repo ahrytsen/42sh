@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 16:39:53 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/08/22 15:23:58 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/22 16:58:00 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static size_t	cut_wrds(char *str, char c)
 	{
 		while (*str && *str != c)
 			if (*str == '\\')
-				ft_skip_slash(&str);
+				*++str ? str++ : 0;
 			else if (ft_strchr("'\"", *str))
 				ft_skip_qoutes(&str);
 			else
@@ -68,7 +68,10 @@ static size_t	skip_quote(char *s, size_t i)
 
 	q = *(s + i++);
 	while (*(s + i) != q && *(s + i))
-		++i;
+		if (s[i] == '\\')
+			s[++i] ? i++ : 0;
+		else
+			++i;
 	return (i + 1);
 }
 
@@ -87,7 +90,7 @@ char			**ft_strcut(char *s, char c)
 		i = 0;
 		while (*(s + i) != c && *(s + i))
 			if (*(s + i) == '\\')
-				i += 2;
+				s[++i] ? i++ : 0;
 			else
 				i = ft_strchr("'\"", *(s + i)) ? skip_quote(s, i) : i + 1;
 		if (!(out[j++] = cut_word(s, i)))

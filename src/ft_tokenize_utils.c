@@ -6,65 +6,104 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:31 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/09 21:18:42 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/21 20:10:50 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
 
-void	ft_token_del(void *token, size_t size)
+int		ft_get_subsh(char **ln, t_token *token)
 {
-	(void)size;
-	if (((t_token*)token)->type >= heredoc
-		&& ((t_token*)token)->type <= herestr)
-		free(((t_token*)token)->data.redir.hd);
-	free(token);
-}
+	t_list	*toks;
 
-int		ft_isseparator(int c)
-{
-	return (ft_strchr("|&;<> \t", c) ? 1 : 0);
-}
-
-int		ft_check_redir(t_token *prev, t_token *next, char *ln)
-{
-	if (prev && prev->type > or && !prev->data.redir.right)
+	toks = NULL;
+	if (**ln == ')' && !(**ln = '\0')
+		&& write(2, "42sh: syntax error near unexpected token `)'\n", 45))
+		return (1);
+	**ln = '\0';
+	token->word = *ln + 1;
+	if (ft_skip_subsh(ln))
+		return (1);
+	*(*ln - 1) = '\0';
+	if (!(toks = ft_tokenize(token->word))
+		|| !(token->data.sub_ast = ft_ast_make(&toks)))
 	{
-		ft_dprintf(2, "21sh: unexpected token `%s'\n",
-					ft_tname(next ? next->type : 0));
+		ft_lstdel(&toks, ft_token_del);
+		write(2, "42sh: syntax error near unexpected token `)'\n", 45);
 		return (1);
 	}
-	else if (next && next->type > or && !*ln)
-	{
-		ft_dprintf(2, "21sh: unexpected token `%s'\n",
-					ft_tname(0));
-		return (1);
-	}
+	token->word = NULL;
+	ft_lstdel(&toks, ft_token_del);
 	return (0);
 }
 
-void	ft_skip_slash(char **s)
+int		ft_skip_word(char **ln)
 {
-	if (*++(*s))
-		(*s)++;
+	while (**ln && !ft_isseparator(**ln))
+		if (**ln == '\'' || **ln == '"' || **ln == '`')
+		{
+			if (ft_skip_qoutes(ln))
+				return (1);
+		}
+		else if (*(*ln) == '$' && *((*ln) + 1) == '(' && (*ln)++)
+		{
+			if (ft_skip_subsh(ln))
+				return (1);
+		}
+		else if (**ln == '\\')
+			*++(*ln) ? (*ln)++ : 0;
+		else
+			(*ln)++;
+	return (0);
 }
 
-int		ft_skip_qoutes(char **s)
+int		ft_skip_subsh(char **ln)
+{
+	(*ln)++;
+	while (**ln != ')')
+		if (!**ln
+			&& ft_dprintf(2, "42sh: %s `)'\n",
+						"unexpected EOF while looking for matching"))
+			return (1);
+		else if (**ln == '\'' || **ln == '`' || **ln == '"')
+		{
+			if (ft_skip_qoutes(ln))
+				return (1);
+		}
+		else if (**ln == '(')
+		{
+			if (ft_skip_subsh(ln))
+				return (1);
+		}
+		else if (**ln == '\\')
+			*++(*ln) ? (*ln)++ : 0;
+		else
+			(*ln)++;
+	(*ln)++;
+	return (0);
+}
+
+int		ft_skip_qoutes(char **ln)
 {
 	char	q;
 
-	q = *(*s)++;
-	while (**s != q)
-		if (!**s
-			&& ft_dprintf(2, "21sh: %s `%c'\n",
+	q = *(*ln)++;
+	while (**ln != q)
+		if (!**ln
+			&& ft_dprintf(2, "42sh: %s `%c'\n",
 						"unexpected EOF while looking for matching", q))
 			return (1);
-		else if (q == '"' && **s == '`')
-			ft_skip_qoutes(s);
-		else if (q != '\'' && **s == '\\' && (*s)++)
-			**s ? (*s)++ : 0;
+		else if (q == '"' && **ln == '`')
+			ft_skip_qoutes(ln);
+		else if (q != '\'' && **ln == '\\')
+			*++(*ln) ? (*ln)++ : 0;
+		else if (q != '\'' && **ln == '$' && *((*ln) + 1) == '(' && (*ln)++)
+		{
+			if (ft_skip_subsh(ln))
+				return (1);
+		}
 		else
-			(*s)++;
-	(*s)++;
+			(*ln)++;
+	(*ln)++;
 	return (0);
 }

@@ -87,38 +87,31 @@ char		*ft_rl_search_command(char *str, size_t len)
 	rl_search_in_path(&list, str, 0, len);
 	if (!list && write(0, "\a", 1))
 		return (NULL);
-	return (ft_rl_match_drawer(list, str));
-}
-
-static void	rl_loop_var(t_list **list, char **env, char *str, size_t len)
-{
-	char	*in;
-	char	*ptr;
-	int		i;
-
-	i = 0;
-	while (env && env[i])
-	{
-		if (!ft_strncmp(str, env[i], len))
-		{
-			in = ft_strsub(env[i], 0, ft_strchr(env[i], '=') - env[i]);
-			ptr = ft_strjoin(in, " ");
-			ft_lstadd_end(list, ft_lstnew((void *)ptr, ft_strlen(ptr) + 1));
-			free(in);
-			free(ptr);
-		}
-		i++;
-	}
+	return (ft_rl_match_drawer(ft_lstsort(list), str));
 }
 
 char		*ft_rl_search_varname(char *str, size_t len)
 {
 	t_list	*list;
+	t_var	*tmp;
+	char	*in;
+	char	*ptr;
 
 	list = NULL;
-	rl_loop_var(&list, get_environ()->envar, str, len);
-	rl_loop_var(&list, get_environ()->shvar, str, len);
+	tmp = get_environ()->shvar;
+	while (tmp)
+	{
+		if (!ft_strncmp(tmp->var, str, len))
+		{
+			in = ft_strsub(tmp->var, 0, ft_strchr(tmp->var, '=') - tmp->var);
+			ptr = ft_strjoin(in, " ");
+			ft_lstadd_end(&list, ft_lstnew((void *)ptr, ft_strlen(ptr) + 1));
+			free(in);
+			free(ptr);
+		}
+		tmp = tmp->next;
+	}
 	if (!list && write(0, "\a", 1))
 		return (NULL);
-	return (ft_rl_match_drawer(list, str));
+	return (ft_rl_match_drawer(ft_lstsort(list), str));
 }

@@ -107,7 +107,7 @@ int			ft_copy_paste(uint64_t buf)
 	if ((buf != K_PASTE && (!get_term()->st_sel || !get_term()->end_sel
 							|| get_term()->st_sel == get_term()->end_sel))
 		|| (buf == K_PASTE && !get_term()->buffer))
-		return (ft_dprintf(0, "\a"));
+		return (write(0, "\a", 1));
 	if (buf == K_CUTE)
 		line_cute();
 	else if (buf == K_PASTE)

@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnumber.c                                      :+:      :+:    :+:   */
+/*   ft_bi_bg.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlinkin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/23 13:29:17 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/08/10 15:48:13 by ahrytsen         ###   ########.fr       */
+/*   Created: 2018/08/21 14:33:48 by ahrytsen          #+#    #+#             */
+/*   Updated: 2018/08/21 16:20:00 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_sh.h"
 
-int		ft_isnumber(char *str)
+//static
+static void ft_bg_job(t_job *job)
 {
-	if (!str)
-		return (0);
-	while (*str == ' ' || *str == '\t' || *str == '\n')
-		str++;
-	if (*str == '+' || *str == '-')
-		str++;
-	return (ft_isnumeric(str));
+	(void)job;
+}
+
+int			ft_bg(char **av)
+{
+	ft_bg_job(NULL);
+	if (!*av)
+	{
+
+	}
+	else
+		while (*av)
+			;
+	return (1);
 }

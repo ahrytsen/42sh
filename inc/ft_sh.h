@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/21 01:51:10 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/21 21:50:25 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 # define FT_SH_H
 
 # include "libft.h"
-# include <sys/stat.h>
+# include <dirent.h>
+# include <fcntl.h>
+# include <pwd.h>
+# include <signal.h>
+# include <sys/dir.h>
 # include <sys/param.h>
 # include <sys/types.h>
-# include <sys/dir.h>
-# include <dirent.h>
-# include <signal.h>
-# include <fcntl.h>
+# include <sys/stat.h>
+# include <sys/wait.h>
 # include <term.h>
 # include <inttypes.h>
 # include <sys/wait.h>
@@ -50,6 +52,19 @@
 # define EXEC_BG 0
 # define EXEC_FG 1
 
+/*
+**	VARIABLES_MOD
+*/
+# define SHVAR 0
+# define ENVAR 2
+
+/*
+**	JOBS_OPTIONS
+*/
+# define J_DEF 0
+# define J_L 1
+# define J_P 2
+
 typedef struct	s_op
 {
 	int		v;
@@ -59,10 +74,18 @@ typedef struct	s_op
 	char	**exec;
 }				t_op;
 
+typedef struct	s_var
+{
+	char			attr;
+	struct s_var	*next;
+	char			*var;
+}				t_var;
+
 typedef struct	s_env
 {
 	char			**envar;
-	char			**shvar;
+	t_var			*shvar;
+	t_list			*setvar;
 	int				st;
 	pid_t			sh_pid;
 	pid_t			sh_pgid;
@@ -88,83 +111,123 @@ typedef struct	s_buf
 	struct s_buf	*next;
 }				t_buf;
 
-typedef struct	s_redir
-{
-	int		cls;
-	int		left;
-	int		nbr;
-	char	*hd;
-	char	*right;
-}				t_redir;
-
-typedef union	u_data
-{
-	char		*word;
-	t_redir		redir;
-}				t_data;
+typedef struct s_cmd	t_cmd;
+typedef struct s_ast	t_ast;
 
 typedef struct	s_token
 {
-	enum	e_ast_type {
+	enum	e_token_type
+	{
 		blank,
+		redir,
+		assignment,
 		word,
-		pipeline,
+		res_word,
+		pipeln,
+		subsh,
+		nl,
 		bg_op,
-		semicolon,
+		semi,
+		dsemi,
 		and,
-		or,
-		heredoc,
-		heredoc_t,
-		herestr,
-		open_file,
-		read_out,
-		read_out_pipe,
-		read_out_apend,
-		read_in,
-		read_in_and,
-		read_out_and,
-		and_read_out
+		or
 	}		type;
-	t_data	data;
+	char	*word;
+	union		u_data
+	{
+		enum	e_rsrv_word_type
+		{
+			not,
+			brace_on,
+			brace_off,
+			_case,
+			_do,
+			done,
+			elif,
+			_else,
+			esac,
+			fi,
+			_for,
+			_if,
+			in,
+			then,
+			until,
+			_while
+		}		res_word_type;
+		t_ast	*sub_ast;
+		struct	s_redir
+		{
+			enum	e_redir_type
+			{
+				heredoc,
+				heredoc_t,
+				herestr,
+				open_file,
+				read_out,
+				read_out_pipe,
+				read_out_apend,
+				read_in,
+				read_in_and,
+				read_out_and,
+				and_read_out
+			}		type;
+			int		cls;
+			int		left;
+			int		nbr;
+			char	*hd;
+			char	*right;
+		}		redir;
+	}		data;
 }				t_token;
 
-typedef struct	s_cmd
+struct			s_ast
 {
-	char			**av;
-	t_list			*toks;
-	pid_t			pid;
-	int				ret;
-	int				p_in;
-	int				p_out;
-	struct s_cmd	*next;
-	struct s_cmd	*prev;
-}				t_cmd;
+	enum	e_ast_type
+	{
+		cmd,
+		ast_and,
+		ast_or,
+		ast_bg,
+		ast_semi,
+		ast_dsemi
+	}		type;
+	t_list	*toks;
+	pid_t	pid;
+	int		bg;
+	struct		s_cmd
+	{
+		enum	e_cmd_type
+		{
+			cmd_smpl,
+			cmd_subsh,
+			cmd_not,
+			cmd_grp,
+			cmd_case,
+			cmd_for,
+			cmd_if,
+			cmd_until,
+			cmd_while
+		}		type;
+		char	**av;
+		t_list	*toks;
+		pid_t	pid;
+		int		ret;
+		int		p_in;
+		int		p_out;
+		t_cmd	*next;
+		t_cmd	*prev;
+	}		*cmd;
+	t_ast	*left;
+	t_ast	*right;
+	t_ast	*prev;
+};
 
 typedef struct	s_job
 {
-	pid_t			pgid;
-	t_cmd			*cmd;
+	pid_t	pgid;
+	int		st;
+	t_cmd	*cmd;
 }				t_job;
-
-typedef struct	s_ast
-{
-	t_list			*toks;
-	enum {
-		cmd = word,
-		sub_on,
-		sub_off,
-		ast_and = and,
-		ast_or = or,
-		ast_bg = bg_op,
-		ast_smcln = semicolon
-	}				type;
-	pid_t			pid;
-	int				bg;
-	t_cmd			*cmd;
-	struct s_ast	*left;
-	struct s_ast	*right;
-	struct s_ast	*prev;
-}				t_ast;
 
 /*
 **				ft_argv_exec.c
@@ -176,60 +239,19 @@ extern const t_builtins	g_builtin[];
 */
 int				main_loop(int fd);
 /*
-**				init.c
-*/
-void			ft_fildes(int mod);
-void			ft_set_sh_signal(int mod);
-void			ft_init_fd(int fd);
-void			ft_init(void);
-/*
-**				ft_tokenize.c
-*/
-t_list			*ft_tokenize(char *ln);
-/*
-**				ft_tokenize_utils.c
-*/
-void			ft_token_del(void *token, size_t size);
-int				ft_isseparator(int c);
-int				ft_check_redir(t_token *prev, t_token *next, char *ln);
-void			ft_skip_slash(char **s);
-int				ft_skip_qoutes(char **s);
-/*
-**				ft_heredoc.c
-*/
-int				ft_heredoc(t_list *toks);
-/*
-**				ft_cmdlst.c
-*/
-t_cmd			*ft_cmdlst_make(t_list **toks);
-/*
-**				ft_cmdlst_utils.c
-*/
-void			ft_cmdlst_print(t_cmd *cmdlst);
-t_cmd			*ft_cmdlst_del(t_cmd *cmdlst);
-t_cmd			*ft_cmdlst_push(t_cmd *cmdlst, t_cmd *node);
-/*
-**				ft_cmdlst_exec.c
-*/
-int				ft_cmdlst_exec(t_cmd *cmd, int bg);
-/*
-**				ft_ast.c
-*/
-char			*ft_tname(int type);
-t_ast			*ft_ast_make(t_list **toks);
-/*
-**				ft_ast_utils.c
-*/
-t_ast			*ft_ast_push(t_ast *ast, t_ast *node);
-t_ast			*ft_ast_del(t_ast *ast, int up);
-/*
-**				ft_ast_exec.c
-*/
-int				ft_ast_exec(t_ast *ast);
-/*
 **				ft_argv.c
 */
 char			**ft_argv_make(t_list *toks);
+/*
+**				ft_argv_exec.c
+*/
+int				ft_argv_exec(char **cmd, char *altpath, int bg);
+/*
+**				ft_argv_quotes.c
+*/
+void			ft_slash(t_buf **cur, char **line);
+void			ft_dquote_slash(t_buf **cur, char **line);
+void			ft_bquote_helper(t_buf **cur, char *str);
 /*
 **				ft_argv_utils.c
 */
@@ -238,15 +260,67 @@ void			ft_quote(t_buf **cur, char **line);
 void			ft_bquote(t_buf **cur, char **line, uint8_t q);
 char			*parse_argv(char *line);
 /*
-**				ft_argv_quotes.c
+**				ft_ast.c
 */
-void			ft_slash(t_buf **cur, char **line);
-void			ft_dquote_slash(t_buf **cur, char **line);
-void			ft_bquote_helper(t_buf **cur, char *str);
+int				ft_isoperator(t_token *tok);
+t_ast			*ft_ast_make(t_list **toks);
 /*
-**				ft_argv_exec.c
+**				ft_ast_debug.c
 */
-int				ft_argv_exec(char **cmd, char *altpath, int bg);
+const char		*ft_ast_name(enum e_ast_type type);
+void			ft_print_ast(t_ast *ast);
+void			ft_print_toks(t_list *toks);
+/*
+**				ft_ast_exec.c
+*/
+int				ft_ast_exec(t_ast *ast);
+/*
+**				ft_ast_utils.c
+*/
+t_ast			*ft_ast_push(t_ast *ast, t_ast *node);
+t_ast			*ft_ast_del(t_ast *ast, int up);
+/*
+**				ft_buffer.c
+*/
+void			ft_putstr_mshbuf(t_buf **buf, char *str, ssize_t len);
+void			ft_putchar_mshbuf(t_buf **buf, char c);
+char			*ft_buftostr(t_buf *buf_head);
+void			*ft_free_mshbuf(t_buf *buf);
+/*
+**				ft_cmd_print.c
+*/
+void			ft_cmd_print(t_cmd *cmd);
+/*
+**				ft_cmdlst.c
+*/
+t_cmd			*ft_cmdlst_make(t_list **toks);
+/*
+**				ft_cmdlst_exec.c
+*/
+int				ft_cmdlst_exec(t_cmd *cmd, int bg);
+/*
+**				ft_cmdlst_utils.c
+*/
+void			ft_cmdlst_print(t_cmd *cmdlst);
+t_cmd			*ft_cmdlst_del(t_cmd *cmdlst);
+t_cmd			*ft_cmdlst_push(t_cmd *cmdlst, t_cmd *node);
+/*
+**				ft_heredoc.c
+*/
+int				ft_heredoc(t_list *toks);
+/*
+**				ft_init.c
+*/
+void			ft_fildes(int mod);
+void			ft_set_sh_signal(int mod);
+void			ft_init_fd(int fd);
+void			ft_init(void);
+/*
+**				ft_jobs_utils.c
+*/
+void			ft_stop_job(t_cmd *cmd, int mod);
+int				ft_control_job(t_cmd *cmd, int bg, int cont);
+int				ft_status_job(int st);
 /*
 **				ft_redirection.c
 */
@@ -256,46 +330,96 @@ void			ft_redirection_close(t_list *toks);
 **				ft_redirection_utils.c
 */
 int				ft_redir_right_param(t_token *tok);
+int				ft_redir_check(t_token *prev, t_token *next, char *ln);
 /*
-**				ft_jobs_utils.c
+**				ft_shell_var.c
 */
-void			ft_stop_job(t_cmd *cmd, int mod);
-int				ft_control_job(t_cmd *cmd, int bg, int cont);
-int				ft_status_job(int st);
+void			ft_init_shell_var(void);
+int				ft_is_valid_name(char *str);
+char			*ft_getenv(const char *name);
+char			*ft_other_getenv(const char *name);
+void			ft_var_checker(t_list *lst);
+t_env			*get_environ(void);
 /*
-**				builtins/builtins.c
+**				ft_shell_var_toolz.c
+*/
+void			ft_add_shvar_entry(char *entry, char attr);
+t_var			*ft_get_shvar_entry(const char *name);
+int				ft_rem_shvar_entry(const char *name);
+int				ft_print_shvar(int mod);
+/*
+**				ft_shell_var_utils.c
+*/
+int				ft_set_tool(const char *name, const char *value,
+							int overwrite, int mod);
+int				ft_unset_tool(const char *name, int mod);
+int				ft_setter(const char *name, const char *value);
+/*
+**				ft_tokenize.c
+*/
+t_list			*ft_tokenize(char *ln);
+/*
+**				ft_tokenize_tools.c
+*/
+int				ft_isseparator(int c);
+void			ft_token_del(void *token, size_t size);
+const char		*ft_tname(t_token *tok);
+/*
+**				ft_tokenize_utils.c
+*/
+int				ft_get_subsh(char **ln, t_token *token);
+int				ft_skip_word(char **ln);
+int				ft_skip_qoutes(char **s);
+int				ft_skip_subsh(char **ln);
+/*
+**				ft_builtins/ft_builtins.c
 */
 int				ft_echo(char **av);
-int				ft_setenv_builtin(char **av);
-int				ft_unsetenv_builtin(char **av);
 int				ft_exit(char **av);
+int				ft_export(char **av);
 /*
-**				builtins/ft_cd.c
+**				ft_builtins/ft_bi_bg.c
+*/
+int				ft_bg(char **av);
+/*
+**				ft_builtins/ft_bi_cd.c
 */
 int				ft_cd(char **av);
 /*
-**				builtins/ft_fg.c
+**				ft_builtins/ft_bi_fg.c
 */
-int				ft_count_fg(t_list *proc);
 int				ft_fg(char **av);
 /*
-**				builtins/env_builtin.c
+**				ft_builtins/ft_bi_jobs.c
+*/
+int				ft_jobs(char **av);
+/*
+**				ft_builtins/ft_bi_jobs_tools.c
+*/
+void			ft_cmd_print_colon(t_cmd *cmdlst);
+void			ft_print_status(int st);
+/*
+**				ft_builtins/ft_bi_env.c
 */
 int				ft_env(char **av);
 int				ft_env_op(int p);
 /*
-**				env_utils.c
+**				ft_builtins/ft_bi_export.c
 */
-t_env			*get_environ(void);
-char			*ft_getenv(const char *name);
-int				ft_setenv(const char *name, const char *value, int overwrite);
-int				ft_unsetenv(const char *name);
+int				ft_export(char **av);
 /*
-**				ft_buffer.c
+**				ft_builtins/ft_bi_un_setenv.c
 */
-void			ft_putstr_mshbuf(t_buf **buf, char *str, ssize_t len);
-void			ft_putchar_mshbuf(t_buf **buf, char c);
-char			*ft_buftostr(t_buf *buf_head);
-void			*ft_free_mshbuf(t_buf *buf);
+int				ft_setenv(char **av);
+int				ft_unsetenv(char **av);
+/*
+**				ft_builtins/ft_bi_un_set.c
+*/
+int				ft_unset(char **av);
+int				ft_set_var(t_list *var, int mod);
+/*
+**				ft_builtins/ft_bi_history.c
+*/
+int				ft_history(char **av);
 
 #endif

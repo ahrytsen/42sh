@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/13 18:55:11 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:22:38 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/21 18:52:44 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,24 @@ static int	ft_ast_smcln_exec(t_ast *ast)
 
 int			ft_ast_exec(t_ast *ast)
 {
+	int		rat;
+	char	*str;
+
+	rat = 0;
 	if (!ast)
-		return (0);
+		rat = 2;
 	else if (ast->type == cmd)
-		return (ft_ast_cmd_exec(ast));
+		rat = ft_ast_cmd_exec(ast);
 	else if (ast->type == ast_and)
-		return (ft_ast_and_exec(ast));
+		rat = ft_ast_and_exec(ast);
 	else if (ast->type == ast_or)
-		return (ft_ast_or_exec(ast));
-	else if (ast->type == ast_bg || ast->type == ast_smcln)
-		return (ft_ast_smcln_exec(ast));
+		rat = ft_ast_or_exec(ast);
+	else if (ast->type == ast_bg || ast->type == ast_semi || ast->type == nl)
+		rat = ft_ast_smcln_exec(ast);
 	else
-		return (-1);
+		rat = -1;
+	str = ft_itoa(rat);
+	ft_set_tool("?", str, 1, SHVAR);
+	free(str);
+	return (rat);
 }

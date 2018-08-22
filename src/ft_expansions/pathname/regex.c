@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 16:40:23 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/08/22 15:40:53 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/22 17:02:18 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static int	check_pathname(char *s)
 {
 	while (*s)
 		if (*s == '\\')
-			ft_skip_slash(&s);
+			*++s ? s++ : 0;
 		else if (ft_strchr("'\"", *s))
 			ft_skip_qoutes(&s);
 		else if (*s == '*' || *s == '?')
