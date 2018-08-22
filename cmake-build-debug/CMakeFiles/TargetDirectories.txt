@@ -1,3 +1,0 @@
-/home/yulia/gsh/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/yulia/gsh/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/yulia/gsh/cmake-build-debug/CMakeFiles/gsh.dir
