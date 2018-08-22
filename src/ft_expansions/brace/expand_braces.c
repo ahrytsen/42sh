@@ -60,8 +60,8 @@ t_list		*expand_braces(char *s, int i, char *buf)
 
 t_list		*brace_expansion(t_list *lst)
 {
-	char buf[ft_strlen(lst->content) + 1];
-	t_list *new_lst;
+	char	buf[ft_strlen(lst->content) + 1];
+	t_list	*new_lst;
 
 	ft_bzero(buf, ft_strlen(lst->content) + 1);
 	new_lst = expand_braces(lst->content, 0, buf);

@@ -6,12 +6,21 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:02:28 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/21 08:48:26 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/22 12:46:09 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
 #include "ft_expansions.h"
+
+void	print_list(t_list *lst)
+{
+	while (lst)
+	{
+		ft_printf("%s\n", lst->content);
+		lst = lst->next;
+	}
+}
 
 t_list	*get_lst_end(t_list *lst)
 {
@@ -34,8 +43,7 @@ void	lstiter_custom(t_list **lst, t_list *(*f)(t_list *))
 		if ((new_lst = (*f)(tmp_lst)))
 		{
 			new_lst_end = get_lst_end(new_lst);
-			if (lst_prev)
-				lst_prev->next = tmp_lst->next;
+			lst_prev ? (lst_prev->next = tmp_lst->next) : (*lst = tmp_lst->next);
 			ft_lstdelone(&tmp_lst, (void (*)(void *, size_t))free);
 			ft_lstinsert(lst, lst_prev, new_lst);
 			tmp_lst = new_lst_end;

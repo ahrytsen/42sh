@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcut.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlinkin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 16:39:53 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/07/26 16:39:57 by dlinkin          ###   ########.fr       */
+/*   Updated: 2018/08/22 15:23:58 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_expansions.h"
+#include "ft_sh.h"
 
-static size_t	cut_wrds(char const *str, char c)
+static size_t	cut_wrds(char *str, char c)
 {
 	size_t	i;
 
@@ -20,7 +21,12 @@ static size_t	cut_wrds(char const *str, char c)
 	while (*str)
 	{
 		while (*str && *str != c)
-			str++;
+			if (*str == '\\')
+				ft_skip_slash(&str);
+			else if (ft_strchr("'\"", *str))
+				ft_skip_qoutes(&str);
+			else
+				++str;
 		i++;
 		while (*str == c)
 			str++;
@@ -56,25 +62,36 @@ static char		*cut_word(char const *s, size_t i)
 	return (out);
 }
 
-char			**ft_strcut(char const *s, char c)
+static size_t	skip_quote(char *s, size_t i)
+{
+	char	q;
+
+	q = *(s + i++);
+	while (*(s + i) != q && *(s + i))
+		++i;
+	return (i + 1);
+}
+
+char			**ft_strcut(char *s, char c)
 {
 	char	**out;
-	size_t	n;
 	size_t	i;
 	size_t	j;
 
-	n = cut_wrds(s, c);
-	if (!n || !(out = (char**)malloc(sizeof(char*) * n + 1)))
+	j = cut_wrds(s, c);
+	if (!j || !(out = (char**)malloc(sizeof(char*) * j + 1)))
 		return (NULL);
 	j = 0;
 	while (*s)
 	{
 		i = 0;
 		while (*(s + i) != c && *(s + i))
-			i++;
-		if (!(out[j] = cut_word(s, i)))
+			if (*(s + i) == '\\')
+				i += 2;
+			else
+				i = ft_strchr("'\"", *(s + i)) ? skip_quote(s, i) : i + 1;
+		if (!(out[j++] = cut_word(s, i)))
 			return (cut_free(out));
-		j++;
 		s += i;
 		while (*s == c)
 			s++;

@@ -6,36 +6,37 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 16:40:23 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/08/21 08:53:54 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/22 15:40:53 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_expansions.h"
+#include "ft_sh.h"
 
-int		ft_regex_str(char *pattern, char *str, char q)
+int			ft_regex_str(char *pat, char *str, char q)
 {
 	int		sl;
 
 	sl = 0;
-	if (!*pattern && !*str)
+	if (!*pat && !*str)
 		return (1);
-	if (*pattern == '\\' && pattern++)
+	if (*pat == '\\' && pat++)
 		sl = 1;
-	else if ((*pattern == '\'' || *pattern == '"') && !q)
-		q = *pattern++;
-	else if (*pattern == q)
+	else if ((*pat == '\'' || *pat == '"') && !q)
+		q = *pat++;
+	else if (*pat == q)
 	{
 		q = 0;
-		++pattern;
+		++pat;
 	}
-	if (!q && !sl && *pattern == '[' && *str)
-		return (ft_regex_brackets(pattern + 1, str, q));
-	if (!q && !sl && *pattern == '*' && *str)
-		return (ft_regex_str(pattern + 1, str, q) || ft_regex_str(pattern, str + 1, q));
-	if (!q && !sl && *pattern == '*' && !*str)
-		return (ft_regex_str(pattern + 1, str, q));
-	if ((!q && !sl && (*pattern == '?' && *str)) || (*pattern == *str))
-		return (ft_regex_str(pattern + 1, str + 1, q));
+	if (!q && !sl && *pat == '[' && *str)
+		return (ft_regex_brackets(pat + 1, str, q));
+	if (!q && !sl && *pat == '*' && *str)
+		return (ft_regex_str(pat + 1, str, q) || ft_regex_str(pat, str + 1, q));
+	if (!q && !sl && *pat == '*' && !*str)
+		return (ft_regex_str(pat + 1, str, q));
+	if ((!q && !sl && (*pat == '?' && *str)) || (*pat == *str))
+		return (ft_regex_str(pat + 1, str + 1, q));
 	return (0);
 }
 
@@ -76,28 +77,40 @@ static void	recurcive(t_list **list, char *path, char **names, char *directory)
 	closedir(papka);
 }
 
-t_list	*expand_pathname(t_list *lst)
+static int	check_pathname(char *s)
+{
+	while (*s)
+		if (*s == '\\')
+			ft_skip_slash(&s);
+		else if (ft_strchr("'\"", *s))
+			ft_skip_qoutes(&s);
+		else if (*s == '*' || *s == '?')
+			return (1);
+		else
+			++s;
+	return (0);
+}
+
+t_list		*expand_pathname(t_list *lst)
 {
 	char	**names;
 	char	path[1024];
 	t_list	*list;
-	char	*pattern;
 
-	pattern = lst->content;
-	names = ft_strcut(pattern, '/');
+	if (!check_pathname(lst->content))
+		return (NULL);
+	names = ft_strcut(lst->content, '/');
 	list = NULL;
-	if (*pattern != '/')
+	if (*(char *)lst->content != '/')
 	{
 		path[0] = 0;
 		recurcive(&list, path, names, ".");
-
 	}
 	else
 	{
 		path[0] = '/';
 		path[1] = 0;
 		recurcive(&list, path, names + 1, "/");
-
 	}
 	list = ft_lstsort(list);
 	ft_free_arr((void **)names);

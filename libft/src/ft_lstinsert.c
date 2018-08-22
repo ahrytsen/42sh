@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 17:11:42 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/21 08:20:54 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/22 12:23:18 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstinsert(t_list **lst, t_list *node, t_list *ins)
 {
 	t_list	*tmp;
 
-	if (!lst || !*lst || !ins)
+	if (!ins)
 		return ;
 	if (!node)
 		ft_lstadd_list(lst, ins);
