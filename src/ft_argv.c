@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:02:28 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/22 18:16:30 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/22 18:17:34 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,5 @@ char	**ft_argv_make(t_list *toks)
 	}
 	ft_lstdel(&tmp, (void (*)(void *, size_t))free);
 	tmp = NULL;
-	system("leaks 42sh --quiet");
 	return (av);
 }
