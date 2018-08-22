@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 12:44:11 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/20 13:40:26 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/22 17:54:57 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ static void	get_vals(char *pattern, char *buf, char *buf_q, char *brackets_end)
 
 int			ft_regex_brackets(char *pattern, char *str, char q)
 {
-	char	*brackets_end;
+	char	*brackets_end = NULL;
 	char	buf[ft_strlen(pattern) + 1];
 	char	buf_q[ft_strlen(pattern) + 1];
 
@@ -103,7 +103,7 @@ int			ft_regex_brackets(char *pattern, char *str, char q)
 		get_vals(pattern, buf, buf_q, brackets_end);
 		return (check_vals(buf, buf_q, brackets_end, str));
 	}
-	else if (*(pattern + 1) != ']')
+	else if (*(pattern + 1) == ']' && *(pattern + 2) == '\0')
 		return (0);
 	else if (*pattern == *str)
 		return (ft_regex_str(pattern + 1, str + 1, q));

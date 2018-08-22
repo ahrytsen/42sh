@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:02:28 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/22 16:41:51 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/22 18:16:30 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,6 @@ t_list	*perform_expansions(t_list *toks)
 	// quote removal
 	// syntax: ft_lstiter(&lst, quote_removal_func);
 	// your quote_removal_func prototype must be as it required in lstiter prototype
-
-//	t_list *tmp = lst;
-//	while (tmp)
-//	{
-//		ft_printf("%s\n", tmp->content);
-//		tmp = tmp->next;
-//	}
-//	ft_printf("\n\n");
 	return (lst);
 }
 
@@ -91,9 +83,11 @@ char	**ft_argv_make(t_list *toks)
 	int		size;
 	char	**av;
 	t_list	*lst;
+	t_list	*tmp;
 
 	i = 0;
 	lst = perform_expansions(toks);
+	tmp = lst;
 	size = ft_lstsize(lst) + 1;
 	if (!(av = ft_memalloc(size * sizeof(av))))
 		return (NULL);
@@ -106,5 +100,8 @@ char	**ft_argv_make(t_list *toks)
 		}
 		lst = lst->next;
 	}
+	ft_lstdel(&tmp, (void (*)(void *, size_t))free);
+	tmp = NULL;
+	system("leaks 42sh --quiet");
 	return (av);
 }

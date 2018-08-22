@@ -84,7 +84,7 @@ static int	check_pathname(char *s)
 			*++s ? s++ : 0;
 		else if (ft_strchr("'\"", *s))
 			ft_skip_qoutes(&s);
-		else if (*s == '*' || *s == '?')
+		else if (*s == '*' || *s == '?' || *s == '[')
 			return (1);
 		else
 			++s;
