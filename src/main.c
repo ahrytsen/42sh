@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/11 19:53:36 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/21 20:29:37 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/23 11:13:45 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int			main(int ac, char **av)
 	int	ret;
 
 	i = 1;
-	ft_init();
+	ft_init(ac, av);
 	if (ac < 2)
 		return (main_loop(STDIN_FILENO));
 	while (i < ac)

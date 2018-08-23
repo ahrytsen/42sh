@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 02:34:57 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/23 07:01:12 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/23 08:08:11 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static char	*get_user_homedir(char *s)
 	struct passwd	*pwd;
 
 	tmp = s;
-	while (*s != '/' && *s)
+	while ((*s != ':' && *s != '/') && *s)
 		++s;
 	tmp = ft_strsub(tmp, 0, s - tmp);
 	pwd = getpwnam(tmp);
@@ -44,7 +44,7 @@ static char	*get_curr_user(char *s)
 {
 	char	*tmp;
 
-	if (!(tmp = ft_getenv("HOME")))
+	if (!(tmp = ft_other_getenv("HOME")))
 			tmp = getpwuid(getuid())->pw_dir;
 	return (normalnyy_strjoin(tmp, s));
 }
@@ -59,10 +59,10 @@ void	expand_tilde(t_list *lst)
 	++s;
 	if (*s == '/' || !*s)
 		s = get_curr_user(s);
-	else if (*s == '-' && (!*(s + 1) || *(s + 1) == '/'))
-		s = normalnyy_strjoin(ft_getenv("OLDPWD"), s + 1);
-	else if (*s == '+' && (!*(s + 1) || *(s + 1) == '/'))
-		s = normalnyy_strjoin(ft_getenv("PWD"), s + 1);
+	else if (*s == '-' && ft_strchr("/:", *(s + 1)))
+		s = normalnyy_strjoin(ft_other_getenv("OLDPWD"), s + 1);
+	else if (*s == '+' && ft_strchr("/:", *(s + 1)))
+		s = normalnyy_strjoin(ft_other_getenv("PWD"), s + 1);
 	else
 		s = get_user_homedir(s);
 	if (s)

@@ -107,7 +107,9 @@ SRC			=	ft_argv.c\
 				ft_expansions/pathname/check_brackets.c\
 				ft_expansions/pathname/ft_strcut.c\
 				\
-				ft_expansions/tilde/tilde.c
+				ft_expansions/tilde/tilde.c\
+				\
+				ft_expansions/variable/substitute_variable.c
 
 OBJ			=	$(addprefix $(DIROBJ), $(SRC:.c=.o))
 
@@ -152,6 +154,7 @@ $(DIROBJ):
 	mkdir -p $(DIROBJ)/ft_expansions/brace
 	mkdir -p $(DIROBJ)/ft_expansions/pathname
 	mkdir -p $(DIROBJ)/ft_expansions/tilde
+	mkdir -p $(DIROBJ)/ft_expansions/variable
 
 lib:
 	@$(MAKE) -C $(SUB_MAKE) -j3

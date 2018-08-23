@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_argv_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:25:12 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:22:13 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/23 10:46:30 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void		ft_bquote(t_buf **cur, char **line, uint8_t q)
 	**line ? (*line)++ : 0;
 }
 
-static void	ft_dquote(t_buf **cur, char **line)
+void	ft_dquote(t_buf **cur, char **line)
 {
 	while (**line != '"')
 		if (!**line)
@@ -102,8 +102,6 @@ char		*parse_argv(char *line)
 	while (*line)
 		if (*line == '\\' && line++)
 			ft_slash(&cur, &line);
-		else if (*line == '$' && line++)
-			parse_dollar(&cur, &line);
 		else if (*line == '\'' && line++)
 			ft_quote(&cur, &line);
 		else if (*line == '`' || *line == '"')

@@ -2817,9 +2817,489 @@ CMakeFiles/gsh.dir/libft/src/get_next_line.c.o.provides: CMakeFiles/gsh.dir/libf
 CMakeFiles/gsh.dir/libft/src/get_next_line.c.o.provides.build: CMakeFiles/gsh.dir/libft/src/get_next_line.c.o
 
 
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.o: ../src/ft_builtins/ft_bi_bg.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building C object CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.o   -c /home/yulia/gsh/src/ft_builtins/ft_bi_bg.c
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_builtins/ft_bi_bg.c > CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.i
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_builtins/ft_bi_bg.c -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.s
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.o.provides: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.o: ../src/ft_builtins/ft_bi_cd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building C object CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.o   -c /home/yulia/gsh/src/ft_builtins/ft_bi_cd.c
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_builtins/ft_bi_cd.c > CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.i
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_builtins/ft_bi_cd.c -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.s
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.o.provides: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.o: ../src/ft_builtins/ft_bi_env.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building C object CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.o   -c /home/yulia/gsh/src/ft_builtins/ft_bi_env.c
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_builtins/ft_bi_env.c > CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.i
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_builtins/ft_bi_env.c -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.s
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.o.provides: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.o: ../src/ft_builtins/ft_bi_export.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building C object CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.o   -c /home/yulia/gsh/src/ft_builtins/ft_bi_export.c
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_builtins/ft_bi_export.c > CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.i
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_builtins/ft_bi_export.c -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.s
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.o.provides: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.o: ../src/ft_builtins/ft_bi_fg.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building C object CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.o   -c /home/yulia/gsh/src/ft_builtins/ft_bi_fg.c
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_builtins/ft_bi_fg.c > CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.i
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_builtins/ft_bi_fg.c -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.s
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.o.provides: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.o: ../src/ft_builtins/ft_bi_history.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building C object CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.o   -c /home/yulia/gsh/src/ft_builtins/ft_bi_history.c
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_builtins/ft_bi_history.c > CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.i
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_builtins/ft_bi_history.c -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.s
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.o.provides: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.o: ../src/ft_builtins/ft_bi_jobs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building C object CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.o   -c /home/yulia/gsh/src/ft_builtins/ft_bi_jobs.c
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_builtins/ft_bi_jobs.c > CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.i
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_builtins/ft_bi_jobs.c -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.s
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.o.provides: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.o: ../src/ft_builtins/ft_bi_jobs_tools.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building C object CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.o   -c /home/yulia/gsh/src/ft_builtins/ft_bi_jobs_tools.c
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_builtins/ft_bi_jobs_tools.c > CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.i
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_builtins/ft_bi_jobs_tools.c -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.s
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.o.provides: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.o: ../src/ft_builtins/ft_bi_un_set.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building C object CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.o   -c /home/yulia/gsh/src/ft_builtins/ft_bi_un_set.c
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_builtins/ft_bi_un_set.c > CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.i
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_builtins/ft_bi_un_set.c -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.s
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.o.provides: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.o: ../src/ft_builtins/ft_bi_un_setenv.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Building C object CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.o   -c /home/yulia/gsh/src/ft_builtins/ft_bi_un_setenv.c
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_builtins/ft_bi_un_setenv.c > CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.i
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_builtins/ft_bi_un_setenv.c -o CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.s
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.o.provides: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.o: ../src/ft_builtins/ft_builtins.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Building C object CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.o   -c /home/yulia/gsh/src/ft_builtins/ft_builtins.c
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_builtins/ft_builtins.c > CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.i
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_builtins/ft_builtins.c -o CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.s
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.o.provides: CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o: ../src/ft_expansions/brace/auxiliary_funcs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Building C object CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o   -c /home/yulia/gsh/src/ft_expansions/brace/auxiliary_funcs.c
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_expansions/brace/auxiliary_funcs.c > CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.i
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_expansions/brace/auxiliary_funcs.c -o CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.s
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o.provides: CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o: ../src/ft_expansions/brace/expand_braces.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_128) "Building C object CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o   -c /home/yulia/gsh/src/ft_expansions/brace/expand_braces.c
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_expansions/brace/expand_braces.c > CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.i
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_expansions/brace/expand_braces.c -o CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.s
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o.provides: CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o: ../src/ft_expansions/brace/fill_buf.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_129) "Building C object CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o   -c /home/yulia/gsh/src/ft_expansions/brace/fill_buf.c
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_expansions/brace/fill_buf.c > CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.i
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_expansions/brace/fill_buf.c -o CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.s
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o.provides: CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o: ../src/ft_expansions/brace/get_range.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_130) "Building C object CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o   -c /home/yulia/gsh/src/ft_expansions/brace/get_range.c
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_expansions/brace/get_range.c > CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.i
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_expansions/brace/get_range.c -o CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.s
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o.provides: CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o: ../src/ft_expansions/brace/get_seq.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_131) "Building C object CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o   -c /home/yulia/gsh/src/ft_expansions/brace/get_seq.c
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_expansions/brace/get_seq.c > CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.i
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_expansions/brace/get_seq.c -o CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.s
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o.provides: CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.o: ../src/ft_expansions/pathname/brackets.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_132) "Building C object CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.o   -c /home/yulia/gsh/src/ft_expansions/pathname/brackets.c
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_expansions/pathname/brackets.c > CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.i
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_expansions/pathname/brackets.c -o CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.s
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.o.provides: CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.o: ../src/ft_expansions/pathname/check_brackets.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_133) "Building C object CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.o   -c /home/yulia/gsh/src/ft_expansions/pathname/check_brackets.c
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_expansions/pathname/check_brackets.c > CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.i
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_expansions/pathname/check_brackets.c -o CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.s
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.o.provides: CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.o: ../src/ft_expansions/pathname/ft_strcut.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_134) "Building C object CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.o   -c /home/yulia/gsh/src/ft_expansions/pathname/ft_strcut.c
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_expansions/pathname/ft_strcut.c > CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.i
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_expansions/pathname/ft_strcut.c -o CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.s
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.o.provides: CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.o: ../src/ft_expansions/pathname/regex.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_135) "Building C object CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.o   -c /home/yulia/gsh/src/ft_expansions/pathname/regex.c
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_expansions/pathname/regex.c > CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.i
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_expansions/pathname/regex.c -o CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.s
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.o.provides: CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.o
+
+
 CMakeFiles/gsh.dir/src/ft_expansions/tilde/tilde.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/src/ft_expansions/tilde/tilde.c.o: ../src/ft_expansions/tilde/tilde.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building C object CMakeFiles/gsh.dir/src/ft_expansions/tilde/tilde.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_136) "Building C object CMakeFiles/gsh.dir/src/ft_expansions/tilde/tilde.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_expansions/tilde/tilde.c.o   -c /home/yulia/gsh/src/ft_expansions/tilde/tilde.c
 
 CMakeFiles/gsh.dir/src/ft_expansions/tilde/tilde.c.i: cmake_force
@@ -2841,9 +3321,849 @@ CMakeFiles/gsh.dir/src/ft_expansions/tilde/tilde.c.o.provides: CMakeFiles/gsh.di
 CMakeFiles/gsh.dir/src/ft_expansions/tilde/tilde.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_expansions/tilde/tilde.c.o
 
 
+CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.o: ../src/ft_readline/ft_readline.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_137) "Building C object CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.o   -c /home/yulia/gsh/src/ft_readline/ft_readline.c
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_readline/ft_readline.c > CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.i
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_readline/ft_readline.c -o CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.s
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.o.provides: CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.o: ../src/ft_readline/ft_rl_action.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_138) "Building C object CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.o   -c /home/yulia/gsh/src/ft_readline/ft_rl_action.c
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_readline/ft_rl_action.c > CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.i
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_readline/ft_rl_action.c -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.s
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.o.provides: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.o: ../src/ft_readline/ft_rl_autocomp_cmd_and_var.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_139) "Building C object CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.o   -c /home/yulia/gsh/src/ft_readline/ft_rl_autocomp_cmd_and_var.c
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_readline/ft_rl_autocomp_cmd_and_var.c > CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.i
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_readline/ft_rl_autocomp_cmd_and_var.c -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.s
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.o.provides: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.o: ../src/ft_readline/ft_rl_autocomp_drawer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_140) "Building C object CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.o   -c /home/yulia/gsh/src/ft_readline/ft_rl_autocomp_drawer.c
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_readline/ft_rl_autocomp_drawer.c > CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.i
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_readline/ft_rl_autocomp_drawer.c -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.s
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.o.provides: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.o: ../src/ft_readline/ft_rl_autocomp_filenames.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_141) "Building C object CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.o   -c /home/yulia/gsh/src/ft_readline/ft_rl_autocomp_filenames.c
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_readline/ft_rl_autocomp_filenames.c > CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.i
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_readline/ft_rl_autocomp_filenames.c -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.s
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.o.provides: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.o: ../src/ft_readline/ft_rl_autocomplit.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_142) "Building C object CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.o   -c /home/yulia/gsh/src/ft_readline/ft_rl_autocomplit.c
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_readline/ft_rl_autocomplit.c > CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.i
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_readline/ft_rl_autocomplit.c -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.s
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.o.provides: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.o: ../src/ft_readline/ft_rl_check_line.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_143) "Building C object CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.o   -c /home/yulia/gsh/src/ft_readline/ft_rl_check_line.c
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_readline/ft_rl_check_line.c > CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.i
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_readline/ft_rl_check_line.c -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.s
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.o.provides: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.o: ../src/ft_readline/ft_rl_cursor.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_144) "Building C object CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.o   -c /home/yulia/gsh/src/ft_readline/ft_rl_cursor.c
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_readline/ft_rl_cursor.c > CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.i
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_readline/ft_rl_cursor.c -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.s
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.o.provides: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.o: ../src/ft_readline/ft_rl_exclamation.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_145) "Building C object CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.o   -c /home/yulia/gsh/src/ft_readline/ft_rl_exclamation.c
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_readline/ft_rl_exclamation.c > CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.i
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_readline/ft_rl_exclamation.c -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.s
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.o.provides: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.o: ../src/ft_readline/ft_rl_helper.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_146) "Building C object CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.o   -c /home/yulia/gsh/src/ft_readline/ft_rl_helper.c
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_readline/ft_rl_helper.c > CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.i
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_readline/ft_rl_helper.c -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.s
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.o.provides: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.o: ../src/ft_readline/ft_rl_highlight.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_147) "Building C object CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.o   -c /home/yulia/gsh/src/ft_readline/ft_rl_highlight.c
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_readline/ft_rl_highlight.c > CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.i
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_readline/ft_rl_highlight.c -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.s
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.o.provides: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.o: ../src/ft_readline/ft_rl_history.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_148) "Building C object CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.o   -c /home/yulia/gsh/src/ft_readline/ft_rl_history.c
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_readline/ft_rl_history.c > CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.i
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_readline/ft_rl_history.c -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.s
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.o.provides: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.o: ../src/ft_readline/ft_rl_init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_149) "Building C object CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.o   -c /home/yulia/gsh/src/ft_readline/ft_rl_init.c
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_readline/ft_rl_init.c > CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.i
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_readline/ft_rl_init.c -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.s
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.o.provides: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.o: ../src/ft_readline/ft_rl_line.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_150) "Building C object CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.o   -c /home/yulia/gsh/src/ft_readline/ft_rl_line.c
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_readline/ft_rl_line.c > CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.i
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_readline/ft_rl_line.c -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.s
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.o.provides: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.o: ../src/ft_readline/ft_rl_line_edit.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_151) "Building C object CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.o   -c /home/yulia/gsh/src/ft_readline/ft_rl_line_edit.c
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_readline/ft_rl_line_edit.c > CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.i
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_readline/ft_rl_line_edit.c -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.s
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.o.provides: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.o: ../src/ft_readline/ft_rl_prompt.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_152) "Building C object CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.o   -c /home/yulia/gsh/src/ft_readline/ft_rl_prompt.c
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_readline/ft_rl_prompt.c > CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.i
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_readline/ft_rl_prompt.c -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.s
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.o.provides: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.o: ../src/ft_readline/ft_rl_read.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_153) "Building C object CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.o   -c /home/yulia/gsh/src/ft_readline/ft_rl_read.c
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_readline/ft_rl_read.c > CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.i
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_readline/ft_rl_read.c -o CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.s
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.o.provides: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_argv.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_argv.c.o: ../src/ft_argv.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_154) "Building C object CMakeFiles/gsh.dir/src/ft_argv.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_argv.c.o   -c /home/yulia/gsh/src/ft_argv.c
+
+CMakeFiles/gsh.dir/src/ft_argv.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_argv.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_argv.c > CMakeFiles/gsh.dir/src/ft_argv.c.i
+
+CMakeFiles/gsh.dir/src/ft_argv.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_argv.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_argv.c -o CMakeFiles/gsh.dir/src/ft_argv.c.s
+
+CMakeFiles/gsh.dir/src/ft_argv.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_argv.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_argv.c.o.provides: CMakeFiles/gsh.dir/src/ft_argv.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_argv.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_argv.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_argv.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_argv_exec.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_argv_exec.c.o: ../src/ft_argv_exec.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_155) "Building C object CMakeFiles/gsh.dir/src/ft_argv_exec.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_argv_exec.c.o   -c /home/yulia/gsh/src/ft_argv_exec.c
+
+CMakeFiles/gsh.dir/src/ft_argv_exec.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_argv_exec.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_argv_exec.c > CMakeFiles/gsh.dir/src/ft_argv_exec.c.i
+
+CMakeFiles/gsh.dir/src/ft_argv_exec.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_argv_exec.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_argv_exec.c -o CMakeFiles/gsh.dir/src/ft_argv_exec.c.s
+
+CMakeFiles/gsh.dir/src/ft_argv_exec.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_argv_exec.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_argv_exec.c.o.provides: CMakeFiles/gsh.dir/src/ft_argv_exec.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv_exec.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_argv_exec.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_argv_exec.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_argv_exec.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_argv_quotes.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_argv_quotes.c.o: ../src/ft_argv_quotes.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_156) "Building C object CMakeFiles/gsh.dir/src/ft_argv_quotes.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_argv_quotes.c.o   -c /home/yulia/gsh/src/ft_argv_quotes.c
+
+CMakeFiles/gsh.dir/src/ft_argv_quotes.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_argv_quotes.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_argv_quotes.c > CMakeFiles/gsh.dir/src/ft_argv_quotes.c.i
+
+CMakeFiles/gsh.dir/src/ft_argv_quotes.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_argv_quotes.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_argv_quotes.c -o CMakeFiles/gsh.dir/src/ft_argv_quotes.c.s
+
+CMakeFiles/gsh.dir/src/ft_argv_quotes.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_argv_quotes.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_argv_quotes.c.o.provides: CMakeFiles/gsh.dir/src/ft_argv_quotes.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv_quotes.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_argv_quotes.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_argv_quotes.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_argv_quotes.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_argv_utils.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_argv_utils.c.o: ../src/ft_argv_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_157) "Building C object CMakeFiles/gsh.dir/src/ft_argv_utils.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_argv_utils.c.o   -c /home/yulia/gsh/src/ft_argv_utils.c
+
+CMakeFiles/gsh.dir/src/ft_argv_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_argv_utils.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_argv_utils.c > CMakeFiles/gsh.dir/src/ft_argv_utils.c.i
+
+CMakeFiles/gsh.dir/src/ft_argv_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_argv_utils.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_argv_utils.c -o CMakeFiles/gsh.dir/src/ft_argv_utils.c.s
+
+CMakeFiles/gsh.dir/src/ft_argv_utils.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_argv_utils.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_argv_utils.c.o.provides: CMakeFiles/gsh.dir/src/ft_argv_utils.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv_utils.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_argv_utils.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_argv_utils.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_argv_utils.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_ast.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_ast.c.o: ../src/ft_ast.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_158) "Building C object CMakeFiles/gsh.dir/src/ft_ast.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_ast.c.o   -c /home/yulia/gsh/src/ft_ast.c
+
+CMakeFiles/gsh.dir/src/ft_ast.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_ast.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_ast.c > CMakeFiles/gsh.dir/src/ft_ast.c.i
+
+CMakeFiles/gsh.dir/src/ft_ast.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_ast.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_ast.c -o CMakeFiles/gsh.dir/src/ft_ast.c.s
+
+CMakeFiles/gsh.dir/src/ft_ast.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_ast.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_ast.c.o.provides: CMakeFiles/gsh.dir/src/ft_ast.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_ast.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_ast.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_ast.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_ast.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_ast_debug.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_ast_debug.c.o: ../src/ft_ast_debug.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_159) "Building C object CMakeFiles/gsh.dir/src/ft_ast_debug.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_ast_debug.c.o   -c /home/yulia/gsh/src/ft_ast_debug.c
+
+CMakeFiles/gsh.dir/src/ft_ast_debug.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_ast_debug.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_ast_debug.c > CMakeFiles/gsh.dir/src/ft_ast_debug.c.i
+
+CMakeFiles/gsh.dir/src/ft_ast_debug.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_ast_debug.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_ast_debug.c -o CMakeFiles/gsh.dir/src/ft_ast_debug.c.s
+
+CMakeFiles/gsh.dir/src/ft_ast_debug.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_ast_debug.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_ast_debug.c.o.provides: CMakeFiles/gsh.dir/src/ft_ast_debug.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_ast_debug.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_ast_debug.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_ast_debug.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_ast_debug.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_ast_exec.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_ast_exec.c.o: ../src/ft_ast_exec.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_160) "Building C object CMakeFiles/gsh.dir/src/ft_ast_exec.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_ast_exec.c.o   -c /home/yulia/gsh/src/ft_ast_exec.c
+
+CMakeFiles/gsh.dir/src/ft_ast_exec.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_ast_exec.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_ast_exec.c > CMakeFiles/gsh.dir/src/ft_ast_exec.c.i
+
+CMakeFiles/gsh.dir/src/ft_ast_exec.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_ast_exec.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_ast_exec.c -o CMakeFiles/gsh.dir/src/ft_ast_exec.c.s
+
+CMakeFiles/gsh.dir/src/ft_ast_exec.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_ast_exec.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_ast_exec.c.o.provides: CMakeFiles/gsh.dir/src/ft_ast_exec.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_ast_exec.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_ast_exec.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_ast_exec.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_ast_exec.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_ast_utils.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_ast_utils.c.o: ../src/ft_ast_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_161) "Building C object CMakeFiles/gsh.dir/src/ft_ast_utils.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_ast_utils.c.o   -c /home/yulia/gsh/src/ft_ast_utils.c
+
+CMakeFiles/gsh.dir/src/ft_ast_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_ast_utils.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_ast_utils.c > CMakeFiles/gsh.dir/src/ft_ast_utils.c.i
+
+CMakeFiles/gsh.dir/src/ft_ast_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_ast_utils.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_ast_utils.c -o CMakeFiles/gsh.dir/src/ft_ast_utils.c.s
+
+CMakeFiles/gsh.dir/src/ft_ast_utils.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_ast_utils.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_ast_utils.c.o.provides: CMakeFiles/gsh.dir/src/ft_ast_utils.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_ast_utils.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_ast_utils.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_ast_utils.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_ast_utils.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_buffer.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_buffer.c.o: ../src/ft_buffer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_162) "Building C object CMakeFiles/gsh.dir/src/ft_buffer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_buffer.c.o   -c /home/yulia/gsh/src/ft_buffer.c
+
+CMakeFiles/gsh.dir/src/ft_buffer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_buffer.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_buffer.c > CMakeFiles/gsh.dir/src/ft_buffer.c.i
+
+CMakeFiles/gsh.dir/src/ft_buffer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_buffer.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_buffer.c -o CMakeFiles/gsh.dir/src/ft_buffer.c.s
+
+CMakeFiles/gsh.dir/src/ft_buffer.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_buffer.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_buffer.c.o.provides: CMakeFiles/gsh.dir/src/ft_buffer.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_buffer.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_buffer.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_buffer.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_buffer.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_cmd_print.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_cmd_print.c.o: ../src/ft_cmd_print.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_163) "Building C object CMakeFiles/gsh.dir/src/ft_cmd_print.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_cmd_print.c.o   -c /home/yulia/gsh/src/ft_cmd_print.c
+
+CMakeFiles/gsh.dir/src/ft_cmd_print.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_cmd_print.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_cmd_print.c > CMakeFiles/gsh.dir/src/ft_cmd_print.c.i
+
+CMakeFiles/gsh.dir/src/ft_cmd_print.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_cmd_print.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_cmd_print.c -o CMakeFiles/gsh.dir/src/ft_cmd_print.c.s
+
+CMakeFiles/gsh.dir/src/ft_cmd_print.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_cmd_print.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_cmd_print.c.o.provides: CMakeFiles/gsh.dir/src/ft_cmd_print.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_cmd_print.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_cmd_print.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_cmd_print.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_cmd_print.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_cmdlst.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_cmdlst.c.o: ../src/ft_cmdlst.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_164) "Building C object CMakeFiles/gsh.dir/src/ft_cmdlst.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_cmdlst.c.o   -c /home/yulia/gsh/src/ft_cmdlst.c
+
+CMakeFiles/gsh.dir/src/ft_cmdlst.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_cmdlst.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_cmdlst.c > CMakeFiles/gsh.dir/src/ft_cmdlst.c.i
+
+CMakeFiles/gsh.dir/src/ft_cmdlst.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_cmdlst.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_cmdlst.c -o CMakeFiles/gsh.dir/src/ft_cmdlst.c.s
+
+CMakeFiles/gsh.dir/src/ft_cmdlst.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_cmdlst.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_cmdlst.c.o.provides: CMakeFiles/gsh.dir/src/ft_cmdlst.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_cmdlst.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_cmdlst.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_cmdlst.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_cmdlst.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.o: ../src/ft_cmdlst_exec.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_165) "Building C object CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.o   -c /home/yulia/gsh/src/ft_cmdlst_exec.c
+
+CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_cmdlst_exec.c > CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.i
+
+CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_cmdlst_exec.c -o CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.s
+
+CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.o.provides: CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.o: ../src/ft_cmdlst_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_166) "Building C object CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.o   -c /home/yulia/gsh/src/ft_cmdlst_utils.c
+
+CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_cmdlst_utils.c > CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.i
+
+CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_cmdlst_utils.c -o CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.s
+
+CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.o.provides: CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_heredoc.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_heredoc.c.o: ../src/ft_heredoc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_167) "Building C object CMakeFiles/gsh.dir/src/ft_heredoc.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_heredoc.c.o   -c /home/yulia/gsh/src/ft_heredoc.c
+
+CMakeFiles/gsh.dir/src/ft_heredoc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_heredoc.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_heredoc.c > CMakeFiles/gsh.dir/src/ft_heredoc.c.i
+
+CMakeFiles/gsh.dir/src/ft_heredoc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_heredoc.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_heredoc.c -o CMakeFiles/gsh.dir/src/ft_heredoc.c.s
+
+CMakeFiles/gsh.dir/src/ft_heredoc.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_heredoc.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_heredoc.c.o.provides: CMakeFiles/gsh.dir/src/ft_heredoc.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_heredoc.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_heredoc.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_heredoc.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_heredoc.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_init.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_init.c.o: ../src/ft_init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_168) "Building C object CMakeFiles/gsh.dir/src/ft_init.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_init.c.o   -c /home/yulia/gsh/src/ft_init.c
+
+CMakeFiles/gsh.dir/src/ft_init.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_init.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_init.c > CMakeFiles/gsh.dir/src/ft_init.c.i
+
+CMakeFiles/gsh.dir/src/ft_init.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_init.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_init.c -o CMakeFiles/gsh.dir/src/ft_init.c.s
+
+CMakeFiles/gsh.dir/src/ft_init.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_init.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_init.c.o.provides: CMakeFiles/gsh.dir/src/ft_init.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_init.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_init.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_init.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_init.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_jobs_utils.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_jobs_utils.c.o: ../src/ft_jobs_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_169) "Building C object CMakeFiles/gsh.dir/src/ft_jobs_utils.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_jobs_utils.c.o   -c /home/yulia/gsh/src/ft_jobs_utils.c
+
+CMakeFiles/gsh.dir/src/ft_jobs_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_jobs_utils.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_jobs_utils.c > CMakeFiles/gsh.dir/src/ft_jobs_utils.c.i
+
+CMakeFiles/gsh.dir/src/ft_jobs_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_jobs_utils.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_jobs_utils.c -o CMakeFiles/gsh.dir/src/ft_jobs_utils.c.s
+
+CMakeFiles/gsh.dir/src/ft_jobs_utils.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_jobs_utils.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_jobs_utils.c.o.provides: CMakeFiles/gsh.dir/src/ft_jobs_utils.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_jobs_utils.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_jobs_utils.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_jobs_utils.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_jobs_utils.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_redirection.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_redirection.c.o: ../src/ft_redirection.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_170) "Building C object CMakeFiles/gsh.dir/src/ft_redirection.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_redirection.c.o   -c /home/yulia/gsh/src/ft_redirection.c
+
+CMakeFiles/gsh.dir/src/ft_redirection.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_redirection.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_redirection.c > CMakeFiles/gsh.dir/src/ft_redirection.c.i
+
+CMakeFiles/gsh.dir/src/ft_redirection.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_redirection.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_redirection.c -o CMakeFiles/gsh.dir/src/ft_redirection.c.s
+
+CMakeFiles/gsh.dir/src/ft_redirection.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_redirection.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_redirection.c.o.provides: CMakeFiles/gsh.dir/src/ft_redirection.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_redirection.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_redirection.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_redirection.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_redirection.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_redirection_utils.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_redirection_utils.c.o: ../src/ft_redirection_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_171) "Building C object CMakeFiles/gsh.dir/src/ft_redirection_utils.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_redirection_utils.c.o   -c /home/yulia/gsh/src/ft_redirection_utils.c
+
+CMakeFiles/gsh.dir/src/ft_redirection_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_redirection_utils.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_redirection_utils.c > CMakeFiles/gsh.dir/src/ft_redirection_utils.c.i
+
+CMakeFiles/gsh.dir/src/ft_redirection_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_redirection_utils.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_redirection_utils.c -o CMakeFiles/gsh.dir/src/ft_redirection_utils.c.s
+
+CMakeFiles/gsh.dir/src/ft_redirection_utils.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_redirection_utils.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_redirection_utils.c.o.provides: CMakeFiles/gsh.dir/src/ft_redirection_utils.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_redirection_utils.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_redirection_utils.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_redirection_utils.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_redirection_utils.c.o
+
+
 CMakeFiles/gsh.dir/src/ft_shell_var.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/src/ft_shell_var.c.o: ../src/ft_shell_var.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building C object CMakeFiles/gsh.dir/src/ft_shell_var.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_172) "Building C object CMakeFiles/gsh.dir/src/ft_shell_var.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_shell_var.c.o   -c /home/yulia/gsh/src/ft_shell_var.c
 
 CMakeFiles/gsh.dir/src/ft_shell_var.c.i: cmake_force
@@ -2867,7 +4187,7 @@ CMakeFiles/gsh.dir/src/ft_shell_var.c.o.provides.build: CMakeFiles/gsh.dir/src/f
 
 CMakeFiles/gsh.dir/src/ft_shell_var_toolz.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/src/ft_shell_var_toolz.c.o: ../src/ft_shell_var_toolz.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building C object CMakeFiles/gsh.dir/src/ft_shell_var_toolz.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_173) "Building C object CMakeFiles/gsh.dir/src/ft_shell_var_toolz.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_shell_var_toolz.c.o   -c /home/yulia/gsh/src/ft_shell_var_toolz.c
 
 CMakeFiles/gsh.dir/src/ft_shell_var_toolz.c.i: cmake_force
@@ -2891,7 +4211,7 @@ CMakeFiles/gsh.dir/src/ft_shell_var_toolz.c.o.provides.build: CMakeFiles/gsh.dir
 
 CMakeFiles/gsh.dir/src/ft_shell_var_utils.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/src/ft_shell_var_utils.c.o: ../src/ft_shell_var_utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building C object CMakeFiles/gsh.dir/src/ft_shell_var_utils.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_174) "Building C object CMakeFiles/gsh.dir/src/ft_shell_var_utils.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_shell_var_utils.c.o   -c /home/yulia/gsh/src/ft_shell_var_utils.c
 
 CMakeFiles/gsh.dir/src/ft_shell_var_utils.c.i: cmake_force
@@ -2911,6 +4231,126 @@ CMakeFiles/gsh.dir/src/ft_shell_var_utils.c.o.provides: CMakeFiles/gsh.dir/src/f
 .PHONY : CMakeFiles/gsh.dir/src/ft_shell_var_utils.c.o.provides
 
 CMakeFiles/gsh.dir/src/ft_shell_var_utils.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_shell_var_utils.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_tokenize.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_tokenize.c.o: ../src/ft_tokenize.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_175) "Building C object CMakeFiles/gsh.dir/src/ft_tokenize.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_tokenize.c.o   -c /home/yulia/gsh/src/ft_tokenize.c
+
+CMakeFiles/gsh.dir/src/ft_tokenize.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_tokenize.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_tokenize.c > CMakeFiles/gsh.dir/src/ft_tokenize.c.i
+
+CMakeFiles/gsh.dir/src/ft_tokenize.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_tokenize.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_tokenize.c -o CMakeFiles/gsh.dir/src/ft_tokenize.c.s
+
+CMakeFiles/gsh.dir/src/ft_tokenize.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_tokenize.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_tokenize.c.o.provides: CMakeFiles/gsh.dir/src/ft_tokenize.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_tokenize.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_tokenize.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_tokenize.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_tokenize.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o: ../src/ft_tokenize_tools.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_176) "Building C object CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o   -c /home/yulia/gsh/src/ft_tokenize_tools.c
+
+CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_tokenize_tools.c > CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.i
+
+CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_tokenize_tools.c -o CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.s
+
+CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o.provides: CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o: ../src/ft_tokenize_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_177) "Building C object CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o   -c /home/yulia/gsh/src/ft_tokenize_utils.c
+
+CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_tokenize_utils.c > CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.i
+
+CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_tokenize_utils.c -o CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.s
+
+CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o.provides: CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o
+
+
+CMakeFiles/gsh.dir/src/main.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/main.c.o: ../src/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_178) "Building C object CMakeFiles/gsh.dir/src/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/main.c.o   -c /home/yulia/gsh/src/main.c
+
+CMakeFiles/gsh.dir/src/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/main.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/main.c > CMakeFiles/gsh.dir/src/main.c.i
+
+CMakeFiles/gsh.dir/src/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/main.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/main.c -o CMakeFiles/gsh.dir/src/main.c.s
+
+CMakeFiles/gsh.dir/src/main.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/main.c.o.requires
+
+CMakeFiles/gsh.dir/src/main.c.o.provides: CMakeFiles/gsh.dir/src/main.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/main.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/main.c.o.provides
+
+CMakeFiles/gsh.dir/src/main.c.o.provides.build: CMakeFiles/gsh.dir/src/main.c.o
+
+
+CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o: CMakeFiles/gsh.dir/flags.make
+CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o: ../src/ft_expansions/variable/substitute_variable.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_179) "Building C object CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o   -c /home/yulia/gsh/src/ft_expansions/variable/substitute_variable.c
+
+CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/ft_expansions/variable/substitute_variable.c > CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.i
+
+CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/ft_expansions/variable/substitute_variable.c -o CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.s
+
+CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o.requires:
+
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o.requires
+
+CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o.provides: CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o.requires
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o.provides.build
+.PHONY : CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o.provides
+
+CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o
 
 
 # Object files for target gsh
@@ -3030,10 +4470,70 @@ gsh_OBJECTS = \
 "CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.o" \
 "CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o" \
 "CMakeFiles/gsh.dir/libft/src/get_next_line.c.o" \
+"CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.o" \
+"CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.o" \
+"CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.o" \
+"CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.o" \
+"CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.o" \
+"CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.o" \
+"CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.o" \
+"CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.o" \
+"CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.o" \
+"CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.o" \
+"CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.o" \
+"CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o" \
+"CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o" \
+"CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o" \
+"CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o" \
+"CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o" \
+"CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.o" \
+"CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.o" \
+"CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.o" \
+"CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.o" \
 "CMakeFiles/gsh.dir/src/ft_expansions/tilde/tilde.c.o" \
+"CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.o" \
+"CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.o" \
+"CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.o" \
+"CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.o" \
+"CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.o" \
+"CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.o" \
+"CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.o" \
+"CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.o" \
+"CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.o" \
+"CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.o" \
+"CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.o" \
+"CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.o" \
+"CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.o" \
+"CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.o" \
+"CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.o" \
+"CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.o" \
+"CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.o" \
+"CMakeFiles/gsh.dir/src/ft_argv.c.o" \
+"CMakeFiles/gsh.dir/src/ft_argv_exec.c.o" \
+"CMakeFiles/gsh.dir/src/ft_argv_quotes.c.o" \
+"CMakeFiles/gsh.dir/src/ft_argv_utils.c.o" \
+"CMakeFiles/gsh.dir/src/ft_ast.c.o" \
+"CMakeFiles/gsh.dir/src/ft_ast_debug.c.o" \
+"CMakeFiles/gsh.dir/src/ft_ast_exec.c.o" \
+"CMakeFiles/gsh.dir/src/ft_ast_utils.c.o" \
+"CMakeFiles/gsh.dir/src/ft_buffer.c.o" \
+"CMakeFiles/gsh.dir/src/ft_cmd_print.c.o" \
+"CMakeFiles/gsh.dir/src/ft_cmdlst.c.o" \
+"CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.o" \
+"CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.o" \
+"CMakeFiles/gsh.dir/src/ft_heredoc.c.o" \
+"CMakeFiles/gsh.dir/src/ft_init.c.o" \
+"CMakeFiles/gsh.dir/src/ft_jobs_utils.c.o" \
+"CMakeFiles/gsh.dir/src/ft_redirection.c.o" \
+"CMakeFiles/gsh.dir/src/ft_redirection_utils.c.o" \
 "CMakeFiles/gsh.dir/src/ft_shell_var.c.o" \
 "CMakeFiles/gsh.dir/src/ft_shell_var_toolz.c.o" \
-"CMakeFiles/gsh.dir/src/ft_shell_var_utils.c.o"
+"CMakeFiles/gsh.dir/src/ft_shell_var_utils.c.o" \
+"CMakeFiles/gsh.dir/src/ft_tokenize.c.o" \
+"CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o" \
+"CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o" \
+"CMakeFiles/gsh.dir/src/main.c.o" \
+"CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o"
 
 # External object files for target gsh
 gsh_EXTERNAL_OBJECTS =
@@ -3153,13 +4653,73 @@ gsh: CMakeFiles/gsh.dir/libft/src/ft_toupper.c.o
 gsh: CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.o
 gsh: CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o
 gsh: CMakeFiles/gsh.dir/libft/src/get_next_line.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.o
 gsh: CMakeFiles/gsh.dir/src/ft_expansions/tilde/tilde.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_argv.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_argv_exec.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_argv_quotes.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_argv_utils.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_ast.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_ast_debug.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_ast_exec.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_ast_utils.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_buffer.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_cmd_print.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_cmdlst.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_heredoc.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_init.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_jobs_utils.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_redirection.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_redirection_utils.c.o
 gsh: CMakeFiles/gsh.dir/src/ft_shell_var.c.o
 gsh: CMakeFiles/gsh.dir/src/ft_shell_var_toolz.c.o
 gsh: CMakeFiles/gsh.dir/src/ft_shell_var_utils.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_tokenize.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o
+gsh: CMakeFiles/gsh.dir/src/main.c.o
+gsh: CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o
 gsh: CMakeFiles/gsh.dir/build.make
 gsh: CMakeFiles/gsh.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Linking C executable gsh"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_180) "Linking C executable gsh"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gsh.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -3282,10 +4842,70 @@ CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_toupper.c.o.require
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_ultoa_base.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/ft_wcharlen.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/libft/src/get_next_line.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_bg.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_export.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_history.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_jobs_tools.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_set.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_un_setenv.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_expansions/tilde/tilde.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_exclamation.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_argv.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_argv_exec.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_argv_quotes.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_argv_utils.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_ast.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_ast_debug.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_ast_exec.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_ast_utils.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_buffer.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_cmd_print.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_cmdlst.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_heredoc.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_init.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_jobs_utils.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_redirection.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_redirection_utils.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_shell_var.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_shell_var_toolz.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_shell_var_utils.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_tokenize.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/main.c.o.requires
+CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o.requires
 
 .PHONY : CMakeFiles/gsh.dir/requires
 

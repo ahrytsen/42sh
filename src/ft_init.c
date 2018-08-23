@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 13:59:58 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/21 18:06:01 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/23 11:12:28 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,13 +79,15 @@ void		ft_init_fd(int fd)
 		ft_if_interactive();
 }
 
-void		ft_init(void)
+void		ft_init(int ac, char **av)
 {
 	extern char	**environ;
 	int			shlvl;
 	char		*tmp;
 
 	ft_bzero(get_environ(), sizeof(t_env));
+	if ((get_environ()->argv = ft_strdup_arr(av)))
+		get_environ()->argc = ac - 1;
 	ft_fildes(FD_BACKUP);
 	get_environ()->envar = ft_strdup_arr(environ);
 	ft_init_shell_var();

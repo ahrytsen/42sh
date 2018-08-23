@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:02:28 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/23 02:15:41 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/23 11:49:21 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,11 @@ t_list	*perform_expansions(t_list *toks)
 	}
 	lstiter_custom(&lst, brace_expansion);
 	ft_lstiter(lst, expand_tilde);
-	// other expansions
-	// syntax: ft_lstiter(&lst, expansion_func);
-	// your expansion_func prototype must be as it required in lstiter prototype
+	ft_lstiter(lst, substitute_variable);
+
+	// Command Substitution
+
 	lstiter_custom(&lst, expand_pathname);
-	// quote removal
-	// syntax: ft_lstiter(&lst, quote_removal_func);
-	// your quote_removal_func prototype must be as it required in lstiter prototype
 
 	return (lst);
 }

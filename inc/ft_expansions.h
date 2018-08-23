@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 14:22:50 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/23 06:50:38 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/23 11:46:27 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,19 @@ t_list		*expand_pathname(t_list *lst);
 */
 int			ft_regex_brackets(char *pattern, char *str, char q);
 /*
-*		ft_strcut.c
+**		ft_strcut.c
 */
 char		**ft_strcut(char *s, char c);
 /*
-*		check_brackets.c
+**		check_brackets.c
 */
 char		*check_brackets(char *pattern);
 /*
-*		tilde.c
+**		tilde.c
 */
-void expand_tilde(t_list *lst);
+void		expand_tilde(t_list *lst);
+/*
+**		substitute_variable.c
+*/
+void		substitute_variable(t_list *lst);
 #endif

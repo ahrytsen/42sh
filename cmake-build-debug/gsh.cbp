@@ -442,7 +442,175 @@
 		<Unit filename="/home/yulia/gsh/libft/src/get_next_line.c">
 			<Option target="gsh"/>
 		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_argv.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_argv_exec.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_argv_quotes.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_argv_utils.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_ast.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_ast_debug.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_ast_exec.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_ast_utils.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_buffer.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_builtins/ft_bi_bg.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_builtins/ft_bi_cd.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_builtins/ft_bi_env.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_builtins/ft_bi_export.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_builtins/ft_bi_fg.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_builtins/ft_bi_history.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_builtins/ft_bi_jobs.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_builtins/ft_bi_jobs_tools.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_builtins/ft_bi_un_set.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_builtins/ft_bi_un_setenv.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_builtins/ft_builtins.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_cmd_print.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_cmdlst.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_cmdlst_exec.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_cmdlst_utils.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_expansions/brace/auxiliary_funcs.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_expansions/brace/expand_braces.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_expansions/brace/fill_buf.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_expansions/brace/get_range.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_expansions/brace/get_seq.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_expansions/pathname/brackets.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_expansions/pathname/check_brackets.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_expansions/pathname/ft_strcut.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_expansions/pathname/regex.c">
+			<Option target="gsh"/>
+		</Unit>
 		<Unit filename="/home/yulia/gsh/src/ft_expansions/tilde/tilde.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_expansions/variable/substitute_variable.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_heredoc.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_init.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_jobs_utils.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_readline/ft_readline.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_readline/ft_rl_action.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_readline/ft_rl_autocomp_cmd_and_var.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_readline/ft_rl_autocomp_drawer.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_readline/ft_rl_autocomp_filenames.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_readline/ft_rl_autocomplit.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_readline/ft_rl_check_line.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_readline/ft_rl_cursor.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_readline/ft_rl_exclamation.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_readline/ft_rl_helper.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_readline/ft_rl_highlight.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_readline/ft_rl_history.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_readline/ft_rl_init.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_readline/ft_rl_line.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_readline/ft_rl_line_edit.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_readline/ft_rl_prompt.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_readline/ft_rl_read.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_redirection.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_redirection_utils.c">
 			<Option target="gsh"/>
 		</Unit>
 		<Unit filename="/home/yulia/gsh/src/ft_shell_var.c">
@@ -452,6 +620,18 @@
 			<Option target="gsh"/>
 		</Unit>
 		<Unit filename="/home/yulia/gsh/src/ft_shell_var_utils.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_tokenize.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_tokenize_tools.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_tokenize_utils.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/home/yulia/gsh/src/main.c">
 			<Option target="gsh"/>
 		</Unit>
 		<Unit filename="/home/yulia/gsh/CMakeLists.txt">
