@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 14:13:02 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/21 21:54:30 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/23 13:18:16 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ static void	job_show(t_job *job, int options, int cur, int id)
 			ft_cmd_print_colon(cmds);
 		else
 			ft_cmdlst_print(cmds);
+		ft_printf("\n");
 	}
 }
 

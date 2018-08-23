@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 18:37:54 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/21 18:50:47 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/23 13:28:59 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,10 @@ void		ft_stop_job(t_cmd *cmd, int mod)
 		job->pgid = get_environ()->pgid;
 		if (mod)
 		{
-			ft_dprintf(2, "\n[%d] + %d suspended\t",
+			ft_printf("\n[%d] + %d suspended\t",
 						ft_lstsize(get_environ()->jobs), job->cmd->pid);
 			ft_cmdlst_print(job->cmd);
+			ft_printf("\n");
 		}
 	}
 	else

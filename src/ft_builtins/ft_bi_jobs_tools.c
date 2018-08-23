@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 21:48:14 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/21 21:48:45 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/23 13:17:47 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void		ft_cmd_print_colon(t_cmd *cmdlst)
 		ft_cmd_print(cmdlst);
 		cmdlst = cmdlst->next;
 	}
-	ft_printf("\n");
 }
 
 void		ft_print_status(int st)
