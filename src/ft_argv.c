@@ -66,6 +66,7 @@ t_list	*perform_expansions(t_list *toks)
 						toks = toks->next;
 	}
 	lstiter_custom(&lst, brace_expansion);
+	ft_lstiter(lst, expand_tilde);
 	// other expansions
 	// syntax: ft_lstiter(&lst, expansion_func);
 	// your expansion_func prototype must be as it required in lstiter prototype

@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 14:22:50 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/22 15:22:44 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/23 06:50:38 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,8 @@ char		**ft_strcut(char *s, char c);
 *		check_brackets.c
 */
 char		*check_brackets(char *pattern);
+/*
+*		tilde.c
+*/
+void expand_tilde(t_list *lst);
 #endif

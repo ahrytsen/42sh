@@ -104,9 +104,6 @@ char		*parse_argv(char *line)
 			ft_slash(&cur, &line);
 		else if (*line == '$' && line++)
 			parse_dollar(&cur, &line);
-		else if (*line == '~' && line == tmp
-				&& (*(line + 1) == '/' || !*(line + 1)) && line++)
-			ft_putstr_mshbuf(&cur, ft_getenv("HOME"), -1);
 		else if (*line == '\'' && line++)
 			ft_quote(&cur, &line);
 		else if (*line == '`' || *line == '"')
