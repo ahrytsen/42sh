@@ -771,32 +771,59 @@ libft/src/ft_isnumber.c.s:
 	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isnumber.c.s
 .PHONY : libft/src/ft_isnumber.c.s
 
-libft/src/ft_isnumeric_str.o: libft/src/ft_isnumeric_str.c.o
+libft/src/ft_isnumeric.o: libft/src/ft_isnumeric.c.o
 
-.PHONY : libft/src/ft_isnumeric_str.o
+.PHONY : libft/src/ft_isnumeric.o
 
 # target to build an object file
-libft/src/ft_isnumeric_str.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isnumeric_str.c.o
-.PHONY : libft/src/ft_isnumeric_str.c.o
+libft/src/ft_isnumeric.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isnumeric.c.o
+.PHONY : libft/src/ft_isnumeric.c.o
 
-libft/src/ft_isnumeric_str.i: libft/src/ft_isnumeric_str.c.i
+libft/src/ft_isnumeric.i: libft/src/ft_isnumeric.c.i
 
-.PHONY : libft/src/ft_isnumeric_str.i
+.PHONY : libft/src/ft_isnumeric.i
 
 # target to preprocess a source file
-libft/src/ft_isnumeric_str.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isnumeric_str.c.i
-.PHONY : libft/src/ft_isnumeric_str.c.i
+libft/src/ft_isnumeric.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isnumeric.c.i
+.PHONY : libft/src/ft_isnumeric.c.i
 
-libft/src/ft_isnumeric_str.s: libft/src/ft_isnumeric_str.c.s
+libft/src/ft_isnumeric.s: libft/src/ft_isnumeric.c.s
 
-.PHONY : libft/src/ft_isnumeric_str.s
+.PHONY : libft/src/ft_isnumeric.s
 
 # target to generate assembly for a file
-libft/src/ft_isnumeric_str.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isnumeric_str.c.s
-.PHONY : libft/src/ft_isnumeric_str.c.s
+libft/src/ft_isnumeric.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isnumeric.c.s
+.PHONY : libft/src/ft_isnumeric.c.s
+
+libft/src/ft_isnumeric_n.o: libft/src/ft_isnumeric_n.c.o
+
+.PHONY : libft/src/ft_isnumeric_n.o
+
+# target to build an object file
+libft/src/ft_isnumeric_n.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isnumeric_n.c.o
+.PHONY : libft/src/ft_isnumeric_n.c.o
+
+libft/src/ft_isnumeric_n.i: libft/src/ft_isnumeric_n.c.i
+
+.PHONY : libft/src/ft_isnumeric_n.i
+
+# target to preprocess a source file
+libft/src/ft_isnumeric_n.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isnumeric_n.c.i
+.PHONY : libft/src/ft_isnumeric_n.c.i
+
+libft/src/ft_isnumeric_n.s: libft/src/ft_isnumeric_n.c.s
+
+.PHONY : libft/src/ft_isnumeric_n.s
+
+# target to generate assembly for a file
+libft/src/ft_isnumeric_n.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/ft_isnumeric_n.c.s
+.PHONY : libft/src/ft_isnumeric_n.c.s
 
 libft/src/ft_isprint.o: libft/src/ft_isprint.c.o
 
@@ -3201,1355 +3228,113 @@ libft/src/get_next_line.c.s:
 	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/libft/src/get_next_line.c.s
 .PHONY : libft/src/get_next_line.c.s
 
-src/ft_argv.o: src/ft_argv.c.o
+src/ft_expansions/tilde/tilde.o: src/ft_expansions/tilde/tilde.c.o
 
-.PHONY : src/ft_argv.o
-
-# target to build an object file
-src/ft_argv.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv.c.o
-.PHONY : src/ft_argv.c.o
-
-src/ft_argv.i: src/ft_argv.c.i
-
-.PHONY : src/ft_argv.i
-
-# target to preprocess a source file
-src/ft_argv.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv.c.i
-.PHONY : src/ft_argv.c.i
-
-src/ft_argv.s: src/ft_argv.c.s
-
-.PHONY : src/ft_argv.s
-
-# target to generate assembly for a file
-src/ft_argv.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv.c.s
-.PHONY : src/ft_argv.c.s
-
-src/ft_argv_exec.o: src/ft_argv_exec.c.o
-
-.PHONY : src/ft_argv_exec.o
+.PHONY : src/ft_expansions/tilde/tilde.o
 
 # target to build an object file
-src/ft_argv_exec.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv_exec.c.o
-.PHONY : src/ft_argv_exec.c.o
+src/ft_expansions/tilde/tilde.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/tilde/tilde.c.o
+.PHONY : src/ft_expansions/tilde/tilde.c.o
 
-src/ft_argv_exec.i: src/ft_argv_exec.c.i
+src/ft_expansions/tilde/tilde.i: src/ft_expansions/tilde/tilde.c.i
 
-.PHONY : src/ft_argv_exec.i
+.PHONY : src/ft_expansions/tilde/tilde.i
 
 # target to preprocess a source file
-src/ft_argv_exec.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv_exec.c.i
-.PHONY : src/ft_argv_exec.c.i
+src/ft_expansions/tilde/tilde.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/tilde/tilde.c.i
+.PHONY : src/ft_expansions/tilde/tilde.c.i
 
-src/ft_argv_exec.s: src/ft_argv_exec.c.s
+src/ft_expansions/tilde/tilde.s: src/ft_expansions/tilde/tilde.c.s
 
-.PHONY : src/ft_argv_exec.s
+.PHONY : src/ft_expansions/tilde/tilde.s
 
 # target to generate assembly for a file
-src/ft_argv_exec.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv_exec.c.s
-.PHONY : src/ft_argv_exec.c.s
+src/ft_expansions/tilde/tilde.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/tilde/tilde.c.s
+.PHONY : src/ft_expansions/tilde/tilde.c.s
 
-src/ft_argv_quotes.o: src/ft_argv_quotes.c.o
+src/ft_shell_var.o: src/ft_shell_var.c.o
 
-.PHONY : src/ft_argv_quotes.o
+.PHONY : src/ft_shell_var.o
 
 # target to build an object file
-src/ft_argv_quotes.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv_quotes.c.o
-.PHONY : src/ft_argv_quotes.c.o
+src/ft_shell_var.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_shell_var.c.o
+.PHONY : src/ft_shell_var.c.o
 
-src/ft_argv_quotes.i: src/ft_argv_quotes.c.i
+src/ft_shell_var.i: src/ft_shell_var.c.i
 
-.PHONY : src/ft_argv_quotes.i
+.PHONY : src/ft_shell_var.i
 
 # target to preprocess a source file
-src/ft_argv_quotes.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv_quotes.c.i
-.PHONY : src/ft_argv_quotes.c.i
+src/ft_shell_var.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_shell_var.c.i
+.PHONY : src/ft_shell_var.c.i
 
-src/ft_argv_quotes.s: src/ft_argv_quotes.c.s
+src/ft_shell_var.s: src/ft_shell_var.c.s
 
-.PHONY : src/ft_argv_quotes.s
+.PHONY : src/ft_shell_var.s
 
 # target to generate assembly for a file
-src/ft_argv_quotes.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv_quotes.c.s
-.PHONY : src/ft_argv_quotes.c.s
+src/ft_shell_var.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_shell_var.c.s
+.PHONY : src/ft_shell_var.c.s
 
-src/ft_argv_utils.o: src/ft_argv_utils.c.o
+src/ft_shell_var_toolz.o: src/ft_shell_var_toolz.c.o
 
-.PHONY : src/ft_argv_utils.o
+.PHONY : src/ft_shell_var_toolz.o
 
 # target to build an object file
-src/ft_argv_utils.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv_utils.c.o
-.PHONY : src/ft_argv_utils.c.o
+src/ft_shell_var_toolz.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_shell_var_toolz.c.o
+.PHONY : src/ft_shell_var_toolz.c.o
 
-src/ft_argv_utils.i: src/ft_argv_utils.c.i
+src/ft_shell_var_toolz.i: src/ft_shell_var_toolz.c.i
 
-.PHONY : src/ft_argv_utils.i
+.PHONY : src/ft_shell_var_toolz.i
 
 # target to preprocess a source file
-src/ft_argv_utils.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv_utils.c.i
-.PHONY : src/ft_argv_utils.c.i
+src/ft_shell_var_toolz.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_shell_var_toolz.c.i
+.PHONY : src/ft_shell_var_toolz.c.i
 
-src/ft_argv_utils.s: src/ft_argv_utils.c.s
+src/ft_shell_var_toolz.s: src/ft_shell_var_toolz.c.s
 
-.PHONY : src/ft_argv_utils.s
+.PHONY : src/ft_shell_var_toolz.s
 
 # target to generate assembly for a file
-src/ft_argv_utils.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv_utils.c.s
-.PHONY : src/ft_argv_utils.c.s
+src/ft_shell_var_toolz.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_shell_var_toolz.c.s
+.PHONY : src/ft_shell_var_toolz.c.s
 
-src/ft_ast.o: src/ft_ast.c.o
+src/ft_shell_var_utils.o: src/ft_shell_var_utils.c.o
 
-.PHONY : src/ft_ast.o
+.PHONY : src/ft_shell_var_utils.o
 
 # target to build an object file
-src/ft_ast.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_ast.c.o
-.PHONY : src/ft_ast.c.o
+src/ft_shell_var_utils.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_shell_var_utils.c.o
+.PHONY : src/ft_shell_var_utils.c.o
 
-src/ft_ast.i: src/ft_ast.c.i
+src/ft_shell_var_utils.i: src/ft_shell_var_utils.c.i
 
-.PHONY : src/ft_ast.i
-
-# target to preprocess a source file
-src/ft_ast.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_ast.c.i
-.PHONY : src/ft_ast.c.i
-
-src/ft_ast.s: src/ft_ast.c.s
-
-.PHONY : src/ft_ast.s
-
-# target to generate assembly for a file
-src/ft_ast.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_ast.c.s
-.PHONY : src/ft_ast.c.s
-
-src/ft_ast_exec.o: src/ft_ast_exec.c.o
-
-.PHONY : src/ft_ast_exec.o
-
-# target to build an object file
-src/ft_ast_exec.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_ast_exec.c.o
-.PHONY : src/ft_ast_exec.c.o
-
-src/ft_ast_exec.i: src/ft_ast_exec.c.i
-
-.PHONY : src/ft_ast_exec.i
+.PHONY : src/ft_shell_var_utils.i
 
 # target to preprocess a source file
-src/ft_ast_exec.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_ast_exec.c.i
-.PHONY : src/ft_ast_exec.c.i
+src/ft_shell_var_utils.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_shell_var_utils.c.i
+.PHONY : src/ft_shell_var_utils.c.i
 
-src/ft_ast_exec.s: src/ft_ast_exec.c.s
+src/ft_shell_var_utils.s: src/ft_shell_var_utils.c.s
 
-.PHONY : src/ft_ast_exec.s
-
-# target to generate assembly for a file
-src/ft_ast_exec.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_ast_exec.c.s
-.PHONY : src/ft_ast_exec.c.s
-
-src/ft_ast_utils.o: src/ft_ast_utils.c.o
-
-.PHONY : src/ft_ast_utils.o
-
-# target to build an object file
-src/ft_ast_utils.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_ast_utils.c.o
-.PHONY : src/ft_ast_utils.c.o
-
-src/ft_ast_utils.i: src/ft_ast_utils.c.i
-
-.PHONY : src/ft_ast_utils.i
-
-# target to preprocess a source file
-src/ft_ast_utils.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_ast_utils.c.i
-.PHONY : src/ft_ast_utils.c.i
-
-src/ft_ast_utils.s: src/ft_ast_utils.c.s
-
-.PHONY : src/ft_ast_utils.s
+.PHONY : src/ft_shell_var_utils.s
 
 # target to generate assembly for a file
-src/ft_ast_utils.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_ast_utils.c.s
-.PHONY : src/ft_ast_utils.c.s
-
-src/ft_buffer.o: src/ft_buffer.c.o
-
-.PHONY : src/ft_buffer.o
-
-# target to build an object file
-src/ft_buffer.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_buffer.c.o
-.PHONY : src/ft_buffer.c.o
-
-src/ft_buffer.i: src/ft_buffer.c.i
-
-.PHONY : src/ft_buffer.i
-
-# target to preprocess a source file
-src/ft_buffer.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_buffer.c.i
-.PHONY : src/ft_buffer.c.i
-
-src/ft_buffer.s: src/ft_buffer.c.s
-
-.PHONY : src/ft_buffer.s
-
-# target to generate assembly for a file
-src/ft_buffer.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_buffer.c.s
-.PHONY : src/ft_buffer.c.s
-
-src/ft_builtins/ft_bi_cd.o: src/ft_builtins/ft_bi_cd.c.o
-
-.PHONY : src/ft_builtins/ft_bi_cd.o
-
-# target to build an object file
-src/ft_builtins/ft_bi_cd.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.o
-.PHONY : src/ft_builtins/ft_bi_cd.c.o
-
-src/ft_builtins/ft_bi_cd.i: src/ft_builtins/ft_bi_cd.c.i
-
-.PHONY : src/ft_builtins/ft_bi_cd.i
-
-# target to preprocess a source file
-src/ft_builtins/ft_bi_cd.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.i
-.PHONY : src/ft_builtins/ft_bi_cd.c.i
-
-src/ft_builtins/ft_bi_cd.s: src/ft_builtins/ft_bi_cd.c.s
-
-.PHONY : src/ft_builtins/ft_bi_cd.s
-
-# target to generate assembly for a file
-src/ft_builtins/ft_bi_cd.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_cd.c.s
-.PHONY : src/ft_builtins/ft_bi_cd.c.s
-
-src/ft_builtins/ft_bi_env.o: src/ft_builtins/ft_bi_env.c.o
-
-.PHONY : src/ft_builtins/ft_bi_env.o
-
-# target to build an object file
-src/ft_builtins/ft_bi_env.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.o
-.PHONY : src/ft_builtins/ft_bi_env.c.o
-
-src/ft_builtins/ft_bi_env.i: src/ft_builtins/ft_bi_env.c.i
-
-.PHONY : src/ft_builtins/ft_bi_env.i
-
-# target to preprocess a source file
-src/ft_builtins/ft_bi_env.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.i
-.PHONY : src/ft_builtins/ft_bi_env.c.i
-
-src/ft_builtins/ft_bi_env.s: src/ft_builtins/ft_bi_env.c.s
-
-.PHONY : src/ft_builtins/ft_bi_env.s
-
-# target to generate assembly for a file
-src/ft_builtins/ft_bi_env.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_env.c.s
-.PHONY : src/ft_builtins/ft_bi_env.c.s
-
-src/ft_builtins/ft_bi_fg.o: src/ft_builtins/ft_bi_fg.c.o
-
-.PHONY : src/ft_builtins/ft_bi_fg.o
-
-# target to build an object file
-src/ft_builtins/ft_bi_fg.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.o
-.PHONY : src/ft_builtins/ft_bi_fg.c.o
-
-src/ft_builtins/ft_bi_fg.i: src/ft_builtins/ft_bi_fg.c.i
-
-.PHONY : src/ft_builtins/ft_bi_fg.i
-
-# target to preprocess a source file
-src/ft_builtins/ft_bi_fg.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.i
-.PHONY : src/ft_builtins/ft_bi_fg.c.i
-
-src/ft_builtins/ft_bi_fg.s: src/ft_builtins/ft_bi_fg.c.s
-
-.PHONY : src/ft_builtins/ft_bi_fg.s
-
-# target to generate assembly for a file
-src/ft_builtins/ft_bi_fg.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_fg.c.s
-.PHONY : src/ft_builtins/ft_bi_fg.c.s
-
-src/ft_builtins/ft_builtins.o: src/ft_builtins/ft_builtins.c.o
-
-.PHONY : src/ft_builtins/ft_builtins.o
-
-# target to build an object file
-src/ft_builtins/ft_builtins.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.o
-.PHONY : src/ft_builtins/ft_builtins.c.o
-
-src/ft_builtins/ft_builtins.i: src/ft_builtins/ft_builtins.c.i
-
-.PHONY : src/ft_builtins/ft_builtins.i
-
-# target to preprocess a source file
-src/ft_builtins/ft_builtins.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.i
-.PHONY : src/ft_builtins/ft_builtins.c.i
-
-src/ft_builtins/ft_builtins.s: src/ft_builtins/ft_builtins.c.s
-
-.PHONY : src/ft_builtins/ft_builtins.s
-
-# target to generate assembly for a file
-src/ft_builtins/ft_builtins.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_builtins/ft_builtins.c.s
-.PHONY : src/ft_builtins/ft_builtins.c.s
-
-src/ft_cmdlst.o: src/ft_cmdlst.c.o
-
-.PHONY : src/ft_cmdlst.o
-
-# target to build an object file
-src/ft_cmdlst.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_cmdlst.c.o
-.PHONY : src/ft_cmdlst.c.o
-
-src/ft_cmdlst.i: src/ft_cmdlst.c.i
-
-.PHONY : src/ft_cmdlst.i
-
-# target to preprocess a source file
-src/ft_cmdlst.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_cmdlst.c.i
-.PHONY : src/ft_cmdlst.c.i
-
-src/ft_cmdlst.s: src/ft_cmdlst.c.s
-
-.PHONY : src/ft_cmdlst.s
-
-# target to generate assembly for a file
-src/ft_cmdlst.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_cmdlst.c.s
-.PHONY : src/ft_cmdlst.c.s
-
-src/ft_cmdlst_exec.o: src/ft_cmdlst_exec.c.o
-
-.PHONY : src/ft_cmdlst_exec.o
-
-# target to build an object file
-src/ft_cmdlst_exec.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.o
-.PHONY : src/ft_cmdlst_exec.c.o
-
-src/ft_cmdlst_exec.i: src/ft_cmdlst_exec.c.i
-
-.PHONY : src/ft_cmdlst_exec.i
-
-# target to preprocess a source file
-src/ft_cmdlst_exec.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.i
-.PHONY : src/ft_cmdlst_exec.c.i
-
-src/ft_cmdlst_exec.s: src/ft_cmdlst_exec.c.s
-
-.PHONY : src/ft_cmdlst_exec.s
-
-# target to generate assembly for a file
-src/ft_cmdlst_exec.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_cmdlst_exec.c.s
-.PHONY : src/ft_cmdlst_exec.c.s
-
-src/ft_cmdlst_utils.o: src/ft_cmdlst_utils.c.o
-
-.PHONY : src/ft_cmdlst_utils.o
-
-# target to build an object file
-src/ft_cmdlst_utils.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.o
-.PHONY : src/ft_cmdlst_utils.c.o
-
-src/ft_cmdlst_utils.i: src/ft_cmdlst_utils.c.i
-
-.PHONY : src/ft_cmdlst_utils.i
-
-# target to preprocess a source file
-src/ft_cmdlst_utils.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.i
-.PHONY : src/ft_cmdlst_utils.c.i
-
-src/ft_cmdlst_utils.s: src/ft_cmdlst_utils.c.s
-
-.PHONY : src/ft_cmdlst_utils.s
-
-# target to generate assembly for a file
-src/ft_cmdlst_utils.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_cmdlst_utils.c.s
-.PHONY : src/ft_cmdlst_utils.c.s
-
-src/ft_env_utils.o: src/ft_env_utils.c.o
-
-.PHONY : src/ft_env_utils.o
-
-# target to build an object file
-src/ft_env_utils.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_env_utils.c.o
-.PHONY : src/ft_env_utils.c.o
-
-src/ft_env_utils.i: src/ft_env_utils.c.i
-
-.PHONY : src/ft_env_utils.i
-
-# target to preprocess a source file
-src/ft_env_utils.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_env_utils.c.i
-.PHONY : src/ft_env_utils.c.i
-
-src/ft_env_utils.s: src/ft_env_utils.c.s
-
-.PHONY : src/ft_env_utils.s
-
-# target to generate assembly for a file
-src/ft_env_utils.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_env_utils.c.s
-.PHONY : src/ft_env_utils.c.s
-
-src/ft_expansions/brace/auxiliary_funcs.o: src/ft_expansions/brace/auxiliary_funcs.c.o
-
-.PHONY : src/ft_expansions/brace/auxiliary_funcs.o
-
-# target to build an object file
-src/ft_expansions/brace/auxiliary_funcs.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.o
-.PHONY : src/ft_expansions/brace/auxiliary_funcs.c.o
-
-src/ft_expansions/brace/auxiliary_funcs.i: src/ft_expansions/brace/auxiliary_funcs.c.i
-
-.PHONY : src/ft_expansions/brace/auxiliary_funcs.i
-
-# target to preprocess a source file
-src/ft_expansions/brace/auxiliary_funcs.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.i
-.PHONY : src/ft_expansions/brace/auxiliary_funcs.c.i
-
-src/ft_expansions/brace/auxiliary_funcs.s: src/ft_expansions/brace/auxiliary_funcs.c.s
-
-.PHONY : src/ft_expansions/brace/auxiliary_funcs.s
-
-# target to generate assembly for a file
-src/ft_expansions/brace/auxiliary_funcs.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/auxiliary_funcs.c.s
-.PHONY : src/ft_expansions/brace/auxiliary_funcs.c.s
-
-src/ft_expansions/brace/expand_braces.o: src/ft_expansions/brace/expand_braces.c.o
-
-.PHONY : src/ft_expansions/brace/expand_braces.o
-
-# target to build an object file
-src/ft_expansions/brace/expand_braces.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.o
-.PHONY : src/ft_expansions/brace/expand_braces.c.o
-
-src/ft_expansions/brace/expand_braces.i: src/ft_expansions/brace/expand_braces.c.i
-
-.PHONY : src/ft_expansions/brace/expand_braces.i
-
-# target to preprocess a source file
-src/ft_expansions/brace/expand_braces.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.i
-.PHONY : src/ft_expansions/brace/expand_braces.c.i
-
-src/ft_expansions/brace/expand_braces.s: src/ft_expansions/brace/expand_braces.c.s
-
-.PHONY : src/ft_expansions/brace/expand_braces.s
-
-# target to generate assembly for a file
-src/ft_expansions/brace/expand_braces.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/expand_braces.c.s
-.PHONY : src/ft_expansions/brace/expand_braces.c.s
-
-src/ft_expansions/brace/fill_buf.o: src/ft_expansions/brace/fill_buf.c.o
-
-.PHONY : src/ft_expansions/brace/fill_buf.o
-
-# target to build an object file
-src/ft_expansions/brace/fill_buf.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.o
-.PHONY : src/ft_expansions/brace/fill_buf.c.o
-
-src/ft_expansions/brace/fill_buf.i: src/ft_expansions/brace/fill_buf.c.i
-
-.PHONY : src/ft_expansions/brace/fill_buf.i
-
-# target to preprocess a source file
-src/ft_expansions/brace/fill_buf.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.i
-.PHONY : src/ft_expansions/brace/fill_buf.c.i
-
-src/ft_expansions/brace/fill_buf.s: src/ft_expansions/brace/fill_buf.c.s
-
-.PHONY : src/ft_expansions/brace/fill_buf.s
-
-# target to generate assembly for a file
-src/ft_expansions/brace/fill_buf.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/fill_buf.c.s
-.PHONY : src/ft_expansions/brace/fill_buf.c.s
-
-src/ft_expansions/brace/get_range.o: src/ft_expansions/brace/get_range.c.o
-
-.PHONY : src/ft_expansions/brace/get_range.o
-
-# target to build an object file
-src/ft_expansions/brace/get_range.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.o
-.PHONY : src/ft_expansions/brace/get_range.c.o
-
-src/ft_expansions/brace/get_range.i: src/ft_expansions/brace/get_range.c.i
-
-.PHONY : src/ft_expansions/brace/get_range.i
-
-# target to preprocess a source file
-src/ft_expansions/brace/get_range.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.i
-.PHONY : src/ft_expansions/brace/get_range.c.i
-
-src/ft_expansions/brace/get_range.s: src/ft_expansions/brace/get_range.c.s
-
-.PHONY : src/ft_expansions/brace/get_range.s
-
-# target to generate assembly for a file
-src/ft_expansions/brace/get_range.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/get_range.c.s
-.PHONY : src/ft_expansions/brace/get_range.c.s
-
-src/ft_expansions/brace/get_seq.o: src/ft_expansions/brace/get_seq.c.o
-
-.PHONY : src/ft_expansions/brace/get_seq.o
-
-# target to build an object file
-src/ft_expansions/brace/get_seq.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.o
-.PHONY : src/ft_expansions/brace/get_seq.c.o
-
-src/ft_expansions/brace/get_seq.i: src/ft_expansions/brace/get_seq.c.i
-
-.PHONY : src/ft_expansions/brace/get_seq.i
-
-# target to preprocess a source file
-src/ft_expansions/brace/get_seq.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.i
-.PHONY : src/ft_expansions/brace/get_seq.c.i
-
-src/ft_expansions/brace/get_seq.s: src/ft_expansions/brace/get_seq.c.s
-
-.PHONY : src/ft_expansions/brace/get_seq.s
-
-# target to generate assembly for a file
-src/ft_expansions/brace/get_seq.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/brace/get_seq.c.s
-.PHONY : src/ft_expansions/brace/get_seq.c.s
-
-src/ft_expansions/pathname/brackets.o: src/ft_expansions/pathname/brackets.c.o
-
-.PHONY : src/ft_expansions/pathname/brackets.o
-
-# target to build an object file
-src/ft_expansions/pathname/brackets.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.o
-.PHONY : src/ft_expansions/pathname/brackets.c.o
-
-src/ft_expansions/pathname/brackets.i: src/ft_expansions/pathname/brackets.c.i
-
-.PHONY : src/ft_expansions/pathname/brackets.i
-
-# target to preprocess a source file
-src/ft_expansions/pathname/brackets.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.i
-.PHONY : src/ft_expansions/pathname/brackets.c.i
-
-src/ft_expansions/pathname/brackets.s: src/ft_expansions/pathname/brackets.c.s
-
-.PHONY : src/ft_expansions/pathname/brackets.s
-
-# target to generate assembly for a file
-src/ft_expansions/pathname/brackets.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/pathname/brackets.c.s
-.PHONY : src/ft_expansions/pathname/brackets.c.s
-
-src/ft_expansions/pathname/check_brackets.o: src/ft_expansions/pathname/check_brackets.c.o
-
-.PHONY : src/ft_expansions/pathname/check_brackets.o
-
-# target to build an object file
-src/ft_expansions/pathname/check_brackets.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.o
-.PHONY : src/ft_expansions/pathname/check_brackets.c.o
-
-src/ft_expansions/pathname/check_brackets.i: src/ft_expansions/pathname/check_brackets.c.i
-
-.PHONY : src/ft_expansions/pathname/check_brackets.i
-
-# target to preprocess a source file
-src/ft_expansions/pathname/check_brackets.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.i
-.PHONY : src/ft_expansions/pathname/check_brackets.c.i
-
-src/ft_expansions/pathname/check_brackets.s: src/ft_expansions/pathname/check_brackets.c.s
-
-.PHONY : src/ft_expansions/pathname/check_brackets.s
-
-# target to generate assembly for a file
-src/ft_expansions/pathname/check_brackets.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.s
-.PHONY : src/ft_expansions/pathname/check_brackets.c.s
-
-src/ft_expansions/pathname/ft_strcut.o: src/ft_expansions/pathname/ft_strcut.c.o
-
-.PHONY : src/ft_expansions/pathname/ft_strcut.o
-
-# target to build an object file
-src/ft_expansions/pathname/ft_strcut.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.o
-.PHONY : src/ft_expansions/pathname/ft_strcut.c.o
-
-src/ft_expansions/pathname/ft_strcut.i: src/ft_expansions/pathname/ft_strcut.c.i
-
-.PHONY : src/ft_expansions/pathname/ft_strcut.i
-
-# target to preprocess a source file
-src/ft_expansions/pathname/ft_strcut.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.i
-.PHONY : src/ft_expansions/pathname/ft_strcut.c.i
-
-src/ft_expansions/pathname/ft_strcut.s: src/ft_expansions/pathname/ft_strcut.c.s
-
-.PHONY : src/ft_expansions/pathname/ft_strcut.s
-
-# target to generate assembly for a file
-src/ft_expansions/pathname/ft_strcut.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.s
-.PHONY : src/ft_expansions/pathname/ft_strcut.c.s
-
-src/ft_expansions/pathname/regex.o: src/ft_expansions/pathname/regex.c.o
-
-.PHONY : src/ft_expansions/pathname/regex.o
-
-# target to build an object file
-src/ft_expansions/pathname/regex.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.o
-.PHONY : src/ft_expansions/pathname/regex.c.o
-
-src/ft_expansions/pathname/regex.i: src/ft_expansions/pathname/regex.c.i
-
-.PHONY : src/ft_expansions/pathname/regex.i
-
-# target to preprocess a source file
-src/ft_expansions/pathname/regex.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.i
-.PHONY : src/ft_expansions/pathname/regex.c.i
-
-src/ft_expansions/pathname/regex.s: src/ft_expansions/pathname/regex.c.s
-
-.PHONY : src/ft_expansions/pathname/regex.s
-
-# target to generate assembly for a file
-src/ft_expansions/pathname/regex.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.s
-.PHONY : src/ft_expansions/pathname/regex.c.s
-
-src/ft_heredoc.o: src/ft_heredoc.c.o
-
-.PHONY : src/ft_heredoc.o
-
-# target to build an object file
-src/ft_heredoc.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_heredoc.c.o
-.PHONY : src/ft_heredoc.c.o
-
-src/ft_heredoc.i: src/ft_heredoc.c.i
-
-.PHONY : src/ft_heredoc.i
-
-# target to preprocess a source file
-src/ft_heredoc.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_heredoc.c.i
-.PHONY : src/ft_heredoc.c.i
-
-src/ft_heredoc.s: src/ft_heredoc.c.s
-
-.PHONY : src/ft_heredoc.s
-
-# target to generate assembly for a file
-src/ft_heredoc.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_heredoc.c.s
-.PHONY : src/ft_heredoc.c.s
-
-src/ft_init.o: src/ft_init.c.o
-
-.PHONY : src/ft_init.o
-
-# target to build an object file
-src/ft_init.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_init.c.o
-.PHONY : src/ft_init.c.o
-
-src/ft_init.i: src/ft_init.c.i
-
-.PHONY : src/ft_init.i
-
-# target to preprocess a source file
-src/ft_init.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_init.c.i
-.PHONY : src/ft_init.c.i
-
-src/ft_init.s: src/ft_init.c.s
-
-.PHONY : src/ft_init.s
-
-# target to generate assembly for a file
-src/ft_init.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_init.c.s
-.PHONY : src/ft_init.c.s
-
-src/ft_jobs_utils.o: src/ft_jobs_utils.c.o
-
-.PHONY : src/ft_jobs_utils.o
-
-# target to build an object file
-src/ft_jobs_utils.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_jobs_utils.c.o
-.PHONY : src/ft_jobs_utils.c.o
-
-src/ft_jobs_utils.i: src/ft_jobs_utils.c.i
-
-.PHONY : src/ft_jobs_utils.i
-
-# target to preprocess a source file
-src/ft_jobs_utils.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_jobs_utils.c.i
-.PHONY : src/ft_jobs_utils.c.i
-
-src/ft_jobs_utils.s: src/ft_jobs_utils.c.s
-
-.PHONY : src/ft_jobs_utils.s
-
-# target to generate assembly for a file
-src/ft_jobs_utils.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_jobs_utils.c.s
-.PHONY : src/ft_jobs_utils.c.s
-
-src/ft_readline/ft_readline.o: src/ft_readline/ft_readline.c.o
-
-.PHONY : src/ft_readline/ft_readline.o
-
-# target to build an object file
-src/ft_readline/ft_readline.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.o
-.PHONY : src/ft_readline/ft_readline.c.o
-
-src/ft_readline/ft_readline.i: src/ft_readline/ft_readline.c.i
-
-.PHONY : src/ft_readline/ft_readline.i
-
-# target to preprocess a source file
-src/ft_readline/ft_readline.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.i
-.PHONY : src/ft_readline/ft_readline.c.i
-
-src/ft_readline/ft_readline.s: src/ft_readline/ft_readline.c.s
-
-.PHONY : src/ft_readline/ft_readline.s
-
-# target to generate assembly for a file
-src/ft_readline/ft_readline.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_readline.c.s
-.PHONY : src/ft_readline/ft_readline.c.s
-
-src/ft_readline/ft_rl_action.o: src/ft_readline/ft_rl_action.c.o
-
-.PHONY : src/ft_readline/ft_rl_action.o
-
-# target to build an object file
-src/ft_readline/ft_rl_action.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.o
-.PHONY : src/ft_readline/ft_rl_action.c.o
-
-src/ft_readline/ft_rl_action.i: src/ft_readline/ft_rl_action.c.i
-
-.PHONY : src/ft_readline/ft_rl_action.i
-
-# target to preprocess a source file
-src/ft_readline/ft_rl_action.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.i
-.PHONY : src/ft_readline/ft_rl_action.c.i
-
-src/ft_readline/ft_rl_action.s: src/ft_readline/ft_rl_action.c.s
-
-.PHONY : src/ft_readline/ft_rl_action.s
-
-# target to generate assembly for a file
-src/ft_readline/ft_rl_action.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_action.c.s
-.PHONY : src/ft_readline/ft_rl_action.c.s
-
-src/ft_readline/ft_rl_autocomp_cmd_and_var.o: src/ft_readline/ft_rl_autocomp_cmd_and_var.c.o
-
-.PHONY : src/ft_readline/ft_rl_autocomp_cmd_and_var.o
-
-# target to build an object file
-src/ft_readline/ft_rl_autocomp_cmd_and_var.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.o
-.PHONY : src/ft_readline/ft_rl_autocomp_cmd_and_var.c.o
-
-src/ft_readline/ft_rl_autocomp_cmd_and_var.i: src/ft_readline/ft_rl_autocomp_cmd_and_var.c.i
-
-.PHONY : src/ft_readline/ft_rl_autocomp_cmd_and_var.i
-
-# target to preprocess a source file
-src/ft_readline/ft_rl_autocomp_cmd_and_var.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.i
-.PHONY : src/ft_readline/ft_rl_autocomp_cmd_and_var.c.i
-
-src/ft_readline/ft_rl_autocomp_cmd_and_var.s: src/ft_readline/ft_rl_autocomp_cmd_and_var.c.s
-
-.PHONY : src/ft_readline/ft_rl_autocomp_cmd_and_var.s
-
-# target to generate assembly for a file
-src/ft_readline/ft_rl_autocomp_cmd_and_var.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_cmd_and_var.c.s
-.PHONY : src/ft_readline/ft_rl_autocomp_cmd_and_var.c.s
-
-src/ft_readline/ft_rl_autocomp_commands.o: src/ft_readline/ft_rl_autocomp_commands.c.o
-
-.PHONY : src/ft_readline/ft_rl_autocomp_commands.o
-
-# target to build an object file
-src/ft_readline/ft_rl_autocomp_commands.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_commands.c.o
-.PHONY : src/ft_readline/ft_rl_autocomp_commands.c.o
-
-src/ft_readline/ft_rl_autocomp_commands.i: src/ft_readline/ft_rl_autocomp_commands.c.i
-
-.PHONY : src/ft_readline/ft_rl_autocomp_commands.i
-
-# target to preprocess a source file
-src/ft_readline/ft_rl_autocomp_commands.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_commands.c.i
-.PHONY : src/ft_readline/ft_rl_autocomp_commands.c.i
-
-src/ft_readline/ft_rl_autocomp_commands.s: src/ft_readline/ft_rl_autocomp_commands.c.s
-
-.PHONY : src/ft_readline/ft_rl_autocomp_commands.s
-
-# target to generate assembly for a file
-src/ft_readline/ft_rl_autocomp_commands.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_commands.c.s
-.PHONY : src/ft_readline/ft_rl_autocomp_commands.c.s
-
-src/ft_readline/ft_rl_autocomp_drawer.o: src/ft_readline/ft_rl_autocomp_drawer.c.o
-
-.PHONY : src/ft_readline/ft_rl_autocomp_drawer.o
-
-# target to build an object file
-src/ft_readline/ft_rl_autocomp_drawer.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.o
-.PHONY : src/ft_readline/ft_rl_autocomp_drawer.c.o
-
-src/ft_readline/ft_rl_autocomp_drawer.i: src/ft_readline/ft_rl_autocomp_drawer.c.i
-
-.PHONY : src/ft_readline/ft_rl_autocomp_drawer.i
-
-# target to preprocess a source file
-src/ft_readline/ft_rl_autocomp_drawer.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.i
-.PHONY : src/ft_readline/ft_rl_autocomp_drawer.c.i
-
-src/ft_readline/ft_rl_autocomp_drawer.s: src/ft_readline/ft_rl_autocomp_drawer.c.s
-
-.PHONY : src/ft_readline/ft_rl_autocomp_drawer.s
-
-# target to generate assembly for a file
-src/ft_readline/ft_rl_autocomp_drawer.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_drawer.c.s
-.PHONY : src/ft_readline/ft_rl_autocomp_drawer.c.s
-
-src/ft_readline/ft_rl_autocomp_filenames.o: src/ft_readline/ft_rl_autocomp_filenames.c.o
-
-.PHONY : src/ft_readline/ft_rl_autocomp_filenames.o
-
-# target to build an object file
-src/ft_readline/ft_rl_autocomp_filenames.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.o
-.PHONY : src/ft_readline/ft_rl_autocomp_filenames.c.o
-
-src/ft_readline/ft_rl_autocomp_filenames.i: src/ft_readline/ft_rl_autocomp_filenames.c.i
-
-.PHONY : src/ft_readline/ft_rl_autocomp_filenames.i
-
-# target to preprocess a source file
-src/ft_readline/ft_rl_autocomp_filenames.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.i
-.PHONY : src/ft_readline/ft_rl_autocomp_filenames.c.i
-
-src/ft_readline/ft_rl_autocomp_filenames.s: src/ft_readline/ft_rl_autocomp_filenames.c.s
-
-.PHONY : src/ft_readline/ft_rl_autocomp_filenames.s
-
-# target to generate assembly for a file
-src/ft_readline/ft_rl_autocomp_filenames.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomp_filenames.c.s
-.PHONY : src/ft_readline/ft_rl_autocomp_filenames.c.s
-
-src/ft_readline/ft_rl_autocomplit.o: src/ft_readline/ft_rl_autocomplit.c.o
-
-.PHONY : src/ft_readline/ft_rl_autocomplit.o
-
-# target to build an object file
-src/ft_readline/ft_rl_autocomplit.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.o
-.PHONY : src/ft_readline/ft_rl_autocomplit.c.o
-
-src/ft_readline/ft_rl_autocomplit.i: src/ft_readline/ft_rl_autocomplit.c.i
-
-.PHONY : src/ft_readline/ft_rl_autocomplit.i
-
-# target to preprocess a source file
-src/ft_readline/ft_rl_autocomplit.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.i
-.PHONY : src/ft_readline/ft_rl_autocomplit.c.i
-
-src/ft_readline/ft_rl_autocomplit.s: src/ft_readline/ft_rl_autocomplit.c.s
-
-.PHONY : src/ft_readline/ft_rl_autocomplit.s
-
-# target to generate assembly for a file
-src/ft_readline/ft_rl_autocomplit.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_autocomplit.c.s
-.PHONY : src/ft_readline/ft_rl_autocomplit.c.s
-
-src/ft_readline/ft_rl_check_line.o: src/ft_readline/ft_rl_check_line.c.o
-
-.PHONY : src/ft_readline/ft_rl_check_line.o
-
-# target to build an object file
-src/ft_readline/ft_rl_check_line.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.o
-.PHONY : src/ft_readline/ft_rl_check_line.c.o
-
-src/ft_readline/ft_rl_check_line.i: src/ft_readline/ft_rl_check_line.c.i
-
-.PHONY : src/ft_readline/ft_rl_check_line.i
-
-# target to preprocess a source file
-src/ft_readline/ft_rl_check_line.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.i
-.PHONY : src/ft_readline/ft_rl_check_line.c.i
-
-src/ft_readline/ft_rl_check_line.s: src/ft_readline/ft_rl_check_line.c.s
-
-.PHONY : src/ft_readline/ft_rl_check_line.s
-
-# target to generate assembly for a file
-src/ft_readline/ft_rl_check_line.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_check_line.c.s
-.PHONY : src/ft_readline/ft_rl_check_line.c.s
-
-src/ft_readline/ft_rl_cursor.o: src/ft_readline/ft_rl_cursor.c.o
-
-.PHONY : src/ft_readline/ft_rl_cursor.o
-
-# target to build an object file
-src/ft_readline/ft_rl_cursor.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.o
-.PHONY : src/ft_readline/ft_rl_cursor.c.o
-
-src/ft_readline/ft_rl_cursor.i: src/ft_readline/ft_rl_cursor.c.i
-
-.PHONY : src/ft_readline/ft_rl_cursor.i
-
-# target to preprocess a source file
-src/ft_readline/ft_rl_cursor.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.i
-.PHONY : src/ft_readline/ft_rl_cursor.c.i
-
-src/ft_readline/ft_rl_cursor.s: src/ft_readline/ft_rl_cursor.c.s
-
-.PHONY : src/ft_readline/ft_rl_cursor.s
-
-# target to generate assembly for a file
-src/ft_readline/ft_rl_cursor.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_cursor.c.s
-.PHONY : src/ft_readline/ft_rl_cursor.c.s
-
-src/ft_readline/ft_rl_helper.o: src/ft_readline/ft_rl_helper.c.o
-
-.PHONY : src/ft_readline/ft_rl_helper.o
-
-# target to build an object file
-src/ft_readline/ft_rl_helper.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.o
-.PHONY : src/ft_readline/ft_rl_helper.c.o
-
-src/ft_readline/ft_rl_helper.i: src/ft_readline/ft_rl_helper.c.i
-
-.PHONY : src/ft_readline/ft_rl_helper.i
-
-# target to preprocess a source file
-src/ft_readline/ft_rl_helper.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.i
-.PHONY : src/ft_readline/ft_rl_helper.c.i
-
-src/ft_readline/ft_rl_helper.s: src/ft_readline/ft_rl_helper.c.s
-
-.PHONY : src/ft_readline/ft_rl_helper.s
-
-# target to generate assembly for a file
-src/ft_readline/ft_rl_helper.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_helper.c.s
-.PHONY : src/ft_readline/ft_rl_helper.c.s
-
-src/ft_readline/ft_rl_highlight.o: src/ft_readline/ft_rl_highlight.c.o
-
-.PHONY : src/ft_readline/ft_rl_highlight.o
-
-# target to build an object file
-src/ft_readline/ft_rl_highlight.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.o
-.PHONY : src/ft_readline/ft_rl_highlight.c.o
-
-src/ft_readline/ft_rl_highlight.i: src/ft_readline/ft_rl_highlight.c.i
-
-.PHONY : src/ft_readline/ft_rl_highlight.i
-
-# target to preprocess a source file
-src/ft_readline/ft_rl_highlight.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.i
-.PHONY : src/ft_readline/ft_rl_highlight.c.i
-
-src/ft_readline/ft_rl_highlight.s: src/ft_readline/ft_rl_highlight.c.s
-
-.PHONY : src/ft_readline/ft_rl_highlight.s
-
-# target to generate assembly for a file
-src/ft_readline/ft_rl_highlight.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_highlight.c.s
-.PHONY : src/ft_readline/ft_rl_highlight.c.s
-
-src/ft_readline/ft_rl_history.o: src/ft_readline/ft_rl_history.c.o
-
-.PHONY : src/ft_readline/ft_rl_history.o
-
-# target to build an object file
-src/ft_readline/ft_rl_history.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.o
-.PHONY : src/ft_readline/ft_rl_history.c.o
-
-src/ft_readline/ft_rl_history.i: src/ft_readline/ft_rl_history.c.i
-
-.PHONY : src/ft_readline/ft_rl_history.i
-
-# target to preprocess a source file
-src/ft_readline/ft_rl_history.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.i
-.PHONY : src/ft_readline/ft_rl_history.c.i
-
-src/ft_readline/ft_rl_history.s: src/ft_readline/ft_rl_history.c.s
-
-.PHONY : src/ft_readline/ft_rl_history.s
-
-# target to generate assembly for a file
-src/ft_readline/ft_rl_history.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_history.c.s
-.PHONY : src/ft_readline/ft_rl_history.c.s
-
-src/ft_readline/ft_rl_init.o: src/ft_readline/ft_rl_init.c.o
-
-.PHONY : src/ft_readline/ft_rl_init.o
-
-# target to build an object file
-src/ft_readline/ft_rl_init.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.o
-.PHONY : src/ft_readline/ft_rl_init.c.o
-
-src/ft_readline/ft_rl_init.i: src/ft_readline/ft_rl_init.c.i
-
-.PHONY : src/ft_readline/ft_rl_init.i
-
-# target to preprocess a source file
-src/ft_readline/ft_rl_init.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.i
-.PHONY : src/ft_readline/ft_rl_init.c.i
-
-src/ft_readline/ft_rl_init.s: src/ft_readline/ft_rl_init.c.s
-
-.PHONY : src/ft_readline/ft_rl_init.s
-
-# target to generate assembly for a file
-src/ft_readline/ft_rl_init.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_init.c.s
-.PHONY : src/ft_readline/ft_rl_init.c.s
-
-src/ft_readline/ft_rl_line.o: src/ft_readline/ft_rl_line.c.o
-
-.PHONY : src/ft_readline/ft_rl_line.o
-
-# target to build an object file
-src/ft_readline/ft_rl_line.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.o
-.PHONY : src/ft_readline/ft_rl_line.c.o
-
-src/ft_readline/ft_rl_line.i: src/ft_readline/ft_rl_line.c.i
-
-.PHONY : src/ft_readline/ft_rl_line.i
-
-# target to preprocess a source file
-src/ft_readline/ft_rl_line.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.i
-.PHONY : src/ft_readline/ft_rl_line.c.i
-
-src/ft_readline/ft_rl_line.s: src/ft_readline/ft_rl_line.c.s
-
-.PHONY : src/ft_readline/ft_rl_line.s
-
-# target to generate assembly for a file
-src/ft_readline/ft_rl_line.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line.c.s
-.PHONY : src/ft_readline/ft_rl_line.c.s
-
-src/ft_readline/ft_rl_line_edit.o: src/ft_readline/ft_rl_line_edit.c.o
-
-.PHONY : src/ft_readline/ft_rl_line_edit.o
-
-# target to build an object file
-src/ft_readline/ft_rl_line_edit.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.o
-.PHONY : src/ft_readline/ft_rl_line_edit.c.o
-
-src/ft_readline/ft_rl_line_edit.i: src/ft_readline/ft_rl_line_edit.c.i
-
-.PHONY : src/ft_readline/ft_rl_line_edit.i
-
-# target to preprocess a source file
-src/ft_readline/ft_rl_line_edit.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.i
-.PHONY : src/ft_readline/ft_rl_line_edit.c.i
-
-src/ft_readline/ft_rl_line_edit.s: src/ft_readline/ft_rl_line_edit.c.s
-
-.PHONY : src/ft_readline/ft_rl_line_edit.s
-
-# target to generate assembly for a file
-src/ft_readline/ft_rl_line_edit.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_line_edit.c.s
-.PHONY : src/ft_readline/ft_rl_line_edit.c.s
-
-src/ft_readline/ft_rl_prompt.o: src/ft_readline/ft_rl_prompt.c.o
-
-.PHONY : src/ft_readline/ft_rl_prompt.o
-
-# target to build an object file
-src/ft_readline/ft_rl_prompt.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.o
-.PHONY : src/ft_readline/ft_rl_prompt.c.o
-
-src/ft_readline/ft_rl_prompt.i: src/ft_readline/ft_rl_prompt.c.i
-
-.PHONY : src/ft_readline/ft_rl_prompt.i
-
-# target to preprocess a source file
-src/ft_readline/ft_rl_prompt.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.i
-.PHONY : src/ft_readline/ft_rl_prompt.c.i
-
-src/ft_readline/ft_rl_prompt.s: src/ft_readline/ft_rl_prompt.c.s
-
-.PHONY : src/ft_readline/ft_rl_prompt.s
-
-# target to generate assembly for a file
-src/ft_readline/ft_rl_prompt.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_prompt.c.s
-.PHONY : src/ft_readline/ft_rl_prompt.c.s
-
-src/ft_readline/ft_rl_read.o: src/ft_readline/ft_rl_read.c.o
-
-.PHONY : src/ft_readline/ft_rl_read.o
-
-# target to build an object file
-src/ft_readline/ft_rl_read.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.o
-.PHONY : src/ft_readline/ft_rl_read.c.o
-
-src/ft_readline/ft_rl_read.i: src/ft_readline/ft_rl_read.c.i
-
-.PHONY : src/ft_readline/ft_rl_read.i
-
-# target to preprocess a source file
-src/ft_readline/ft_rl_read.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.i
-.PHONY : src/ft_readline/ft_rl_read.c.i
-
-src/ft_readline/ft_rl_read.s: src/ft_readline/ft_rl_read.c.s
-
-.PHONY : src/ft_readline/ft_rl_read.s
-
-# target to generate assembly for a file
-src/ft_readline/ft_rl_read.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_readline/ft_rl_read.c.s
-.PHONY : src/ft_readline/ft_rl_read.c.s
-
-src/ft_redirection.o: src/ft_redirection.c.o
-
-.PHONY : src/ft_redirection.o
-
-# target to build an object file
-src/ft_redirection.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_redirection.c.o
-.PHONY : src/ft_redirection.c.o
-
-src/ft_redirection.i: src/ft_redirection.c.i
-
-.PHONY : src/ft_redirection.i
-
-# target to preprocess a source file
-src/ft_redirection.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_redirection.c.i
-.PHONY : src/ft_redirection.c.i
-
-src/ft_redirection.s: src/ft_redirection.c.s
-
-.PHONY : src/ft_redirection.s
-
-# target to generate assembly for a file
-src/ft_redirection.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_redirection.c.s
-.PHONY : src/ft_redirection.c.s
-
-src/ft_redirection_utils.o: src/ft_redirection_utils.c.o
-
-.PHONY : src/ft_redirection_utils.o
-
-# target to build an object file
-src/ft_redirection_utils.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_redirection_utils.c.o
-.PHONY : src/ft_redirection_utils.c.o
-
-src/ft_redirection_utils.i: src/ft_redirection_utils.c.i
-
-.PHONY : src/ft_redirection_utils.i
-
-# target to preprocess a source file
-src/ft_redirection_utils.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_redirection_utils.c.i
-.PHONY : src/ft_redirection_utils.c.i
-
-src/ft_redirection_utils.s: src/ft_redirection_utils.c.s
-
-.PHONY : src/ft_redirection_utils.s
-
-# target to generate assembly for a file
-src/ft_redirection_utils.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_redirection_utils.c.s
-.PHONY : src/ft_redirection_utils.c.s
-
-src/ft_tokenize.o: src/ft_tokenize.c.o
-
-.PHONY : src/ft_tokenize.o
-
-# target to build an object file
-src/ft_tokenize.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_tokenize.c.o
-.PHONY : src/ft_tokenize.c.o
-
-src/ft_tokenize.i: src/ft_tokenize.c.i
-
-.PHONY : src/ft_tokenize.i
-
-# target to preprocess a source file
-src/ft_tokenize.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_tokenize.c.i
-.PHONY : src/ft_tokenize.c.i
-
-src/ft_tokenize.s: src/ft_tokenize.c.s
-
-.PHONY : src/ft_tokenize.s
-
-# target to generate assembly for a file
-src/ft_tokenize.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_tokenize.c.s
-.PHONY : src/ft_tokenize.c.s
-
-src/ft_tokenize_utils.o: src/ft_tokenize_utils.c.o
-
-.PHONY : src/ft_tokenize_utils.o
-
-# target to build an object file
-src/ft_tokenize_utils.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o
-.PHONY : src/ft_tokenize_utils.c.o
-
-src/ft_tokenize_utils.i: src/ft_tokenize_utils.c.i
-
-.PHONY : src/ft_tokenize_utils.i
-
-# target to preprocess a source file
-src/ft_tokenize_utils.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.i
-.PHONY : src/ft_tokenize_utils.c.i
-
-src/ft_tokenize_utils.s: src/ft_tokenize_utils.c.s
-
-.PHONY : src/ft_tokenize_utils.s
-
-# target to generate assembly for a file
-src/ft_tokenize_utils.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.s
-.PHONY : src/ft_tokenize_utils.c.s
-
-src/main.o: src/main.c.o
-
-.PHONY : src/main.o
-
-# target to build an object file
-src/main.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/main.c.o
-.PHONY : src/main.c.o
-
-src/main.i: src/main.c.i
-
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/main.c.i
-.PHONY : src/main.c.i
-
-src/main.s: src/main.c.s
-
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/main.c.s
-.PHONY : src/main.c.s
+src/ft_shell_var_utils.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_shell_var_utils.c.s
+.PHONY : src/ft_shell_var_utils.c.s
 
 # Help Target
 help:
@@ -4632,9 +3417,12 @@ help:
 	@echo "... libft/src/ft_isnumber.o"
 	@echo "... libft/src/ft_isnumber.i"
 	@echo "... libft/src/ft_isnumber.s"
-	@echo "... libft/src/ft_isnumeric_str.o"
-	@echo "... libft/src/ft_isnumeric_str.i"
-	@echo "... libft/src/ft_isnumeric_str.s"
+	@echo "... libft/src/ft_isnumeric.o"
+	@echo "... libft/src/ft_isnumeric.i"
+	@echo "... libft/src/ft_isnumeric.s"
+	@echo "... libft/src/ft_isnumeric_n.o"
+	@echo "... libft/src/ft_isnumeric_n.i"
+	@echo "... libft/src/ft_isnumeric_n.s"
 	@echo "... libft/src/ft_isprint.o"
 	@echo "... libft/src/ft_isprint.i"
 	@echo "... libft/src/ft_isprint.s"
@@ -4902,156 +3690,18 @@ help:
 	@echo "... libft/src/get_next_line.o"
 	@echo "... libft/src/get_next_line.i"
 	@echo "... libft/src/get_next_line.s"
-	@echo "... src/ft_argv.o"
-	@echo "... src/ft_argv.i"
-	@echo "... src/ft_argv.s"
-	@echo "... src/ft_argv_exec.o"
-	@echo "... src/ft_argv_exec.i"
-	@echo "... src/ft_argv_exec.s"
-	@echo "... src/ft_argv_quotes.o"
-	@echo "... src/ft_argv_quotes.i"
-	@echo "... src/ft_argv_quotes.s"
-	@echo "... src/ft_argv_utils.o"
-	@echo "... src/ft_argv_utils.i"
-	@echo "... src/ft_argv_utils.s"
-	@echo "... src/ft_ast.o"
-	@echo "... src/ft_ast.i"
-	@echo "... src/ft_ast.s"
-	@echo "... src/ft_ast_exec.o"
-	@echo "... src/ft_ast_exec.i"
-	@echo "... src/ft_ast_exec.s"
-	@echo "... src/ft_ast_utils.o"
-	@echo "... src/ft_ast_utils.i"
-	@echo "... src/ft_ast_utils.s"
-	@echo "... src/ft_buffer.o"
-	@echo "... src/ft_buffer.i"
-	@echo "... src/ft_buffer.s"
-	@echo "... src/ft_builtins/ft_bi_cd.o"
-	@echo "... src/ft_builtins/ft_bi_cd.i"
-	@echo "... src/ft_builtins/ft_bi_cd.s"
-	@echo "... src/ft_builtins/ft_bi_env.o"
-	@echo "... src/ft_builtins/ft_bi_env.i"
-	@echo "... src/ft_builtins/ft_bi_env.s"
-	@echo "... src/ft_builtins/ft_bi_fg.o"
-	@echo "... src/ft_builtins/ft_bi_fg.i"
-	@echo "... src/ft_builtins/ft_bi_fg.s"
-	@echo "... src/ft_builtins/ft_builtins.o"
-	@echo "... src/ft_builtins/ft_builtins.i"
-	@echo "... src/ft_builtins/ft_builtins.s"
-	@echo "... src/ft_cmdlst.o"
-	@echo "... src/ft_cmdlst.i"
-	@echo "... src/ft_cmdlst.s"
-	@echo "... src/ft_cmdlst_exec.o"
-	@echo "... src/ft_cmdlst_exec.i"
-	@echo "... src/ft_cmdlst_exec.s"
-	@echo "... src/ft_cmdlst_utils.o"
-	@echo "... src/ft_cmdlst_utils.i"
-	@echo "... src/ft_cmdlst_utils.s"
-	@echo "... src/ft_env_utils.o"
-	@echo "... src/ft_env_utils.i"
-	@echo "... src/ft_env_utils.s"
-	@echo "... src/ft_expansions/brace/auxiliary_funcs.o"
-	@echo "... src/ft_expansions/brace/auxiliary_funcs.i"
-	@echo "... src/ft_expansions/brace/auxiliary_funcs.s"
-	@echo "... src/ft_expansions/brace/expand_braces.o"
-	@echo "... src/ft_expansions/brace/expand_braces.i"
-	@echo "... src/ft_expansions/brace/expand_braces.s"
-	@echo "... src/ft_expansions/brace/fill_buf.o"
-	@echo "... src/ft_expansions/brace/fill_buf.i"
-	@echo "... src/ft_expansions/brace/fill_buf.s"
-	@echo "... src/ft_expansions/brace/get_range.o"
-	@echo "... src/ft_expansions/brace/get_range.i"
-	@echo "... src/ft_expansions/brace/get_range.s"
-	@echo "... src/ft_expansions/brace/get_seq.o"
-	@echo "... src/ft_expansions/brace/get_seq.i"
-	@echo "... src/ft_expansions/brace/get_seq.s"
-	@echo "... src/ft_expansions/pathname/brackets.o"
-	@echo "... src/ft_expansions/pathname/brackets.i"
-	@echo "... src/ft_expansions/pathname/brackets.s"
-	@echo "... src/ft_expansions/pathname/check_brackets.o"
-	@echo "... src/ft_expansions/pathname/check_brackets.i"
-	@echo "... src/ft_expansions/pathname/check_brackets.s"
-	@echo "... src/ft_expansions/pathname/ft_strcut.o"
-	@echo "... src/ft_expansions/pathname/ft_strcut.i"
-	@echo "... src/ft_expansions/pathname/ft_strcut.s"
-	@echo "... src/ft_expansions/pathname/regex.o"
-	@echo "... src/ft_expansions/pathname/regex.i"
-	@echo "... src/ft_expansions/pathname/regex.s"
-	@echo "... src/ft_heredoc.o"
-	@echo "... src/ft_heredoc.i"
-	@echo "... src/ft_heredoc.s"
-	@echo "... src/ft_init.o"
-	@echo "... src/ft_init.i"
-	@echo "... src/ft_init.s"
-	@echo "... src/ft_jobs_utils.o"
-	@echo "... src/ft_jobs_utils.i"
-	@echo "... src/ft_jobs_utils.s"
-	@echo "... src/ft_readline/ft_readline.o"
-	@echo "... src/ft_readline/ft_readline.i"
-	@echo "... src/ft_readline/ft_readline.s"
-	@echo "... src/ft_readline/ft_rl_action.o"
-	@echo "... src/ft_readline/ft_rl_action.i"
-	@echo "... src/ft_readline/ft_rl_action.s"
-	@echo "... src/ft_readline/ft_rl_autocomp_cmd_and_var.o"
-	@echo "... src/ft_readline/ft_rl_autocomp_cmd_and_var.i"
-	@echo "... src/ft_readline/ft_rl_autocomp_cmd_and_var.s"
-	@echo "... src/ft_readline/ft_rl_autocomp_commands.o"
-	@echo "... src/ft_readline/ft_rl_autocomp_commands.i"
-	@echo "... src/ft_readline/ft_rl_autocomp_commands.s"
-	@echo "... src/ft_readline/ft_rl_autocomp_drawer.o"
-	@echo "... src/ft_readline/ft_rl_autocomp_drawer.i"
-	@echo "... src/ft_readline/ft_rl_autocomp_drawer.s"
-	@echo "... src/ft_readline/ft_rl_autocomp_filenames.o"
-	@echo "... src/ft_readline/ft_rl_autocomp_filenames.i"
-	@echo "... src/ft_readline/ft_rl_autocomp_filenames.s"
-	@echo "... src/ft_readline/ft_rl_autocomplit.o"
-	@echo "... src/ft_readline/ft_rl_autocomplit.i"
-	@echo "... src/ft_readline/ft_rl_autocomplit.s"
-	@echo "... src/ft_readline/ft_rl_check_line.o"
-	@echo "... src/ft_readline/ft_rl_check_line.i"
-	@echo "... src/ft_readline/ft_rl_check_line.s"
-	@echo "... src/ft_readline/ft_rl_cursor.o"
-	@echo "... src/ft_readline/ft_rl_cursor.i"
-	@echo "... src/ft_readline/ft_rl_cursor.s"
-	@echo "... src/ft_readline/ft_rl_helper.o"
-	@echo "... src/ft_readline/ft_rl_helper.i"
-	@echo "... src/ft_readline/ft_rl_helper.s"
-	@echo "... src/ft_readline/ft_rl_highlight.o"
-	@echo "... src/ft_readline/ft_rl_highlight.i"
-	@echo "... src/ft_readline/ft_rl_highlight.s"
-	@echo "... src/ft_readline/ft_rl_history.o"
-	@echo "... src/ft_readline/ft_rl_history.i"
-	@echo "... src/ft_readline/ft_rl_history.s"
-	@echo "... src/ft_readline/ft_rl_init.o"
-	@echo "... src/ft_readline/ft_rl_init.i"
-	@echo "... src/ft_readline/ft_rl_init.s"
-	@echo "... src/ft_readline/ft_rl_line.o"
-	@echo "... src/ft_readline/ft_rl_line.i"
-	@echo "... src/ft_readline/ft_rl_line.s"
-	@echo "... src/ft_readline/ft_rl_line_edit.o"
-	@echo "... src/ft_readline/ft_rl_line_edit.i"
-	@echo "... src/ft_readline/ft_rl_line_edit.s"
-	@echo "... src/ft_readline/ft_rl_prompt.o"
-	@echo "... src/ft_readline/ft_rl_prompt.i"
-	@echo "... src/ft_readline/ft_rl_prompt.s"
-	@echo "... src/ft_readline/ft_rl_read.o"
-	@echo "... src/ft_readline/ft_rl_read.i"
-	@echo "... src/ft_readline/ft_rl_read.s"
-	@echo "... src/ft_redirection.o"
-	@echo "... src/ft_redirection.i"
-	@echo "... src/ft_redirection.s"
-	@echo "... src/ft_redirection_utils.o"
-	@echo "... src/ft_redirection_utils.i"
-	@echo "... src/ft_redirection_utils.s"
-	@echo "... src/ft_tokenize.o"
-	@echo "... src/ft_tokenize.i"
-	@echo "... src/ft_tokenize.s"
-	@echo "... src/ft_tokenize_utils.o"
-	@echo "... src/ft_tokenize_utils.i"
-	@echo "... src/ft_tokenize_utils.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... src/ft_expansions/tilde/tilde.o"
+	@echo "... src/ft_expansions/tilde/tilde.i"
+	@echo "... src/ft_expansions/tilde/tilde.s"
+	@echo "... src/ft_shell_var.o"
+	@echo "... src/ft_shell_var.i"
+	@echo "... src/ft_shell_var.s"
+	@echo "... src/ft_shell_var_toolz.o"
+	@echo "... src/ft_shell_var_toolz.i"
+	@echo "... src/ft_shell_var_toolz.s"
+	@echo "... src/ft_shell_var_utils.o"
+	@echo "... src/ft_shell_var_utils.i"
+	@echo "... src/ft_shell_var_utils.s"
 .PHONY : help
 
 

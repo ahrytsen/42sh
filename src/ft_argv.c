@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:02:28 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/22 18:17:34 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/23 02:15:41 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,36 +61,35 @@ t_list	*perform_expansions(t_list *toks)
 	while (toks)
 	{
 		if (((t_token*)(toks->content))->type == word)
-			ft_lstpush_back(&lst, ((t_token*)(toks->content))->word,
-						ft_strlen(((t_token*)(toks->content))->word) + 1);
-		toks = toks->next;
+					ft_lstpush_back(&lst, ((t_token*)(toks->content))->word,
+							ft_strlen(((t_token*)(toks->content))->word) + 1);
+						toks = toks->next;
 	}
 	lstiter_custom(&lst, brace_expansion);
 	// other expansions
 	// syntax: ft_lstiter(&lst, expansion_func);
 	// your expansion_func prototype must be as it required in lstiter prototype
-
 	lstiter_custom(&lst, expand_pathname);
 	// quote removal
 	// syntax: ft_lstiter(&lst, quote_removal_func);
 	// your quote_removal_func prototype must be as it required in lstiter prototype
+
 	return (lst);
 }
 
 char	**ft_argv_make(t_list *toks)
 {
 	int		i;
-	int		size;
 	char	**av;
 	t_list	*lst;
 	t_list	*tmp;
 
-	i = 0;
 	lst = perform_expansions(toks);
 	tmp = lst;
-	size = ft_lstsize(lst) + 1;
-	if (!(av = ft_memalloc(size * sizeof(av))))
+	i = ft_lstsize(lst) + 1;
+	if (!(av = ft_memalloc(i * sizeof(av))))
 		return (NULL);
+	i = 0;
 	while (lst)
 	{
 		if (!(av[i++] = parse_argv(lst->content)))

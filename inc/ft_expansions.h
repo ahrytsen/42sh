@@ -14,8 +14,9 @@
 # define FT_EXPANSIONS_H
 
 # include "libft.h"
-#include <dirent.h>
-#include <sys/stat.h>
+# include <dirent.h>
+# include <sys/stat.h>
+# include <pwd.h>
 
 typedef struct	s_char_class
 {

@@ -1,25 +1,15 @@
-cmake_minimum_required(VERSION 3.9)
-project(gsh)
+cmake_minimum_required(VERSION 3.10)
+project(gsh C)
 
-set(CMAKE_CXX_STANDARD 99)
+set(CMAKE_C_STANDARD 99)
 
-#set (CMAKE_C_FLAGS "-Wall -Werror -Wextra")
-
-include_directories(inc libft/inc)
+include_directories(inc)
+include_directories(libft/inc)
 
 add_executable(gsh
-        src/ft_expansions/pathname/regex.c
-        src/ft_expansions/pathname/ft_strcut.c
-        src/ft_expansions/pathname/brackets.c
-        src/ft_expansions/pathname/check_brackets.c
-        src/ft_expansions/brace/fill_buf.c
-        src/ft_expansions/brace/get_seq.c
-        src/ft_expansions/brace/expand_braces.c
-        src/ft_expansions/brace/auxiliary_funcs.c
-        src/ft_expansions/brace/get_range.c
+        inc/ft_expansions.h
         inc/ft_readline.h
         inc/ft_sh.h
-        inc/ft_expansions.h
         libft/inc/ft_printf.h
         libft/inc/libft.h
         libft/src/ft_printf/ft_pbuf.c
@@ -45,12 +35,21 @@ add_executable(gsh
         libft/src/ft_isalpha_str.c
         libft/src/ft_isascii.c
         libft/src/ft_isascii_str.c
+        libft/src/ft_isblank.c
+        libft/src/ft_iscntrl.c
         libft/src/ft_isdigit.c
+        libft/src/ft_isgraph.c
+        libft/src/ft_islower.c
         libft/src/ft_isnumber.c
-        libft/src/ft_isnumeric_str.c
+        libft/src/ft_isnumeric.c
+        libft/src/ft_isnumeric_n.c
         libft/src/ft_isprint.c
         libft/src/ft_isprint_str.c
+        libft/src/ft_ispunct.c
+        libft/src/ft_isupper.c
         libft/src/ft_iswhitespace.c
+        libft/src/ft_isword.c
+        libft/src/ft_isxdigit.c
         libft/src/ft_itoa.c
         libft/src/ft_itoa_base.c
         libft/src/ft_ldtoa.c
@@ -61,6 +60,7 @@ add_executable(gsh
         libft/src/ft_lstdel.c
         libft/src/ft_lstdelone.c
         libft/src/ft_lstfree.c
+        libft/src/ft_lstinsert.c
         libft/src/ft_lstiter.c
         libft/src/ft_lstmap.c
         libft/src/ft_lstnew.c
@@ -110,6 +110,7 @@ add_executable(gsh
         libft/src/ft_strmap.c
         libft/src/ft_strmapi.c
         libft/src/ft_strncat.c
+        libft/src/ft_strnchr.c
         libft/src/ft_strncmp.c
         libft/src/ft_strncpy.c
         libft/src/ft_strnequ.c
@@ -126,55 +127,67 @@ add_executable(gsh
         libft/src/ft_ultoa_base.c
         libft/src/ft_wcharlen.c
         libft/src/get_next_line.c
-        src/ft_builtins/ft_bi_cd.c
-        src/ft_builtins/ft_bi_env.c
-        src/ft_builtins/ft_bi_fg.c
-        src/ft_builtins/ft_builtins.c
-        src/ft_readline/ft_readline.c
-        src/ft_readline/ft_rl_action.c
-        src/ft_readline/ft_rl_autocomp_cmd_and_var.c
-        src/ft_readline/ft_rl_autocomp_commands.c
-        src/ft_readline/ft_rl_autocomp_drawer.c
-        src/ft_readline/ft_rl_autocomp_filenames.c
-        src/ft_readline/ft_rl_autocomplit.c
-        src/ft_readline/ft_rl_check_line.c
-        src/ft_readline/ft_rl_cursor.c
-        src/ft_readline/ft_rl_helper.c
-        src/ft_readline/ft_rl_highlight.c
-        src/ft_readline/ft_rl_history.c
-        src/ft_readline/ft_rl_init.c
-        src/ft_readline/ft_rl_line.c
-        src/ft_readline/ft_rl_line_edit.c
-        src/ft_readline/ft_rl_prompt.c
-        src/ft_readline/ft_rl_read.c
-        src/ft_argv.c
-        src/ft_argv_exec.c
-        src/ft_argv_quotes.c
-        src/ft_argv_utils.c
-        src/ft_ast.c
-        src/ft_ast_exec.c
-        src/ft_ast_utils.c
-        src/ft_buffer.c
-        src/ft_cmdlst.c
-        src/ft_cmdlst_exec.c
-        src/ft_cmdlst_utils.c
-        src/ft_env_utils.c
-        src/ft_heredoc.c
-        src/ft_init.c
-        src/ft_jobs_utils.c
-        src/ft_redirection.c
-        src/ft_redirection_utils.c
-        src/ft_tokenize.c
-        src/ft_tokenize_utils.c
-        src/main.c
-        libft/src/ft_isblank.c
-        libft/src/ft_iscntrl.c
-        libft/src/ft_isgraph.c
-        libft/src/ft_islower.c
-        libft/src/ft_ispunct.c
-        libft/src/ft_isupper.c
-        libft/src/ft_isword.c
-        libft/src/ft_isxdigit.c
-        libft/src/ft_strnchr.c
-        libft/src/ft_lstinsert.c
+#        src/ft_builtins/ft_bi_bg.c
+#        src/ft_builtins/ft_bi_cd.c
+#        src/ft_builtins/ft_bi_env.c
+#        src/ft_builtins/ft_bi_export.c
+#        src/ft_builtins/ft_bi_fg.c
+#        src/ft_builtins/ft_bi_history.c
+#        src/ft_builtins/ft_bi_jobs.c
+#        src/ft_builtins/ft_bi_jobs_tools.c
+#        src/ft_builtins/ft_bi_un_set.c
+#        src/ft_builtins/ft_bi_un_setenv.c
+#        src/ft_builtins/ft_builtins.c
+#        src/ft_expansions/brace/auxiliary_funcs.c
+#        src/ft_expansions/brace/expand_braces.c
+#        src/ft_expansions/brace/fill_buf.c
+#        src/ft_expansions/brace/get_range.c
+#        src/ft_expansions/brace/get_seq.c
+#        src/ft_expansions/pathname/brackets.c
+#        src/ft_expansions/pathname/check_brackets.c
+#        src/ft_expansions/pathname/ft_strcut.c
+#        src/ft_expansions/pathname/regex.c
+        src/ft_expansions/tilde/tilde.c
+#        src/ft_readline/ft_readline.c
+#        src/ft_readline/ft_rl_action.c
+#        src/ft_readline/ft_rl_autocomp_cmd_and_var.c
+#        src/ft_readline/ft_rl_autocomp_drawer.c
+#        src/ft_readline/ft_rl_autocomp_filenames.c
+#        src/ft_readline/ft_rl_autocomplit.c
+#        src/ft_readline/ft_rl_check_line.c
+#        src/ft_readline/ft_rl_cursor.c
+#        src/ft_readline/ft_rl_exclamation.c
+#        src/ft_readline/ft_rl_helper.c
+#        src/ft_readline/ft_rl_highlight.c
+#        src/ft_readline/ft_rl_history.c
+#        src/ft_readline/ft_rl_init.c
+#        src/ft_readline/ft_rl_line.c
+#        src/ft_readline/ft_rl_line_edit.c
+#        src/ft_readline/ft_rl_prompt.c
+#        src/ft_readline/ft_rl_read.c
+#        src/ft_argv.c
+#        src/ft_argv_exec.c
+#        src/ft_argv_quotes.c
+#        src/ft_argv_utils.c
+#        src/ft_ast.c
+#        src/ft_ast_debug.c
+#        src/ft_ast_exec.c
+#        src/ft_ast_utils.c
+#        src/ft_buffer.c
+#        src/ft_cmd_print.c
+#        src/ft_cmdlst.c
+#        src/ft_cmdlst_exec.c
+#        src/ft_cmdlst_utils.c
+#        src/ft_heredoc.c
+#        src/ft_init.c
+#        src/ft_jobs_utils.c
+#        src/ft_redirection.c
+#        src/ft_redirection_utils.c
+        src/ft_shell_var.c
+        src/ft_shell_var_toolz.c
+        src/ft_shell_var_utils.c
+#        src/ft_tokenize.c
+#        src/ft_tokenize_tools.c
+#        src/ft_tokenize_utils.c
+#        src/main.c
         )
