@@ -24,7 +24,7 @@ history -awrn [filename]\n\thistory -ps arg [arg...]", 2);
 	return (1);
 }
 
-void	ft_hist_erase(void)
+void		ft_hist_erase(void)
 {
 	t_hist	*tmp;
 	t_hist	*hist;
@@ -52,7 +52,8 @@ static int	mega_uber_trivial_name_fo_function(t_hist *hist, t_hist *prev,
 
 	tmp = hist->next;
 	line_tostr(&hist->line, 2);
-	line_tostr(&hist->tmp, 2);
+	if (hist->tmp)
+		line_tostr(&hist->tmp, 2);
 	free(hist);
 	if (prev)
 		prev->next = tmp;
@@ -94,4 +95,40 @@ int			ft_hist_erase_rec(char *str)
 		}
 	}
 	return (0);
+}
+
+void		ft_hist_add_rec(char **av)
+{
+	t_line	*line;
+	char	*tmp;
+	size_t	size;
+	int		i;
+
+	if (!*av)
+		return ;
+	line = get_term()->hist->line;
+	line_tostr(&line, 2);
+	line = (t_line *)ft_memalloc(sizeof(t_line));
+	size = 0;
+	i = 0;
+	while (av[i])
+	{
+		size += ft_strlen(av[i]) + 1;
+		i++;
+	}
+	tmp = (char *)ft_memalloc(size);
+	while (*av)
+	{
+		ft_strcat(tmp, *av);
+		ft_strcat(tmp, " ");
+		av++;
+	}
+	i = 0;
+	while(tmp[i])
+	{
+		line_add(line, (uint64_t)tmp[i]);
+		i++;
+	}
+	get_term()->hist->line = line;
+	free(tmp);
 }

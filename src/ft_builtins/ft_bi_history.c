@@ -97,7 +97,7 @@ int			ft_history(char **av)
 		if (*(*av + 1) == 'c')
 			ft_hist_erase();
 		else if (*(*av + 1) == 's')
-			ft_hist_add_rec();
+			ft_hist_add_rec(av + 1);
 		else if (*(*av + 1) == 'p')
 			ft_hist_show_without_add(av + 1);
 		else if (*(*av + 1) == 'd')
