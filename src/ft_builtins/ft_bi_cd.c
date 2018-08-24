@@ -19,7 +19,7 @@ static char	*ft_cd_getpath(char **av)
 
 	tmp = NULL;
 	next_path = NULL;
-	if (*av && ft_strequ(*av, "-"))
+	if (*av && **av == '-' && !*(*av + 1))
 		tmp = "OLDPWD";
 	else if (!*av)
 		tmp = "HOME";
@@ -36,12 +36,12 @@ static char	**ft_cd_flags(char **av, char *fl)
 
 	while (*av && **av == '-' && *(*av + 1))
 	{
-		i = 1;
 		if (ft_strequ(*av, "--"))
 		{
 			av++;
 			break ;
 		}
+		i = 1;
 		while ((*av)[i])
 		{
 			if ((*av)[i] == 'L' || (*av)[i] == 'P')
@@ -78,7 +78,7 @@ int			ft_cd(char **av)
 		|| (((next_path && access(next_path, X_OK)) || chdir(next_path) == -1)
 			&& ft_dprintf(2, "cd: permission denied: %s\n", next_path)))
 		return (256);
-	if (*av && ft_strequ(*av, "-"))
+	if (*av && **av == '-' && !*(*av + 1))
 		ft_printf("%s\n", next_path);
 	ft_set_tool("OLDPWD", ft_getenv("PWD"), 1, ENVAR);
 	getcwd(curent_path, MAXPATHLEN);
