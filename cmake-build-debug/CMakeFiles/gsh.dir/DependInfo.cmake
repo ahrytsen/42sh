@@ -152,6 +152,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/yulia/gsh/src/ft_expansions/pathname/check_brackets.c" "/home/yulia/gsh/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_expansions/pathname/check_brackets.c.o"
   "/home/yulia/gsh/src/ft_expansions/pathname/ft_strcut.c" "/home/yulia/gsh/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_expansions/pathname/ft_strcut.c.o"
   "/home/yulia/gsh/src/ft_expansions/pathname/regex.c" "/home/yulia/gsh/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.o"
+  "/home/yulia/gsh/src/ft_expansions/quote/quote_removal.c" "/home/yulia/gsh/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_expansions/quote/quote_removal.c.o"
   "/home/yulia/gsh/src/ft_expansions/tilde/tilde.c" "/home/yulia/gsh/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_expansions/tilde/tilde.c.o"
   "/home/yulia/gsh/src/ft_expansions/variable/substitute_variable.c" "/home/yulia/gsh/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o"
   "/home/yulia/gsh/src/ft_heredoc.c" "/home/yulia/gsh/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_heredoc.c.o"

@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:25:12 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/23 10:46:30 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/24 03:43:30 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void		ft_quote(t_buf **cur, char **line)
 {
 	char	*st;
 
-	st = *line;
+	st = (*line)++;
 	while (**line != '\'')
 	{
 		if (!**line)
@@ -80,10 +80,6 @@ void	ft_dquote(t_buf **cur, char **line)
 			break ;
 		else if (**line == '\\' && (*line)++)
 			ft_dquote_slash(cur, line);
-		else if (**line == '$' && (*line)++)
-			parse_dollar(cur, line);
-		else if (**line == '`' && (*line)++)
-			ft_bquote(cur, line, 1);
 		else
 			ft_putchar_mshbuf(cur, *(*line)++);
 	**line ? (*line)++ : 0;

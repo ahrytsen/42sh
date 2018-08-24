@@ -92,7 +92,8 @@ char			**ft_strcut(char *s, char c)
 			if (*(s + i) == '\\')
 				s[++i] ? i++ : 0;
 			else
-				i = ft_strchr("'\"", *(s + i)) ? skip_quote(s, i) : i + 1;
+				i = *(s + i) && *ft_strchr("'\"", *(s + i)) ?
+						skip_quote(s, i) : i + 1;
 		if (!(out[j++] = cut_word(s, i)))
 			return (cut_free(out));
 		s += i;

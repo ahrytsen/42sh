@@ -4119,6 +4119,33 @@ src/ft_expansions/pathname/regex.c.s:
 	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/pathname/regex.c.s
 .PHONY : src/ft_expansions/pathname/regex.c.s
 
+src/ft_expansions/quote/quote_removal.o: src/ft_expansions/quote/quote_removal.c.o
+
+.PHONY : src/ft_expansions/quote/quote_removal.o
+
+# target to build an object file
+src/ft_expansions/quote/quote_removal.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/quote/quote_removal.c.o
+.PHONY : src/ft_expansions/quote/quote_removal.c.o
+
+src/ft_expansions/quote/quote_removal.i: src/ft_expansions/quote/quote_removal.c.i
+
+.PHONY : src/ft_expansions/quote/quote_removal.i
+
+# target to preprocess a source file
+src/ft_expansions/quote/quote_removal.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/quote/quote_removal.c.i
+.PHONY : src/ft_expansions/quote/quote_removal.c.i
+
+src/ft_expansions/quote/quote_removal.s: src/ft_expansions/quote/quote_removal.c.s
+
+.PHONY : src/ft_expansions/quote/quote_removal.s
+
+# target to generate assembly for a file
+src/ft_expansions/quote/quote_removal.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/quote/quote_removal.c.s
+.PHONY : src/ft_expansions/quote/quote_removal.c.s
+
 src/ft_expansions/tilde/tilde.o: src/ft_expansions/tilde/tilde.c.o
 
 .PHONY : src/ft_expansions/tilde/tilde.o
@@ -5409,6 +5436,9 @@ help:
 	@echo "... src/ft_expansions/pathname/regex.o"
 	@echo "... src/ft_expansions/pathname/regex.i"
 	@echo "... src/ft_expansions/pathname/regex.s"
+	@echo "... src/ft_expansions/quote/quote_removal.o"
+	@echo "... src/ft_expansions/quote/quote_removal.i"
+	@echo "... src/ft_expansions/quote/quote_removal.s"
 	@echo "... src/ft_expansions/tilde/tilde.o"
 	@echo "... src/ft_expansions/tilde/tilde.i"
 	@echo "... src/ft_expansions/tilde/tilde.s"

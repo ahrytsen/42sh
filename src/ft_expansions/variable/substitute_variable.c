@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 08:15:32 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/23 11:49:49 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/24 03:44:06 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,17 @@ void	substitute_variable(t_list *lst)
 	head = buf;
 	while (*s)
 		if (*s == '\\' && s++)
-			ft_slash(&buf, &s);
+		{
+			ft_putchar_mshbuf(&buf, *s++);
+			*s ? ft_putchar_mshbuf(&buf, *s++) : 0;
+		}
 		else if (*s == '$' && ft_isword(*(s + 1)) && s++)
 			s = record_var(&buf, s);
-		else if (*s == '\'' && s++)
-			ft_quote(&buf, &s);
+		else if (*s == '\'')
+			ft_putstr_mshbuf(&buf, s, ft_strchr(s + 1, '\'') - s);
 		else
 			ft_putchar_mshbuf(&buf, *s++);
 	free(lst->content);
 	lst->content = ft_buftostr(head);
+	ft_printf("sub_var: %s\n", lst->content);
 }

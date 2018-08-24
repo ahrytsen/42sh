@@ -541,6 +541,9 @@
 		<Unit filename="/home/yulia/gsh/src/ft_expansions/pathname/regex.c">
 			<Option target="gsh"/>
 		</Unit>
+		<Unit filename="/home/yulia/gsh/src/ft_expansions/quote/quote_removal.c">
+			<Option target="gsh"/>
+		</Unit>
 		<Unit filename="/home/yulia/gsh/src/ft_expansions/tilde/tilde.c">
 			<Option target="gsh"/>
 		</Unit>
