@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 14:13:02 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/23 13:18:16 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/25 15:18:24 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,33 +45,34 @@ static void	job_show(t_job *job, int options, int cur, int id)
 	}
 }
 
-static int	job_iter(t_list *jobs, int options, int cur)
-{
-	int	id;
-
-	if (!jobs)
-		return (1);
-	id = job_iter(jobs->next, options, cur ? cur - 1 : cur);
-	job_show(jobs->content, options, cur, id);
-	return (id + 1);
-}
-
-static int	job_by_id(t_list *jobs, int options, int id)
+static void	job_iter(t_list *jobs, int options)
 {
 	int	cur;
-	int	num_jobs;
 
-	num_jobs = ft_lstsize(jobs);
-	cur = (id == num_jobs ? 2 : 0);
-	cur = (id == num_jobs - 1 ? 1 : 0);
-	while (jobs && num_jobs != id)
+	while(jobs)
 	{
+		if (jobs->next && jobs->next->next)
+			cur = 0;
+		else
+			cur = (jobs->next ? 1 : 2);
+		job_show(jobs->content, options, cur, jobs->content_size);
 		jobs = jobs->next;
-		num_jobs--;
 	}
-	jobs ? job_show(jobs->content, options, cur, id)
+}
+
+static int	job_by_id(t_list *jobs, int options, size_t id)
+{
+	int		cur;
+
+	while (jobs && jobs->content_size != id)
+		jobs = jobs->next;
+	if (!jobs || (jobs->next && jobs->next->next))
+		cur = 0;
+	else
+		cur = (jobs->next ? 1 : 2);
+	jobs && jobs->content ? job_show(jobs->content, options, cur, id)
 		: ft_dprintf(2, "42sh: jobs: %d: no such job\n", id);
-	return (jobs == NULL);
+	return (jobs && jobs->content);
 }
 
 int			ft_jobs(char **av)
@@ -92,7 +93,7 @@ int			ft_jobs(char **av)
 		av++;
 	}
 	if (!*av)
-		job_iter(get_environ()->jobs, options, 2);
+		job_iter(get_environ()->jobs, options);
 	else
 		while (*av)
 			if (job_by_id(get_environ()->jobs, options, ft_atoi(*av++)))

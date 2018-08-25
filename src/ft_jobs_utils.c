@@ -6,39 +6,52 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 18:37:54 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/23 13:28:59 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/25 18:31:25 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
 
+t_list	*ft_job_push_back(t_list **jobs, t_job *new_job)
+{
+	int	id;
+
+	id = 0;
+	if (!jobs)
+		return (NULL);
+	while (*jobs && (*jobs)->content)
+	{
+		id++;
+		jobs = &(*jobs)->next;
+	}
+	if (!*jobs && (!(*jobs = ft_memalloc(sizeof(t_list)))
+					|| !((*jobs)->content_size = id + 1)))
+		return (NULL);
+	if (!((*jobs)->content = ft_memalloc(sizeof(t_job))))
+		return (NULL);
+	ft_memcpy((*jobs)->content, new_job, sizeof(t_job));
+	return (*jobs);
+}
+
 void		ft_stop_job(t_cmd *cmd, int mod)
 {
-	t_list	*jobs_tmp;
-	t_job	*job;
+	t_job	new_job;
+	t_list	*tmp;
 
-	job = NULL;
-	jobs_tmp = NULL;
-	if ((jobs_tmp = ft_memalloc(sizeof(t_list)))
-		&& (job = ft_memalloc(sizeof(t_job))))
+	new_job.cmd = cmd;
+	new_job.pgid = get_environ()->pgid;
+	if ((tmp = ft_job_push_back(&get_environ()->jobs, &new_job)))
 	{
-		jobs_tmp->content = job;
-		ft_lstadd(&get_environ()->jobs, jobs_tmp);
-		job->cmd = cmd;
-		job->pgid = get_environ()->pgid;
+
 		if (mod)
 		{
-			ft_printf("\n[%d] + %d suspended\t",
-						ft_lstsize(get_environ()->jobs), job->cmd->pid);
-			ft_cmdlst_print(job->cmd);
+			ft_printf("\n[%d] + %d suspended\t", tmp->content_size, cmd->pid);
+			ft_cmdlst_print(cmd);
 			ft_printf("\n");
 		}
 	}
 	else
-	{
-		free(job);
-		free(jobs_tmp);
-	}
+		ft_dprintf(2, "42sh: malloc error\n");
 }
 
 static void	ft_bg_job(t_cmd *cmd)
@@ -48,12 +61,16 @@ static void	ft_bg_job(t_cmd *cmd)
 	ft_stop_job(cmd, 0);
 }
 
-static void	ft_kill_all(t_cmd *cmd)
+static void	ft_cmdlst_wait(t_cmd *cmd)
 {
-	while ((cmd = cmd->prev))
+	while (cmd)
 	{
-		cmd->pid > 0 ? waitpid(cmd->pid, &cmd->ret, WUNTRACED) : 0;
-		cmd->ret = ft_status_job(cmd->ret);
+		if (cmd->pid > 0 && !cmd->ret)
+		{
+			waitpid(cmd->pid, &cmd->ret, WUNTRACED);
+			WIFSTOPPED(cmd->ret) ? ft_stop_job(cmd, 1) : 0;
+		}
+		cmd = cmd->prev;
 	}
 }
 
@@ -62,19 +79,21 @@ int			ft_control_job(t_cmd *cmd, int bg, int cont)
 	int	ret;
 
 	ret = cmd->ret;
-	if (!cmd->ret && cmd->pid && get_environ()->is_interactive)
+	if (!cmd->ret && cmd->pid)
 	{
-		setpgid(cmd->pid, get_environ()->pgid);
-		!bg ? tcsetpgrp(0, get_environ()->pgid) : 0;
+		if (get_environ()->is_interactive)
+		{
+			setpgid(cmd->pid, get_environ()->pgid);
+			!bg ? tcsetpgrp(0, get_environ()->pgid) : 0;
+		}
 		cont ? kill(-get_environ()->pgid, SIGCONT) : 0;
-		!bg ? waitpid(cmd->pid, &cmd->ret, WUNTRACED) : ft_bg_job(cmd);
-		!bg ? tcsetpgrp(0, get_environ()->sh_pgid) : 0;
+		!bg ? ft_cmdlst_wait(cmd) : ft_bg_job(cmd);
+		!bg && get_environ()->is_interactive
+			? tcsetpgrp(0, get_environ()->sh_pgid) : 0;
 		!bg && WIFSTOPPED(cmd->ret) ? ft_stop_job(cmd, 1) : 0;
 	}
-	else if (!cmd->ret && cmd->pid)
-		waitpid(cmd->pid, &cmd->ret, 0);
-	if (ret || (!WIFSTOPPED(cmd->ret) && !bg))
-		ft_kill_all(cmd);
+	else if (cmd->ret || !cmd->pid)
+		ft_cmdlst_wait(cmd->prev);
 	ret = cmd->ret;
 	cmd->ret = 0;
 	get_environ()->pgid = 0;
@@ -89,9 +108,9 @@ int			ft_status_job(int st)
 		if (WIFEXITED(st))
 			st = WEXITSTATUS(st);
 		else if (WIFSTOPPED(st))
-			st = WSTOPSIG(st);
+			st = -WSTOPSIG(st);
 		else if (WIFSIGNALED(st))
-			st = WTERMSIG(st);
+			st = -WTERMSIG(st);
 	}
 	return (st);
 }
