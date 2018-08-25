@@ -109,7 +109,9 @@ SRC			=	ft_argv.c\
 				\
 				ft_expansions/tilde/tilde.c\
 				\
-				ft_expansions/variable/substitute_variable.c
+				ft_expansions/variable/substitute_variable.c\
+				\
+				ft_expansions/quote/quote_removal.c
 
 OBJ			=	$(addprefix $(DIROBJ), $(SRC:.c=.o))
 
@@ -155,6 +157,7 @@ $(DIROBJ):
 	mkdir -p $(DIROBJ)/ft_expansions/pathname
 	mkdir -p $(DIROBJ)/ft_expansions/tilde
 	mkdir -p $(DIROBJ)/ft_expansions/variable
+	mkdir -p $(DIROBJ)/ft_expansions/quote
 
 lib:
 	@$(MAKE) -C $(SUB_MAKE) -j3

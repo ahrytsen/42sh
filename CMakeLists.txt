@@ -189,5 +189,6 @@ add_executable(gsh
         src/ft_tokenize.c
         src/ft_tokenize_tools.c
         src/ft_tokenize_utils.c
-        src/main.c
-        src/ft_expansions/variable/substitute_variable.c src/ft_expansions/quote/quote_removal.c)
+#        src/main.c
+        src/ft_expansions/variable/substitute_variable.c
+        src/ft_expansions/quote/quote_removal.c)

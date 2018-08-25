@@ -4956,33 +4956,6 @@ src/ft_tokenize_utils.c.s:
 	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.s
 .PHONY : src/ft_tokenize_utils.c.s
 
-src/main.o: src/main.c.o
-
-.PHONY : src/main.o
-
-# target to build an object file
-src/main.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/main.c.o
-.PHONY : src/main.c.o
-
-src/main.i: src/main.c.i
-
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/main.c.i
-.PHONY : src/main.c.i
-
-src/main.s: src/main.c.s
-
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/main.c.s
-.PHONY : src/main.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -5529,9 +5502,6 @@ help:
 	@echo "... src/ft_tokenize_utils.o"
 	@echo "... src/ft_tokenize_utils.i"
 	@echo "... src/ft_tokenize_utils.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
 .PHONY : help
 
 

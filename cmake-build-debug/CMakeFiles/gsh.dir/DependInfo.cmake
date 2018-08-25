@@ -183,7 +183,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/yulia/gsh/src/ft_tokenize.c" "/home/yulia/gsh/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_tokenize.c.o"
   "/home/yulia/gsh/src/ft_tokenize_tools.c" "/home/yulia/gsh/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o"
   "/home/yulia/gsh/src/ft_tokenize_utils.c" "/home/yulia/gsh/cmake-build-debug/CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o"
-  "/home/yulia/gsh/src/main.c" "/home/yulia/gsh/cmake-build-debug/CMakeFiles/gsh.dir/src/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

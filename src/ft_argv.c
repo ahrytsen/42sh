@@ -6,21 +6,12 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:02:28 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/23 11:49:21 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/25 01:18:59 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
 #include "ft_expansions.h"
-
-void	print_list(t_list *lst)
-{
-	while (lst)
-	{
-		ft_printf("%s\n", lst->content);
-		lst = lst->next;
-	}
-}
 
 t_list	*get_lst_end(t_list *lst)
 {
@@ -72,7 +63,7 @@ t_list	*perform_expansions(t_list *toks)
 	// Command Substitution
 
 	lstiter_custom(&lst, expand_pathname);
-
+	ft_lstiter(lst, remove_quotes);
 	return (lst);
 }
 
@@ -91,14 +82,10 @@ char	**ft_argv_make(t_list *toks)
 	i = 0;
 	while (lst)
 	{
-		if (!(av[i++] = parse_argv(lst->content)))
-		{
-			ft_strarr_free(av);
-			return (NULL);
-		}
+		av[i++] = lst->content;
 		lst = lst->next;
 	}
-	ft_lstdel(&tmp, (void (*)(void *, size_t))free);
+	ft_lstdel(&tmp, NULL);
 	tmp = NULL;
 	return (av);
 }

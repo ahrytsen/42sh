@@ -4305,33 +4305,9 @@ CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o.provides: CMakeFiles/gsh.dir/src/ft
 CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o.provides.build: CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o
 
 
-CMakeFiles/gsh.dir/src/main.c.o: CMakeFiles/gsh.dir/flags.make
-CMakeFiles/gsh.dir/src/main.c.o: ../src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_178) "Building C object CMakeFiles/gsh.dir/src/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/main.c.o   -c /home/yulia/gsh/src/main.c
-
-CMakeFiles/gsh.dir/src/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gsh.dir/src/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yulia/gsh/src/main.c > CMakeFiles/gsh.dir/src/main.c.i
-
-CMakeFiles/gsh.dir/src/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gsh.dir/src/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yulia/gsh/src/main.c -o CMakeFiles/gsh.dir/src/main.c.s
-
-CMakeFiles/gsh.dir/src/main.c.o.requires:
-
-.PHONY : CMakeFiles/gsh.dir/src/main.c.o.requires
-
-CMakeFiles/gsh.dir/src/main.c.o.provides: CMakeFiles/gsh.dir/src/main.c.o.requires
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/main.c.o.provides.build
-.PHONY : CMakeFiles/gsh.dir/src/main.c.o.provides
-
-CMakeFiles/gsh.dir/src/main.c.o.provides.build: CMakeFiles/gsh.dir/src/main.c.o
-
-
 CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o: ../src/ft_expansions/variable/substitute_variable.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_179) "Building C object CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_178) "Building C object CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o   -c /home/yulia/gsh/src/ft_expansions/variable/substitute_variable.c
 
 CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.i: cmake_force
@@ -4355,7 +4331,7 @@ CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o.provides.b
 
 CMakeFiles/gsh.dir/src/ft_expansions/quote/quote_removal.c.o: CMakeFiles/gsh.dir/flags.make
 CMakeFiles/gsh.dir/src/ft_expansions/quote/quote_removal.c.o: ../src/ft_expansions/quote/quote_removal.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_180) "Building C object CMakeFiles/gsh.dir/src/ft_expansions/quote/quote_removal.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_179) "Building C object CMakeFiles/gsh.dir/src/ft_expansions/quote/quote_removal.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gsh.dir/src/ft_expansions/quote/quote_removal.c.o   -c /home/yulia/gsh/src/ft_expansions/quote/quote_removal.c
 
 CMakeFiles/gsh.dir/src/ft_expansions/quote/quote_removal.c.i: cmake_force
@@ -4556,7 +4532,6 @@ gsh_OBJECTS = \
 "CMakeFiles/gsh.dir/src/ft_tokenize.c.o" \
 "CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o" \
 "CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o" \
-"CMakeFiles/gsh.dir/src/main.c.o" \
 "CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o" \
 "CMakeFiles/gsh.dir/src/ft_expansions/quote/quote_removal.c.o"
 
@@ -4740,12 +4715,11 @@ gsh: CMakeFiles/gsh.dir/src/ft_shell_var_utils.c.o
 gsh: CMakeFiles/gsh.dir/src/ft_tokenize.c.o
 gsh: CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o
 gsh: CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o
-gsh: CMakeFiles/gsh.dir/src/main.c.o
 gsh: CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o
 gsh: CMakeFiles/gsh.dir/src/ft_expansions/quote/quote_removal.c.o
 gsh: CMakeFiles/gsh.dir/build.make
 gsh: CMakeFiles/gsh.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_181) "Linking C executable gsh"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yulia/gsh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_180) "Linking C executable gsh"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gsh.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -4930,7 +4904,6 @@ CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_shell_var_utils.c.o.requi
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_tokenize.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o.requires
-CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/main.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o.requires
 CMakeFiles/gsh.dir/requires: CMakeFiles/gsh.dir/src/ft_expansions/quote/quote_removal.c.o.requires
 

@@ -6,14 +6,14 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 08:15:32 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/24 03:44:06 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/25 06:19:53 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_expansions.h"
 #include "ft_sh.h"
 
-char	*record_var(t_buf **buf, char *s)
+static char	*record_var(t_buf **buf, char *s)
 {
 	char	*tmp;
 
@@ -42,6 +42,55 @@ char	*record_var(t_buf **buf, char *s)
 	return (s);
 }
 
+static char	*record_quote(char *s, t_buf **buf)
+{
+	char	*tmp;
+
+	tmp = ft_strchr(s + 1, *s);
+	ft_putstr_mshbuf(buf, s, tmp - s + 1);
+	return (tmp + 1);
+}
+
+static char	*record_dquote(char *s, t_buf **buf)
+{
+	ft_putchar_mshbuf(buf, *s++);
+	while (*s != '"' && *s)
+		if (*s == '\\')
+		{
+			ft_putchar_mshbuf(buf, *s++);
+			*s ? ft_putchar_mshbuf(buf, *s++) : 0;
+		}
+		else if (*s == '$' && ft_isword(*(s + 1)) && s++)
+			s = record_var(buf, s);
+		else
+			ft_putchar_mshbuf(buf, *s++);
+	ft_putchar_mshbuf(buf, *s++);
+	return (s);
+}
+
+static char	*skip_parentheses(char *s, t_buf **buf)
+{
+	if (*s == '$')
+		ft_putchar_mshbuf(buf, *s++);
+	ft_putchar_mshbuf(buf, *s++);
+	while (*s)
+		if (*s == '\\')
+		{
+			ft_putchar_mshbuf(buf, *s++);
+			*s ? ft_putchar_mshbuf(buf, *s++) : 0;
+		}
+		else if (*s && ft_strchr("\"'`", *s))
+			s = record_quote(s, buf);
+		else if (*s == ')')
+			break ;
+		else if (*s == '(')
+			s = skip_parentheses(s, buf);
+		else
+			ft_putchar_mshbuf(buf, *s++);
+	ft_putchar_mshbuf(buf, *s++);
+	return (s);
+}
+
 void	substitute_variable(t_list *lst)
 {
 	char	*s;
@@ -49,22 +98,24 @@ void	substitute_variable(t_list *lst)
 	t_buf	*head;
 
 	s = lst->content;
-	if (!(buf = ft_memalloc(sizeof(t_buf))))
-		return;
+	buf = ft_memalloc(sizeof(t_buf));
 	head = buf;
 	while (*s)
-		if (*s == '\\' && s++)
+		if (*s == '\\')
 		{
 			ft_putchar_mshbuf(&buf, *s++);
 			*s ? ft_putchar_mshbuf(&buf, *s++) : 0;
 		}
 		else if (*s == '$' && ft_isword(*(s + 1)) && s++)
 			s = record_var(&buf, s);
-		else if (*s == '\'')
-			ft_putstr_mshbuf(&buf, s, ft_strchr(s + 1, '\'') - s);
+		else if (*s == '$' && *(s + 1) == '(')
+			s = skip_parentheses(s, &buf);
+		else if (*s == '"')
+			s = record_dquote(s, &buf);
+		else if (*s == '\'' || *s == '`')
+			s = record_quote(s, &buf);
 		else
 			ft_putchar_mshbuf(&buf, *s++);
 	free(lst->content);
 	lst->content = ft_buftostr(head);
-	ft_printf("sub_var: %s\n", lst->content);
 }

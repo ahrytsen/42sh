@@ -76,4 +76,8 @@ void		expand_tilde(t_list *lst);
 **		substitute_variable.c
 */
 void		substitute_variable(t_list *lst);
+/*
+**			quote_removal.c
+*/
+void		remove_quotes(t_list *lst);
 #endif

@@ -39,7 +39,7 @@ void		ft_quote(t_buf **cur, char **line)
 {
 	char	*st;
 
-	st = (*line)++;
+	st = *line;
 	while (**line != '\'')
 	{
 		if (!**line)

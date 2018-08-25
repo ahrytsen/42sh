@@ -634,9 +634,6 @@
 		<Unit filename="/home/yulia/gsh/src/ft_tokenize_utils.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/home/yulia/gsh/src/main.c">
-			<Option target="gsh"/>
-		</Unit>
 		<Unit filename="/home/yulia/gsh/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

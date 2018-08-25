@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 02:34:57 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/23 08:08:11 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/25 02:04:16 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,13 @@ static char	*get_user_homedir(char *s)
 	struct passwd	*pwd;
 
 	tmp = s;
-	while ((*s != ':' && *s != '/') && *s)
-		++s;
+	while (*s != ':' && *s != '/' && *s)
+		if (*s == '\\')
+			*++s ? s++ : 0;
+		else if (ft_strchr("'\"", *s))
+			ft_skip_qoutes(&s);
+		else
+			++s;
 	tmp = ft_strsub(tmp, 0, s - tmp);
 	pwd = getpwnam(tmp);
 	free(tmp);
@@ -57,7 +62,7 @@ void	expand_tilde(t_list *lst)
 	if (*s != '~')
 		return ;
 	++s;
-	if (*s == '/' || !*s)
+	if (ft_strchr("/:", *s))
 		s = get_curr_user(s);
 	else if (*s == '-' && ft_strchr("/:", *(s + 1)))
 		s = normalnyy_strjoin(ft_other_getenv("OLDPWD"), s + 1);

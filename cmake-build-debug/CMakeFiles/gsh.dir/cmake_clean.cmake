@@ -176,7 +176,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/gsh.dir/src/ft_tokenize.c.o"
   "CMakeFiles/gsh.dir/src/ft_tokenize_tools.c.o"
   "CMakeFiles/gsh.dir/src/ft_tokenize_utils.c.o"
-  "CMakeFiles/gsh.dir/src/main.c.o"
   "CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o"
   "CMakeFiles/gsh.dir/src/ft_expansions/quote/quote_removal.c.o"
   "gsh.pdb"
