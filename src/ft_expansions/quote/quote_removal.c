@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/24 03:23:42 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/24 03:58:22 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/25 06:26:39 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ void	remove_quotes(t_list *lst)
 		return;
 	head = buf;
 	while (*s)
-		if (*s == '\\' && s++)
+		if (*s == '\\' && *(s + 1) == 10)
+			s += 2;
+		else if (*s == '\\' && s++)
 			ft_slash(&buf, &s);
 		else if (*s == '\'' && s++)
 			ft_quote(&buf, &s);
