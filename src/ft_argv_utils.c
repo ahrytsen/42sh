@@ -44,6 +44,8 @@ void		ft_quote(t_buf **cur, char **line)
 	{
 		if (!**line)
 			break ;
+		if (**line == '\\' && *(*line + 1) == 10)
+			(*line)++;
 		(*line)++;
 	}
 	ft_putstr_mshbuf(cur, st, *line - st);
@@ -78,6 +80,8 @@ void	ft_dquote(t_buf **cur, char **line)
 	while (**line != '"')
 		if (!**line)
 			break ;
+		else if (**line == '\\' && *(*line + 1) == 10)
+			*line += 2;
 		else if (**line == '\\' && (*line)++)
 			ft_dquote_slash(cur, line);
 		else
