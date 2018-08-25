@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 05:35:20 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/10 15:47:02 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/25 18:47:20 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,6 +143,7 @@ void			ft_strarr_free(char **arr);
 char			*ft_arrstr(char **arr, char *str);
 size_t			ft_count_digits(size_t n);
 
+
 char			*ft_realloc(size_t new_size, size_t old_size, char *ptr);
 void			ft_lstfree(t_list **alst);
 t_list			*ft_lstsort(t_list *alst);
@@ -152,5 +153,6 @@ char			*ft_itoa_base(int n, int base);
 int				ft_isnumber(char *str);
 void			ft_free_arr(void **arr);
 int				ft_is_blank(char *str);
+ssize_t  		ft_absolute(ssize_t value);
 
 #endif

@@ -6,15 +6,15 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/16 19:10:56 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/08/25 19:09:55 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME 		=	42sh
 
 #===========================================================
-OS			= $(shell uname)
-ifeq ($(OS),Darwin)
+#OS			= $(shell uname)
+#ifeq ($(OS),Darwin)
 	INC		=	-I./inc/ -I./libft/inc/
 	LIBFT	= ./libft/libftprintf.a
 	SUB_MAKE= ./libft
@@ -23,12 +23,12 @@ ifeq ($(OS),Darwin)
 	NON		= \x1b[0m
 	CYANN	= \x1b[36m
 	GREEN	= \x1b[32m
-else
-	INC		= -I../../libft_win/includes -I./inc
-	LIBFT	= ../../libft_win/libftprintf.a
-	SUB_MAKE= ../../libft_win
-	TCAP	= -lcurses
-endif
+#else
+#	INC		= -I../../libft_win/includes -I./inc
+#	LIBFT	= ../../libft_win/libftprintf.a
+#	SUB_MAKE= ../../libft_win
+#	TCAP	= -lcurses
+#endif
 #===========================================================
 
 
@@ -123,7 +123,7 @@ STRING5 = $(CYAN)---$(NAME) installed in ~/.mybin$(NON)
 
 .PHONY: all clean re
 
-all: $(NAME)
+all: lib $(NAME)
 
 $(NAME): $(LIBFT) $(DIROBJ) $(OBJ)
 	@echo "$(STRING1)"
@@ -137,8 +137,6 @@ $(DIROBJ):
 
 lib:
 	@$(MAKE) -C $(SUB_MAKE) -j3
-
-$(LIBFT): lib
 
 $(OBJ):	$(DIROBJ)%.o : $(DIRSRC)%.c $(HDR)
 	@$(CC) $(INC) $(CFLAGS) -o $@ -c $<

@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/10 15:25:24 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/08/25 18:51:37 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -118,14 +118,14 @@ SRC		=	ft_arrstr.c\
 			ft_toupper.c\
 			ft_ultoa_base.c\
 			ft_wcharlen.c\
+			ft_absolute.c\
 			get_next_line.c\
 			\
 			ft_printf/ft_pbuf.c\
 			ft_printf/ft_pfloat.c\
 			ft_printf/ft_phelper.c\
 			ft_printf/ft_phendler.c\
-			ft_printf/ft_printf.c\
-			ft_printf/ft_ptool.c
+			ft_printf/ft_printf.c
 
 OBJ		= $(addprefix $(DIROBJ), $(SRC:.c=.o))
 
