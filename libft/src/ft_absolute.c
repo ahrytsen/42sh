@@ -6,13 +6,13 @@
 /*   By: dlinkin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/02 13:45:05 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/08/25 19:10:31 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/25 19:14:45 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-inline ssize_t 	ft_absolute(ssize_t value)
+inline ssize_t	ft_absolute(ssize_t value)
 {
 	return (value >= 0 ? value : -value);
 }
