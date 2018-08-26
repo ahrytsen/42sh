@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/26 12:15:06 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/26 21:09:16 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ typedef struct	s_env
 	int				bkp_fd[3];
 	int				sh_terminal;
 	int				is_interactive;
+	char 			**argv;
+	int 			argc;
 }				t_env;
 
 typedef struct	s_builtins
@@ -259,6 +261,7 @@ void			parse_dollar(t_buf **cur, char **line);
 void			ft_quote(t_buf **cur, char **line);
 void			ft_bquote(t_buf **cur, char **line, uint8_t q);
 char			*parse_argv(char *line);
+void			ft_dquote(t_buf **cur, char **line);
 /*
 **				ft_ast.c
 */
@@ -314,7 +317,7 @@ int				ft_heredoc(t_list *toks);
 void			ft_fildes(int mod);
 void			ft_set_sh_signal(int mod);
 void			ft_init_fd(int fd);
-void			ft_init(void);
+void			ft_init(int ac, char **av);
 /*
 **				ft_jobs_utils.c
 */
@@ -396,6 +399,8 @@ int				ft_jobs(char **av);
 /*
 **				ft_builtins/ft_bi_jobs_tools.c
 */
+void			ft_jobs_clean_lst(t_list **jobs);
+int				ft_count_jobs(t_list *jobs);
 void			ft_cmd_print_colon(t_cmd *cmdlst);
 void			ft_print_status(int st);
 t_list			*ft_job_push_back(t_list **jobs, t_job *new_job);

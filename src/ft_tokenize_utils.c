@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:31 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/22 18:29:05 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/26 20:36:13 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int		ft_skip_subsh(char **ln)
 	(*ln)++;
 	while (**ln != ')')
 		if (!**ln
-			&& ft_dprintf(2, "42sh: %s `)'\n",
+			&& ft_dprintf(2, "42sh: syntax error: %s `)'\n",
 						"unexpected EOF while looking for matching"))
 			return (1);
 		else if (**ln == '\'' || **ln == '`' || **ln == '"')

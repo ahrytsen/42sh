@@ -3,14 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_argv_quotes.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:36:50 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:21:19 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/26 14:19:19 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
+
+void		record_hex(t_buf **cur, char **line)
+{
+	int		i;
+	char	buf[3];
+
+	++*line;
+	i = 0;
+	ft_bzero(buf, 3);
+	while (ft_isxdigit(**line) && i < 2)
+		buf[i++] = *(*line)++;
+	ft_putchar_mshbuf(cur, ft_atoi_base(buf, 16));
+}
+
+void		record_oct(t_buf **cur, char **line)
+{
+	int		i;
+	char	buf[4];
+
+	++*line;
+	i = 0;
+	ft_bzero(buf, 4);
+	while (**line >= '0' && **line < '8' && i < 3)
+		buf[i++] = *(*line)++;
+	ft_putchar_mshbuf(cur, ft_atoi_base(buf, 8));
+}
 
 void		ft_dquote_slash(t_buf **cur, char **line)
 {
@@ -28,11 +54,9 @@ void		ft_dquote_slash(t_buf **cur, char **line)
 		ft_putchar_mshbuf(cur, 12);
 	else if (**line == 'r')
 		ft_putchar_mshbuf(cur, 7);
-	else if (**line == '0')
+	else if (**line == '0' || **line == 'x')
 	{
-		ft_putchar_mshbuf(cur, ft_atoi_base(*line, 8));
-		while (**line >= '0' && **line < '8')
-			(*line)++;
+		**line == '0' ? record_oct(cur, line) : record_hex(cur, line);
 		return ;
 	}
 	else if (**line)

@@ -92,7 +92,7 @@ static void	get_vals(char *pattern, char *buf, char *buf_q, char *brackets_end)
 
 int			ft_regex_brackets(char *pattern, char *str, char q)
 {
-	char	*brackets_end = NULL;
+	char	*brackets_end;
 	char	buf[ft_strlen(pattern) + 1];
 	char	buf_q[ft_strlen(pattern) + 1];
 

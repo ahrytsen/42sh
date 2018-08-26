@@ -14,7 +14,7 @@ NAME 		=	42sh
 
 #===========================================================
 OS			= $(shell uname)
-ifeq ($(OS),Darwin)
+#ifeq ($(OS),Darwin)
 	INC		=	-I./inc/ -I./libft/inc/
 	LIBFT	= ./libft/libftprintf.a
 	SUB_MAKE= ./libft
@@ -23,12 +23,12 @@ ifeq ($(OS),Darwin)
 	NON		= \x1b[0m
 	CYANN	= \x1b[36m
 	GREEN	= \x1b[32m
-else
-	INC		= -I../../libft_win/includes -I./inc
-	LIBFT	= ../../libft_win/libftprintf.a
-	SUB_MAKE= ../../libft_win
-	TCAP	= -lcurses
-endif
+#else
+#	INC		= -I../../libft_win/includes -I./inc
+#	LIBFT	= ../../libft_win/libftprintf.a
+#	SUB_MAKE= ../../libft_win
+#	TCAP	= -lcurses
+#endif
 #===========================================================
 
 
@@ -105,11 +105,17 @@ SRC			=	ft_argv.c\
 				ft_expansions/pathname/brackets.c\
 				ft_expansions/pathname/regex.c\
 				ft_expansions/pathname/check_brackets.c\
-				ft_expansions/pathname/ft_strcut.c
+				ft_expansions/pathname/ft_strcut.c\
+				\
+				ft_expansions/tilde/tilde.c\
+				\
+				ft_expansions/variable/substitute_variable.c\
+				\
+				ft_expansions/quote/quote_removal.c
 
 OBJ			=	$(addprefix $(DIROBJ), $(SRC:.c=.o))
 
-CC			=	gcc
+CC			=	clang
 RM			=	rm -rf
 ECHO		=	echo
 
@@ -139,7 +145,7 @@ all: $(NAME)
 
 $(NAME): $(LIBFT) $(DIROBJ) $(OBJ)
 	@echo "$(STRING1)"
-	@$(CC) $(INC) $(INC_LIB) $(CFLAGS) $(OBJ) -o $(NAME)
+	@$(CC) $(INC) $(INC_LIB) $(CFLAGS) $(OBJ) -o $(NAME) libft/libftprintf.a
 	@echo "$(CYANN)comp$(NON)..."$(NAME)"...$(GREEN)OK$(NON)"
 
 $(DIROBJ):
@@ -149,6 +155,9 @@ $(DIROBJ):
 	mkdir -p $(DIROBJ)/ft_expansions
 	mkdir -p $(DIROBJ)/ft_expansions/brace
 	mkdir -p $(DIROBJ)/ft_expansions/pathname
+	mkdir -p $(DIROBJ)/ft_expansions/tilde
+	mkdir -p $(DIROBJ)/ft_expansions/variable
+	mkdir -p $(DIROBJ)/ft_expansions/quote
 
 lib:
 	@$(MAKE) -C $(SUB_MAKE) -j3

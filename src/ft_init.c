@@ -78,13 +78,15 @@ void		ft_init_fd(int fd)
 		ft_if_interactive();
 }
 
-void		ft_init(void)
+void		ft_init(int ac, char **av)
 {
 	extern char	**environ;
 	int			shlvl;
 	char		*tmp;
 
 	ft_bzero(get_environ(), sizeof(t_env));
+	if ((get_environ()->argv = ft_strdup_arr(av)))
+		get_environ()->argc = ac - 1;
 	ft_fildes(FD_BACKUP);
 	get_environ()->envar = ft_strdup_arr(environ);
 	ft_init_shell_var();

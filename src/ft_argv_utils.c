@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_argv_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:25:12 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:22:13 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/24 03:43:30 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void		ft_quote(t_buf **cur, char **line)
 	{
 		if (!**line)
 			break ;
+		if (**line == '\\' && *(*line + 1) == 10)
+			(*line)++;
 		(*line)++;
 	}
 	ft_putstr_mshbuf(cur, st, *line - st);
@@ -73,17 +75,15 @@ void		ft_bquote(t_buf **cur, char **line, uint8_t q)
 	**line ? (*line)++ : 0;
 }
 
-static void	ft_dquote(t_buf **cur, char **line)
+void	ft_dquote(t_buf **cur, char **line)
 {
 	while (**line != '"')
 		if (!**line)
 			break ;
+		else if (**line == '\\' && *(*line + 1) == 10)
+			*line += 2;
 		else if (**line == '\\' && (*line)++)
 			ft_dquote_slash(cur, line);
-		else if (**line == '$' && (*line)++)
-			parse_dollar(cur, line);
-		else if (**line == '`' && (*line)++)
-			ft_bquote(cur, line, 1);
 		else
 			ft_putchar_mshbuf(cur, *(*line)++);
 	**line ? (*line)++ : 0;
@@ -102,11 +102,6 @@ char		*parse_argv(char *line)
 	while (*line)
 		if (*line == '\\' && line++)
 			ft_slash(&cur, &line);
-		else if (*line == '$' && line++)
-			parse_dollar(&cur, &line);
-		else if (*line == '~' && line == tmp
-				&& (*(line + 1) == '/' || !*(line + 1)) && line++)
-			ft_putstr_mshbuf(&cur, ft_getenv("HOME"), -1);
 		else if (*line == '\'' && line++)
 			ft_quote(&cur, &line);
 		else if (*line == '`' || *line == '"')

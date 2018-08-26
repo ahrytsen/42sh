@@ -6,30 +6,45 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:02:28 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/22 18:17:34 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/26 16:58:21 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
 #include "ft_expansions.h"
 
-void	print_list(t_list *lst)
+static t_list	*del_empty_nodes(t_list *lst)
 {
+	t_list	*new_lst;
+	t_list	*tmp;
+
+	new_lst = NULL;
 	while (lst)
 	{
-		ft_printf("%s\n", lst->content);
-		lst = lst->next;
+		tmp = lst->next;
+		if (*(char *)lst->content == '\0')
+		{
+			tmp = lst->next;
+			ft_lstdelone(&lst, (void (*)(void *, size_t)) free);
+		}
+		else
+		{
+			lst->next = NULL;
+			ft_lstadd_end(&new_lst, lst);
+		}
+		lst = tmp;
 	}
+	return (new_lst);
 }
 
-t_list	*get_lst_end(t_list *lst)
+static t_list	*get_lst_end(t_list *lst)
 {
 	while (lst->next)
 		lst = lst->next;
 	return (lst);
 }
 
-void	lstiter_custom(t_list **lst, t_list *(*f)(t_list *))
+static void		lstiter_custom(t_list **lst, t_list *(*f)(t_list *))
 {
 	t_list	*lst_prev;
 	t_list	*new_lst;
@@ -53,7 +68,7 @@ void	lstiter_custom(t_list **lst, t_list *(*f)(t_list *))
 	}
 }
 
-t_list	*perform_expansions(t_list *toks)
+static t_list	*perform_expansions(t_list *toks)
 {
 	t_list	*lst;
 
@@ -61,46 +76,41 @@ t_list	*perform_expansions(t_list *toks)
 	while (toks)
 	{
 		if (((t_token*)(toks->content))->type == word)
-			ft_lstpush_back(&lst, ((t_token*)(toks->content))->word,
-						ft_strlen(((t_token*)(toks->content))->word) + 1);
-		toks = toks->next;
+					ft_lstpush_back(&lst, ((t_token*)(toks->content))->word,
+							ft_strlen(((t_token*)(toks->content))->word) + 1);
+						toks = toks->next;
 	}
 	lstiter_custom(&lst, brace_expansion);
-	// other expansions
-	// syntax: ft_lstiter(&lst, expansion_func);
-	// your expansion_func prototype must be as it required in lstiter prototype
+	ft_lstiter(lst, expand_tilde);
+	ft_lstiter(lst, substitute_variable);
+
+	// Command Substitution
 
 	lstiter_custom(&lst, expand_pathname);
-	// quote removal
-	// syntax: ft_lstiter(&lst, quote_removal_func);
-	// your quote_removal_func prototype must be as it required in lstiter prototype
+	ft_lstiter(lst, remove_quotes);
+	lst = del_empty_nodes(lst);
 	return (lst);
 }
 
 char	**ft_argv_make(t_list *toks)
 {
 	int		i;
-	int		size;
 	char	**av;
 	t_list	*lst;
 	t_list	*tmp;
 
-	i = 0;
 	lst = perform_expansions(toks);
 	tmp = lst;
-	size = ft_lstsize(lst) + 1;
-	if (!(av = ft_memalloc(size * sizeof(av))))
+	i = ft_lstsize(lst) + 1;
+	if (!(av = ft_memalloc(i * sizeof(av))))
 		return (NULL);
+	i = 0;
 	while (lst)
 	{
-		if (!(av[i++] = parse_argv(lst->content)))
-		{
-			ft_strarr_free(av);
-			return (NULL);
-		}
+		av[i++] = lst->content;
 		lst = lst->next;
 	}
-	ft_lstdel(&tmp, (void (*)(void *, size_t))free);
+	ft_lstdel(&tmp, NULL);
 	tmp = NULL;
 	return (av);
 }

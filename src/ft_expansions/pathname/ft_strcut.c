@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 16:39:53 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/08/22 18:31:54 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/26 12:16:13 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,8 @@ char			**ft_strcut(char *s, char c)
 			if (*(s + i) == '\\')
 				s[++i] ? i++ : 0;
 			else
-				i = ft_strchr("'\"", *(s + i)) ? skip_quote(s, i) : i + 1;
+				i = *(s + i) && ft_strchr("'\"", *(s + i)) ?
+					skip_quote(s, i) : i + 1;
 		if (!(out[j++] = cut_word(s, i)))
 			return (cut_free(out));
 		s += i;

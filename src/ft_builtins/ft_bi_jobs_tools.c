@@ -6,11 +6,33 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 21:48:14 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/26 12:13:59 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/26 21:08:56 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
+
+void		ft_jobs_clean_lst(t_list **jobs)
+{
+	if (!jobs || !*jobs)
+		return ;
+	ft_jobs_clean_lst(&(*jobs)->next);
+	if (!(*jobs)->next && !(*jobs)->content)
+		ft_memdel((void**)jobs);
+}
+int			ft_count_jobs(t_list *jobs)
+{
+	int	jobs_num;
+
+	jobs_num = 0;
+	while (jobs)
+	{
+		if (jobs->content)
+			jobs_num++;
+		jobs = jobs->next;
+	}
+	return (jobs_num);
+}
 
 void		ft_cmd_print_colon(t_cmd *cmdlst)
 {
