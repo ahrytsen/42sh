@@ -73,10 +73,10 @@ static int	ft_hist_reveal(char **av)
 		hist = get_term()->hist;
 		while (hist->prev)
 			hist = hist->prev;
-		while (hist)
+		while (hist && hist->line)
 		{
 			str = line_tostr(&hist->line, 0);
-			ft_printf("%5d  %s\n", hist->no, str);
+			ft_printf("%5d  %s %p\n", hist->no, str, hist->line);
 			free(str);
 			hist = hist->next;
 		}

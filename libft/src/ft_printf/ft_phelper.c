@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-const static t_len	g_len[] =
+static const t_len	g_len[] =
 {
 	{1, "hh"}, {2, "h"}, {4, "ll"}, {3, "l"},
 	{5, "j"}, {6, "t"}, {7, "z"}, {8, "L"}, {0, NULL}
@@ -78,9 +78,11 @@ inline long	ft_getnbr(va_list *ap, t_arg *arg)
 {
 	long	nbr;
 
-	nbr = (ft_strchr("pDUO", arg->spec)
-			|| (arg->len && ft_strchr("lzjt", arg->len[0])))
-		? va_arg(*ap, long) : (unsigned int)va_arg(*ap, int);
+	if (ft_strchr("pDUO", arg->spec)
+		|| (arg->len && ft_strchr("lzjt", arg->len[0])))
+		nbr = va_arg(*ap, long);
+	else
+		nbr = (unsigned int)va_arg(*ap, int);
 	if (ft_strchr("pDUO", arg->spec)
 		|| (arg->len && ft_strchr("lzjt", arg->len[0])))
 		return (nbr);
