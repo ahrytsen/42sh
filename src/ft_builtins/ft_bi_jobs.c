@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 14:13:02 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/25 15:18:24 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/26 12:21:17 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void	job_iter(t_list *jobs, int options)
 {
 	int	cur;
 
-	while(jobs)
+	while (jobs)
 	{
 		if (jobs->next && jobs->next->next)
 			cur = 0;

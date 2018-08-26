@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/21 21:50:25 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/26 12:15:06 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -398,6 +398,7 @@ int				ft_jobs(char **av);
 */
 void			ft_cmd_print_colon(t_cmd *cmdlst);
 void			ft_print_status(int st);
+t_list			*ft_job_push_back(t_list **jobs, t_job *new_job);
 /*
 **				ft_builtins/ft_bi_env.c
 */

@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 18:46:30 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/23 20:08:41 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/26 12:36:00 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@
 	tmp = get_environ()->jobs->next;
 	job = get_environ()->jobs->content;
 	free(get_environ()->jobs);
-
 }
 */
+
 int			ft_fg(char **av)
 {
 	t_list	*tmp;

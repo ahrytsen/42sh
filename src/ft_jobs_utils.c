@@ -6,32 +6,11 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 18:37:54 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/25 18:31:25 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/26 12:39:02 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
-
-t_list	*ft_job_push_back(t_list **jobs, t_job *new_job)
-{
-	int	id;
-
-	id = 0;
-	if (!jobs)
-		return (NULL);
-	while (*jobs && (*jobs)->content)
-	{
-		id++;
-		jobs = &(*jobs)->next;
-	}
-	if (!*jobs && (!(*jobs = ft_memalloc(sizeof(t_list)))
-					|| !((*jobs)->content_size = id + 1)))
-		return (NULL);
-	if (!((*jobs)->content = ft_memalloc(sizeof(t_job))))
-		return (NULL);
-	ft_memcpy((*jobs)->content, new_job, sizeof(t_job));
-	return (*jobs);
-}
 
 void		ft_stop_job(t_cmd *cmd, int mod)
 {
@@ -42,23 +21,17 @@ void		ft_stop_job(t_cmd *cmd, int mod)
 	new_job.pgid = get_environ()->pgid;
 	if ((tmp = ft_job_push_back(&get_environ()->jobs, &new_job)))
 	{
-
 		if (mod)
 		{
 			ft_printf("\n[%d] + %d suspended\t", tmp->content_size, cmd->pid);
 			ft_cmdlst_print(cmd);
 			ft_printf("\n");
 		}
+		else
+			ft_printf("[%d] %d\n", tmp->content_size, cmd->pid);
 	}
 	else
 		ft_dprintf(2, "42sh: malloc error\n");
-}
-
-static void	ft_bg_job(t_cmd *cmd)
-{
-	ft_dprintf(2, "[%d] %d\n", ft_lstsize(get_environ()->jobs) + 1,
-				get_environ()->pid);
-	ft_stop_job(cmd, 0);
 }
 
 static void	ft_cmdlst_wait(t_cmd *cmd)
@@ -87,7 +60,7 @@ int			ft_control_job(t_cmd *cmd, int bg, int cont)
 			!bg ? tcsetpgrp(0, get_environ()->pgid) : 0;
 		}
 		cont ? kill(-get_environ()->pgid, SIGCONT) : 0;
-		!bg ? ft_cmdlst_wait(cmd) : ft_bg_job(cmd);
+		!bg ? ft_cmdlst_wait(cmd) : ft_stop_job(cmd, 0);
 		!bg && get_environ()->is_interactive
 			? tcsetpgrp(0, get_environ()->sh_pgid) : 0;
 		!bg && WIFSTOPPED(cmd->ret) ? ft_stop_job(cmd, 1) : 0;

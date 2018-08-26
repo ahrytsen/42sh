@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 21:48:14 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/23 13:17:47 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/26 12:13:59 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,25 @@ void		ft_print_status(int st)
 		else if (WSTOPSIG(st) == SIGTTOU)
 			ft_printf("SIGTTOU)\t\t");
 	}
+}
+
+t_list		*ft_job_push_back(t_list **jobs, t_job *new_job)
+{
+	int	id;
+
+	id = 0;
+	if (!jobs)
+		return (NULL);
+	while (*jobs && (*jobs)->content)
+	{
+		id++;
+		jobs = &(*jobs)->next;
+	}
+	if (!*jobs && (!(*jobs = ft_memalloc(sizeof(t_list)))
+					|| !((*jobs)->content_size = id + 1)))
+		return (NULL);
+	if (!((*jobs)->content = ft_memalloc(sizeof(t_job))))
+		return (NULL);
+	ft_memcpy((*jobs)->content, new_job, sizeof(t_job));
+	return (*jobs);
 }
