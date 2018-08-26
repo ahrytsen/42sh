@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.9)
 project(gsh C)
 
 set(CMAKE_C_STANDARD 99)
@@ -189,6 +189,6 @@ add_executable(gsh
         src/ft_tokenize.c
         src/ft_tokenize_tools.c
         src/ft_tokenize_utils.c
-#        src/main.c
+        src/main.c
         src/ft_expansions/variable/substitute_variable.c
         src/ft_expansions/quote/quote_removal.c)

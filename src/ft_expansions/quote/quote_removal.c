@@ -21,7 +21,7 @@ void	remove_quotes(t_list *lst)
 
 	s = lst->content;
 	if (!(buf = ft_memalloc(sizeof(t_buf))))
-		return;
+		return ;
 	head = buf;
 	while (*s)
 		if (*s == '\\' && *(s + 1) == 10)

@@ -50,11 +50,11 @@ static char	*get_curr_user(char *s)
 	char	*tmp;
 
 	if (!(tmp = ft_other_getenv("HOME")))
-			tmp = getpwuid(getuid())->pw_dir;
+		tmp = getpwuid(getuid())->pw_dir;
 	return (normalnyy_strjoin(tmp, s));
 }
 
-void	expand_tilde(t_list *lst)
+void		expand_tilde(t_list *lst)
 {
 	char	*s;
 

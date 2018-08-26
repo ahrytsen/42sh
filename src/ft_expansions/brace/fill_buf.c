@@ -25,8 +25,8 @@ char	*put_quote_content_to_buf(char *buf, int *i, char *s)
 
 	quote = *s;
 	buf[(*i)++] = *s++;
-	while (*s != quote)
-		if (*s == '\\')
+	while (*s != quote && *s)
+		if (*s == '\\' && quote != '\'')
 			s = put_backslash_to_buf(buf, i, s);
 		else
 			buf[(*i)++] = *s++;

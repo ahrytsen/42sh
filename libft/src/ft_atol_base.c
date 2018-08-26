@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atol_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 13:33:02 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/03/12 15:37:04 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/26 14:24:27 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 static int	in_range(char c, int base)
 {
 	if ((base <= 10 && c >= '0' && c < base + '0')
-		|| (base > 10 && ((c >= 'a' && c < 'a' + base - 10)
-							|| (c >= 'A' && c < 'A' + base - 10))))
+		|| (base > 10 && (ft_isdigit(c)
+						  || (c >= 'a' && c < 'a' + base - 10)
+						  || (c >= 'A' && c < 'A' + base - 10))))
 		return (1);
 	else
 		return (0);

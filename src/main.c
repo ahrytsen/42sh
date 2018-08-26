@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/11 19:53:36 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/23 11:13:45 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/26 12:41:39 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ int			main_loop(int fd)
 		cmds = NULL;
 		ast = NULL;
 		if (!(i = ft_readline(fd, &cmds)) || (i == -1 && !ft_is_interrupted()))
+		{
+			system("/usr/bin/leaks -quiet 42sh >>/Users/yvyliehz/gsh/leaks.txt 2>&-");
 			return (!i ? get_environ()->st : 1);
+		}
 		if (cmds && (toks = ft_tokenize(cmds)) && ft_heredoc(toks))
 		{
 			ast = ft_ast_make(&toks);
@@ -61,5 +64,6 @@ int			main(int ac, char **av)
 		i++;
 		ret = main_loop(fd);
 	}
+//	dup2(open("/Users/yvyliehz/gsh/leaks.txt", O_WRONLY | O_CREAT | O_APPEND), 1);
 	return (ret);
 }

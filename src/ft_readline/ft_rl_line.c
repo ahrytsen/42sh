@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rl_line.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/07 16:25:08 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:18:04 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/26 15:30:39 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*line_tostr(t_line **cursor, int mod)
 	char	*line;
 	t_line	*tmp;
 
-	size = 1;
+	size = 2;
 	line = NULL;
 	tmp = *cursor;
 	while (tmp->next)

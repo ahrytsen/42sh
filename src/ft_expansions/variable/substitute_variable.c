@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 08:15:32 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/25 06:19:53 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/26 16:35:19 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static char	*record_var(t_buf **buf, char *s)
 		tmp = ft_itoa(get_environ()->st);
 		ft_putstr_mshbuf(buf, tmp, -1);
 	}
-	else if  (*s == '$' && ++s)
+	else if (*s == '$' && ++s)
 	{
 		tmp = ft_itoa(get_environ()->sh_pid);
 		ft_putstr_mshbuf(buf, tmp, -1);
@@ -91,7 +91,7 @@ static char	*skip_parentheses(char *s, t_buf **buf)
 	return (s);
 }
 
-void	substitute_variable(t_list *lst)
+void		substitute_variable(t_list *lst)
 {
 	char	*s;
 	t_buf	*buf;
@@ -106,14 +106,13 @@ void	substitute_variable(t_list *lst)
 			ft_putchar_mshbuf(&buf, *s++);
 			*s ? ft_putchar_mshbuf(&buf, *s++) : 0;
 		}
-		else if (*s == '$' && ft_isword(*(s + 1)) && s++)
+		else if (*s == '$' && (ft_isword(*(s + 1)) || ft_isdigit(*(s + 1))
+							|| *(s + 1) == '?') && s++)
 			s = record_var(&buf, s);
 		else if (*s == '$' && *(s + 1) == '(')
 			s = skip_parentheses(s, &buf);
-		else if (*s == '"')
-			s = record_dquote(s, &buf);
-		else if (*s == '\'' || *s == '`')
-			s = record_quote(s, &buf);
+		else if (*s && ft_strchr("\"'`", *s))
+			s = *s == '"' ? record_dquote(s, &buf) : record_quote(s, &buf);
 		else
 			ft_putchar_mshbuf(&buf, *s++);
 	free(lst->content);
