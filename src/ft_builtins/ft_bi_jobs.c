@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 14:13:02 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/26 21:07:15 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/27 17:19:50 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static void	job_iter(t_list *jobs, int options)
 	}
 }
 
-static int	job_by_id(t_list *jobs, int options, size_t id)
+int			job_by_id(t_list *jobs, int options, size_t id)
 {
 	int	i;
 	int	cur;

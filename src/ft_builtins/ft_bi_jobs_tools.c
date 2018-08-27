@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 21:48:14 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/26 21:08:56 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/27 20:36:32 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void		ft_jobs_clean_lst(t_list **jobs)
 	if (!(*jobs)->next && !(*jobs)->content)
 		ft_memdel((void**)jobs);
 }
+
 int			ft_count_jobs(t_list *jobs)
 {
 	int	jobs_num;
@@ -66,6 +67,8 @@ void		ft_print_status(int st)
 		else if (WSTOPSIG(st) == SIGTTOU)
 			ft_printf("SIGTTOU)\t\t");
 	}
+	else if (WIFSIGNALED(st))
+		ft_printf("Terminated(%d)\t\t", WTERMSIG(st));
 }
 
 t_list		*ft_job_push_back(t_list **jobs, t_job *new_job)

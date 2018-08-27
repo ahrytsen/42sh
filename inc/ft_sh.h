@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/26 21:09:16 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/27 20:51:23 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,8 @@ typedef struct	s_env
 	int				bkp_fd[3];
 	int				sh_terminal;
 	int				is_interactive;
-	char 			**argv;
-	int 			argc;
+	char			**argv;
+	int				argc;
 }				t_env;
 
 typedef struct	s_builtins
@@ -395,6 +395,7 @@ int				ft_fg(char **av);
 /*
 **				ft_builtins/ft_bi_jobs.c
 */
+int				job_by_id(t_list *jobs, int options, size_t id);
 int				ft_jobs(char **av);
 /*
 **				ft_builtins/ft_bi_jobs_tools.c
