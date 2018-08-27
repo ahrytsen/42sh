@@ -35,7 +35,7 @@ static void	ft_hist_add_entry(char *line)
 	tmp->line = (t_line *)ft_memalloc(sizeof(t_line));
 	while (line[i])
 	{
-		line_add(tmp->line, (uint64_t)line[i]);
+		line_add(tmp->line, (uint64_t)line[i]);							//UNICODE
 		i++;
 	}
 	get_term()->hist = tmp;

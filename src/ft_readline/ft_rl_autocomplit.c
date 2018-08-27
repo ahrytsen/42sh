@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_readline.h"
+#include "ft_sh.h"
 
 char		*ft_rl_autocomp_switcher(t_list *lst, char *str)
 {
@@ -39,9 +40,8 @@ static char	*rl_check_line(t_line *cur, size_t size)
 	t_line	*tmp;
 
 	tmp = cur;
-	while (cur && cur->next && cur->ch != ' ' && cur->ch != '\t'
-		&& (cur->ch != '$' || (cur->ch == '$' && size == 1)) && cur->ch != ';'
-		&& cur->ch != '&' && cur->ch != '|')
+	while (cur && cur->next && !ft_isseparator(cur->ch)
+		&& (cur->ch != '$' || (cur->ch == '$' && size == 1)))
 	{
 		cur = cur->next;
 		size += ft_strlen((char*)&cur->ch);
@@ -71,8 +71,7 @@ static char	*rl_search(char *str)
 	int		mk;
 
 	len = ft_strlen(str);
-	while (len && str[len - 1] != ' ' && str[len - 1] != '\t' && str[len] != '$'
-		&& str[len - 1] != ';' && str[len - 1] != '|' && str[len - 1] != '&')
+	while (len && !ft_isseparator(str[len - 1]) && str[len] != '$')
 		len--;
 	s = str + len;
 	while (len && (str[len - 1] == ' ' || str[len - 1] == '\t')
@@ -105,7 +104,7 @@ void		ft_autocomplit(t_line *cursor)
 		{
 			tmp = res;
 			while (*res)
-				ft_add((uint64_t)(*res++));
+				ft_add((uint64_t)(*res++));								//UNICODE
 			free(tmp);
 		}
 	}

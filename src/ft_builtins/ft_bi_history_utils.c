@@ -113,10 +113,10 @@ void			ft_hist_add_rec(char **av)
 		i = 0;
 		while ((*av)[i])
 		{
-			line_add(line, (uint64_t)(*av)[i]);
+			line_add(line, (uint64_t)(*av)[i]);							//UNICODE
 			i++;
 		}
-		line_add(line, (uint64_t)(' '));
+		line_add(line, (uint64_t)(' '));							//UNICODE
 		av++;
 	}
 	get_term()->hist->line = line;

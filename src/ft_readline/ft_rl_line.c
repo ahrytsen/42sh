@@ -35,7 +35,7 @@ char	*line_tostr(t_line **cursor, int mod)
 	char	*line;
 	t_line	*tmp;
 
-	size = 1;
+	size = 2;														//size of (UNICODE)
 	line = NULL;
 	tmp = *cursor;
 	while (tmp->next)
