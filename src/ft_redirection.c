@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 14:04:03 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/17 20:10:39 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/28 17:34:54 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,8 @@ int			ft_redirection(t_list *toks)
 		token = toks->content;
 		if (token->type == redir)
 		{
+			if ((ret = ft_redir_expansion(token)))
+				return (ret);
 			if (token->data.redir.type >= heredoc
 				&& token->data.redir.type <= herestr)
 				ret = ft_redir_heredoc(token);

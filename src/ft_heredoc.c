@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/23 21:00:10 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/15 21:19:58 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/28 18:23:39 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	ft_heredoc_toread(t_token *tok)
 	line = NULL;
 	f = 0;
 	ret = 0;
-	get_term()->heredoc_key = parse_heredoc(tok->data.redir.right, 0, &f);
+	get_term()->heredoc_key = parse_heredoc(tok->word, 0, &f);
 	while (get_term()->heredoc_key && (ret = ft_readline(0, &line)) > 0)
 	{
 		if (!ft_strcmp(line, get_term()->heredoc_key))
@@ -84,8 +84,8 @@ int			ft_heredoc(t_list *toks)
 			if (!(ret = ft_heredoc_toread(tok)))
 				break ;
 		}
-		else if (tok->data.redir.type == herestr)
-			tok->data.redir.hd = parse_heredoc(tok->data.redir.right, 1, NULL);
+		else if (tok->type == redir && tok->data.redir.type == herestr)
+			tok->data.redir.hd = parse_heredoc(tok->word, 1, NULL);
 		toks = toks->next;
 	}
 	get_term()->prompt = P_USER;

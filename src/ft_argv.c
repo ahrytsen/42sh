@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:02:28 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/26 16:58:21 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/28 17:55:48 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,17 +68,17 @@ static void		lstiter_custom(t_list **lst, t_list *(*f)(t_list *))
 	}
 }
 
-static t_list	*perform_expansions(t_list *toks)
+t_list			*perform_expansions(t_list *toks, int mod)
 {
 	t_list	*lst;
 
-	lst = NULL;
-	while (toks)
+	lst = (mod ? NULL : toks);
+	while (mod && toks)
 	{
 		if (((t_token*)(toks->content))->type == word)
-					ft_lstpush_back(&lst, ((t_token*)(toks->content))->word,
+			ft_lstpush_back(&lst, ((t_token*)(toks->content))->word,
 							ft_strlen(((t_token*)(toks->content))->word) + 1);
-						toks = toks->next;
+		toks = toks->next;
 	}
 	lstiter_custom(&lst, brace_expansion);
 	ft_lstiter(lst, expand_tilde);
@@ -92,14 +92,14 @@ static t_list	*perform_expansions(t_list *toks)
 	return (lst);
 }
 
-char	**ft_argv_make(t_list *toks)
+char			**ft_argv_make(t_list *toks)
 {
 	int		i;
 	char	**av;
 	t_list	*lst;
 	t_list	*tmp;
 
-	lst = perform_expansions(toks);
+	lst = perform_expansions(toks, EXP_TOKS);
 	tmp = lst;
 	i = ft_lstsize(lst) + 1;
 	if (!(av = ft_memalloc(i * sizeof(av))))

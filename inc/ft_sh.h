@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/27 20:51:23 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/28 18:02:25 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,12 @@
 # define J_DEF 0
 # define J_L 1
 # define J_P 2
+
+/*
+**	PERFORM_EXP_OPTIONS
+*/
+# define EXP_STRS 0
+# define EXP_TOKS 1
 
 typedef struct	s_op
 {
@@ -243,6 +249,7 @@ int				main_loop(int fd);
 /*
 **				ft_argv.c
 */
+t_list			*perform_expansions(t_list *toks, int mod);
 char			**ft_argv_make(t_list *toks);
 /*
 **				ft_argv_exec.c
@@ -334,6 +341,7 @@ void			ft_redirection_close(t_list *toks);
 */
 int				ft_redir_right_param(t_token *tok);
 int				ft_redir_check(t_token *prev, t_token *next, char *ln);
+int				ft_redir_expansion(t_token *tok);
 /*
 **				ft_shell_var.c
 */
@@ -357,6 +365,7 @@ int				ft_set_tool(const char *name, const char *value,
 							int overwrite, int mod);
 int				ft_unset_tool(const char *name, int mod);
 int				ft_setter(const char *name, const char *value);
+char			*ft_assign_expansions(char *str);
 /*
 **				ft_tokenize.c
 */

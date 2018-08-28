@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/21 20:22:09 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/28 17:28:32 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,8 +118,8 @@ t_list		*ft_tokenize(char *ln)
 				|| !(tok.type = semi))) || tok.type == blank)
 			continue ;
 		else if (toks && ((t_token*)tmp->content)->type == redir
-			&& !((t_token*)tmp->content)->data.redir.right && tok.type == word)
-			((t_token*)tmp->content)->data.redir.right = tok.word;
+			&& !((t_token*)tmp->content)->word && tok.type == word)
+			((t_token*)tmp->content)->word = tok.word;
 		else if (ft_redir_check(toks ? tmp->content : NULL, &tok, ln)
 			|| !(tmp = ft_lstpush_back(toks ? &tmp : &toks, &tok, sizeof(tok))))
 		{
