@@ -101,9 +101,9 @@ static char	**ft_get_path(const char *altpath)
 
 static char	*ft_search_bin(char *bin_name, const char *altpath)
 {
-	int				i;
-	char			*exec_path;
-	char			**path;
+	int		i;
+	char	*exec_path;
+	char	**path;
 
 	i = 0;
 	exec_path = NULL;
@@ -114,8 +114,7 @@ static char	*ft_search_bin(char *bin_name, const char *altpath)
 		if (!(exec_path = malloc(ft_strlen(path[i]) + ft_strlen(bin_name) + 2)))
 			return (NULL);
 		ft_strcpy(exec_path, path[i]);
-		ft_strcat(exec_path, "/");
-		ft_strcat(exec_path, bin_name);
+		ft_strcat(ft_strcat(exec_path, "/"), bin_name);
 		if (!access(exec_path, F_OK))
 			break ;
 		ft_memdel((void**)&exec_path);
@@ -127,7 +126,7 @@ static char	*ft_search_bin(char *bin_name, const char *altpath)
 	return (exec_path);
 }
 
-int			ft_argv_exec(char **cmd, char *altpath, int bg)					//27
+int			ft_argv_exec(char **cmd, char *altpath, int bg)
 {
 	char	*bin_path;
 	int		st;

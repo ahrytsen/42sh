@@ -41,67 +41,62 @@ static char	**ft_cd_flags(char **av, char *fl)
 	return (av);
 }
 
-static char	*path_resolver(char *old)
+static char	*path_resolver(char *ptr)
 {
 	char	*new;
-	char	*ptr;
 	char	**elem;
 	int		i;
 
-	new = (char *)ft_memalloc(ft_strlen(old) + 1);
-	elem = ft_strsplit(old, '/');
+	if (!*(ptr + 1))
+		return (ptr);
+	new = (char *)ft_memalloc(ft_strlen(ptr) + 1);
+	elem = ft_strsplit(ptr, '/');
+	free(ptr);
 	i = 0;
 	while (elem[i])
 	{
 		if (!ft_strcmp(elem[i], "..") && (ptr = ft_strrchr(new, '/')))
 		{
-			while (*ptr)
-			{
-				*ptr = 0;
-				ptr++;
-			}
+			ft_bzero((void *)ptr, ft_strlen(ptr));
+			!*new ? *new = '/' : 0;
 		}
 		else if (ft_strcmp(elem[i], ".") && ft_strcmp(elem[i], ".."))
-		{
-			ft_strcat(new, "/");
-			ft_strcat(new, elem[i]);
-		}
+			ft_strcat(ft_strcat(new, "/"), elem[i]);
 		i++;
 	}
-	free(old);
+	ft_free_arr((void **)elem);
 	return (new);
 }
 
-static int	step2(char *curpath, char fl)
+static int	ft_change_dir(char **curpath, char fl, char *dir)
 {
-	char *str;
+	char		*str;
+	char		buf[MAXPATHLEN];
 	struct stat	tmp;
 
-	write(1, "@", 1);
-	if (fl != 'P')
+	if (fl < 'P')
 	{
-		if (*curpath != '/')
-		{
-			str = ft_strjoin(ft_getenv("PWD"), "/");
-			curpath = ft_strjoin(str, curpath);
-			free(str);
-		}
-		curpath = path_resolver(curpath);
+		if (**curpath != '/' && (str = ft_strjoin(ft_getenv("PWD"), "/")))
+			*curpath = ft_strextend(str, *curpath);
+		*curpath = path_resolver(*curpath);
 	}
-	if (*curpath)
-	{
-		if ((access(curpath, F_OK)
-		&& ft_dprintf(2, "cd: no such file or directory: %s\n", curpath))
-		|| (!stat(curpath, &tmp)
-		&& !S_ISDIR(tmp.st_mode) && ft_dprintf(2, "cd: not a directory: %s\n", curpath))
-		|| (((access(curpath, X_OK)) || chdir(curpath) == -1)
-		&& ft_dprintf(2, "cd: permission denied: %s\n", curpath)))
+	if (!(*curpath && **curpath))
+		return (0);
+	if ((access(*curpath, F_OK) && ft_dprintf(2, "cd: no such file or direc\
+tory: %s\n", dir)) || (!stat(*curpath, &tmp) && !S_ISDIR(tmp.st_mode)
+	&& ft_dprintf(2, "cd: not a directory: %s\n", dir))
+	|| (((access(*curpath, X_OK)) || chdir(*curpath) == -1)
+	&& ft_dprintf(2, "cd: permission denied: %s\n", dir)))
 		return (256);
-	}
+	ft_set_tool("OLDPWD", ft_getenv("PWD"), 1, ENVAR);
+	ft_set_tool("PWD", (fl >= 'P' ? getcwd(buf, MAXPATHLEN) : *curpath)
+	, 1, ENVAR);
+	if (fl != 'L' && fl != 'P')
+		ft_printf("%s\n", *curpath);
 	return (0);
 }
 
-static char	*search_cdpath(char *dir, char **paths)
+static char	*search_cdpath(char *dir, char **paths, char *fl)
 {
 	char		*curpath;
 	char		*str;
@@ -118,6 +113,7 @@ static char	*search_cdpath(char *dir, char **paths)
 			free(str);
 			if (!stat(curpath, &tmp) && S_ISDIR(tmp.st_mode))
 			{
+				(*fl)++;
 				ft_free_arr((void **)paths);
 				return (curpath);
 			}
@@ -133,29 +129,27 @@ int			ft_cd(char **av)
 {
 	char	fl;
 	char	*dir;
+	char	*tmp;
 	int		rat;
 
 	fl = 'L';
 	if (!(av = ft_cd_flags(av, &fl)))
 		return (256);
-	if (!*av && !(dir = ft_getenv("HOME")))
+	if (!*av || (*av && **av == '-' && !*(*av + 1)))
 	{
-		write(2, "cd: HOME not set\n", 17);
-		return (256);
+		tmp = (!*av ? "HOME" : "OLDPWD");
+		*av ? fl++ : 0;
+		if (!(dir = ft_getenv(tmp)) && ft_dprintf(2, "cd: %s not set\n", tmp))
+			return (256);
 	}
-	else if (*av && **av == '-' && !*(*av + 1) && !(dir = ft_getenv("OLDPWD"))
-	&& write(2, "cd: OLDPWD not set\n", 19))
-		return (256);
 	else
 		dir = *av;
-	ft_printf("%s\n", dir);
-	if (*dir == '/' || (!ft_strncmp(dir, "./", 2) || !ft_strncmp(dir, "../", 3)))
-	{
-		write(1, "#", 1);
-		return (step2(dir, fl));
-	}
-	dir = search_cdpath(dir, ft_strsplit(ft_getenv("CDPATH"), ':'));
-	rat = step2(dir, fl);
-	free(dir);
+	if (*dir != '/' && ft_strncmp(dir, "./", 2) && ft_strncmp(dir, "../", 3)
+	&& ft_strncmp(dir, ".\0", 2) && ft_strncmp(dir, "..\0", 3))
+		tmp = search_cdpath(dir, ft_strsplit(ft_getenv("CDPATH"), ':'), &fl);
+	else
+		tmp = ft_strdup(dir);
+	rat = ft_change_dir(&tmp, fl, *av);
+	free(tmp);
 	return (rat);
 }

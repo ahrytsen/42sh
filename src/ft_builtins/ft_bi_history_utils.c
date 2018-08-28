@@ -105,8 +105,8 @@ void			ft_hist_add_rec(char **av)
 
 	if (!*av)
 		return ;
-	line = get_term()->hist->line;
-	line_tostr(&line, 2);
+	if (get_term()->hist && (line = get_term()->hist->line))
+		line_tostr(&line, 2);
 	line = (t_line *)ft_memalloc(sizeof(t_line));
 	while (*av)
 	{
@@ -119,5 +119,7 @@ void			ft_hist_add_rec(char **av)
 		line_add(line, (uint64_t)(' '));							//UNICODE
 		av++;
 	}
+	if (!get_term()->hist)
+		get_term()->hist = (t_hist *)ft_memalloc(sizeof(t_hist));
 	get_term()->hist->line = line;
 }

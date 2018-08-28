@@ -49,11 +49,8 @@ static char	*rl_check_line(t_line *cur, size_t size)
 	}
 	get_term()->cursor = cur;
 	while (tmp->prev && tmp->prev->ch != ';' && tmp->prev->ch != '&'
-		&& tmp->prev->ch != '|')
-	{
-		tmp = tmp->prev;
+		&& tmp->prev->ch != '|' && (tmp = tmp->prev))
 		size += ft_strlen((char*)&tmp->ch);
-	}
 	if (!(line = ft_memalloc(sizeof(char) * size)))
 		return (NULL);
 	while (tmp != cur)

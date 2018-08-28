@@ -106,14 +106,19 @@ void		ft_hist_show_without_add(char **av)
 	t_hist	*hist;
 	t_hist	*tmp;
 
-	hist = get_term()->hist;
-	tmp = hist->prev;
-	tmp->next = NULL;
+	tmp = NULL;
+	if ((hist = get_term()->hist))
+	{
+		tmp = hist->prev;
+		if (tmp)
+			tmp->next = NULL;
+		if (hist->line)
+			line_tostr(&hist->line, 2);
+		if (hist->tmp)
+			line_tostr(&hist->tmp, 2);
+		free(hist);
+	}
 	get_term()->hist = tmp;
-	line_tostr(&hist->line, 2);
-	if (hist->tmp)
-		line_tostr(&hist->tmp, 2);
-	free(hist);
 	while (*av)
 	{
 		ft_putendl(*av);

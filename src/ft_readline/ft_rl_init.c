@@ -89,7 +89,6 @@ void		ft_terminal(int mod)
 	else if (mod == T_INIT && !already_saved)
 	{
 		ft_bzero(get_term(), sizeof(t_term));
-
 		ft_init_termcap();
 		tcgetattr(get_environ()->sh_terminal, &get_term()->savetty);
 		get_term()->work_tty = get_term()->savetty;

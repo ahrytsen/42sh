@@ -282,7 +282,6 @@ int				ft_redir_check(t_token *prev, t_token *next, char *ln);
 */
 void			ft_init_shell_var(void);
 int				ft_is_valid_name(char *str);
-char			*ft_getenv(const char *name);
 char			*ft_other_getenv(const char *name);
 void			ft_var_checker(t_list *lst);
 t_env			*get_environ(void);
@@ -296,17 +295,18 @@ int				ft_print_shvar(int mod);
 /*
 **				ft_shell_var_utils.c
 */
+int				ft_setter(const char *name, const char *value);
 int				ft_set_tool(const char *name, const char *value, int overwrite
 	, int mod);
 int				ft_unset_tool(const char *name, int mod);
-int				ft_setter(const char *name, const char *value);
+char			*ft_getenv(const char *name);
 /*
 **				ft_tokenize.c
 */
 t_list			*ft_tokenize(char *ln);
 /*
- **				ft_tokenize_tools.c
- */
+**				ft_tokenize_tools.c
+*/
 int				ft_isseparator(int c);
 void			ft_token_del(void *token, size_t size);
 /*
