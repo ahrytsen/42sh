@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 20:36:35 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/21 21:11:09 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/23 13:33:14 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,23 @@ static void	ft_cmd_print_smpl(t_cmd *cmd)
 	}
 }
 
+static void	ft_ast_print(t_ast *ast)
+{
+	if (!ast)
+		return ;
+	ft_ast_print(ast->right);
+	if (ast->type == cmd)
+		ft_cmdlst_print(ast->cmd);
+	else
+		ft_printf(ast->left ? " %s " : " %s", ft_ast_name(ast->type));
+	ft_ast_print(ast->left);
+}
+
 static void	ft_cmd_print_subsh(t_cmd *cmd)
 {
-	(void)cmd;
+	ft_printf("(");
+	ft_ast_print(((t_token*)(cmd->toks->content))->data.sub_ast);
+	ft_printf(")");
 }
 
 static void	ft_cmd_print_not(t_cmd *cmd)

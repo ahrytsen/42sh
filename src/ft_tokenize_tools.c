@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 20:36:51 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/21 20:25:42 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/29 18:03:42 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,27 @@ const char	*ft_tname(t_token *tok)
 		return (t_names[tok->type]);
 	else
 		return ("unknown token");
+}
+
+void	ft_get_ampersand(char  **ln, t_token *token)
+{
+	*(*ln)++ = '\0';
+	if (**ln == '>')
+	{
+		*(*ln)++ = '\0';
+		token->type = redir;
+		token->data.redir.type = and_read_out;
+		if (**ln == '>')
+		{
+			*(*ln)++ = '\0';
+			token->data.redir.type = and_read_out_apend;
+		}
+	}
+	else if (**ln == '&')
+	{
+		*(*ln)++ = '\0';
+		token->type = and;
+	}
+	else
+		token->type = bg_op;
 }

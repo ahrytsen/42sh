@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/05 17:38:16 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/15 15:52:35 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/27 20:53:36 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@
 # include <sys/ioctl.h>
 # include <signal.h>
 # include <term.h>
-
-#include <inttypes.h>
-
+# include <inttypes.h>
 
 /*
 **	KEY BINDINGS

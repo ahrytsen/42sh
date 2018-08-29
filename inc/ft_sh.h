@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/23 11:04:04 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/29 19:34:56 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,12 @@
 # define J_L 1
 # define J_P 2
 
+/*
+**	PERFORM_EXP_OPTIONS
+*/
+# define EXP_STRS 0
+# define EXP_TOKS 1
+
 typedef struct	s_op
 {
 	int		v;
@@ -95,8 +101,8 @@ typedef struct	s_env
 	int				bkp_fd[3];
 	int				sh_terminal;
 	int				is_interactive;
-	char 			**argv;
-	int 			argc;
+	char			**argv;
+	int				argc;
 }				t_env;
 
 typedef struct	s_builtins
@@ -171,7 +177,8 @@ typedef struct	s_token
 				read_in,
 				read_in_and,
 				read_out_and,
-				and_read_out
+				and_read_out,
+				and_read_out_apend
 			}		type;
 			int		cls;
 			int		left;
@@ -243,6 +250,7 @@ int				main_loop(int fd);
 /*
 **				ft_argv.c
 */
+t_list			*perform_expansions(t_list *toks, int mod);
 char			**ft_argv_make(t_list *toks);
 /*
 **				ft_argv_exec.c
@@ -260,7 +268,7 @@ void			ft_bquote_helper(t_buf **cur, char *str);
 void			parse_dollar(t_buf **cur, char **line);
 void			ft_quote(t_buf **cur, char **line);
 void			ft_bquote(t_buf **cur, char **line, uint8_t q);
-char			*parse_argv(char *line);
+//char			*parse_argv(char *line);
 void			ft_dquote(t_buf **cur, char **line);
 /*
 **				ft_ast.c
@@ -310,6 +318,7 @@ t_cmd			*ft_cmdlst_push(t_cmd *cmdlst, t_cmd *node);
 /*
 **				ft_heredoc.c
 */
+void			ft_heredoc_expansion(t_token *tok);
 int				ft_heredoc(t_list *toks);
 /*
 **				ft_init.c
@@ -334,6 +343,7 @@ void			ft_redirection_close(t_list *toks);
 */
 int				ft_redir_right_param(t_token *tok);
 int				ft_redir_check(t_token *prev, t_token *next, char *ln);
+int				ft_redir_expansion(t_token *tok);
 /*
 **				ft_shell_var.c
 */
@@ -357,6 +367,7 @@ int				ft_set_tool(const char *name, const char *value,
 							int overwrite, int mod);
 int				ft_unset_tool(const char *name, int mod);
 int				ft_setter(const char *name, const char *value);
+char			*ft_assign_expansions(char *str);
 /*
 **				ft_tokenize.c
 */
@@ -367,6 +378,7 @@ t_list			*ft_tokenize(char *ln);
 int				ft_isseparator(int c);
 void			ft_token_del(void *token, size_t size);
 const char		*ft_tname(t_token *tok);
+void			ft_get_ampersand(char  **ln, t_token *token);
 /*
 **				ft_tokenize_utils.c
 */
@@ -395,12 +407,16 @@ int				ft_fg(char **av);
 /*
 **				ft_builtins/ft_bi_jobs.c
 */
+int				job_by_id(t_list *jobs, int options, size_t id);
 int				ft_jobs(char **av);
 /*
 **				ft_builtins/ft_bi_jobs_tools.c
 */
+void			ft_jobs_clean_lst(t_list **jobs);
+int				ft_count_jobs(t_list *jobs);
 void			ft_cmd_print_colon(t_cmd *cmdlst);
 void			ft_print_status(int st);
+t_list			*ft_job_push_back(t_list **jobs, t_job *new_job);
 /*
 **				ft_builtins/ft_bi_env.c
 */

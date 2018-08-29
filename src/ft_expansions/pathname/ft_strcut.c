@@ -68,7 +68,7 @@ static size_t	skip_quote(char *s, size_t i)
 
 	q = *(s + i++);
 	while (*(s + i) != q && *(s + i))
-		if (s[i] == '\\')
+		if (q != '\'' && s[i] == '\\')
 			s[++i] ? i++ : 0;
 		else
 			++i;

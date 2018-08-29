@@ -6,11 +6,12 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 15:44:16 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:20:51 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/28 19:01:44 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
+#include "ft_expansions.h"
 
 static char	*ft_new_env_str(const char *name, const char *value)
 {
@@ -108,4 +109,27 @@ int			ft_unset_tool(const char *name, int mod)
 	while (*env++)
 		*(env - 1) = *env;
 	return (0);
+}
+
+char			*ft_assign_expansions(char *str)
+{
+	char	*value;
+	char	*sign;
+	char	*res;
+	t_list	tmp;
+
+	if (!(sign = ft_strchr(str, '=')))
+		return (str);
+	value = ft_strdup(sign + 1);
+	sign[1] = '\0';
+	ft_bzero(&tmp, sizeof(t_list));
+	tmp.content = value;
+	ft_lstiter(&tmp, expand_tilde);
+	ft_lstiter(&tmp, substitute_variable);
+	// Command Substitution
+	ft_lstiter(&tmp, remove_quotes);
+	res = ft_strjoin(str, tmp.content);
+	free(tmp.content);
+	free(str);
+	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/11 19:53:36 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/26 12:41:39 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/28 14:16:22 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int			main_loop(int fd)
 		ast = NULL;
 		if (!(i = ft_readline(fd, &cmds)) || (i == -1 && !ft_is_interrupted()))
 		{
-			system("/usr/bin/leaks -quiet 42sh >>/Users/yvyliehz/gsh/leaks.txt 2>&-");
+			system("/usr/bin/leaks -quiet 42sh >>/Users/motofun/projects/42sh/leaks.txt 2>&-");
 			return (!i ? get_environ()->st : 1);
 		}
 		if (cmds && (toks = ft_tokenize(cmds)) && ft_heredoc(toks))

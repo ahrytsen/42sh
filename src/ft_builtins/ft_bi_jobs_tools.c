@@ -6,11 +6,34 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 21:48:14 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/21 21:48:45 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/27 20:36:32 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
+
+void		ft_jobs_clean_lst(t_list **jobs)
+{
+	if (!jobs || !*jobs)
+		return ;
+	ft_jobs_clean_lst(&(*jobs)->next);
+	if (!(*jobs)->next && !(*jobs)->content)
+		ft_memdel((void**)jobs);
+}
+
+int			ft_count_jobs(t_list *jobs)
+{
+	int	jobs_num;
+
+	jobs_num = 0;
+	while (jobs)
+	{
+		if (jobs->content)
+			jobs_num++;
+		jobs = jobs->next;
+	}
+	return (jobs_num);
+}
 
 void		ft_cmd_print_colon(t_cmd *cmdlst)
 {
@@ -22,7 +45,6 @@ void		ft_cmd_print_colon(t_cmd *cmdlst)
 		ft_cmd_print(cmdlst);
 		cmdlst = cmdlst->next;
 	}
-	ft_printf("\n");
 }
 
 void		ft_print_status(int st)
@@ -45,4 +67,27 @@ void		ft_print_status(int st)
 		else if (WSTOPSIG(st) == SIGTTOU)
 			ft_printf("SIGTTOU)\t\t");
 	}
+	else if (WIFSIGNALED(st))
+		ft_printf("Terminated(%d)\t\t", WTERMSIG(st));
+}
+
+t_list		*ft_job_push_back(t_list **jobs, t_job *new_job)
+{
+	int	id;
+
+	id = 0;
+	if (!jobs)
+		return (NULL);
+	while (*jobs && (*jobs)->content)
+	{
+		id++;
+		jobs = &(*jobs)->next;
+	}
+	if (!*jobs && (!(*jobs = ft_memalloc(sizeof(t_list)))
+					|| !((*jobs)->content_size = id + 1)))
+		return (NULL);
+	if (!((*jobs)->content = ft_memalloc(sizeof(t_job))))
+		return (NULL);
+	ft_memcpy((*jobs)->content, new_job, sizeof(t_job));
+	return (*jobs);
 }

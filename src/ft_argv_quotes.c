@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:36:50 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/26 14:19:19 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/29 13:45:34 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,10 @@ void		ft_dquote_slash(t_buf **cur, char **line)
 		return ;
 	}
 	else if (**line)
+	{
+		ft_putchar_mshbuf(cur, '\\');
 		ft_putchar_mshbuf(cur, **line);
+	}
 	**line ? (*line)++ : 0;
 }
 

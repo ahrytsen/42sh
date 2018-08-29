@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 14:13:02 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/21 21:54:30 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/27 17:19:50 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	job_usage(char c)
 {
 	ft_dprintf(2, "42sh: jobs: -%c: invalid option\n"
 				"jobs: usage: jobs [-l|-p] [job_id...]\n", c);
-	return (1);
+	return (256);
 }
 
 static void	job_show(t_job *job, int options, int cur, int id)
@@ -41,36 +41,55 @@ static void	job_show(t_job *job, int options, int cur, int id)
 			ft_cmd_print_colon(cmds);
 		else
 			ft_cmdlst_print(cmds);
+		ft_printf("\n");
 	}
 }
 
-static int	job_iter(t_list *jobs, int options, int cur)
+static void	job_iter(t_list *jobs, int options)
 {
-	int	id;
+	int	i;
+	int	num_jobs;
+	int	cur;
 
-	if (!jobs)
-		return (1);
-	id = job_iter(jobs->next, options, cur ? cur - 1 : cur);
-	job_show(jobs->content, options, cur, id);
-	return (id + 1);
+	i = 0;
+	num_jobs = ft_count_jobs(jobs);
+	while (jobs)
+	{
+		if (jobs->content)
+		{
+			i++;
+			if (i < num_jobs - 1)
+				cur = 0;
+			else
+				cur = (i == num_jobs ? 2 : 1);
+			job_show(jobs->content, options, cur, jobs->content_size);
+		}
+		jobs = jobs->next;
+	}
 }
 
-static int	job_by_id(t_list *jobs, int options, int id)
+int			job_by_id(t_list *jobs, int options, size_t id)
 {
+	int	i;
 	int	cur;
 	int	num_jobs;
 
-	num_jobs = ft_lstsize(jobs);
-	cur = (id == num_jobs ? 2 : 0);
-	cur = (id == num_jobs - 1 ? 1 : 0);
-	while (jobs && num_jobs != id)
+	i = 0;
+	num_jobs = ft_count_jobs(jobs);
+	while (jobs)
 	{
+		jobs->content ? i++ : 0;
+		if (jobs->content_size == id)
+			break ;
 		jobs = jobs->next;
-		num_jobs--;
 	}
-	jobs ? job_show(jobs->content, options, cur, id)
+	if (i < num_jobs - 1)
+		cur = 0;
+	else
+		cur = (i == num_jobs ? 2 : 1);
+	jobs && jobs->content ? job_show(jobs->content, options, cur, id)
 		: ft_dprintf(2, "42sh: jobs: %d: no such job\n", id);
-	return (jobs == NULL);
+	return (jobs && jobs->content);
 }
 
 int			ft_jobs(char **av)
@@ -91,10 +110,10 @@ int			ft_jobs(char **av)
 		av++;
 	}
 	if (!*av)
-		job_iter(get_environ()->jobs, options, 2);
+		job_iter(get_environ()->jobs, options);
 	else
 		while (*av)
 			if (job_by_id(get_environ()->jobs, options, ft_atoi(*av++)))
-				ret = 1;
+				ret = 256;
 	return (ret);
 }
