@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 14:40:46 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/13 14:42:52 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/26 18:12:28 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ char	*put_quote_content_to_buf(char *buf, int *i, char *s)
 	while (*s != quote && *s)
 		if (*s == '\\' && quote != '\'')
 			s = put_backslash_to_buf(buf, i, s);
+		else if (*s == '$' && *(s + 1) == '(')
+		{
+			buf[(*i)++] = *s++;
+			s = put_parentheses_content_to_buf(buf, i, s);
+		}
 		else
 			buf[(*i)++] = *s++;
 	buf[(*i)++] = *s++;

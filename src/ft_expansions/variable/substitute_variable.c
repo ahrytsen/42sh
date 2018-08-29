@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 08:15:32 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/26 16:35:19 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/29 15:56:30 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,28 +44,21 @@ static char	*record_var(t_buf **buf, char *s)
 
 static char	*record_quote(char *s, t_buf **buf)
 {
-	char	*tmp;
+	char	*st;
+	char	quote;
 
-	tmp = ft_strchr(s + 1, *s);
-	ft_putstr_mshbuf(buf, s, tmp - s + 1);
-	return (tmp + 1);
-}
-
-static char	*record_dquote(char *s, t_buf **buf)
-{
-	ft_putchar_mshbuf(buf, *s++);
-	while (*s != '"' && *s)
-		if (*s == '\\')
-		{
-			ft_putchar_mshbuf(buf, *s++);
-			*s ? ft_putchar_mshbuf(buf, *s++) : 0;
-		}
-		else if (*s == '$' && ft_isword(*(s + 1)) && s++)
-			s = record_var(buf, s);
-		else
-			ft_putchar_mshbuf(buf, *s++);
-	ft_putchar_mshbuf(buf, *s++);
-	return (s);
+	st = s;
+	quote = *s++;
+	while (*s != '\'')
+	{
+		if (!*s)
+			break ;
+		if (*s == '\\' && quote == '`')
+			++s;
+		++s;
+	}
+	ft_putstr_mshbuf(buf, st, s - st + 1);
+	return (*s ? ++s : s);
 }
 
 static char	*skip_parentheses(char *s, t_buf **buf)
@@ -85,6 +78,25 @@ static char	*skip_parentheses(char *s, t_buf **buf)
 			break ;
 		else if (*s == '(')
 			s = skip_parentheses(s, buf);
+		else
+			ft_putchar_mshbuf(buf, *s++);
+	ft_putchar_mshbuf(buf, *s++);
+	return (s);
+}
+
+static char	*record_dquote(char *s, t_buf **buf)
+{
+	ft_putchar_mshbuf(buf, *s++);
+	while (*s != '"' && *s)
+		if (*s == '\\')
+		{
+			ft_putchar_mshbuf(buf, *s++);
+			*s ? ft_putchar_mshbuf(buf, *s++) : 0;
+		}
+		else if (*s == '$' && *(s + 1) == '(')
+			s = skip_parentheses(s, buf);
+		else if (*s == '$' && ft_isword(*(s + 1)) && s++)
+			s = record_var(buf, s);
 		else
 			ft_putchar_mshbuf(buf, *s++);
 	ft_putchar_mshbuf(buf, *s++);

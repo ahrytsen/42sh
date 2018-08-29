@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:02:28 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/26 16:58:21 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/26 18:17:33 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,12 +82,14 @@ static t_list	*perform_expansions(t_list *toks)
 	}
 	lstiter_custom(&lst, brace_expansion);
 	ft_lstiter(lst, expand_tilde);
+//	ft_printf("ASD\n");
 	ft_lstiter(lst, substitute_variable);
 
 	// Command Substitution
 
 	lstiter_custom(&lst, expand_pathname);
 	ft_lstiter(lst, remove_quotes);
+//	ft_printf("ASD1\n");
 	lst = del_empty_nodes(lst);
 	return (lst);
 }

@@ -64,6 +64,5 @@ int			main(int ac, char **av)
 		i++;
 		ret = main_loop(fd);
 	}
-//	dup2(open("/Users/yvyliehz/gsh/leaks.txt", O_WRONLY | O_CREAT | O_APPEND), 1);
 	return (ret);
 }
