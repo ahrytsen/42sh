@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/29 16:36:25 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/08/29 19:53:37 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -124,13 +124,13 @@ SRC		=	ft_arrstr.c\
 			ft_isblank.c\
 			ft_iscntrl.c\
 			ft_isgraph.c\
-	        ft_islower.c\
-	        ft_ispunct.c\
-	        ft_isupper.c\
-	        ft_isword.c\
-	        ft_isxdigit.c\
-	        ft_strnchr.c\
-	        ft_lstinsert.c\
+			ft_islower.c\
+			ft_ispunct.c\
+			ft_isupper.c\
+			ft_isword.c\
+			ft_isxdigit.c\
+			ft_strnchr.c\
+			ft_lstinsert.c\
 			ft_printf/ft_pbuf.c\
 			ft_printf/ft_pfloat.c\
 			ft_printf/ft_phelper.c\

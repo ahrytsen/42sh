@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/29 14:06:48 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/08/29 19:56:43 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -14,7 +14,7 @@ NAME 		=	42sh
 
 #===========================================================
 OS			= $(shell uname)
-#ifeq ($(OS),Darwin)
+ifeq ($(OS),Darwin)
 	INC		=	-I./inc/ -I./libft/inc/
 	LIBFT	= ./libft/libftprintf.a
 	SUB_MAKE= ./libft
@@ -23,12 +23,12 @@ OS			= $(shell uname)
 	NON		= \x1b[0m
 	CYANN	= \x1b[36m
 	GREEN	= \x1b[32m
-#else
-#	INC		= -I../../libft_win/includes -I./inc
-#	LIBFT	= ../../libft_win/libftprintf.a
-#	SUB_MAKE= ../../libft_win
-#	TCAP	= -lcurses
-#endif
+else
+	INC		= -I../../libft_win/includes -I./inc
+	LIBFT	= ../../libft_win/libftprintf.a
+	SUB_MAKE= ../../libft_win
+	TCAP	= -lcurses
+endif
 #===========================================================
 
 
@@ -47,7 +47,7 @@ SRC			=	ft_argv.c\
 				ft_argv_utils.c\
 				ft_ast.c\
 				ft_ast_exec.c\
-                ft_ast_debug.c\
+				ft_ast_debug.c\
 				ft_ast_utils.c\
 				ft_buffer.c\
 				ft_cmd_print.c\

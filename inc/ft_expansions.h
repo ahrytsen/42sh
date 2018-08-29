@@ -6,14 +6,14 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 14:22:50 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/27 20:53:16 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/29 21:18:12 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_EXPANSIONS_H
 # define FT_EXPANSIONS_H
 
-# include "libft.h"
+# include "ft_sh.h"
 # include <dirent.h>
 # include <sys/stat.h>
 # include <pwd.h>
@@ -75,6 +75,7 @@ void			expand_tilde(t_list *lst);
 /*
 **		substitute_variable.c
 */
+char			*record_var(t_buf **buf, char *s);
 void			substitute_variable(t_list *lst);
 /*
 **			quote_removal.c

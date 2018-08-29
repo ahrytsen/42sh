@@ -6,13 +6,13 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:25:12 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/29 14:35:43 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/29 21:21:58 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
 
-void		parse_dollar(t_buf **cur, char **line)
+/*void		parse_dollar(t_buf **cur, char **line)
 {
 	char	*st;
 	char	*tmp;
@@ -34,7 +34,7 @@ void		parse_dollar(t_buf **cur, char **line)
 	ft_putstr_mshbuf(cur, ft_getenv(tmp), -1);
 	free(tmp);
 }
-
+*/
 void		ft_quote(t_buf **cur, char **line)
 {
 	char	*st;
@@ -89,7 +89,7 @@ void	ft_dquote(t_buf **cur, char **line)
 	**line ? (*line)++ : 0;
 }
 
-char		*parse_argv(char *line)
+/*char		*parse_argv(char *line)
 {
 	char	*tmp;
 	t_buf	*head;
@@ -111,3 +111,4 @@ char		*parse_argv(char *line)
 			ft_putchar_mshbuf(&cur, *line++);
 	return (ft_buftostr(head));
 }
+*/

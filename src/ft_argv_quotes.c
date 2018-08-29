@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:36:50 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/29 13:45:34 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/29 20:06:57 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ void		ft_bquote_helper(t_buf **cur, char *str)
 		get_environ()->pid = 0;
 	}
 	else if (get_environ()->pid == -1)
-		write(2, "21sh: fork() error\n", 19);
+		write(2, "42sh: fork() error\n", 19);
 	else
 		ft_bquote_child(fd_get, str);
 }

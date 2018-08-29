@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/23 21:00:10 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/29 19:34:14 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/29 21:20:32 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,18 @@ void		ft_heredoc_expansion(t_token *tok)
 		return ;
 	cur = head;
 	while (*s)
-		if (*s == '\\' && (*s == '$' || *s == '`' || *s == '\\'))
+		if (*s == '\\' && s++)
 		{
-			ft_putstr_mshbuf(&cur, s, 2);
-			s += 2;
+			if (*s != '$' && *s != '`' && *s != '\\')
+				ft_putchar_mshbuf(&cur, '\\');
+			ft_putchar_mshbuf(&cur, *s++);
 		}
 		else if (*s == '`' && s++)
 			ft_bquote(&cur, &s, 0);
 		else if (*s == '$' && *(s + 1) == '(' && (s += 2))
 			ft_bquote(&cur, &s, 0);
 		else if (*s == '$' && s++)
-			parse_dollar(&cur, &s);
+			s = record_var(&cur, s);
 		else
 			ft_putchar_mshbuf(&cur, *s++);
 	tok->data.redir.right = ft_buftostr(head);
