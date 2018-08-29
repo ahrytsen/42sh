@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/28 17:28:32 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/29 18:03:24 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,15 +60,8 @@ static int	ft_get_separator(char **ln, t_token *token)
 	else if (**ln == '|' && !(*(*ln)++ = '\0'))
 		token->type =
 			(**ln == '|' && !(*(*ln)++ = '\0')) ? or : pipeln;
-	else if (**ln == '&' && !(*(*ln)++ = '\0'))
-	{
-		if (**ln == '>' && !(*(*ln)++ = '\0')
-			&& (token->type = redir))
-			token->data.redir.type = and_read_out;
-		else
-			token->type =
-				(**ln == '&' && !(*(*ln)++ = '\0')) ? and : bg_op;
-	}
+	else if (**ln == '&')
+		ft_get_ampersand(ln, token);
 	else if ((**ln == '(' || **ln == ')') && (token->type = subsh))
 		return (ft_get_subsh(ln, token));
 	else if (**ln == '<')

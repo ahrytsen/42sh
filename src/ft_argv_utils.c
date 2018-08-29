@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:25:12 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/24 03:43:30 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/29 14:35:43 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	ft_dquote(t_buf **cur, char **line)
 	while (**line != '"')
 		if (!**line)
 			break ;
-		else if (**line == '\\' && *(*line + 1) == 10)
+		else if (**line == '\\' && *(*line + 1) == '\n')
 			*line += 2;
 		else if (**line == '\\' && (*line)++)
 			ft_dquote_slash(cur, line);

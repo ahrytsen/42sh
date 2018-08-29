@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/28 18:02:25 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/29 19:34:56 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,7 +177,8 @@ typedef struct	s_token
 				read_in,
 				read_in_and,
 				read_out_and,
-				and_read_out
+				and_read_out,
+				and_read_out_apend
 			}		type;
 			int		cls;
 			int		left;
@@ -267,7 +268,7 @@ void			ft_bquote_helper(t_buf **cur, char *str);
 void			parse_dollar(t_buf **cur, char **line);
 void			ft_quote(t_buf **cur, char **line);
 void			ft_bquote(t_buf **cur, char **line, uint8_t q);
-char			*parse_argv(char *line);
+//char			*parse_argv(char *line);
 void			ft_dquote(t_buf **cur, char **line);
 /*
 **				ft_ast.c
@@ -317,6 +318,7 @@ t_cmd			*ft_cmdlst_push(t_cmd *cmdlst, t_cmd *node);
 /*
 **				ft_heredoc.c
 */
+void			ft_heredoc_expansion(t_token *tok);
 int				ft_heredoc(t_list *toks);
 /*
 **				ft_init.c
@@ -376,6 +378,7 @@ t_list			*ft_tokenize(char *ln);
 int				ft_isseparator(int c);
 void			ft_token_del(void *token, size_t size);
 const char		*ft_tname(t_token *tok);
+void			ft_get_ampersand(char  **ln, t_token *token);
 /*
 **				ft_tokenize_utils.c
 */

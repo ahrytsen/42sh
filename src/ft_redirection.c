@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 14:04:03 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/28 17:34:54 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/29 19:35:49 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ static int	ft_redir_fd(t_token *tok)
 	int	fd;
 
 	if ((!ft_redir_right_param(tok) && tok->data.redir.type == read_out_and
-		&& tok->data.redir.left == 1) || tok->data.redir.type == and_read_out)
+		&& tok->data.redir.left == 1) || tok->data.redir.type >= and_read_out)
 	{
-		fd = open(tok->data.redir.right, O_WRONLY | O_CREAT | O_TRUNC,
+		fd = open(tok->data.redir.right, O_WRONLY | O_CREAT
+				| (tok->data.redir.type == and_read_out ? O_TRUNC : O_APPEND),
 				S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 		if (fd < 0)
 			return (256);
@@ -44,6 +45,16 @@ static int	ft_redir_heredoc(t_token *tok)
 {
 	int	pl[2];
 
+	if (!tok->data.redir.nbr)
+	{
+		ft_memdel((void**)&tok->data.redir.right);
+		ft_heredoc_expansion(tok);
+	}
+	else if (!tok->data.redir.right)
+	{
+		tok->data.redir.right = tok->data.redir.hd;
+		tok->data.redir.hd = NULL;
+	}
 	if (pipe(pl) && write(2, "42sh: pipe error\n", 17))
 		return (256);
 	if (dup2(pl[0], tok->data.redir.left) == -1
@@ -51,7 +62,7 @@ static int	ft_redir_heredoc(t_token *tok)
 		return (256);
 	close(pl[0]);
 	ft_dprintf(pl[1], tok->data.redir.type == herestr
-				? "%s\n" : "%s", tok->data.redir.hd);
+				? "%s\n" : "%s", tok->data.redir.right);
 	close(pl[1]);
 	return (0);
 }
@@ -108,7 +119,8 @@ int			ft_redirection(t_list *toks)
 		token = toks->content;
 		if (token->type == redir)
 		{
-			if ((ret = ft_redir_expansion(token)))
+			if (token->data.redir.type > herestr
+				&& (ret = ft_redir_expansion(token)))
 				return (ret);
 			if (token->data.redir.type >= heredoc
 				&& token->data.redir.type <= herestr)
@@ -116,7 +128,7 @@ int			ft_redirection(t_list *toks)
 			else if (token->data.redir.type >= open_file
 					&& token->data.redir.type <= read_in)
 				ret = ft_redir_file(token);
-			else if (token->data.redir.type <= and_read_out)
+			else if (token->data.redir.type <= and_read_out_apend)
 				ret = ft_redir_fd(token);
 		}
 		toks = toks->next;

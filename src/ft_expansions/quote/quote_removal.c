@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/24 03:23:42 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/25 06:26:39 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/08/29 14:42:12 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void	remove_quotes(t_list *lst)
 	t_buf	*buf;
 	t_buf	*head;
 
-	s = lst->content;
-	if (!(buf = ft_memalloc(sizeof(t_buf))))
+	if (!lst || !lst->content || !(buf = ft_memalloc(sizeof(t_buf))))
 		return ;
 	head = buf;
+	s = lst->content;
 	while (*s)
-		if (*s == '\\' && *(s + 1) == 10)
+		if (*s == '\\' && *(s + 1) == '\n')
 			s += 2;
 		else if (*s == '\\' && s++)
 			ft_slash(&buf, &s);
