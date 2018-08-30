@@ -27,8 +27,9 @@ char		*ft_rl_autocomp_switcher(t_list *lst, char *str)
 	get_term()->comp_stage++;
 	if (lst->next == NULL)
 		get_term()->comp_stage = 0;
-	get_term()->comp_erase = lst->content_size - (ft_strlen(str) + 2);
-	i = get_term()->comp_erase;
+	get_term()->comp_erase = ft_strlen_unicode(lst->content)
+			- (ft_strlen_unicode(str) + 1);
+	i = lst->content_size - (ft_strlen(str) + 2);
 	ptr = (char *)ft_memalloc(i + 1);
 	ft_strncpy(ptr, lst->content + ft_strlen(str), i);
 	return (ptr);
@@ -101,7 +102,7 @@ void		ft_autocomplit(t_line *cursor)
 		{
 			tmp = res;
 			while (*res)
-				ft_add((uint64_t)(*res++));								//UNICODE
+				ft_add(ft_get_unichar(&res));
 			free(tmp);
 		}
 	}

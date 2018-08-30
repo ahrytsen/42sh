@@ -101,7 +101,7 @@ int				ft_hist_erase_rec(char *str)
 void			ft_hist_add_rec(char **av)
 {
 	t_line	*line;
-	int		i;
+	char	*tmp;
 
 	if (!*av)
 		return ;
@@ -110,13 +110,10 @@ void			ft_hist_add_rec(char **av)
 	line = (t_line *)ft_memalloc(sizeof(t_line));
 	while (*av)
 	{
-		i = 0;
-		while ((*av)[i])
-		{
-			line_add(line, (uint64_t)(*av)[i]);							//UNICODE
-			i++;
-		}
-		line_add(line, (uint64_t)(' '));							//UNICODE
+		tmp = *av;
+		while (*tmp)
+			line_add(line, ft_get_unichar(&tmp));
+		line_add(line, (uint64_t)(' '));
 		av++;
 	}
 	if (!get_term()->hist)

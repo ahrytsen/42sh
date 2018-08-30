@@ -12,7 +12,7 @@
 
 #include "ft_sh.h"
 
-static char	**ft_cd_flags(char **av, char *fl)
+static char	**ft_cd_flags(char **av, int *fl)
 {
 	int	i;
 
@@ -47,7 +47,7 @@ static char	*path_resolver(char *ptr)
 	char	**elem;
 	int		i;
 
-	if (!*(ptr + 1))
+	if (!ptr || !*(ptr + 1))
 		return (ptr);
 	new = (char *)ft_memalloc(ft_strlen(ptr) + 1);
 	elem = ft_strsplit(ptr, '/');
@@ -56,32 +56,32 @@ static char	*path_resolver(char *ptr)
 	while (elem[i])
 	{
 		if (!ft_strcmp(elem[i], "..") && (ptr = ft_strrchr(new, '/')))
-		{
 			ft_bzero((void *)ptr, ft_strlen(ptr));
-			!*new ? *new = '/' : 0;
-		}
 		else if (ft_strcmp(elem[i], ".") && ft_strcmp(elem[i], ".."))
 			ft_strcat(ft_strcat(new, "/"), elem[i]);
 		i++;
 	}
 	ft_free_arr((void **)elem);
+	if (!*new)
+		*new = '/';
 	return (new);
 }
 
-static int	ft_change_dir(char **curpath, char fl, char *dir)
+static int	ft_change_dir(char **curpath, int fl, char *dir)
 {
 	char		*str;
 	char		buf[MAXPATHLEN];
 	struct stat	tmp;
 
+	if (!*curpath)
+		return (256);
 	if (fl < 'P')
 	{
 		if (**curpath != '/' && (str = ft_strjoin(ft_getenv("PWD"), "/")))
 			*curpath = ft_strextend(str, *curpath);
-		*curpath = path_resolver(*curpath);
+		if (!(*curpath = path_resolver(*curpath)))
+			return (256);
 	}
-	if (!(*curpath && **curpath))
-		return (0);
 	if ((access(*curpath, F_OK) && ft_dprintf(2, "cd: no such file or direc\
 tory: %s\n", dir)) || (!stat(*curpath, &tmp) && !S_ISDIR(tmp.st_mode)
 	&& ft_dprintf(2, "cd: not a directory: %s\n", dir))
@@ -96,60 +96,60 @@ tory: %s\n", dir)) || (!stat(*curpath, &tmp) && !S_ISDIR(tmp.st_mode)
 	return (0);
 }
 
-static char	*search_cdpath(char *dir, char **paths, char *fl)
+static char	*search_cdpath(char *dir, char **paths, int *fl)
 {
 	char		*curpath;
 	char		*str;
 	struct stat	tmp;
 	int			i;
 
-	if (paths)
+	if (!paths)
+		return (ft_strdup(dir));
+	i = 0;
+	while (paths[i])
 	{
-		i = 0;
-		while (paths[i])
+		str = ft_strjoin(paths[i], "/");
+		curpath = ft_strjoin(str, dir);
+		free(str);
+		if (!stat(curpath, &tmp) && S_ISDIR(tmp.st_mode))
 		{
-			str = ft_strjoin(paths[i], "/");
-			curpath = ft_strjoin(str, dir);
-			free(str);
-			if (!stat(curpath, &tmp) && S_ISDIR(tmp.st_mode))
-			{
-				(*fl)++;
-				ft_free_arr((void **)paths);
-				return (curpath);
-			}
-			free(curpath);
-			i++;
+			(*fl)++;
+			ft_free_arr((void **)paths);
+			return (curpath);
 		}
-		ft_free_arr((void **)paths);
+		free(curpath);
+		i++;
 	}
-	return (ft_strdup(dir));
+	ft_free_arr((void **)paths);
+	ft_dprintf(2, "cd: no such file or directory: %s\n", dir);
+	return (NULL);
 }
 
 int			ft_cd(char **av)
 {
-	char	fl;
 	char	*dir;
 	char	*tmp;
-	int		rat;
+	int		mk[2];
 
-	fl = 'L';
-	if (!(av = ft_cd_flags(av, &fl)))
+	*mk = 'L';
+	if (!(av = ft_cd_flags(av, mk)))
 		return (256);
 	if (!*av || (*av && **av == '-' && !*(*av + 1)))
 	{
 		tmp = (!*av ? "HOME" : "OLDPWD");
-		*av ? fl++ : 0;
-		if (!(dir = ft_getenv(tmp)) && ft_dprintf(2, "cd: %s not set\n", tmp))
+		*av ? (*mk)++ : 0;
+		if ((!(dir = ft_getenv(tmp)) || !*dir)
+		&& ft_dprintf(2, "cd: %s not set\n", tmp))
 			return (256);
 	}
 	else
 		dir = *av;
 	if (*dir != '/' && ft_strncmp(dir, "./", 2) && ft_strncmp(dir, "../", 3)
 	&& ft_strncmp(dir, ".\0", 2) && ft_strncmp(dir, "..\0", 3))
-		tmp = search_cdpath(dir, ft_strsplit(ft_getenv("CDPATH"), ':'), &fl);
+		tmp = search_cdpath(dir, ft_strsplit(ft_getenv("CDPATH"), ':'), mk);
 	else
 		tmp = ft_strdup(dir);
-	rat = ft_change_dir(&tmp, fl, *av);
+	mk[1] = ft_change_dir(&tmp, *mk, dir);
 	free(tmp);
-	return (rat);
+	return (mk[1]);
 }

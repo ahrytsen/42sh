@@ -35,15 +35,15 @@ char	*line_tostr(t_line **cursor, int mod)
 	char	*line;
 	t_line	*tmp;
 
-	size = 2;														//size of (UNICODE)
+	size = 1;
 	line = NULL;
 	tmp = *cursor;
 	while (tmp->next)
 		tmp = tmp->next;
 	while (tmp->prev)
 	{
-		size += ft_strlen((char*)&tmp->ch);
 		tmp = tmp->prev;
+		size += ft_strlen((char*)&tmp->ch);
 	}
 	if (mod != 2 && !(line = ft_memalloc(sizeof(char) * size)))
 		return (NULL);

@@ -109,7 +109,7 @@ int			ft_unset_tool(const char *name, int mod)
 	return (0);
 }
 
-t_env	*get_environ(void)
+t_env		*get_environ(void)
 {
 	static t_env	env;
 
