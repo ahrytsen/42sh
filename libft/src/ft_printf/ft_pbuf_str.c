@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 19:54:13 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/29 16:34:12 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/30 11:55:04 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static size_t	ft_buflen(t_buf *pbuf_head)
 	return (size);
 }
 
-ssize_t			ft_buftostr(char **line, t_buf *pbuf, t_buf *pbuf_head)
+ssize_t			ft_pbuf_str(char **line, t_buf *pbuf, t_buf *pbuf_head)
 {
 	ssize_t	size;
 	ssize_t	tmp_sz;

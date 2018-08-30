@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/29 19:56:43 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/08/30 11:40:02 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -141,7 +141,7 @@ STRING5 = $(CYAN)---$(NAME) installed in ~/.mybin$(NON)
 
 .PHONY: all clean re
 
-all: $(NAME)
+all: lib $(NAME)
 
 $(NAME): $(LIBFT) $(DIROBJ) $(OBJ)
 	@echo "$(STRING1)"
@@ -159,10 +159,10 @@ $(DIROBJ):
 	mkdir -p $(DIROBJ)/ft_expansions/variable
 	mkdir -p $(DIROBJ)/ft_expansions/quote
 
+$(LIBFT): lib
+
 lib:
 	@$(MAKE) -C $(SUB_MAKE) -j3
-
-$(LIBFT): lib
 
 $(OBJ):	$(DIROBJ)%.o : $(DIRSRC)%.c $(HDR)
 	@$(CC) $(INC) $(CFLAGS) -o $@ -c $<

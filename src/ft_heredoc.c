@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/23 21:00:10 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/29 21:20:32 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/30 11:43:31 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,7 @@ static int	ft_heredoc_toread(t_token *tok)
 		while (tok->data.redir.type == heredoc_t && line[i] == '\t')
 			i++;
 		tmp = tok->data.redir.hd;
-		ft_asprintf(&tok->data.redir.hd, "%s%s\n",
-					tok->data.redir.hd ? tok->data.redir.hd : "", line + i);
+		ft_asprintf(&tok->data.redir.hd, "%s%s\n", tmp ? tmp : "", line + i);
 		free(tmp);
 		ft_memdel((void**)&line);
 	}
