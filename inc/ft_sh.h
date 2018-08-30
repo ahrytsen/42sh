@@ -282,7 +282,6 @@ int				ft_redir_check(t_token *prev, t_token *next, char *ln);
 */
 void			ft_init_shell_var(void);
 int				ft_is_valid_name(char *str);
-char			*ft_getenv(const char *name);
 char			*ft_other_getenv(const char *name);
 void			ft_var_checker(t_list *lst);
 t_env			*get_environ(void);
@@ -296,17 +295,18 @@ int				ft_print_shvar(int mod);
 /*
 **				ft_shell_var_utils.c
 */
+int				ft_setter(const char *name, const char *value);
 int				ft_set_tool(const char *name, const char *value, int overwrite
 	, int mod);
 int				ft_unset_tool(const char *name, int mod);
-int				ft_setter(const char *name, const char *value);
+char			*ft_getenv(const char *name);
 /*
 **				ft_tokenize.c
 */
 t_list			*ft_tokenize(char *ln);
 /*
- **				ft_tokenize_tools.c
- */
+**				ft_tokenize_tools.c
+*/
 int				ft_isseparator(int c);
 void			ft_token_del(void *token, size_t size);
 /*
@@ -327,11 +327,6 @@ int				ft_export(char **av);
 */
 int				ft_cd(char **av);
 /*
-**				ft_builtins/ft_bi_fg.c
-*/
-int				ft_count_fg(t_list *proc);
-int				ft_fg(char **av);
-/*
 **				ft_builtins/ft_bi_env.c
 */
 int				ft_env(char **av);
@@ -341,18 +336,36 @@ int				ft_env_op(int p);
 */
 int				ft_export(char **av);
 /*
-**				ft_builtins/ft_bi_un_setenv.c
+**				ft_builtins/ft_bi_fg.c
 */
-int				ft_setenv(char **av);
-int				ft_unsetenv(char **av);
+int				ft_count_fg(t_list *proc);
+int				ft_fg(char **av);
+/*
+**				ft_builtins/ft_bi_history.c
+*/
+int				ft_history(char **av);
+/*
+**				ft_builtins/ft_bi_history_toolz.c
+*/
+void			ft_hist_init(char *str);
+void			ft_hist_read(char *str);
+void			ft_hist_show_without_add(char **av);
+/*
+**				ft_builtins/ft_bi_history_utils.c
+*/
+int				ft_hist_usage(int err);
+void			ft_hist_erase(void);
+int				ft_hist_erase_rec(char *str);
+void			ft_hist_add_rec(char **av);
 /*
 **				ft_builtins/ft_bi_un_set.c
 */
 int				ft_unset(char **av);
 int				ft_set_var(t_list *var, int mod);
 /*
-**				ft_builtins/ft_bi_history.c
+**				ft_builtins/ft_bi_un_setenv.c
 */
-int				ft_history(char **av);
+int				ft_setenv(char **av);
+int				ft_unsetenv(char **av);
 
 #endif

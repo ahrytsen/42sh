@@ -42,8 +42,8 @@ char	*line_tostr(t_line **cursor, int mod)
 		tmp = tmp->next;
 	while (tmp->prev)
 	{
-		size += ft_strlen((char*)&tmp->ch);
 		tmp = tmp->prev;
+		size += ft_strlen((char*)&tmp->ch);
 	}
 	if (mod != 2 && !(line = ft_memalloc(sizeof(char) * size)))
 		return (NULL);

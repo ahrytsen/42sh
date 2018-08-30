@@ -12,7 +12,7 @@
 
 #include "ft_readline.h"
 
-ssize_t	ft_read(int fd, uint64_t *buf)
+ssize_t		ft_read(int fd, uint64_t *buf)
 {
 	ssize_t	ret;
 
@@ -29,4 +29,49 @@ ssize_t	ft_read(int fd, uint64_t *buf)
 	else if (*buf >= 0xF0 && *buf <= 0xF4)
 		ret = read(fd, (uint8_t*)buf + 1, 3);
 	return (ret > 0 ? ret + 1 : ret);
+}
+
+uint64_t	ft_get_unichar(char **str)
+{
+	uint64_t		tmp;
+	size_t			size;
+	unsigned char	u;
+
+	u = (unsigned char)**str;
+	if (u >= 0xC2 && u <= 0xDF)
+		size = 2;
+	else if (u >= 0xE0 && u <= 0xEF)
+		size = 3;
+	else if (u >= 0xF0 && u <= 0xF4)
+		size = 4;
+	else
+		size = 1;
+	tmp = 0;
+	strncat((char *)&tmp, *str, size);
+	*str += size;
+	return (tmp);
+}
+
+size_t		ft_strlen_unicode(char *str)
+{
+	size_t			i;
+	unsigned char	u;
+
+	i = 0;
+	if (!str || !*str)
+		return (0);
+	while (*str)
+	{
+		u = (unsigned char)*str;
+		if (u >= 0xC2 && u <= 0xDF)
+			str += 2;
+		else if (u >= 0xE0 && u <= 0xEF)
+			str += 3;
+		else if (u >= 0xF0 && u <= 0xF4)
+			str += 4;
+		else
+			str += 1;
+		i++;
+	}
+	return (i);
 }

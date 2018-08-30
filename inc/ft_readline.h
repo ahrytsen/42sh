@@ -113,6 +113,7 @@ typedef struct	s_term
 	struct termios	work_tty;
 	int				comp_stage;
 	int				comp_erase;
+	int				hist_max_size;
 }				t_term;
 
 /*
@@ -144,6 +145,8 @@ void			ft_redraw_line(void);
 **				ft_readline/ft_rl_read.c
 */
 ssize_t			ft_read(int fd, uint64_t *buf);
+uint64_t		ft_get_unichar(char **str);
+size_t			ft_strlen_unicode(char *str);
 /*
 **				ft_readline/ft_rl_cursor.c
 */

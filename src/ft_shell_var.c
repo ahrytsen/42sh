@@ -80,13 +80,6 @@ void	ft_var_checker(t_list *lst)
 	}
 }
 
-t_env	*get_environ(void)
-{
-	static t_env	env;
-
-	return (&env);
-}
-
 char	*ft_getenv(const char *name)
 {
 	t_var	*entry;
