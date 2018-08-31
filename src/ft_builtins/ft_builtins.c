@@ -54,18 +54,50 @@ int		ft_exit(char **av)
 	exit((av && *av) ? ft_atoi(*av) : get_environ()->st);
 }
 
+static int	ft_exec_exec(char **cmd, int bg)
+{
+	char	*bin_path;
+	int		st;
+
+	if (!cmd || !*cmd)
+		return (0);
+	bin_path = NULL;
+	if (ft_strchr(*cmd, '/'))
+		st = ft_exec_bypath(cmd, *cmd, bg);
+	else
+	{
+		if ((bin_path = ft_search_bin(*cmd, NULL)))
+			st = ft_exec_bypath(cmd, bin_path, bg);
+		else if ((st = 127))
+			ft_dprintf(2, "%s: command not found\n", *cmd);
+	}
+	free(bin_path);
+	return (st);
+}
+
 int		ft_exec(char **av)
 {
 	pid_t	tmp;
 	int		rat;
+	int		shlvl;
+	char	*ptr;
 
 	tmp = get_environ()->pid;
 	if (!av || !*av)
 		return (0);
 	get_environ()->pid = 1;
-	rat = 256;
-	if (!(rat = ft_argv_exec(av, NULL, -1)))
+	ptr = ft_getenv("SHLVL");
+	shlvl = ft_atoi(ptr);
+	ptr = ft_itoa(shlvl - 1);
+	ft_set_tool("SHLVL", ptr, 1, ENVAR);
+	free(ptr);
+	if (!(rat = ft_exec_exec(av, -1)))
 		exit(0);
+	ptr = ft_getenv("SHLVL");
+	shlvl = ft_atoi(ptr);
+	ptr = ft_itoa(shlvl + 1);
+	ft_set_tool("SHLVL", ptr, 1, ENVAR);
+	free(ptr);
 	get_environ()->pid = tmp;
 	return (rat);
 }
