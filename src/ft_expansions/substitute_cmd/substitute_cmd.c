@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   substitute_variable.c                              :+:      :+:    :+:   */
+/*   substitute_cmd.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/23 08:15:32 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/31 03:45:11 by ahrytsen         ###   ########.fr       */
+/*   Created: 2018/08/30 18:56:58 by ahrytsen          #+#    #+#             */
+/*   Updated: 2018/08/30 23:46:22 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_expansions.h"
 #include "ft_sh.h"
 
-char		*record_var(t_buf **buf, char *s)
+/*char		*record_var(t_buf **buf, char *s)
 {
 	char	*tmp;
 
@@ -49,14 +49,13 @@ static char	*record_quote(char *s, t_buf **buf)
 
 	st = s;
 	quote = *s++;
-	while (*s != quote)
+	while (*s != '\'')
 	{
 		if (!*s)
 			break ;
-		if (*s == '\\' && quote != '\'')
+		if (*s == '\\' && quote == '`')
 			++s;
-		else
-			++s;
+		++s;
 	}
 	ft_putstr_mshbuf(buf, st, s - st + 1);
 	return (*s ? ++s : s);
@@ -103,10 +102,10 @@ static char	*record_dquote(char *s, t_buf **buf)
 	ft_putchar_mshbuf(buf, *s++);
 	return (s);
 }
-
-void		substitute_variable(t_list *lst)
+*/
+void		substitute_cmd(t_list *lst)
 {
-	char	*s;
+/*	char	*s;
 	t_buf	*buf;
 	t_buf	*head;
 
@@ -119,15 +118,13 @@ void		substitute_variable(t_list *lst)
 			ft_putchar_mshbuf(&buf, *s++);
 			*s ? ft_putchar_mshbuf(&buf, *s++) : 0;
 		}
-		else if (*s == '$' && (ft_isword(*(s + 1)) || ft_isdigit(*(s + 1))
-							|| *(s + 1) == '?') && s++)
-			s = record_var(&buf, s);
 		else if (*s == '$' && *(s + 1) == '(')
 			s = skip_parentheses(s, &buf);
 		else if (*s && ft_strchr("\"'`", *s))
 			s = (*s == '"' ? record_dquote(s, &buf) : record_quote(s, &buf));
-		else
+			else
 			ft_putchar_mshbuf(&buf, *s++);
 	free(lst->content);
-	lst->content = ft_buftostr(head);
+	lst->content = ft_buftostr(head);*/
+	(void)lst;
 }

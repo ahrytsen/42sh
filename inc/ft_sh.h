@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/29 19:34:56 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/31 02:26:40 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -261,14 +261,11 @@ int				ft_argv_exec(char **cmd, char *altpath, int bg);
 */
 void			ft_slash(t_buf **cur, char **line);
 void			ft_dquote_slash(t_buf **cur, char **line);
-void			ft_bquote_helper(t_buf **cur, char *str);
 /*
 **				ft_argv_utils.c
 */
-void			parse_dollar(t_buf **cur, char **line);
 void			ft_quote(t_buf **cur, char **line);
 void			ft_bquote(t_buf **cur, char **line, uint8_t q);
-//char			*parse_argv(char *line);
 void			ft_dquote(t_buf **cur, char **line);
 /*
 **				ft_ast.c
@@ -318,7 +315,7 @@ t_cmd			*ft_cmdlst_push(t_cmd *cmdlst, t_cmd *node);
 /*
 **				ft_heredoc.c
 */
-void			ft_heredoc_expansion(t_token *tok);
+char			*ft_heredoc_expansion(char *s);
 int				ft_heredoc(t_list *toks);
 /*
 **				ft_init.c

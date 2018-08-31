@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 14:22:50 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/29 21:18:12 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/30 18:55:56 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,11 @@ void			expand_tilde(t_list *lst);
 char			*record_var(t_buf **buf, char *s);
 void			substitute_variable(t_list *lst);
 /*
-**			quote_removal.c
+**		substitute_cmd.c
+*/
+void			substitute_cmd(t_list *lst);
+/*
+**		quote_removal.c
 */
 void			remove_quotes(t_list *lst);
 

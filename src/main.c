@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/11 19:53:36 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/28 14:16:22 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/31 03:05:02 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int			main_loop(int fd)
 	t_ast	*ast;
 	int		i;
 
+	int fd_leaks = open("/Users/motofun/projects/42sh/leaks.txt", O_WRONLY | O_APPEND);
+	ft_dprintf(fd_leaks, "\n===============================================================\n");
 	ft_init_fd(fd);
 	while (1)
 	{
@@ -28,9 +30,12 @@ int			main_loop(int fd)
 		ast = NULL;
 		if (!(i = ft_readline(fd, &cmds)) || (i == -1 && !ft_is_interrupted()))
 		{
-			system("/usr/bin/leaks -quiet 42sh >>/Users/motofun/projects/42sh/leaks.txt 2>&-");
+			int st = system("/usr/bin/leaks -quiet 42sh >>/Users/motofun/projects/42sh/leaks.txt 2>&-");
+			ft_dprintf(fd_leaks, st ? "{red}" : "{green}");
+			ft_dprintf(fd_leaks, "\n==============================================================={eoc}\n");
 			return (!i ? get_environ()->st : 1);
 		}
+		ft_dprintf(fd_leaks, "%s\n", cmds);
 		if (cmds && (toks = ft_tokenize(cmds)) && ft_heredoc(toks))
 		{
 			ast = ft_ast_make(&toks);

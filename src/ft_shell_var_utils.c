@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 15:44:16 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/28 19:01:44 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/30 18:11:08 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ char			*ft_assign_expansions(char *str)
 	tmp.content = value;
 	ft_lstiter(&tmp, expand_tilde);
 	ft_lstiter(&tmp, substitute_variable);
-	// Command Substitution
+	ft_lstiter(&tmp, substitute_cmd);
 	ft_lstiter(&tmp, remove_quotes);
 	res = ft_strjoin(str, tmp.content);
 	free(tmp.content);

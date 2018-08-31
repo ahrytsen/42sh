@@ -6,35 +6,12 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:25:12 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/29 21:21:58 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/31 02:22:11 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
 
-/*void		parse_dollar(t_buf **cur, char **line)
-{
-	char	*st;
-	char	*tmp;
-
-	st = *line;
-	if (*st == '0' && (*line)++)
-	{
-		ft_putstr_mshbuf(cur, "msh", -1);
-		return ;
-	}
-	else if (!ft_isalnum(*st) && *st != '_')
-	{
-		ft_putchar_mshbuf(cur, '$');
-		return ;
-	}
-	while (ft_isalnum(**line) || **line == '_')
-		(*line)++;
-	tmp = ft_strsub(st, 0, *line - st);
-	ft_putstr_mshbuf(cur, ft_getenv(tmp), -1);
-	free(tmp);
-}
-*/
 void		ft_quote(t_buf **cur, char **line)
 {
 	char	*st;
@@ -44,12 +21,56 @@ void		ft_quote(t_buf **cur, char **line)
 	{
 		if (!**line)
 			break ;
-		if (**line == '\\' && *(*line + 1) == 10)
-			(*line)++;
 		(*line)++;
 	}
 	ft_putstr_mshbuf(cur, st, *line - st);
 	**line ? (*line)++ : 0;
+}
+
+static void	ft_bquote_child(int fd_get[2], char *cmds)
+{
+	t_list	*toks;
+	t_ast	*ast;
+
+	get_environ()->pid = 1;
+	close(fd_get[0]);
+	dup2(fd_get[1], 1);
+	toks = ft_tokenize(cmds);
+	ast = ft_ast_make(&toks);
+	ft_lstdel(&toks, ft_token_del);
+	get_environ()->st = ft_ast_exec(ast);
+	ast = ft_ast_del(ast, 1);
+	free(cmds);
+	close(fd_get[1]);
+	exit(get_environ()->st);
+}
+
+static void	ft_bquote_helper(t_buf **cur, char *str)
+{
+	int		fd_get[2];
+	char	*line;
+	int		i;
+
+	i = 0;
+	pipe(fd_get);
+	if ((get_environ()->pid = fork()))
+	{
+		close(fd_get[1]);
+		while (get_next_line(fd_get[0], &line) > 0)
+		{
+			i++ ? ft_putchar_mshbuf(cur, '\n') : 0;
+			ft_putstr_mshbuf(cur, line, -1);
+			free(line);
+		}
+		close(fd_get[0]);
+		waitpid(get_environ()->pid, &get_environ()->st, WUNTRACED);
+		get_environ()->st = WEXITSTATUS(get_environ()->st);
+		get_environ()->pid = 0;
+	}
+	else if (get_environ()->pid == -1)
+		write(2, "42sh: fork() error\n", 19);
+	else
+		ft_bquote_child(fd_get, str);
 }
 
 void		ft_bquote(t_buf **cur, char **line, uint8_t q)
@@ -88,27 +109,3 @@ void	ft_dquote(t_buf **cur, char **line)
 			ft_putchar_mshbuf(cur, *(*line)++);
 	**line ? (*line)++ : 0;
 }
-
-/*char		*parse_argv(char *line)
-{
-	char	*tmp;
-	t_buf	*head;
-	t_buf	*cur;
-
-	tmp = line;
-	if (!(head = ft_memalloc(sizeof(t_buf))))
-		return (NULL);
-	cur = head;
-	while (*line)
-		if (*line == '\\' && line++)
-			ft_slash(&cur, &line);
-		else if (*line == '\'' && line++)
-			ft_quote(&cur, &line);
-		else if (*line == '`' || *line == '"')
-			(*line++ == '"') ? ft_dquote(&cur, &line)
-				: ft_bquote(&cur, &line, 0);
-		else
-			ft_putchar_mshbuf(&cur, *line++);
-	return (ft_buftostr(head));
-}
-*/

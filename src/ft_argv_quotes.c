@@ -6,13 +6,13 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:36:50 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/29 20:06:57 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/31 02:34:06 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sh.h"
 
-void		record_hex(t_buf **cur, char **line)
+static void	record_hex(t_buf **cur, char **line)
 {
 	int		i;
 	char	buf[3];
@@ -25,7 +25,7 @@ void		record_hex(t_buf **cur, char **line)
 	ft_putchar_mshbuf(cur, ft_atoi_base(buf, 16));
 }
 
-void		record_oct(t_buf **cur, char **line)
+static void	record_oct(t_buf **cur, char **line)
 {
 	int		i;
 	char	buf[4];
@@ -41,19 +41,19 @@ void		record_oct(t_buf **cur, char **line)
 void		ft_dquote_slash(t_buf **cur, char **line)
 {
 	if (**line == 'a')
-		ft_putchar_mshbuf(cur, 7);
+		ft_putchar_mshbuf(cur, '\a');
 	else if (**line == 'b')
-		ft_putchar_mshbuf(cur, 8);
+		ft_putchar_mshbuf(cur, '\b');
 	else if (**line == 't')
-		ft_putchar_mshbuf(cur, 9);
+		ft_putchar_mshbuf(cur, '\t');
 	else if (**line == 'n')
-		ft_putchar_mshbuf(cur, 10);
+		ft_putchar_mshbuf(cur, '\n');
 	else if (**line == 'v')
-		ft_putchar_mshbuf(cur, 11);
+		ft_putchar_mshbuf(cur, '\v');
 	else if (**line == 'f')
-		ft_putchar_mshbuf(cur, 12);
+		ft_putchar_mshbuf(cur, '\f');
 	else if (**line == 'r')
-		ft_putchar_mshbuf(cur, 7);
+		ft_putchar_mshbuf(cur, '\r');
 	else if (**line == '0' || **line == 'x')
 	{
 		**line == '0' ? record_oct(cur, line) : record_hex(cur, line);
@@ -61,7 +61,7 @@ void		ft_dquote_slash(t_buf **cur, char **line)
 	}
 	else if (**line)
 	{
-		ft_putchar_mshbuf(cur, '\\');
+		!ft_strchr("\"`$\\", **line) ? ft_putchar_mshbuf(cur, '\\') : 0;
 		ft_putchar_mshbuf(cur, **line);
 	}
 	**line ? (*line)++ : 0;
@@ -74,50 +74,4 @@ void		ft_slash(t_buf **cur, char **line)
 	else
 		ft_putchar_mshbuf(cur, **line);
 	(*line)++;
-}
-
-static void	ft_bquote_child(int fd_get[2], char *cmds)
-{
-	t_list	*toks;
-	t_ast	*ast;
-
-	get_environ()->pid = 1;
-	close(fd_get[0]);
-	dup2(fd_get[1], 1);
-	toks = ft_tokenize(cmds);
-	ast = ft_ast_make(&toks);
-	ft_lstdel(&toks, ft_token_del);
-	get_environ()->st = ft_ast_exec(ast);
-	ast = ft_ast_del(ast, 1);
-	free(cmds);
-	close(fd_get[1]);
-	exit(get_environ()->st);
-}
-
-void		ft_bquote_helper(t_buf **cur, char *str)
-{
-	int		fd_get[2];
-	char	*line;
-	int		i;
-
-	i = 0;
-	pipe(fd_get);
-	if ((get_environ()->pid = fork()))
-	{
-		close(fd_get[1]);
-		while (get_next_line(fd_get[0], &line) > 0)
-		{
-			i++ ? ft_putchar_mshbuf(cur, '\n') : 0;
-			ft_putstr_mshbuf(cur, line, -1);
-			free(line);
-		}
-		close(fd_get[0]);
-		waitpid(get_environ()->pid, &get_environ()->st, WUNTRACED);
-		get_environ()->st = WEXITSTATUS(get_environ()->st);
-		get_environ()->pid = 0;
-	}
-	else if (get_environ()->pid == -1)
-		write(2, "42sh: fork() error\n", 19);
-	else
-		ft_bquote_child(fd_get, str);
 }

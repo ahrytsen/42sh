@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/23 21:00:10 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/30 11:43:31 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/30 17:06:49 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,15 @@ static char	*parse_key(char *key, int *f)
 	return (tmp.content);
 }
 
-void		ft_heredoc_expansion(t_token *tok)
+char		*ft_heredoc_expansion(char *s)
 {
-	char	*s;
 	char	*tmp;
 	t_buf	*head;
 	t_buf	*cur;
 
-	s = (tok->data.redir.type == herestr ? tok->word : tok->data.redir.hd);
 	tmp = s;
 	if (!s || !(head = ft_memalloc(sizeof(t_buf))))
-		return ;
+		return (NULL);
 	cur = head;
 	while (*s)
 		if (*s == '\\' && s++)
@@ -53,7 +51,7 @@ void		ft_heredoc_expansion(t_token *tok)
 			s = record_var(&cur, s);
 		else
 			ft_putchar_mshbuf(&cur, *s++);
-	tok->data.redir.right = ft_buftostr(head);
+	return (ft_buftostr(head));
 }
 
 static int	ft_heredoc_toread(t_token *tok)
@@ -97,6 +95,8 @@ int			ft_heredoc(t_list *toks)
 				|| tok->data.redir.type == heredoc_t)
 			&& !(ret = ft_heredoc_toread(tok)))
 				break ;
+		else if (tok->type == redir && tok->data.redir.type == herestr)
+			tok->data.redir.hd = tok->word;
 		toks = toks->next;
 	}
 	get_term()->prompt = P_USER;
