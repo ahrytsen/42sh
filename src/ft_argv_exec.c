@@ -23,6 +23,7 @@ const t_builtins	g_builtin[] = {
 	{"env", &ft_env},
 	{"exit", &ft_exit},
 	{"export", &ft_export},
+	{"exec", &ft_exec},
 	{NULL, NULL}
 };
 

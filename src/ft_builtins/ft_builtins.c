@@ -53,3 +53,19 @@ int		ft_exit(char **av)
 	}
 	exit((av && *av) ? ft_atoi(*av) : get_environ()->st);
 }
+
+int		ft_exec(char **av)
+{
+	pid_t	tmp;
+	int		rat;
+
+	tmp = get_environ()->pid;
+	if (!av || !*av)
+		return (0);
+	get_environ()->pid = 1;
+	rat = 256;
+	if (!(rat = ft_argv_exec(av, NULL, -1)))
+		exit(0);
+	get_environ()->pid = tmp;
+	return (rat);
+}

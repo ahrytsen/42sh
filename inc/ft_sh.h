@@ -321,7 +321,7 @@ int				ft_skip_subsh(char **ln);
 */
 int				ft_echo(char **av);
 int				ft_exit(char **av);
-int				ft_export(char **av);
+int				ft_exec(char **av);
 /*
 **				ft_builtins/ft_bi_cd.c
 */
