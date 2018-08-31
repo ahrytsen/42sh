@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_argv_quotes.c                                   :+:      :+:    :+:   */
+/*   bslash_removal.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/15 13:36:50 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/31 02:34:06 by ahrytsen         ###   ########.fr       */
+/*   Created: 2018/08/31 04:53:50 by ahrytsen          #+#    #+#             */
+/*   Updated: 2018/08/31 04:56:15 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_sh.h"
+#include "ft_expansions.h"
 
 static void	record_hex(t_buf **cur, char **line)
 {
@@ -36,6 +36,15 @@ static void	record_oct(t_buf **cur, char **line)
 	while (**line >= '0' && **line < '8' && i < 3)
 		buf[i++] = *(*line)++;
 	ft_putchar_mshbuf(cur, ft_atoi_base(buf, 8));
+}
+
+void		ft_slash(t_buf **cur, char **line)
+{
+	if (!**line)
+		return ;
+	else
+		ft_putchar_mshbuf(cur, **line);
+	(*line)++;
 }
 
 void		ft_dquote_slash(t_buf **cur, char **line)
@@ -65,13 +74,4 @@ void		ft_dquote_slash(t_buf **cur, char **line)
 		ft_putchar_mshbuf(cur, **line);
 	}
 	**line ? (*line)++ : 0;
-}
-
-void		ft_slash(t_buf **cur, char **line)
-{
-	if (!**line)
-		return ;
-	else
-		ft_putchar_mshbuf(cur, **line);
-	(*line)++;
 }

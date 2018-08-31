@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/31 02:26:40 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/31 05:07:17 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -256,17 +256,6 @@ char			**ft_argv_make(t_list *toks);
 **				ft_argv_exec.c
 */
 int				ft_argv_exec(char **cmd, char *altpath, int bg);
-/*
-**				ft_argv_quotes.c
-*/
-void			ft_slash(t_buf **cur, char **line);
-void			ft_dquote_slash(t_buf **cur, char **line);
-/*
-**				ft_argv_utils.c
-*/
-void			ft_quote(t_buf **cur, char **line);
-void			ft_bquote(t_buf **cur, char **line, uint8_t q);
-void			ft_dquote(t_buf **cur, char **line);
 /*
 **				ft_ast.c
 */

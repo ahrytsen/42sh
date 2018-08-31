@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 08:15:32 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/31 03:45:11 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/31 05:13:16 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,8 @@ static char	*record_dquote(char *s, t_buf **buf)
 		}
 		else if (*s == '$' && *(s + 1) == '(')
 			s = skip_parentheses(s, buf);
-		else if (*s == '$' && ft_isword(*(s + 1)) && s++)
+		else if (*s == '$' && (ft_isword(*(s + 1)) || ft_isdigit(*(s + 1))
+							|| *(s + 1) == '?') && s++)
 			s = record_var(buf, s);
 		else
 			ft_putchar_mshbuf(buf, *s++);

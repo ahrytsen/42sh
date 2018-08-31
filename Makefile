@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/31 03:11:03 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/08/31 05:18:42 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -43,8 +43,6 @@ HDR			=	inc/ft_sh.h\
 
 SRC			=	ft_argv.c\
 				ft_argv_exec.c\
-				ft_argv_quotes.c\
-				ft_argv_utils.c\
 				ft_ast.c\
 				ft_ast_exec.c\
 				ft_ast_debug.c\
@@ -110,10 +108,10 @@ SRC			=	ft_argv.c\
 				ft_expansions/tilde/tilde.c\
 				\
 				ft_expansions/variable/substitute_variable.c\
+				ft_expansions/variable/substitute_cmd.c\
 				\
 				ft_expansions/quote/quote_removal.c\
-				\
-				ft_expansions/substitute_cmd/substitute_cmd.c
+				ft_expansions/quote/bslash_removal.c
 
 OBJ			=	$(addprefix $(DIROBJ), $(SRC:.c=.o))
 
