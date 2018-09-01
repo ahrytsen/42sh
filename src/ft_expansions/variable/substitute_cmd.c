@@ -6,13 +6,13 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 18:56:58 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/31 08:45:10 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/01 14:50:09 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_expansions.h"
 #include "ft_sh.h"
-
+/*
 static void	ft_bquote_child(int fd_get[2], char *cmds)
 {
 	t_list	*toks;
@@ -86,10 +86,10 @@ char		*ft_get_bquote_cmd(t_buf **cur, char **line)
 	free(str);
 	**line ? (*line)++ : 0;
 }
-
+*/
 void		substitute_cmd(t_list *lst)
 {
-	char	*s;
+/*	char	*s;
 	t_buf	*buf;
 	t_buf	*head;
 
@@ -109,6 +109,6 @@ void		substitute_cmd(t_list *lst)
 			else
 			ft_putchar_mshbuf(&buf, *s++);
 	free(lst->content);
-	lst->content = ft_buftostr(head);
+	lst->content = ft_buftostr(head);*/
 	(void)lst;
 }

@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/31 07:08:29 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/01 14:46:08 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -370,8 +370,8 @@ void			ft_get_ampersand(char  **ln, t_token *token);
 */
 int				ft_get_subsh(char **ln, t_token *token);
 int				ft_skip_word(char **ln);
-//int				ft_skip_qoutes(char **s);
-//int				ft_skip_subsh(char **ln);
+int				ft_skip_qoutes(char **s);
+int				ft_skip_subsh(char **ln);
 /*
 **				ft_builtins/ft_builtins.c
 */
