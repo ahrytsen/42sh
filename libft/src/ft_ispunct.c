@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ptool.c                                         :+:      :+:    :+:   */
+/*   ft_ispunct.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlinkin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/02 13:45:05 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/08/02 13:45:13 by dlinkin          ###   ########.fr       */
+/*   Created: 2018/08/17 01:43:37 by yvyliehz          #+#    #+#             */
+/*   Updated: 2018/08/17 01:44:28 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-extern inline ssize_t	ft_absolute(ssize_t value)
+int	ft_ispunct(int c)
 {
-	return (value >= 0 ? value : -value);
+	return (ft_isgraph(c) && !ft_isalnum(c));
 }

@@ -14,7 +14,7 @@
 
 int	ft_iswhitespace(int c)
 {
-	if (c == 32 || c == 13 || (c > 8 && c < 12))
+	if (c == 32 || (c > 8 && c < 14))
 		return (1);
 	else
 		return (0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_readline.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 16:45:16 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 18:40:02 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/25 07:17:40 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int			ft_readline(const int fd, char **line)
 	*line = NULL;
 	while (ft_check_line(*line))
 	{
-		if ((tmp = *line) && get_term()->prompt != P_BSLASH)
+		if ((tmp = *line))
 		{
 			*line = ft_strjoin(tmp, "\n");
 			free(tmp);

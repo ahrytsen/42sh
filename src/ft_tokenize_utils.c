@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:31 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/13 20:39:33 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/31 07:12:51 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,26 @@
 
 int		ft_get_subsh(char **ln, t_token *token)
 {
+	t_list	*toks;
+
+	toks = NULL;
 	if (**ln == ')' && !(**ln = '\0')
-		&& write(2, "42sh: unexpected token `)'\n", 27))
+		&& write(2, "42sh: syntax error near unexpected token `)'\n", 45))
 		return (1);
 	**ln = '\0';
-	token->data.word = *ln + 1;
+	token->word = *ln + 1;
 	if (ft_skip_subsh(ln))
 		return (1);
 	*(*ln - 1) = '\0';
+	if (!(toks = ft_tokenize(token->word))
+		|| !(token->data.sub_ast = ft_ast_make(&toks)))
+	{
+		ft_lstdel(&toks, ft_token_del);
+		write(2, "42sh: syntax error near unexpected token `)'\n", 45);
+		return (1);
+	}
+	token->word = NULL;
+	ft_lstdel(&toks, ft_token_del);
 	return (0);
 }
 
@@ -50,7 +62,7 @@ int		ft_skip_subsh(char **ln)
 	(*ln)++;
 	while (**ln != ')')
 		if (!**ln
-			&& ft_dprintf(2, "42sh: %s `)'\n",
+			&& ft_dprintf(2, "42sh: syntax error: %s `)'\n",
 						"unexpected EOF while looking for matching"))
 			return (1);
 		else if (**ln == '\'' || **ln == '`' || **ln == '"')
@@ -78,7 +90,7 @@ int		ft_skip_qoutes(char **ln)
 	q = *(*ln)++;
 	while (**ln != q)
 		if (!**ln
-			&& ft_dprintf(2, "42sh: %s `%c'\n",
+			&& ft_dprintf(2, "42sh: syntax error: %s `%c'\n",
 						"unexpected EOF while looking for matching", q))
 			return (1);
 		else if (q == '"' && **ln == '`')

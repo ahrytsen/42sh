@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/13 18:55:11 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/10 12:05:37 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/21 18:52:44 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int			ft_ast_exec(t_ast *ast)
 		rat = ft_ast_and_exec(ast);
 	else if (ast->type == ast_or)
 		rat = ft_ast_or_exec(ast);
-	else if (ast->type == ast_bg || ast->type == ast_smcln)
+	else if (ast->type == ast_bg || ast->type == ast_semi || ast->type == nl)
 		rat = ft_ast_smcln_exec(ast);
 	else
 		rat = -1;

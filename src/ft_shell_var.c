@@ -6,7 +6,7 @@
 /*   By: dlinkin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/08 14:21:11 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/08/08 14:21:12 by dlinkin          ###   ########.fr       */
+/*   Updated: 2018/08/28 19:05:45 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int		ft_is_valid_name(char *str)
 
 void	ft_var_checker(t_list *lst)
 {
+	char	*assign;
 	t_token	*tmp;
 
 	if (get_environ()->setvar)
@@ -64,14 +65,16 @@ void	ft_var_checker(t_list *lst)
 	while (lst)
 	{
 		tmp = lst->content;
-		if (tmp->type == (enum e_ast_type)word)
+		if (tmp->type == word || tmp->type == assignment)
 		{
-			if (ft_strchr(tmp->data.word, '=')
-			&& ft_is_valid_name(tmp->data.word))
+			if (tmp->type == assignment
+				|| (ft_strchr(tmp->word, '=') && ft_is_valid_name(tmp->word)))
 			{
-				ft_lstpush_back(&get_environ()->setvar, tmp->data.word
-				, ft_strlen(tmp->data.word) + 1);
-				tmp->type = (enum e_ast_type)assignment;
+				assign = ft_assign_expansions(ft_strdup(tmp->word));
+				assign ? ft_lstpush_back(&get_environ()->setvar, assign,
+										ft_strlen(assign) + 1) : 0;
+				free(assign);
+				tmp->type = assignment;
 			}
 			else
 				break ;

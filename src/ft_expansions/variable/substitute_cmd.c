@@ -1,54 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_argv_quotes.c                                   :+:      :+:    :+:   */
+/*   substitute_cmd.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/15 13:36:50 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:21:19 by ahrytsen         ###   ########.fr       */
+/*   Created: 2018/08/30 18:56:58 by ahrytsen          #+#    #+#             */
+/*   Updated: 2018/09/01 14:50:09 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_expansions.h"
 #include "ft_sh.h"
-
-void		ft_dquote_slash(t_buf **cur, char **line)
-{
-	if (**line == 'a')
-		ft_putchar_mshbuf(cur, 7);
-	else if (**line == 'b')
-		ft_putchar_mshbuf(cur, 8);
-	else if (**line == 't')
-		ft_putchar_mshbuf(cur, 9);
-	else if (**line == 'n')
-		ft_putchar_mshbuf(cur, 10);
-	else if (**line == 'v')
-		ft_putchar_mshbuf(cur, 11);
-	else if (**line == 'f')
-		ft_putchar_mshbuf(cur, 12);
-	else if (**line == 'r')
-		ft_putchar_mshbuf(cur, 7);
-	else if (**line == '0')
-	{
-		ft_putchar_mshbuf(cur, ft_atoi_base(*line, 8));
-		while (**line >= '0' && **line < '8')
-			(*line)++;
-		return ;
-	}
-	else if (**line)
-		ft_putchar_mshbuf(cur, **line);
-	**line ? (*line)++ : 0;
-}
-
-void		ft_slash(t_buf **cur, char **line)
-{
-	if (!**line)
-		return ;
-	else
-		ft_putchar_mshbuf(cur, **line);
-	(*line)++;
-}
-
+/*
 static void	ft_bquote_child(int fd_get[2], char *cmds)
 {
 	t_list	*toks;
@@ -67,7 +31,7 @@ static void	ft_bquote_child(int fd_get[2], char *cmds)
 	exit(get_environ()->st);
 }
 
-void		ft_bquote_helper(t_buf **cur, char *str)
+static void	ft_bquote_helper(t_buf **cur, char *str)
 {
 	int		fd_get[2];
 	char	*line;
@@ -90,7 +54,61 @@ void		ft_bquote_helper(t_buf **cur, char *str)
 		get_environ()->pid = 0;
 	}
 	else if (get_environ()->pid == -1)
-		write(2, "21sh: fork() error\n", 19);
+		write(2, "42sh: fork() error\n", 19);
 	else
 		ft_bquote_child(fd_get, str);
+}
+
+char		*ft_get_parentheses_cmd(t_buf **cur, char *s)
+{
+
+}
+
+char		*ft_get_bquote_cmd(t_buf **cur, char **line)
+{
+	t_buf	*head;
+	t_buf	*tmp;
+	char	*str;
+
+	if (!(head = ft_memalloc(sizeof(t_buf))) || !line)
+		return ;
+	tmp = head;
+	while (**line != '`')
+		if (!**line)
+			break ;
+		else if (**line == '\\' && (*line)++)
+			(q ? ft_dquote_slash : ft_slash)(&tmp, line);
+		else
+			ft_putchar_mshbuf(&tmp, *(*line)++);
+	str = ft_buftostr(head);
+	if (*str)
+		ft_bquote_helper(cur, str);
+	free(str);
+	**line ? (*line)++ : 0;
+}
+*/
+void		substitute_cmd(t_list *lst)
+{
+/*	char	*s;
+	t_buf	*buf;
+	t_buf	*head;
+
+	s = lst->content;
+	buf = ft_memalloc(sizeof(t_buf));
+	head = buf;
+	while (*s)
+		if (*s == '\\')
+		{
+			ft_putchar_mshbuf(&buf, *s++);
+			*s ? ft_putchar_mshbuf(&buf, *s++) : 0;
+		}
+		else if (*s == '$' && *(s + 1) == '(')
+			s = skip_parentheses(s, &buf);
+		else if (*s && ft_strchr("\"'`", *s))
+			s = (*s == '"' ? record_dquote(s, &buf) : record_quote(s, &buf));
+			else
+			ft_putchar_mshbuf(&buf, *s++);
+	free(lst->content);
+	lst->content = ft_buftostr(head);*/
+	(void)lst;
 }

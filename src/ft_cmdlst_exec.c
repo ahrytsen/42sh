@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 17:41:55 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/13 20:28:03 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/25 17:39:39 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,15 @@ static int	ft_pl_make(int pl[2], t_cmd *cmd)
 
 static int	ft_subsh_exec(t_cmd *cmd)
 {
-	t_list	*toks;
-	t_ast	*ast;
+	t_token	*tmp;
 
-	ast = NULL;
-	toks = NULL;
+	ft_fildes(FD_BACKUP);
+	get_environ()->is_interactive = 0;
+	get_environ()->pid = 0;
+	get_environ()->pgid = 0;
+	tmp = cmd->toks->content;
 	get_environ()->st = 1;
-	if (cmd->subsh && (toks = ft_tokenize(cmd->subsh))
-		&& ft_heredoc(toks))
-	{
-		ast = ft_ast_make(&toks);
-		get_environ()->st = ft_ast_exec(ast);
-		ast = ft_ast_del(ast, 1);
-		ft_lstdel(&toks, ft_token_del);
-	}
+	get_environ()->st = ft_ast_exec(tmp->data.sub_ast);
 	exit(get_environ()->st);
 }
 
@@ -51,13 +46,14 @@ static int	ft_cmd_exec_chld(t_cmd *cmd, int bg)
 		cmd->prev ? close(cmd->p_in) : 0;
 		cmd->next ? dup2(cmd->p_out, 1) : 0;
 		cmd->next ? close(cmd->p_out) : 0;
+		cmd->next ? close(cmd->next->p_in) : 0;
 		ft_set_sh_signal(bg ? S_CHLD : S_CHLD_FG);
 		bg = -1;
 	}
 	if (ft_redirection(cmd->toks))
 		cmd->ret = 1;
 	else
-		cmd->ret = cmd->subsh ? ft_subsh_exec(cmd)
+		cmd->ret = cmd->type == cmd_subsh ? ft_subsh_exec(cmd)
 			: ft_argv_exec(cmd->av, NULL, bg);
 	cmd->pid = get_environ()->pid;
 	get_environ()->pgid = cmd->pid;
@@ -72,10 +68,11 @@ static int	ft_cmd_exec(t_cmd *cmd, int bg)
 	static int	pl[2];
 
 	if (ft_pl_make(pl, cmd)
-	|| (!cmd->subsh && !(cmd->av = ft_argv_make(cmd->toks))
-	&& write(2, "42sh: malloc error\n", 19)))
+		|| (cmd->type == cmd_smpl && !(cmd->av = ft_argv_make(cmd->toks))
+			&& write(2, "42sh: malloc error\n", 19)))
 		return (1);
-	if ((cmd->next || cmd->prev || bg || cmd->subsh) && (cmd->pid = fork()))
+	if ((cmd->next || cmd->prev || bg || cmd->type == cmd_subsh)
+		&& (cmd->pid = fork()))
 	{
 		if (cmd->pid == -1 && write(2, "42sh: fork() error\n", 19))
 			return (1);
@@ -84,6 +81,7 @@ static int	ft_cmd_exec(t_cmd *cmd, int bg)
 		{
 			!get_environ()->pgid ? get_environ()->pgid = cmd->pid : 0;
 			setpgid(get_environ()->pid, get_environ()->pgid);
+			!bg ? tcsetpgrp(0, get_environ()->pgid) : 0;
 		}
 		return (0);
 	}
@@ -106,7 +104,8 @@ int			ft_cmdlst_exec(t_cmd *cmd, int bg)
 			break ;
 		cmd = cmd->next;
 	}
-	(cmd->next || cmd->prev || bg) ? 0 : ft_fildes(FD_RESTORE);
+	(cmd->next || cmd->prev || bg || cmd->type == cmd_subsh)
+		? 0 : ft_fildes(FD_RESTORE);
 	ret = cmd->ret;
 	ret2 = ft_control_job(cmd, bg, 0);
 	if (ret || (!WIFSTOPPED(ret2) && !bg))
