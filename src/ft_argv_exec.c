@@ -23,6 +23,7 @@ const t_builtins	g_builtin[] = {
 	{"env", &ft_env},
 	{"exit", &ft_exit},
 	{"export", &ft_export},
+	{"exec", &ft_exec},
 	{NULL, NULL}
 };
 
@@ -43,7 +44,7 @@ static int	ft_exec_builtin(char **cmd)
 	return (-1);
 }
 
-static int	ft_exec_bypath(char **cmd, char *path, int bg)
+int			ft_exec_bypath(char **cmd, char *path, int bg)
 {
 	struct stat	tmp;
 	int			fd;
@@ -99,7 +100,7 @@ static char	**ft_get_path(const char *altpath)
 	return (ft_strsplit(altpath, ':'));
 }
 
-static char	*ft_search_bin(char *bin_name, const char *altpath)
+char		*ft_search_bin(char *bin_name, const char *altpath)
 {
 	int		i;
 	char	*exec_path;

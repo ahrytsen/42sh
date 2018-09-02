@@ -200,6 +200,8 @@ char			**ft_argv_make(t_list *toks);
 /*
 **				ft_argv_exec.c
 */
+int				ft_exec_bypath(char **cmd, char *path, int bg);
+char			*ft_search_bin(char *bin_name, const char *altpath);
 int				ft_argv_exec(char **cmd, char *altpath, int bg);
 /*
 **				ft_argv_quotes.c
@@ -321,7 +323,7 @@ int				ft_skip_subsh(char **ln);
 */
 int				ft_echo(char **av);
 int				ft_exit(char **av);
-int				ft_export(char **av);
+int				ft_exec(char **av);
 /*
 **				ft_builtins/ft_bi_cd.c
 */
