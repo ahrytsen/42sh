@@ -65,7 +65,7 @@ static int	ft_heredoc_toread(t_token *tok)
 	line = NULL;
 	get_term()->heredoc_key = parse_key(tok->word, &tok->data.redir.nbr);
 	while (get_term()->heredoc_key && (ret = ft_readline(0, &line)) > 0
-			&& ft_strcmp(line, get_term()->heredoc_key)  && !(i = 0))
+			&& ft_strcmp(line, get_term()->heredoc_key) && !(i = 0))
 	{
 		while (tok->data.redir.type == heredoc_t && line[i] == '\t')
 			i++;
@@ -90,11 +90,10 @@ int			ft_heredoc(t_list *toks)
 	while (toks)
 	{
 		tok = toks->content;
-		if (tok->type == redir
-			&& (tok->data.redir.type == heredoc
-				|| tok->data.redir.type == heredoc_t)
-			&& !(ret = ft_heredoc_toread(tok)))
-				break ;
+		if (tok->type == redir && (tok->data.redir.type == heredoc
+		|| tok->data.redir.type == heredoc_t)
+		&& !(ret = ft_heredoc_toread(tok)))
+			break ;
 		else if (tok->type == redir && tok->data.redir.type == herestr)
 			tok->data.redir.hd = tok->word;
 		toks = toks->next;

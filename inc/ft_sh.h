@@ -341,11 +341,14 @@ int				ft_redir_expansion(t_token *tok);
 /*
 **				ft_shell_var.c
 */
-void			ft_init_shell_var(void);
 int				ft_is_valid_name(char *str);
-char			*ft_other_getenv(const char *name);
 void			ft_var_checker(t_list *lst);
-t_env			*get_environ(void);
+char			*ft_getenv(const char *name);
+char			*ft_other_getenv(const char *name);
+/*
+**				ft_shell_var_toolz.c
+*/
+void			ft_init_shell_var(void);
 /*
 **				ft_shell_var_toolz.c
 */
@@ -360,7 +363,7 @@ int				ft_set_tool(const char *name, const char *value,
 							int overwrite, int mod);
 int				ft_unset_tool(const char *name, int mod);
 int				ft_setter(const char *name, const char *value);
-char			*ft_assign_expansions(char *str);
+t_env			*get_environ(void);
 /*
 **				ft_tokenize.c
 */
@@ -371,7 +374,7 @@ t_list			*ft_tokenize(char *ln);
 int				ft_isseparator(int c);
 void			ft_token_del(void *token, size_t size);
 const char		*ft_tname(t_token *tok);
-void			ft_get_ampersand(char  **ln, t_token *token);
+void			ft_get_ampersand(char **ln, t_token *token);
 /*
 **				ft_tokenize_utils.c
 */

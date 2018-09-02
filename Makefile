@@ -57,6 +57,7 @@ SRC			=	ft_argv.c\
 				ft_init.c\
 				ft_jobs_utils.c\
 				ft_shell_var.c\
+				ft_shell_var_init.c\
 				ft_shell_var_toolz.c\
 				ft_shell_var_utils.c\
 				ft_redirection.c\
@@ -153,15 +154,15 @@ $(NAME): $(LIBFT) $(DIROBJ) $(OBJ)
 
 $(DIROBJ):
 	mkdir -p $(DIROBJ)
-	mkdir -p $(DIROBJ)/ft_readline
-	mkdir -p $(DIROBJ)/ft_builtins
-	mkdir -p $(DIROBJ)/ft_expansions
-	mkdir -p $(DIROBJ)/ft_expansions/brace
-	mkdir -p $(DIROBJ)/ft_expansions/pathname
-	mkdir -p $(DIROBJ)/ft_expansions/tilde
-	mkdir -p $(DIROBJ)/ft_expansions/variable
-	mkdir -p $(DIROBJ)/ft_expansions/quote
-	mkdir -p $(DIROBJ)/ft_expansions/substitute_cmd/
+	mkdir -p $(DIROBJ)ft_readline
+	mkdir -p $(DIROBJ)ft_builtins
+	mkdir -p $(DIROBJ)ft_expansions
+	mkdir -p $(DIROBJ)ft_expansions/brace
+	mkdir -p $(DIROBJ)ft_expansions/pathname
+	mkdir -p $(DIROBJ)ft_expansions/tilde
+	mkdir -p $(DIROBJ)ft_expansions/variable
+	mkdir -p $(DIROBJ)ft_expansions/quote
+	mkdir -p $(DIROBJ)ft_expansions/substitute_cmd/
 
 $(LIBFT): lib
 

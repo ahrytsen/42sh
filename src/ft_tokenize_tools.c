@@ -20,8 +20,8 @@ void		ft_token_del(void *token, size_t size)
 	(void)size;
 	if (tok->type == redir)
 	{
-			free(tok->data.redir.hd);
-			free(tok->data.redir.right);
+		free(tok->data.redir.hd);
+		free(tok->data.redir.right);
 	}
 	else if (tok->type == subsh)
 		ft_ast_del(tok->data.sub_ast, 1);
@@ -56,7 +56,7 @@ const char	*ft_tname(t_token *tok)
 		return ("unknown token");
 }
 
-void	ft_get_ampersand(char  **ln, t_token *token)
+void		ft_get_ampersand(char **ln, t_token *token)
 {
 	*(*ln)++ = '\0';
 	if (**ln == '>')

@@ -11,36 +11,9 @@
 /* ************************************************************************** */
 
 #include "ft_sh.h"
+#include "ft_expansions.h"
 
-void	ft_init_shell_var(void)
-{
-	char	*str;
-	char	*ptr;
-	char	**env;
-
-	get_environ()->shvar = NULL;
-	if ((env = get_environ()->envar))
-		while (*env)
-		{
-			ft_add_shvar_entry(*env, 'e');
-			env++;
-		}
-	ft_add_shvar_entry("?=0", 'l');
-	str = ft_itoa(getpid());
-	ptr = ft_strjoin("$=", str);
-	ft_add_shvar_entry(ptr, 'l');
-	free(str);
-	free(ptr);
-	str = ft_strjoin(getpwuid(getuid())->pw_dir, "/.ft_history");
-	ptr = ft_strjoin("HISTFILE=", str);
-	ft_add_shvar_entry(ptr, 'l');
-	free(str);
-	free(ptr);
-	ft_add_shvar_entry("HISTSIZE=42", 'l');
-	ft_add_shvar_entry("HISTFILESIZE=42", 'l');
-}
-
-int		ft_is_valid_name(char *str)
+int			ft_is_valid_name(char *str)
 {
 	int i;
 
@@ -55,7 +28,30 @@ int		ft_is_valid_name(char *str)
 	return (1);
 }
 
-void	ft_var_checker(t_list *lst)
+static char	*ft_assign_expansions(char *str)
+{
+	char	*value;
+	char	*sign;
+	char	*res;
+	t_list	tmp;
+
+	if (!(sign = ft_strchr(str, '=')))
+		return (str);
+	value = ft_strdup(sign + 1);
+	sign[1] = '\0';
+	ft_bzero(&tmp, sizeof(t_list));
+	tmp.content = value;
+	ft_lstiter(&tmp, expand_tilde);
+	ft_lstiter(&tmp, substitute_variable);
+	ft_lstiter(&tmp, substitute_cmd);
+	ft_lstiter(&tmp, remove_quotes);
+	res = ft_strjoin(str, tmp.content);
+	free(tmp.content);
+	free(str);
+	return (res);
+}
+
+void		ft_var_checker(t_list *lst)
 {
 	char	*assign;
 	t_token	*tmp;
@@ -70,9 +66,9 @@ void	ft_var_checker(t_list *lst)
 			if (tmp->type == assignment
 				|| (ft_strchr(tmp->word, '=') && ft_is_valid_name(tmp->word)))
 			{
-				assign = ft_assign_expansions(ft_strdup(tmp->word));
-				assign ? ft_lstpush_back(&get_environ()->setvar, assign,
-										ft_strlen(assign) + 1) : 0;
+				if ((assign = ft_assign_expansions(ft_strdup(tmp->word))))
+					ft_lstpush_back(&get_environ()->setvar, assign,
+										ft_strlen(assign) + 1);
 				free(assign);
 				tmp->type = assignment;
 			}
@@ -83,7 +79,7 @@ void	ft_var_checker(t_list *lst)
 	}
 }
 
-char	*ft_getenv(const char *name)
+char		*ft_getenv(const char *name)
 {
 	t_var	*entry;
 	char	*ptr;
@@ -95,7 +91,7 @@ char	*ft_getenv(const char *name)
 	return (ptr);
 }
 
-char	*ft_other_getenv(const char *name)
+char		*ft_other_getenv(const char *name)
 {
 	char	**env;
 

@@ -13,7 +13,7 @@
 #include "ft_expansions.h"
 #include "ft_sh.h"
 
-void		ft_quote(t_buf **cur, char **line)
+void	ft_quote(t_buf **cur, char **line)
 {
 	char	*st;
 

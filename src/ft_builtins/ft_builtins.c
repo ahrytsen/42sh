@@ -12,7 +12,7 @@
 
 #include "ft_sh.h"
 
-int		ft_echo(char **av)
+int			ft_echo(char **av)
 {
 	int	i;
 	int n;
@@ -30,7 +30,7 @@ int		ft_echo(char **av)
 	return (0);
 }
 
-int		ft_exit(char **av)
+int			ft_exit(char **av)
 {
 	char	*tmp;
 
@@ -75,7 +75,7 @@ static int	ft_exec_exec(char **cmd, int bg)
 	return (st);
 }
 
-int		ft_exec(char **av)
+int			ft_exec(char **av)
 {
 	pid_t	tmp;
 	int		rat;

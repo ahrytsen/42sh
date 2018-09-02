@@ -58,7 +58,10 @@ static void		lstiter_custom(t_list **lst, t_list *(*f)(t_list *))
 		if ((new_lst = (*f)(tmp_lst)))
 		{
 			new_lst_end = get_lst_end(new_lst);
-			lst_prev ? (lst_prev->next = tmp_lst->next) : (*lst = tmp_lst->next);
+			if (lst_prev)
+				lst_prev->next = tmp_lst->next;
+			else
+				*lst = tmp_lst->next;
 			ft_lstdelone(&tmp_lst, (void (*)(void *, size_t))free);
 			ft_lstinsert(lst, lst_prev, new_lst);
 			tmp_lst = new_lst_end;
