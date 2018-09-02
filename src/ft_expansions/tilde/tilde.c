@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 02:34:57 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/28 18:55:37 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/02 15:10:00 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static char	*get_user_homedir(char *s)
 	return (pwd ? ft_strjoin(pwd->pw_dir, s) : NULL);
 }
 
-static char	*get_curr_user(char *s)
+static void	get_curr_user(t_buf **buf, char **s)
 {
 	char	*tmp;
 
@@ -54,15 +54,12 @@ static char	*get_curr_user(char *s)
 	return (normalnyy_strjoin(tmp, s));
 }
 
-void		expand_tilde(t_list *lst)
+void		expand_tilde(t_buf **buf, char **s)
 {
-	char	*s;
-
-	s = lst->content;
-	if (*s != '~')
+	if (!s || !*s || **s != '~')
 		return ;
-	++s;
-	if (ft_strchr("/:", *s))
+	++(*s);
+	if (ft_strchr("/:", **s))
 		s = get_curr_user(s);
 	else if (*s == '-' && ft_strchr("/:", *(s + 1)))
 		s = normalnyy_strjoin(ft_other_getenv("OLDPWD"), s + 1);
