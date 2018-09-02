@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/09/01 14:46:08 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/02 10:41:46 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -283,6 +283,12 @@ void			ft_putstr_mshbuf(t_buf **buf, char *str, ssize_t len);
 void			ft_putchar_mshbuf(t_buf **buf, char c);
 char			*ft_buftostr(t_buf *buf_head);
 void			*ft_free_mshbuf(t_buf *buf);
+/*
+**				ft_buffer_spec.c
+*/
+void			ft_putcharq_mshbuf(t_buf **buf, char c, char *symbols);
+void			ft_putstrq_mshbuf(t_buf **buf, char *str,
+								ssize_t len, char *symbols);
 /*
 **				ft_cmd_print.c
 */

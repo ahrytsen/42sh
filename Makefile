@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/31 05:18:42 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/09/02 10:45:31 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -48,6 +48,7 @@ SRC			=	ft_argv.c\
 				ft_ast_debug.c\
 				ft_ast_utils.c\
 				ft_buffer.c\
+				ft_buffer_spec.c\
 				ft_cmd_print.c\
 				ft_cmdlst.c\
 				ft_cmdlst_utils.c\
