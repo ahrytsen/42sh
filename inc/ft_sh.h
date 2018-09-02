@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/29 19:34:56 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/30 09:33:11 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -440,5 +440,9 @@ int				ft_set_var(t_list *var, int mod);
 **				ft_builtins/ft_bi_history.c
 */
 int				ft_history(char **av);
+/*
+**				ft_builtins/ft_read.c
+*/
+int				ft_bi_read(char **av);
 
 #endif

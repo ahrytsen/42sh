@@ -49,11 +49,11 @@ static char	*record_quote(char *s, t_buf **buf)
 
 	st = s;
 	quote = *s++;
-	while (*s != '\'')
+	while (*s != quote)
 	{
 		if (!*s)
 			break ;
-		if (*s == '\\' && quote == '`')
+		if (*s == '\\' && quote != '\'')
 			++s;
 		++s;
 	}

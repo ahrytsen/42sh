@@ -25,7 +25,7 @@ int		ft_unset(char **av)
 	return (ret);
 }
 
-int		ft_set_var(t_list *var, int mod)									//28
+int		ft_set_var(t_list *var, int mod)
 {
 	char	*value;
 	char	*ptr;

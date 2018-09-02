@@ -179,6 +179,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/gsh.dir/src/main.c.o"
   "CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o"
   "CMakeFiles/gsh.dir/src/ft_expansions/quote/quote_removal.c.o"
+  "CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_read.c.o"
+  "CMakeFiles/gsh.dir/src/ft_expansions/field/field_splitting.c.o"
+  "CMakeFiles/gsh.dir/print_args.c.o"
   "gsh.pdb"
   "gsh"
 )
