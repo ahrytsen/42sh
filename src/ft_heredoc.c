@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/23 21:00:10 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/09/01 14:51:13 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/02 19:50:05 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,10 @@ char		*ft_heredoc_expansion(char *s)
 				ft_putchar_mshbuf(&cur, '\\');
 			ft_putchar_mshbuf(&cur, *s++);
 		}
-	/*else if (*s == '`' && s++)
-	  ft_bquote(&cur, &s, 0);
-		else if (*s == '$' && *(s + 1) == '(' && (s += 2))
-		ft_bquote(&cur, &s, 0);*/
-		else if (*s == '$' && s++)
-			s = record_var(&cur, s);
+		else if (*s == '`' || (*s == '$' && *(s + 1) == '(' && (s += 2)))
+			substitute_cmd(&cur, &s, NULL);
+		else if (*s == '$' && (ft_isword(*(s + 1)) || *(s + 1) == '?') && s++)
+			record_var(&cur, &s, NULL);
 		else
 			ft_putchar_mshbuf(&cur, *s++);
 	return (ft_buftostr(head));
@@ -65,7 +63,7 @@ static int	ft_heredoc_toread(t_token *tok)
 	line = NULL;
 	get_term()->heredoc_key = parse_key(tok->word, &tok->data.redir.nbr);
 	while (get_term()->heredoc_key && (ret = ft_readline(0, &line)) > 0
-			&& ft_strcmp(line, get_term()->heredoc_key)  && !(i = 0))
+			&& ft_strcmp(line, get_term()->heredoc_key) && !(i = 0))
 	{
 		while (tok->data.redir.type == heredoc_t && line[i] == '\t')
 			i++;
@@ -90,11 +88,10 @@ int			ft_heredoc(t_list *toks)
 	while (toks)
 	{
 		tok = toks->content;
-		if (tok->type == redir
-			&& (tok->data.redir.type == heredoc
-				|| tok->data.redir.type == heredoc_t)
-			&& !(ret = ft_heredoc_toread(tok)))
-				break ;
+		if (tok->type == redir && (tok->data.redir.type == heredoc
+		|| tok->data.redir.type == heredoc_t)
+		&& !(ret = ft_heredoc_toread(tok)))
+			break ;
 		else if (tok->type == redir && tok->data.redir.type == herestr)
 			tok->data.redir.hd = tok->word;
 		toks = toks->next;

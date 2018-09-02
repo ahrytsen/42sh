@@ -87,12 +87,14 @@ static void		rl_get_dimensions(int *dim)
 static int		rl_get_max_name(t_list *lst)
 {
 	size_t max;
+	size_t size;
 
 	max = 0;
 	while (lst)
 	{
-		if (max < lst->content_size - 1)
-			max = lst->content_size - 1;
+		size = ft_strlen_unicode((char *)lst->content) - 1;
+		if (max < size)
+			max = size;
 		lst = lst->next;
 	}
 	max += 2;

@@ -6,32 +6,34 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 18:56:58 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/09/01 14:50:09 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/02 20:35:02 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_expansions.h"
 #include "ft_sh.h"
-/*
+
 static void	ft_bquote_child(int fd_get[2], char *cmds)
 {
 	t_list	*toks;
 	t_ast	*ast;
 
-	get_environ()->pid = 1;
+	get_environ()->is_interactive = 0;
 	close(fd_get[0]);
 	dup2(fd_get[1], 1);
-	toks = ft_tokenize(cmds);
-	ast = ft_ast_make(&toks);
+	if ((toks = ft_tokenize(cmds)) && ft_heredoc(toks))
+	{
+		ast = ft_ast_make(&toks);
+		get_environ()->st = ft_ast_exec(ast);
+		ast = ft_ast_del(ast, 1);
+	}
 	ft_lstdel(&toks, ft_token_del);
-	get_environ()->st = ft_ast_exec(ast);
-	ast = ft_ast_del(ast, 1);
 	free(cmds);
 	close(fd_get[1]);
 	exit(get_environ()->st);
 }
 
-static void	ft_bquote_helper(t_buf **cur, char *str)
+static void	ft_bquote_helper(t_buf **cur, char *str, char *symbols)
 {
 	int		fd_get[2];
 	char	*line;
@@ -45,11 +47,11 @@ static void	ft_bquote_helper(t_buf **cur, char *str)
 		while (get_next_line(fd_get[0], &line) > 0)
 		{
 			i++ ? ft_putchar_mshbuf(cur, '\n') : 0;
-			ft_putstr_mshbuf(cur, line, -1);
+			ft_putstrq_mshbuf(cur, line, -1, symbols);
 			free(line);
 		}
 		close(fd_get[0]);
-		waitpid(get_environ()->pid, &get_environ()->st, WUNTRACED);
+		waitpid(get_environ()->pid, &get_environ()->st, 0);
 		get_environ()->st = WEXITSTATUS(get_environ()->st);
 		get_environ()->pid = 0;
 	}
@@ -59,56 +61,51 @@ static void	ft_bquote_helper(t_buf **cur, char *str)
 		ft_bquote_child(fd_get, str);
 }
 
-char		*ft_get_parentheses_cmd(t_buf **cur, char *s)
+static char	*get_prnth_cmd(char **s)
 {
+	char	*st;
 
+	st = ++(*s);
+	st++;
+	if (ft_skip_subsh(s))
+		return (NULL);
+	return (ft_strsub(st, 0, *s - st - 1));
 }
 
-char		*ft_get_bquote_cmd(t_buf **cur, char **line)
+static char	*get_bq_cmd(char **s)
 {
 	t_buf	*head;
 	t_buf	*tmp;
-	char	*str;
+	char	*st;
 
-	if (!(head = ft_memalloc(sizeof(t_buf))) || !line)
-		return ;
+	if (!s || !*s)
+		return (NULL);
+	st = *s + 1;
+	if (ft_skip_qoutes(s)
+		|| !(head = ft_memalloc(sizeof(t_buf))))
+		return (NULL);
 	tmp = head;
-	while (**line != '`')
-		if (!**line)
-			break ;
-		else if (**line == '\\' && (*line)++)
-			(q ? ft_dquote_slash : ft_slash)(&tmp, line);
+	while (st < *s - 1)
+		if (*st == '\\')
+			ft_putchar_mshbuf(&tmp, *st && ft_strchr("\\$`", *(st + 1))
+							? *++st : *st++);
 		else
-			ft_putchar_mshbuf(&tmp, *(*line)++);
-	str = ft_buftostr(head);
-	if (*str)
-		ft_bquote_helper(cur, str);
-	free(str);
-	**line ? (*line)++ : 0;
+			ft_putchar_mshbuf(&tmp, *st++);
+	return (ft_buftostr(head));
 }
-*/
-void		substitute_cmd(t_list *lst)
-{
-/*	char	*s;
-	t_buf	*buf;
-	t_buf	*head;
 
-	s = lst->content;
-	buf = ft_memalloc(sizeof(t_buf));
-	head = buf;
-	while (*s)
-		if (*s == '\\')
-		{
-			ft_putchar_mshbuf(&buf, *s++);
-			*s ? ft_putchar_mshbuf(&buf, *s++) : 0;
-		}
-		else if (*s == '$' && *(s + 1) == '(')
-			s = skip_parentheses(s, &buf);
-		else if (*s && ft_strchr("\"'`", *s))
-			s = (*s == '"' ? record_dquote(s, &buf) : record_quote(s, &buf));
-			else
-			ft_putchar_mshbuf(&buf, *s++);
-	free(lst->content);
-	lst->content = ft_buftostr(head);*/
-	(void)lst;
+void		substitute_cmd(t_buf **buf, char **s, char *symbols)
+{
+	char	*cmd;
+	char	*st;
+
+	st = *s;
+	if (!(cmd = (**s == '$' ? get_prnth_cmd : get_bq_cmd)(s)))
+	{
+		ft_putstr_mshbuf(buf, st, -1);
+		return ;
+	}
+	if (*cmd)
+		ft_bquote_helper(buf, cmd, symbols);
+	free(cmd);
 }

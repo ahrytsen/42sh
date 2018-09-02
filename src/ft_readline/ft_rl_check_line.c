@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 15:22:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/22 18:23:44 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/02 19:58:35 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int	skip_qoutes(char **ln)
 			if (skip_qoutes(ln))
 				return (1);
 		}
-		else if (q != '\'' && **ln == '$' && *(*ln + 1) == '(')
+		else if (q == '"' && **ln == '$' && *(*ln + 1) == '(')
 		{
 			if (ft_rl_skip_subsh(ln))
 				return (1);

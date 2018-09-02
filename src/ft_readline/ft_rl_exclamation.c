@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_readline.h"
+#include "ft_sh.h"
 
 static char	*search_hist_by_number(char *ptr)
 {
@@ -57,9 +58,8 @@ static char	*rl_match_history(char *ptr)
 	return (NULL);
 }
 
-static int	rl_mark_replacer(t_line **cur)									//28
+static int	rl_mark_replacer(t_line **cur)
 {
-	char	*tmp;
 	char	*rat;
 	char	ptr[4096];
 	int		k;
@@ -67,52 +67,47 @@ static int	rl_mark_replacer(t_line **cur)									//28
 	k = 0;
 	while ((*cur)->next && (*cur = (*cur)->next))
 	{
-		if ((*cur)->ch == ' ' || (*cur)->ch == '\t' || (*cur)->ch == '\n'
-		|| (*cur)->ch == '\'' || (*cur)->ch == ';' || (*cur)->ch == '|'
-		|| (*cur)->ch == '&' || (*cur)->ch == '\"' || (*cur)->ch == '\0'
-		|| (k && (*cur)->prev->ch == '!'))
+		if (!(*cur)->ch || (*cur)->ch == '\'' || (*cur)->ch == '\"'
+		|| ft_isseparator((*cur)->ch) || (k && (*cur)->prev->ch == '!'))
 			break ;
 		ptr[k++] = (*cur)->ch;
 	}
 	ptr[k] = 0;
-	if ((rat = rl_match_history(ptr)))
-	{
-		while (k-- + 1)
-			ft_back_space();
-		tmp = rat;
-		while (*rat)
-			line_add(*cur, (uint64_t)(*rat++));
-		free(tmp);
-		return (1);
-	}
-	ft_dprintf(2, "42sh: event not found: %s\n", ptr);
-	return (0);
+	rat = rl_match_history(ptr);
+	if (!rat && ft_dprintf(2, "42sh: event not found: %s\n", ptr))
+		return (0);
+	while (k-- + 1)
+		ft_back_space();
+	k = 0;
+	while (rat[k])
+		line_add(*cur, (uint64_t)(rat[k++]));
+	free(rat);
+	return (1);
 }
 
 char		*ft_rl_history_replace_mark(t_line **cur)
 {
-	char	mk[3];
+	char	mk[2];
 	char	*s;
 
+	mk[0] = 0;
 	mk[1] = 0;
-	mk[2] = 0;
 	s = NULL;
 	while ((*cur)->prev)
 		*cur = (*cur)->prev;
 	while (*cur && (*cur)->next)
 	{
-		if ((*cur)->ch == '!' && !mk[1] && !((*cur)->prev && (*cur)->prev->ch
-		== '\\') && (*mk = (char)(*cur)->next->ch) != '\t' && *mk != '\n'
-		&& *mk != ' ' && *mk != ';' && *mk != '|' && *mk != '&' && *mk != '\0')
+		if ((*cur)->ch == '!' && !*mk && !((*cur)->prev && (*cur)->prev->ch
+		== '\\') && (*cur)->next->ch && !ft_isseparator((char)(*cur)->next->ch))
 		{
 			if (!rl_mark_replacer(cur))
 				return (NULL);
-			mk[2] = 1;
+			mk[1] = 1;
 		}
-		(*cur)->ch == '\'' ? mk[1] ^= 1 : 0;
+		(*cur)->ch == '\'' ? *mk ^= 1 : 0;
 		(*cur)->next ? *cur = (*cur)->next : 0;
 	}
-	if (mk[2] && (s = line_tostr(cur, 0)))
+	if (mk[1] && (s = line_tostr(cur, 0)))
 		ft_printf("%s\n", s);
 	return (s);
 }

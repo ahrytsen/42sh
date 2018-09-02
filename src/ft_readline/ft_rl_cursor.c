@@ -32,7 +32,8 @@ void	ft_curleft(int mod)
 	else if (get_term()->cury >= 0)
 	{
 		get_term()->curx--;
-		mod ? tputs(tgoto(get_term()->cm_left, 1, 1), 1, term_print) : 0;
+		if (mod)
+			tputs(tgoto(get_term()->cm_left, 1, 1), 1, term_print);
 	}
 }
 
@@ -44,12 +45,14 @@ void	ft_curright(int mod)
 		get_term()->cury++;
 		tputs(tgetstr("do", NULL), 1, term_print);
 		tputs(tgetstr("cr", NULL), 1, term_print);
-		!mod ? tputs(tgetstr("cd", NULL), 1, term_print) : 0;
+		if (!mod)
+			tputs(tgetstr("cd", NULL), 1, term_print);
 	}
 	else if (get_term()->cury >= 0)
 	{
 		get_term()->curx++;
-		mod ? tputs(get_term()->cm_right, 1, term_print) : 0;
+		if (mod)
+			tputs(get_term()->cm_right, 1, term_print);
 	}
 }
 

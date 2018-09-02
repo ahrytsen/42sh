@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:02:28 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/31 02:49:16 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/02 18:55:44 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,10 @@ static void		lstiter_custom(t_list **lst, t_list *(*f)(t_list *))
 		if ((new_lst = (*f)(tmp_lst)))
 		{
 			new_lst_end = get_lst_end(new_lst);
-			lst_prev ? (lst_prev->next = tmp_lst->next) : (*lst = tmp_lst->next);
+			if (lst_prev)
+				lst_prev->next = tmp_lst->next;
+			else
+				*lst = tmp_lst->next;
 			ft_lstdelone(&tmp_lst, (void (*)(void *, size_t))free);
 			ft_lstinsert(lst, lst_prev, new_lst);
 			tmp_lst = new_lst_end;
@@ -81,9 +84,7 @@ t_list			*perform_expansions(t_list *toks, int mod)
 		toks = toks->next;
 	}
 	lstiter_custom(&lst, brace_expansion);
-	ft_lstiter(lst, expand_tilde);
 	ft_lstiter(lst, substitute_variable);
-	ft_lstiter(lst, substitute_cmd);
 	lstiter_custom(&lst, expand_pathname);
 	lst = del_empty_nodes(lst);
 	ft_lstiter(lst, remove_quotes);

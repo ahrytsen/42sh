@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 14:22:50 by yvyliehz          #+#    #+#             */
-
+/*   Updated: 2018/09/02 18:53:32 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,18 +69,22 @@ char			**ft_strcut(char *s, char c);
 */
 char			*check_brackets(char *pattern);
 /*
-**				ft_expansions/tilde/tilde.c
+**				ft_expansions/tilde_var_cmd/substitute_variable.c
 */
-void			expand_tilde(t_list *lst);
-/*
-**				ft_expansions/variable/substitute_variable.c
-*/
-char			*record_var(t_buf **buf, char *s);
+void			record_var(t_buf **buf, char **s, char *symbols);
 void			substitute_variable(t_list *lst);
+/*
+**				ft_expansions/tilde_var_cmd/tilde.c
+*/
+void			expand_tilde(t_buf **buf, char **s);
+/*
+**				ft_expansions/tilde_var_cmd/substitute_cmd.c
+*/
+void			substitute_cmd(t_buf **buf, char **s, char *symbols);
+void			ft_bquote(t_buf **cur, char **line, uint8_t q);
 /*
 **				ft_expansions/quote/quote_removal.c
 */
-
 void			ft_quote(t_buf **cur, char **line);
 void			ft_dquote(t_buf **cur, char **line);
 void			remove_quotes(t_list *lst);
@@ -89,12 +93,5 @@ void			remove_quotes(t_list *lst);
 */
 void			ft_slash(t_buf **cur, char **line);
 void			ft_dquote_slash(t_buf **cur, char **line);
-
-/*
-**		substitute_cmd.c
-*/
-void			substitute_cmd(t_list *lst);
-
-void			ft_bquote(t_buf **cur, char **line, uint8_t q);
 
 #endif

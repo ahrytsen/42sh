@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "ft_sh.h"
-#include "ft_expansions.h"
 
 static char	*ft_new_env_str(const char *name, const char *value)
 {
@@ -79,8 +78,7 @@ int			ft_set_tool(const char *name, const char *value, int overwrite
 	}
 	free(str);
 	if (((entry && entry->attr == 'e') || mod == ENVAR)
-	&& ft_setter(name, value) == -1
-	&& ft_rem_shvar_entry(name))
+	&& ft_setter(name, value) == -1 && ft_rem_shvar_entry(name))
 		return (-1);
 	return (0);
 }
@@ -111,25 +109,9 @@ int			ft_unset_tool(const char *name, int mod)
 	return (0);
 }
 
-char			*ft_assign_expansions(char *str)
+t_env		*get_environ(void)
 {
-	char	*value;
-	char	*sign;
-	char	*res;
-	t_list	tmp;
+	static t_env	env;
 
-	if (!(sign = ft_strchr(str, '=')))
-		return (str);
-	value = ft_strdup(sign + 1);
-	sign[1] = '\0';
-	ft_bzero(&tmp, sizeof(t_list));
-	tmp.content = value;
-	ft_lstiter(&tmp, expand_tilde);
-	ft_lstiter(&tmp, substitute_variable);
-	ft_lstiter(&tmp, substitute_cmd);
-	ft_lstiter(&tmp, remove_quotes);
-	res = ft_strjoin(str, tmp.content);
-	free(tmp.content);
-	free(str);
-	return (res);
+	return (&env);
 }
