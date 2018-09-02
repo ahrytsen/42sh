@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 13:08:50 by ahrytsen          #+#    #+#             */
-/*   Updated: 2017/12/07 16:29:43 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/30 20:20:44 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,8 @@ static int	read_to_newline(const int fd, char **fd_buff)
 
 	if (!(read_b = (char*)ft_memalloc(sizeof(char) * (BUFF_SIZE + 1))))
 		return (-1);
-	while ((count = read(fd, read_b, BUFF_SIZE)))
+	while ((count = read(fd, read_b, BUFF_SIZE)) > 0)
 	{
-		if (count == -1)
-			return (1);
 		tmp = *fd_buff;
 		*fd_buff = ft_strjoin(*fd_buff, read_b);
 		free(tmp);
@@ -78,7 +76,7 @@ static int	read_to_newline(const int fd, char **fd_buff)
 		ft_bzero(read_b, BUFF_SIZE);
 	}
 	free(read_b);
-	return (0);
+	return (count < 0 ? 1 : 0);
 }
 
 int			get_next_line(const int fd, char **line)

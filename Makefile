@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/25 19:09:55 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/09/02 10:45:31 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -43,13 +43,13 @@ HDR			=	inc/ft_sh.h\
 
 SRC			=	ft_argv.c\
 				ft_argv_exec.c\
-				ft_argv_quotes.c\
-				ft_argv_utils.c\
 				ft_ast.c\
 				ft_ast_exec.c\
-                ft_ast_debug.c\
+				ft_ast_debug.c\
 				ft_ast_utils.c\
 				ft_buffer.c\
+				ft_buffer_spec.c\
+				ft_cmd_print.c\
 				ft_cmdlst.c\
 				ft_cmdlst_utils.c\
 				ft_cmdlst_exec.c\
@@ -57,6 +57,7 @@ SRC			=	ft_argv.c\
 				ft_init.c\
 				ft_jobs_utils.c\
 				ft_shell_var.c\
+				ft_shell_var_init.c\
 				ft_shell_var_toolz.c\
 				ft_shell_var_utils.c\
 				ft_redirection.c\
@@ -67,10 +68,13 @@ SRC			=	ft_argv.c\
 				main.c\
 				\
 				ft_builtins/ft_builtins.c\
+				ft_builtins/ft_bi_bg.c\
 				ft_builtins/ft_bi_cd.c\
 				ft_builtins/ft_bi_env.c\
 				ft_builtins/ft_bi_export.c\
 				ft_builtins/ft_bi_fg.c\
+				ft_builtins/ft_bi_jobs.c\
+				ft_builtins/ft_bi_jobs_tools.c\
 				ft_builtins/ft_bi_history.c\
 				ft_builtins/ft_bi_history_toolz.c\
 				ft_builtins/ft_bi_history_utils.c\
@@ -93,11 +97,29 @@ SRC			=	ft_argv.c\
 				ft_readline/ft_rl_line_edit.c\
 				ft_readline/ft_rl_line.c\
 				ft_readline/ft_rl_prompt.c\
-				ft_readline/ft_rl_read.c
+				ft_readline/ft_rl_read.c\
+				\
+				ft_expansions/brace/auxiliary_funcs.c\
+				ft_expansions/brace/expand_braces.c\
+				ft_expansions/brace/fill_buf.c\
+				ft_expansions/brace/get_range.c\
+				ft_expansions/brace/get_seq.c\
+				ft_expansions/pathname/brackets.c\
+				ft_expansions/pathname/regex.c\
+				ft_expansions/pathname/check_brackets.c\
+				ft_expansions/pathname/ft_strcut.c\
+				\
+				ft_expansions/tilde/tilde.c\
+				\
+				ft_expansions/variable/substitute_variable.c\
+				ft_expansions/variable/substitute_cmd.c\
+				\
+				ft_expansions/quote/quote_removal.c\
+				ft_expansions/quote/bslash_removal.c
 
 OBJ			=	$(addprefix $(DIROBJ), $(SRC:.c=.o))
 
-CC			=	gcc
+CC			=	clang
 RM			=	rm -rf
 ECHO		=	echo
 
@@ -127,13 +149,22 @@ all: lib $(NAME)
 
 $(NAME): $(LIBFT) $(DIROBJ) $(OBJ)
 	@echo "$(STRING1)"
-	@$(CC) $(INC) $(INC_LIB) $(CFLAGS) $(OBJ) -o $(NAME)
+	@$(CC) $(INC) $(INC_LIB) $(CFLAGS) $(OBJ) -o $(NAME) libft/libftprintf.a
 	@echo "$(CYANN)comp$(NON)..."$(NAME)"...$(GREEN)OK$(NON)"
 
 $(DIROBJ):
 	mkdir -p $(DIROBJ)
-	mkdir -p $(DIROBJ)/ft_readline
-	mkdir -p $(DIROBJ)/ft_builtins
+	mkdir -p $(DIROBJ)ft_readline
+	mkdir -p $(DIROBJ)ft_builtins
+	mkdir -p $(DIROBJ)ft_expansions
+	mkdir -p $(DIROBJ)ft_expansions/brace
+	mkdir -p $(DIROBJ)ft_expansions/pathname
+	mkdir -p $(DIROBJ)ft_expansions/tilde
+	mkdir -p $(DIROBJ)ft_expansions/variable
+	mkdir -p $(DIROBJ)ft_expansions/quote
+	mkdir -p $(DIROBJ)ft_expansions/substitute_cmd/
+
+$(LIBFT): lib
 
 lib:
 	@$(MAKE) -C $(SUB_MAKE) -j3

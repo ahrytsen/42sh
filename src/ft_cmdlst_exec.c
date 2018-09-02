@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 17:41:55 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/17 21:23:20 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/25 17:39:39 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ static int	ft_subsh_exec(t_cmd *cmd)
 	t_token	*tmp;
 
 	ft_fildes(FD_BACKUP);
+	get_environ()->is_interactive = 0;
+	get_environ()->pid = 0;
+	get_environ()->pgid = 0;
 	tmp = cmd->toks->content;
 	get_environ()->st = 1;
 	get_environ()->st = ft_ast_exec(tmp->data.sub_ast);
@@ -43,6 +46,7 @@ static int	ft_cmd_exec_chld(t_cmd *cmd, int bg)
 		cmd->prev ? close(cmd->p_in) : 0;
 		cmd->next ? dup2(cmd->p_out, 1) : 0;
 		cmd->next ? close(cmd->p_out) : 0;
+		cmd->next ? close(cmd->next->p_in) : 0;
 		ft_set_sh_signal(bg ? S_CHLD : S_CHLD_FG);
 		bg = -1;
 	}
@@ -77,6 +81,7 @@ static int	ft_cmd_exec(t_cmd *cmd, int bg)
 		{
 			!get_environ()->pgid ? get_environ()->pgid = cmd->pid : 0;
 			setpgid(get_environ()->pid, get_environ()->pgid);
+			!bg ? tcsetpgrp(0, get_environ()->pgid) : 0;
 		}
 		return (0);
 	}

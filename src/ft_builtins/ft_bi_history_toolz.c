@@ -13,12 +13,10 @@
 #include "ft_sh.h"
 #include "ft_readline.h"
 
-void ft_hist_add_entry(char *line)
+static void	ft_hist_add_entry(char *line)
 {
 	t_hist	*tmp;
-	int		i;
 
-	i = 0;
 	tmp = get_term()->hist;
 	if (tmp)
 	{
@@ -33,11 +31,8 @@ void ft_hist_add_entry(char *line)
 		tmp->no = 1;
 	}
 	tmp->line = (t_line *)ft_memalloc(sizeof(t_line));
-	while (line[i])
-	{
-		line_add(tmp->line, (uint64_t)line[i]);
-		i++;
-	}
+	while (*line)
+		line_add(tmp->line, ft_get_unichar(&line));
 	get_term()->hist = tmp;
 }
 
@@ -101,39 +96,24 @@ void		ft_hist_read(char *str)
 	}
 }
 
-void		ft_hist_add_rec(void)
-{
-	t_line	*line;
-	t_line	*tmp;
-	char	sw;
-
-	line = get_term()->hist->line;
-	while (line->prev)
-		line = line->prev;
-	sw = 0;
-	while ((!sw && line->ch != 32) || (sw && line->ch == 32))
-	{
-		tmp = line;
-		line = line->next;
-		if ((!sw && line->ch == 32) || (sw && line->ch != 32))
-			sw ^= 1;
-		free(tmp);
-	}
-	line->prev = NULL;
-}
-
 void		ft_hist_show_without_add(char **av)
 {
 	t_hist	*hist;
 	t_hist	*tmp;
 
-	hist = get_term()->hist;
-	tmp = hist->prev;
-	tmp->next = NULL;
+	tmp = NULL;
+	if ((hist = get_term()->hist))
+	{
+		tmp = hist->prev;
+		if (tmp)
+			tmp->next = NULL;
+		if (hist->line)
+			line_tostr(&hist->line, 2);
+		if (hist->tmp)
+			line_tostr(&hist->tmp, 2);
+		free(hist);
+	}
 	get_term()->hist = tmp;
-	line_tostr(&hist->line, 2);
-	// line_tostr(&hist->tmp, 2);
-	free(hist);
 	while (*av)
 	{
 		ft_putendl(*av);

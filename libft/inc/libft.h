@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 05:35:20 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/25 19:15:30 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/30 22:02:58 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int				ft_putchar(int c);
 void			ft_putstr(char const *s);
 void			ft_putendl(char const *s);
 void			ft_putnbr(int n);
-void			ft_putchar_fd(char c, int fd);
+int				ft_putchar_fd(int c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
@@ -110,6 +110,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 /*
 **              Extra functions
 */
+void			ft_lstadd_list(t_list **alst, t_list *new);
 void			ft_lstadd_end(t_list **alst, t_list *new);
 t_list			*ft_lstpush_back(t_list **lst, void const *content,
 								size_t content_size);
@@ -141,7 +142,7 @@ long			ft_atol_base(const char *str, int base);
 int				ft_atoi_base(const char *str, int base);
 void			ft_strarr_free(char **arr);
 char			*ft_arrstr(char **arr, char *str);
-size_t			ft_count_digits(size_t n);
+size_t			ft_count_digits(ssize_t n);
 
 char			*ft_realloc(size_t new_size, size_t old_size, char *ptr);
 void			ft_lstfree(t_list **alst);
@@ -153,5 +154,15 @@ int				ft_isnumber(char *str);
 void			ft_free_arr(void **arr);
 int				ft_is_blank(char *str);
 ssize_t			ft_absolute(ssize_t value);
+int				ft_isblank(int c);
+int				ft_iscntrl(int c);
+int				ft_isgraph(int c);
+int				ft_islower(int c);
+int				ft_isupper(int c);
+int				ft_ispunct(int c);
+int				ft_isword(int c);
+int				ft_isxdigit(int c);
+char			*ft_strnchr(const char *s, int c, int n);
+void			ft_lstinsert(t_list **lst, t_list *node, t_list *ins);
 
 #endif

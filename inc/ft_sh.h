@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sh.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/17 19:32:13 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/02 10:41:46 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 # include <sys/stat.h>
 # include <sys/wait.h>
 # include <term.h>
+# include <inttypes.h>
+# include <sys/wait.h>
 
 /*
 **	SIGNAL MODS
@@ -51,10 +53,23 @@
 # define EXEC_FG 1
 
 /*
-**	VARIABLES MOD
+**	VARIABLES_MOD
 */
 # define SHVAR 0
 # define ENVAR 2
+
+/*
+**	JOBS_OPTIONS
+*/
+# define J_DEF 0
+# define J_L 1
+# define J_P 2
+
+/*
+**	PERFORM_EXP_OPTIONS
+*/
+# define EXP_STRS 0
+# define EXP_TOKS 1
 
 typedef struct	s_op
 {
@@ -86,6 +101,8 @@ typedef struct	s_env
 	int				bkp_fd[3];
 	int				sh_terminal;
 	int				is_interactive;
+	char			**argv;
+	int				argc;
 }				t_env;
 
 typedef struct	s_builtins
@@ -160,7 +177,8 @@ typedef struct	s_token
 				read_in,
 				read_in_and,
 				read_out_and,
-				and_read_out
+				and_read_out,
+				and_read_out_apend
 			}		type;
 			int		cls;
 			int		left;
@@ -216,6 +234,7 @@ struct			s_ast
 typedef struct	s_job
 {
 	pid_t	pgid;
+	int		st;
 	t_cmd	*cmd;
 }				t_job;
 
@@ -231,24 +250,14 @@ int				main_loop(int fd);
 /*
 **				ft_argv.c
 */
+t_list			*perform_expansions(t_list *toks, int mod);
 char			**ft_argv_make(t_list *toks);
 /*
 **				ft_argv_exec.c
 */
+int				ft_exec_bypath(char **cmd, char *path, int bg);
+char			*ft_search_bin(char *bin_name, const char *altpath);
 int				ft_argv_exec(char **cmd, char *altpath, int bg);
-/*
-**				ft_argv_quotes.c
-*/
-void			ft_slash(t_buf **cur, char **line);
-void			ft_dquote_slash(t_buf **cur, char **line);
-void			ft_bquote_helper(t_buf **cur, char *str);
-/*
-**				ft_argv_utils.c
-*/
-void			parse_dollar(t_buf **cur, char **line);
-void			ft_quote(t_buf **cur, char **line);
-void			ft_bquote(t_buf **cur, char **line, uint8_t q);
-char			*parse_argv(char *line);
 /*
 **				ft_ast.c
 */
@@ -277,6 +286,16 @@ void			ft_putchar_mshbuf(t_buf **buf, char c);
 char			*ft_buftostr(t_buf *buf_head);
 void			*ft_free_mshbuf(t_buf *buf);
 /*
+**				ft_buffer_spec.c
+*/
+void			ft_putcharq_mshbuf(t_buf **buf, char c, char *symbols);
+void			ft_putstrq_mshbuf(t_buf **buf, char *str,
+								ssize_t len, char *symbols);
+/*
+**				ft_cmd_print.c
+*/
+void			ft_cmd_print(t_cmd *cmd);
+/*
 **				ft_cmdlst.c
 */
 t_cmd			*ft_cmdlst_make(t_list **toks);
@@ -293,6 +312,7 @@ t_cmd			*ft_cmdlst_push(t_cmd *cmdlst, t_cmd *node);
 /*
 **				ft_heredoc.c
 */
+char			*ft_heredoc_expansion(char *s);
 int				ft_heredoc(t_list *toks);
 /*
 **				ft_init.c
@@ -300,7 +320,7 @@ int				ft_heredoc(t_list *toks);
 void			ft_fildes(int mod);
 void			ft_set_sh_signal(int mod);
 void			ft_init_fd(int fd);
-void			ft_init(void);
+void			ft_init(int ac, char **av);
 /*
 **				ft_jobs_utils.c
 */
@@ -317,15 +337,18 @@ void			ft_redirection_close(t_list *toks);
 */
 int				ft_redir_right_param(t_token *tok);
 int				ft_redir_check(t_token *prev, t_token *next, char *ln);
+int				ft_redir_expansion(t_token *tok);
 /*
 **				ft_shell_var.c
 */
-void			ft_init_shell_var(void);
 int				ft_is_valid_name(char *str);
+void			ft_var_checker(t_list *lst);
 char			*ft_getenv(const char *name);
 char			*ft_other_getenv(const char *name);
-void			ft_var_checker(t_list *lst);
-t_env			*get_environ(void);
+/*
+**				ft_shell_var_toolz.c
+*/
+void			ft_init_shell_var(void);
 /*
 **				ft_shell_var_toolz.c
 */
@@ -336,20 +359,22 @@ int				ft_print_shvar(int mod);
 /*
 **				ft_shell_var_utils.c
 */
-int				ft_set_tool(const char *name, const char *value, int overwrite
-	, int mod);
+int				ft_set_tool(const char *name, const char *value,
+							int overwrite, int mod);
 int				ft_unset_tool(const char *name, int mod);
 int				ft_setter(const char *name, const char *value);
+t_env			*get_environ(void);
 /*
 **				ft_tokenize.c
 */
 t_list			*ft_tokenize(char *ln);
 /*
- **				ft_tokenize_tools.c
- */
+**				ft_tokenize_tools.c
+*/
 int				ft_isseparator(int c);
 void			ft_token_del(void *token, size_t size);
 const char		*ft_tname(t_token *tok);
+void			ft_get_ampersand(char **ln, t_token *token);
 /*
 **				ft_tokenize_utils.c
 */
@@ -362,11 +387,32 @@ int				ft_skip_subsh(char **ln);
 */
 int				ft_echo(char **av);
 int				ft_exit(char **av);
-int				ft_export(char **av);
+int				ft_exec(char **av);
+/*
+**				ft_builtins/ft_bi_bg.c
+*/
+int				ft_bg(char **av);
 /*
 **				ft_builtins/ft_bi_cd.c
 */
 int				ft_cd(char **av);
+/*
+**				ft_builtins/ft_bi_fg.c
+*/
+int				ft_fg(char **av);
+/*
+**				ft_builtins/ft_bi_jobs.c
+*/
+int				job_by_id(t_list *jobs, int options, size_t id);
+int				ft_jobs(char **av);
+/*
+**				ft_builtins/ft_bi_jobs_tools.c
+*/
+void			ft_jobs_clean_lst(t_list **jobs);
+int				ft_count_jobs(t_list *jobs);
+void			ft_cmd_print_colon(t_cmd *cmdlst);
+void			ft_print_status(int st);
+t_list			*ft_job_push_back(t_list **jobs, t_job *new_job);
 /*
 **				ft_builtins/ft_bi_env.c
 */
@@ -384,21 +430,20 @@ int				ft_fg(char **av);
 /*
 **				ft_builtins/ft_bi_history.c
 */
-int				ft_hist_usage(int err);
 int				ft_history(char **av);
-void			ft_hist_erase(void);
 /*
 **				ft_builtins/ft_bi_history_toolz.c
 */
 void			ft_hist_init(char *str);
 void			ft_hist_read(char *str);
-int				ft_hist_erase_rec(char *str);
-void			ft_hist_add_rec(void);
 void			ft_hist_show_without_add(char **av);
 /*
 **				ft_builtins/ft_bi_history_utils.c
 */
-
+int				ft_hist_usage(int err);
+void			ft_hist_erase(void);
+int				ft_hist_erase_rec(char *str);
+void			ft_hist_add_rec(char **av);
 /*
 **				ft_builtins/ft_bi_un_set.c
 */

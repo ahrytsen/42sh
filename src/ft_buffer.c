@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 19:01:15 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:22:54 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/02 10:47:40 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char			*ft_buftostr(t_buf *buf_head)
 	if (!buf_head)
 		return (ft_strdup(""));
 	if (!(str = ft_memalloc(sizeof(char) * (b_size + 1))))
-		ft_fatal(1, exit, "21sh: malloc error\n");
+		ft_fatal(1, exit, "42sh: malloc error\n");
 	while (buf_head)
 	{
 		tmp = buf_head->next;
@@ -53,7 +53,7 @@ void			ft_putchar_mshbuf(t_buf **buf, char c)
 	if ((*buf)->len == BUFF_SIZE)
 	{
 		if (!((*buf)->next = ft_memalloc(sizeof(t_buf))))
-			ft_fatal(1, exit, "21sh: malloc error\n");
+			ft_fatal(1, exit, "42sh: malloc error\n");
 		(*buf)->next->id = (*buf)->id + 1;
 		*buf = (*buf)->next;
 	}
@@ -64,15 +64,8 @@ void			ft_putstr_mshbuf(t_buf **buf, char *str, ssize_t len)
 {
 	if (!str || !buf || !*buf)
 		return ;
-	if (len == -1)
-		while (*str)
-			ft_putchar_mshbuf(buf, *str++);
-	else
-		while (len && *buf)
-		{
-			ft_putchar_mshbuf(buf, *str++);
-			len--;
-		}
+	while ((len < 0 ? 1 : (len-- > 0)) && *str)
+		ft_putchar_mshbuf(buf, *str++);
 }
 
 void			*ft_free_mshbuf(t_buf *buf)

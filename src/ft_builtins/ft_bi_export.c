@@ -6,7 +6,7 @@
 /*   By: dlinkin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/16 15:00:23 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/08/16 15:00:27 by dlinkin          ###   ########.fr       */
+/*   Updated: 2018/08/28 18:28:29 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	ft_read_export_flags(char ***av, int *flags)
 		{
 			if ((**av)[i] != 'n' && (**av)[i] != 'o' && (**av)[i] != 'p')
 			{
-				ft_dprintf(2, "export: bad option: -%c\n", (**av)[i]);
+				ft_dprintf(2, "export: illegal option: -%c\n", (**av)[i]);
 				write(2, "export: usage: export [-nop] [name[=value]]\n", 43);
 				return (1);
 			}

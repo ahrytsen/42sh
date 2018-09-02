@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/26 16:27:15 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/17 22:32:04 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/21 14:26:30 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 const t_builtins	g_builtin[] = {
 	{"echo", &ft_echo},
+	{"bg", &ft_bg},
 	{"cd", &ft_cd},
 	{"fg", &ft_fg},
+	{"jobs", &ft_jobs},
 	{"history", &ft_history},
 	{"setenv", &ft_setenv},
 	{"unsetenv", &ft_unsetenv},
@@ -23,6 +25,7 @@ const t_builtins	g_builtin[] = {
 	{"env", &ft_env},
 	{"exit", &ft_exit},
 	{"export", &ft_export},
+	{"exec", &ft_exec},
 	{NULL, NULL}
 };
 
@@ -43,7 +46,7 @@ static int	ft_exec_builtin(char **cmd)
 	return (-1);
 }
 
-static int	ft_exec_bypath(char **cmd, char *path, int bg)
+int			ft_exec_bypath(char **cmd, char *path, int bg)
 {
 	struct stat	tmp;
 	int			fd;
@@ -99,11 +102,11 @@ static char	**ft_get_path(const char *altpath)
 	return (ft_strsplit(altpath, ':'));
 }
 
-static char	*ft_search_bin(char *bin_name, const char *altpath)
+char		*ft_search_bin(char *bin_name, const char *altpath)
 {
-	int				i;
-	char			*exec_path;
-	char			**path;
+	int		i;
+	char	*exec_path;
+	char	**path;
 
 	i = 0;
 	exec_path = NULL;
@@ -114,8 +117,7 @@ static char	*ft_search_bin(char *bin_name, const char *altpath)
 		if (!(exec_path = malloc(ft_strlen(path[i]) + ft_strlen(bin_name) + 2)))
 			return (NULL);
 		ft_strcpy(exec_path, path[i]);
-		ft_strcat(exec_path, "/");
-		ft_strcat(exec_path, bin_name);
+		ft_strcat(ft_strcat(exec_path, "/"), bin_name);
 		if (!access(exec_path, F_OK))
 			break ;
 		ft_memdel((void**)&exec_path);

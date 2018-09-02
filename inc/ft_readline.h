@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/05 17:38:16 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/15 15:52:35 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/27 20:53:36 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <sys/ioctl.h>
 # include <signal.h>
 # include <term.h>
+# include <inttypes.h>
 
 /*
 **	KEY BINDINGS
@@ -153,6 +154,8 @@ void			ft_redraw_line(void);
 **				ft_readline/ft_rl_read.c
 */
 ssize_t			ft_read(int fd, uint64_t *buf);
+uint64_t		ft_get_unichar(char **str);
+size_t			ft_strlen_unicode(char *str);
 /*
 **				ft_readline/ft_rl_cursor.c
 */

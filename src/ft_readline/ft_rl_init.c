@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 13:35:29 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/03 19:55:19 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/21 18:02:55 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,8 @@ static void	ft_set_rl_signal(int mod)
 	}
 	else
 	{
-		signal(SIGINT, SIG_IGN);
-		signal(SIGQUIT, SIG_IGN);
-		signal(SIGTSTP, SIG_IGN);
-		signal(SIGTTIN, SIG_IGN);
-		signal(SIGTTOU, SIG_IGN);
+		ft_set_sh_signal(S_SH);
+		signal(SIGWINCH, SIG_DFL);
 	}
 }
 
@@ -89,7 +86,6 @@ void		ft_terminal(int mod)
 	else if (mod == T_INIT && !already_saved)
 	{
 		ft_bzero(get_term(), sizeof(t_term));
-
 		ft_init_termcap();
 		tcgetattr(get_environ()->sh_terminal, &get_term()->savetty);
 		get_term()->work_tty = get_term()->savetty;

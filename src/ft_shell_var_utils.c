@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 15:44:16 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:20:51 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/30 18:11:08 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,7 @@ int			ft_set_tool(const char *name, const char *value, int overwrite
 	}
 	free(str);
 	if (((entry && entry->attr == 'e') || mod == ENVAR)
-	&& ft_setter(name, value) == -1
-	&& ft_rem_shvar_entry(name))
+	&& ft_setter(name, value) == -1 && ft_rem_shvar_entry(name))
 		return (-1);
 	return (0);
 }
@@ -108,4 +107,11 @@ int			ft_unset_tool(const char *name, int mod)
 	while (*env++)
 		*(env - 1) = *env;
 	return (0);
+}
+
+t_env		*get_environ(void)
+{
+	static t_env	env;
+
+	return (&env);
 }

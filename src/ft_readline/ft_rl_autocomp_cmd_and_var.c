@@ -103,7 +103,10 @@ char		*ft_rl_search_varname(char *str, size_t len)
 	{
 		if (!ft_strncmp(tmp->var, str, len))
 		{
-			in = ft_strsub(tmp->var, 0, ft_strchr(tmp->var, '=') - tmp->var);
+			if ((ptr = ft_strchr(tmp->var, '=')))
+				in = ft_strsub(tmp->var, 0, ptr - tmp->var);
+			else
+				in = ft_strdup(tmp->var);
 			ptr = ft_strjoin(in, " ");
 			ft_lstadd_end(&list, ft_lstnew((void *)ptr, ft_strlen(ptr) + 1));
 			free(in);

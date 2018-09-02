@@ -73,7 +73,7 @@ static int	ft_hist_reveal(char **av)
 		hist = get_term()->hist;
 		while (hist->prev)
 			hist = hist->prev;
-		while (hist)
+		while (hist && hist->line)
 		{
 			str = line_tostr(&hist->line, 0);
 			ft_printf("%5d  %s\n", hist->no, str);
@@ -97,7 +97,7 @@ int			ft_history(char **av)
 		if (*(*av + 1) == 'c')
 			ft_hist_erase();
 		else if (*(*av + 1) == 's')
-			ft_hist_add_rec();
+			ft_hist_add_rec(av + 1);
 		else if (*(*av + 1) == 'p')
 			ft_hist_show_without_add(av + 1);
 		else if (*(*av + 1) == 'd')
