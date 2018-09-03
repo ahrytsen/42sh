@@ -121,7 +121,6 @@ SRC		=	ft_arrstr.c\
 			ft_absolute.c\
 			get_next_line.c\
 			ft_lstadd_list.c\
-			ft_absolute.c\
 			ft_isblank.c\
 			ft_iscntrl.c\
 			ft_isgraph.c\
