@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/09/02 15:57:32 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/09/03 15:13:58 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -44,6 +44,7 @@ SRC		=	ft_arrstr.c\
 			ft_isnumeric_n.c\
 			ft_isprint.c\
 			ft_isprint_str.c\
+			ft_isvar.c\
 			ft_iswhitespace.c\
 			ft_itoa.c\
 			ft_itoa_base.c\

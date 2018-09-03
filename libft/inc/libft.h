@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 05:35:20 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/30 22:02:58 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/03 15:14:46 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,6 +161,7 @@ int				ft_islower(int c);
 int				ft_isupper(int c);
 int				ft_ispunct(int c);
 int				ft_isword(int c);
+int				ft_isvar(int c);
 int				ft_isxdigit(int c);
 char			*ft_strnchr(const char *s, int c, int n);
 void			ft_lstinsert(t_list **lst, t_list *node, t_list *ins);

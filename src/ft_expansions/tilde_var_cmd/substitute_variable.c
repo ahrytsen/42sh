@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 08:15:32 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/09/02 18:34:33 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/03 15:22:11 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,7 @@ static void	record_dquote(t_buf **buf, char **s)
 		}
 		else if (**s == '`' || (**s == '$' && *(*s + 1) == '('))
 			substitute_cmd(buf, s, "\"\\");
-		else if (**s == '$' && (ft_isword(*(*s + 1)) || *(*s + 1) == '?')
-				&& (*s)++)
+		else if (**s == '$' && ft_isvar(*(*s + 1)) && (*s)++)
 			record_var(buf, s, "\"\\");
 		else
 			ft_putchar_mshbuf(buf, *(*s)++);
@@ -89,7 +88,7 @@ void		substitute_variable(t_list *lst)
 			ft_putchar_mshbuf(&buf, *s++);
 			*s ? ft_putchar_mshbuf(&buf, *s++) : 0;
 		}
-		else if (*s == '$' && (ft_isword(*(s + 1)) || *(s + 1) == '?') && s++)
+		else if (*s == '$' && ft_isvar(*(s + 1)) && s++)
 			record_var(&buf, &s, "'\"\\");
 		else if (*s == '`' || (*s == '$' && *(s + 1) == '('))
 			substitute_cmd(&buf, &s, "'\"\\");
