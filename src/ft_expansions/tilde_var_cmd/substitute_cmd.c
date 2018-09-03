@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 18:56:58 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/09/02 20:35:02 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/03 21:36:04 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static void	ft_bquote_child(int fd_get[2], char *cmds)
 	t_list	*toks;
 	t_ast	*ast;
 
+	signal(SIGINT, SIG_DFL);
 	get_environ()->is_interactive = 0;
 	close(fd_get[0]);
 	dup2(fd_get[1], 1);
@@ -33,20 +34,38 @@ static void	ft_bquote_child(int fd_get[2], char *cmds)
 	exit(get_environ()->st);
 }
 
+static char *ft_read_cmdsubst(int fd)
+{
+	t_buf	*head;
+	t_buf	*cur;
+	char	buf[BUFF_SIZE];
+	char	*line;
+	ssize_t	rd;
+
+	if (!(head = ft_memalloc(sizeof(t_buf))))
+		return (NULL);
+	cur = head;
+	while ((rd = read(fd, buf, BUFF_SIZE)) > 0)
+		ft_putstr_mshbuf(&cur, buf, rd);
+	if (!(line = ft_buftostr(head)))
+		return (NULL);
+	rd = ft_strlen(line) - 1;
+	while (rd >= 0 && line[rd] == '\n')
+		line[rd--] = '\0';
+	return (line);
+}
+
 static void	ft_bquote_helper(t_buf **cur, char *str, char *symbols)
 {
 	int		fd_get[2];
 	char	*line;
-	int		i;
 
-	i = 0;
 	pipe(fd_get);
 	if ((get_environ()->pid = fork()))
 	{
 		close(fd_get[1]);
-		while (get_next_line(fd_get[0], &line) > 0)
+		if ((line = ft_read_cmdsubst(fd_get[0])))
 		{
-			i++ ? ft_putchar_mshbuf(cur, '\n') : 0;
 			ft_putstrq_mshbuf(cur, line, -1, symbols);
 			free(line);
 		}
@@ -54,6 +73,7 @@ static void	ft_bquote_helper(t_buf **cur, char *str, char *symbols)
 		waitpid(get_environ()->pid, &get_environ()->st, 0);
 		get_environ()->st = WEXITSTATUS(get_environ()->st);
 		get_environ()->pid = 0;
+		tcsetpgrp(get_environ()->sh_terminal, get_environ()->sh_pgid);
 	}
 	else if (get_environ()->pid == -1)
 		write(2, "42sh: fork() error\n", 19);

@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/09/02 10:41:46 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/03 20:33:22 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -461,6 +461,6 @@ int				ft_bi_read(char **av);
 /*
 **              ft_builtins/ft_bi_read_records.c
 */
-void            read_line(char **av, char r_flag);
+void			read_line(char **av, char r_flag);
 
 #endif
