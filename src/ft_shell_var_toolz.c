@@ -84,7 +84,7 @@ int				ft_rem_shvar_entry(const char *name)
 	{
 		while (iter)
 		{
-			if (ft_strcmp(iter->var, name) == '=')
+			if (!ft_strncmp(iter->var, name, ft_strlen(name)))
 			{
 				if (tmp)
 					tmp->next = iter->next;
