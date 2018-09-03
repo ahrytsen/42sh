@@ -81,6 +81,8 @@ SRC			=	ft_argv.c\
 				ft_builtins/ft_bi_history_utils.c\
 				ft_builtins/ft_bi_un_set.c\
 				ft_builtins/ft_bi_un_setenv.c\
+				ft_builtins/ft_bi_read.c\
+				ft_builtins/ft_bi_read_records.c\
 				\
 				ft_readline/ft_readline.c\
 				ft_readline/ft_rl_autocomplit.c\
@@ -116,7 +118,9 @@ SRC			=	ft_argv.c\
 				ft_expansions/tilde_var_cmd/substitute_cmd.c\
 				\
 				ft_expansions/quote/quote_removal.c\
-				ft_expansions/quote/bslash_removal.c
+				ft_expansions/quote/bslash_removal.c\
+		        ft_expansions/field/field_splitting.c\
+		        \
 
 OBJ			=	$(addprefix $(DIROBJ), $(SRC:.c=.o))
 
@@ -162,6 +166,7 @@ $(DIROBJ):
 	mkdir -p $(DIROBJ)ft_expansions/pathname
 	mkdir -p $(DIROBJ)ft_expansions/tilde_var_cmd
 	mkdir -p $(DIROBJ)ft_expansions/quote
+	mkdir -p $(DIROBJ)ft_expansions/field
 
 $(LIBFT): lib
 

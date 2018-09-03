@@ -93,5 +93,9 @@ void			remove_quotes(t_list *lst);
 */
 void			ft_slash(t_buf **cur, char **line);
 void			ft_dquote_slash(t_buf **cur, char **line);
+/*
+**				ft_expansions/field/field_splitting.c
+*/
+t_list			*field_splitting(t_list *lst);
 
 #endif

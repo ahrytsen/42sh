@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_argv_exec.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/26 16:27:15 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/21 14:26:30 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/30 09:35:56 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ const t_builtins	g_builtin[] = {
 	{"exit", &ft_exit},
 	{"export", &ft_export},
 	{"exec", &ft_exec},
+	{"read", &ft_bi_read},
 	{NULL, NULL}
 };
 

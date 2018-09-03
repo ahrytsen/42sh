@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:02:28 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/09/02 18:55:44 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/03 18:40:06 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static t_list	*del_empty_nodes(t_list *lst)
 	while (lst)
 	{
 		tmp = lst->next;
-		if (*(char *)lst->content == '\0')
+		if (!lst->content || *(char *)lst->content == '\0')
 		{
 			tmp = lst->next;
 			ft_lstdelone(&lst, (void (*)(void *, size_t)) free);
@@ -85,6 +85,7 @@ t_list			*perform_expansions(t_list *toks, int mod)
 	}
 	lstiter_custom(&lst, brace_expansion);
 	ft_lstiter(lst, substitute_variable);
+	lstiter_custom(&lst, field_splitting);
 	lstiter_custom(&lst, expand_pathname);
 	lst = del_empty_nodes(lst);
 	ft_lstiter(lst, remove_quotes);

@@ -454,5 +454,13 @@ int				ft_set_var(t_list *var, int mod);
 */
 int				ft_setenv(char **av);
 int				ft_unsetenv(char **av);
+/*
+**				ft_builtins/ft_read.c
+*/
+int				ft_bi_read(char **av);
+/*
+**              ft_builtins/ft_bi_read_records.c
+*/
+void            read_line(char **av, char r_flag);
 
 #endif
