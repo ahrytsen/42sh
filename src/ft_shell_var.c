@@ -6,7 +6,7 @@
 /*   By: dlinkin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/08 14:21:11 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/08/28 19:05:45 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/02 18:56:40 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,7 @@ static char	*ft_assign_expansions(char *str)
 	sign[1] = '\0';
 	ft_bzero(&tmp, sizeof(t_list));
 	tmp.content = value;
-	ft_lstiter(&tmp, expand_tilde);
 	ft_lstiter(&tmp, substitute_variable);
-	ft_lstiter(&tmp, substitute_cmd);
 	ft_lstiter(&tmp, remove_quotes);
 	res = ft_strjoin(str, tmp.content);
 	free(tmp.content);

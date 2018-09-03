@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/29 19:53:37 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/09/02 15:57:32 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -118,7 +118,6 @@ SRC		=	ft_arrstr.c\
 			ft_toupper.c\
 			ft_ultoa_base.c\
 			ft_wcharlen.c\
-			ft_absolute.c\
 			get_next_line.c\
 			ft_lstadd_list.c\
 			ft_isblank.c\

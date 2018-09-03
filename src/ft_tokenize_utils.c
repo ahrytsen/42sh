@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:31 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/31 07:12:51 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/02 19:59:08 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int		ft_skip_qoutes(char **ln)
 			ft_skip_qoutes(ln);
 		else if (q != '\'' && **ln == '\\')
 			*++(*ln) ? (*ln)++ : 0;
-		else if (q != '\'' && **ln == '$' && *((*ln) + 1) == '(' && (*ln)++)
+		else if (q == '"' && **ln == '$' && *((*ln) + 1) == '(' && (*ln)++)
 		{
 			if (ft_skip_subsh(ln))
 				return (1);
