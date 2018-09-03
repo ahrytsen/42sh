@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/03 13:53:16 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/09/03 15:13:26 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/09/03 16:15:30 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,33 +24,41 @@ char			*skip_ifs_delim(char *s, char *ifs)
 {
 	char	nonspace;
 
-	nonspace = 0;
-	while (*s && ft_strchr(ifs, *s))
+	if (s)
 	{
-		if (!ft_iswhitespace(*s))
+		nonspace = 0;
+		while (*s && ft_strchr(ifs, *s))
 		{
-			if (!nonspace)
-				nonspace = 1;
-			else
-				break ;
+			if (!ft_iswhitespace(*s))
+			{
+				if (!nonspace)
+					nonspace = 1;
+				else
+					break;
+			}
+			++s;
 		}
-		++s;
 	}
 	return (s);
 }
 
 void	record_vals(char **av, char *s, char r_flag)
 {
-	char	buf[ft_strlen(s) + 1];
+	char	buf[s ? ft_strlen(s) + 1 : 1];
 	int		i;
 	char	*ifs;
 
 	i = 0;
-	!(ifs = ft_getenv("IFS")) ? ifs = " \t\n" : 0;
 	ft_bzero(buf, sizeof(buf));
+	!(ifs = ft_getenv("IFS")) ? ifs = " \t\n" : 0;
 	while (*av)
 	{
-		while (!ft_strchr(ifs, *s))
+		if (!*(av + 1))
+		{
+			ft_set_tool(*av, s, 1, SHVAR);
+			break ;
+		}
+		while (s && !ft_strchr(ifs, *s))
 		{
 			if (*s == '\\' && !r_flag)
 				++s;
@@ -60,11 +68,6 @@ void	record_vals(char **av, char *s, char r_flag)
 		ft_bzero(buf, i);
 		i = 0;
 		s = skip_ifs_delim(s, ifs);
-		if (!*(av + 1))
-		{
-			ft_set_tool(*av, s, 1, SHVAR);
-			break ;
-		}
 	}
 }
 
@@ -73,7 +76,7 @@ static int	check_newline(char *s)
 	if (s && s[ft_strlen(s) - 1] == '\\')
 		while (*s)
 		{
-			if (*s == '\\' && !*++s)
+			if (*s == '\\' && !*(s + 1))
 			{
 				*s = 0;
 				return (1);
@@ -94,7 +97,6 @@ void	read_line(char **av, char r_flag)
 	{
 		if (get_next_line(1, &tmp_s) == -1)
 		{
-			ft_printf("ASD2\n");
 			free(s);
 			return ;
 		}
@@ -109,8 +111,6 @@ void	read_line(char **av, char r_flag)
 		s = ft_strtrim(s);
 		free(tmp_s);
 	}
-//	ft_printf("%s\n", s);
 	record_vals(*av ? av : (char *[]){"REPLY", NULL}, s, r_flag);
-	ft_printf("ASD\n");
 	free(s);
 }

@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 08:17:22 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/09/03 15:10:41 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/09/03 16:18:52 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static char	**check_flags(char **av, char *r_flag)
 	char	*s;
 
 	if (av)
-		while(*av && **av == '-')
+		while (*av && **av == '-')
 		{
 			if (ft_strequ(*av, "--"))
 				return (av + 1);
@@ -76,7 +76,6 @@ static int	check_var_names(char **av)
 int			ft_bi_read(char **av)
 {
 	char	r_flag;
-	system("leaks 42sh");
 
 	r_flag = 0;
 	handle_sigint();
@@ -84,5 +83,6 @@ int			ft_bi_read(char **av)
 		return (256);
 	read_line(av, r_flag);
 	signal(SIGINT, SIG_IGN);
+	system("leaks --quiet 42sh");
 	return (0);
 }
