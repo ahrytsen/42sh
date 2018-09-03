@@ -451,12 +451,6 @@
 		<Unit filename="/Users/yvyliehz/gsh/src/ft_argv_exec.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/src/ft_argv_quotes.c">
-			<Option target="gsh"/>
-		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/src/ft_argv_utils.c">
-			<Option target="gsh"/>
-		</Unit>
 		<Unit filename="/Users/yvyliehz/gsh/src/ft_ast.c">
 			<Option target="gsh"/>
 		</Unit>
@@ -556,10 +550,13 @@
 		<Unit filename="/Users/yvyliehz/gsh/src/ft_expansions/quote/quote_removal.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/src/ft_expansions/tilde/tilde.c">
+		<Unit filename="/Users/yvyliehz/gsh/src/ft_expansions/tilde_var_cmd/substitute_cmd.c">
 			<Option target="gsh"/>
 		</Unit>
-		<Unit filename="/Users/yvyliehz/gsh/src/ft_expansions/variable/substitute_variable.c">
+		<Unit filename="/Users/yvyliehz/gsh/src/ft_expansions/tilde_var_cmd/substitute_variable.c">
+			<Option target="gsh"/>
+		</Unit>
+		<Unit filename="/Users/yvyliehz/gsh/src/ft_expansions/tilde_var_cmd/tilde.c">
 			<Option target="gsh"/>
 		</Unit>
 		<Unit filename="/Users/yvyliehz/gsh/src/ft_heredoc.c">

@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/10 15:30:01 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/10 15:49:03 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/30 22:24:46 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isnumeric_n(char *str, size_t len)
 {
-	if (!str)
+	if (!str || !*str)
 		return (0);
 	while (*str && len--)
 		if (!ft_isdigit(*str++))

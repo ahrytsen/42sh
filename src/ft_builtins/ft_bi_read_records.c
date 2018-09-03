@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/03 13:53:16 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/09/03 16:15:30 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/09/03 17:25:09 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 static int	check_ifs_val(char *ifs)
 {
 	return (!ifs || (ft_strlen(ifs) == 3 &&
-	                 ft_strchr(ifs, ' ') &&
-	                 ft_strchr(ifs, '\n') &&
-	                 ft_strchr(ifs, '\t')));
+					ft_strchr(ifs, ' ') &&
+					ft_strchr(ifs, '\n') &&
+					ft_strchr(ifs, '\t')));
 }
 
-char			*skip_ifs_delim(char *s, char *ifs)
+char		*skip_ifs_delim(char *s, char *ifs)
 {
 	char	nonspace;
 
@@ -34,41 +34,12 @@ char			*skip_ifs_delim(char *s, char *ifs)
 				if (!nonspace)
 					nonspace = 1;
 				else
-					break;
+					break ;
 			}
 			++s;
 		}
 	}
 	return (s);
-}
-
-void	record_vals(char **av, char *s, char r_flag)
-{
-	char	buf[s ? ft_strlen(s) + 1 : 1];
-	int		i;
-	char	*ifs;
-
-	i = 0;
-	ft_bzero(buf, sizeof(buf));
-	!(ifs = ft_getenv("IFS")) ? ifs = " \t\n" : 0;
-	while (*av)
-	{
-		if (!*(av + 1))
-		{
-			ft_set_tool(*av, s, 1, SHVAR);
-			break ;
-		}
-		while (s && !ft_strchr(ifs, *s))
-		{
-			if (*s == '\\' && !r_flag)
-				++s;
-			buf[i++] = *s++;
-		}
-		ft_set_tool(*av++, buf, 1, SHVAR);
-		ft_bzero(buf, i);
-		i = 0;
-		s = skip_ifs_delim(s, ifs);
-	}
 }
 
 static int	check_newline(char *s)
@@ -86,7 +57,36 @@ static int	check_newline(char *s)
 	return (0);
 }
 
-void	read_line(char **av, char r_flag)
+void		record_vals(char **av, char *s, char r_flag)
+{
+	char	buf[s ? ft_strlen(s) + 1 : 1];
+	int		i;
+	char	*ifs;
+
+	i = 0;
+	ft_bzero(buf, sizeof(buf));
+	if (!(ifs = ft_getenv("IFS")))
+		ifs = " \t\n";
+	while (*av)
+	{
+		if (!*(av + 1))
+		{
+			ft_set_tool(*av, s, 1, SHVAR);
+			break ;
+		}
+		while (s && !ft_strchr(ifs, *s))
+			if (*s == '\\' && !r_flag)
+				s += 2;
+			else
+				buf[i++] = *s++;
+		ft_set_tool(*av++, buf, 1, SHVAR);
+		ft_bzero(buf, i);
+		i = 0;
+		s = skip_ifs_delim(s, ifs);
+	}
+}
+
+void		read_line(char **av, char r_flag)
 {
 	char	*s;
 	char	*tmp_s;

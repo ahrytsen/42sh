@@ -147,7 +147,6 @@ add_executable(gsh
         src/ft_expansions/pathname/check_brackets.c
         src/ft_expansions/pathname/ft_strcut.c
         src/ft_expansions/pathname/regex.c
-        src/ft_expansions/tilde/tilde.c
         src/ft_readline/ft_readline.c
         src/ft_readline/ft_rl_action.c
         src/ft_readline/ft_rl_autocomp_cmd_and_var.c
@@ -167,8 +166,6 @@ add_executable(gsh
         src/ft_readline/ft_rl_read.c
         src/ft_argv.c
         src/ft_argv_exec.c
-        src/ft_argv_quotes.c
-        src/ft_argv_utils.c
         src/ft_ast.c
         src/ft_ast_debug.c
         src/ft_ast_exec.c
@@ -190,9 +187,13 @@ add_executable(gsh
         src/ft_tokenize_tools.c
         src/ft_tokenize_utils.c
         src/main.c
-        src/ft_expansions/variable/substitute_variable.c
         src/ft_expansions/quote/quote_removal.c
         src/ft_builtins/ft_bi_read.c
         src/ft_expansions/field/field_splitting.c
         print_args.c
-        src/ft_builtins/ft_bi_read.c src/ft_builtins/ft_bi_read_records.c)
+        src/ft_builtins/ft_bi_read.c
+        src/ft_builtins/ft_bi_read_records.c
+        src/ft_expansions/tilde_var_cmd/substitute_cmd.c
+        src/ft_expansions/tilde_var_cmd/substitute_variable.c
+        src/ft_expansions/tilde_var_cmd/tilde.c
+        )

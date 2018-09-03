@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/29 16:23:54 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/29 16:30:51 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/30 11:56:28 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ int			ft_asprintf(char **line, const char *format, ...)
 		else
 			ft_putchar_buf(&pbuf[1], *format++);
 	format ? va_end(ap) : 0;
-	return (ft_buftostr(line, pbuf[1], pbuf[0]));
+	return (ft_pbuf_str(line, pbuf[1], pbuf[0]));
 }

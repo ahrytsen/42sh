@@ -60,8 +60,7 @@ static void	ft_toread_prompt(int mod)
 	tmp = ft_strlen(prompt);
 	get_term()->cury = tmp / get_term()->width;
 	get_term()->curx = tmp % get_term()->width;
-	ft_dprintf(2, "\r%s\033[31m%s\033[0m",
-				tgetstr("cd", NULL), prompt);
+	ft_dprintf(2, "\r%s\033[31m%s\033[0m", tgetstr("cd", NULL), prompt);
 }
 
 static void	ft_user_prompt(void)
@@ -69,6 +68,7 @@ static void	ft_user_prompt(void)
 	int		tmp;
 	int		proc;
 	char	pwd[MAXPATHLEN];
+	char	*ptr;
 
 	getcwd(pwd, MAXPATHLEN);
 	proc = ft_count_jobs(get_environ()->jobs);
@@ -82,7 +82,9 @@ static void	ft_user_prompt(void)
 		tmp += ft_dprintf(2, proc == 1 ? "{⚙} " : "{⚙: %d} ", proc) - 2;
 	}
 	ft_dprintf(2, "\033[33m");
-	tmp += ft_dprintf(2, "%s ", pwd);
+	if (!(ptr = ft_getenv("PWD")) || !*ptr)
+		ptr = getcwd(pwd, MAXPATHLEN);
+	tmp += ft_dprintf(2, "%s ", ptr);
 	ft_dprintf(2, "\033[32m$>\033[0m ");
 	get_term()->cury = tmp / get_term()->width;
 	get_term()->curx = tmp % get_term()->width;

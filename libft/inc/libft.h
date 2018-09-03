@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 05:35:20 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/10 15:47:02 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/30 22:02:58 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int				ft_putchar(int c);
 void			ft_putstr(char const *s);
 void			ft_putendl(char const *s);
 void			ft_putnbr(int n);
-void			ft_putchar_fd(char c, int fd);
+int				ft_putchar_fd(int c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);

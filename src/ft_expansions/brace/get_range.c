@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 14:31:24 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/13 15:00:24 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/09/01 20:18:17 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,22 +43,23 @@ static t_list	*get_num_range(char **s)
 
 static t_list	*get_alpha_range(int lim1, int lim2, char **s)
 {
-	char	buf[2];
+	char	buf[3];
 	t_list	*lst;
 
 	lst = NULL;
-	buf[1] = 0;
+	buf[0] = '\\';
+	buf[2] = 0;
 	if (lim1 < lim2)
 		while (lim1 <= lim2)
 		{
-			buf[0] = lim1++;
-			ft_lstpush_back(&lst, buf, 2);
+			buf[1] = lim1++;
+			ft_lstpush_back(&lst, buf, 3);
 		}
 	else
 		while (lim1 >= lim2)
 		{
-			buf[0] = lim1--;
-			ft_lstpush_back(&lst, buf, 2);
+			buf[1] = lim1--;
+			ft_lstpush_back(&lst, buf, 3);
 		}
 	*s += 6;
 	return (lst);

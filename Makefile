@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/08/29 19:56:43 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/09/02 18:55:21 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -14,7 +14,7 @@ NAME 		=	42sh
 
 #===========================================================
 OS			= $(shell uname)
-#ifeq ($(OS),Darwin)
+ifeq ($(OS),Darwin)
 	INC		=	-I./inc/ -I./libft/inc/
 	LIBFT	= ./libft/libftprintf.a
 	SUB_MAKE= ./libft
@@ -23,12 +23,12 @@ OS			= $(shell uname)
 	NON		= \x1b[0m
 	CYANN	= \x1b[36m
 	GREEN	= \x1b[32m
-#else
-#	INC		= -I../../libft_win/includes -I./inc
-#	LIBFT	= ../../libft_win/libftprintf.a
-#	SUB_MAKE= ../../libft_win
-#	TCAP	= -lcurses
-#endif
+else
+	INC		= -I../../libft_win/includes -I./inc
+	LIBFT	= ../../libft_win/libftprintf.a
+	SUB_MAKE= ../../libft_win
+	TCAP	= -lcurses
+endif
 #===========================================================
 
 
@@ -39,17 +39,17 @@ DIRSRC		=	./src/
 DIROBJ		=	./obj/
 
 HDR			=	inc/ft_sh.h\
-				inc/ft_readline.h
+				inc/ft_readline.h\
+				inc/ft_expansions.h
 
 SRC			=	ft_argv.c\
 				ft_argv_exec.c\
-				ft_argv_quotes.c\
-				ft_argv_utils.c\
 				ft_ast.c\
 				ft_ast_exec.c\
 				ft_ast_debug.c\
 				ft_ast_utils.c\
 				ft_buffer.c\
+				ft_buffer_spec.c\
 				ft_cmd_print.c\
 				ft_cmdlst.c\
 				ft_cmdlst_utils.c\
@@ -58,6 +58,7 @@ SRC			=	ft_argv.c\
 				ft_init.c\
 				ft_jobs_utils.c\
 				ft_shell_var.c\
+				ft_shell_var_init.c\
 				ft_shell_var_toolz.c\
 				ft_shell_var_utils.c\
 				ft_redirection.c\
@@ -76,6 +77,8 @@ SRC			=	ft_argv.c\
 				ft_builtins/ft_bi_jobs.c\
 				ft_builtins/ft_bi_jobs_tools.c\
 				ft_builtins/ft_bi_history.c\
+				ft_builtins/ft_bi_history_toolz.c\
+				ft_builtins/ft_bi_history_utils.c\
 				ft_builtins/ft_bi_un_set.c\
 				ft_builtins/ft_bi_un_setenv.c\
 				ft_builtins/ft_bi_read.c\
@@ -104,16 +107,20 @@ SRC			=	ft_argv.c\
 				ft_expansions/brace/fill_buf.c\
 				ft_expansions/brace/get_range.c\
 				ft_expansions/brace/get_seq.c\
+				\
 				ft_expansions/pathname/brackets.c\
 				ft_expansions/pathname/regex.c\
 				ft_expansions/pathname/check_brackets.c\
 				ft_expansions/pathname/ft_strcut.c\
 				\
-				ft_expansions/tilde/tilde.c\
+				ft_expansions/tilde_var_cmd/tilde.c\
+				ft_expansions/tilde_var_cmd/substitute_variable.c\
+				ft_expansions/tilde_var_cmd/substitute_cmd.c\
 				\
-				ft_expansions/variable/substitute_variable.c\
-				\
-				ft_expansions/quote/quote_removal.c
+				ft_expansions/quote/quote_removal.c\
+				ft_expansions/quote/bslash_removal.c\
+		        ft_expansions/field/field_splitting.c\
+		        \
 
 OBJ			=	$(addprefix $(DIROBJ), $(SRC:.c=.o))
 
@@ -143,7 +150,7 @@ STRING5 = $(CYAN)---$(NAME) installed in ~/.mybin$(NON)
 
 .PHONY: all clean re
 
-all: $(NAME)
+all: lib $(NAME)
 
 $(NAME): $(LIBFT) $(DIROBJ) $(OBJ)
 	@echo "$(STRING1)"
@@ -152,19 +159,19 @@ $(NAME): $(LIBFT) $(DIROBJ) $(OBJ)
 
 $(DIROBJ):
 	mkdir -p $(DIROBJ)
-	mkdir -p $(DIROBJ)/ft_readline
-	mkdir -p $(DIROBJ)/ft_builtins
-	mkdir -p $(DIROBJ)/ft_expansions
-	mkdir -p $(DIROBJ)/ft_expansions/brace
-	mkdir -p $(DIROBJ)/ft_expansions/pathname
-	mkdir -p $(DIROBJ)/ft_expansions/tilde
-	mkdir -p $(DIROBJ)/ft_expansions/variable
-	mkdir -p $(DIROBJ)/ft_expansions/quote
+	mkdir -p $(DIROBJ)ft_readline
+	mkdir -p $(DIROBJ)ft_builtins
+	mkdir -p $(DIROBJ)ft_expansions
+	mkdir -p $(DIROBJ)ft_expansions/brace
+	mkdir -p $(DIROBJ)ft_expansions/pathname
+	mkdir -p $(DIROBJ)ft_expansions/tilde_var_cmd
+	mkdir -p $(DIROBJ)ft_expansions/quote
+	mkdir -p $(DIROBJ)ft_expansions/field
+
+$(LIBFT): lib
 
 lib:
 	@$(MAKE) -C $(SUB_MAKE) -j3
-
-$(LIBFT): lib
 
 $(OBJ):	$(DIROBJ)%.o : $(DIRSRC)%.c $(HDR)
 	@$(CC) $(INC) $(CFLAGS) -o $@ -c $<

@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 14:04:03 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/29 19:35:49 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/30 15:56:03 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	ft_redir_heredoc(t_token *tok)
 	if (!tok->data.redir.nbr)
 	{
 		ft_memdel((void**)&tok->data.redir.right);
-		ft_heredoc_expansion(tok);
+		tok->data.redir.right = ft_heredoc_expansion(tok->data.redir.hd);
 	}
 	else if (!tok->data.redir.right)
 	{

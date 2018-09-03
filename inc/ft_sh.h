@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/30 09:33:11 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/09/02 10:41:46 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -255,21 +255,9 @@ char			**ft_argv_make(t_list *toks);
 /*
 **				ft_argv_exec.c
 */
+int				ft_exec_bypath(char **cmd, char *path, int bg);
+char			*ft_search_bin(char *bin_name, const char *altpath);
 int				ft_argv_exec(char **cmd, char *altpath, int bg);
-/*
-**				ft_argv_quotes.c
-*/
-void			ft_slash(t_buf **cur, char **line);
-void			ft_dquote_slash(t_buf **cur, char **line);
-void			ft_bquote_helper(t_buf **cur, char *str);
-/*
-**				ft_argv_utils.c
-*/
-void			parse_dollar(t_buf **cur, char **line);
-void			ft_quote(t_buf **cur, char **line);
-void			ft_bquote(t_buf **cur, char **line, uint8_t q);
-//char			*parse_argv(char *line);
-void			ft_dquote(t_buf **cur, char **line);
 /*
 **				ft_ast.c
 */
@@ -298,6 +286,12 @@ void			ft_putchar_mshbuf(t_buf **buf, char c);
 char			*ft_buftostr(t_buf *buf_head);
 void			*ft_free_mshbuf(t_buf *buf);
 /*
+**				ft_buffer_spec.c
+*/
+void			ft_putcharq_mshbuf(t_buf **buf, char c, char *symbols);
+void			ft_putstrq_mshbuf(t_buf **buf, char *str,
+								ssize_t len, char *symbols);
+/*
 **				ft_cmd_print.c
 */
 void			ft_cmd_print(t_cmd *cmd);
@@ -318,7 +312,7 @@ t_cmd			*ft_cmdlst_push(t_cmd *cmdlst, t_cmd *node);
 /*
 **				ft_heredoc.c
 */
-void			ft_heredoc_expansion(t_token *tok);
+char			*ft_heredoc_expansion(char *s);
 int				ft_heredoc(t_list *toks);
 /*
 **				ft_init.c
@@ -347,12 +341,14 @@ int				ft_redir_expansion(t_token *tok);
 /*
 **				ft_shell_var.c
 */
-void			ft_init_shell_var(void);
 int				ft_is_valid_name(char *str);
+void			ft_var_checker(t_list *lst);
 char			*ft_getenv(const char *name);
 char			*ft_other_getenv(const char *name);
-void			ft_var_checker(t_list *lst);
-t_env			*get_environ(void);
+/*
+**				ft_shell_var_toolz.c
+*/
+void			ft_init_shell_var(void);
 /*
 **				ft_shell_var_toolz.c
 */
@@ -367,7 +363,7 @@ int				ft_set_tool(const char *name, const char *value,
 							int overwrite, int mod);
 int				ft_unset_tool(const char *name, int mod);
 int				ft_setter(const char *name, const char *value);
-char			*ft_assign_expansions(char *str);
+t_env			*get_environ(void);
 /*
 **				ft_tokenize.c
 */
@@ -378,7 +374,7 @@ t_list			*ft_tokenize(char *ln);
 int				ft_isseparator(int c);
 void			ft_token_del(void *token, size_t size);
 const char		*ft_tname(t_token *tok);
-void			ft_get_ampersand(char  **ln, t_token *token);
+void			ft_get_ampersand(char **ln, t_token *token);
 /*
 **				ft_tokenize_utils.c
 */
@@ -391,7 +387,7 @@ int				ft_skip_subsh(char **ln);
 */
 int				ft_echo(char **av);
 int				ft_exit(char **av);
-int				ft_export(char **av);
+int				ft_exec(char **av);
 /*
 **				ft_builtins/ft_bi_bg.c
 */
@@ -427,25 +423,44 @@ int				ft_env_op(int p);
 */
 int				ft_export(char **av);
 /*
-**				ft_builtins/ft_bi_un_setenv.c
+**				ft_builtins/ft_bi_fg.c
 */
-int				ft_setenv(char **av);
-int				ft_unsetenv(char **av);
+int				ft_count_fg(t_list *proc);
+int				ft_fg(char **av);
+/*
+**				ft_builtins/ft_bi_history.c
+*/
+int				ft_history(char **av);
+/*
+**				ft_builtins/ft_bi_history_toolz.c
+*/
+void			ft_hist_init(char *str);
+void			ft_hist_read(char *str);
+void			ft_hist_show_without_add(char **av);
+/*
+**				ft_builtins/ft_bi_history_utils.c
+*/
+int				ft_hist_usage(int err);
+void			ft_hist_erase(void);
+int				ft_hist_erase_rec(char *str);
+void			ft_hist_add_rec(char **av);
 /*
 **				ft_builtins/ft_bi_un_set.c
 */
 int				ft_unset(char **av);
 int				ft_set_var(t_list *var, int mod);
 /*
-**				ft_builtins/ft_bi_history.c
+**				ft_builtins/ft_bi_un_setenv.c
 */
-int				ft_history(char **av);
+int				ft_setenv(char **av);
+int				ft_unsetenv(char **av);
 /*
 **				ft_builtins/ft_read.c
 */
 int				ft_bi_read(char **av);
 /*
-**              ft_bi_read_records.c
+**              ft_builtins/ft_bi_read_records.c
 */
 void            read_line(char **av, char r_flag);
+
 #endif

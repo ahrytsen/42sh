@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/09 19:54:49 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/29 16:43:26 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/30 11:55:38 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void			ft_putchar_buf(t_buf **pbuf, int c);
 void			ft_putustr_buf(t_buf **pbuf, int *str, ssize_t len);
 void			ft_putstr_buf(t_buf **pbuf, char *str, ssize_t len);
 ssize_t			ft_print_buf(int fd, t_buf *pbuf, t_buf *pbuf_head);
-ssize_t			ft_buftostr(char **line, t_buf *pbuf, t_buf *pbuf_head);
+ssize_t			ft_pbuf_str(char **line, t_buf *pbuf, t_buf *pbuf_head);
 /*
 **				Helpers!
 */
@@ -85,6 +85,5 @@ void			ft_int(t_buf **pbuf, va_list *ap, t_arg *arg);
 void			ft_base(t_buf **pbuf, va_list *ap, t_arg *arg);
 void			ft_undef(t_buf **pbuf, va_list *ap, t_arg *arg);
 void			ft_pfloat(t_buf **pbuf, va_list *ap, t_arg *arg);
-ssize_t			ft_absolute(ssize_t value);
 
 #endif

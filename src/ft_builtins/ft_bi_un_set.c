@@ -28,30 +28,27 @@ int		ft_unset(char **av)
 int		ft_set_var(t_list *var, int mod)
 {
 	char	*value;
-	char	*ptr;
-	t_var	*entry;
+	t_var	*ent;
 
 	while (var)
 	{
-		ptr = ft_strchr(var->content, '=');
-		value = ptr + 1;
-		*ptr = '\0';
+		value = ft_strchr(var->content, '=');
+		*value = '\0';
 		if (mod == SHVAR)
 		{
-			if ((entry = ft_get_shvar_entry(var->content)))
+			if ((ent = ft_get_shvar_entry(var->content)))
 			{
-				if (entry->attr == 'e'
-				|| (entry->attr == 'u' && (entry->attr = 'e')))
-					ft_setter(var->content, value);
-				free(entry->var);
-				*ptr = '=';
-				entry->var = ft_strdup(var->content);
+				if (ent->attr == 'e' || (ent->attr == 'u' && (ent->attr = 'e')))
+					ft_setter(var->content, value + 1);
+				free(ent->var);
+				*value = '=';
+				ent->var = ft_strdup(var->content);
 			}
 			else
-				ft_set_tool(var->content, value, 1, SHVAR);
+				ft_set_tool(var->content, value + 1, 1, SHVAR);
 		}
 		else if (mod == ENVAR)
-			ft_setter(var->content, value);
+			ft_setter(var->content, value + 1);
 		var = var->next;
 	}
 	return (0);

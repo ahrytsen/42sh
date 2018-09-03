@@ -6,18 +6,87 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/31 06:54:59 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/31 07:48:30 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/09/03 19:56:07 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_sh.h"
+#include "ft_expansions.h"
 
-t_list	*field_splitting(t_list *lst)
+static char		*skip_quote(char *s, size_t *res)
 {
-//	char	buf[ft_strlen(lst->content) + 1];
-//
-//	if ()
-//	ft_bzero(buf, sizeof(buf));
+	const char	quote = *s++;
 
+	++*res;
+	while (*s && *s != quote)
+		if (*s == '\\')
+		{
+			++s;
+			++*res;
+			if (*s && s++)
+				++*res;
+		}
+		else
+		{
+			++s;
+			++*res;
+		}
+	if (*s)
+	{
+		++s;
+		++*res;
+	}
+	return (s);
+}
 
+static size_t	ft_strlen_c_quoted(char *s)
+{
+	size_t res;
+
+	res = 0;
+	while (!ft_strchr(" \n\t", *s))
+		if (*s == '\\')
+		{
+			++s;
+			++res;
+			if (*s)
+			{
+				++s;
+				++res;
+			}
+		}
+		else if (ft_strchr("\"'", *s))
+			s = skip_quote(s, &res);
+		else
+		{
+			s++;
+			res++;
+		}
+	return (res);
+}
+
+static t_list	*ft_strsplit_quoted(char *s)
+{
+	size_t	wlen;
+	t_list	*lst;
+	t_list	*beg;
+
+	beg = NULL;
+	while (*s)
+	{
+		if (!ft_strchr(" \t\n", *s))
+		{
+			wlen = ft_strlen_c_quoted(s);
+			if ((lst = ft_lstpush_back(&beg, s, wlen + 1)))
+				((char *)(lst->content))[lst->content_size - 1] = 0;
+			s += wlen;
+		}
+		else
+			s++;
+	}
+	return (beg);
+}
+
+t_list			*field_splitting(t_list *lst)
+{
+	return (ft_strsplit_quoted(lst->content));
 }

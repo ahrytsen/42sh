@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 13:02:28 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/28 17:55:48 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/03 18:40:06 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static t_list	*del_empty_nodes(t_list *lst)
 	while (lst)
 	{
 		tmp = lst->next;
-		if (*(char *)lst->content == '\0')
+		if (!lst->content || *(char *)lst->content == '\0')
 		{
 			tmp = lst->next;
 			ft_lstdelone(&lst, (void (*)(void *, size_t)) free);
@@ -58,7 +58,10 @@ static void		lstiter_custom(t_list **lst, t_list *(*f)(t_list *))
 		if ((new_lst = (*f)(tmp_lst)))
 		{
 			new_lst_end = get_lst_end(new_lst);
-			lst_prev ? (lst_prev->next = tmp_lst->next) : (*lst = tmp_lst->next);
+			if (lst_prev)
+				lst_prev->next = tmp_lst->next;
+			else
+				*lst = tmp_lst->next;
 			ft_lstdelone(&tmp_lst, (void (*)(void *, size_t))free);
 			ft_lstinsert(lst, lst_prev, new_lst);
 			tmp_lst = new_lst_end;
@@ -81,14 +84,11 @@ t_list			*perform_expansions(t_list *toks, int mod)
 		toks = toks->next;
 	}
 	lstiter_custom(&lst, brace_expansion);
-	ft_lstiter(lst, expand_tilde);
 	ft_lstiter(lst, substitute_variable);
-
-	// Command Substitution
-
+	lstiter_custom(&lst, field_splitting);
 	lstiter_custom(&lst, expand_pathname);
-	ft_lstiter(lst, remove_quotes);
 	lst = del_empty_nodes(lst);
+	ft_lstiter(lst, remove_quotes);
 	return (lst);
 }
 

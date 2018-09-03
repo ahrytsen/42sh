@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 20:36:51 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/29 18:03:42 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/08/31 02:30:57 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ void		ft_token_del(void *token, size_t size)
 	(void)size;
 	if (tok->type == redir)
 	{
-		if (tok->data.redir.type >= heredoc
-			&& tok->data.redir.type <= herestr)
-			free(tok->data.redir.hd);
+		free(tok->data.redir.hd);
 		free(tok->data.redir.right);
 	}
 	else if (tok->type == subsh)
@@ -58,7 +56,7 @@ const char	*ft_tname(t_token *tok)
 		return ("unknown token");
 }
 
-void	ft_get_ampersand(char  **ln, t_token *token)
+void		ft_get_ampersand(char **ln, t_token *token)
 {
 	*(*ln)++ = '\0';
 	if (**ln == '>')

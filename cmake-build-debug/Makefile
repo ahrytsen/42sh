@@ -3309,60 +3309,6 @@ src/ft_argv_exec.c.s:
 	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv_exec.c.s
 .PHONY : src/ft_argv_exec.c.s
 
-src/ft_argv_quotes.o: src/ft_argv_quotes.c.o
-
-.PHONY : src/ft_argv_quotes.o
-
-# target to build an object file
-src/ft_argv_quotes.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv_quotes.c.o
-.PHONY : src/ft_argv_quotes.c.o
-
-src/ft_argv_quotes.i: src/ft_argv_quotes.c.i
-
-.PHONY : src/ft_argv_quotes.i
-
-# target to preprocess a source file
-src/ft_argv_quotes.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv_quotes.c.i
-.PHONY : src/ft_argv_quotes.c.i
-
-src/ft_argv_quotes.s: src/ft_argv_quotes.c.s
-
-.PHONY : src/ft_argv_quotes.s
-
-# target to generate assembly for a file
-src/ft_argv_quotes.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv_quotes.c.s
-.PHONY : src/ft_argv_quotes.c.s
-
-src/ft_argv_utils.o: src/ft_argv_utils.c.o
-
-.PHONY : src/ft_argv_utils.o
-
-# target to build an object file
-src/ft_argv_utils.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv_utils.c.o
-.PHONY : src/ft_argv_utils.c.o
-
-src/ft_argv_utils.i: src/ft_argv_utils.c.i
-
-.PHONY : src/ft_argv_utils.i
-
-# target to preprocess a source file
-src/ft_argv_utils.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv_utils.c.i
-.PHONY : src/ft_argv_utils.c.i
-
-src/ft_argv_utils.s: src/ft_argv_utils.c.s
-
-.PHONY : src/ft_argv_utils.s
-
-# target to generate assembly for a file
-src/ft_argv_utils.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_argv_utils.c.s
-.PHONY : src/ft_argv_utils.c.s
-
 src/ft_ast.o: src/ft_ast.c.o
 
 .PHONY : src/ft_ast.o
@@ -4254,59 +4200,86 @@ src/ft_expansions/quote/quote_removal.c.s:
 	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/quote/quote_removal.c.s
 .PHONY : src/ft_expansions/quote/quote_removal.c.s
 
-src/ft_expansions/tilde/tilde.o: src/ft_expansions/tilde/tilde.c.o
+src/ft_expansions/tilde_var_cmd/substitute_cmd.o: src/ft_expansions/tilde_var_cmd/substitute_cmd.c.o
 
-.PHONY : src/ft_expansions/tilde/tilde.o
-
-# target to build an object file
-src/ft_expansions/tilde/tilde.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/tilde/tilde.c.o
-.PHONY : src/ft_expansions/tilde/tilde.c.o
-
-src/ft_expansions/tilde/tilde.i: src/ft_expansions/tilde/tilde.c.i
-
-.PHONY : src/ft_expansions/tilde/tilde.i
-
-# target to preprocess a source file
-src/ft_expansions/tilde/tilde.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/tilde/tilde.c.i
-.PHONY : src/ft_expansions/tilde/tilde.c.i
-
-src/ft_expansions/tilde/tilde.s: src/ft_expansions/tilde/tilde.c.s
-
-.PHONY : src/ft_expansions/tilde/tilde.s
-
-# target to generate assembly for a file
-src/ft_expansions/tilde/tilde.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/tilde/tilde.c.s
-.PHONY : src/ft_expansions/tilde/tilde.c.s
-
-src/ft_expansions/variable/substitute_variable.o: src/ft_expansions/variable/substitute_variable.c.o
-
-.PHONY : src/ft_expansions/variable/substitute_variable.o
+.PHONY : src/ft_expansions/tilde_var_cmd/substitute_cmd.o
 
 # target to build an object file
-src/ft_expansions/variable/substitute_variable.c.o:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.o
-.PHONY : src/ft_expansions/variable/substitute_variable.c.o
+src/ft_expansions/tilde_var_cmd/substitute_cmd.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/tilde_var_cmd/substitute_cmd.c.o
+.PHONY : src/ft_expansions/tilde_var_cmd/substitute_cmd.c.o
 
-src/ft_expansions/variable/substitute_variable.i: src/ft_expansions/variable/substitute_variable.c.i
+src/ft_expansions/tilde_var_cmd/substitute_cmd.i: src/ft_expansions/tilde_var_cmd/substitute_cmd.c.i
 
-.PHONY : src/ft_expansions/variable/substitute_variable.i
+.PHONY : src/ft_expansions/tilde_var_cmd/substitute_cmd.i
 
 # target to preprocess a source file
-src/ft_expansions/variable/substitute_variable.c.i:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.i
-.PHONY : src/ft_expansions/variable/substitute_variable.c.i
+src/ft_expansions/tilde_var_cmd/substitute_cmd.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/tilde_var_cmd/substitute_cmd.c.i
+.PHONY : src/ft_expansions/tilde_var_cmd/substitute_cmd.c.i
 
-src/ft_expansions/variable/substitute_variable.s: src/ft_expansions/variable/substitute_variable.c.s
+src/ft_expansions/tilde_var_cmd/substitute_cmd.s: src/ft_expansions/tilde_var_cmd/substitute_cmd.c.s
 
-.PHONY : src/ft_expansions/variable/substitute_variable.s
+.PHONY : src/ft_expansions/tilde_var_cmd/substitute_cmd.s
 
 # target to generate assembly for a file
-src/ft_expansions/variable/substitute_variable.c.s:
-	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/variable/substitute_variable.c.s
-.PHONY : src/ft_expansions/variable/substitute_variable.c.s
+src/ft_expansions/tilde_var_cmd/substitute_cmd.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/tilde_var_cmd/substitute_cmd.c.s
+.PHONY : src/ft_expansions/tilde_var_cmd/substitute_cmd.c.s
+
+src/ft_expansions/tilde_var_cmd/substitute_variable.o: src/ft_expansions/tilde_var_cmd/substitute_variable.c.o
+
+.PHONY : src/ft_expansions/tilde_var_cmd/substitute_variable.o
+
+# target to build an object file
+src/ft_expansions/tilde_var_cmd/substitute_variable.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/tilde_var_cmd/substitute_variable.c.o
+.PHONY : src/ft_expansions/tilde_var_cmd/substitute_variable.c.o
+
+src/ft_expansions/tilde_var_cmd/substitute_variable.i: src/ft_expansions/tilde_var_cmd/substitute_variable.c.i
+
+.PHONY : src/ft_expansions/tilde_var_cmd/substitute_variable.i
+
+# target to preprocess a source file
+src/ft_expansions/tilde_var_cmd/substitute_variable.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/tilde_var_cmd/substitute_variable.c.i
+.PHONY : src/ft_expansions/tilde_var_cmd/substitute_variable.c.i
+
+src/ft_expansions/tilde_var_cmd/substitute_variable.s: src/ft_expansions/tilde_var_cmd/substitute_variable.c.s
+
+.PHONY : src/ft_expansions/tilde_var_cmd/substitute_variable.s
+
+# target to generate assembly for a file
+src/ft_expansions/tilde_var_cmd/substitute_variable.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/tilde_var_cmd/substitute_variable.c.s
+.PHONY : src/ft_expansions/tilde_var_cmd/substitute_variable.c.s
+
+src/ft_expansions/tilde_var_cmd/tilde.o: src/ft_expansions/tilde_var_cmd/tilde.c.o
+
+.PHONY : src/ft_expansions/tilde_var_cmd/tilde.o
+
+# target to build an object file
+src/ft_expansions/tilde_var_cmd/tilde.c.o:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/tilde_var_cmd/tilde.c.o
+.PHONY : src/ft_expansions/tilde_var_cmd/tilde.c.o
+
+src/ft_expansions/tilde_var_cmd/tilde.i: src/ft_expansions/tilde_var_cmd/tilde.c.i
+
+.PHONY : src/ft_expansions/tilde_var_cmd/tilde.i
+
+# target to preprocess a source file
+src/ft_expansions/tilde_var_cmd/tilde.c.i:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/tilde_var_cmd/tilde.c.i
+.PHONY : src/ft_expansions/tilde_var_cmd/tilde.c.i
+
+src/ft_expansions/tilde_var_cmd/tilde.s: src/ft_expansions/tilde_var_cmd/tilde.c.s
+
+.PHONY : src/ft_expansions/tilde_var_cmd/tilde.s
+
+# target to generate assembly for a file
+src/ft_expansions/tilde_var_cmd/tilde.c.s:
+	$(MAKE) -f CMakeFiles/gsh.dir/build.make CMakeFiles/gsh.dir/src/ft_expansions/tilde_var_cmd/tilde.c.s
+.PHONY : src/ft_expansions/tilde_var_cmd/tilde.c.s
 
 src/ft_heredoc.o: src/ft_heredoc.c.o
 
@@ -5454,12 +5427,6 @@ help:
 	@echo "... src/ft_argv_exec.o"
 	@echo "... src/ft_argv_exec.i"
 	@echo "... src/ft_argv_exec.s"
-	@echo "... src/ft_argv_quotes.o"
-	@echo "... src/ft_argv_quotes.i"
-	@echo "... src/ft_argv_quotes.s"
-	@echo "... src/ft_argv_utils.o"
-	@echo "... src/ft_argv_utils.i"
-	@echo "... src/ft_argv_utils.s"
 	@echo "... src/ft_ast.o"
 	@echo "... src/ft_ast.i"
 	@echo "... src/ft_ast.s"
@@ -5559,12 +5526,15 @@ help:
 	@echo "... src/ft_expansions/quote/quote_removal.o"
 	@echo "... src/ft_expansions/quote/quote_removal.i"
 	@echo "... src/ft_expansions/quote/quote_removal.s"
-	@echo "... src/ft_expansions/tilde/tilde.o"
-	@echo "... src/ft_expansions/tilde/tilde.i"
-	@echo "... src/ft_expansions/tilde/tilde.s"
-	@echo "... src/ft_expansions/variable/substitute_variable.o"
-	@echo "... src/ft_expansions/variable/substitute_variable.i"
-	@echo "... src/ft_expansions/variable/substitute_variable.s"
+	@echo "... src/ft_expansions/tilde_var_cmd/substitute_cmd.o"
+	@echo "... src/ft_expansions/tilde_var_cmd/substitute_cmd.i"
+	@echo "... src/ft_expansions/tilde_var_cmd/substitute_cmd.s"
+	@echo "... src/ft_expansions/tilde_var_cmd/substitute_variable.o"
+	@echo "... src/ft_expansions/tilde_var_cmd/substitute_variable.i"
+	@echo "... src/ft_expansions/tilde_var_cmd/substitute_variable.s"
+	@echo "... src/ft_expansions/tilde_var_cmd/tilde.o"
+	@echo "... src/ft_expansions/tilde_var_cmd/tilde.i"
+	@echo "... src/ft_expansions/tilde_var_cmd/tilde.s"
 	@echo "... src/ft_heredoc.o"
 	@echo "... src/ft_heredoc.i"
 	@echo "... src/ft_heredoc.s"

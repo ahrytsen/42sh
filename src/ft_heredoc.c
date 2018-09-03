@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/23 21:00:10 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/29 19:34:14 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/02 19:50:05 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,33 +26,30 @@ static char	*parse_key(char *key, int *f)
 	return (tmp.content);
 }
 
-void		ft_heredoc_expansion(t_token *tok)
+char		*ft_heredoc_expansion(char *s)
 {
-	char	*s;
 	char	*tmp;
 	t_buf	*head;
 	t_buf	*cur;
 
-	s = (tok->data.redir.type == herestr ? tok->word : tok->data.redir.hd);
 	tmp = s;
 	if (!s || !(head = ft_memalloc(sizeof(t_buf))))
-		return ;
+		return (NULL);
 	cur = head;
 	while (*s)
-		if (*s == '\\' && (*s == '$' || *s == '`' || *s == '\\'))
+		if (*s == '\\' && s++)
 		{
-			ft_putstr_mshbuf(&cur, s, 2);
-			s += 2;
+			if (*s != '$' && *s != '`' && *s != '\\')
+				ft_putchar_mshbuf(&cur, '\\');
+			ft_putchar_mshbuf(&cur, *s++);
 		}
-		else if (*s == '`' && s++)
-			ft_bquote(&cur, &s, 0);
-		else if (*s == '$' && *(s + 1) == '(' && (s += 2))
-			ft_bquote(&cur, &s, 0);
-		else if (*s == '$' && s++)
-			parse_dollar(&cur, &s);
+		else if (*s == '`' || (*s == '$' && *(s + 1) == '(' && (s += 2)))
+			substitute_cmd(&cur, &s, NULL);
+		else if (*s == '$' && (ft_isword(*(s + 1)) || *(s + 1) == '?') && s++)
+			record_var(&cur, &s, NULL);
 		else
 			ft_putchar_mshbuf(&cur, *s++);
-	tok->data.redir.right = ft_buftostr(head);
+	return (ft_buftostr(head));
 }
 
 static int	ft_heredoc_toread(t_token *tok)
@@ -66,13 +63,12 @@ static int	ft_heredoc_toread(t_token *tok)
 	line = NULL;
 	get_term()->heredoc_key = parse_key(tok->word, &tok->data.redir.nbr);
 	while (get_term()->heredoc_key && (ret = ft_readline(0, &line)) > 0
-			&& ft_strcmp(line, get_term()->heredoc_key)  && !(i = 0))
+			&& ft_strcmp(line, get_term()->heredoc_key) && !(i = 0))
 	{
 		while (tok->data.redir.type == heredoc_t && line[i] == '\t')
 			i++;
 		tmp = tok->data.redir.hd;
-		ft_asprintf(&tok->data.redir.hd, "%s%s\n",
-					tok->data.redir.hd ? tok->data.redir.hd : "", line + i);
+		ft_asprintf(&tok->data.redir.hd, "%s%s\n", tmp ? tmp : "", line + i);
 		free(tmp);
 		ft_memdel((void**)&line);
 	}
@@ -92,11 +88,12 @@ int			ft_heredoc(t_list *toks)
 	while (toks)
 	{
 		tok = toks->content;
-		if (tok->type == redir
-			&& (tok->data.redir.type == heredoc
-				|| tok->data.redir.type == heredoc_t)
-			&& !(ret = ft_heredoc_toread(tok)))
-				break ;
+		if (tok->type == redir && (tok->data.redir.type == heredoc
+		|| tok->data.redir.type == heredoc_t)
+		&& !(ret = ft_heredoc_toread(tok)))
+			break ;
+		else if (tok->type == redir && tok->data.redir.type == herestr)
+			tok->data.redir.hd = tok->word;
 		toks = toks->next;
 	}
 	get_term()->prompt = P_USER;

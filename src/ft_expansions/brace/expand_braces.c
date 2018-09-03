@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:31:09 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/08/21 02:47:00 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/09/01 14:19:00 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ t_list		*expand_braces(char *s, int i, char *buf)
 
 t_list		*brace_expansion(t_list *lst)
 {
-	char	buf[ft_strlen(lst->content) + 1];
+	char	buf[lst->content_size];
 	t_list	*new_lst;
 
-	ft_bzero(buf, ft_strlen(lst->content) + 1);
+	ft_bzero(buf, lst->content_size);
 	new_lst = expand_braces(lst->content, 0, buf);
 	if (!new_lst->next && ft_strequ(new_lst->content, lst->content))
 	{

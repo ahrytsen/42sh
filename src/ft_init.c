@@ -83,6 +83,7 @@ void		ft_init(int ac, char **av)
 	extern char	**environ;
 	int			shlvl;
 	char		*tmp;
+	char		buf[MAXPATHLEN];
 
 	ft_bzero(get_environ(), sizeof(t_env));
 	if ((get_environ()->argv = ft_strdup_arr(av)))
@@ -96,4 +97,7 @@ void		ft_init(int ac, char **av)
 	ft_set_tool("SHLVL", tmp, 1, ENVAR);
 	free(tmp);
 	ft_set_tool("PATH", "/usr/bin:/bin", 0, ENVAR);
+	ft_set_tool("PWD", getcwd(buf, MAXPATHLEN), 1, ENVAR);
+	ft_unset_tool("OLDPWD", SHVAR);
+	ft_set_tool("OLDPWD", NULL, 1, -1);
 }

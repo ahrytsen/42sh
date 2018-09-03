@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 20:36:35 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/23 13:33:14 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/02 20:51:59 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,49 +49,53 @@ static void	ft_cmd_print_subsh(t_cmd *cmd)
 	ft_printf(")");
 }
 
-static void	ft_cmd_print_not(t_cmd *cmd)
-{
-	(void)cmd;
-}
-
-static void	ft_cmd_print_grp(t_cmd *cmd)
-{
-	(void)cmd;
-}
-
-static void	ft_cmd_print_case(t_cmd *cmd)
-{
-	(void)cmd;
-}
-
-static void	ft_cmd_print_for(t_cmd *cmd)
-{
-	(void)cmd;
-}
-
-static void	ft_cmd_print_if(t_cmd *cmd)
-{
-	(void)cmd;
-}
-
-static void	ft_cmd_print_until(t_cmd *cmd)
-{
-	(void)cmd;
-}
-
-static void	ft_cmd_print_while(t_cmd *cmd)
-{
-	(void)cmd;
-}
+/*
+**static void	ft_cmd_print_not(t_cmd *cmd)
+**{
+**	(void)cmd;
+**}
+**
+**static void	ft_cmd_print_grp(t_cmd *cmd)
+**{
+**	(void)cmd;
+**}
+**
+**static void	ft_cmd_print_case(t_cmd *cmd)
+**{
+**	(void)cmd;
+**}
+**
+**static void	ft_cmd_print_for(t_cmd *cmd)
+**{
+**	(void)cmd;
+**}
+**
+**static void	ft_cmd_print_if(t_cmd *cmd)
+**{
+**	(void)cmd;
+**}
+**
+**static void	ft_cmd_print_until(t_cmd *cmd)
+**{
+**	(void)cmd;
+**}
+**
+**static void	ft_cmd_print_while(t_cmd *cmd)
+**{
+**	(void)cmd;
+**}
+**		, ft_cmd_print_not,
+**		ft_cmd_print_grp, ft_cmd_print_case, ft_cmd_print_for,
+**		ft_cmd_print_if, ft_cmd_print_until, ft_cmd_print_while
+**	};
+*/
 
 void		ft_cmd_print(t_cmd *cmd)
 {
 	static void	(*const print[])(t_cmd*) = {
-		ft_cmd_print_smpl, ft_cmd_print_subsh, ft_cmd_print_not,
-		ft_cmd_print_grp, ft_cmd_print_case, ft_cmd_print_for,
-		ft_cmd_print_if, ft_cmd_print_until, ft_cmd_print_while
+		ft_cmd_print_smpl, ft_cmd_print_subsh
 	};
 
-	if (cmd->type >= cmd_smpl && cmd->type <= cmd_while)
-		print[cmd->type](cmd);
+	if (cmd->type >= cmd_smpl && cmd->type <= cmd_subsh)
+		print[cmd->type] ? print[cmd->type](cmd) : 0;
 }
