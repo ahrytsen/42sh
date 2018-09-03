@@ -191,4 +191,8 @@ add_executable(gsh
         src/ft_tokenize_utils.c
         src/main.c
         src/ft_expansions/variable/substitute_variable.c
-        src/ft_expansions/quote/quote_removal.c src/ft_builtins/ft_bi_read.c src/ft_expansions/field/field_splitting.c print_args.c)
+        src/ft_expansions/quote/quote_removal.c
+        src/ft_builtins/ft_bi_read.c
+        src/ft_expansions/field/field_splitting.c
+        print_args.c
+        src/ft_builtins/ft_bi_read.c src/ft_builtins/ft_bi_read_records.c)

@@ -182,6 +182,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_read.c.o"
   "CMakeFiles/gsh.dir/src/ft_expansions/field/field_splitting.c.o"
   "CMakeFiles/gsh.dir/print_args.c.o"
+  "CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_read_records.c.o"
   "gsh.pdb"
   "gsh"
 )

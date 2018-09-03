@@ -79,6 +79,7 @@ SRC			=	ft_argv.c\
 				ft_builtins/ft_bi_un_set.c\
 				ft_builtins/ft_bi_un_setenv.c\
 				ft_builtins/ft_bi_read.c\
+				ft_builtins/ft_bi_read_records.c\
 				\
 				ft_readline/ft_readline.c\
 				ft_readline/ft_rl_autocomplit.c\
