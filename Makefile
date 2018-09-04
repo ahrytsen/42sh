@@ -218,7 +218,8 @@ inst:
 
 install:
 	@echo "$(STRING6)"
-	@cp $(NAME) ~/.mybin
+	@mkdir -p $(HOME)/.mybin/
+	@cp $(NAME) $(HOME)/.mybin/
 
 .NOTEPARALLEL: all $(NAME) re
 
