@@ -462,5 +462,9 @@ int				ft_bi_read(char **av);
 **              ft_builtins/ft_bi_read_records.c
 */
 void            read_line(char **av, char r_flag);
+/*
+**				ft_builtins/ft_bi_read_get_last_var.c
+*/
+char			*get_last_var(char *s, char *buf, int *i);
 
 #endif

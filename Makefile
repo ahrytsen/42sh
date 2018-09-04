@@ -14,7 +14,7 @@ NAME 		=	42sh
 
 #===========================================================
 OS			= $(shell uname)
-ifeq ($(OS),Darwin)
+#ifeq ($(OS),Darwin)
 	INC		=	-I./inc/ -I./libft/inc/
 	LIBFT	= ./libft/libftprintf.a
 	SUB_MAKE= ./libft
@@ -23,12 +23,12 @@ ifeq ($(OS),Darwin)
 	NON		= \x1b[0m
 	CYANN	= \x1b[36m
 	GREEN	= \x1b[32m
-else
-	INC		= -I../../libft_win/includes -I./inc
-	LIBFT	= ../../libft_win/libftprintf.a
-	SUB_MAKE= ../../libft_win
-	TCAP	= -lcurses
-endif
+#else
+#	INC		= -I../../libft_win/includes -I./inc
+#	LIBFT	= ../../libft_win/libftprintf.a
+#	SUB_MAKE= ../../libft_win
+#	TCAP	= -lcurses
+#endif
 #===========================================================
 
 
@@ -83,6 +83,7 @@ SRC			=	ft_argv.c\
 				ft_builtins/ft_bi_un_setenv.c\
 				ft_builtins/ft_bi_read.c\
 				ft_builtins/ft_bi_read_records.c\
+				ft_builtins/ft_bi_read_get_last_var.c\
 				\
 				ft_readline/ft_readline.c\
 				ft_readline/ft_rl_autocomplit.c\

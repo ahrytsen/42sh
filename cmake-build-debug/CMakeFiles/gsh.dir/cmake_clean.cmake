@@ -182,6 +182,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/gsh.dir/src/ft_expansions/tilde_var_cmd/substitute_cmd.c.o"
   "CMakeFiles/gsh.dir/src/ft_expansions/tilde_var_cmd/substitute_variable.c.o"
   "CMakeFiles/gsh.dir/src/ft_expansions/tilde_var_cmd/tilde.c.o"
+  "CMakeFiles/gsh.dir/src/ft_builtins/ft_bi_read_get_last_var.c.o"
   "gsh.pdb"
   "gsh"
 )

@@ -196,4 +196,4 @@ add_executable(gsh
         src/ft_expansions/tilde_var_cmd/substitute_cmd.c
         src/ft_expansions/tilde_var_cmd/substitute_variable.c
         src/ft_expansions/tilde_var_cmd/tilde.c
-        )
+        src/ft_builtins/ft_bi_read_get_last_var.c)

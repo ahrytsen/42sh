@@ -27,10 +27,7 @@ int			main_loop(int fd)
 		cmds = NULL;
 		ast = NULL;
 		if (!(i = ft_readline(fd, &cmds)) || (i == -1 && !ft_is_interrupted()))
-		{
-			system("/usr/bin/leaks -quiet 42sh >>/Users/yvyliehz/gsh/leaks.txt 2>/dev/null");
 			return (!i ? get_environ()->st : 1);
-		}
 		if (cmds && (toks = ft_tokenize(cmds)) && ft_heredoc(toks))
 		{
 			ast = ft_ast_make(&toks);
