@@ -21,7 +21,8 @@ DIROBJ	=	./obj/
 HDR		=	inc/libft.h\
 			inc/ft_printf.h
 
-SRC		=	ft_arrstr.c\
+SRC		=	ft_absolute.c\
+			ft_arrstr.c\
 			ft_atoi.c\
 			ft_atoi_base.c\
 			ft_atol.c\
@@ -121,7 +122,6 @@ SRC		=	ft_arrstr.c\
 			ft_wcharlen.c\
 			get_next_line.c\
 			ft_lstadd_list.c\
-			ft_absolute.c\
 			ft_isblank.c\
 			ft_iscntrl.c\
 			ft_isgraph.c\
