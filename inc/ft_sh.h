@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/09/03 20:33:22 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/04 17:39:29 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,13 @@
 # define EXP_STRS 0
 # define EXP_TOKS 1
 
+typedef struct	s_alias
+{
+	char			*name;
+	char			*value;
+	struct s_alias	*next;
+}				t_alias;
+
 typedef struct	s_op
 {
 	int		v;
@@ -103,6 +110,7 @@ typedef struct	s_env
 	int				is_interactive;
 	char			**argv;
 	int				argc;
+	t_alias			*aliases;
 }				t_env;
 
 typedef struct	s_builtins
@@ -248,6 +256,10 @@ extern const t_builtins	g_builtin[];
 */
 int				main_loop(int fd);
 /*
+**				ft_alias_checker.c
+*/
+void			ft_alias_checker(t_list *lst);
+/*
 **				ft_argv.c
 */
 t_list			*perform_expansions(t_list *toks, int mod);
@@ -389,6 +401,15 @@ int				ft_echo(char **av);
 int				ft_exit(char **av);
 int				ft_exec(char **av);
 /*
+**				ft_builtins/ft_bi_alias.c
+*/
+t_alias			**ft_get_alias(char *name);
+int				ft_alias(char **av);
+/*
+**				ft_builtins/ft_bi_unalias.c
+*/
+int				ft_unalias(char **av);
+/*
 **				ft_builtins/ft_bi_bg.c
 */
 int				ft_bg(char **av);
@@ -455,12 +476,16 @@ int				ft_set_var(t_list *var, int mod);
 int				ft_setenv(char **av);
 int				ft_unsetenv(char **av);
 /*
-**				ft_builtins/ft_read.c
+**				ft_builtins/ft_bi_read.c
 */
 int				ft_bi_read(char **av);
 /*
 **              ft_builtins/ft_bi_read_records.c
 */
 void			read_line(char **av, char r_flag);
+/*
+**				ft_builtins/ft_bi_read_get_last_var.c
+*/
+char			*get_last_var(char *s, char *buf, int *i);
 
 #endif

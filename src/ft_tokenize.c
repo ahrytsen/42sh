@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:07 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/29 18:03:24 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/04 20:56:08 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,12 +86,8 @@ static int	ft_get_token(char **ln, t_token *token)
 		token->data.redir.left = ft_atoi(token->word);
 		token->word = NULL;
 	}
-	else
-	{
-		tmp = ft_strnew(*ln - token->word);
-		ft_strncpy(tmp, token->word, *ln - token->word);
+	else if ((tmp = ft_strsub(token->word, 0, *ln - token->word)))
 		token->word = tmp;
-	}
 	return (0);
 }
 

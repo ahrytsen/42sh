@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 18:56:58 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/09/03 21:36:04 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/04 15:44:07 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,27 +32,6 @@ static void	ft_bquote_child(int fd_get[2], char *cmds)
 	free(cmds);
 	close(fd_get[1]);
 	exit(get_environ()->st);
-}
-
-static char *ft_read_cmdsubst(int fd)
-{
-	t_buf	*head;
-	t_buf	*cur;
-	char	buf[BUFF_SIZE];
-	char	*line;
-	ssize_t	rd;
-
-	if (!(head = ft_memalloc(sizeof(t_buf))))
-		return (NULL);
-	cur = head;
-	while ((rd = read(fd, buf, BUFF_SIZE)) > 0)
-		ft_putstr_mshbuf(&cur, buf, rd);
-	if (!(line = ft_buftostr(head)))
-		return (NULL);
-	rd = ft_strlen(line) - 1;
-	while (rd >= 0 && line[rd] == '\n')
-		line[rd--] = '\0';
-	return (line);
 }
 
 static void	ft_bquote_helper(t_buf **cur, char *str, char *symbols)

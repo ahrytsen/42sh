@@ -1,0 +1,5 @@
+HISTFILE=$HOME/.42shhist
+[ -e $HISTFILE ] || touch $HISTFILE
+alias g='git'
+alias norm='norminette'
+alias ls='ls -G'

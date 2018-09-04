@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/03 13:53:16 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/09/03 17:25:09 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/09/04 02:56:58 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	check_ifs_val(char *ifs)
 					ft_strchr(ifs, '\t')));
 }
 
-char		*skip_ifs_delim(char *s, char *ifs)
+static char	*skip_ifs_delim(char *s, char *ifs)
 {
 	char	nonspace;
 
@@ -47,7 +47,9 @@ static int	check_newline(char *s)
 	if (s && s[ft_strlen(s) - 1] == '\\')
 		while (*s)
 		{
-			if (*s == '\\' && !*(s + 1))
+			if (*s == '\\' && *(s + 1))
+				++s;
+			else if (*s == '\\' && !*(s + 1))
 			{
 				*s = 0;
 				return (1);
@@ -57,7 +59,7 @@ static int	check_newline(char *s)
 	return (0);
 }
 
-void		record_vals(char **av, char *s, char r_flag)
+static void	record_vals(char **av, char *s, char r_flag)
 {
 	char	buf[s ? ft_strlen(s) + 1 : 1];
 	int		i;
@@ -71,12 +73,12 @@ void		record_vals(char **av, char *s, char r_flag)
 	{
 		if (!*(av + 1))
 		{
-			ft_set_tool(*av, s, 1, SHVAR);
+			ft_set_tool(*av, r_flag ? s : get_last_var(s, buf, &i), 1, SHVAR);
 			break ;
 		}
 		while (s && !ft_strchr(ifs, *s))
-			if (*s == '\\' && !r_flag)
-				s += 2;
+			if (*s == '\\' && !r_flag && s++)
+				buf[i++] = *s++;
 			else
 				buf[i++] = *s++;
 		ft_set_tool(*av++, buf, 1, SHVAR);
@@ -111,6 +113,6 @@ void		read_line(char **av, char r_flag)
 		s = ft_strtrim(s);
 		free(tmp_s);
 	}
-	record_vals(*av ? av : (char *[]){"REPLY", NULL}, s, r_flag);
+	record_vals(av && *av ? av : (char *[]){"REPLY", NULL}, s, r_flag);
 	free(s);
 }

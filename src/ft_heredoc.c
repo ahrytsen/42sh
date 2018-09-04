@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/23 21:00:10 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/09/03 15:22:56 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/04 15:48:04 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char		*ft_heredoc_expansion(char *s)
 				ft_putchar_mshbuf(&cur, '\\');
 			ft_putchar_mshbuf(&cur, *s++);
 		}
-		else if (*s == '`' || (*s == '$' && *(s + 1) == '(' && (s += 2)))
+		else if (*s == '`' || (*s == '$' && *(s + 1) == '('))
 			substitute_cmd(&cur, &s, NULL);
 		else if (*s == '$' && ft_isvar(*(s + 1)) && s++)
 			record_var(&cur, &s, NULL);

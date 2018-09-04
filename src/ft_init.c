@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 13:59:58 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/09/03 20:59:34 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/04 16:10:29 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void		ft_fildes(int mod)
 {
 	if (mod == FD_BACKUP)
 	{
-		get_environ()->bkp_fd[0] = dup2(0, 10);
-		get_environ()->bkp_fd[1] = dup2(1, 11);
-		get_environ()->bkp_fd[2] = dup2(2, 12);
+		get_environ()->bkp_fd[0] = dup2(0, 100);
+		get_environ()->bkp_fd[1] = dup2(1, 101);
+		get_environ()->bkp_fd[2] = dup2(2, 102);
 	}
 	else if (mod == FD_RESTORE)
 	{

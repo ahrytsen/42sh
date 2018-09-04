@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 14:22:50 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/09/02 18:53:32 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/04 15:37:56 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,10 @@ void			expand_tilde(t_buf **buf, char **s);
 */
 void			substitute_cmd(t_buf **buf, char **s, char *symbols);
 void			ft_bquote(t_buf **cur, char **line, uint8_t q);
+/*
+**				ft_expansions/tilde_var_cmd/tools.c
+*/
+char			*ft_read_cmdsubst(int fd);
 /*
 **				ft_expansions/quote/quote_removal.c
 */

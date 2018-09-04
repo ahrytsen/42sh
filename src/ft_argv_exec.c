@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/26 16:27:15 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/30 09:35:56 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/09/04 16:43:18 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ const t_builtins	g_builtin[] = {
 	{"export", &ft_export},
 	{"exec", &ft_exec},
 	{"read", &ft_bi_read},
+	{"alias", &ft_alias},
+	{"unalias", &ft_unalias},
 	{NULL, NULL}
 };
 

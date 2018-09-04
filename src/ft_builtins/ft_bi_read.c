@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 08:17:22 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/09/03 16:18:52 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/09/04 02:47:58 by yvyliehz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static char	**check_flags(char **av, char *r_flag)
 				if (*s != 'r')
 				{
 					ft_dprintf(2, "42sh: read: %s: invalid option\n"
-								"read: usage: read [-r] [name ...]\n");
+								"read: usage: read [-r] [name ...]\n", *av);
 					return (NULL);
 				}
 				else
@@ -78,11 +78,12 @@ int			ft_bi_read(char **av)
 	char	r_flag;
 
 	r_flag = 0;
-	handle_sigint();
+	if (get_environ()->is_interactive)
+		handle_sigint();
 	if (!(av = check_flags(av, &r_flag)) || !check_var_names(av))
 		return (256);
 	read_line(av, r_flag);
-	signal(SIGINT, SIG_IGN);
-	system("leaks --quiet 42sh");
+	if (get_environ()->is_interactive)
+		signal(SIGINT, SIG_IGN);
 	return (0);
 }

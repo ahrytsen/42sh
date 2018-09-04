@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 17:41:55 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/25 17:39:39 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/04 20:11:18 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	ft_subsh_exec(t_cmd *cmd)
 
 static int	ft_cmd_exec_chld(t_cmd *cmd, int bg)
 {
-	if (cmd->next || cmd->prev || bg)
+	if (cmd->next || cmd->prev || bg || cmd->type == cmd_subsh)
 	{
 		cmd->prev ? dup2(cmd->p_in, 0) : 0;
 		cmd->prev ? close(cmd->p_in) : 0;
@@ -55,11 +55,11 @@ static int	ft_cmd_exec_chld(t_cmd *cmd, int bg)
 	else
 		cmd->ret = cmd->type == cmd_subsh ? ft_subsh_exec(cmd)
 			: ft_argv_exec(cmd->av, NULL, bg);
+	(cmd->next || cmd->prev || bg) ? exit(cmd->ret) : 0;
 	cmd->pid = get_environ()->pid;
 	get_environ()->pgid = cmd->pid;
-	ft_redirection_close(cmd->toks);
-	if (cmd->next || cmd->prev || bg)
-		exit(cmd->ret);
+	if (!cmd->av || !ft_strequ(cmd->av[0], "exec"))
+		ft_redirection_close(cmd->toks);
 	return (cmd->ret);
 }
 
@@ -97,6 +97,7 @@ int			ft_cmdlst_exec(t_cmd *cmd, int bg)
 	while (1)
 	{
 		ft_var_checker(cmd->toks);
+		ft_alias_checker(cmd->toks);
 		cmd->ret = ft_cmd_exec(cmd, bg);
 		cmd->next ? close(cmd->p_out) : 0;
 		cmd->prev ? close(cmd->p_in) : 0;

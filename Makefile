@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/09/02 18:55:21 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/09/04 16:42:11 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -48,6 +48,7 @@ SRC			=	ft_argv.c\
 				ft_ast_exec.c\
 				ft_ast_debug.c\
 				ft_ast_utils.c\
+				ft_alias_checker.c\
 				ft_buffer.c\
 				ft_buffer_spec.c\
 				ft_cmd_print.c\
@@ -69,6 +70,8 @@ SRC			=	ft_argv.c\
 				main.c\
 				\
 				ft_builtins/ft_builtins.c\
+				ft_builtins/ft_bi_alias.c\
+				ft_builtins/ft_bi_unalias.c\
 				ft_builtins/ft_bi_bg.c\
 				ft_builtins/ft_bi_cd.c\
 				ft_builtins/ft_bi_env.c\
@@ -83,6 +86,7 @@ SRC			=	ft_argv.c\
 				ft_builtins/ft_bi_un_setenv.c\
 				ft_builtins/ft_bi_read.c\
 				ft_builtins/ft_bi_read_records.c\
+				ft_builtins/ft_bi_read_get_last_var.c\
 				\
 				ft_readline/ft_readline.c\
 				ft_readline/ft_rl_autocomplit.c\
@@ -116,11 +120,11 @@ SRC			=	ft_argv.c\
 				ft_expansions/tilde_var_cmd/tilde.c\
 				ft_expansions/tilde_var_cmd/substitute_variable.c\
 				ft_expansions/tilde_var_cmd/substitute_cmd.c\
+				ft_expansions/tilde_var_cmd/tools.c\
 				\
 				ft_expansions/quote/quote_removal.c\
 				ft_expansions/quote/bslash_removal.c\
-		        ft_expansions/field/field_splitting.c\
-		        \
+		        ft_expansions/field/field_splitting.c
 
 OBJ			=	$(addprefix $(DIROBJ), $(SRC:.c=.o))
 
