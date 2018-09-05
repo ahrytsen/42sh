@@ -6,11 +6,12 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 15:22:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/09/02 19:58:35 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/05 03:51:23 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_readline.h"
+#include "ft_sh.h"
 
 static int	skip_slash(char **ln)
 {
@@ -81,12 +82,38 @@ int			ft_rl_skip_subsh(char **ln)
 	return (0);
 }
 
+static void	ft_remove_comment(char *ln)
+{
+	int		tmp_p;
+	char	*st;
+
+	tmp_p = get_term()->prompt;
+	if (!(st = ln))
+		return ;
+	while (*ln)
+		if (ft_strchr("\"'`", *ln))
+			skip_qoutes(&ln);
+		else if (*ln == '(' || (*ln == '$' && ln[1] == '('))
+			ft_rl_skip_subsh(&ln);
+		else if (*ln == '\\')
+			skip_slash(&ln);
+		else if (*ln == '#' && (ln == st || ft_isseparator(*(ln - 1))))
+		{
+			*ln = '\0';
+			break ;
+		}
+		else
+			ln++;
+	get_term()->prompt = tmp_p;
+}
+
 int			ft_check_line(char *ln)
 {
 	if (get_term()->prompt == P_HEREDOC)
 		return (ln ? 0 : 1);
 	if (!ln && !(get_term()->prompt = P_USER))
 		return (1);
+	ft_remove_comment(ln);
 	while (*ln)
 		if (*ln == '"' || *ln == '\'' || *ln == '`')
 		{

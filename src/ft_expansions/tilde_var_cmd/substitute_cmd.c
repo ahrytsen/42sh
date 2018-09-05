@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 18:56:58 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/09/04 15:44:07 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/05 03:23:12 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static void	ft_bquote_child(int fd_get[2], char *cmds)
 	t_ast	*ast;
 
 	signal(SIGINT, SIG_DFL);
+	ft_fildes(FD_BACKUP);
 	get_environ()->is_interactive = 0;
 	close(fd_get[0]);
 	dup2(fd_get[1], 1);
