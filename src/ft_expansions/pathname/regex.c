@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 16:40:23 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/08/26 12:12:05 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/09/05 17:56:18 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,21 @@ static void	recurcive(t_list **list, char *path, char **names, char *directory)
 
 static int	check_pathname(char *s)
 {
+	char	q;
+
 	while (*s)
 		if (*s == '\\')
 			*++s ? s++ : 0;
 		else if (ft_strchr("'\"", *s))
-			ft_skip_qoutes(&s);
+		{
+			q = *s++;
+			while (*s && *s != q)
+				if (*s == '\\' && q != '\'')
+					*++s ? s++ : 0;
+				else
+					s++;
+			*s ? s++ : 0;
+		}
 		else if (*s == '*' || *s == '?' || *s == '[')
 			return (1);
 		else

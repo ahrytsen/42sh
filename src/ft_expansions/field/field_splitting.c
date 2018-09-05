@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/31 06:54:59 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/09/03 19:56:07 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/09/05 17:40:36 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static char		*skip_quote(char *s, size_t *res)
 
 	++*res;
 	while (*s && *s != quote)
-		if (*s == '\\')
+		if (*s == '\\' && quote != '\'')
 		{
 			++s;
 			++*res;

@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 19:11:31 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/09/05 03:28:21 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/05 17:58:51 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		ft_skip_word(char **ln)
 	while (**ln && !ft_isseparator(**ln))
 		if (**ln == '\'' || **ln == '"' || **ln == '`')
 		{
-			if (ft_skip_qoutes(ln))
+			if (ft_skip_quotes(ln))
 				return (1);
 		}
 		else if (*(*ln) == '$' && *((*ln) + 1) == '(' && (*ln)++)
@@ -68,7 +68,7 @@ int		ft_skip_subsh(char **ln)
 			return (1);
 		else if (**ln == '\'' || **ln == '`' || **ln == '"')
 		{
-			if (ft_skip_qoutes(ln))
+			if (ft_skip_quotes(ln))
 				return (1);
 		}
 		else if (**ln == '(')
@@ -84,7 +84,7 @@ int		ft_skip_subsh(char **ln)
 	return (0);
 }
 
-int		ft_skip_qoutes(char **ln)
+int		ft_skip_quotes(char **ln)
 {
 	char	q;
 
@@ -95,7 +95,7 @@ int		ft_skip_qoutes(char **ln)
 						"unexpected EOF while looking for matching", q))
 			return (1);
 		else if (q == '"' && **ln == '`')
-			ft_skip_qoutes(ln);
+			ft_skip_quotes(ln);
 		else if (q != '\'' && **ln == '\\')
 			*++(*ln) ? (*ln)++ : 0;
 		else if (q == '"' && **ln == '$' && *((*ln) + 1) == '(' && (*ln)++)

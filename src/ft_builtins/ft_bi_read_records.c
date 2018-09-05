@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/03 13:53:16 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/09/04 02:56:58 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/09/05 21:04:37 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void		read_line(char **av, char r_flag)
 	tmp_s = NULL;
 	while (1)
 	{
-		if (get_next_line(1, &tmp_s) == -1)
+		if (get_next_line(0, &tmp_s) == -1)
 		{
 			free(s);
 			return ;

@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 16:39:53 by dlinkin           #+#    #+#             */
-/*   Updated: 2018/08/26 12:16:13 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/09/05 18:02:28 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 static size_t	cut_wrds(char *str, char c)
 {
 	size_t	i;
+	char	q;
 
 	i = 0;
 	while (*str)
@@ -23,8 +24,15 @@ static size_t	cut_wrds(char *str, char c)
 		while (*str && *str != c)
 			if (*str == '\\')
 				*++str ? str++ : 0;
-			else if (ft_strchr("'\"", *str))
-				ft_skip_qoutes(&str);
+			else if (ft_strchr("'\"", *str) && (q = *str++))
+			{
+				while (*str && *str != q)
+					if (*str == '\\' && q != '\'')
+						*++str ? str++ : 0;
+					else
+						str++;
+				*str ? str++ : 0;
+			}
 			else
 				++str;
 		i++;

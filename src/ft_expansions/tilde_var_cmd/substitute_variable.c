@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 08:15:32 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/09/03 15:22:11 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/05 18:45:48 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void		record_var(t_buf **buf, char **s, char *symbols)
 	tmp = NULL;
 	if (ft_isdigit(**s) && **s - '0' <= get_environ()->argc)
 	{
-		ft_putstrq_mshbuf(buf, get_environ()->argv[**s++ - '0'], -1, symbols);
+		ft_putstrq_mshbuf(buf, get_environ()->argv[*(*s)++ - '0'], -1, symbols);
 		return ;
 	}
 	else if (**s == '?' || **s == '$')

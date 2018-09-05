@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 18:56:58 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/09/05 03:23:12 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/05 20:38:49 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ static void	ft_bquote_child(int fd_get[2], char *cmds)
 	t_ast	*ast;
 
 	signal(SIGINT, SIG_DFL);
-	ft_fildes(FD_BACKUP);
 	get_environ()->is_interactive = 0;
 	close(fd_get[0]);
 	dup2(fd_get[1], 1);
+	ft_fildes(FD_BACKUP);
 	if ((toks = ft_tokenize(cmds)) && ft_heredoc(toks))
 	{
 		ast = ft_ast_make(&toks);
@@ -81,7 +81,7 @@ static char	*get_bq_cmd(char **s)
 	if (!s || !*s)
 		return (NULL);
 	st = *s + 1;
-	if (ft_skip_qoutes(s)
+	if (ft_skip_quotes(s)
 		|| !(head = ft_memalloc(sizeof(t_buf))))
 		return (NULL);
 	tmp = head;
