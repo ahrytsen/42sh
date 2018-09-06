@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/23 21:00:10 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/09/04 15:48:04 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/06 20:20:33 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,13 @@ static int	ft_heredoc_toread(t_token *tok)
 	ret = 0;
 	line = NULL;
 	get_term()->heredoc_key = parse_key(tok->word, &tok->data.redir.nbr);
-	while (get_term()->heredoc_key && (ret = ft_readline(0, &line)) > 0
-			&& ft_strcmp(line, get_term()->heredoc_key) && !(i = 0))
+	while (get_term()->heredoc_key && !(i = 0)
+		&& (ret = ft_readline(get_environ()->sh_terminal, &line)) > 0)
 	{
 		while (tok->data.redir.type == heredoc_t && line[i] == '\t')
 			i++;
+		if (ft_strequ(line + i, get_term()->heredoc_key))
+			break ;
 		tmp = tok->data.redir.hd;
 		ft_asprintf(&tok->data.redir.hd, "%s%s\n", tmp ? tmp : "", line + i);
 		free(tmp);

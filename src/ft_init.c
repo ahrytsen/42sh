@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 13:59:58 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/09/04 16:10:29 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/06 20:19:55 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ static void	ft_if_interactive(void)
 			(get_environ()->sh_pgid = getpgrp()))
 		kill(-get_environ()->sh_pgid, SIGTTIN);
 	ft_set_sh_signal(S_SH);
-	get_environ()->sh_pid = getpid();
 	setpgid(get_environ()->sh_pid, get_environ()->sh_pid);
 	get_environ()->sh_pgid = getpgrp();
 	tcsetpgrp(get_environ()->sh_terminal, get_environ()->sh_pgid);
@@ -100,4 +99,6 @@ void		ft_init(int ac, char **av)
 	ft_set_tool("PWD", getcwd(buf, MAXPATHLEN), 1, ENVAR);
 	ft_unset_tool("OLDPWD", SHVAR);
 	ft_set_tool("OLDPWD", NULL, 1, -1);
+	get_environ()->sh_pid = getpid();
+	get_environ()->sh_pgid = getpgrp();
 }

@@ -7,11 +7,11 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/05 18:40:56 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/09/06 17:23:36 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/09/06 20:27:47 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-say -v Milena "Привет, зайка! Меня зовут $0" #feat Milena
+#say -v Milena "Привет, зайка! Меня зовут $0" #feat Milena
 echo $1 $2 $3 $4
 read < src/main.c
 echo $REPLY
@@ -19,3 +19,36 @@ echo $REPLY
 lol=kek
 echo $lol
 echo $(ls) | wc
+echo "\n\n=================================================================="
+echo "\t\t\tOUR BONUSES:"
+echo "=================================================================="
+echo "\tcommand substitution ('\`' and '\$()')
+\talias and unalias
+\tsymbolic links
+\tall env flags
+\tshell parameters
+\t'<>' (open custom descriptor)
+\t'<<<' (herestring)
+\t'<&, >&, &> and &>>' (file descriptor agregation)
+\t'>|' (same as '>' in out implementation)
+\t'<<-' (delete all leading tab characters in heredoc lines)
+\t~-, ~+, ~*user_name*
+\tfield splitting
+\t.42shrc
+\t.ft_history"
+echo "==================================================================\n\n"
+echo "=======test '<<-'==========="
+cat <<- EOF
+		lol kek
+		y nas byv segfolt
+		lol
+		EOF
+echo "=======test '<<'==========="
+cat << EOF
+		lol kek
+		y nas byv segfolt
+		lol
+EOF
+echo "=======test 'leaks'==========="
+leaks --quiet $$
+echo "=====ETO KANEC"

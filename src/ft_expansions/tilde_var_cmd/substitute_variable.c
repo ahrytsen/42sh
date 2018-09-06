@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 08:15:32 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/09/05 18:45:48 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/06 21:25:08 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,19 @@ void		record_var(t_buf **buf, char **s, char *symbols)
 	free(tmp);
 }
 
+static void	record_bslash(t_buf **buf, char **s)
+{
+	if (!s || !*s || !**s)
+		return ;
+	if (*(*s + 1) == '\n')
+	{
+		*s += 2;
+		return ;
+	}
+	ft_putchar_mshbuf(buf, *(*s)++);
+	**s ? ft_putchar_mshbuf(buf, *(*s)++) : 0;
+}
+
 static void	record_quote(t_buf **buf, char **s)
 {
 	char	*st;
@@ -58,10 +71,7 @@ static void	record_dquote(t_buf **buf, char **s)
 	ft_putchar_mshbuf(buf, *(*s)++);
 	while (**s != '"' && **s)
 		if (**s == '\\')
-		{
-			ft_putchar_mshbuf(buf, *(*s)++);
-			**s ? ft_putchar_mshbuf(buf, *(*s)++) : 0;
-		}
+			record_bslash(buf, s);
 		else if (**s == '`' || (**s == '$' && *(*s + 1) == '('))
 			substitute_cmd(buf, s, "\"\\");
 		else if (**s == '$' && ft_isvar(*(*s + 1)) && (*s)++)
@@ -84,10 +94,7 @@ void		substitute_variable(t_list *lst)
 	expand_tilde(&buf, &s);
 	while (*s)
 		if (*s == '\\')
-		{
-			ft_putchar_mshbuf(&buf, *s++);
-			*s ? ft_putchar_mshbuf(&buf, *s++) : 0;
-		}
+			record_bslash(&buf, &s);
 		else if (*s == '$' && ft_isvar(*(s + 1)) && s++)
 			record_var(&buf, &s, "'\"\\");
 		else if (*s == '`' || (*s == '$' && *(s + 1) == '('))
