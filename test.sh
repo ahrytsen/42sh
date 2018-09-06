@@ -11,8 +11,12 @@
 #                                                                              #
 # **************************************************************************** #
 
+say -v Milena "Привет, зайка" #feat Milena
 echo $1 $2 $3 $4
-read 0< src/main.c
-echo ===================
-echo	lol		kek\
-		cheburek
+read < src/main.c
+echo $REPLY
+{echo,*}
+lol=kek
+echo $lol
+echo $(ls) | wc
+

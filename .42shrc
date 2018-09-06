@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/05 18:32:47 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/09/05 18:35:10 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/09/06 17:10:53 by yvyliehz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,3 +19,5 @@ alias e='emacs -nw'
 say -v Milena 'Привет, зайка!' &
 echo 'Hello, Artur!'
 echo  '42sh in da house'
+export PATH="$HOME/.mybin/:$PATH"
+
