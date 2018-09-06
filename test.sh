@@ -1,21 +1,18 @@
+#!/usr/bin/env 42sh
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    .42shrc                                            :+:      :+:    :+:    #
+#    test.sh                                            :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/09/05 18:32:47 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/09/05 18:35:10 by ahrytsen         ###   ########.fr        #
+#    Created: 2018/09/05 18:40:56 by ahrytsen          #+#    #+#              #
+#    Updated: 2018/09/05 21:21:40 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#HISTFILE=$HOME/.42shhist
-#[ -e $HISTFILE ] || touch $HISTFILE
-alias g='git' #this is a comment
-alias norm='norminette'
-alias ls='ls -G'
-alias e='emacs -nw'
-say -v Milena 'Привет, зайка!' &
-echo 'Hello, Artur!'
-echo  '42sh in da house'
+echo $1 $2 $3 $4
+read 0< src/main.c
+echo ===================
+echo	lol		kek\
+		cheburek

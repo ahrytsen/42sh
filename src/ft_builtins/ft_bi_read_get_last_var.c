@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/04 02:56:04 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/09/04 02:56:58 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/09/06 14:45:04 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,9 @@ char	*get_last_var(char *s, char *buf, int *i)
 	if (s)
 		while (*s)
 		{
-			if (*s == '\\')
-			{
-				buf[(*i)++] = *++s;
-				++s;
-			}
-			else
+			if (*s == '\\' && *++s)
+				*s != '\n' ? buf[(*i)++] = *++s : (int)s++;
+			else if (*s)
 				buf[(*i)++] = *s++;
 		}
 	return (buf);

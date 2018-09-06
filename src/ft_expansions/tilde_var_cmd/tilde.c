@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 02:34:57 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/09/02 20:47:19 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/05 18:14:11 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	get_user_homedir(t_buf **buf, char **s)
 		if (**s == '\\')
 			*++(*s) ? (*s)++ : 0;
 		else if (ft_strchr("'\"", **s))
-			ft_skip_qoutes(s);
+			ft_skip_quotes(s);
 		else
 			++(*s);
 	tmp = ft_strsub(tmp, 0, *s - tmp);

@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/03 13:53:16 by yvyliehz          #+#    #+#             */
-/*   Updated: 2018/09/04 02:56:58 by yvyliehz         ###   ########.fr       */
+/*   Updated: 2018/09/06 14:45:35 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,23 +42,6 @@ static char	*skip_ifs_delim(char *s, char *ifs)
 	return (s);
 }
 
-static int	check_newline(char *s)
-{
-	if (s && s[ft_strlen(s) - 1] == '\\')
-		while (*s)
-		{
-			if (*s == '\\' && *(s + 1))
-				++s;
-			else if (*s == '\\' && !*(s + 1))
-			{
-				*s = 0;
-				return (1);
-			}
-			++s;
-		}
-	return (0);
-}
-
 static void	record_vals(char **av, char *s, char r_flag)
 {
 	char	buf[s ? ft_strlen(s) + 1 : 1];
@@ -77,15 +60,42 @@ static void	record_vals(char **av, char *s, char r_flag)
 			break ;
 		}
 		while (s && !ft_strchr(ifs, *s))
-			if (*s == '\\' && !r_flag && s++)
-				buf[i++] = *s++;
-			else
+			if (*s == '\\' && !r_flag && *++s)
+				*s != '\n' ? (buf[i++] = *s++) : (int)s++;
+			else if (*s)
 				buf[i++] = *s++;
 		ft_set_tool(*av++, buf, 1, SHVAR);
 		ft_bzero(buf, i);
 		i = 0;
 		s = skip_ifs_delim(s, ifs);
 	}
+}
+
+static int	get_line(char **line, char r_flag)
+{
+	t_buf	*head;
+	t_buf	*cur;
+	char	buf;
+	char	quot;
+	int		rd;
+
+	quot = 0;
+	line ? (*line = NULL) : 0;
+	if (!line || !(head = ft_memalloc(sizeof(t_buf))))
+		return (-1);
+	cur = head;
+	while ((rd = read(0, &buf, 1)) > 0)
+	{
+		if (!r_flag && !quot && buf == '\\')
+			quot = 1;
+		else if ((r_flag || !quot) && buf == '\n')
+			break ;
+		else
+			quot = 0;
+		ft_putchar_mshbuf(&cur, buf);
+	}
+	*line = (rd < 0 ? ft_free_mshbuf(head) : ft_buftostr(head));
+	return (rd < 0 ? 1 : 0);
 }
 
 void		read_line(char **av, char r_flag)
@@ -95,18 +105,8 @@ void		read_line(char **av, char r_flag)
 
 	s = NULL;
 	tmp_s = NULL;
-	while (1)
-	{
-		if (get_next_line(1, &tmp_s) == -1)
-		{
-			free(s);
-			return ;
-		}
-		s = s ? ft_strextend(s, tmp_s) : tmp_s;
-		if (!r_flag && check_newline(s))
-			continue ;
-		break ;
-	}
+	if (get_line(&s, r_flag))
+		return ;
 	if (check_ifs_val(ft_getenv("IFS")))
 	{
 		tmp_s = s;
