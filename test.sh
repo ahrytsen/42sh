@@ -7,11 +7,11 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/05 18:40:56 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/09/05 21:21:40 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/09/06 17:23:36 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-say -v Milena "Привет, зайка" #feat Milena
+say -v Milena "Привет, зайка! Меня зовут $0" #feat Milena
 echo $1 $2 $3 $4
 read < src/main.c
 echo $REPLY
@@ -19,4 +19,3 @@ echo $REPLY
 lol=kek
 echo $lol
 echo $(ls) | wc
-
