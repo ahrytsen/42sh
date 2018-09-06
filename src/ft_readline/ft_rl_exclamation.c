@@ -92,7 +92,6 @@ char		*ft_rl_history_replace_mark(t_line **cur)
 
 	mk[0] = 0;
 	mk[1] = 0;
-	s = NULL;
 	while ((*cur)->prev)
 		*cur = (*cur)->prev;
 	while (*cur && (*cur)->next)
@@ -107,7 +106,8 @@ char		*ft_rl_history_replace_mark(t_line **cur)
 		(*cur)->ch == '\'' ? *mk ^= 1 : 0;
 		(*cur)->next ? *cur = (*cur)->next : 0;
 	}
-	if (mk[1] && (s = line_tostr(cur, 0)))
+	s = line_tostr(cur, 0);
+	if (mk[1])
 		ft_printf("%s\n", s);
 	return (s);
 }
