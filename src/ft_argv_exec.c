@@ -98,7 +98,7 @@ static char	**ft_get_path(const char *altpath)
 			}
 		}
 		else
-			altpath = ft_other_getenv("PATH");
+			altpath = ft_getenv("PATH");
 		if (!altpath || !*altpath)
 			altpath = getcwd(pwd, MAXPATHLEN);
 	}
