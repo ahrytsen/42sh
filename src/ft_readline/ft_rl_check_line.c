@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 15:22:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/09/05 03:51:23 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/06 15:10:17 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,10 @@ int			ft_rl_skip_subsh(char **ln)
 static void	ft_remove_comment(char *ln)
 {
 	int		tmp_p;
-	char	*st;
+	char	prev;
 
 	tmp_p = get_term()->prompt;
-	if (!(st = ln))
-		return ;
+	prev = '\0';
 	while (*ln)
 		if (ft_strchr("\"'`", *ln))
 			skip_qoutes(&ln);
@@ -97,13 +96,13 @@ static void	ft_remove_comment(char *ln)
 			ft_rl_skip_subsh(&ln);
 		else if (*ln == '\\')
 			skip_slash(&ln);
-		else if (*ln == '#' && (ln == st || ft_isseparator(*(ln - 1))))
+		else if (*ln == '#' && (!prev || ft_isseparator(prev)))
 		{
 			*ln = '\0';
 			break ;
 		}
 		else
-			ln++;
+			prev = *ln++;
 	get_term()->prompt = tmp_p;
 }
 
