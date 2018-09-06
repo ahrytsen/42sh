@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/09/04 16:42:11 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/09/05 14:38:45 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -58,6 +58,7 @@ SRC			=	ft_argv.c\
 				ft_heredoc.c\
 				ft_init.c\
 				ft_jobs_utils.c\
+				ft_jobs_helper.c\
 				ft_shell_var.c\
 				ft_shell_var_init.c\
 				ft_shell_var_toolz.c\

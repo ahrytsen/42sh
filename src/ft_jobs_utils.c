@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 18:37:54 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/27 20:37:16 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/05 14:45:56 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,21 @@ void		ft_stop_job(t_cmd *cmd, int mod)
 
 static void	ft_cmdlst_wait(t_cmd *cmd)
 {
+	char	*tmp;
+
+	if (!cmd)
+		return ;
+	waitpid(cmd->pid, &cmd->ret, WUNTRACED);
+	if (WIFSTOPPED(cmd->ret))
+		ft_stop_job(cmd, 1);
+	else if (WIFSIGNALED(cmd->ret)
+			&& (tmp = ft_get_job_error(WTERMSIG(cmd->ret))))
+		ft_dprintf(2, "%s: %d\n", tmp, WTERMSIG(cmd->ret));
+	cmd = cmd->prev;
 	while (cmd)
 	{
 		if (cmd->pid > 0 && !cmd->ret)
-		{
-			waitpid(cmd->pid, &cmd->ret, WUNTRACED);
-			WIFSTOPPED(cmd->ret) ? ft_stop_job(cmd, 1) : 0;
-		}
+			waitpid(cmd->pid, &cmd->ret, WNOHANG | WUNTRACED);
 		cmd = cmd->prev;
 	}
 }

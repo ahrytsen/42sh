@@ -6,7 +6,7 @@
 /*   By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/07 12:20:20 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/08/01 14:17:50 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/05 14:54:06 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,11 @@ int		ft_add(uint64_t buf)
 {
 	int	ret;
 
+	if (buf == 11)
+	{
+		write(0, "\a", 1);
+		return (buf);
+	}
 	ret = 1;
 	ft_dprintf(0, "%s", &buf);
 	ft_curright(0);

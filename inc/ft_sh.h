@@ -6,7 +6,7 @@
 /*   By: yvyliehz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 14:08:52 by ahrytsen          #+#    #+#             */
-/*   Updated: 2018/09/04 17:39:29 by ahrytsen         ###   ########.fr       */
+/*   Updated: 2018/09/05 14:38:03 by ahrytsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -339,6 +339,10 @@ void			ft_init(int ac, char **av);
 void			ft_stop_job(t_cmd *cmd, int mod);
 int				ft_control_job(t_cmd *cmd, int bg, int cont);
 int				ft_status_job(int st);
+/*
+**				ft_jobs_helper.c
+*/
+char			*ft_get_job_error(int sig);
 /*
 **				ft_redirection.c
 */
