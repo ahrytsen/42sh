@@ -36,15 +36,15 @@ static int	rl_get_path_name(char *out, char *path, char *name)
 	return (ret);
 }
 
-static void	rl_search_in_path(t_list **list, char *str, int i, size_t len)
+static void	rl_search_in_path(t_list **list, char *str, char *path, size_t len)
 {
-	char			*path;
 	char			part[NAMESIZE];
 	DIR				*directory;
 	struct dirent	*fl;
 	char			*ptr;
+	int				i;
 
-	path = ft_getenv("PATH");
+	i = 0;
 	while ((i = rl_get_path_name(part, path, "")))
 	{
 		if ((directory = opendir(part)))
@@ -84,7 +84,8 @@ char		*ft_rl_search_command(char *str, size_t len)
 		}
 		i++;
 	}
-	rl_search_in_path(&list, str, 0, len);
+	if ((ptr = ft_getenv("PATH")))
+		rl_search_in_path(&list, str, ptr, len);
 	if (!list && write(0, "\a", 1))
 		return (NULL);
 	return (ft_rl_match_drawer(ft_lstsort(list), str));
