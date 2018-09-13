@@ -6,7 +6,7 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/03 20:19:57 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/09/05 14:38:45 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/09/13 23:54:48 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -150,7 +150,7 @@ STRING2 = $(CYAN)---Remove_$(NAME)_O_Files$(NON)
 STRING3 = $(CYAN)---Remove_$(NAME)$(NON)
 STRING4 = $(CYAN)---Running$(NON)
 STRING5 = $(CYAN)---Copy binary file in ~/my_bin$(NON)
-STRING5 = $(CYAN)---$(NAME) installed in ~/.mybin$(NON)
+STRING6 = $(CYAN)---$(NAME) installed in ~/.mybin$(NON)
 #===========================================================
 
 .PHONY: all clean re

@@ -7,11 +7,11 @@
 #    By: ahrytsen <ahrytsen@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/05 18:40:56 by ahrytsen          #+#    #+#              #
-#    Updated: 2018/09/06 20:27:47 by ahrytsen         ###   ########.fr        #
+#    Updated: 2018/09/13 23:53:02 by ahrytsen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#say -v Milena "Привет, зайка! Меня зовут $0" #feat Milena
+say -v Milena "Привет, зайка! Меня зовут $0" #feat Milena
 echo $1 $2 $3 $4
 read < src/main.c
 echo $REPLY
@@ -51,4 +51,4 @@ cat << EOF
 EOF
 echo "=======test 'leaks'==========="
 leaks --quiet $$
-echo "=====ETO KANEC"
+echo "=========ETO KANEC============"
