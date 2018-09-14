@@ -40,13 +40,13 @@ echo "==================================================================\n\n"
 echo "=======test '<<-'==========="
 cat <<- EOF
 		lol kek
-		y nas byv segfolt
+		y nas buv segfolt
 		lol
 		EOF
 echo "=======test '<<'==========="
 cat << EOF
 		lol kek
-		y nas byv segfolt
+		y nas buv segfolt
 		lol
 EOF
 echo "=======test 'leaks'==========="
